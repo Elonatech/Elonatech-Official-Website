@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import Loading from "../Loading/Loading";
 import DOMPurify from "dompurify";
-import BlogPagination from "./blogPagination/blogPagination";
-import "./blog.css";
+import "./new.css";
 import { Helmet } from "react-helmet-async";
+import NewsPagination from "./newsPagination/NewsPagination";
 
-const Blog = () => {
+const News = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,7 +17,7 @@ const Blog = () => {
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(4);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
   const [email, setEmail] = useState("");
-  const [activeItem, setActiveItem] = useState("Item 1");
+  const [activeItem, setActiveItem] = useState("Item 2");
 
   const handleClick = (item) => {
     setActiveItem(item);
@@ -26,8 +26,8 @@ const Blog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/blog/`);
-        setData(response.data.getAllBlogs.reverse());
+        const response = await axios.get(`${BASEURL}/api/v1/blog/news`);
+        setData(response.data.getAllNews.reverse());
         setIsLoading(true);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -140,7 +140,8 @@ const Blog = () => {
                             <div className="col-md-6 ">
                               <div className="ms-3">
                                 <h6 className="fs-6 pb-3 pt-4">
-                                  {item.category + item.category.slice(1)}
+                                  {item.category +
+                                    item.category.slice(1)}
                                 </h6>
                                 <h5
                                   className="pb-3"
@@ -191,7 +192,7 @@ const Blog = () => {
                 )}
               </div>
               <div className="mt-5">
-                <BlogPagination
+                <NewsPagination
                   totalPosts={data.length}
                   itemsPerPage={itemsPerPage}
                   maxPageNumberLimit={maxPageNumberLimit}
@@ -207,40 +208,40 @@ const Blog = () => {
 
           <div className="col-md-3">
             <div className="mt-4">
-          <h5>Categories</h5>
+              <h5 style={{ color: "#34548c" }}>Categories</h5>
               <ul className="list-unstyled mt-2">
                 <li>
-                  <a
-                    className={`buttons btn btn-outline-primary rounded-pill px-5  item ${
-                      activeItem === "Item 1" ? "active" : ""
-                    }`}
-                    onClick={() => handleClick("Item 1")}
-                  >
-                    Blogs
-                  </a>
-                </li>
-                <li>
-                  <Link to={"/news"}>
-                    <a
-                      className={`buttons btn btn-outline-primary rounded-pill px-5 mt-1  item ${
-                        activeItem === "Item 2" ? "active" : ""
+                  <Link to={"/blog"}>
+                    <button
+                      className={`buttons btn btn-outline-primary rounded-pill px-5 mt-1 item ${
+                        activeItem === "Item 1" ? "active" : ""
                       }`}
-                      onClick={() => handleClick("Item 2")}
+                      onClick={() => handleClick("Item 1")}
                     >
-                      News
-                    </a>
+                      Blogs
+                    </button>
                   </Link>
                 </li>
                 <li>
+                  <button
+                    className={` buttons btn btn-outline-primary rounded-pill px-5 mt-1 item ${
+                      activeItem === "Item 2" ? "active" : ""
+                    }`}
+                    onClick={() => handleClick("Item 2")}
+                  >
+                    News
+                  </button>
+                </li>
+                <li>
                   <Link to={"/trends"}>
-                    <a
-                      className={`buttons btn btn-outline-primary rounded-pill px-5 mt-1  item ${
+                    <button
+                      className={` buttons btn btn-outline-primary rounded-pill px-5 mt-1 item ${
                         activeItem === "Item 3" ? "active" : ""
                       }`}
                       onClick={() => handleClick("Item 3")}
                     >
                       Trends
-                    </a>
+                    </button>
                   </Link>
                 </li>
               </ul>
@@ -295,4 +296,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default News;

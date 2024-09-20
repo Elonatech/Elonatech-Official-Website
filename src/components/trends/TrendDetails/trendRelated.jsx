@@ -1,43 +1,43 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams , useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import { BASEURL } from '../../BaseURL/BaseURL';
-import './blogDetails.css';
-import Loading from '../Loading/Loading';
+import { BASEURL } from '../../../BaseURL/BaseURL';
+import './trendDetails.css';
+import Loading from '../../Loading/Loading';
 import DOMPurify from 'dompurify';
 
 
-const BlogRelated = () => {
+const TrendRelated = () => {
 const [data , setData] = useState({})
 const [relatedPosts, setRelatedPosts] = useState([]);
 const [currentAdmin, setCurrentAdmin] = useState('');
 const [isLoading, setIsLoading] = useState(false);
 const { id } = useParams()
 const navigate = useNavigate();
- const [activeItem, setActiveItem] = useState("Item 1");
+const [activeItem, setActiveItem] = useState("Item 3");
 
- const handleClick = (item) => {
-   setActiveItem(item);
- };
+const handleClick = (item) => {
+  setActiveItem(item);
+};
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const newData = {
+      email
+    };
+    const mail = await axios.post(
+      `${BASEURL}/api/v1/email/mailchimp`,
+      newData,
+      { headers: { "Content-Type": "Application/json" } }
+    );
+    if (mail) {
+      setMailChimp("visible");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
- const handleSubmit = async (e) => {
-   e.preventDefault();
-   try {
-     const newData = {
-       email
-     };
-     const mail = await axios.post(
-       `${BASEURL}/api/v1/email/mailchimp`,
-       newData,
-       { headers: { "Content-Type": "Application/json" } }
-     );
-     if (mail) {
-       setMailChimp("visible");
-     }
-   } catch (error) {
-     console.log(error);
-   }
- };
 
 
 useEffect(() =>{
@@ -179,40 +179,42 @@ return (
         {/*================================== Categories ========================================*/}
         <div className="col-md-3">
           <div className="mt-4">
-            <h5>Categories</h5>
+            <h5 style={{ color: "#34548c" }}>Categories</h5>
             <ul className="list-unstyled mt-2">
               <li>
-                <a
-                  className={`buttons btn btn-outline-primary rounded-pill px-5  item ${
-                    activeItem === "Item 1" ? "active" : ""
-                  }`}
-                  onClick={() => handleClick("Item 1")}
-                >
-                  Blogs
-                </a>
+                <Link to={"/blog"}>
+                  <button
+                    className={`buttons btn btn-outline-primary rounded-pill px-5 mt-1 item ${
+                      activeItem === "Item 1" ? "active" : ""
+                    }`}
+                    onClick={() => handleClick("Item 1")}
+                  >
+                    Blogs
+                  </button>
+                </Link>
               </li>
               <li>
                 <Link to={"/news"}>
-                  <a
+                  <button
                     className={`buttons btn btn-outline-primary rounded-pill px-5 mt-1  item ${
                       activeItem === "Item 2" ? "active" : ""
                     }`}
                     onClick={() => handleClick("Item 2")}
                   >
                     News
-                  </a>
+                  </button>
                 </Link>
               </li>
               <li>
                 <Link to={"/trends"}>
-                  <a
+                  <button
                     className={`buttons btn btn-outline-primary rounded-pill px-5 mt-1  item ${
                       activeItem === "Item 3" ? "active" : ""
                     }`}
                     onClick={() => handleClick("Item 3")}
                   >
                     Trends
-                  </a>
+                  </button>
                 </Link>
               </li>
             </ul>
@@ -265,4 +267,5 @@ return (
 );
 }
 
-export default BlogRelated;
+export default TrendRelated;
+

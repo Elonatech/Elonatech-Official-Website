@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { BASEURL } from "../../BaseURL/BaseURL";
+import { BASEURL } from "../../../BaseURL/BaseURL";
 import hgdelete from "./caption/delete.png";
 import edit from "./caption/editing.png";
-import "./blogDetails.css";
-import Loading from "../Loading/Loading";
+import "./newsDetails.css";
+import Loading from "../../Loading/Loading";
 import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
 import sanitizeHtml from "sanitize-html";
 
-const BlogDetails = () => {
+const NewsDetails = () => {
   const [data, setData] = useState({});
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [currentAdmin, setCurrentAdmin] = useState("");
@@ -18,7 +18,7 @@ const BlogDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [activeItem, setActiveItem] = useState("Item 1");
+  const [activeItem, setActiveItem] = useState("Item 2");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,9 +65,9 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/blog/`);
+        const response = await axios.get(`${BASEURL}/api/v1/blog/news`);
         setRelatedPosts(
-          response.data.getAllBlogs
+          response.data.getAllNews
             .sort(() => Math.random() - Math.random())
             .slice(0, 4)
         );
@@ -79,7 +79,7 @@ const BlogDetails = () => {
   }, []);
 
   const handleDelete = async () => {
-    const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`);
+    const res = await axios.delete(`${BASEURL}/api/v1/blog/news/${id}`);
     console.log(res);
     navigate("/blog");
   };
@@ -255,14 +255,16 @@ const BlogDetails = () => {
               <h5 style={{ color: "#34548c" }}>Categories</h5>
               <ul className="list-unstyled mt-2">
                 <li>
-                  <button
-                    className={`buttons btn btn-outline-primary rounded-pill px-5  item ${
-                      activeItem === "Item 1" ? "active" : ""
-                    }`}
-                    onClick={() => handleClick("Item 1")}
-                  >
-                    Blogs
-                  </button>
+                  <Link to={"/blog"}>
+                    <button
+                      className={`buttons btn btn-outline-primary rounded-pill px-5  item ${
+                        activeItem === "Item 1" ? "active" : ""
+                      }`}
+                      onClick={() => handleClick("Item 1")}
+                    >
+                      Blogs
+                    </button>
+                  </Link>
                 </li>
                 <li>
                   <Link to={"/news"}>
@@ -340,4 +342,4 @@ const BlogDetails = () => {
   );
 };
 
-export default BlogDetails;
+export default NewsDetails;
