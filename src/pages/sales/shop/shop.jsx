@@ -60,6 +60,12 @@ const Shop = () => {
  }, []);
 
  useEffect(() => {
+  const page = parseInt(searchParams.get('page') || '1', 10);
+  setCurrentPage(page);
+}, [searchParams]);
+
+
+ useEffect(() => {
    if (filteredProducts.length > 0) {
      setRecords(filteredProducts); // Show filtered products
      setNoResultsMessage(false); // Don't show "No Results" message
@@ -239,13 +245,10 @@ const Shop = () => {
                       return (
                         <div className="col-lg-3 mb-4" key={product.id}>
                           <div className="mx-1 shadow-lg p-3 bg-body rounded showbutton">
-                            <Link
-                              className="text-decoration-none text-dark"
-                              to={`/product/${product._id}/${product.name
-                                .split(" ")
-                                .join("-")
-                                .toLowerCase()}`}
-                            >
+                          <Link 
+                                className='text-decoration-none text-dark' 
+                                to={`/product/${product._id}?fromPage=${currentPage}`}
+                              >
                               <div className="text-center take">
                                 <LazyLoadImage
                                   src={product.images[0]?.url}

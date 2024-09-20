@@ -39,10 +39,11 @@ const Computer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/product/computers`);
-        const products = response.data.data.reverse();
-        setData(products);
-        setRecords(products); // Initially display all products
+        // const response = await axios.get(`${BASEURL}/api/v1/product/computers`);
+        const response = await axios.get(`${BASEURL}/api/v1/product/`);
+        const filtered = response.data.getAllProducts.filter(user => user.category === 'Computer')
+        setData(filtered.reverse());
+        setRecords(filtered)
         setIsLoading(true);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -64,6 +65,13 @@ const Computer = () => {
     }
   }, [filteredProducts, data]);
 
+
+  useEffect(() => {
+    const page = parseInt(searchParams.get('page') || '1', 10);
+    setCurrentPage(page);
+  }, [searchParams]);
+
+  
   const Filter = (event) => {
     const searchTerm = event.target.value.toLowerCase();
     setRecords(
@@ -144,13 +152,10 @@ const Computer = () => {
                     displayedProducts.map((product) => (
                       <div className="col-lg-3 mb-4" key={product.id}>
                         <div className="mx-1 shadow-lg p-3 bg-body rounded showbutton">
-                          <Link
-                            className="text-decoration-none text-dark"
-                            to={`/product/${product._id}/${product.name
-                              .split(` `)
-                              .join(`-`)
-                              .toLowerCase()}`}
-                          >
+                        <Link 
+                              className='text-decoration-none text-dark' 
+                              to={`/product/${product._id}?fromPage=${currentPage}`}
+                            >
                             <div className="text-center take">
                               <LazyLoadImage
                                 src={product.images[0]?.url}
