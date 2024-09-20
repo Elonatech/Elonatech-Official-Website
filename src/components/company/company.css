@@ -1,0 +1,140 @@
+.transparent{
+    border: 1px solid white; 
+}
+
+.transparent{
+    border-top: 100px solid transparent;
+}
+
+/* ----------   core values --------------- */
+
+.border-start-fg{
+    border: 1px solid white; 
+}
+
+@media only screen and (max-width: 500px) {
+
+    .transparent{
+        border: none; 
+    }
+
+    .border-start-fg{
+        border: none; 
+    }
+    .company-professional{
+       position: absolute;
+       top: 7px;
+       padding-right: 70px;
+    }
+    .company-team-bord{
+        position: relative;
+        bottom: 40px;
+        right: 50px;
+    }
+
+    .company-integrity{
+        position: relative;
+        bottom: 40px;
+        right: 50px;
+      
+    }
+
+    .company-excellence{
+        position: relative;
+        bottom: 70px;
+
+
+    }
+
+    .company-team-text {
+        text-align: start;
+
+    }
+
+    .company-professionalism-text{
+     text-align: start;
+    }
+
+}
+
+.our-company-section {
+    min-height: 400px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709801232/companyPage/Company_ya3qxz.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Text styling for desktop */
+  .our-company-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .our-company-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .our-company-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .our-company-section {
+      min-height: 108px;
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .our-company-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .our-company-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .our-company-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .our-company-section h2,
+    .our-company-section h5,
+    .our-company-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+
+

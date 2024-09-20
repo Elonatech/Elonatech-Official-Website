@@ -1,0 +1,95 @@
+.singlePostImg {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .postImg{
+    width: 104%;
+    height: 20rem;
+    object-fit: cover;
+   margin-right: 400px;
+    
+  }
+
+
+  .related-post-title:hover{
+    cursor: pointer;
+    color:red;
+  
+  }
+
+
+  .blog-details-section {
+    height: 500px; /* Fixed height for desktop */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  
+  /* Text styling for desktop */
+  .blog-details-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .blog-details-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .blog-details-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .blog-details-section {
+      height: 108px; /* Fixed height for mobile */
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .blog-details-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .blog-details-section h5,
+    .blog-details-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none; /* Hide on mobile if not used */
+    }
+  
+    .blog-details-section h2,
+    .blog-details-section h5,
+    .blog-details-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  

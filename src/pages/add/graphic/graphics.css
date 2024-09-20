@@ -1,0 +1,320 @@
+
+  .graphic-text{
+    padding-top: 17.5rem;
+  padding-left: 14rem;
+  float: left;
+  }
+
+   
+
+  .elona-img-1{
+    width: 525px;
+    height: 15rem;
+  }
+
+  .elona-img-2{
+    width: 620px;
+    height: 15rem;
+  }
+ 
+  .container-card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 90px;
+  }
+
+  .content-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+
+  .content-section .card-body{
+    flex: 1;
+    margin: 20px 20px;
+  }
+ 
+@media screen and (max-width:768px) {
+  .content-section{
+    flex-direction: column;
+  }
+  .graphic-bg{
+    width: 100%;
+    min-height: 250px;
+    
+  }
+
+  .graphic-text{
+   display: none;
+  }
+}
+
+  .bg-primary{
+    width: 35%;
+    border-radius: 50%;
+    margin: 0 auto;
+
+   }
+
+   .card-border{
+    padding: 1.5em .5em .5em;
+    text-align: center;
+
+   }
+
+   .branding-title{
+    display: flex;
+    justify-content: center;
+   }
+
+   .img-card{
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 20px;
+    justify-content: center;
+
+   }
+/* 
+   .elona-img{
+    width: 380px;
+    height: 400px;
+
+
+  } */
+
+  .elona-img{
+    width: 310px;
+    height: 300px;
+    /* padding: 20px; */
+
+  }
+
+  .elona-img-1{
+    width: 525px;
+    height: 15rem;
+  }
+
+  .elona-img-2{
+    width: 620px;
+    height: 15rem;
+  }
+  .offering{
+   padding-top: 2rem;
+  }
+  .text-p{
+    padding-right: 3rem;
+   
+  }
+
+  @media(max-width:768px) {
+    .background{
+      min-height: 40vh;
+    }
+    .text-p{
+      padding-right: 0;
+     
+    }
+    .text{
+      font-size: calc(1rem + 3.3vw);
+      font-weight: 400;
+    }
+    .text-container{
+      position: absolute;
+      margin-top: 4rem ;
+      margin-left: 0;
+      padding: 20px;
+    }
+
+
+
+    .elona-img{
+      width: 100px;
+      height: 100px;
+      padding: 4px;
+
+    }
+
+    .elona-img-1{
+      width: 370px;
+      height: 15rem;
+      padding-bottom: 10px;
+    }
+
+    .elona-img-2{
+      width: 380px;
+      height: 15rem;
+      padding-bottom: 30px;
+    }
+  
+
+  }
+ 
+
+
+  /* WHAT WE DO */
+  .text-1{
+    font-weight: bolder;
+    font-size: 2rem;
+
+  }
+
+  .services__item__icon{
+    border: 5px solid #2b5592;
+    width: 70px;
+    padding: 5px;
+    margin: 1rem 0 ;
+  }
+  .logo-icon1{
+    padding-right: 7px;
+  }
+  .logo-icon2{
+    padding-left: 8px;
+  }
+  .logo-icon3{
+    padding-left: 8px;
+   
+  }
+
+  .row-1{
+    margin: 2rem 0;
+  }
+  .icon{
+   margin-left:2px;
+  }
+
+  .our-latest-project{
+    /* padding: 6rem 4rem; */
+    background-color: #2b5592;
+  }
+
+  .text-content-2{
+    text-align: start;
+    padding: 3rem 6rem;
+  }
+
+
+  .project{
+  font-weight: 800;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: #020202;
+  }
+
+  .line{
+    border-top: 2px solid #000; /* Adjust the thickness and color */
+     width: 100px;
+    margin: 20px 0;
+  }
+
+
+
+  @media(max-width:768px) {
+    .text-content-2{
+
+      padding: 0;
+    }
+
+    .row{
+      margin: 0;
+    }
+  }
+
+/* 
+  @media screen and (min-width: 414px) {
+    body {
+      background-color: lightgreen;
+    }
+
+   
+  } */
+
+
+
+
+  .graphic-design-section {
+    height: 500px; /* Fixed height for desktop */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709803309/graphicPage/graphics_design_zw3fk4.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 100px; /* Adjust as needed */
+  }
+  
+  /* Text styling for desktop */
+  .graphic-design-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .graphic-design-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .graphic-design-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .graphic-design-section {
+      height: 108px; /* Adjusted height for mobile */
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .graphic-design-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .graphic-design-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .graphic-design-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .graphic-design-section h2,
+    .graphic-design-section h5,
+    .graphic-design-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+

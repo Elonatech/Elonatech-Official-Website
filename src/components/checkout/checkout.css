@@ -1,0 +1,116 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+
+
+.untree_co-section {
+  padding: 7rem 0; }
+
+.form-control {
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif; 
+}
+  .form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #3b5d50;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2); }
+  .form-control::-webkit-input-placeholder {
+    font-size: 14px; }
+  .form-control::-moz-placeholder {
+    font-size: 14px; }
+  .form-control:-ms-input-placeholder {
+    font-size: 14px; }
+  .form-control:-moz-placeholder {
+    font-size: 14px; }
+
+textarea {
+  height: auto !important; 
+}
+
+
+.cart-btn {
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #ffffff;
+  background: #2f2f2f;
+  border-color: #2f2f2f; 
+}
+
+
+.checkout-section {
+  height: 414px;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1712150234/checkoutPage/cart_page_vwycvd.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+/* Text styling for desktop */
+.checkout-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.checkout-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.checkout-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .checkout-section {
+    height: 108px; 
+    background-size: contain;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .checkout-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .checkout-section h5,
+  .checkout-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none; 
+  }
+
+  .checkout-section h2,
+  .checkout-section h5,
+  .checkout-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
+

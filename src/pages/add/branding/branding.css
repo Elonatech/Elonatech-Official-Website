@@ -1,0 +1,283 @@
+
+  .branding-text-container{
+    padding: 10rem;
+  }
+
+  .branding-text{
+    text-align: center;
+    /* font-size: 40px;
+    font-weight: 700 ; */
+  }
+
+
+  .text-container1{
+    display: flex;
+    margin: 4rem 8rem;
+
+  }
+  span{
+    color: red;
+  }
+
+  .frequent-container{
+    width: 50%;
+  }
+
+  .clients{
+    width: 100px;
+  }
+
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background: black;
+    cursor: pointer;
+  }
+
+  .content{
+    color: white;
+  }
+
+  .slider:hover .overlay{
+    opacity: 0.6;
+  }
+ 
+
+  @media(max-width:768px) {
+    .branding-text{
+
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600 ;
+      }
+
+      .slider  img{
+        height: 80vh!important;
+      }
+
+      .branding-text-container{
+        padding: 1rem;
+        padding-top: 8rem;
+      }
+
+      .branding-background{
+        min-height: 50vh;
+      }
+
+      .elo-img{
+        width: 320px;
+        height: 25vh;
+      margin: 20px 0;
+      }
+
+      .elona{
+        margin-left: 30px;
+      }
+
+
+  }
+
+  .cup-img{
+    width: 400px;
+    margin-left: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  .img-bg{
+    margin-left: 25rem;
+  }
+
+ .slider  img{
+    height: 500px !important;
+  }
+
+
+  @media(max-width:768px) {
+    .cup-img{
+        width: 300px;
+        margin-left:0;
+        margin-bottom:0;
+      }
+
+      .discuss{
+        flex-direction: column;
+      }
+
+      .img-bg{
+        margin-left:10px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width:18rem;
+      }
+
+
+  }
+
+
+
+  .survalliance .content h3 {
+    font-weight: 400;
+    font-size: 34px;
+  }
+  
+  .survalliance .content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+  
+  .survalliance .content p {
+    font-size: 15px;
+    color: #6c757d;
+  }
+  
+  .survalliance .accordion-item {
+    border: 0;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+  
+  .survalliance .accordion-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .survalliance .accordion-collapse {
+    border: 0;
+  }
+  
+  .survalliance .accordion-button {
+    padding: 20px 50px 20px 20px;
+    font-weight: 600;
+    border: 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-default);
+    text-align: left;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+  
+  .survalliance .accordion-button .num {
+    padding-right: 10px;
+    font-size: 20px;
+    line-height: 0;
+    color: var(--color-primary);
+  }
+  
+  .survalliance .accordion-button:not(.collapsed) {
+    color: var(--color-primary);
+    border-bottom: 0;
+    box-shadow: none;
+  }
+  
+  .survalliance .accordion-button:after {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  .survalliance .accordion-body {
+    padding: 0 40px 30px 45px;
+    border: 0;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+  } 
+
+
+
+
+  .brand-development-section {
+    height: 500px; /* Fixed height for desktop */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709801098/brandingPage/Brand_development_meuwrk.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 100px; /* Adjust as needed */
+  }
+  
+  /* Text styling for desktop */
+  .brand-development-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .brand-development-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .brand-development-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  .brand-development-section p span {
+    font-style: italic; /* Style for the quote author */
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .brand-development-section {
+      height: 108px; /* Adjusted height for mobile */
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .brand-development-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .brand-development-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .brand-development-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .brand-development-section p span {
+      font-style: italic;
+    }
+  
+    .brand-development-section h2,
+    .brand-development-section h5,
+    .brand-development-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  

@@ -1,0 +1,333 @@
+
+
+
+
+.team-item {
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.team-item .team-social {
+    position: absolute;
+    padding: 0;
+    top: 15px;
+    left: 0;
+    overflow: hidden;
+    color: black;
+}
+
+.team-item .team-social li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-left: -50px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.team-item:hover .team-social li {
+    margin-left: 15px;
+    opacity: 1;
+}
+
+.team-item .team-social li .btn {
+    background: #FFFFFF;
+    color: var(--primary);
+    border-radius: 40px;
+    transition: .5s;
+}
+
+.team-item .team-social li .btn:hover {
+    color: red;
+    background: white;
+}
+
+.team-item .team-social li:nth-child(1) {
+    transition-delay: .1s;
+}
+
+.team-item .team-social li:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.team-item .team-social li:nth-child(3) {
+    transition-delay: .3s;
+}
+
+.team-item .team-social li:nth-child(4) {
+    transition-delay: .4s;
+}
+
+.team-item .team-social li:nth-child(5) {
+    transition-delay: .5s;
+}
+
+
+
+.brci{
+    background-color:#34548c;
+    color: #FFFFFF;
+    margin: auto;
+    height:50px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:50px;
+}
+ 
+
+/*--------------------------------------------------------------
+# Our Team Section
+--------------------------------------------------------------*/
+.team .member {
+    position: relative;
+  }
+  
+  .team .member .member-img {
+    margin: 0 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  @media (max-width: 1024px) {
+    .team .member .member-img {
+      margin: 0 60px;
+    }
+  }
+  
+  .team .member .member-img img {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .team .member .member-img .social {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding-bottom: 20px;
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .team .member .member-img .social a {
+    transition: 0.3s;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 8px;
+  }
+  
+  .team .member .member-img .social a:hover {
+    color: #a02924;
+  }
+  
+  .team .member .member-info {
+    margin-top: 30px;
+  }
+  
+  .team .member .member-info h4 {
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: var(--color-secondary);
+  }
+  
+  .team .member .member-info span {
+    font-style: italic;
+    display: block;
+    font-size: 15px;
+    color: #838893;
+    margin-bottom: 10px;
+  }
+  
+  .team .member .member-info p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  
+  .team .member:hover .member-img .social {
+    padding-bottom: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* =========================== */
+
+
+
+  @media only screen and (max-width: 500px) {
+
+    .team-margin-end{
+      margin-right: 0;
+    }
+
+
+  }
+
+
+  .our-team-section {
+    min-height: 400px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709812595/teamPage/Team_Work_ecfn7z.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Text styling for desktop */
+  .our-team-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .our-team-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .our-team-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .our-team-section {
+      min-height: 108px;
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .our-team-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .our-team-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .our-team-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .our-team-section h2,
+    .our-team-section h5,
+    .our-team-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+
+  .team-section {
+    height: 500px; /* Fixed height for desktop */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709226487/teamPage/Team_Work_ea0uhv.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  
+  /* Text styling for desktop */
+  .team-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .team-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .team-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .team-section {
+      height: 135px; 
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .team-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .team-section h5,
+    .team-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+    }
+  
+    .team-section h5,
+    .team-section p {
+      display: none; /* Hide on mobile if not used */
+    }
+  
+    .team-section h2,
+    .team-section h5,
+    .team-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  
+
+
+
+

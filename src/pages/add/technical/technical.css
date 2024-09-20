@@ -1,0 +1,103 @@
+
+.p-text{
+    width: 90%;
+    padding-top: 10px;
+}
+.star{
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
+}
+
+
+
+  @media screen and (max-width:768px){
+    .p-text{
+        width: 100%;
+    }
+    .tech-text{
+        margin-top: 1rem;
+    }
+    
+  }
+
+ 
+  .tech-support-section {
+    min-height: 500px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709812685/techSupportPage/tech_support_header_m69n74.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  
+  /* Text styling for desktop */
+  .tech-support-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .tech-support-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .tech-support-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .tech-support-section {
+      min-height: 135px;
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .tech-support-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .tech-support-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .tech-support-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .tech-support-section h2,
+    .tech-support-section h5,
+    .tech-support-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  

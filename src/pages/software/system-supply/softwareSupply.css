@@ -1,0 +1,117 @@
+
+.stats-counter {
+    padding: 40px 0;
+  }
+  
+  .stats-counter .stats-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  
+  .stats-counter .stats-item .purecounter {
+    min-width: 90px;
+    padding-right: 15px;
+  }
+  
+  .stats-counter .stats-item i {
+    font-size: 44px;
+    line-height: 0;
+    margin-right: 15px;
+  }
+  
+  .stats-counter .stats-item span {
+    font-size: 40px;
+    display: block;
+    font-weight: 700;
+    color: green;
+    line-height: 40px;
+  }
+  
+  .stats-counter .stats-item p {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: 14px;
+  }
+
+
+  .software-supply-section {
+    min-height: 500px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1707923994/systemSolutionPage/sotware_application_kftocw.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  
+  /* Text styling for desktop */
+  .software-supply-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .software-supply-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .software-supply-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .software-supply-section {
+      min-height: 135px;
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .software-supply-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .software-supply-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .software-supply-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .software-supply-section h2,
+    .software-supply-section h5,
+    .software-supply-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+
+  

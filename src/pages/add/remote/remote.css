@@ -1,0 +1,114 @@
+
+  .remote-text{
+    text-align: left;
+    width: 50%;
+  }
+  .photo-icon{
+    width: 80px;
+    /* border-radius: 50%; */
+    margin-left:20px ;
+    margin-top:20px ;
+  }
+  .remote-card{
+    transition: all 0.3s;
+   
+  }
+  .remote-card:hover{
+    transform: scale(0.9);
+   
+  }
+
+  @media screen and (max-width:768px){
+    .remote-text{
+        text-align: center;
+        width: 100%;
+      }
+      .remote-text p{
+        text-align: center;
+      }
+      .remote-row{
+        margin-left: 30px;
+      }
+  }
+
+
+
+  .remote-support-section {
+    min-height: 400px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709807120/remoteSupportPage/remote_suppport_jn4gqd.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  
+  /* Text styling for desktop */
+  .remote-support-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .remote-support-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .remote-support-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .remote-support-section {
+      min-height: 108px;
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .remote-support-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .remote-support-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .remote-support-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .remote-support-section h2,
+    .remote-support-section h5,
+    .remote-support-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  

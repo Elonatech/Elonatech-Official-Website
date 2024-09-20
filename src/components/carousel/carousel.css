@@ -1,0 +1,54 @@
+.carouselCard{
+ height: 500px;
+color: white;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+}
+
+
+.carouselCardPadding{
+padding-top: 16rem;
+padding-left: 5rem;
+}
+
+/* .carouselText{
+    margin-bottom: 150px;
+} */
+
+
+@media only screen and (max-width: 567px) {
+    .carouselCard{
+       height: 152px;
+       color: white;
+       background-size: contain;
+       background-position:  bottom;
+       
+       }
+       .carouselCardPadding{
+        padding-top: 5rem;
+        padding-left: 3rem;
+        }
+          .title {
+            font-size: 21px;
+            margin-top: -10px;
+            text-align: center;
+          }
+          .para {
+            font-size: 14px;
+            display: none;
+          }
+          .cta {
+            font-size: 10px;
+            margin-top: -15px;
+            
+            
+  
+          }
+          .down {
+            margin-bottom: -30px;
+          }
+        
+
+}

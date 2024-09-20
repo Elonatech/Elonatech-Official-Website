@@ -1,0 +1,85 @@
+.bg-size{
+    width: 50%;
+}
+
+@media(max-width:768px){
+    .bg-size{
+        width: 100%;
+    }
+    
+}
+
+.editorContainer {
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid lightgray;
+}
+
+.editor {
+    height: 300%;
+    border: none;
+    overflow-y: hidden; 
+  }
+
+  .dashboard {
+    display: flex;
+    max-width: 200px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 50px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .dash:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .dash .icon {
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .dash:hover .icon {
+    transform: rotate(360deg);
+  }
+  
+  .dash::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 100%;
+    left: -150%;
+    background: linear-gradient(45deg, transparent, #00ff87, #007bff, transparent);
+    transition: 0.5s ease-in-out;
+    z-index: 0;
+  }
+  
+  .dash:hover::before {
+    top: -150%;
+  }
+  
+  .dash:hover {
+    border-color: transparent;
+  }
+  

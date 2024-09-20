@@ -1,0 +1,168 @@
+
+
+.about__text {
+	padding-top: 20px;
+}
+
+.about__text h2 {
+	color: #111111;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+.about__text p {
+	color: #111111;
+	margin-bottom: 26px;
+}
+
+.about__text .about__achievement .about__achieve__item {
+	display: inline-block;
+	margin-right: 95px;
+	margin-bottom: 30px;
+}
+
+.about__text .about__achievement .about__achieve__item:last-child {
+	margin-right: 0;
+}
+
+.about__text .about__achievement .about__achieve__item span {
+	font-size: 30px;
+	color: #4c57d6;
+}
+
+.about__text .about__achievement .about__achieve__item h4 {
+	color: #111111;
+	font-weight: 700;
+	margin-top: 12px;
+}
+
+.about__text .about__achievement .about__achieve__item p {
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #444444;
+	margin-bottom: 0;
+}
+
+
+
+.feature-section {
+	background: #f5f5f5;
+	padding-bottom: 70px;
+}
+
+.feature__item {
+	background: #ffffff;
+	-webkit-box-shadow: 0px 0px 10px rgba(18, 8, 81, 0.15);
+	box-shadow: 0px 0px 10px rgba(18, 8, 81, 0.15);
+	padding: 30px 35px 32px 35px;
+	text-align: center;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	margin-bottom: 30px;
+}
+
+.feature__item:hover {
+	-webkit-box-shadow: 0px 8px 30px rgba(18, 8, 81, 0.2);
+	box-shadow: 0px 8px 30px rgba(18, 8, 81, 0.2);
+}
+
+.feature__item span {
+	font-size: 42px;
+	color: #4c57d6;
+}
+
+.feature__item h5 {
+	font-size: 20px;
+	color: #111111;
+	font-weight: 700;
+	margin-top: 18px;
+	margin-bottom: 10px;
+}
+
+.feature__item p {
+	color: #111111;
+	margin-bottom: 0;
+} 
+
+
+.ppc-section {
+	height: 500px; /* Fixed height for desktop */
+	background-image: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)
+	  ),
+	  url('https://res.cloudinary.com/elonatech/image/upload/v1709803456/ppcPage/ppc_bcbzk4.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+	padding: 20px;
+	margin-bottom: 50px; /* Adjust margin as needed */
+  }
+  
+  /* Text styling for desktop */
+  .ppc-section h2 {
+	font-size: 2rem;
+	line-height: 1.2;
+	margin-bottom: 10px;
+  }
+  
+  .ppc-section h5 {
+	font-size: 1.3rem;
+	line-height: 1.2;
+	margin-bottom: 8px;
+  }
+  
+  .ppc-section p {
+	font-size: 1.1rem;
+	line-height: 1.2;
+	margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+	.ppc-section {
+	  height: 108px; /* Adjusted height for mobile */
+	  background-size: contain;
+	  flex-direction: column;
+	  align-items: center;
+	  padding-top: 50px;
+	}
+  
+	/* Adjusting text for mobile view */
+	.ppc-section h2 {
+	  font-size: 1.5rem;
+	  margin-bottom: 5px;
+	  line-height: 1.1;
+	}
+  
+	.ppc-section h5 {
+	  font-size: 1rem;
+	  margin-bottom: 3px;
+	  line-height: 1.1;
+	  font-weight: 200;
+	  display: none;
+	}
+  
+	.ppc-section p {
+	  font-size: 0.9rem;
+	  line-height: 1.1;
+	  margin-bottom: 0;
+	  display: none;
+	}
+  
+	.ppc-section h2,
+	.ppc-section h5,
+	.ppc-section p {
+	  margin: 0;
+	  padding: 0;
+	}
+  }
+  

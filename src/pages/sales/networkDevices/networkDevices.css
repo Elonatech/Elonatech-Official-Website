@@ -1,0 +1,217 @@
+
+
+/* Pop-Up-Message */
+
+.pop-up-message{
+  width: 68rem;
+  font-family: sans-serif;
+  position: relative;
+  }
+  
+  /*   Media Pop Up Message  */
+  
+  @media only screen and (max-width: 1673px) {
+    .pop-up-message{
+      width: 59rem;
+      font-family: sans-serif;
+      position: relative;
+      left: 29px;
+      }
+          
+  }
+  
+  @media only screen and (max-width: 1599px) {
+    .pop-up-message{
+      width: 57rem;
+      font-family: sans-serif;
+      position: relative;
+      left: 25px;
+      }
+          
+  }
+  
+  
+  
+  @media only screen and (max-width: 1538px) {
+    .pop-up-message{
+      width: 51rem;
+      font-family: sans-serif;
+      position: relative;
+      left: 25px;
+      }
+          
+  }
+  
+  @media only screen and (max-width: 1428px) {
+    .pop-up-message{
+      width: 49rem;
+      font-family: sans-serif;
+      position: relative;
+      left: 25px;
+      }
+          
+  }
+  
+  @media only screen and (max-width: 1399px) {
+    .pop-up-message{
+      width: 49rem;
+      font-family: sans-serif;
+      position: relative;
+      left: 25px;
+      }
+          
+  }
+  
+  
+  @media only screen and (max-width: 1290px) {
+    .pop-up-message{
+      width: 47rem;
+      font-family: sans-serif;
+      position: relative;
+      }
+          
+  }
+  
+  
+  @media only screen and (max-width: 500px) {
+    .pop-up-message{
+        width: 24rem;
+        font-family: sans-serif;
+        position: relative;
+        left: 25px;
+    
+    }
+        
+  }
+  
+
+  @media (max-width: 768px) {
+    .progress-circle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .progress-circle .col-lg-3 {
+      flex: 0 0 48%;
+      margin: 1% 0;
+      padding: 0;
+    }
+  
+    .mx-1 {
+      margin: 0;
+      padding: 0.5rem;
+    }
+  
+    .lazyload {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .fw-normal {
+      font-size: 0.9rem;
+    }
+  
+    .lead.fs-6 {
+      font-size: 0.8rem;
+    }
+  
+    .d-flex.justify-content-between p {
+      font-size: 0.9rem;
+    }
+  
+    .btn-outline {
+      padding: 0.5rem;
+    }
+  
+    .pageNumbers li {
+      padding: 5px;
+    }
+    .mx-1.shadow-lg.p-3.bg-body.rounded.showbutton {
+      padding: 0.3rem !important;
+    }
+  }
+
+
+  .network-devices-section {
+    min-height: 400px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709806697/productHeaderPage/products_networking_wsa9wh.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  
+  /* Text styling for desktop */
+  .network-devices-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .network-devices-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .network-devices-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .network-devices-section {
+      min-height: 108px;
+      background-size: contain;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .network-devices-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .network-devices-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      display: none;
+    }
+  
+    .network-devices-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .network-devices-section h2,
+    .network-devices-section h5,
+    .network-devices-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  
+  
+    
