@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Slider from "react-slider";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import { Link } from "react-router-dom";
+import Slider from "@mui/material/Slider";
 
 const ShopFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
@@ -62,9 +62,6 @@ const ShopFilter = ({ setFilteredProducts }) => {
     await applyFilters(updatedBrands, filters.price);
   };
 
-  const handlePriceRangeChange = (values) => {
-    setPriceRange(values);
-  };
 
   const handleInputChange = (e, index) => {
     const rawValue = e.target.value.replace(/,/g, ""); // Remove commas
@@ -131,6 +128,10 @@ const ShopFilter = ({ setFilteredProducts }) => {
       : new Intl.NumberFormat().format(value);
   };
 
+  const handlePriceRangeChange = (event, newValue) => {
+    setPriceRange(newValue);
+  };
+
   return (
     <div className="">
       {/* Filter by Brand */}
@@ -180,18 +181,29 @@ const ShopFilter = ({ setFilteredProducts }) => {
         <div className="price-range-values">
           <div style={{ width: "100%" }}>
             <input
-              style={{ width: "80%", borderRadius: "5px" }}
+              style={{ width: "100%", borderRadius: "5px" }}
               type="text"
-              value={priceRange[0] === "" ? "" : formatPrice(priceRange[0])} // Handle zero or empty value
+              value={
+                priceRange[0] !== undefined
+                  ? priceRange[0].toLocaleString()
+                  : ""
+              }
               onChange={(e) => handleInputChange(e, 0)}
+              className="price-input"
             />
           </div>
+          <span className="separator">-</span>
           <div>
             <input
               style={{ width: "100%", borderRadius: "5px" }}
               type="text"
-              value={priceRange[1] === "" ? "" : formatPrice(priceRange[1])} // Handle zero or empty value
+              value={
+                priceRange[1] !== undefined
+                  ? priceRange[1].toLocaleString()
+                  : ""
+              }
               onChange={(e) => handleInputChange(e, 1)}
+              className="price-input"
             />
           </div>
         </div>
