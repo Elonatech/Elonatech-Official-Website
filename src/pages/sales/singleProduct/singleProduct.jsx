@@ -138,6 +138,7 @@ const SingleProduct = () => {
           setCategory(res.data.product.category);
           setComputer(res.data.product.computerProperty);
           setIsLoading(true);
+
   
           // Fetch next product
           const nextRes = await axios.get(`${BASEURL}/api/v1/product/${id}/next`);
