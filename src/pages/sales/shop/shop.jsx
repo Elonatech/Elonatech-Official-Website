@@ -292,13 +292,11 @@ const Shop = () => {
                                   ₦ {formatPrice(product.price)}
                                 </p>
                             </Link>
-                            <button
+                           <button
                               style={{ color: "red", fontWeight: "bold" }}
                               className="btn btn-outline-secondary btn-md w-100 rounded"
                               onClick={() => addItem(product)}
                             >
-                              Add to cart
-                            </button>
                               Add to cart
                             </button>
                           </div>
