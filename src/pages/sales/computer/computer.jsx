@@ -192,17 +192,20 @@ const Computer = () => {
                                 style={{ color: "#f4be1d" }}
                               ></i>
                             </div>
-                            <p style={{ color: "red" }} className="lead fs-6">
-                              ₦ {formatPrice(product.price)}
-                            </p>
+                            <p
+                                  style={{ color: "red", fontWeight: "bold" }}
+                                  className="lead fs-6"
+                                >
+                                  ₦ {formatPrice(product.price)}
+                                </p>
                           </Link>
-                          <button
-                            style={{ color: "red" }}
-                            className="btn btn-outline-secondary btn-md w-100 rounded"
-                            onClick={() => addItem(product)}
-                          >
-                            Add to cart
-                          </button>
+                        <button
+                              style={{ color: "red", fontWeight: "bold" }}
+                              className="btn btn-outline-secondary btn-md w-100 rounded"
+                              onClick={() => addItem(product)}
+                            >
+                              Add to cart
+                            </button>
                         </div>
                       </div>
                     ))
