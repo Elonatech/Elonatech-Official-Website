@@ -98,28 +98,17 @@ const Trends = () => {
         <link rel="canonical" href="https://elonatech.com.ng/blog" />
       </Helmet>
 
-      <div
-        class="container-fluid bg-secondary py-5 "
-        style={{
-          height: "500px",
-          marginBottom: "45px",
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg)`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      >
-        <div class="py-5 mt-5 ">
-          <h2 class=" mt-5 text-white text-center">Blog</h2>
-          <h5 class=" mt-4 text-white text-center">
-            Offering regularly updated and trendy contents
-          </h5>
-          <p class="lead text-white text-center">
-            We'd love to share our knowledge, experiences and the latest news,
-            trends and info with you
-          </p>
-        </div>
-      </div>
+      <div class="container-fluid blog-section">
+  <div class="text-content">
+    <h2>Trends</h2>
+    <h5>Offering regularly updated and trendy contents</h5>
+    <p class="lead">
+      We'd love to share our knowledge, experiences and the latest news,
+      trends and info with you.
+    </p>
+  </div>
+</div>
+
 
       <div className="container mb-5">
         <div className="row">

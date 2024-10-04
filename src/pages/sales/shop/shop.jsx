@@ -186,27 +186,17 @@ const Shop = () => {
       </Helmet>
 
       {/* Header Section */}
-      <div
-        className="container-fluid bg-secondary py-5"
-        style={{
-          height: "500px",
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709811140/shopPage/shop_oby1yn.jpg)`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover"
-        }}
-      >
-        <div className="py-5 mt-5">
-          <h2 className="mt-5 text-white text-center">Shop Products</h2>
-          <h5 className="mt-4 text-white text-center">
-            Get what you need to run your business
-          </h5>
-          <p className="lead text-white text-center">
-            Smart business people need quality and reliable hardware, software,
-            service, and support for the day to day running of their businesses
-          </p>
-        </div>
-      </div>
+      <div className="container-fluid shop-products-section">
+  <div className="text-content">
+    <h2>Shop Products</h2>
+    <h5>Get what you need to run your business</h5>
+    <p className="lead">
+      Smart business people need quality and reliable hardware, software,
+      service, and support for the day to day running of their businesses
+    </p>
+  </div>
+</div>
+
 
       <main className="container-fluid">
         <div className="row g-0">
