@@ -371,7 +371,7 @@ const handlePriceChange = (event, newValue) => {
             />
             <span className="separator">-</span>
             <input
-              style={{ width: "50%" }}
+              style={{ width: "80%" }}
               type="text"
               value={formatPrice(filters.price[1])}
               onChange={(e) => handleInputPriceChange(e, 1)}
