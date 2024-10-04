@@ -31,5 +31,6 @@
         "Safebrooks",
         "suvalliance",
         "testimon"
-    ]
+    ],
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
