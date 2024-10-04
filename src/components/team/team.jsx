@@ -175,7 +175,7 @@ const Team = () => {
       <div class="kontribusi">
         <div class="team-item rounded overflow-hidden pb-4">
          <Link className='text-decoration-none' to={'/violet-oku'}>
-        <img class="img-fluid mb-4" src="https://res.cloudinary.com/elonatech/image/upload/v1709808286/teamPage/Admin_-_Copy_ugao5i.png" alt=""/>
+        <img class="img-fluid mb-4" src="https://res.cloudinary.com/elonatech/image/upload/v1723814537/admin_dctuiq.jpg" alt=""/>
         <h4 className='fw-bold' style={{color:"#34548c"}}>Violet Laura O.</h4>
         <h6 class="text-danger">Employee Relations/Admin Manager</h6>
         </Link>
