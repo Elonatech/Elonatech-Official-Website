@@ -32,7 +32,7 @@ const TeamAdmin = () => {
     <div className="row">
         <div className="col-md-4">
             <div className="card border-0">
-                <img src="https://res.cloudinary.com/elonatech/image/upload/v1709808286/teamPage/Admin_-_Copy_ugao5i.png" className="img-fluid" alt="" />
+                <img src="https://res.cloudinary.com/elonatech/image/upload/v1723814537/admin_dctuiq.jpg" className="img-fluid" alt="" />
             </div>
         </div>
         <div className="col-md-8">
