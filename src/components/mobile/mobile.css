@@ -5,7 +5,7 @@
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
       ),
-      url('C:\Users\suppo\Documents\Elonatech-Official-Website\src\components\mobile\captions\phone_rep_nwjtv1.jpg'); /* Replace with actual URL */
+      url('./captions/phone_rep_nwjtv1.jpg'); /* Replace with actual URL */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
