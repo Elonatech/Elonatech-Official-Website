@@ -368,10 +368,15 @@ const Computer = () => {
               </div>
 
               <div
-                style={{ margin: "20px", width: "60%" }}
+                style={{ margin: "15px", width: "60%" }}
                 className="filter-section p-2 rounded shadow-sm"
               >
-                <h4 className="mb-3">Sort computers by</h4>
+                <h4
+                  style={{ marginTop: "-8px", marginBottom: "16px" }}
+                  class="fw-bold "
+                >
+                  Sort Computers by
+                </h4>
                 <ComputerFilter setFilteredProducts={setFilteredProducts} />
               </div>
             </div>
@@ -383,3 +388,29 @@ const Computer = () => {
 };
 
 export default Computer;
+
+
+
+<div
+              style={{ margin: "15px", width: "60%" }}
+              className="filter-section p-2 rounded shadow-sm"
+            >
+              <h4
+                style={{ marginTop: "-8px", marginBottom: "16px" }}
+                class="fw-bold "
+              >
+                Sort Computers by
+              </h4>
+              <ComputerFilter setFilteredProducts={setFilteredProducts} />
+            </div>
+
+
+
+
+{/* <div
+                style={{ margin: "20px", width: "60%" }}
+                className="filter-section p-2 rounded shadow-sm"
+              >
+                <h4 className="mb-3">Sort computers by</h4>
+                <ComputerFilter setFilteredProducts={setFilteredProducts} />
+              </div> */}
