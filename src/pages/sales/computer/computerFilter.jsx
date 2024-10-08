@@ -386,65 +386,41 @@ const handlePriceChange = (event, newValue) => {
           Reset Price Range
         </button>
         <style jsx>{`
-          .shop-filter {
-            margin-bottom: 1rem;
-          }
-          .price-filter {
-            margin-top: 1rem;
-          }
-          .slider {
-            margin: 10px 0;
-          }
-          .price-range-values {
-            display: flex;
-            justify-content: space-between;
-          }
-          .apply-btn,
-          .reset-btn {
-            margin: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-          }
-          .apply-btn {
-            background-color: rgb(52, 84, 140);
-            color: white;
-          }
-          .reset-btn {
-            background-color: rgb(220, 53, 69);
-            color: white;
-          }
-          .no-products-message {
-            color: red;
-            font-size: 18px;
-            margin-top: 20px;
-          }
-          .price-inputs {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4px; /* Adjust gap between inputs and separator */
-          }
-          .price-input {
-            padding: 8px;
-          }
-          .separator {
-            padding: 0 4px;
-          }
-          @media (max-width: 600px) {
-            .price-inputs {
-              gap: 4px; /* Reduce gap on smaller screens */
-            }
-            .price-input {
-              flex: 1; /* Use flex layout only for smaller screens */
-              padding: 6px;
-            }
-            .separator {
-              padding: 0 4px;
-            }
-          }
-        `}</style>
+        .shop-filter {
+          margin-bottom: 1rem;
+        }
+        .price-filter {
+          margin-top: 1rem;
+        }
+        .slider {
+          margin: 10px 0;
+        }
+        .price-range-values {
+          display: flex;
+          justify-content: space-between;
+        }
+        .apply-btn,
+        .reset-btn {
+          margin: 5px;
+          padding: 5px 10px;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+        }
+        .apply-btn {
+          background-color: rgb(52, 84, 140);
+          color: white;
+        }
+        .reset-btn {
+          background-color: rgb(220, 53, 69);
+          color: white;
+        }
+        .no-products-message {
+          color: red;
+          font-size: 18px;
+          margin-top: 20px;
+        }
+      `}</style>
       </form>
     </div>
   );
