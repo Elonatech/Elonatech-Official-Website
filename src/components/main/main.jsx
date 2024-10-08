@@ -360,7 +360,12 @@ const Main = () => {
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234752/homePage/clientLogo/district_sjdnft.png"  className='img-fluid lazyload' alt="" />
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png"  className='img-fluid lazyload' alt="" />
+              </div>
+            </div>
+            <div className="col-md-2 col-6">
+              <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload' alt="" />
               </div>
             </div>
             <div className="col-md-2 col-6">

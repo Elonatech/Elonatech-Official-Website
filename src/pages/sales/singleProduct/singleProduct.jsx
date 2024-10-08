@@ -245,7 +245,7 @@ const html = data.description;
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid bg-dark py-5" 
      style={{
-         height: isMobile ? "110px" : "414px",
+         height: isMobile ? "110px" : "500px",
          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1710840109/productHeaderPage/shop_inner_page_qgzv9v.jpg)`, 
          backgroundRepeat: "no-repeat", 
          backgroundPosition: "bottom center", 

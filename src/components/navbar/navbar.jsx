@@ -351,14 +351,16 @@ const handleTeleMouseOver = () => {
     setTechMouseEnter(true);
     setDigitalMouseEnter(false);
     setSalesMouseEnter(false);
+    setActiveDropdown('hardware'); // Set 'hardware' as default active when Tech Solution is hovered
   };
 
 
   const handleDigitalMouseEnter = () => {
-    setDigitalMouseEnter(true)
-    setSalesMouseEnter(false)
-    setTechMouseEnter(false)
-  }
+    setDigitalMouseEnter(true);
+    setSalesMouseEnter(false);
+    setTechMouseEnter(false);
+    setActiveDropdown('digital'); // Set 'digital' or any relevant dropdown for Digital Solution
+  };
   const handleSalesMouseEnter = () => {
     setSalesMouseEnter(true)
     setTechMouseEnter(false)
