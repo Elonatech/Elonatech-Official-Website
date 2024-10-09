@@ -260,6 +260,14 @@ position: relative;
   }
 }
 
+.active-category {
+  background-color: #11253D;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
 
 
 

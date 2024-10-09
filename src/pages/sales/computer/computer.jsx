@@ -313,14 +313,13 @@ const Computer = () => {
                   <li>
                     <Link
                       to={"/computers"}
-                      className={`item ${
-                        activeItem === "Item 2" ? "active" : ""
-                      }`}
+                      className={`item ${activeItem === "Item 2" ? "active-category" : ""}`}
                       onClick={() => handleClick("Item 2")}
                     >
                       Computers
                     </Link>
                   </li>
+
                   <li>
                     <Link
                       to={"/office-equipment"}

@@ -25,8 +25,12 @@ const Printers = () => {
   const [pageNumberLimit, setpageNumberLimit] = useState(4);
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(4);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
+  const [activeItem, setActiveItem] = useState("Item 5");
 
 
+  const handleClick = (item) => {
+    setActiveItem(item);
+  };
 
 useEffect(() => {
   const fetchData = async () => {
@@ -213,13 +217,61 @@ return (
         </form>
           <h4 class="fw-bold">Categories</h4>
           <ul className="list-unstyled">
-          <li><Link to={'/shop'} className='text-decoration-none text-dark'>Shop</Link></li>
-            <li><Link to={'/computers'} className='text-decoration-none text-dark'>Computers</Link></li>
-            <li><Link to={'/office-equipment'}  className='text-decoration-none text-dark'>Office Equipment</Link></li>
-            <li><Link to={'/pos-system'} className='text-decoration-none text-dark'>POS System</Link></li>
-            <li><Link to={'/printers'} className='text-decoration-none text-dark'>Printers</Link></li>
-            <li><Link to={'/network-devices'} className='text-decoration-none text-dark'>Network Devices</Link></li>
-          </ul>
+                  <li>
+                    <Link
+                      to={'/shop'}
+                      className={`text-decoration-none ${activeItem === "Item 1" ? "active-category" : "text-dark"}`}
+                      onClick={() => handleClick("Item 1")}
+                    >
+                      Shop
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={'/computers'}
+                      className={`text-decoration-none ${activeItem === "Item 2" ? "active-category" : "text-dark"}`}
+                      onClick={() => handleClick("Item 2")}
+                    >
+                      Computers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={'/office-equipment'}
+                      className={`text-decoration-none ${activeItem === "Item 3" ? "active-category" : "text-dark"}`}
+                      onClick={() => handleClick("Item 3")}
+                    >
+                      Office Equipment
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={'/pos-system'}
+                      className={`text-decoration-none ${activeItem === "Item 4" ? "active-category" : "text-dark"}`}
+                      onClick={() => handleClick("Item 4")}
+                    >
+                      POS System
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={'/printers'}
+                      className={`text-decoration-none ${activeItem === "Item 5" ? "active-category" : "text-dark"}`}
+                      onClick={() => handleClick("Item 5")}
+                    >
+                      Printers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={'/network-devices'}
+                      className={`text-decoration-none ${activeItem === "Item 6" ? "active-category" : "text-dark"}`}
+                      onClick={() => handleClick("Item 6")}
+                    >
+                      Network Devices
+                    </Link>
+                  </li>
+                </ul>
         </div>
       </div>
 </div>

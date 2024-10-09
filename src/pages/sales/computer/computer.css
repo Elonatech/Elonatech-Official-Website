@@ -306,6 +306,12 @@
       padding: 0;
     }
   }
+
+  .active-category {
+    background-color: #11253D;
+    color: white;
+  }
+  
   
   
   

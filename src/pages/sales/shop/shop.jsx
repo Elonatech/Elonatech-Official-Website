@@ -342,17 +342,16 @@ const Shop = () => {
                 Browse Categories
               </h4>
               <ul className="list-unstyled">
-                <li>
+              <li>
                   <Link
                     to={"/shop"}
-                    className={`item ${
-                      activeItem === "Item 1" ? "active" : ""
-                    }`}
+                    className={`item ${activeItem === "Item 1" ? "active-category" : ""}`}
                     onClick={() => handleClick("Item 1")}
                   >
                     All Products
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     to={"/computers"}
