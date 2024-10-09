@@ -133,6 +133,7 @@ const TeamAdmin = lazy(() => import("./components/team/teamAdmin"))
 const TeamLead = lazy(() => import("./components/team/teamLead"))
 const TeamSystem = lazy(() => import("./components/team/teamSystem"))
 const TeamWeb = lazy(() => import("./components/team/teamWeb"))
+const BlogPages = lazy(() => import("./components/blog/blogPages"));
 
 // import Mailchimp from './components/mailchimp/mailchimp';
 
@@ -266,6 +267,10 @@ const router = createBrowserRouter([
     {
       path:'/blog',
       element:<Blog/>
+    },
+    {
+      path: "/blog/page/:pagenumber",
+      element: <BlogPages />
     },
     {
       path:'/blog/:id',
