@@ -15,4 +15,46 @@
   color: #dc3545;
 }
 
+.blog-section {
+  height: 500px;
+  margin-bottom: 45px;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .blog-section {
+    height: auto; /* Adjust as needed */
+    padding-top: 50px;
+  }
+
+  .blog-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .blog-section h5,
+  .blog-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+}
+
 

@@ -28,7 +28,7 @@ const Trends = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASEURL}/api/v1/blog/trends`);
-        setData(response.data.getAllTrends.reverse());
+        setData(response.data.getAllTrends);
         setIsLoading(true);
       } catch (error) {
         console.error("Error fetching data:", error);

@@ -158,6 +158,14 @@ const [isDropdownOpen, setDropdownOpen] = useState(false);
 
 // 
 
+const [initialLoad, setInitialLoad] = useState(true);
+
+useEffect(() => {
+  if (initialLoad) {
+    handleTechMouseEnter();
+    setInitialLoad(false);
+  }
+}, []);
 
 const handleHardwareMouseOver = () => {
   if (!isSmallScreen) {
@@ -351,7 +359,7 @@ const handleTeleMouseOver = () => {
     setTechMouseEnter(true);
     setDigitalMouseEnter(false);
     setSalesMouseEnter(false);
-    setActiveDropdown('hardware'); // Set 'hardware' as default active when Tech Solution is hovered
+    setActiveDropdown('hardware'); 
   };
 
 
@@ -359,7 +367,7 @@ const handleTeleMouseOver = () => {
     setDigitalMouseEnter(true);
     setSalesMouseEnter(false);
     setTechMouseEnter(false);
-    setActiveDropdown('digital'); // Set 'digital' or any relevant dropdown for Digital Solution
+    setActiveDropdown('web');
   };
   const handleSalesMouseEnter = () => {
     setSalesMouseEnter(true)
@@ -590,13 +598,13 @@ return (
                   {/*===================================== HARDWARE SOLUTIONS =============================================================*/}
                   <li className={'elonatechinnerListItemContentRightTechListItem'} onMouseEnter={() => setActiveDropdown('hardware')}>
                     <div className="elonatechtest">
-                      <h6 onClick={() => setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware')}
-                          className={activeDropdown === 'hardware' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
+                      <h6 className={activeDropdown === 'hardware' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
                         Hardware Solutions
                       </h6>
                       <i className="bi bi-plus text-dark fs-3"></i>
                     </div>
                     <ul className={activeDropdown === 'hardware' ? 'elonatechhardwareSolutionsListActive' : 'elonatechhardwareSolutionsList'}>
+
                       <Link to={'/hardware-engineering'} className="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas">
                         <li className={'elonatechhardwareSolutionsListItem'}>
                           <img data-src={hardwareComputer} className='lazyload' alt="" style={{ width: "50px", height: "50px", objectFit: "contain", alignSelf: "center" }} />
@@ -772,16 +780,30 @@ return (
               <li className='elonatechinnerListContentRight'>
               <ul className={digitalMouseEnter ? 'elonatechinnerListItemContentRightDigitalListActive' : 'elonatechinnerListItemContentRightDigitalList'}>
               {/*============================================================ web solution ==============================================*/}
-              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={handleWebMouseOver}> <div className="elonatechtest">  <h6 onClick={handleWebMouseClick} className={webMouseOver || webMouseClick ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>Web Solutions </h6>  { webMouseClick ? <HiOutlineXMark style={{color:'red'}}/> :<><i class="bi bi-plus text-dark fs-3"></i></>} </div>
-              <ul className={webMouseOver || webMouseClick? 'elonatechwebSolutionsListActive' : 'elonatechwebSolutionsList'}>
+              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('web')}>
+              <div className="elonatechtest">
+                <h6 className={activeDropdown === 'web' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
+                  Web Solutions
+                </h6>
+                <i className="bi bi-plus text-dark fs-3"></i>
+              </div>
+              <ul className={activeDropdown === 'web' ? 'elonatechwebSolutionsListActive' : 'elonatechwebSolutionsList'}>
               <Link to={'/web-design'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem'> <img  data-src={webDev} className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/>Web Design/Dev.</li></Link>
               <Link to={'/domain'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem'> <img   data-src={webDomain}  className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Domain Reg./DNS Mgt </li></Link>
               <Link to={'/hosting'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem '> <img   data-src={WebHost} className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'start'}}/>  <span className='text-'>Web Hosting</span> </li></Link>
               </ul>
               </li>
               {/*============================================================  digital marketing =====================================*/}
-              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={handleDigitalMarketMouseOver}> <div className="elonatechtest"><h6  onClick={handleDigitalMarketMouseClick} className={digitalMarketMouseOver || digitalMarketMouseClick ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>Digital Marketing</h6>  { digitalMarketMouseClick ? <HiOutlineXMark  style={{color:'red'}}/> :<><i class="bi bi-plus text-dark fs-3"></i></>}</div>
-              <ul className={digitalMarketMouseOver || digitalMarketMouseClick ? 'elonatechdigitalMarketingListActive' : 'elonatechdigitalMarketingList'}>
+              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('digitalMarketing')}>
+              <div className="elonatechtest">
+                <h6 onClick={() => setActiveDropdown(activeDropdown === 'digitalMarketing' ? null : 'digitalMarketing')} 
+                    className={activeDropdown === 'digitalMarketing' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
+                  Digital Marketing
+                </h6>
+                <i className="bi bi-plus text-dark fs-3"></i>
+              </div>
+              <ul className={activeDropdown === 'digitalMarketing' ? 'elonatechdigitalMarketingListActive' : 'elonatechdigitalMarketingList'}>
+
               <Link to={'/digital-marketing'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className={'elonatechdigitalMarketingListItem'}> <img  data-src={digitalDigital} class="lazyload"   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Digital Marketing</li></Link>
               <Link to={'/social-media-marketing'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className={'elonatechdigitalMarketingListItem'}> <img   data-src={digitalSocial} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/>    Social Media Marketing</li></Link>
               <Link to={'/email-marketing'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className={'elonatechdigitalMarketingListItem'}> <img   data-src={digitalEmail} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Email Marketing</li></Link>
@@ -791,24 +813,45 @@ return (
               </ul>
               </li>
               {/*======================================================== graphic =======================================================*/}
-              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={handleGraphicsMouseOver}> <div className="elonatechtest"><h6 onClick={handleGraphicsMouseClick } className={graphicsMouseOver || graphicsMouseClick ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>Graphics</h6>  { graphicsMouseClick ? <HiOutlineXMark style={{color:'red'}} /> :<><i class="bi bi-plus text-dark fs-3"></i></>}</div>
-              <ul className={graphicsMouseOver || graphicsMouseClick ? 'elonatechgraphicsListActive' : 'elonatechgraphicsList'}>
+              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('graphics')}>
+              <div className="elonatechtest">
+                <h6 onClick={() => setActiveDropdown(activeDropdown === 'graphics' ? null : 'graphics')} 
+                    className={activeDropdown === 'graphics' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
+                  Graphics
+                </h6>
+                <i className="bi bi-plus text-dark fs-3"></i>
+              </div>
+              <ul className={activeDropdown === 'graphics' ? 'elonatechgraphicsListActive' : 'elonatechgraphicsList'}>
               <Link to={'/graphics-design'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas">  <li className='elonatechgraphicsListListItem'> <img data-src={graphicsGraphics} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Graphic</li></Link>
               <Link to={'/brand-identity'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas">  <li className='elonatechgraphicsListListItem'> <img  data-src={graphicsBrand} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Brand Development</li></Link>
               <Link to={'/uiux'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechgraphicsListListItem'> <img  data-src={graphicsUiux} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> UI/UX & Prototyping</li></Link>
               </ul>
               </li>
               {/*================================================================== video animation ========================================*/}
-              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={handleVideoMouseOver}> <div className="elonatechtest"><h6 onClick={handleVideoMouseClick} className={videoMouseOver || videoMouseClick ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>Video Animations</h6>  {  videoMouseClick ? <HiOutlineXMark style={{color:'red'}}/> :<><i class="bi bi-plus text-dark fs-3"></i></>}</div>
-              <ul className={videoMouseOver || videoMouseClick ? 'elonatechvideoAnimationsListActive' : 'elonatechvideoAnimationsList'}>
+              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('videoAnimations')}>
+              <div className="elonatechtest">
+                <h6 onClick={() => setActiveDropdown(activeDropdown === 'videoAnimations' ? null : 'videoAnimations')} 
+                    className={activeDropdown === 'videoAnimations' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
+                  Video Animations
+                </h6>
+                <i className="bi bi-plus text-dark fs-3"></i>
+              </div>
+              <ul className={activeDropdown === 'videoAnimations' ? 'elonatechvideoAnimationsListActive' : 'elonatechvideoAnimationsList'}>
               <Link to={'/animation'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechvideoAnimationsListListItem'> <img data-src={video3d} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> 2D/3D Animations</li></Link>
               <Link to={'/motion-graphics'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechvideoAnimationsListListItem'> <img data-src={videoMotion} class="lazyload"   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Motion Graphics</li></Link>
               <Link to={'/video-editing'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechvideoAnimationsListListItem'> <img  data-src={videoEdit} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Video Editing</li></Link>
               </ul>
               </li>
               {/*============================================== teleconferencing ============================================================*/}
-              <li  className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={handleTeleMouseOver}> <div className="elonatechtest"> <h6 onClick={handleTeleMouseClick} className={teleMouseOver || teleMouseClick ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>Teleconferencing</h6>  { teleMouseClick ? <HiOutlineXMark style={{color:'red'}}/> :<><i class="bi bi-plus text-dark fs-3"></i></>}</div>
-              <ul className={teleMouseOver || teleMouseClick ? 'elonatechteleconferencingListActive' : 'elonatechteleconferencingList'}>
+              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('teleconferencing')}>
+              <div className="elonatechtest">
+                <h6 onClick={() => setActiveDropdown(activeDropdown === 'teleconferencing' ? null : 'teleconferencing')} 
+                    className={activeDropdown === 'teleconferencing' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
+                  Teleconferencing
+                </h6>
+                <i className="bi bi-plus text-dark fs-3"></i>
+              </div>
+              <ul className={activeDropdown === 'teleconferencing' ? 'elonatechteleconferencingListActive' : 'elonatechteleconferencingList'}>
               <Link to={'/livestreaming'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechteleconferencingListListItem'> <img  data-src={teleLivestream} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center', marginBottom: '1rem'}}/> Livestreaming</li></Link>
               <Link to={'/videoconferencing'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechteleconferencingListListItem'> <img data-src={teleVideo} class="lazyload"  alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center', marginBottom: '1rem'}}/>  Videoconferencing</li></Link>
               </ul>
