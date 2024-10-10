@@ -1108,16 +1108,3 @@ display: none;
 .carousel-navbar-item-show {
   display: block;
 }
-
-
-@media (max-width: 767px) {
-  .elonatechinnerListItemContentRightTechListItem,
-  .elonatechinnerListItemContentRightDigitalListItem {
-    pointer-events: none;
-  }
-
-  .elonatechinnerListItemContentRightTechListItem > div,
-  .elonatechinnerListItemContentRightDigitalListItem > div {
-    pointer-events: auto;
-  }
-}
