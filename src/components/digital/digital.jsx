@@ -130,10 +130,16 @@ const Digital = () => {
      </div>
     <div class="col-md-5">
     <div className="card border-0">
-      <div className="text-center">
-        <img src='https://i.stack.imgur.com/qq8AE.gif'  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709919164/digitalPage/digital_market_2_ig15b2.jpg' className='lazyload' alt="" />
-
+    <div className="text-center">
+        <img 
+          src='https://i.stack.imgur.com/qq8AE.gif'  
+          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709919164/digitalPage/digital_market_2_ig15b2.jpg' 
+          className='lazyload img-fluid' 
+          alt="Digital Marketing" 
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
       </div>
+
       </div>
     </div>
   </div>

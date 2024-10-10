@@ -69,18 +69,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-.checkout-section h5 {
-  font-size: 1.3rem;
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-
-.checkout-section p {
-  font-size: 1.1rem;
-  line-height: 1.2;
-  margin-bottom: 5px;
-}
-
 /* Mobile view */
 @media (max-width: 768px) {
   .checkout-section {
@@ -98,17 +86,7 @@ textarea {
     line-height: 1.1;
   }
 
-  .checkout-section h5,
-  .checkout-section p {
-    font-size: 0.9rem;
-    line-height: 1.1;
-    margin-bottom: 0;
-    display: none; 
-  }
-
-  .checkout-section h2,
-  .checkout-section h5,
-  .checkout-section p {
+  .checkout-section h2 {
     margin: 0;
     padding: 0;
   }

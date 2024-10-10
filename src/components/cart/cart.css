@@ -101,7 +101,7 @@ padding: 7rem 0 12rem 0 !important;
       text-align: center;
       color: white;
       padding: 20px;
-      margin-bottom: 100px;
+      margin-bottom: 50px;
     }
     
     /* Text styling for desktop */
@@ -133,31 +133,7 @@ padding: 7rem 0 12rem 0 !important;
         padding-top: 50px;
       }
     
-      /* Adjusting text for mobile view */
       .cart-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 5px;
-        line-height: 1.1;
-      }
-    
-      .cart-section h5 {
-        font-size: 1rem;
-        margin-bottom: 3px;
-        line-height: 1.1;
-        font-weight: 200;
-        display: none; /* Hide on mobile if not used */
-      }
-    
-      .cart-section p {
-        font-size: 0.9rem;
-        line-height: 1.1;
-        margin-bottom: 0;
-        display: none; /* Hide on mobile if not used */
-      }
-    
-      .cart-section h2,
-      .cart-section h5,
-      .cart-section p {
         margin: 0;
         padding: 0;
       }

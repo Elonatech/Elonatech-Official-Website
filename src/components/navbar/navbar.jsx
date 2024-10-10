@@ -153,8 +153,9 @@ const [activeDropdown, setActiveDropdown] = useState(null);
 
 
 // SAMPLE
-const isSmallScreen = window.innerWidth < 768;
+const isSmallScreen = window.innerWidth < 1024;
 const [isDropdownOpen, setDropdownOpen] = useState(false);
+const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1024);
 
 // 
 
@@ -178,6 +179,15 @@ const handleHardwareMouseClick = () => {
     setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware'); 
   }
 };
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobileView(window.innerWidth < 768); // Adjust the breakpoint as needed
+  };
+
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
 // NETWORK
 const handleNetworkMouseOver = () => {
@@ -359,15 +369,18 @@ const handleTeleMouseOver = () => {
     setTechMouseEnter(true);
     setDigitalMouseEnter(false);
     setSalesMouseEnter(false);
-    setActiveDropdown('hardware'); 
+    if (!isMobileView) {
+      setActiveDropdown('hardware');
+    }
   };
-
-
+  
   const handleDigitalMouseEnter = () => {
     setDigitalMouseEnter(true);
     setSalesMouseEnter(false);
     setTechMouseEnter(false);
-    setActiveDropdown('web');
+    if (!isMobileView) {
+      setActiveDropdown('web');
+    }
   };
   const handleSalesMouseEnter = () => {
     setSalesMouseEnter(true)
@@ -389,6 +402,14 @@ const handleTeleMouseOver = () => {
       setScroll(false);
     }
   }, []);
+
+
+  useEffect(() => {
+    if (!isMobileView && initialLoad) {
+      handleTechMouseEnter();
+      setInitialLoad(false);
+    }
+  }, [isMobileView]);
 
 
   // ============================================================= //
@@ -596,7 +617,8 @@ return (
                 <ul className={techMouseEnter ? 'elonatechinnerListItemContentRightTechListActive' : 'elonatechinnerListItemContentRightTechList'}>
                   
                   {/*===================================== HARDWARE SOLUTIONS =============================================================*/}
-                  <li className={'elonatechinnerListItemContentRightTechListItem'} onMouseEnter={() => setActiveDropdown('hardware')}>
+                  <li className={'elonatechinnerListItemContentRightTechListItem'} onMouseEnter={() => !isMobileView && setActiveDropdown('hardware')}
+        onClick={() => isMobileView && setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware')}>
                     <div className="elonatechtest">
                       <h6 className={activeDropdown === 'hardware' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
                         Hardware Solutions
@@ -780,7 +802,8 @@ return (
               <li className='elonatechinnerListContentRight'>
               <ul className={digitalMouseEnter ? 'elonatechinnerListItemContentRightDigitalListActive' : 'elonatechinnerListItemContentRightDigitalList'}>
               {/*============================================================ web solution ==============================================*/}
-              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('web')}>
+              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => !isMobileView && setActiveDropdown('web')}
+        onClick={() => isMobileView && setActiveDropdown(activeDropdown === 'web' ? null : 'web')}>
               <div className="elonatechtest">
                 <h6 className={activeDropdown === 'web' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
                   Web Solutions
