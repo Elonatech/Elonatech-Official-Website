@@ -238,7 +238,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .brand-development-section {
       height: 108px; /* Adjusted height for mobile */
       background-size: contain;

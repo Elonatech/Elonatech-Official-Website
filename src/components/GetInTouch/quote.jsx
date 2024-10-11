@@ -21,6 +21,7 @@ const Quote = () => {
   const [project, setProject] = useState("");
   const [location, setLocation] = useState("");
   const [letter, setLetter] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
 
   const handleChangeNumber = (e) => {
@@ -31,6 +32,7 @@ const Quote = () => {
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
+    setIsSubmitting(true);
     try {
     const newData = {
       fullname, 
@@ -51,7 +53,9 @@ const Quote = () => {
     }  
     } catch (error) {
     toast.error(error.response.data);
-    }
+    }finally {
+      setIsSubmitting(false);
+  }
     }
 
     return (
@@ -119,7 +123,9 @@ onChange={(value) => setLetter(value)}
      </div>
       <div class="modal-footer border-0">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary onliyu" onClick={handleSubmit}><h6>Submit</h6></button>
+        <button type="button" className="btn btn-primary onliyu" onClick={handleSubmit} disabled={isSubmitting}>
+                                <h6>{isSubmitting ? "Submitting..." : "Submit"}</h6>
+                            </button>
       </div>
     </div>
   </div>

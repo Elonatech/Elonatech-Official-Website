@@ -56,9 +56,9 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .careers-section {
-      min-height: 135px; /* Minimum height for mobile */
+      min-height: 135px;
       background-size: contain;
       flex-direction: column;
       align-items: center;

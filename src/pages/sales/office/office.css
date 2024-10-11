@@ -198,7 +198,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .office-equipment-section {
       min-height: 108px;
       background-size: contain;

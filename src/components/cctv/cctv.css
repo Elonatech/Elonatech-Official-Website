@@ -81,7 +81,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .cctv-section {
       height: 108px; /* Adjusted height for mobile */
       background-size: contain;

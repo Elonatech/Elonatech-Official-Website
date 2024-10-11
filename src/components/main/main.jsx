@@ -41,6 +41,7 @@ const Main = () => {
     const [cost, setCost] = useState("");
     const [invest, setInvest] = useState("");
     const [error , setError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChangeCost = (e) => {
       const value = e.target.value.replace(/\D/g, "");
@@ -53,6 +54,7 @@ const Main = () => {
 
     const handleSubmit = async (e) =>{
       e.preventDefault();
+      setIsSubmitting(true);
       try {
       const newData = {
         name, 
@@ -75,7 +77,9 @@ const Main = () => {
         console.log(error)
       toast.error(error.response.data);
       setError(error.response.data)
-      }
+      }finally {
+        setIsSubmitting(false);
+    }
       
       }
 
@@ -360,11 +364,6 @@ const Main = () => {
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png"  className='img-fluid lazyload' alt="" />
-              </div>
-            </div>
-            <div className="col-md-2 col-6">
-              <div className="card border-0">
               <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload' alt="" />
               </div>
             </div>
@@ -376,6 +375,11 @@ const Main = () => {
             <div className="col-md-2 col-6">
               <div className="card border-0">
               <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707753250/homePage/clientLogo/cathenet_lgod6k.png"  className='img-fluid lazyload' alt="" />
+              </div>
+            </div>
+            <div className="col-md-2 col-6">
+              <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png"  className='img-fluid lazyload' alt="" />
               </div>
             </div>
           </div>
@@ -478,7 +482,9 @@ const Main = () => {
       </div>
       <div class="modal-footer border-0">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onClick={handleSubmit} class="btn btn-danger">Submit</button>
+        <button type="button" className="btn btn-primary onliyu" onClick={handleSubmit} disabled={isSubmitting}>
+                                <h6>{isSubmitting ? "Submitting..." : "Submit"}</h6>
+                            </button>
     
       </div>
     </div>

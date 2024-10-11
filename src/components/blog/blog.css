@@ -37,7 +37,7 @@
 }
 
 /* Mobile view */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .blog-section {
     height: auto; /* Adjust as needed */
     padding-top: 50px;

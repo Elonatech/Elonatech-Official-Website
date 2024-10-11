@@ -109,7 +109,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .surveillance-section {
       height: 108px; /* Fixed height for mobile */
       background-size: contain;

@@ -4,7 +4,7 @@
   background:#34548c; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .faq{
     height: 100vh;
   }
@@ -56,7 +56,7 @@
 }
 
 /* Mobile view */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .animations-section {
     height: 108px; /* Adjusted height for mobile */
     background-size: contain;

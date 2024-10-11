@@ -49,49 +49,59 @@ const Team = () => {
 </div>
 {/*=========================================================== attribute  2 ================================================*/}
 <div className="container mt-5">
-    <div className="row justify-content-md-center">
-        <div className="col-6 col-md-2 mb-3 mt-4">
-            <div className="text-center">
-                <div className='brci mb-3'>
-                    <h1 className=''>F</h1>
-                    </div>
-                <h5 className='fw-bolder'>Flexible</h5>
+    <div className="row justify-content-center">
+        {/* 'F' Section */}
+        <div className="col-12 col-md-2 d-flex flex-md-column align-items-center mb-3 mt-4">
+            <div className="d-flex align-items-center">
+                <div className="brci">
+                    <h1 className="focus-letter">F</h1>
+                </div>
+                <h5 className="fw-bolder ms-3">Flexible</h5>
             </div>
+        </div>
+
+        {/* 'O' Section */}
+        <div className="col-12 col-md-2 d-flex flex-md-column align-items-center mb-3 mt-4">
+            <div className="d-flex align-items-center">
+                <div className="brci">
+                    <h1 className="focus-letter">O</h1>
+                </div>
+                <h5 className="fw-bolder ms-3">Optimistic</h5>
             </div>
-        <div className="col-6 col-md-2 mt-4">
-            <div className="text-center">
-            <div className='brci mb-3'>
-                    <h1 className=''>O</h1>
-                    </div>
-                <h5 className='fw-bolder'>Optimistic</h5>
+        </div>
+
+        {/* 'C' Section */}
+        <div className="col-12 col-md-2 d-flex flex-md-column align-items-center mb-3 mt-4">
+            <div className="d-flex align-items-center">
+                <div className="brci">
+                    <h1 className="focus-letter">C</h1>
+                </div>
+                <h5 className="fw-bolder ms-3">Committed</h5>
             </div>
+        </div>
+
+        {/* 'U' Section */}
+        <div className="col-12 col-md-2 d-flex flex-md-column align-items-center mb-3 mt-4">
+            <div className="d-flex align-items-center">
+                <div className="brci">
+                    <h1 className="focus-letter">U</h1>
+                </div>
+                <h5 className="fw-bolder ms-3">Unparalleled</h5>
             </div>
-        <div className="col-6 col-md-2 mt-4">
-            <div className="text-center">
-            <div className='brci mb-3'>
-                    <h1 className=''>C</h1>
-                    </div>
-                <h5 className='fw-bolder'>Committed</h5>
+        </div>
+
+        {/* 'S' Section */}
+        <div className="col-12 col-md-2 d-flex flex-md-column align-items-center mb-3 mt-4">
+            <div className="d-flex align-items-center">
+                <div className="brci">
+                    <h1 className="focus-letter">S</h1>
+                </div>
+                <h5 className="fw-bolder ms-3">Sustainable</h5>
             </div>
-            </div>
-        <div className="col-6 col-md-2 mt-4">
-            <div className="text-center">
-            <div className='brci mb-3'>
-                    <h1 className=''>U</h1>
-                    </div>
-                <h5 className='fw-bolder'>Unparalleled</h5>
-            </div>
-            </div>
-        <div className="col-6 col-md-2 mt-4">
-            <div className="text-center">
-            <div className='brci mb-3'>
-                    <h1 className=''>S</h1>
-                    </div>
-                <h5 className='fw-bolder'>Sustainable</h5>
-            </div>
-            </div>
+        </div>
     </div>
 </div>
+
 {/*============================================================= worthy ===================================================*/}
 <div className="container mt-5">
     <div className="row g-5">

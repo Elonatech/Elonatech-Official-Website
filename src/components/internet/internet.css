@@ -45,7 +45,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .internet-solution-section {
       min-height: 108px; /* Adjusted height for mobile */
       background-size: contain;

@@ -210,7 +210,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .our-team-section {
       min-height: 108px;
       background-size: contain;
@@ -290,7 +290,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .team-section {
       height: 135px; 
       background-size: contain;
@@ -326,6 +326,20 @@
     }
   }
   
+
+  @media (max-width: 576px) {
+    .d-flex {
+        justify-content: flex-start;
+    }
+    .ms-3 {
+        margin-left: 15px;
+    }
+}
+
+.brci {
+  text-align: center;
+}
+
   
 
 

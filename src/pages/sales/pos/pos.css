@@ -199,7 +199,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .point-of-sale-section {
       min-height: 135px;
       background-size: contain;

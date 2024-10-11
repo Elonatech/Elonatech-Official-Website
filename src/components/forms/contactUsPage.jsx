@@ -17,6 +17,7 @@ const ContactUsPage = () => {
     const [subject, setSubject] = useState("");
     const [number, setNumber] = useState("");
     const [message, setMessage] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
 
     const handleChangeNumber = (e) => {
@@ -28,6 +29,7 @@ const ContactUsPage = () => {
 
     const handleSubmit = async (e) =>{
       e.preventDefault();
+      setIsSubmitting(true);
       try {
       const newData = {
         name, 
@@ -46,7 +48,9 @@ const ContactUsPage = () => {
       }  
       } catch (error) {
       toast.error(error.response.data);
-      } 
+      }finally {
+        setIsSubmitting(false); 
+    }
       }
 
 return (
@@ -89,10 +93,12 @@ return (
              <div id="emailHelp" style={{color:"transparent"}} class="form-text mt-2">We'll never share your email with anyone else.</div>
             </div>
       </form>
-      </div>
+      </div>       
       <div class="modal-footer border-0">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onClick={handleSubmit} class="btn btn-primary">Submit</button>
+        <button type="button" className="btn btn-primary onliyu" onClick={handleSubmit} disabled={isSubmitting}>
+                                <h6>{isSubmitting ? "Submitting..." : "Submit"}</h6>
+                            </button>
     
       </div>
     </div>

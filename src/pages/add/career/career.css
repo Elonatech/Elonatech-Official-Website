@@ -61,7 +61,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .career-section {
       min-height: 108px; /* Adjusted for mobile */
       background-size: contain;

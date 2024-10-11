@@ -49,7 +49,7 @@ color: #dc3545;
 }
 
 /* Mobile view */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .consumables-supply-section {
     min-height: 108px;
     background-size: contain;

@@ -29,7 +29,7 @@
     margin-bottom: 20px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .about h3 {
       font-size: 28px;
     }
@@ -88,7 +88,7 @@
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
       ),
-      url('https://res.cloudinary.com/elonatech/image/upload/v1709805410/cctvPage/cctv_installation_tqofhd.jpg'); /* Replace with your businessHeader URL */
+      url('./captions/business_app_sofrtware_zao5e9.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -121,7 +121,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .business-application-software-section {
       min-height: 108px; /* Adjusted height for mobile */
       background-size: contain;

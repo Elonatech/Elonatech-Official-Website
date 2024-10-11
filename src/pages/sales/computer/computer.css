@@ -295,7 +295,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .computers-section {
       min-height: 108px;
       background-size: contain;

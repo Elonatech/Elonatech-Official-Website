@@ -45,7 +45,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .infrastructure-section {
       min-height: 106px; 
       background-size: contain;

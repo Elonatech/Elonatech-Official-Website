@@ -249,7 +249,7 @@ margin-bottom: 5px;
 }
 
 /* Mobile view */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
 .shop-products-section {
   min-height: 108px;
   background-size: contain;

@@ -37,7 +37,7 @@
    text-align: center;
    color: white;
    padding: 20px;
-   margin-bottom: 100px;
+   /* margin-bottom: 100px; */
  }
  
  /* Text styling for desktop */
@@ -60,7 +60,7 @@
  }
  
  /* Mobile view */
- @media (max-width: 768px) {
+ @media (max-width: 576px) {
    .order-confirmation-section {
      height: 108px; /* Fixed height for mobile */
      background-size: contain;

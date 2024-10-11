@@ -59,7 +59,7 @@ textarea {
   text-align: center;
   color: white;
   padding: 20px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 /* Text styling for desktop */
@@ -70,7 +70,7 @@ textarea {
 }
 
 /* Mobile view */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .checkout-section {
     height: 108px; 
     background-size: contain;

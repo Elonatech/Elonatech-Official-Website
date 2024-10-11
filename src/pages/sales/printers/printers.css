@@ -199,7 +199,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .printers-section {
       min-height: 108px;
       background-size: contain;

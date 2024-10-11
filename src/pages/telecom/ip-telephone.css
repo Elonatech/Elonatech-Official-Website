@@ -38,7 +38,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .ip-telephony-section {
       min-height: 108px; /* Adjusted height for mobile */
       background-size: contain;
@@ -118,7 +118,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .voip-section {
       min-height: 220px; /* Adjusted height for mobile */
       background-size: contain;

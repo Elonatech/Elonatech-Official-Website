@@ -90,7 +90,7 @@
   }
   
   /* Mobile view */
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .network-equipment-maintenance-section {
       min-height: 107px;
       background-size: contain;

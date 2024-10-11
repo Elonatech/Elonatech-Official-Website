@@ -357,43 +357,54 @@ return (
 </div>
 {/*=================================================== splide web development =====================================*/}
 <div style={{background: '#021048', padding: '1rem 0rem 1rem 0rem'}}>
-<h2 className="text-center text-white ">Some Of Our Projects</h2>
-<h4 className="text-center text-white">Web Development/Web Design</h4>
-<hr className='m-auto  mb-' style={{background:'red', width: "50px", height: "2px"}} />
-<h4 className="mb-4"></h4>
-    <Splide
+      <h2 className="text-center text-white">Some Of Our Projects</h2>
+      <h4 className="text-center text-white">Web Development/Web Design</h4>
+      <hr className='m-auto mb-4' style={{background:'red', width: "50px", height: "2px"}} />
+      
+      <Splide
         options={{
-            type: "loop",
-            drag: "free",
-            arrows: true,
-            pagination: false,
-            perPage: 3,
-            autoScroll: {
+          type: "loop",
+          drag: "free",
+          arrows: true,
+          pagination: false,
+          perPage: 3,
+          autoScroll: {
             pauseOnHover: true,
             pauseOnFocus: false,
             rewind: true,
             speed: 1
-            }
+          },
+          breakpoints: {
+            640: {
+              perPage: 1,
+            },
+            768: {
+              perPage: 2,
+            },
+            1024: {
+              perPage: 3,
+            },
+          },
         }}
         extensions={{ AutoScroll }}
-    > 
-            {projects.map((project)=> (
-            <SplideSlide key={project.id}>
-			  <div className="webContainer">
-               <img  data-src={project.img} className="lazyload"  style={{height:"350px" , width:"90%"}}  alt="Image 1" />
-			   <div class="webOverlay">
-				<div className="text-center">
-				<a target="_blank" rel="noopener noreferrer"  href={project.web}>
-			    <i class="bi bi-box-arrow-up-right fs-5 text-danger"></i>
-				</a>
-                <h5 class="fw-bold text-white">{project.company}</h5>
-				</div>
+      > 
+        {projects.map((project) => (
+          <SplideSlide key={project.id}>
+            <div className="webContainer">
+              <img src={project.img} className="lazyload" style={{height:"350px", width:"90%"}} alt={`Project ${project.id}`} />
+              <div className="webOverlay">
+                <div className="text-center">
+                  <a target="_blank" rel="noopener noreferrer" href={project.web}>
+                    <i className="bi bi-box-arrow-up-right fs-5 text-danger"></i>
+                  </a>
+                  <h5 className="fw-bold text-white">{project.company}</h5>
+                </div>
               </div>
-				</div>
-            </SplideSlide>
-            ))}
-    </Splide>
-</div>
+            </div>
+          </SplideSlide>
+        ))}
+      </Splide>
+    </div>
 {/*====================================================== OUR ===================================================*/}
 <div className="container-fluid " style={{background:"#dddddd"}}>
 <div className="container ">
