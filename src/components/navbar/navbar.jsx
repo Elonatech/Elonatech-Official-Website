@@ -602,7 +602,6 @@ return (
                         >
                           <h6 className="techCenter">
                             <span className="salesSupply">Sales /</span>{" "}
-                            <span className="saleSupplyAnd">Sales and</span>{" "}
                             Supply
                           </h6>
                         </li>
