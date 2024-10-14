@@ -243,17 +243,9 @@ const html = data.description;
     return (
     <>
 {/*================================================================ header ==============================================*/}
-<div class="container-fluid bg-dark py-5" 
-     style={{
-         height: isMobile ? "110px" : "500px",
-         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1710840109/productHeaderPage/shop_inner_page_qgzv9v.jpg)`, 
-         backgroundRepeat: "no-repeat", 
-         backgroundPosition: "bottom center", 
-         backgroundSize: "contain",
-     }}>
-  <div class="py-5 mt-5 ">
-  </div>
-</div> 
+<div class="container-fluid shop-section">
+  <div class="py-5 mt-5"></div>
+</div>
 <section class="mt-0" id="product" style={{backgroundColor:"#f1f1f2"}}>
 {isLoading ? 
 <>
