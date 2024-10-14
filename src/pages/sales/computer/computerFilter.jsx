@@ -182,7 +182,6 @@ const handlePriceChange = (event, newValue) => {
           </div>
         </div>
         {/* Brand Filter - Scrollable */}
-10:38
 <div
           style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
           className="mb-3"
@@ -332,14 +331,13 @@ const handlePriceChange = (event, newValue) => {
         </div>
         {/* Price Filter */}
         <div className="price-filter">
-          <label className="price-label">
-            PRICE (₦){" "}
+          <label className="form-label">
+          Filter by Price(₦)
             <button
               type="button"
               className="apply-button"
               onClick={handleApplyClick}
             >
-              APPLY
             </button>
           </label>
           <Slider
@@ -361,9 +359,9 @@ const handlePriceChange = (event, newValue) => {
               </div>
             )}
           />
-          <div className="price-inputs">
+          <div className="price-range-values">
             <input
-              style={{ width: "50%" }}
+              style={{ width: "50%", borderRadius: "5px" }}
               type="text"
               value={formatPrice(filters.price[0])}
               onChange={(e) => handleInputPriceChange(e, 0)}
@@ -371,7 +369,7 @@ const handlePriceChange = (event, newValue) => {
             />
             <span className="separator">-</span>
             <input
-              style={{ width: "100%" }}
+              style={{ width: "50%", borderRadius: "5px" }}
               type="text"
               value={formatPrice(filters.price[1])}
               onChange={(e) => handleInputPriceChange(e, 1)}
@@ -379,13 +377,15 @@ const handlePriceChange = (event, newValue) => {
             />
           </div>
         </div>
-        <button type="button" onClick={handleApplyClick} className="apply-btn">
-          Apply Price Range
-        </button>
-        <button type="button" onClick={resetPriceRange} className="reset-btn">
-          Reset Price Range
-        </button>
-        <style jsx>{`
+        <div className="expand">
+            <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
+              Apply Price Range
+            </button>
+            <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
+              Reset Price Range
+            </button>
+        </div>
+        <style>{`
         .shop-filter {
           margin-bottom: 1rem;
         }
@@ -401,7 +401,7 @@ const handlePriceChange = (event, newValue) => {
         }
         .apply-btn,
         .reset-btn {
-          margin: 5px;
+          // margin: 5px;
           padding: 5px 10px;
           cursor: pointer;
           border: none;

@@ -6,6 +6,7 @@ import { useState, useEffect, React } from 'react';
 import { FiArchive } from "react-icons/fi";
 import './dashboard.css'
 import { AiOutlineDashboard } from 'react-icons/ai';
+import { BASEURL } from "../../BaseURL/BaseURL";
 
 const Dashboard = () => {
     const [visitorData, setVisitorData] = useState([]);
@@ -19,33 +20,56 @@ const Dashboard = () => {
         borderRadius: '10px',
       };
 
+    // useEffect(() => {
+    //     const fetchVisitorData = async () => {
+    //         try {
+    //             const currentYear = new Date().getFullYear();
+
+    //             // Fetch data from the backend API
+    //             const response = await axios.get(`/api/v1/visitors/monthly?year=${currentYear}`);
+
+    //             // Map month numbers (1-12) to their names
+    //             const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    //             // Transform the data from the API to fit the chart format
+    //             const transformedData = response.data.visitors.map(v => ({
+    //                 month: months[v._id.month - 1],  // Convert month number to name (0-indexed array)
+    //                 visitors: v.count  // Use the count of visitors for each month
+    //             }));
+
+    //             // Set the transformed data to state
+    //             setVisitorData(transformedData);
+    //         } catch (error) {
+    //             console.error("Error fetching visitor data:", error);
+    //         }
+    //     };
+
+    //     fetchVisitorData(); 
+    // }, []);
+
+
     useEffect(() => {
         const fetchVisitorData = async () => {
             try {
                 const currentYear = new Date().getFullYear();
+    
+                const response = await axios.get(`${BASEURL}/api/v1/visitors/monthly?year=${currentYear}`);
 
-                // Fetch data from the backend API
-                const response = await axios.get(`/api/v1/visitors/monthly?year=${currentYear}`);
-
-                // Map month numbers (1-12) to their names
                 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-                // Transform the data from the API to fit the chart format
+    
                 const transformedData = response.data.visitors.map(v => ({
-                    month: months[v._id.month - 1],  // Convert month number to name (0-indexed array)
-                    visitors: v.count  // Use the count of visitors for each month
+                    month: months[v._id.month - 1], 
+                    visitors: v.count 
                 }));
-
-                // Set the transformed data to state
+    
                 setVisitorData(transformedData);
             } catch (error) {
                 console.error("Error fetching visitor data:", error);
             }
         };
-
+    
         fetchVisitorData(); 
     }, []);
-
 
     return (
         <>

@@ -1,0 +1,69 @@
+.getintouch-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .getintouch-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .getintouch-background {
+    width: 100%;
+    height: 150px;
+    display: block;
+  }
+  
+  .getintouch-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    /* background: rgba(0, 0, 50, 0.6); */
+  }
+  
+  .getintouch-title {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  /* .request-quote-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  } */
+  
+  /* .request-quote-button:hover {
+    background-color: #c82333;
+  } */
+  
+  @media (max-width: 768px) {
+    /* .getintouch-content {
+      padding: 15px;
+    } */
+  
+    .getintouch-title {
+      font-size: 1.2rem;
+    }
+  
+    /* .request-quote-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    } */
+  }
