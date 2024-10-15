@@ -238,10 +238,31 @@ const ProductSection = ({ title, products }) => (
     const { addItem } = useCart();
 
 // Sanitize Html for description
-const html = data.description;
+const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
+const productImage = image.length > 0 ? image[0].url : 'ttps://elonatech-official-website.vercel.app/default-product-image.jpg';
 
     return (
     <>
+
+<Helmet>
+                <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
+                <meta name="description" content={sanitizedDescription} />
+                <link rel="canonical" href={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
+                
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta property="og:description" content={sanitizedDescription} />
+                <meta property="og:image" content={productImage} />
+                <meta property="og:url" content={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
+                <meta property="og:type" content="product" />
+                
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta name="twitter:description" content={sanitizedDescription} />
+                <meta name="twitter:image" content={productImage} />
+            </Helmet>
+
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid shop-section">
   <div class="py-5 mt-5"></div>
