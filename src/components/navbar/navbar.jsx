@@ -580,7 +580,7 @@ return (
                           onMouseEnter={handleTechMouseEnter}
                         >
                           {" "}
-                          <h6 className="techCenter">Tech Solution</h6>
+                          <h6 className="techCenter">Tech Solutions</h6>
                         </li>
                         <li
                           className={
@@ -590,7 +590,7 @@ return (
                           }
                           onMouseEnter={handleDigitalMouseEnter}
                         >
-                          <h6 className="techCenter">Digital Solution</h6>
+                          <h6 className="techCenter">Digital Solutions</h6>
                         </li>
                         <li
                           className={
@@ -601,8 +601,7 @@ return (
                           onMouseEnter={handleSalesMouseEnter}
                         >
                           <h6 className="techCenter">
-                            <span className="salesSupply">Sales /</span>{" "}
-                            Supply
+                            Sales / Supply
                           </h6>
                         </li>
                       </ul>
