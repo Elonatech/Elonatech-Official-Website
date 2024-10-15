@@ -284,7 +284,7 @@
 	text-align: center;
 	color: white;
 	padding: 20px;
-	margin-bottom: 100px;
+	/* margin-bottom: 100px; */
   }
   
   /* Text styling for desktop */
@@ -309,14 +309,13 @@
   /* Mobile view */
   @media (max-width: 576px) {
 	.website-hosting-section {
-	  min-height: 108px; /* Fixed height for mobile */
+	  min-height: 108px; 
 	  background-size: contain;
 	  flex-direction: column;
 	  align-items: center;
 	  padding-top: 50px;
 	}
   
-	/* Adjusting text for mobile view */
 	.website-hosting-section h2 {
 	  font-size: 1.5rem;
 	  margin-bottom: 5px;
