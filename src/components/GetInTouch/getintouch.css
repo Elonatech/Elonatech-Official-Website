@@ -10,7 +10,7 @@
   
   .getintouch-background {
     width: 100%;
-    height: 150px;
+    height: 300px;
     display: block;
   }
   
@@ -60,6 +60,11 @@
   
     .getintouch-title {
       font-size: 1.2rem;
+    }
+    .getintouch-background {
+      width: 100%;
+      height: 150px;
+      display: block;
     }
   
     /* .request-quote-button {
