@@ -8,10 +8,10 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import Loading from '../../../components/Loading/Loading';
 import DOMPurify from 'dompurify';
 import { useCart } from "react-use-cart";
-import sanitizeHtml from 'sanitize-html';
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css'
+import sanitizeHtml from 'sanitize-html';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -351,11 +351,29 @@ const productImage = image.length > 0 ? image[0].url : 'ttps://elonatech-officia
 
 <div class="col-lg-4 mb-5">
             <div class=""  >
-                <Helmet>
+                {/* <Helmet>
                  <title>{data.name} - Tech Solution, Digital Solution</title>
                  <meta name="description" content={sanitizeHtml(html, {allowedTags:["strong"]})} />
                  <link rel="canonical" href={`https://elonatech.com.ng/blog/${id}`}  />
-                </Helmet>
+                </Helmet> */}
+                <Helmet>
+                <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
+                <meta name="description" content={sanitizedDescription} />
+                <link rel="canonical" href={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
+                
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta property="og:description" content={sanitizedDescription} />
+                <meta property="og:image" content={productImage} />
+                <meta property="og:url" content={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
+                <meta property="og:type" content="product" />
+                
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta name="twitter:description" content={sanitizedDescription} />
+                <meta name="twitter:image" content={productImage} />
+            </Helmet>
 
                     <h4 className='fw-bold'>{data.name}</h4>
                      <hr />
