@@ -246,6 +246,8 @@ const html = data.description;
 <div class="container-fluid shop-section">
   <div class="py-5 mt-5"></div>
 </div>
+
+ {/* ===================================================================================================================  */}
 <section class="mt-0" id="product" style={{backgroundColor:"#f1f1f2"}}>
 {isLoading ? 
 <>
