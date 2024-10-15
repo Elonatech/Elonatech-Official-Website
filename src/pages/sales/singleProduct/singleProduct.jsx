@@ -239,29 +239,14 @@ const ProductSection = ({ title, products }) => (
 
 // Sanitize Html for description
 const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
-const productImage = image.length > 0 ? image[0].url : 'ttps://elonatech-official-website.vercel.app/default-product-image.jpg';
+const productImage = image.length > 0 
+        ? (image[0].url.startsWith('http') ? image[0].url : `https://elonatech.com.ng${image[0].url}`)
+        : 'https://elonatech.com.ng/default-product-image.jpg';
+
+    const productUrl = `https://elonatech.com.ng/product/${id}`;
 
     return (
     <>
-
-<Helmet>
-                <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
-                <meta name="description" content={sanitizedDescription} />
-                <link rel="canonical" href={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
-                
-                {/* Open Graph Meta Tags */}
-                <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-                <meta property="og:description" content={sanitizedDescription} />
-                <meta property="og:image" content={productImage} />
-                <meta property="og:url" content={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
-                <meta property="og:type" content="product" />
-                
-                {/* Twitter Card Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-                <meta name="twitter:description" content={sanitizedDescription} />
-                <meta name="twitter:image" content={productImage} />
-            </Helmet>
 
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid shop-section">
@@ -359,13 +344,13 @@ const productImage = image.length > 0 ? image[0].url : 'ttps://elonatech-officia
                 <Helmet>
                 <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
                 <meta name="description" content={sanitizedDescription} />
-                <link rel="canonical" href={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
+                <link rel="canonical" href={`https://elonatech.com.ng/product/${id}`} />
                 
                 {/* Open Graph Meta Tags */}
                 <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
                 <meta property="og:description" content={sanitizedDescription} />
                 <meta property="og:image" content={productImage} />
-                <meta property="og:url" content={`ttps://elonatech-official-website.vercel.app/product/${id}`} />
+                <meta property="og:url" content={`https://elonatech.com.ng/product/${id}`} />
                 <meta property="og:type" content="product" />
                 
                 {/* Twitter Card Meta Tags */}
