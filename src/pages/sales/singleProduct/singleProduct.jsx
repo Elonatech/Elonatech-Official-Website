@@ -239,14 +239,69 @@ const ProductSection = ({ title, products }) => (
 
 // Sanitize Html for description
 const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
-const productImage = image.length > 0 
+    
+    const productImage = image.length > 0 
         ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech-official-website.vercel.app${image[0].url}`)
-        : 'https://elonatech-official-website.vercel.app/https://performance.ford.com/content/fordracing/home/performance-vehicles/_jcr_content/par/fr_external_link_com_522722112/image.img.jpg/1682003426508.jpg';
+        : 'https://elonatech-official-website.vercel.app/default-product-image.jpg';
 
     const productUrl = `https://elonatech-official-website.vercel.app/product/${id}`;
 
+    const structuredData = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": data.name,
+        "image": productImage,
+        "description": sanitizedDescription,
+        "brand": {
+            "@type": "Brand",
+            "name": data.brand
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": productUrl,
+            "priceCurrency": "NGN",
+            "price": data.price,
+            "availability": data.quantity > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+        }
+    };
+
     return (
     <>
+
+<Helmet>
+                <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
+                <meta name="description" content={sanitizedDescription} />
+                <link rel="canonical" href={productUrl} />
+                
+                {/* Preload critical image */}
+                <link rel="preload" href={productImage} as="image" />
+                
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta property="og:description" content={sanitizedDescription} />
+                <meta property="og:image" content={productImage} />
+                <meta property="og:image:secure_url" content={productImage} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:image:alt" content={data.name} />
+                <meta property="og:url" content={productUrl} />
+                <meta property="og:type" content="product" />
+                <meta property="og:site_name" content="Elonatech Nigeria Limited" />
+                <meta property="og:locale" content="en_NG" />
+                <meta property="og:price:amount" content={data.price} />
+                <meta property="og:price:currency" content="NGN" />
+                
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta name="twitter:description" content={sanitizedDescription} />
+                <meta name="twitter:image" content={productImage} />
+
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
+            </Helmet>
 
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid shop-section">
@@ -336,27 +391,12 @@ const productImage = image.length > 0
 
 <div class="col-lg-4 mb-5">
             <div class=""  >
-            <Helmet>
-              <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
-              <meta name="description" content={sanitizedDescription} />
-              <link rel="canonical" href={`https://elonatech-official-website.vercel.app/product/${id}`} />
-              
-              {/* Open Graph Meta Tags */}
-              <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-              <meta property="og:description" content={sanitizedDescription} />
-              <meta property="og:image:secure_url" content={productImage} />
-              <meta property="og:image:width" content="1200" />
-              <meta property="og:image:height" content="630" />
-              <meta property="og:url" content={`https://elonatech-official-website.vercel.app/product/${id}`} />
-              <meta property="og:type" content="product" />
-              
-              {/* Twitter Card Meta Tags */}
-              <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-              <meta name="twitter:description" content={sanitizedDescription} />
-              <meta name="twitter:image" content={productImage} />
-            </Helmet>
-
+            <div className="container" style={{display: "none"}}>
+                <h1>{data.name}</h1>
+                <img src={productImage} alt={data.name} />
+                <p>Price: ₦{Number(data.price).toLocaleString()}.00</p>
+                <div dangerouslySetInnerHTML={{__html: sanitizedDescription}}></div>
+            </div>
                     <h4 className='fw-bold'>{data.name}</h4>
                      <hr />
                     <div class=" mt-0">
