@@ -241,7 +241,7 @@ const ProductSection = ({ title, products }) => (
 const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
 const productImage = image.length > 0 
         ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech-official-website.vercel.app${image[0].url}`)
-        : 'https://elonatech-official-website.vercel.app/default-product-image.jpg';
+        : 'https://elonatech-official-website.vercel.app/https://performance.ford.com/content/fordracing/home/performance-vehicles/_jcr_content/par/fr_external_link_com_522722112/image.img.jpg/1682003426508.jpg';
 
     const productUrl = `https://elonatech-official-website.vercel.app/product/${id}`;
 
