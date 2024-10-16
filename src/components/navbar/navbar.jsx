@@ -153,9 +153,9 @@ const [activeDropdown, setActiveDropdown] = useState(null);
 
 
 // SAMPLE
-const isSmallScreen = window.innerWidth < 1024;
+const isSmallScreen = window.innerWidth < 768;
 const [isDropdownOpen, setDropdownOpen] = useState(false);
-const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1024);
+const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
 
 // 
 
@@ -404,12 +404,12 @@ const handleTeleMouseOver = () => {
   }, []);
 
 
-  useEffect(() => {
-    if (!isMobileView && initialLoad) {
-      handleTechMouseEnter();
-      setInitialLoad(false);
-    }
-  }, [isMobileView]);
+  // useEffect(() => {
+  //   if (!isMobileView && initialLoad) {
+  //     handleTechMouseEnter();
+  //     setInitialLoad(false);
+  //   }
+  // }, [isMobileView]);
 
 
   // ============================================================= //
@@ -601,7 +601,7 @@ return (
                           onMouseEnter={handleSalesMouseEnter}
                         >
                           <h6 className="techCenter">
-                            Sales / Supply
+                            Sales/ Supply
                           </h6>
                         </li>
                       </ul>
