@@ -268,7 +268,7 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
     return (
     <>
 
-<Helmet>
+    <Helmet>
                 <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
                 <meta name="description" content={sanitizedDescription} />
                 <link rel="canonical" href={productUrl} />

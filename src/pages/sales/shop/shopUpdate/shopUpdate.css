@@ -1,43 +1,22 @@
-.bg-size{
-    width: 50%;
+.bg-size {
+  width: 50%;
 }
 
-@media(max-width:768px){
-    .bg-size{
-        width: 100%;
-    }
-    
+@media (max-width: 768px) {
+  .bg-size {
+    width: 100%;
+  }
 }
-
 
 .editorContainer {
-    height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
-    border: 1px solid lightgray;
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: 1px solid lightgray;
 }
 
 .editor {
-    height: 300%;
-    border: none;
-    overflow-y: hidden; 
-  }
-
-  .back-btn {
-    transition: all 0.3s ease;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-  }
-  
-  .back-btn:hover {
-    transform: translateX(-5px);
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    background-color: #6c757d;
-    color: white;
-  }
-  
-  .back-btn:active {
-    transform: translateX(-2px);
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  }
+  height: 300%;
+  border: none;
+  overflow-y: hidden;
+}
