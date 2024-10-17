@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import "./computer.css";
 import { toast } from "react-toastify";
+import { AiOutlineDashboard } from 'react-icons/ai';
 
 const ComputerWrite = () => {
   const getInitialState = () => {
@@ -116,6 +117,24 @@ const ComputerWrite = () => {
 
   return (
     <>
+    {/* <div class="container-fluid bg-dark py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url()`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
+<div class="py-5 mt-5 ">
+</div>
+</div>  */}
+
+<div class="container-fluid bg-secondary py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1726245491/admin_computer_page_fwqmqh.jpg)`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
+ <div class="py-5 mt-5 ">
+   <h2 class=" mt-5 text-white text-center">Computer Editor</h2>
+   <h5 class=" mt-4 text-white text-center">Design and launch new computer products with ease and precision.</h5>
+   <p class="lead text-white text-center">Use our Computer Editor to craft detailed product listings, manage specifications, and showcase features effectively, ensuring your new products stand out in the market.</p>
+ </div>
+</div>
+
+<div className='dashboard'>
+      <Link to="/dashboard" className="btn btn-outline-primary btn-sm me-3 dash">
+        <AiOutlineDashboard className="icon" /> Dashboard
+      </Link>
+</div>
       <div
         className="computer-write container my-5 py-5"
         style={{ marginTop: "5rem" }}

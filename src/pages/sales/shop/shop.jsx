@@ -275,20 +275,14 @@ const Shop = () => {
                                   style={{ color: "#f4be1d" }}
                                 ></i>
                               </div>
-                               <p
-                                  style={{ color: "red", fontWeight: "bold" }}
-                                  className="lead fs-6"
-                                >
-                                  ₦ {formatPrice(product.price)}
-                                </p>
+                              <div class="d-flex justify-content-between">
+                              <p className='mt-2 px-1 text-danger'>₦ {Number(product.price).toLocaleString()}.00</p>
+                              <i class="bi bi-cart p-1" style={{fontSize:"20px" , cursor:"pointer"}}></i>
+                              </div>
                             </Link>
-                           <button
-                              style={{ color: "red", fontWeight: "bold" }}
-                              className="btn btn-outline-secondary btn-md w-100 rounded"
-                              onClick={() => addItem(product)}
-                            >
-                              Add to cart
-                            </button>
+                            <div class="d-grid gap-2" key={product.id}>
+                            <div class="btn btn-outline" style={{backgroundColor:"#a9abae"}} onClick={() => addItem(product)}	><h6 className='text-danger'>ADD TO CART</h6></div>
+                            </div>
                           </div>
                         </div>
                       );
@@ -438,7 +432,7 @@ const Shop = () => {
                 style={{ marginTop: "-8px", marginBottom: "16px" }}
                 class="fw-bold "
               >
-                Sort Computers by
+                Sort Product by
               </h4>
               <ShopFilter setFilteredProducts={setFilteredProducts} />
             </div>

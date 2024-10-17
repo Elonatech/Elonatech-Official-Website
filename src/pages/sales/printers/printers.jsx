@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import Pagination from '../../../components/Pagination/Pagination';
 import { BASEURL } from '../../../BaseURL/BaseURL';
@@ -9,53 +8,57 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useCart } from "react-use-cart";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import PrinterFilter from './printerFilter';
 import "./printers.css"
 
-
-
 const Printers = () => {
-
   const [data, setData] = useState([]);
-  const [records, setRecords] = useState([])
+  const [records, setRecords] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(12);
-  const [pageNumberLimit, setpageNumberLimit] = useState(4);
+  const [pageNumberLimit] = useState(4);
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(4);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
   const [activeItem, setActiveItem] = useState("Item 5");
-
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleClick = (item) => {
     setActiveItem(item);
   };
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(`${BASEURL}/api/v1/product/`);
-      const filtered = response.data.getAllProducts.filter(user => user.category === 'Printer')
-      setData(filtered.reverse());
-      setRecords(filtered)
-      setIsLoading(true);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      setIsLoading(true);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${BASEURL}/api/v1/product/`);
+        const filtered = response.data.getAllProducts.filter(user => user.category === 'Printer')
+        setData(filtered.reverse());
+        setRecords(filtered);
+        setIsLoading(true);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setIsLoading(true);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const page = parseInt(searchParams.get('page') || '1', 10);
+    setCurrentPage(page);
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (filteredProducts.length > 0) {
+      setRecords(filteredProducts);
+    } else {
+      setRecords(data);
     }
-  };
-  fetchData();
-}, []);
+  }, [filteredProducts, data]);
 
-useEffect(() => {
-  const page = parseInt(searchParams.get('page') || '1', 10);
-  setCurrentPage(page);
-}, [searchParams]);
-
-
-const Filter = (event) =>{
-  setRecords(data.reverse().filter(c => c.name.toLowerCase().includes(event.target.value)))
+  const Filter = (event) => {
+    setRecords(data.filter(c => c.name.toLowerCase().includes(event.target.value.toLowerCase())));
   }
 
   const paginate = (pageNumber) => {
@@ -63,38 +66,32 @@ const Filter = (event) =>{
     setSearchParams({ page: pageNumber.toString() });
   };
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentPosts = records.slice(indexOfFirstItem, indexOfLastItem);
 
+  const handleNextbtn = () => {
+    const nextPage = currentPage + 1;
+    setCurrentPage(nextPage);
+    setSearchParams({ page: nextPage.toString() });
 
-const indexOfLastItem = currentPage * itemsPerPage;
-const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentPosts = records.slice(indexOfFirstItem, indexOfLastItem);
+    if (nextPage > maxPageNumberLimit) {
+      setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+      setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+    }
+  };
 
+  const handlePrevbtn = () => {
+    const prevPage = currentPage - 1;
+    setCurrentPage(prevPage);
+    setSearchParams({ page: prevPage.toString() });
 
+    if ((prevPage - 1) % pageNumberLimit === 0) {
+      setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+      setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+    }
+  };
 
-const handleNextbtn = () => {
-  const nextPage = currentPage + 1;
-  setCurrentPage(nextPage);
-  setSearchParams({ page: nextPage.toString() });
-
-  if (nextPage > maxPageNumberLimit) {
-    setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
-    setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);
-  }
-};
-
-const handlePrevbtn = () => {
-  const prevPage = currentPage - 1;
-  setCurrentPage(prevPage);
-  setSearchParams({ page: prevPage.toString() });
-
-  if ((prevPage - 1) % pageNumberLimit == 0) {
-    setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
-    setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
-  }
-};
-
-
-    // add to cart
   const { addItem } = useCart();
 
 
@@ -208,55 +205,99 @@ return (
 		</div>
 	</section>
 </div>
-<div class="col-md-3  mb-5">
-      <div class="position-sticky p-3" style={{top:"2rem"}}>
-        <div class="mb-3 mt-4 rounded">
-        <form class="d-flex pt-5">
-        {/* <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-success me-5" type="submit">Search</button> */}
-        </form>
-          <h4 class="fw-bold">Categories</h4>
-          <ul className="list-unstyled">
+<div className="col-md-3">
+            <div
+              className="position-sticky"
+              style={{ top: "2rem", marginTop: "20px" }}
+            >
+              <div
+                style={{
+                  marginTop: "50px",
+                  paddingTop: "30px",
+                  paddingBottom: "30px",
+                  marginLeft: "15px"
+                }}
+              >
+                <form
+                  style={{
+                    paddingTop: "20px",
+                    paddingBottom: "20px"
+                  }}
+                  className="d-flex"
+                ></form>
+                <h4
+                  style={{ marginTop: "-8px", marginBottom: "16px" }}
+                  className="fw-bold"
+                >
+                  Browse Categories
+                </h4>
+                <ul className="list-unstyled">
                   <li>
                     <Link
-                      to={'/shop'}
-                      className={`text-decoration-none ${activeItem === "Item 1" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 1")}
+                      to={"/shop"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
-                      Shop
+                      All Products
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={'/computers'}
-                      className={`text-decoration-none ${activeItem === "Item 2" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 2")}
+                      to={"/computers"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       Computers
                     </Link>
+
                   </li>
+
                   <li>
                     <Link
-                      to={'/office-equipment'}
-                      className={`text-decoration-none ${activeItem === "Item 3" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 3")}
+                      to={"/office-equipment"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       Office Equipment
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={'/pos-system'}
-                      className={`text-decoration-none ${activeItem === "Item 4" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 4")}
+                      to={"/pos-system"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       POS System
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={'/printers'}
-                      className={`text-decoration-none ${activeItem === "Item 5" ? "active-category" : "text-dark"}`}
+                      to={"/printers"}
+                      className={`item ${activeItem === "Item 5" ? "active-category" : ""}`}
                       onClick={() => handleClick("Item 5")}
                     >
                       Printers
@@ -264,15 +305,28 @@ return (
                   </li>
                   <li>
                     <Link
-                      to={'/network-devices'}
-                      className={`text-decoration-none ${activeItem === "Item 6" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 6")}
+                      to={"/Network-devices"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       Network Devices
                     </Link>
                   </li>
                 </ul>
-        </div>
+              </div>
+
+              <div style={{ margin: "15px", width: "60%" }} className="filter-section p-2 rounded shadow-sm">
+                  <h4 style={{ marginTop: "-8px", marginBottom: "16px" }} className="fw-bold">
+                    Sort Product by
+                  </h4>
+                  <PrinterFilter setFilteredProducts={setFilteredProducts} />
+                </div>
       </div>
 </div>
 

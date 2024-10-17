@@ -247,5 +247,9 @@
   
   
   
-  
+  .form-label {
+    color: #212529;
+    font-size: 22.86px;
+    font-weight: bold;
+  }
   

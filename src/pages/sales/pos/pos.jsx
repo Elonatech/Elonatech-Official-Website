@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams  } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Pagination from '../../../components/Pagination/Pagination';
 import { BASEURL } from '../../../BaseURL/BaseURL';
 import Loading from '../../../components/Loading/Loading';
@@ -10,10 +9,9 @@ import "./pos.css"
 import { useCart } from "react-use-cart";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import PosFilter from './posFilter.jsx';
 
 const Pos = () => {
-
   const [data, setData] = useState([]);
   const [records, setRecords] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,8 +22,7 @@ const Pos = () => {
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(4);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
   const [activeItem, setActiveItem] = useState("Item 4");
-  
-
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleClick = (item) => {
     setActiveItem(item);
@@ -52,25 +49,26 @@ const Pos = () => {
     setCurrentPage(page);
   }, [searchParams]);
 
+  useEffect(() => {
+    if (filteredProducts.length > 0) {
+      setRecords(filteredProducts);
+    } else {
+      setRecords(data);
+    }
+  }, [filteredProducts, data]);
 
+  const Filter = (event) => {
+    setRecords(data.filter(c => c.name.toLowerCase().includes(event.target.value.toLowerCase())))
+  }
 
-  
-const Filter = (event) =>{
-  setRecords(data.reverse().filter(c => c.name.toLowerCase().includes(event.target.value)))
-}
-
-const paginate = (pageNumber) => {
-  setCurrentPage(pageNumber);
-  setSearchParams({ page: pageNumber.toString() });
-};
-
-
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    setSearchParams({ page: pageNumber.toString() });
+  };
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentPosts = records.slice(indexOfFirstItem, indexOfLastItem);
-
-
 
   const handleNextbtn = () => {
     const nextPage = currentPage + 1;
@@ -94,29 +92,24 @@ const paginate = (pageNumber) => {
     }
   };
 
-    // add to cart
-    const { addItem } = useCart();
+  const { addItem } = useCart();
 
- 
-    // Pop up message 
-    const [displayPopUp, setDisplayPopUp] = useState(true);
+  const [displayPopUp, setDisplayPopUp] = useState(true);
 
-    const closePopUp = () => {
-      localStorage.setItem("PosPopUp", true);
-      setDisplayPopUp(false);
-    };
-  
-  
-   useEffect(() => {
-      let returningUser = localStorage.getItem("PosPopUp");
-        function showPopUp() {
-          if(!returningUser) {
-            toast.warn("Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase",
-            { position:"top-center", autoClose:20000 , className: 'pop-up-message'}, closePopUp())
-          }
-        }
-      setInterval(showPopUp(), 604800000);
-  
+  const closePopUp = () => {
+    localStorage.setItem("PosPopUp", true);
+    setDisplayPopUp(false);
+  };
+
+  useEffect(() => {
+    let returningUser = localStorage.getItem("PosPopUp");
+    function showPopUp() {
+      if(!returningUser) {
+        toast.warn("Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase",
+        { position:"top-center", autoClose:20000 , className: 'pop-up-message'}, closePopUp())
+      }
+    }
+    setInterval(showPopUp(), 604800000);
   }, []);
   
 
@@ -209,46 +202,84 @@ return (
 		</div>
 	</section>
 </div>
-<div class="col-md-3  mb-5">
-      <div class="position-sticky p-3" style={{top:"2rem"}}>
-        <div class="mb-3 mt-4 rounded">
-        <form class="d-flex  pt-5">
-        {/* <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-success me-5" type="submit">Search</button> */}
-        </form>
-          <h4 class="fw-bold">Categories</h4>
-          <ul className="list-unstyled">
+<div className="col-md-3">
+            <div
+              className="position-sticky"
+              style={{ top: "2rem", marginTop: "20px" }}
+            >
+              <div
+                style={{
+                  marginTop: "50px",
+                  paddingTop: "30px",
+                  paddingBottom: "30px",
+                  marginLeft: "15px"
+                }}
+              >
+                <form
+                  style={{
+                    paddingTop: "20px",
+                    paddingBottom: "20px"
+                  }}
+                  className="d-flex"
+                ></form>
+                <h4
+                  style={{ marginTop: "-8px", marginBottom: "16px" }}
+                  className="fw-bold"
+                >
+                  Browse Categories
+                </h4>
+                <ul className="list-unstyled">
                   <li>
                     <Link
-                      to={'/shop'}
-                      className={`text-decoration-none ${activeItem === "Item 1" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 1")}
+                      to={"/shop"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
-                      Shop
+                      All Products
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={'/computers'}
-                      className={`text-decoration-none ${activeItem === "Item 2" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 2")}
+                      to={"/computers"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       Computers
                     </Link>
+
                   </li>
+
                   <li>
                     <Link
-                      to={'/office-equipment'}
-                      className={`text-decoration-none ${activeItem === "Item 3" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 3")}
+                      to={"/office-equipment"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       Office Equipment
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={'/pos-system'}
-                      className={`text-decoration-none ${activeItem === "Item 4" ? "active-category" : "text-dark"}`}
+                      to={"/pos-system"}
+                      className={`item ${activeItem === "Item 4" ? "active-category" : ""}`}
                       onClick={() => handleClick("Item 4")}
                     >
                       POS System
@@ -256,24 +287,48 @@ return (
                   </li>
                   <li>
                     <Link
-                      to={'/printers'}
-                      className={`text-decoration-none ${activeItem === "Item 5" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 5")}
+                      to={"/printers"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       Printers
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={'/network-devices'}
-                      className={`text-decoration-none ${activeItem === "Item 6" ? "active-category" : "text-dark"}`}
-                      onClick={() => handleClick("Item 6")}
+                      to={"/network-devices"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
+                      }
                     >
                       Network Devices
                     </Link>
                   </li>
                 </ul>
-        </div>
+              </div>
+              <div
+                style={{ margin: "15px", width: "60%" }}
+                className="filter-section p-2 rounded shadow-sm"
+              >
+                <h4
+                  style={{ marginTop: "-8px", marginBottom: "16px" }}
+                  className="fw-bold"
+                >
+                  Sort Product by
+                </h4>
+                <PosFilter setFilteredProducts={setFilteredProducts} />
+              </div>
       </div>
 </div>
 </div>

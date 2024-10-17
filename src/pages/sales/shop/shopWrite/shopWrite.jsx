@@ -2,10 +2,11 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./shopWrite.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { BASEURL } from "../../../../BaseURL/BaseURL";
 import { toast } from "react-toastify";
+import { AiOutlineDashboard } from 'react-icons/ai';
 
 const shopWrite = () => {
   const getInitialState = () => {
@@ -81,9 +82,29 @@ const shopWrite = () => {
 
   return (
     <>
+
+<div class="container-fluid bg-secondary py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1726158347/Shop-banner-test_wgekev.png)`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
+ <div class="py-5 mt-5 ">
+   <h2 class=" mt-5 text-white text-center">Shop Editor</h2>
+   <h5 class=" mt-4 text-white text-center">Effortlessly manage and customize your online store with our Shop Editor.</h5>
+   <p class="lead text-white text-center">Optimize your e-commerce platform with intuitive tools that help you streamline operations, enhance user experience, and boost sales.</p>
+ </div>
+</div>
+
+{/* <div class="container-fluid bg-dark py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url()`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
+ <div class="py-5 mt-5 ">
+ </div>
+ </div>  */}
+ <div className='dashboard'>
+      <Link to="/dashboard" className="btn btn-outline-primary btn-sm me-3 dash">
+        <AiOutlineDashboard className="icon" /> Dashboard
+      </Link>
+</div>
+
+
       <div className=" container bg-size py-5" style={{ marginTop: "5rem" }}>
         <h2 className="text-center mb-5 fw-bold">
-          Upload Office, Pos and Printer.
+          Upload Office Equipment, POS System, Printers and Network Devices
         </h2>
         <div className="" style={{}}>
           <div className="row">

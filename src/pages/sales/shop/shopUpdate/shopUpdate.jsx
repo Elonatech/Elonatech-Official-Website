@@ -203,7 +203,7 @@ const ShopUpdate = () => {
         style={{ marginTop: "0rem" }}
       >
         <h2 className="text-center mb-5 fw-bold">
-          Update Office, Pos and Printer.
+          Update Office Equipment, POS System, Printers and Network Devices
         </h2>
         <div className="">
           <div className="row">

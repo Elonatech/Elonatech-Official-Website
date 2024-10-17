@@ -104,7 +104,7 @@ const Dashboard = () => {
                         <div className="card text-bg-danger text-center p-3">
                             <figure className="mb-0 text-decoration-none">
                                 <blockquote className="blockquote">
-                                    <h4>Blog</h4>
+                                    <h4> Create Blog</h4>
                                 </blockquote>
                             </figure>
                         </div>
@@ -116,7 +116,7 @@ const Dashboard = () => {
                         <div className="card text-bg-success text-center  p-3">
                             <figure className="p-3 mb-0">
                                 <blockquote className="blockquote">
-                                    <h4>Computer</h4>
+                                    <h4>Upload Computer</h4>
                                 </blockquote>
                             </figure>
                         </div>
@@ -128,7 +128,7 @@ const Dashboard = () => {
                         <div className="card text-bg-primary text-center p-3">
                             <figure className="mb-0">
                                 <blockquote className="blockquote">
-                                    <h4 className="text-white">Shop</h4>
+                                    <h4 className="text-white">Upload All Products</h4>
                                 </blockquote>
                             </figure>
                         </div>

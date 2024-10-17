@@ -1,4 +1,4 @@
-import "./computerFilter.css"; // Assuming you'll add custom styles here
+import "./computerFilter.css"; 
 import React, { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import { BASEURL } from "../../../BaseURL/BaseURL";
@@ -7,42 +7,37 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     ram: "",
     brand: "",
     drive: "",
-    price: [0, 1000000] // Default static price range (can be changed dynamically)
+    price: [0, 1000000]
   });
   const [noResultsMessage, setNoResultsMessage] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 1000000]); // For the UI input
-  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]); // To store the fetched min and max price
-  const [filter, setFilter] = useState(null); // No filter applied on initial render
+  const [priceRange, setPriceRange] = useState([0, 1000000]); 
+  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]); 
+  const [filter, setFilter] = useState(null); 
   useEffect(() => {
-    // Fetch the min and max price from the database (or server)
     fetch(`${BASEURL}/api/v1/product/filter?category=Computer`)
       .then((response) => response.json())
       .then((data) => {
         if (data.minPrice !== undefined && data.maxPrice !== undefined) {
           const fetchedMinPrice = data.minPrice;
           const fetchedMaxPrice = data.maxPrice;
-          // Update the default price range to what is fetched from the API
           setDefaultPriceRange([fetchedMinPrice, fetchedMaxPrice]);
-          setPriceRange([fetchedMinPrice, fetchedMaxPrice]); // Set initial price range
+          setPriceRange([fetchedMinPrice, fetchedMaxPrice]);
           setFilters((prevFilters) => ({
             ...prevFilters,
-            price: [fetchedMinPrice, fetchedMaxPrice] // Set filter price range initially
+            price: [fetchedMinPrice, fetchedMaxPrice] 
           }));
         }
-        setFilteredProducts(data.data); // Populate products
+        setFilteredProducts(data.data); 
       })
       .catch((error) => console.error("Error fetching initial data:", error));
   }, [setFilteredProducts]);
   const resetPriceRange = () => {
-    // Reset to the dynamic minPrice and maxPrice from the database
     setPriceRange(defaultPriceRange);
-    // Update the filters to reset the price filter to the fetched min and max values
     const updatedFilters = {
       ...filters,
-      price: defaultPriceRange // Use the fetched min and max price values
+      price: defaultPriceRange
     };
     setFilters(updatedFilters);
-    // Apply the filters to fetch and display the products
     applyFilters(updatedFilters);
   };
   const handleCheckboxChange = (event) => {
@@ -50,9 +45,9 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     setFilters((prevFilters) => {
       const updatedFilters = {
         ...prevFilters,
-        [name]: checked ? value : "" // Set value or reset if unchecked
+        [name]: checked ? value : ""
       };
-      applyFilters(updatedFilters); // Apply filters each time a checkbox is changed
+      applyFilters(updatedFilters);
       return updatedFilters;
     });
   };
@@ -66,35 +61,29 @@ const handlePriceChange = (event, newValue) => {
   }));
 };
   const handleApplyClick = () => {
-    applyFilters(filters); // Apply filters including price when "Apply" is clicked
+    applyFilters(filters);
   };
   const applyFilters = (updatedFilters) => {
     let queryParams = [];
-    // Add RAM filter if selected
     if (updatedFilters.ram) {
       queryParams.push(`ram=${updatedFilters.ram.replace(/\D/g, "")}`);
     }
-    // Add brand filter if selected
     if (updatedFilters.brand) {
       queryParams.push(
         `brand=${updatedFilters.brand.replace(/\s+/g, "").toLowerCase()}`
       );
     }
-    // Add drive filter if selected
     if (updatedFilters.drive) {
       queryParams.push(`drive=${updatedFilters.drive.replace(/\D/g, "")}`);
     }
-    // Add price filter if the price range is modified
     if (
-      updatedFilters.price[0] !== 0 || // Min price is not default
-      updatedFilters.price[1] !== 1000000 // Max price is not default
+      updatedFilters.price[0] !== 0 || 
+      updatedFilters.price[1] !== 1000000 
     ) {
       queryParams.push(`minPrice=${updatedFilters.price[0]}`);
       queryParams.push(`maxPrice=${updatedFilters.price[1]}`);
     }
-    // Build the query string with all active filters
     const queryString = queryParams.length > 0 ? queryParams.join("&") : "";
-    // Fetch the products using the combined filter criteria
     fetch(`${BASEURL}/api/v1/product/filter?category=Computer&${queryString}`)
       .then((response) => response.json())
       .then((data) => {
@@ -102,12 +91,11 @@ const handlePriceChange = (event, newValue) => {
       })
       .catch((error) => console.error("Error:", error));
   };
-  // Helper function to format numbers with commas for display
   const formatPrice = (price) => {
-    return price.toLocaleString(); // Adds commas to the number
+    return price.toLocaleString();
   };
   const handleInputPriceChange = (event, index) => {
-    const value = event.target.value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+    const value = event.target.value.replace(/[^0-9]/g, "");
     const newPrice = [...filters.price];
     newPrice[index] = parseFloat(value) || 0;
     setFilters((prevFilters) => ({
@@ -116,7 +104,7 @@ const handlePriceChange = (event, newValue) => {
     }));
   };
   const formatPrice2 = (price) => {
-    return new Intl.NumberFormat().format(price); // Formats price with commas
+    return new Intl.NumberFormat().format(price);
   };
   return (
     <div>
@@ -333,12 +321,6 @@ const handlePriceChange = (event, newValue) => {
         <div className="price-filter">
           <label className="form-label">
           Filter by Price(₦)
-            <button
-              type="button"
-              className="apply-button"
-              onClick={handleApplyClick}
-            >
-            </button>
           </label>
           <Slider
             className="custom-slider"
@@ -385,7 +367,7 @@ const handlePriceChange = (event, newValue) => {
               Reset Price Range
             </button>
         </div>
-        <style>{`
+        <style jsx>{`
         .shop-filter {
           margin-bottom: 1rem;
         }
@@ -401,7 +383,7 @@ const handlePriceChange = (event, newValue) => {
         }
         .apply-btn,
         .reset-btn {
-          // margin: 5px;
+          margin: 5px;
           padding: 5px 10px;
           cursor: pointer;
           border: none;
