@@ -7,8 +7,9 @@ const NetworkFilter = ({ setFilteredProducts }) => {
     type: "",
     brand: "",
     portSpeed: "",
-    price: [0, 1000000]
+    price: [0, 1000000],
   });
+  const [brands, setBrands] = useState([]); // State to store available brands
   const [noResultsMessage, setNoResultsMessage] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
@@ -24,19 +25,24 @@ const NetworkFilter = ({ setFilteredProducts }) => {
           setPriceRange([fetchedMinPrice, fetchedMaxPrice]);
           setFilters((prevFilters) => ({
             ...prevFilters,
-            price: [fetchedMinPrice, fetchedMaxPrice]
+            price: [fetchedMinPrice, fetchedMaxPrice],
           }));
         }
         setFilteredProducts(data.data);
+        
+        // Use Set to ensure unique brands
+        const availableBrands = [...new Set(data.data.map((product) => product.brand))];
+        setBrands(availableBrands); // Set unique brands
       })
       .catch((error) => console.error("Error fetching initial data:", error));
   }, [setFilteredProducts]);
+  
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
     const updatedFilters = {
       ...filters,
-      price: defaultPriceRange
+      price: defaultPriceRange,
     };
     setFilters(updatedFilters);
     applyFilters(updatedFilters);
@@ -47,7 +53,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
     setFilters((prevFilters) => {
       const updatedFilters = {
         ...prevFilters,
-        [name]: checked ? value : ""
+        [name]: checked ? value : "",
       };
       applyFilters(updatedFilters);
       return updatedFilters;
@@ -57,7 +63,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
   const handlePriceChange = (event, newValue) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
-      price: newValue
+      price: newValue,
     }));
   };
 
@@ -76,10 +82,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
     if (updatedFilters.portSpeed) {
       queryParams.push(`portSpeed=${updatedFilters.portSpeed.replace(/\D/g, "")}`);
     }
-    if (
-      updatedFilters.price[0] !== 0 ||
-      updatedFilters.price[1] !== 1000000
-    ) {
+    if (updatedFilters.price[0] !== 0 || updatedFilters.price[1] !== 1000000) {
       queryParams.push(`minPrice=${updatedFilters.price[0]}`);
       queryParams.push(`maxPrice=${updatedFilters.price[1]}`);
     }
@@ -103,7 +106,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
     newPrice[index] = parseFloat(value) || 0;
     setFilters((prevFilters) => ({
       ...prevFilters,
-      price: newPrice
+      price: newPrice,
     }));
   };
 
@@ -119,138 +122,33 @@ const NetworkFilter = ({ setFilteredProducts }) => {
         </div>
       )}
       <form>
-        {/* Type Filter */}
-        {/* <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          <label className="form-label">Type:</label>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="Router"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "Router"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Router</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="Switch"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "Switch"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Switch</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="AccessPoint"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "AccessPoint"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Access Point</label>
-          </div>
-        </div> */}
-
         {/* Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          {/* <label className="form-label">Brand:</label> */}
+          <label className="form-label">Brand:</label>
           <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="Cisco"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "Cisco"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Cisco</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="TP-Link"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "TP-Link"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">TP-Link</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="Netgear"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "Netgear"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Netgear</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="D-Link"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "D-Link"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">D-Link</label>
-            </div>
+            {brands.length > 0 ? (
+              brands.map((brand) => (
+                <div className="form-check" key={brand}>
+                  <input
+                    type="checkbox"
+                    name="brand"
+                    value={brand}
+                    onChange={handleCheckboxChange}
+                    checked={filters.brand === brand}
+                    className="form-check-input"
+                  />
+                  <label className="form-check-label">{brand}</label>
+                </div>
+              ))
+            ) : (
+              <p>No brands available</p>
+            )}
           </div>
         </div>
 
-        {/* Port Speed Filter */}
-        {/* <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          <label className="form-label">Port Speed:</label>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="portSpeed"
-              value="100Mbps"
-              onChange={handleCheckboxChange}
-              checked={filters.portSpeed === "100Mbps"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">100Mbps</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="portSpeed"
-              value="1Gbps"
-              onChange={handleCheckboxChange}
-              checked={filters.portSpeed === "1Gbps"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">1Gbps</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="portSpeed"
-              value="10Gbps"
-              onChange={handleCheckboxChange}
-              checked={filters.portSpeed === "10Gbps"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">10Gbps</label>
-          </div>
-        </div> */}
-
         {/* Price Filter */}
         <div className="price-filter">
-          <label className="form-label">
-            Filter by Price(₦)
-          </label>
+          <label className="form-label">Filter by Price(₦)</label>
           <Slider
             className="custom-slider"
             value={filters.price}

@@ -11,6 +11,7 @@ const PosFilter = ({ setFilteredProducts }) => {
   });
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
+  const [availableBrands, setAvailableBrands] = useState([]);
 
   useEffect(() => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Pos`)
@@ -26,6 +27,11 @@ const PosFilter = ({ setFilteredProducts }) => {
             price: [fetchedMinPrice, fetchedMaxPrice]
           }));
         }
+        
+        // Extract unique brands from the fetched data
+        const uniqueBrands = [...new Set(data.data.map(product => product.brand))];
+        setAvailableBrands(uniqueBrands);
+
         setFilteredProducts(data.data);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
@@ -107,59 +113,21 @@ const PosFilter = ({ setFilteredProducts }) => {
       <form>
         {/* Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          {/* <label className="form-label">Brand:</label> */}
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="brand"
-              value="Verifone"
-              onChange={handleCheckboxChange}
-              checked={filters.brand === "Verifone"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Verifone</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="brand"
-              value="Ingenico"
-              onChange={handleCheckboxChange}
-              checked={filters.brand === "Ingenico"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Ingenico</label>
-          </div>
-          {/* Add more brand options as needed */}
+          {/* Dynamically create the list of brands */}
+          {availableBrands.map((brand) => (
+            <div className="form-check" key={brand}>
+              <input
+                type="checkbox"
+                name="brand"
+                value={brand}
+                onChange={handleCheckboxChange}
+                checked={filters.brand === brand}
+                className="form-check-input"
+              />
+              <label className="form-check-label">{brand}</label>
+            </div>
+          ))}
         </div>
-
-        {/* Type Filter */}
-        {/* <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          <label className="form-label">Type:</label>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="Desktop"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "Desktop"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Desktop</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="Mobile"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "Mobile"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Mobile</label>
-          </div> */}
-          {/* Add more type options as needed */}
-        {/* </div> */}
 
         {/* Price Filter */}
         <div className="price-filter">

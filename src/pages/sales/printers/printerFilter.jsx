@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 
-import './printers.css'
+import './printers.css';
 
 const PrinterFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
@@ -13,8 +13,10 @@ const PrinterFilter = ({ setFilteredProducts }) => {
   const [noResultsMessage, setNoResultsMessage] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
+  const [brands, setBrands] = useState([]); // Store available brands
 
   useEffect(() => {
+    // Fetch product filters including available brands and price range
     fetch(`${BASEURL}/api/v1/product/filter?category=Printer`)
       .then((response) => response.json())
       .then((data) => {
@@ -28,7 +30,9 @@ const PrinterFilter = ({ setFilteredProducts }) => {
             price: [fetchedMinPrice, fetchedMaxPrice]
           }));
         }
-        setFilteredProducts(data.data);
+        
+        const availableBrands = [...new Set(data.data.map((product) => product.brand))];
+        setBrands(availableBrands);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
   }, [setFilteredProducts]);
@@ -116,49 +120,10 @@ const PrinterFilter = ({ setFilteredProducts }) => {
         </div>
       )}
       <form>
-        {/* Type Filter */}
-        {/* <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          <label className="form-label">Type:</label>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="Inkjet"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "Inkjet"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Inkjet</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="Laser"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "Laser"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">Laser</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="type"
-              value="All-in-One"
-              onChange={handleCheckboxChange}
-              checked={filters.type === "All-in-One"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">All-in-One</label>
-          </div>
-        </div> */}
-
         {/* Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          {/* <label className="form-label">Brand:</label> */}
           <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
-            {["HP", "Epson", "Canon", "Brother", "Xerox"].map((brand) => (
+            {brands.map((brand) => (
               <div className="form-check" key={brand}>
                 <input
                   type="checkbox"

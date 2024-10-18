@@ -274,7 +274,7 @@ const ShopUpdate = () => {
                 onChange={(e) => setCategory(e.target.value)}
                 id="inputGroupSelect01"
               >
-                <option value="Pos System">Pos System</option>
+                <option value="Pos System">POS System</option>
                 <option value="Computer">Computer</option>
                 <option value="Office">Office</option>
                 <option value="Printer">Printer</option>

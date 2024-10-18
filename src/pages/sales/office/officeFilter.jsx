@@ -12,6 +12,7 @@ const OfficeFilter = ({ setFilteredProducts }) => {
   const [noResultsMessage, setNoResultsMessage] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
+  const [brands, setBrands] = useState([]); // Add state to hold brands
 
   useEffect(() => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Office`)
@@ -28,6 +29,10 @@ const OfficeFilter = ({ setFilteredProducts }) => {
           }));
         }
         setFilteredProducts(data.data);
+        
+        // Use Set to ensure unique brands
+        const availableBrands = [...new Set(data.data.map((product) => product.brand))];
+        setBrands(availableBrands); // Set unique brands
       })
       .catch((error) => console.error("Error fetching initial data:", error));
   }, [setFilteredProducts]);
@@ -117,7 +122,7 @@ const OfficeFilter = ({ setFilteredProducts }) => {
         <div className="filter-section">
           {/* <label className="form-label">Brand:</label> */}
           <div className="scrollable-options">
-            {["Canon", "Epson", "HP", "Brother", "Xerox", "Ricoh"].map((brand) => (
+            {brands.map((brand) => (
               <div className="form-check" key={brand}>
                 <input
                   type="checkbox"
@@ -132,26 +137,6 @@ const OfficeFilter = ({ setFilteredProducts }) => {
             ))}
           </div>
         </div>
-
-        {/* Type Filter */}
-        {/* <div className="filter-section">
-          <label className="form-label">Type:</label>
-          <div className="scrollable-options">
-            {["Printer", "Scanner", "Copier", "Fax", "All-in-One"].map((type) => (
-              <div className="form-check" key={type}>
-                <input
-                  type="checkbox"
-                  name="type"
-                  value={type}
-                  onChange={handleCheckboxChange}
-                  checked={filters.type === type}
-                  className="form-check-input"
-                />
-                <label className="form-check-label">{type}</label>
-              </div>
-            ))}
-          </div>
-        </div> */}
 
         {/* Price Filter */}
         <div className="price-filter">

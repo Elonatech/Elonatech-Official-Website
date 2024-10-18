@@ -12,6 +12,7 @@ import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import sanitizeHtml from 'sanitize-html';
+import SocialShareButtons from './socialShareButton';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -265,6 +266,8 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
         }
     };
 
+    console.log("Product Image URL:", productImage);
+
     return (
     <>
 
@@ -283,13 +286,8 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
                 <meta property="og:image:secure_url" content={productImage} />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-                <meta property="og:image:alt" content={data.name} />
                 <meta property="og:url" content={productUrl} />
                 <meta property="og:type" content="product" />
-                <meta property="og:site_name" content="Elonatech Nigeria Limited" />
-                <meta property="og:locale" content="en_NG" />
-                <meta property="og:price:amount" content={data.price} />
-                <meta property="og:price:currency" content="NGN" />
                 
                 {/* Twitter Card Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
@@ -422,6 +420,7 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
                                     <button className='btn btn-dark mt-3' 	onClick={() => addItem(data)}><b>Add To Cart</b></button>
                                  </div>
                                 </div>
+                                
                          <div className="col-6">
                                   {currentAdmin ? (
                                     <div className="text-end">
@@ -443,6 +442,11 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
                                 
                             </div>
         </div>
+        <SocialShareButtons 
+          url={productUrl} 
+          title={data.name} 
+          image={productImage}
+        />
 </div>
 </div>
 

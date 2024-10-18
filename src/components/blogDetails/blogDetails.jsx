@@ -9,6 +9,7 @@ import Loading from "../Loading/Loading";
 import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
 import sanitizeHtml from "sanitize-html";
+import BlogSocialShareButtons from './blogShareButton';
 
 const BlogDetails = () => {
   const [data, setData] = useState({});
@@ -19,6 +20,11 @@ const BlogDetails = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [activeItem, setActiveItem] = useState("Item 1");
+  const [blogUrl, setBlogUrl] = useState("");
+
+useEffect(() => {
+  setBlogUrl(window.location.href);
+}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -153,6 +159,19 @@ const BlogDetails = () => {
                                   rel="canonical"
                                   href={`https://elonatech.com.ng/product/${id}`}
                                 />
+
+                                {/* Open Graph Meta Tags */}
+                                <meta property="og:title" content={data.title} />
+                                <meta property="og:description" content={sanitizeHtml(html, { allowedTags: [] })} />
+                                <meta property="og:image" content={data.cloudinary_id} />
+                                <meta property="og:url" content={blogUrl} />
+                                <meta property="og:type" content="article" />
+                                
+                                {/* Twitter Card Meta Tags */}
+                                <meta name="twitter:card" content="summary_large_image" />
+                                <meta name="twitter:title" content={data.title} />
+                                <meta name="twitter:description" content={sanitizeHtml(html, { allowedTags: [] })} />
+                                <meta name="twitter:image" content={data.cloudinary_id} />
                               </Helmet>
 
                               <img
@@ -202,6 +221,11 @@ const BlogDetails = () => {
                               <div></div>
                             )}
                           </div>
+                          <BlogSocialShareButtons 
+                            url={blogUrl} 
+                            title={data.title}
+                            image={data.cloudinary_id}
+                          />
                         </div>
                       </div>
                       <div
