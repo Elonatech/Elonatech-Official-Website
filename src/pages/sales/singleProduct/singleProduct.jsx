@@ -242,10 +242,10 @@ const ProductSection = ({ title, products }) => (
 const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
     
     const productImage = image.length > 0 
-        ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech-official-website.vercel.app${image[0].url}`)
-        : 'https://elonatech-official-website.vercel.app/default-product-image.jpg';
+        ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech.com.ng${image[0].url}`)
+        : 'https://elonatech.com.ng/default-product-image.jpg';
 
-    const productUrl = `https://elonatech-official-website.vercel.app/product/${id}`;
+    const productUrl = `https://elonatech.com.ng/product/${id}`;
 
     const structuredData = {
         "@context": "https://schema.org/",
