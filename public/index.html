@@ -35,13 +35,22 @@
   background: none !important;
 }
 
-.unselectable {
+<!-- .unselectable {
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  }
+} -->
+
+/* For admin users */
+.selectable {
+  -webkit-user-select: text;
+  -webkit-touch-callout: default;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
 </style>
 
 
