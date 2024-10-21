@@ -31,7 +31,7 @@ const OfficeFilter = ({ setFilteredProducts }) => {
         setFilteredProducts(data.data);
         
         // Use Set to ensure unique brands
-        const availableBrands = [...new Set(data.data.map((product) => product.brand))];
+        const availableBrands = [...new Set(data.data.map((product) => product.brand.toUpperCase()))];
         setBrands(availableBrands); // Set unique brands
       })
       .catch((error) => console.error("Error fetching initial data:", error));

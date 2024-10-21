@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASEURL } from "../../../BaseURL/BaseURL";
-import { Link } from "react-router-dom";
 import Slider from "@mui/material/Slider";
 
 const ShopFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
     brand: [],
-    price: [0, 1000000]
+    price: [0, 1000000],
   });
 
   const [brands, setBrands] = useState([]);
@@ -21,18 +20,13 @@ const ShopFilter = ({ setFilteredProducts }) => {
         if (response.data.success) {
           const { brands: fetchedBrands, minPrice, maxPrice } = response.data;
 
-          // Normalize and remove duplicate brands
+          // Normalize, remove duplicates, and convert to uppercase
           const normalizedBrands = fetchedBrands.map((brand) =>
-            brand.trim().toLowerCase()
+            brand.trim().toUpperCase()
           );
           const uniqueBrands = [...new Set(normalizedBrands)];
-          const displayBrands = uniqueBrands.map((uniqueBrand) =>
-            fetchedBrands.find(
-              (brand) => brand.trim().toLowerCase() === uniqueBrand
-            )
-          );
 
-          setBrands(displayBrands);
+          setBrands(uniqueBrands);
           setDefaultPriceRange([minPrice, maxPrice]);
           setPriceRange([minPrice, maxPrice]);
         }
@@ -46,7 +40,7 @@ const ShopFilter = ({ setFilteredProducts }) => {
     // Clear the selected brands
     setFilters((prevFilters) => ({
       ...prevFilters,
-      brand: []
+      brand: [],
     }));
 
     // Clear filtered products
@@ -61,7 +55,6 @@ const ShopFilter = ({ setFilteredProducts }) => {
     setFilters((prevFilters) => ({ ...prevFilters, brand: updatedBrands }));
     await applyFilters(updatedBrands, filters.price);
   };
-
 
   const handleInputChange = (e, index) => {
     const rawValue = e.target.value.replace(/,/g, ""); // Remove commas
@@ -93,34 +86,32 @@ const ShopFilter = ({ setFilteredProducts }) => {
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
     setFilters((prevFilters) => ({ ...prevFilters, price: defaultPriceRange }));
-     setFilteredProducts([]);
+    setFilteredProducts([]);
   };
 
-
   const applyFilters = async (brands, price) => {
-  try {
-    const formattedBrands = brands.map((brand) => brand.trim()).join(",");
+    try {
+      const formattedBrands = brands.map((brand) => brand.trim().toUpperCase()).join(",");
 
-    const params = {
-      brand: formattedBrands || undefined,
-    };
+      const params = {
+        brand: formattedBrands || undefined,
+      };
 
-    // If the user has specified a price range, add it to the query
-    if (price[0] !== defaultPriceRange[0] || price[1] !== defaultPriceRange[1]) {
-      params.minPrice = price[0];
-      params.maxPrice = price[1];
+      // If the user has specified a price range, add it to the query
+      if (price[0] !== defaultPriceRange[0] || price[1] !== defaultPriceRange[1]) {
+        params.minPrice = price[0];
+        params.maxPrice = price[1];
+      }
+
+      const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`, { params });
+
+      if (response.data.success) {
+        setFilteredProducts(response.data.data);
+      }
+    } catch (error) {
+      console.error("Error filtering products:", error);
     }
-
-    const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`, { params });
-
-    if (response.data.success) {
-      setFilteredProducts(response.data.data);
-    }
-  } catch (error) {
-    console.error("Error filtering products:", error);
-  }
-};
-
+  };
 
   const formatPrice = (value) => {
     return value === "" || value === 0
@@ -136,8 +127,6 @@ const ShopFilter = ({ setFilteredProducts }) => {
     <div className="">
       {/* Filter by Brand */}
       <div style={{ maxHeight: "200px", overflowY: "scroll" }}>
-        {" "}
-        {/* Adjusted height */}
         {brands
           .sort((a, b) => a.localeCompare(b)) // Sort brands alphabetically
           .map((brand) => (
@@ -165,7 +154,6 @@ const ShopFilter = ({ setFilteredProducts }) => {
 
       {/* Filter by Price */}
       <div className="price-filter">
-        <div className="col col-flex"></div>
         <h4>Filter by Price(₦)</h4>
         <Slider
           className="slider"

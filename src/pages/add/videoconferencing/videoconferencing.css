@@ -50,8 +50,14 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .videoconferencing-section {
-      height: 108px; /* Adjusted height for mobile */
-      background-size: contain;
+      height: 200px;
+      background-image: linear-gradient(
+		  0deg,
+		  rgba(0, 0, 0, 0.5),
+		  rgba(0, 0, 0, 0.5)
+		),
+		url('https://res.cloudinary.com/elonatech/image/upload/v1729523990/Videoconference-_mobile-view_cyuxpp.png');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
@@ -69,14 +75,14 @@
       margin-bottom: 3px;
       line-height: 1.1;
       font-weight: 200;
-      display: none;
+      /* display: none; */
     }
   
     .videoconferencing-section p {
       font-size: 0.9rem;
       line-height: 1.2; /* Adjusted line-height for mobile */
       margin-bottom: 0;
-      display: none;
+      /* display: none; */
     }
   
     .videoconferencing-section h2,

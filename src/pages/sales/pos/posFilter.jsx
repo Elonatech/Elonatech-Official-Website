@@ -29,7 +29,7 @@ const PosFilter = ({ setFilteredProducts }) => {
         }
         
         // Extract unique brands from the fetched data
-        const uniqueBrands = [...new Set(data.data.map(product => product.brand))];
+        const uniqueBrands = [...new Set(data.data.map(product => product.brand.toUpperCase()))];
         setAvailableBrands(uniqueBrands);
 
         setFilteredProducts(data.data);

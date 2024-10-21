@@ -397,12 +397,12 @@ const Company = () => {
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png"  className='img-fluid lazyload' alt="" />
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png"  className='img-fluid lazyload taanet' alt="" />
               </div>
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload' alt="" />
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload vivon' alt="" />
               </div>
             </div>
             <div className="col-md-2 col-6">
@@ -410,13 +410,18 @@ const Company = () => {
               <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707753249/homePage/clientLogo/diva_cakes_betw0b.png"  className='img-fluid lazyload' alt="" />
               </div>
             </div>
+    </div>
+    </div>
+
+    <div className="col-12 mb-3">
+    <div className="row  wow fadeInRight" data-wow-delay="0.9s" >
             <div className="col-md-2 col-6">
               <div className="card border-0">
               <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707753250/homePage/clientLogo/cathenet_lgod6k.png"  className='img-fluid lazyload' alt="" />
               </div>
             </div>
     </div>
-    </div>  
+    </div>    
     </div>
 </div>
 </>

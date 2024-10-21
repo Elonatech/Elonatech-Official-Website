@@ -9,7 +9,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
     portSpeed: "",
     price: [0, 1000000],
   });
-  const [brands, setBrands] = useState([]); // State to store available brands
+  const [brands, setBrands] = useState([]);
   const [noResultsMessage, setNoResultsMessage] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
@@ -30,13 +30,13 @@ const NetworkFilter = ({ setFilteredProducts }) => {
         }
         setFilteredProducts(data.data);
         
-        // Use Set to ensure unique brands
-        const availableBrands = [...new Set(data.data.map((product) => product.brand))];
-        setBrands(availableBrands); // Set unique brands
+        // Enhanced brand deduplication
+        const uniqueBrands = Array.from(new Set(data.data.map(product => product.brand.toUpperCase().trim())))
+          .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+        setBrands(uniqueBrands);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
   }, [setFilteredProducts]);
-  
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
@@ -74,10 +74,10 @@ const NetworkFilter = ({ setFilteredProducts }) => {
   const applyFilters = (updatedFilters) => {
     let queryParams = [];
     if (updatedFilters.type) {
-      queryParams.push(`type=${updatedFilters.type.toLowerCase()}`);
+      queryParams.push(`type=${updatedFilters.type}`);
     }
     if (updatedFilters.brand) {
-      queryParams.push(`brand=${updatedFilters.brand.replace(/\s+/g, "").toLowerCase()}`);
+      queryParams.push(`brand=${encodeURIComponent(updatedFilters.brand)}`);
     }
     if (updatedFilters.portSpeed) {
       queryParams.push(`portSpeed=${updatedFilters.portSpeed.replace(/\D/g, "")}`);
@@ -124,7 +124,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
       <form>
         {/* Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          <label className="form-label">Brand:</label>
+          {/* <label className="form-label">Brand:</label> */}
           <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
             {brands.length > 0 ? (
               brands.map((brand) => (

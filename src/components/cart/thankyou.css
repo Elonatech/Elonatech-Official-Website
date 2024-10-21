@@ -62,11 +62,17 @@
  /* Mobile view */
  @media (max-width: 576px) {
    .order-confirmation-section {
-     height: 108px; /* Fixed height for mobile */
-     background-size: contain;
-     flex-direction: column;
-     align-items: center;
-     padding-top: 50px;
+    min-height: 200px; 
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1729523985/thank_you_for_shopping_with_us_akdpaa.jpg');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
    }
  
    /* Adjusting text for mobile view */
@@ -81,7 +87,7 @@
      font-size: 0.9rem;
      line-height: 1.1;
      margin-bottom: 0;
-     display: none; /* Hide on mobile if not used */
+     /* display: none;  */
    }
  
    .order-confirmation-section h2,

@@ -31,7 +31,7 @@ const PrinterFilter = ({ setFilteredProducts }) => {
           }));
         }
         
-        const availableBrands = [...new Set(data.data.map((product) => product.brand))];
+        const availableBrands = [...new Set(data.data.map((product) => product.brand.toUpperCase()))];
         setBrands(availableBrands);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
