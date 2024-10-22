@@ -140,6 +140,8 @@ const SingleProduct = () => {
           setComputer(res.data.product.computerProperty);
           setIsLoading(true);
 
+          document.title = `${res.data.product.name} - Elonatech Nigeria Limited`;
+
   
           // Fetch next product
           const nextRes = await axios.get(`${BASEURL}/api/v1/product/${id}/next`);
@@ -238,66 +240,67 @@ const ProductSection = ({ title, products }) => (
 
     const { addItem } = useCart();
 
-// Sanitize Html for description
-const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
-    
-    const productImage = image.length > 0 
-        ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech.com.ng${image[0].url}`)
-        : 'https://elonatech.com.ng/default-product-image.jpg';
+    const getMetaTags = () => {
+      const productImage = image.length > 0 
+          ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech.com.ng${image[0].url}`)
+          : 'https://elonatech.com.ng/default-product-image.jpg';
+      
+      const productUrl = `https://elonatech.com.ng/product/${id}`;
+      const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
 
-    const productUrl = `https://elonatech.com.ng/product/${id}`;
-
-    const structuredData = {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": data.name,
-        "image": productImage,
-        "description": sanitizedDescription,
-        "brand": {
-            "@type": "Brand",
-            "name": data.brand
-        },
-        "offers": {
-            "@type": "Offer",
-            "url": productUrl,
-            "priceCurrency": "NGN",
-            "price": data.price,
-            "availability": data.quantity > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
-        }
-    };
-
-    console.log("Product Image URL:", productImage);
+      return {
+          title: `${data.name} - Elonatech Nigeria Limited`,
+          description: sanitizedDescription,
+          image: productImage,
+          url: productUrl
+      };
+  };
 
     return (
     <>
 
-    <Helmet>
-                <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
-                <meta name="description" content={sanitizedDescription} />
-                <link rel="canonical" href={productUrl} />
+<Helmet>
+                {/* Basic Meta Tags */}
+                <title>{getMetaTags().title}</title>
+                <meta name="description" content={getMetaTags().description} />
+                <link rel="canonical" href={getMetaTags().url} />
                 
                 {/* Preload critical image */}
-                <link rel="preload" href={productImage} as="image" />
+                <link rel="preload" href={getMetaTags().image} as="image" />
                 
                 {/* Open Graph Meta Tags */}
-                <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-                <meta property="og:description" content={sanitizedDescription} />
-                <meta property="og:image" content={productImage} />
-                <meta property="og:image:secure_url" content={productImage} />
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
-                <meta property="og:url" content={productUrl} />
+                <meta property="og:title" content={getMetaTags().title} />
+                <meta property="og:description" content={getMetaTags().description} />
+                <meta property="og:image" content={getMetaTags().image} />
+                <meta property="og:url" content={getMetaTags().url} />
                 <meta property="og:type" content="product" />
                 
                 {/* Twitter Card Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-                <meta name="twitter:description" content={sanitizedDescription} />
-                <meta name="twitter:image" content={productImage} />
+                <meta name="twitter:title" content={getMetaTags().title} />
+                <meta name="twitter:description" content={getMetaTags().description} />
+                <meta name="twitter:image" content={getMetaTags().image} />
 
-                {/* Structured Data */}
+                {/* Product Schema */}
                 <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
+                    {JSON.stringify({
+                        "@context": "https://schema.org/",
+                        "@type": "Product",
+                        "name": data.name,
+                        "image": getMetaTags().image,
+                        "description": getMetaTags().description,
+                        "brand": {
+                            "@type": "Brand",
+                            "name": data.brand
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "url": getMetaTags().url,
+                            "priceCurrency": "NGN",
+                            "price": data.price,
+                            "availability": data.quantity > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+                        }
+                    })}
                 </script>
             </Helmet>
 

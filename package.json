@@ -21,6 +21,7 @@
     "eslint-plugin-disable": "^2.0.3",
     "jquery": "^3.7.0",
     "moment": "^2.29.4",
+    "next": "^15.0.0",
     "oaf-react-router": "^4.1.0",
     "primereact": "^10.2.1",
     "rc-slider": "^11.1.6",
