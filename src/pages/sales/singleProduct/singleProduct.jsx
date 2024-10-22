@@ -147,7 +147,7 @@ const SingleProduct = () => {
           existingMetaTags.forEach(tag => tag.remove());
           
           const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = response.data.metaTags;
+          tempDiv.innerHTML = res.data.metaTags;
           tempDiv.querySelectorAll('meta').forEach(tag => head.appendChild(tag));
 
   
