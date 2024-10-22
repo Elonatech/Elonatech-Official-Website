@@ -111,7 +111,6 @@ const SingleProduct = () => {
     const [image, setImage] = useState([]);
     const [recentlyViewed, setRecentlyViewed] = useState([]);
     const { id } = useParams();
-    const baseUrl = process.env.REACT_APP_BASE_URL || 'https://elonatech-official-website.vercel.app/';
     const [relatedProducts, setRelatedProducts] = useState([]);
     const [nextProductId, setNextProductId] = useState(null);
     const [product, setProduct] = useState(null);
@@ -137,17 +136,17 @@ const SingleProduct = () => {
     const fetchData = async () => {
         try {
           const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
-          setProduct(res.data.product);
-          setMetaData({
-            title: response.data.title,
-            metaTags: response.data.metaTags,
-            jsonLd: response.data.jsonLd
-          });
           setData(res.data.product);
+          setProduct(res.data.product);
           setImage(res.data.product.images);
           setCategory(res.data.product.category);
           setComputer(res.data.product.computerProperty);
           setIsLoading(true);
+          setMetaData({
+            title: res.data.title || 'Elonatech Product',
+            metaTags: res.data.metaTags || {},
+            jsonLd: res.data.jsonLd || {}
+        });
 
   
           // Fetch next product
@@ -167,7 +166,6 @@ const SingleProduct = () => {
     fetchData();
 }, [id]);
 
-if (!product || !metaData) return null;
 
 useEffect(() => {
   const storedRecentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
@@ -248,64 +246,60 @@ const ProductSection = ({ title, products }) => (
 
     const { addItem } = useCart();
 
-    // if (!product) return null;
+// Sanitize Html for description
+const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
+    
+    const productImage = image.length > 0 
+        ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech.com.ng${image[0].url}`)
+        : 'https://elonatech.com.ng/default-product-image.jpg';
 
-    // const sanitizedDescription = sanitizeHtml(product.description, {
-    //   allowedTags: ['strong', 'p', 'br'],
-    //   allowedAttributes: {}
-    // });
-  
-    // const productImage = product.images?.[0]?.url 
-    //   ? new URL(product.images[0].url, baseUrl).toString()
-    //   : `${baseUrl}/default-product-image.jpg`;
-  
-    // const productUrl = `${baseUrl}/product/${id}`;
-    // const productTitle = `${product.name} - Elonatech Nigeria Limited`;
-  
-    // const structuredData = {
-    //   "@context": "https://schema.org/",
-    //   "@type": "Product",
-    //   "name": product.name,
-    //   "image": productImage,
-    //   "description": sanitizedDescription,
-    //   "brand": {
-    //     "@type": "Brand",
-    //     "name": product.brand
-    //   },
-    //   "offers": {
-    //     "@type": "Offer",
-    //     "url": productUrl,
-    //     "priceCurrency": "NGN",
-    //     "price": product.price,
-    //     "availability": product.quantity > 0 
-    //       ? "https://schema.org/InStock" 
-    //       : "https://schema.org/OutOfStock"
-    //   }
-    // };
+    const productUrl = `https://elonatech.com.ng/product/${id}`;
 
-    // console.log("Product Image URL:", productImage);
+    const structuredData = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": data.name,
+        "image": productImage,
+        "description": sanitizedDescription,
+        "brand": {
+            "@type": "Brand",
+            "name": data.brand
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": productUrl,
+            "priceCurrency": "NGN",
+            "price": data.price,
+            "availability": data.quantity > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+        }
+    };
+
+    console.log("Product Image URL:", productImage);
+    if (!product || !metaData) return null;
 
     return (
     <>
 
-      <Helmet>
-        {/* Title */}
-        <title>{metaData.title}</title>
+<Helmet>
+                {/* Title */}
+                <title>{metaData.title}</title>
 
-        {/* Meta Tags */}
-        {Object.entries(metaData.metaTags).map(([name, content]) => (
-          name.startsWith('og:') ? (
-            <meta key={name} property={name} content={content} />
-          ) : (
-            <meta key={name} name={name} content={content} />
-          )
-        ))}
+                {/* Meta Tags */}
+                {metaData.metaTags && Object.entries(metaData.metaTags).map(([name, content]) => (
+                    name.startsWith('og:') ? (
+                        <meta key={name} property={name} content={content} />
+                    ) : (
+                        <meta key={name} name={name} content={content} />
+                    )
+                ))}
 
-        {/* JSON-LD Script */}
-        <script type="application/ld+json">
-          {JSON.stringify(metaData.jsonLd)}
-        </script>
-      </Helmet>
+                {/* JSON-LD Script */}
+                {metaData.jsonLd && (
+                    <script type="application/ld+json">
+                        {JSON.stringify(metaData.jsonLd)}
+                    </script>
+                )}
+            </Helmet>
 
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid shop-section">
