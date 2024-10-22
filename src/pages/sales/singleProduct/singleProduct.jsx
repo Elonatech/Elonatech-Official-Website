@@ -115,6 +115,7 @@ const SingleProduct = () => {
     const [relatedProducts, setRelatedProducts] = useState([]);
     const [nextProductId, setNextProductId] = useState(null);
     const [product, setProduct] = useState(null);
+    const [metaData, setMetaData] = useState(null);
 
     const navigate = useNavigate();
   const location = useLocation();
@@ -137,6 +138,11 @@ const SingleProduct = () => {
         try {
           const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
           setProduct(res.data.product);
+          setMetaData({
+            title: response.data.title,
+            metaTags: response.data.metaTags,
+            jsonLd: response.data.jsonLd
+          });
           setData(res.data.product);
           setImage(res.data.product.images);
           setCategory(res.data.product.category);
@@ -161,6 +167,7 @@ const SingleProduct = () => {
     fetchData();
 }, [id]);
 
+if (!product || !metaData) return null;
 
 useEffect(() => {
   const storedRecentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
@@ -241,74 +248,62 @@ const ProductSection = ({ title, products }) => (
 
     const { addItem } = useCart();
 
-    if (!product) return null;
+    // if (!product) return null;
 
-    const sanitizedDescription = sanitizeHtml(product.description, {
-      allowedTags: ['strong', 'p', 'br'],
-      allowedAttributes: {}
-    });
+    // const sanitizedDescription = sanitizeHtml(product.description, {
+    //   allowedTags: ['strong', 'p', 'br'],
+    //   allowedAttributes: {}
+    // });
   
-    const productImage = product.images?.[0]?.url 
-      ? new URL(product.images[0].url, baseUrl).toString()
-      : `${baseUrl}/default-product-image.jpg`;
+    // const productImage = product.images?.[0]?.url 
+    //   ? new URL(product.images[0].url, baseUrl).toString()
+    //   : `${baseUrl}/default-product-image.jpg`;
   
-    const productUrl = `${baseUrl}/product/${id}`;
-    const productTitle = `${product.name} - Elonatech Nigeria Limited`;
+    // const productUrl = `${baseUrl}/product/${id}`;
+    // const productTitle = `${product.name} - Elonatech Nigeria Limited`;
   
-    const structuredData = {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": product.name,
-      "image": productImage,
-      "description": sanitizedDescription,
-      "brand": {
-        "@type": "Brand",
-        "name": product.brand
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": productUrl,
-        "priceCurrency": "NGN",
-        "price": product.price,
-        "availability": product.quantity > 0 
-          ? "https://schema.org/InStock" 
-          : "https://schema.org/OutOfStock"
-      }
-    };
+    // const structuredData = {
+    //   "@context": "https://schema.org/",
+    //   "@type": "Product",
+    //   "name": product.name,
+    //   "image": productImage,
+    //   "description": sanitizedDescription,
+    //   "brand": {
+    //     "@type": "Brand",
+    //     "name": product.brand
+    //   },
+    //   "offers": {
+    //     "@type": "Offer",
+    //     "url": productUrl,
+    //     "priceCurrency": "NGN",
+    //     "price": product.price,
+    //     "availability": product.quantity > 0 
+    //       ? "https://schema.org/InStock" 
+    //       : "https://schema.org/OutOfStock"
+    //   }
+    // };
 
-    console.log("Product Image URL:", productImage);
+    // console.log("Product Image URL:", productImage);
 
     return (
     <>
 
-<Helmet>
-        {/* Basic Meta Tags */}
-        <title>{productTitle}</title>
-        <meta name="description" content={sanitizedDescription.substring(0, 155)} />
-        <link rel="canonical" href={productUrl} />
-        
-        {/* Open Graph Meta Tags */}
-        <meta property="og:site_name" content="Elonatech Nigeria Limited" />
-        <meta property="og:title" content={productTitle} />
-        <meta property="og:description" content={sanitizedDescription.substring(0, 155)} />
-        <meta property="og:image" content={productImage} />
-        <meta property="og:image:secure_url" content={productImage} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:url" content={productUrl} />
-        <meta property="og:type" content="product" />
-        
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@elonatech" />
-        <meta name="twitter:title" content={productTitle} />
-        <meta name="twitter:description" content={sanitizedDescription.substring(0, 155)} />
-        <meta name="twitter:image" content={productImage} />
-        <meta name="twitter:creator" content="@elonatech" />
+      <Helmet>
+        {/* Title */}
+        <title>{metaData.title}</title>
 
-        {/* Structured Data */}
+        {/* Meta Tags */}
+        {Object.entries(metaData.metaTags).map(([name, content]) => (
+          name.startsWith('og:') ? (
+            <meta key={name} property={name} content={content} />
+          ) : (
+            <meta key={name} name={name} content={content} />
+          )
+        ))}
+
+        {/* JSON-LD Script */}
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {JSON.stringify(metaData.jsonLd)}
         </script>
       </Helmet>
 
