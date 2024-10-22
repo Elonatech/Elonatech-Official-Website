@@ -142,13 +142,11 @@ const SingleProduct = () => {
           setCategory(res.data.product.category);
           setComputer(res.data.product.computerProperty);
           setIsLoading(true);
-          const head = document.querySelector('head');
-          const existingMetaTags = head.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]');
-          existingMetaTags.forEach(tag => tag.remove());
-          
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = res.data.metaTags;
-          tempDiv.querySelectorAll('meta').forEach(tag => head.appendChild(tag));
+          setMetaData({
+            title: res.data.title,
+            metaTags: res.data.metaTags,
+            jsonLd: res.data.jsonLd
+        });
 
   
           // Fetch next product
@@ -282,9 +280,26 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
     return (
     <>
 
-      <Helmet>
-        <div dangerouslySetInnerHTML={{ __html: metaTags }} />
-      </Helmet>
+<Helmet>
+                {/* Title */}
+                <title>{metaData.title}</title>
+
+                {/* Meta Tags */}
+                {metaData.metaTags && Object.entries(metaData.metaTags).map(([name, content]) => (
+                    name.startsWith('og:') ? (
+                        <meta key={name} property={name} content={content} />
+                    ) : (
+                        <meta key={name} name={name} content={content} />
+                    )
+                ))}
+
+                {/* JSON-LD Script */}
+                {metaData.jsonLd && (
+                    <script type="application/ld+json">
+                        {JSON.stringify(metaData.jsonLd)}
+                    </script>
+                )}
+            </Helmet>
 
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid shop-section">
