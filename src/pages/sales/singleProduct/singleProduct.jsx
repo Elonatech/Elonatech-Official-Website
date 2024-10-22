@@ -113,8 +113,6 @@ const SingleProduct = () => {
     const { id } = useParams();
     const [relatedProducts, setRelatedProducts] = useState([]);
     const [nextProductId, setNextProductId] = useState(null);
-    const [product, setProduct] = useState(null);
-    const [metaData, setMetaData] = useState(null);
 
     const navigate = useNavigate();
   const location = useLocation();
@@ -137,16 +135,10 @@ const SingleProduct = () => {
         try {
           const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
           setData(res.data.product);
-          setProduct(res.data.product);
           setImage(res.data.product.images);
           setCategory(res.data.product.category);
           setComputer(res.data.product.computerProperty);
           setIsLoading(true);
-          setMetaData({
-            title: res.data.title,
-            metaTags: res.data.metaTags,
-            jsonLd: res.data.jsonLd
-        });
 
   
           // Fetch next product
@@ -275,30 +267,38 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
     };
 
     console.log("Product Image URL:", productImage);
-    if (!product || !metaData) return null;
 
     return (
     <>
 
-<Helmet>
-                {/* Title */}
-                <title>{metaData.title}</title>
+    <Helmet>
+                <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
+                <meta name="description" content={sanitizedDescription} />
+                <link rel="canonical" href={productUrl} />
+                
+                {/* Preload critical image */}
+                <link rel="preload" href={productImage} as="image" />
+                
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta property="og:description" content={sanitizedDescription} />
+                <meta property="og:image" content={productImage} />
+                <meta property="og:image:secure_url" content={productImage} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content={productUrl} />
+                <meta property="og:type" content="product" />
+                
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
+                <meta name="twitter:description" content={sanitizedDescription} />
+                <meta name="twitter:image" content={productImage} />
 
-                {/* Meta Tags */}
-                {metaData.metaTags && Object.entries(metaData.metaTags).map(([name, content]) => (
-                    name.startsWith('og:') ? (
-                        <meta key={name} property={name} content={content} />
-                    ) : (
-                        <meta key={name} name={name} content={content} />
-                    )
-                ))}
-
-                {/* JSON-LD Script */}
-                {metaData.jsonLd && (
-                    <script type="application/ld+json">
-                        {JSON.stringify(metaData.jsonLd)}
-                    </script>
-                )}
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
             </Helmet>
 
 {/*================================================================ header ==============================================*/}
