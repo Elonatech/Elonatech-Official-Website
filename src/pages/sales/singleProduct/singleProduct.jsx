@@ -142,11 +142,13 @@ const SingleProduct = () => {
           setCategory(res.data.product.category);
           setComputer(res.data.product.computerProperty);
           setIsLoading(true);
-          setMetaData({
-            title: res.data.title || 'Elonatech Product',
-            metaTags: res.data.metaTags || {},
-            jsonLd: res.data.jsonLd || {}
-        });
+          const head = document.querySelector('head');
+          const existingMetaTags = head.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]');
+          existingMetaTags.forEach(tag => tag.remove());
+          
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = response.data.metaTags;
+          tempDiv.querySelectorAll('meta').forEach(tag => head.appendChild(tag));
 
   
           // Fetch next product
@@ -280,26 +282,9 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
     return (
     <>
 
-<Helmet>
-                {/* Title */}
-                <title>{metaData.title}</title>
-
-                {/* Meta Tags */}
-                {metaData.metaTags && Object.entries(metaData.metaTags).map(([name, content]) => (
-                    name.startsWith('og:') ? (
-                        <meta key={name} property={name} content={content} />
-                    ) : (
-                        <meta key={name} name={name} content={content} />
-                    )
-                ))}
-
-                {/* JSON-LD Script */}
-                {metaData.jsonLd && (
-                    <script type="application/ld+json">
-                        {JSON.stringify(metaData.jsonLd)}
-                    </script>
-                )}
-            </Helmet>
+      <Helmet>
+        <div dangerouslySetInnerHTML={{ __html: metaTags }} />
+      </Helmet>
 
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid shop-section">
