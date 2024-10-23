@@ -60,6 +60,7 @@
   
     .getintouch-title {
       font-size: 1.2rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 1); 
     }
     .getintouch-background {
       width: 100%;

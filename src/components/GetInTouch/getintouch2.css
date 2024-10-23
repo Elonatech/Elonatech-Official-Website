@@ -24,16 +24,18 @@
     /* background: rgba(0, 0, 0, 0.5); */
   }
   
-  .getintouch-title {
-    color: white;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-  }
+.getintouch-title {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);  */
+}
   
   @media (max-width: 576px) {
     .getintouch-title {
       font-size: 1.2rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 1); 
     }
     .getintouch-background {
       width: 100%;
