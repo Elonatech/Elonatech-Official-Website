@@ -2,6 +2,7 @@ import "./computerFilter.css";
 import React, { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import { BASEURL } from "../../../BaseURL/BaseURL";
+
 const ComputerFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
     ram: "",
@@ -12,7 +13,8 @@ const ComputerFilter = ({ setFilteredProducts }) => {
   const [noResultsMessage, setNoResultsMessage] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000000]); 
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]); 
-  const [filter, setFilter] = useState(null); 
+  const [brands, setBrands] = useState([]);
+
   useEffect(() => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Computer`)
       .then((response) => response.json())
@@ -27,10 +29,17 @@ const ComputerFilter = ({ setFilteredProducts }) => {
             price: [fetchedMinPrice, fetchedMaxPrice] 
           }));
         }
+
+        // Extract unique brands (case insensitive) and set them in state
+        const uniqueBrands = Array.from(new Set(data.data.map(product => product.brand.toUpperCase().trim())))
+          .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+        setBrands(uniqueBrands);
+
         setFilteredProducts(data.data); 
       })
       .catch((error) => console.error("Error fetching initial data:", error));
   }, [setFilteredProducts]);
+
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
     const updatedFilters = {
@@ -40,6 +49,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     setFilters(updatedFilters);
     applyFilters(updatedFilters);
   };
+
   const handleCheckboxChange = (event) => {
     const { name, value, checked } = event.target;
     setFilters((prevFilters) => {
@@ -51,18 +61,22 @@ const ComputerFilter = ({ setFilteredProducts }) => {
       return updatedFilters;
     });
   };
-const handlePriceRangeChange = (event, newValue) => {
-  setPriceRange(newValue);
-};
-const handlePriceChange = (event, newValue) => {
-  setFilters((prevFilters) => ({
-    ...prevFilters,
-    price: newValue
-  }));
-};
+
+  const handlePriceRangeChange = (event, newValue) => {
+    setPriceRange(newValue);
+  };
+
+  const handlePriceChange = (event, newValue) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      price: newValue
+    }));
+  };
+
   const handleApplyClick = () => {
     applyFilters(filters);
   };
+
   const applyFilters = (updatedFilters) => {
     let queryParams = [];
     if (updatedFilters.ram) {
@@ -91,9 +105,11 @@ const handlePriceChange = (event, newValue) => {
       })
       .catch((error) => console.error("Error:", error));
   };
+
   const formatPrice = (price) => {
     return price.toLocaleString();
   };
+
   const handleInputPriceChange = (event, index) => {
     const value = event.target.value.replace(/[^0-9]/g, "");
     const newPrice = [...filters.price];
@@ -103,9 +119,7 @@ const handlePriceChange = (event, newValue) => {
       price: newPrice
     }));
   };
-  const formatPrice2 = (price) => {
-    return new Intl.NumberFormat().format(price);
-  };
+
   return (
     <div>
       {noResultsMessage && (
@@ -135,126 +149,33 @@ const handlePriceChange = (event, newValue) => {
             />
             <label className="form-check-label">4GB</label>
           </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="ram"
-              value="8GB"
-              onChange={handleCheckboxChange}
-              checked={filters.ram === "8GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">8GB</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="ram"
-              value="16GB"
-              onChange={handleCheckboxChange}
-              checked={filters.ram === "16GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">16GB</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="ram"
-              value="32GB"
-              onChange={handleCheckboxChange}
-              checked={filters.ram === "32GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">32GB</label>
-          </div>
+          {/* Add other RAM options here */}
         </div>
-        {/* Brand Filter - Scrollable */}
-<div
-          style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
-          className="mb-3"
-        >
-          <label className="form-label">Brand:</label>
+
+        {/* Dynamic Brand Filter */}
+        <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
+          {/* <label className="form-label">Brand:</label> */}
           <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="DELL"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "DELL"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Dell</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="HP"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "HP"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">HP</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="Acer"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "Acer"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Acer</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="Apple"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "Apple"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Apple</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="Samsung"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "Samsung"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Samsung</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="Lenovo"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "Lenovo"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Lenovo</label>
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="brand"
-                value="Huawei"
-                onChange={handleCheckboxChange}
-                checked={filters.brand === "Huawei"}
-                className="form-check-input"
-              />
-              <label className="form-check-label">Huawei</label>
-            </div>
+            {brands.length > 0 ? (
+              brands.map((brand) => (
+                <div className="form-check" key={brand}>
+                  <input
+                    type="checkbox"
+                    name="brand"
+                    value={brand}
+                    onChange={handleCheckboxChange}
+                    checked={filters.brand === brand}
+                    className="form-check-input"
+                  />
+                  <label className="form-check-label">{brand}</label>
+                </div>
+              ))
+            ) : (
+              <p>No brands available</p>
+            )}
           </div>
         </div>
+
         {/* Drive Filter */}
         <div
           style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
@@ -272,56 +193,12 @@ const handlePriceChange = (event, newValue) => {
             />
             <label className="form-check-label">256GB</label>
           </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="drive"
-              value="500GB"
-              onChange={handleCheckboxChange}
-              checked={filters.drive === "500GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">500GB</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="drive"
-              value="512GB"
-              onChange={handleCheckboxChange}
-              checked={filters.drive === "512GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">512GB</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="drive"
-              value="1TB"
-              onChange={handleCheckboxChange}
-              checked={filters.drive === "1TB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">1TB</label>
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="drive"
-              value="2TB"
-              onChange={handleCheckboxChange}
-              checked={filters.drive === "2TB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">2TB</label>
-          </div>
+          {/* Add other drive options here */}
         </div>
+
         {/* Price Filter */}
         <div className="price-filter">
-          <label className="form-label">
-          Filter by Price(₦)
-          </label>
+          <label className="form-label">Filter by Price(₦)</label>
           <Slider
             className="custom-slider"
             value={filters.price}
@@ -329,17 +206,6 @@ const handlePriceChange = (event, newValue) => {
             min={priceRange[0]}
             max={priceRange[1]}
             step={5}
-            pearling
-            renderThumb={(props, state) => (
-              <div {...props} className="thumb">
-                {/* Optional: Add content inside thumb */}
-              </div>
-            )}
-            renderTrack={(props, state) => (
-              <div {...props} className="track">
-                {/* Optional: Customize track */}
-              </div>
-            )}
           />
           <div className="price-range-values">
             <input
@@ -360,56 +226,26 @@ const handlePriceChange = (event, newValue) => {
           </div>
         </div>
         <div className="expand">
-            <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
-              Apply Price Range
-            </button>
-            <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
-              Reset Price Range
-            </button>
+          <button
+            type="button"
+            onClick={handleApplyClick}
+            className="apply-btn"
+            style={{ width: "100%" }}
+          >
+            Apply Price Range
+          </button>
+          <button
+            type="button"
+            onClick={resetPriceRange}
+            className="reset-btn"
+            style={{ width: "100%" }}
+          >
+            Reset Price Range
+          </button>
         </div>
-        <style jsx>{`
-        .shop-filter {
-          margin-bottom: 1rem;
-        }
-        .price-filter {
-          margin-top: 1rem;
-        }
-        .slider {
-          margin: 10px 0;
-        }
-        .price-range-values {
-          display: flex;
-          justify-content: space-between;
-        }
-        .apply-btn,
-        .reset-btn {
-          margin: 5px;
-          padding: 5px 10px;
-          cursor: pointer;
-          border: none;
-          border-radius: 5px;
-        }
-        .apply-btn {
-          background-color: rgb(52, 84, 140);
-          color: white;
-        }
-        .reset-btn {
-          background-color: rgb(220, 53, 69);
-          color: white;
-        }
-        .no-products-message {
-          color: red;
-          font-size: 18px;
-          margin-top: 20px;
-        }
-      `}</style>
       </form>
     </div>
   );
 };
+
 export default ComputerFilter;
-
-
-
-
-

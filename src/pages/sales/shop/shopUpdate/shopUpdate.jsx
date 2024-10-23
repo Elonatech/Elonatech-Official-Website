@@ -187,16 +187,21 @@ const ShopUpdate = () => {
   return (
     <>
       <div
-        class="container-fluid bg-dark py-5 "
+        class="container-fluid  py-5 "
         style={{
           height: "500px",
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url()`,
+          background: "#11253d",
+          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1726158347/Shop-banner-test_wgekev.png)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover"
         }}
       >
-        <div class="py-5 mt-5 "></div>
+        <div class="py-5 mt-5 ">
+          <h2 class=" mt-5 text-white text-center">Product Update</h2>
+          <h5 class=" mt-4 text-white text-center"></h5>
+          <p class="lead text-white text-center"></p>
+        </div>
       </div>
       <div
         className=" container bg-size mt-5 mb-5 "

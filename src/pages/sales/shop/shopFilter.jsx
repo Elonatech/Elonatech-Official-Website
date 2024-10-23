@@ -6,7 +6,7 @@ import Slider from "@mui/material/Slider";
 const ShopFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
     brand: [],
-    price: [0, 1000000],
+    price: [0, 1000000000],
   });
 
   const [brands, setBrands] = useState([]);
@@ -144,13 +144,13 @@ const ShopFilter = ({ setFilteredProducts }) => {
           ))}
       </div>
 
-      <button
+      {/* <button
         style={{ width: "100%" }}
         onClick={resetBrands}
         className="reset-btn"
       >
         Reset Brand
-      </button>
+      </button> */}
 
       {/* Filter by Price */}
       <div className="price-filter">

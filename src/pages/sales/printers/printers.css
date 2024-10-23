@@ -254,3 +254,46 @@
     font-size: 22.86px;
     font-weight: bold;
   }
+
+
+
+  .add-to-cart {
+    background-color: white;
+    border: 1px solid #a9abae;
+    transition: background-color 0.3s; 
+  }
+  
+  .add-to-cart:hover {
+    background-color: #a9abae;
+  }
+  
+
+
+  .showbutton {
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .take {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  
+  .lazyload {
+    max-width: 100%;
+    max-height: 150px; 
+  }
+  
+  .product-name {
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: nowrap; 
+  }
+  
+  .stars {
+    font-size: 1.2em;
+  }

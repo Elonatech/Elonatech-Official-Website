@@ -364,7 +364,7 @@ const Main = () => {
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload' alt="" />
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload' alt="" style={{width: "150px", height: "150px", marginLeft: "30px"}} />
               </div>
             </div>
             <div className="col-md-2 col-6">
@@ -377,15 +377,28 @@ const Main = () => {
               <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707753250/homePage/clientLogo/cathenet_lgod6k.png"  className='img-fluid lazyload' alt="" />
               </div>
             </div>
-            <div className="col-md-2 col-6">
+            {/* <div className="col-md-2 col-6">
               <div className="card border-0">
               <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png"  className='img-fluid lazyload' alt="" />
               </div>
-            </div>
+            </div> */}
           </div>
     </div>
     </div>
   </div>
+
+  <div class="carousel-item">
+  <div className="container">
+    <div className="row">
+      <div className="col-md-2 col-6">
+        <div className="card border-0">
+          <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png" className='img-fluid lazyload' alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>

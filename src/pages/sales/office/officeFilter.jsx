@@ -73,28 +73,29 @@ const OfficeFilter = ({ setFilteredProducts }) => {
   const applyFilters = (updatedFilters) => {
     let queryParams = [];
     if (updatedFilters.brand) {
-      queryParams.push(`brand=${updatedFilters.brand.replace(/\s+/g, "").toLowerCase()}`);
+        queryParams.push(`brand=${encodeURIComponent(updatedFilters.brand.toLowerCase())}`);
     }
     if (updatedFilters.type) {
-      queryParams.push(`type=${updatedFilters.type.toLowerCase()}`);
+        queryParams.push(`type=${updatedFilters.type.toLowerCase()}`);
     }
     if (
-      updatedFilters.price[0] !== defaultPriceRange[0] ||
-      updatedFilters.price[1] !== defaultPriceRange[1]
+        updatedFilters.price[0] !== defaultPriceRange[0] ||
+        updatedFilters.price[1] !== defaultPriceRange[1]
     ) {
-      queryParams.push(`minPrice=${updatedFilters.price[0]}`);
-      queryParams.push(`maxPrice=${updatedFilters.price[1]}`);
+        queryParams.push(`minPrice=${updatedFilters.price[0]}`);
+        queryParams.push(`maxPrice=${updatedFilters.price[1]}`);
     }
 
     const queryString = queryParams.length > 0 ? queryParams.join("&") : "";
     fetch(`${BASEURL}/api/v1/product/filter?category=Office&${queryString}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setFilteredProducts(data.data);
-        setNoResultsMessage(data.data.length === 0 ? "No products match your filter criteria." : "");
-      })
-      .catch((error) => console.error("Error:", error));
-  };
+        .then((response) => response.json())
+        .then((data) => {
+            setFilteredProducts(data.data);
+            setNoResultsMessage(data.data.length === 0 ? "No products match your filter criteria." : "");
+        })
+        .catch((error) => console.error("Error:", error));
+};
+
 
   const formatPrice = (price) => {
     return price.toLocaleString();

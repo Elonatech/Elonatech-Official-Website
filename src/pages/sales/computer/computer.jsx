@@ -203,47 +203,39 @@ const Computer = () => {
                                   alt=""
                                 />
                               </div>
-                              <h5 className="fw-normal pt-3">
+                              <h5 className="fw-normal pt-3 product-name">
                                 {product.name.slice(0, 23)}...
                               </h5>
                               <p className="lead fs-6">{product.category}</p>
-                              <div className="stars" style={{ color: "black" }}>
-                                <i
-                                  className="bi bi-star-fill"
-                                  style={{ color: "#f4be1d" }}
-                                ></i>
-                                <i
-                                  className="bi bi-star-fill"
-                                  style={{ color: "#f4be1d" }}
-                                ></i>
-                                <i
-                                  className="bi bi-star-fill"
-                                  style={{ color: "#f4be1d" }}
-                                ></i>
-                                <i
-                                  className="bi bi-star-fill"
-                                  style={{ color: "#f4be1d" }}
-                                ></i>
-                                <i
-                                  className="bi bi-star-half"
-                                  style={{ color: "#f4be1d" }}
-                                ></i>
+                              
+                              {/* Star Rating */}
+                              <div className="stars" style={{ color: "black", marginBottom: '10px' }}>
+                                {[...Array(5)].map((star, index) => {
+                                  return (
+                                    <i
+                                      key={index}
+                                      className={
+                                        index < Math.floor(5)
+                                          ? "bi bi-star-fill"
+                                          : "bi bi-star"
+                                      }
+                                      style={{ color: "#f4be1d" }}
+                                    ></i>
+                                  );
+                                })}
                               </div>
-                              <div class="d-flex justify-content-between">
-                              <p className='mt-2 px-1 text-danger'>₦ {Number(product.price).toLocaleString()}.00</p>
-                              <i class="bi bi-cart p-1" style={{fontSize:"20px" , cursor:"pointer"}}></i>
+                              
+                              <div className="d-flex justify-content-between">
+                                <p className='mt-2 px-1 text-danger'>
+                                  <strong>₦ {Number(product.price).toLocaleString()}.00</strong>
+                                </p>
+                                <i className="bi bi-cart p-1" style={{ fontSize: "20px", cursor: "pointer" }}></i>
                               </div>
-                                            
                             </Link>
-                            {/* <button
-                              style={{ color: "red", fontWeight: "bold" }}
-                              className="btn btn-outline-secondary btn-md w-100 rounded"
-                              onClick={() => addItem(product)}
-                            >
-                              Add to cart
-                            </button> */}
-                            <div class="d-grid gap-2" key={product.id}>
-                            <div class="btn btn-outline" style={{backgroundColor:"#a9abae"}} onClick={() => addItem(product)}	><h6 className='text-danger'>ADD TO CART</h6></div>
+                            <div className="d-grid gap-2" key={product.id}>
+                              <div className="btn btn-outline add-to-cart" onClick={() => addItem(product)}>
+                                <h6 className='text-danger'>ADD TO CART</h6>
+                              </div>
                             </div>
                           </div>
                         </div>
