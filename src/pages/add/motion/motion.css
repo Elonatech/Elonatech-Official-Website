@@ -78,8 +78,14 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .motion-graphics-section {
-      height: 108px; /* Adjusted height for mobile */
-      background-size: contain;
+      height: 200px; /* Adjusted height for mobile */
+      background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1729523984/Motion_Graphics_New_e19lwt.png');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
@@ -93,18 +99,18 @@
     }
   
     .motion-graphics-section h5 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-bottom: 3px;
       line-height: 1.1;
       font-weight: 200;
-      display: none;
+      /* display: none; */
     }
   
     .motion-graphics-section p {
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       line-height: 1.1;
       margin-bottom: 0;
-      display: none;
+      /* display: none; */
     }
   
     .motion-graphics-section h2,

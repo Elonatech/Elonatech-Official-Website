@@ -372,7 +372,7 @@ const NetworkDevices = () => {
                   style={{ marginTop: "-8px", marginBottom: "16px" }}
                   className="fw-bold"
                 >
-                  Sort Product by
+                  Sort Products by
                 </h4>
                 <NetworkFilter setFilteredProducts={setFilteredProducts} />
               </div>

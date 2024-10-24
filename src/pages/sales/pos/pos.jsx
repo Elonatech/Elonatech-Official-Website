@@ -362,7 +362,7 @@ const Pos = () => {
                   style={{ marginTop: "-8px", marginBottom: "16px" }}
                   className="fw-bold"
                 >
-                  Sort Product by
+                  Sort Products by
                 </h4>
                 <PosFilter setFilteredProducts={setFilteredProducts} />
               </div>

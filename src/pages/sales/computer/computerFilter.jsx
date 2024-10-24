@@ -132,29 +132,10 @@ const ComputerFilter = ({ setFilteredProducts }) => {
         </div>
       )}
       <form>
-        {/* RAM Filter */}
-        <div
-          style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
-          className="mb-3"
-        >
-          <label className="form-label">RAM:</label>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="ram"
-              value="4GB"
-              onChange={handleCheckboxChange}
-              checked={filters.ram === "4GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">4GB</label>
-          </div>
-          {/* Add other RAM options here */}
-        </div>
 
         {/* Dynamic Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          {/* <label className="form-label">Brand:</label> */}
+          <label className="form-label">Brand:</label>
           <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
             {brands.length > 0 ? (
               brands.map((brand) => (
@@ -174,6 +155,27 @@ const ComputerFilter = ({ setFilteredProducts }) => {
               <p>No brands available</p>
             )}
           </div>
+        </div>
+
+        
+        {/* RAM Filter */}
+        <div
+          style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
+          className="mb-3"
+        >
+          <label className="form-label">RAM:</label>
+          <div className="form-check">
+            <input
+              type="checkbox"
+              name="ram"
+              value="4GB"
+              onChange={handleCheckboxChange}
+              checked={filters.ram === "4GB"}
+              className="form-check-input"
+            />
+            <label className="form-check-label">4GB</label>
+          </div>
+          {/* Add other RAM options here */}
         </div>
 
         {/* Drive Filter */}

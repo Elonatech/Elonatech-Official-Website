@@ -121,7 +121,7 @@ const OfficeFilter = ({ setFilteredProducts }) => {
       <form>
         {/* Brand Filter */}
         <div className="filter-section">
-          {/* <label className="form-label">Brand:</label> */}
+          <label className="form-label">Brand:</label>
           <div className="scrollable-options">
             {brands.map((brand) => (
               <div className="form-check" key={brand}>

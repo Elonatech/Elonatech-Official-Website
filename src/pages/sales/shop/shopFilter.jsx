@@ -126,9 +126,10 @@ const ShopFilter = ({ setFilteredProducts }) => {
   return (
     <div className="">
       {/* Filter by Brand */}
+      <label className="form-label">Brand:</label>
       <div style={{ maxHeight: "200px", overflowY: "scroll" }}>
         {brands
-          .sort((a, b) => a.localeCompare(b)) // Sort brands alphabetically
+          .sort((a, b) => a.localeCompare(b))
           .map((brand) => (
             <div key={brand} className="text-dark">
               <input

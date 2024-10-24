@@ -114,6 +114,7 @@ const PosFilter = ({ setFilteredProducts }) => {
         {/* Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
           {/* Dynamically create the list of brands */}
+          <label className="form-label">Brand:</label>
           {availableBrands.map((brand) => (
             <div className="form-check" key={brand}>
               <input

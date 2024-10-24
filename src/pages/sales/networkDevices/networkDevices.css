@@ -202,8 +202,14 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .network-devices-section {
-      min-height: 108px;
-      background-size: contain;
+      min-height: 200px;
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523979/products_networking_mobile_ztoutd.jpg');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
@@ -221,14 +227,14 @@
       margin-bottom: 3px;
       line-height: 1.1;
       font-weight: 200;
-      display: none;
+      /* display: none; */
     }
   
     .network-devices-section p {
       font-size: 0.9rem;
       line-height: 1.1;
       margin-bottom: 0;
-      display: none;
+      /* display: none; */
     }
   
     .network-devices-section h2,

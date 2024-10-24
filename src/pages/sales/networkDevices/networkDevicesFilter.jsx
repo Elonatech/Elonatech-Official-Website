@@ -124,7 +124,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
       <form>
         {/* Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
-          {/* <label className="form-label">Brand:</label> */}
+          <label className="form-label">Brand:</label>
           <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
             {brands.length > 0 ? (
               brands.map((brand) => (

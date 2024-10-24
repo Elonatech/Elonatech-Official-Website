@@ -20,9 +20,9 @@ padding-left: 5rem;
 
 @media only screen and (max-width: 567px) {
     .carouselCard{
-       height: 152px;
+       height: 230px;
        color: white;
-       background-size: contain;
+       background-size: cover;
        background-position:  bottom;
        
        }
@@ -37,7 +37,7 @@ padding-left: 5rem;
           }
           .para {
             font-size: 14px;
-            display: none;
+            /* display: none; */
           }
           .cta {
             font-size: 10px;

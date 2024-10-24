@@ -56,8 +56,14 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .get-in-touch-section {
-      min-height: 135px;
-      background-size: contain;
+      min-height: 200px;
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523971/Customer_Service_New_y0ya5f.png');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
@@ -75,14 +81,14 @@
       margin-bottom: 3px;
       line-height: 1.1;
       font-weight: 200;
-      display: none;
+      /* display: none; */
     }
   
     .get-in-touch-section p {
       font-size: 0.9rem;
       line-height: 1.1;
       margin-bottom: 0;
-      display: none;
+      /* display: none; */
     }
   
     .get-in-touch-section h2,

@@ -37,7 +37,7 @@ const Shop = () => {
   };
 
   const formatPrice = (price) => {
-    return price.toLocaleString(); // Adds commas to the number
+    return price.toLocaleString(); 
   };
 
  useEffect(() => {
@@ -50,7 +50,7 @@ const Shop = () => {
        // Initially set all fetched products to both `data` and `records`
        setData(products);
        setRecords(products); // Show all products initially
-       setIsLoading(false); // Stop loading state
+       setIsLoading(false); 
      } catch (error) {
        console.error("Error fetching data:", error);
        setIsLoading(false);
@@ -432,7 +432,7 @@ const Shop = () => {
                 style={{ marginTop: "-8px", marginBottom: "16px" }}
                 class="fw-bold "
               >
-                Sort Product by
+                Sort Products by
               </h4>
               <ShopFilter setFilteredProducts={setFilteredProducts} />
             </div>

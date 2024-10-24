@@ -137,8 +137,14 @@
 /* Mobile view */
 @media (max-width: 576px) {
   .system-software-section {
-    height: 108px; /* Adjusted height for mobile */
-    background-size: contain;
+    height: 200px; /* Adjusted height for mobile */
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1729523984/System_software_mobile_l0muuk.jpg');
+    background-size: cover;
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
@@ -156,14 +162,14 @@
     margin-bottom: 3px;
     line-height: 1.1;
     font-weight: 200;
-    display: none; /* Hide h5 on mobile */
+    /* display: none; */
   }
 
   .system-software-section p {
-    font-size: 0.9rem;
-    line-height: 1.1;
+    font-size: 1.2rem;
+    line-height: 1.5;
     margin-bottom: 0;
-    display: none; /* Hide p on mobile */
+    /* display: none;  */
   }
 
   .system-software-section h2,

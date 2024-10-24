@@ -377,7 +377,7 @@ const Printers = () => {
 
               <div style={{ margin: "15px", width: "60%" }} className="filter-section p-2 rounded shadow-sm">
                   <h4 style={{ marginTop: "-8px", marginBottom: "16px" }} className="fw-bold">
-                    Sort Product by
+                    Sort Products by
                   </h4>
                   <PrinterFilter setFilteredProducts={setFilteredProducts} />
                 </div>

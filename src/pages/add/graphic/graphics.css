@@ -280,8 +280,14 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .graphic-design-section {
-      height: 108px; /* Adjusted height for mobile */
-      background-size: contain;
+      height: 200px; /* Adjusted height for mobile */
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523974/graphic_design_v0jrad.jpg');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
@@ -299,14 +305,14 @@
       margin-bottom: 3px;
       line-height: 1.1;
       font-weight: 200;
-      display: none;
+      /* display: none; */
     }
   
     .graphic-design-section p {
       font-size: 0.9rem;
       line-height: 1.1;
       margin-bottom: 0;
-      display: none;
+      /* display: none; */
     }
   
     .graphic-design-section h2,
