@@ -82,7 +82,7 @@
       font-size: 0.9rem;
       line-height: 1.2; /* Adjusted line-height for mobile */
       margin-bottom: 0;
-      /* display: none; */
+      display: none;
     }
   
     .videoconferencing-section h2,

@@ -189,9 +189,9 @@
     }
   
     .progress-circle .col-lg-3 {
-      flex: 0 0 calc(50% - 10px);
-      max-width: calc(50% - 10px);
-      margin: 5px;
+      flex: 0 0 calc(50% - -0px);
+      max-width: calc(50% - -0px);
+      /* margin: 5px; */
     }
   
     .mx-1.shadow-lg.p-3.bg-body.rounded.showbutton {
@@ -329,7 +329,7 @@
       font-size: 0.9rem;
       line-height: 1.1;
       margin-bottom: 0;
-      /* display: none; */
+      display: none;
     }
   
     .computers-section h2,
@@ -450,3 +450,10 @@
   .stars {
     font-size: 1.2em;
   }
+
+  .custom-container {
+    --bs-gutter-x: 0;
+    width: 100%;
+    padding-right: 3px;
+    padding-left: 3px;
+}

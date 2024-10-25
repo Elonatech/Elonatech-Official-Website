@@ -14,6 +14,68 @@ const ComputerFilter = ({ setFilteredProducts }) => {
   const [priceRange, setPriceRange] = useState([0, 1000000]); 
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]); 
   const [brands, setBrands] = useState([]);
+  const [rams, setRams] = useState([]); 
+  const [drives, setDrives] = useState([]); 
+
+  // Normalize RAM values
+  const normalizeRam = (ramString) => {
+    if (!ramString) return null;
+    
+    // Convert to uppercase and remove extra spaces
+    const ram = ramString.toUpperCase().trim();
+    
+    // Extract the number and standardize format
+    const match = ram.match(/(\d+)\s*(?:GB|G)?/i);
+    if (match) {
+      const number = match[1];
+      return `${number}GB RAM`;
+    }
+    return null;
+  };
+
+  // Normalize Drive values
+  const normalizeDrive = (driveString) => {
+    if (!driveString) return null;
+    
+    // Convert to uppercase and remove extra spaces
+    const drive = driveString.toUpperCase().trim();
+    
+    // Handle special cases first
+    if (drive.includes('PCIE') || drive.includes('RAM,')) {
+      return null;
+    }
+    
+    // Extract capacity and type
+    const matchSSD = drive.match(/(\d+)\s*(?:GB|G|TB|T)?\s*(?:SSD)?/i);
+    const matchHDD = drive.match(/(\d+)\s*(?:GB|G|TB|T)?\s*(?:HDD)?/i);
+    
+    if (matchSSD || matchHDD) {
+      const match = matchSSD || matchHDD;
+      const number = parseInt(match[1]);
+      const isTerabyte = drive.includes('TB') || drive.includes('T');
+      const capacityGB = isTerabyte ? number * 1024 : number;
+      
+      // Validate capacity ranges
+      // SSDs: typically 128GB to 4TB (4096GB)
+      // HDDs: typically 500GB to 18TB (18432GB)
+      const type = drive.includes('HDD') ? 'HDD' : 'SSD';
+      
+      if (type === 'SSD' && (capacityGB < 128 || capacityGB > 4096)) {
+        return null;
+      }
+      if (type === 'HDD' && (capacityGB < 500 || capacityGB > 18432)) {
+        return null;
+      }
+      
+      // Format the output
+      if (capacityGB >= 1024) {
+        return `${(capacityGB / 1024)}TB ${type}`;
+      }
+      return `${capacityGB}GB ${type}`;
+    }
+    
+    return null;
+  };
 
   useEffect(() => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Computer`)
@@ -30,10 +92,46 @@ const ComputerFilter = ({ setFilteredProducts }) => {
           }));
         }
 
-        // Extract unique brands (case insensitive) and set them in state
-        const uniqueBrands = Array.from(new Set(data.data.map(product => product.brand.toUpperCase().trim())))
+        // Extract and normalize unique brands
+        const uniqueBrands = Array.from(new Set(data.data
+          .map(product => product.brand.toUpperCase().trim())))
           .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
         setBrands(uniqueBrands);
+
+        // Extract and normalize unique RAMs
+        const uniqueRams = Array.from(new Set(data.data
+          .filter(product => product.computerProperty && 
+                           product.computerProperty[0] && 
+                           product.computerProperty[0].ram)
+          .map(product => normalizeRam(product.computerProperty[0].ram))
+          .filter(ram => ram !== null))) // Remove null values
+          .sort((a, b) => {
+            // Sort by RAM size numerically
+            const aSize = parseInt(a.match(/\d+/)[0]);
+            const bSize = parseInt(b.match(/\d+/)[0]);
+            return aSize - bSize;
+          });
+        setRams(uniqueRams);
+
+        // Extract and normalize unique drives
+        const uniqueDrives = Array.from(new Set(data.data
+          .filter(product => product.computerProperty && 
+                           product.computerProperty[0] && 
+                           product.computerProperty[0].drive)
+          .map(product => normalizeDrive(product.computerProperty[0].drive))
+          .filter(drive => drive !== null))) // Remove null values
+          .sort((a, b) => {
+            // Sort by drive size and type
+            const aMatch = a.match(/(\d+)(TB|GB)/);
+            const bMatch = b.match(/(\d+)(TB|GB)/);
+            if (aMatch && bMatch) {
+              const aSize = parseInt(aMatch[1]) * (aMatch[2] === 'TB' ? 1000 : 1);
+              const bSize = parseInt(bMatch[1]) * (bMatch[2] === 'TB' ? 1000 : 1);
+              return aSize - bSize;
+            }
+            return a.localeCompare(b);
+          });
+        setDrives(uniqueDrives);
 
         setFilteredProducts(data.data); 
       })
@@ -133,7 +231,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
       )}
       <form>
 
-        {/* Dynamic Brand Filter */}
+        {/* Brand Filter */}
         <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
           <label className="form-label">Brand:</label>
           <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
@@ -157,25 +255,31 @@ const ComputerFilter = ({ setFilteredProducts }) => {
           </div>
         </div>
 
-        
         {/* RAM Filter */}
         <div
           style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
           className="mb-3"
         >
           <label className="form-label">RAM:</label>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="ram"
-              value="4GB"
-              onChange={handleCheckboxChange}
-              checked={filters.ram === "4GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">4GB</label>
+          <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
+            {rams.length > 0 ? (
+              rams.map((ram) => (
+                <div className="form-check" key={ram}>
+                  <input
+                    type="checkbox"
+                    name="ram"
+                    value={ram}
+                    onChange={handleCheckboxChange}
+                    checked={filters.ram === ram}
+                    className="form-check-input"
+                  />
+                  <label className="form-check-label">{ram}</label>
+                </div>
+              ))
+            ) : (
+              <p>No RAM options available</p>
+            )}
           </div>
-          {/* Add other RAM options here */}
         </div>
 
         {/* Drive Filter */}
@@ -184,18 +288,25 @@ const ComputerFilter = ({ setFilteredProducts }) => {
           className="mb-3"
         >
           <label className="form-label">Drive:</label>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              name="drive"
-              value="256GB"
-              onChange={handleCheckboxChange}
-              checked={filters.drive === "256GB"}
-              className="form-check-input"
-            />
-            <label className="form-check-label">256GB</label>
+          <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
+            {drives.length > 0 ? (
+              drives.map((drive) => (
+                <div className="form-check" key={drive}>
+                  <input
+                    type="checkbox"
+                    name="drive"
+                    value={drive}
+                    onChange={handleCheckboxChange}
+                    checked={filters.drive === drive}
+                    className="form-check-input"
+                  />
+                  <label className="form-check-label">{drive}</label>
+                </div>
+              ))
+            ) : (
+              <p>No drive options available</p>
+            )}
           </div>
-          {/* Add other drive options here */}
         </div>
 
         {/* Price Filter */}

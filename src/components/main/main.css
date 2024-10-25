@@ -52,7 +52,12 @@
   }
 }
 
-
+.custom-container {
+  --bs-gutter-x: 0;
+  width: 100%;
+  padding-right: 3px;
+  padding-left: 3px;
+}
 
 
 

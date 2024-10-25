@@ -223,11 +223,11 @@ const Main = () => {
 </div>
 
 {/*==============================================================  Services =============================================================== */}
-<div className="container mt-">
+
 <Serve />
-</div>
+
 {/*============================================================ Our clients ================================================================ */}
-<div className="container mt-5 mb-5">
+<div className="container mt-5 mb-5 custom-container">
 <h2 className='text-center fw-bold'>Some Of Our Clients</h2>
 <div style={{backgroundColor:"#dc3545", height:"2px", width:"80px", margin:"auto"}}></div>
 <div id="carouselExampleControls" class="carousel slide mt-5" data-bs-ride="carousel"> 

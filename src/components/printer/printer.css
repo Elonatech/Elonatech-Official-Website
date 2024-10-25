@@ -90,7 +90,7 @@ background-color: rgba(0, 0, 0, 0.7);
     font-size: 0.9rem;
     line-height: 1.1;
     margin-bottom: 0;
-    /* display: none; */
+    display: none;
   }
 
   .printer-repair-section h2,

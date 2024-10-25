@@ -115,7 +115,7 @@
       font-size: 0.9rem;
       line-height: 1.1;
       margin-bottom: 0;
-      /* display: none; */
+      display: none;
     }
   
     .cctv-section h2,

@@ -56,9 +56,9 @@
   
     .live-streaming-section p {
       font-size: 0.9rem;
-      line-height: 1.2; /* Adjusted line-height for mobile */
+      line-height: 1.2; 
       margin-bottom: 0;
-      /* display: none; */
+      display: none;
     }
   
     .live-streaming-section h2,

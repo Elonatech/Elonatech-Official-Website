@@ -145,11 +145,11 @@ const Pos = () => {
         </div>
       </div>
 
-      <main className="container-fluid">
+      <main className="container-fluid custom-container">
         <div className="row g-0">
           <div className="col-md-9">
             <section className="ftco-section" id="skills-section">
-              <div className="container">
+              <div className="container custom-container">
                 <div className="row justify-content-center pt-3 pb-4">
                   <div className="col-md-8 pt-4">
                     <h6>
