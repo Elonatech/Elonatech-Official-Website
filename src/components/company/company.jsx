@@ -40,8 +40,8 @@ const Company = () => {
   </div>
 </div>
 {/*========================================================================== the company ======================================================================*/}
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
+<div class="container-fluid py-5 wow fadeInUp custom-container" data-wow-delay="0.1s">
+        <div class="container custom-container">
         <h3 class="fw-bold text-uppercase">ABOUT US</h3>
         <div className="mb-2"  style={{height:"2px", width:"4rem", backgroundColor:"red"}}></div>
             <div class="row g-5">
@@ -164,8 +164,8 @@ const Company = () => {
     </div>
 </div>
 {/*============================================================================ vision & mission  =============================================================*/}
-<div className="container-fluid" style={{backgroundColor:"#000000", marginTop:"250px"}}>
-<div className="container" style={{position:"relative" , bottom:"160px"}}>
+<div className="container-fluid custom-container" style={{backgroundColor:"#000000", marginTop:"250px"}}>
+<div className="container custom-container" style={{position:"relative" , bottom:"160px"}}>
     <div className="row g-0">
         <div className="col-md-6 bg-secondary wow fadeInLeft"  >
         <div className="pt-3">
@@ -193,7 +193,7 @@ const Company = () => {
 
 
 {/* Core Value */}
-<div className="container rounded wow zoomIn" data-wow-delay="0.9s" style={{backgroundColor:"#000000" , position:"relative" , bottom:"50px"}}>
+<div className="container rounded wow zoomIn custom-container" data-wow-delay="0.9s" style={{backgroundColor:"#000000" , position:"relative" , bottom:"50px"}}>
     <p className="fw-bold fs-2 text-center text-white mb-5">Core Values</p>
     <div className="row ">
         <div className="col-md-4">

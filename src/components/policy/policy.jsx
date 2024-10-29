@@ -16,13 +16,14 @@ const Policy = () => {
 </Helmet>
 
  {/*================================================================== header =======================================================*/}
- <div class="container-fluid bg-secondary py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1712137823/policyPage/policy_hqnjss.jpg)`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
- <div class="py-5 mt-5 ">
-   <h2 class=" mt-5 text-white text-center">Privacy Policy</h2>
-   <h5 class=" mt-4 text-white text-center"></h5>
-   <p class="lead text-white text-center"></p>
- </div>
- </div>
+ <div class="container-fluid privacy-policy-section">
+  <div class="text-content">
+    <h2>Privacy Policy</h2>
+    <h5>Your Privacy is Important to Us</h5>
+    <p class="lead">We are committed to protecting your personal information and your right to privacy.</p>
+  </div>
+</div>
+
 
     {/*=================================================================== main =======================================================*/} 
      <div class="ex-basic-1 pt-5 pb-5">

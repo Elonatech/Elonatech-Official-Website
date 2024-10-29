@@ -44,6 +44,7 @@ let navigate = useNavigate();
   const [contract, setContract] = useState(getContractState);
   const [frequency, setFrequency] = useState(getFrequencyState);
   const [selected, setSelected] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function onChange(i) {
     setSelected((prev) => (i === prev ? null : i));
@@ -58,6 +59,7 @@ let navigate = useNavigate();
 
 const handleSubmit = async (e) =>{
     e.preventDefault();
+    setIsSubmitting(true);
     try {
     const newData = {
     fullname, 
@@ -82,6 +84,8 @@ const handleSubmit = async (e) =>{
     }  
     } catch (error) {
     toast.error(error.response.data);
+    }finally {
+      setIsSubmitting(false);
     }
     }
 
@@ -193,7 +197,9 @@ return (
    </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-danger" onClick={handleSubmit}>Submit</button>
+      <button type="button" className="btn btn-primary onliyu" onClick={handleSubmit} disabled={isSubmitting}>
+                                <h6>{isSubmitting ? "Submitting..." : "Submit"}</h6>
+                            </button>
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import Slider from "@mui/material/Slider";
+import "./shopFilter.css"
 
 const ShopFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
@@ -124,7 +125,7 @@ const ShopFilter = ({ setFilteredProducts }) => {
   };
 
   return (
-    <div className="">
+    <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
       {/* Filter by Brand */}
       <label className="form-label">Brand:</label>
       <div style={{ maxHeight: "200px", overflowY: "scroll" }}>

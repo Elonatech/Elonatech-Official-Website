@@ -104,3 +104,14 @@ button[type="submit"]:hover {
   font-size: 18px;
   margin-top: 20px;
 }
+
+
+.filter-list {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.filter-list-item {
+  margin: 5px 0;
+  font-size: 0.9em;
+}

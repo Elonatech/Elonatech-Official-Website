@@ -190,12 +190,12 @@ const Consulting = () => {
   </div>
 </div>
 {/* ===================================================================== */}
-<div className="container mb-5 mt-5">
+<div className="container mb-5 mt-5 last-section">
   <div className="row g-0">
     <div className="col-3">
       <div className=" border-top-0 border-bottom-0 border-start-0 rounded-0 border-dark">
        <h4 className="text-center">#1 Provider</h4>
-       <p className="text-center">of core Information Technology systems</p>
+       <p className="text-center first-text">of core Information Technology systems</p>
       </div>
     </div>
     <div className="col-3">

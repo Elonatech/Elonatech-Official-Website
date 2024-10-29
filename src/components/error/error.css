@@ -16,3 +16,53 @@
       margin-top: 1rem;
     }
   }
+
+
+  .page-not-found-section {
+    min-height: 500px;
+    margin-bottom: 50px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1726670937/404_page_1_rcbizm.png'); /* Replace with the actual URL if dynamic */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  /* Text styling for desktop */
+  .page-not-found-section h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 576px) {
+    .page-not-found-section {
+      min-height: 200px;
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523967/404_Page_New_rneogt.png'); 
+      background-size: cover;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    .page-not-found-section h1 {
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+  }
+  

@@ -80,7 +80,7 @@
   text-align: center;
   color: white;
   padding: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 /* Text styling for desktop */
@@ -111,7 +111,7 @@
 		rgba(0, 0, 0, 0.5),
 		rgba(0, 0, 0, 0.5)
 	  ),
-	  url('https://res.cloudinary.com/elonatech/image/upload/v1729523965/admin_mobile_suqcp6.jpg');
+	  url('https://res.cloudinary.com/elonatech/image/upload/v1729523963/Access_control_mobile_opumwx.jpg');
     background-size: cover;
     flex-direction: column;
     align-items: center;
@@ -137,7 +137,7 @@
     font-size: 0.9rem;
     line-height: 1.1;
     margin-bottom: 0;
-    /* display: none; */
+    display: none;
   }
 
   .access-control-section h2,

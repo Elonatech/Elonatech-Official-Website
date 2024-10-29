@@ -83,3 +83,18 @@
     }
   }
   
+@media (max-width: 576px) {
+  .last-section {
+    font-size: 0.7rem;
+    --bs-gutter-x: 0;
+    width: 100%;
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+  .last-section h4 {
+    font-size: 1.1rem;
+  }
+  .last-section .first-text {
+    width: 100px;
+  }
+}

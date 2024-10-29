@@ -59,6 +59,7 @@ const [year, setYear] = useState(getYearState);
 const  [hour, setHour] = useState('')
 const  [minute, setMinute] = useState('')
 const  [gmt, setGmt] = useState(getGmtState)
+const [isSubmitting, setIsSubmitting] = useState(false);
 
 
 
@@ -87,6 +88,8 @@ const navigate = useNavigate()
 
 const handleSubmit = async (e) =>{
     e.preventDefault();
+    setIsSubmitting(true);
+
     try {
   
     const newData = {
@@ -115,6 +118,8 @@ const handleSubmit = async (e) =>{
     } catch (error) {
     toast.error(error.response.data);
     console.log(error)
+    }finally {
+      setIsSubmitting(false);
     }
     }
 
@@ -336,7 +341,9 @@ const handleSubmit = async (e) =>{
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger"><h6 className='mt-1' onClick={handleSubmit} >Submit</h6></button>
+      <button type="button" className="btn btn-primary onliyu" onClick={handleSubmit} disabled={isSubmitting}>
+                                <h6>{isSubmitting ? "Submitting..." : "Submit"}</h6>
+                            </button>
       </div>
     </div>
   </div>

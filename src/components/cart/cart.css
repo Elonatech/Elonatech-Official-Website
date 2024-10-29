@@ -126,11 +126,17 @@ padding: 2rem 0 8rem 0 !important;
     /* Mobile view */
     @media (max-width: 576px) {
       .cart-section {
-        height: 108px;
-        background-size: contain;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 50px;
+      height: 200px; 
+      background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1730211777/shopping_cart_qctior.png');
+      background-size: cover;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
       }
     
       .cart-section h2 {

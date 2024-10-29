@@ -15,14 +15,14 @@
     text-align: center;
     color: white;
     padding: 20px;
-    margin-bottom: 100px;
+    /* margin-bottom: 30px; */
   }
   
   /* Text styling for desktop */
   .ip-telephony-section h2 {
     font-size: 2rem;
     line-height: 1.2;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
   
   .ip-telephony-section h5 {
@@ -101,7 +101,7 @@
     text-align: center;
     color: white;
     padding: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
   }
   
   /* Text styling for desktop */
@@ -126,8 +126,14 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .voip-section {
-      min-height: 220px; /* Adjusted height for mobile */
-      background-size: contain;
+      min-height: 200px;
+      background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1730211775/voip_zggbkk.jpg');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
@@ -141,18 +147,18 @@
     }
   
     .voip-section h5 {
-      font-size: 1rem;
+      font-size: 1.3rem;
       margin-bottom: 3px;
       line-height: 1.1;
       font-weight: 200;
-      display: none; /* Hide h5 on mobile */
+      /* display: none;  */
     }
   
     .voip-section p {
       font-size: 0.9rem;
       line-height: 1.1;
       margin-bottom: 0;
-      display: none; /* Hide p on mobile */
+      display: none;
     }
   
     .voip-section h2,

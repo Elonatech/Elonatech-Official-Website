@@ -24,20 +24,12 @@ const Error = () => {
       </Helmet>
 
       {/*======================================================== header ==============================================*/}
-      <div
-        class="container-fluid  py-5 "
-        style={{
-          minHeight: "500px",
-          marginBottom: "50px",
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1726670937/404_page_1_rcbizm.png)`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover"
-        }}
-      >
-        <div class="py-5 mt-5 ">
-          <h1 class=" mt-5 text-white text-center">Page not found!!!</h1>
+      <div class="container-fluid page-not-found-section">
+        <div class="text-content">
+          <h1>Page Not Found!!!</h1>
         </div>
       </div>
+
 
       <div
         style={{ minHeight: "500px", marginBottom: "50px" }}

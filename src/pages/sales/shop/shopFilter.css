@@ -55,3 +55,10 @@
   button[type="submit"]:hover {
     background-color: #5c6bc0;
   } */
+
+
+    .form-label {
+    color: #212529;
+    font-size: 22.86px;
+    font-weight: bold;
+  }

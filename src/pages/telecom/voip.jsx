@@ -28,7 +28,7 @@ We help organizations to communicate better. We provide the leading VoIP phone s
 
 
 {/*====================================================================== body ==================================================*/}
-<div className="container  mb-5" style={{marginTop:"100px"}}>
+<div className="container  mb-5">
   <div class="row justify-content-center align-items-center  g-2">
     <div class="col-md-6 ps-5">
     <h2 className='mb-4 mt-3'>Flexible VoIP Phone Systems</h2>

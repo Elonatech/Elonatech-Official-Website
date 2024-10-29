@@ -87,7 +87,7 @@ const Dashboard = () => {
                 </Link>
                 <div className="d-flex align-items-center">
                     <span style={{ marginRight: "10px", color: "#6c757d" }}>Welcome</span>
-                    <img src="https://elonatech-test1-web.vercel.app/static/media/Elonatech%20icon.176a8c1916da20a23e4f.png" alt="Logo" style={{ height: "30px", width: "30px" }} />
+                    <img src="https://elonatech.com.ng/static/media/Elonatech%20icon.176a8c1916da20a23e4f.png" alt="Logo" style={{ height: "30px", width: "30px" }} />
                 </div>
             </div>
 

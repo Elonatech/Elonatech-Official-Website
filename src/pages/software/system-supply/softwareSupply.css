@@ -76,8 +76,14 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .software-supply-section {
-      min-height: 135px;
-      background-size: contain;
+      min-height: 200px; 
+      background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1730211773/software_supply_xc5ydy.jpg');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
@@ -95,7 +101,7 @@
       margin-bottom: 3px;
       line-height: 1.1;
       font-weight: 200;
-      display: none;
+      /* display: none; */
     }
   
     .software-supply-section p {

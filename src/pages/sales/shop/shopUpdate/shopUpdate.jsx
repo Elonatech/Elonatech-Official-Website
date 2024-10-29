@@ -154,7 +154,7 @@ const ShopUpdate = () => {
       await axios.put(`${BASEURL}/api/v1/product/${id}/update`, newData);
       toast.success("Product Updated Successfully");
       setImages([]);
-      navigate(`/product/${id}/${name.split(` `).join(`-`).toLowerCase()}`);
+      navigate(`/product/${id}`)
     } catch (error) {
       toast.warning("Please Fill All Required Fields");
     }

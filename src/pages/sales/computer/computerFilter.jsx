@@ -2,6 +2,11 @@ import "./computerFilter.css";
 import React, { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import { BASEURL } from "../../../BaseURL/BaseURL";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import Button from "@mui/material/Button";
 
 const ComputerFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
@@ -15,16 +20,14 @@ const ComputerFilter = ({ setFilteredProducts }) => {
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]); 
   const [brands, setBrands] = useState([]);
   const [rams, setRams] = useState([]); 
-  const [drives, setDrives] = useState([]); 
+  const [drives, setDrives] = useState([]);
+  const [allProducts, setAllProducts] = useState([]); 
+  const [showNoResultsDialog, setShowNoResultsDialog] = useState(false);
+  const [activeFilters, setActiveFilters] = useState([]);
 
-  // Normalize RAM values
   const normalizeRam = (ramString) => {
     if (!ramString) return null;
-    
-    // Convert to uppercase and remove extra spaces
     const ram = ramString.toUpperCase().trim();
-    
-    // Extract the number and standardize format
     const match = ram.match(/(\d+)\s*(?:GB|G)?/i);
     if (match) {
       const number = match[1];
@@ -33,19 +36,14 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     return null;
   };
 
-  // Normalize Drive values
   const normalizeDrive = (driveString) => {
     if (!driveString) return null;
-    
-    // Convert to uppercase and remove extra spaces
     const drive = driveString.toUpperCase().trim();
     
-    // Handle special cases first
     if (drive.includes('PCIE') || drive.includes('RAM,')) {
       return null;
     }
     
-    // Extract capacity and type
     const matchSSD = drive.match(/(\d+)\s*(?:GB|G|TB|T)?\s*(?:SSD)?/i);
     const matchHDD = drive.match(/(\d+)\s*(?:GB|G|TB|T)?\s*(?:HDD)?/i);
     
@@ -55,9 +53,6 @@ const ComputerFilter = ({ setFilteredProducts }) => {
       const isTerabyte = drive.includes('TB') || drive.includes('T');
       const capacityGB = isTerabyte ? number * 1024 : number;
       
-      // Validate capacity ranges
-      // SSDs: typically 128GB to 4TB (4096GB)
-      // HDDs: typically 500GB to 18TB (18432GB)
       const type = drive.includes('HDD') ? 'HDD' : 'SSD';
       
       if (type === 'SSD' && (capacityGB < 128 || capacityGB > 4096)) {
@@ -67,13 +62,11 @@ const ComputerFilter = ({ setFilteredProducts }) => {
         return null;
       }
       
-      // Format the output
       if (capacityGB >= 1024) {
         return `${(capacityGB / 1024)}TB ${type}`;
       }
       return `${capacityGB}GB ${type}`;
     }
-    
     return null;
   };
 
@@ -81,6 +74,9 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Computer`)
       .then((response) => response.json())
       .then((data) => {
+        // Store all products for local filtering
+        setAllProducts(data.data);
+
         if (data.minPrice !== undefined && data.maxPrice !== undefined) {
           const fetchedMinPrice = data.minPrice;
           const fetchedMaxPrice = data.maxPrice;
@@ -92,36 +88,32 @@ const ComputerFilter = ({ setFilteredProducts }) => {
           }));
         }
 
-        // Extract and normalize unique brands
+        // Set up filter options
         const uniqueBrands = Array.from(new Set(data.data
           .map(product => product.brand.toUpperCase().trim())))
           .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
         setBrands(uniqueBrands);
 
-        // Extract and normalize unique RAMs
         const uniqueRams = Array.from(new Set(data.data
           .filter(product => product.computerProperty && 
                            product.computerProperty[0] && 
                            product.computerProperty[0].ram)
           .map(product => normalizeRam(product.computerProperty[0].ram))
-          .filter(ram => ram !== null))) // Remove null values
+          .filter(ram => ram !== null)))
           .sort((a, b) => {
-            // Sort by RAM size numerically
             const aSize = parseInt(a.match(/\d+/)[0]);
             const bSize = parseInt(b.match(/\d+/)[0]);
             return aSize - bSize;
           });
         setRams(uniqueRams);
 
-        // Extract and normalize unique drives
         const uniqueDrives = Array.from(new Set(data.data
           .filter(product => product.computerProperty && 
                            product.computerProperty[0] && 
                            product.computerProperty[0].drive)
           .map(product => normalizeDrive(product.computerProperty[0].drive))
-          .filter(drive => drive !== null))) // Remove null values
+          .filter(drive => drive !== null)))
           .sort((a, b) => {
-            // Sort by drive size and type
             const aMatch = a.match(/(\d+)(TB|GB)/);
             const bMatch = b.match(/(\d+)(TB|GB)/);
             if (aMatch && bMatch) {
@@ -133,10 +125,128 @@ const ComputerFilter = ({ setFilteredProducts }) => {
           });
         setDrives(uniqueDrives);
 
-        setFilteredProducts(data.data); 
+        setFilteredProducts(data.data);
+        setNoResultsMessage("");
       })
       .catch((error) => console.error("Error fetching initial data:", error));
   }, [setFilteredProducts]);
+
+
+  const getActiveFilters = (currentFilters) => {
+    const active = [];
+    if (currentFilters.brand) active.push(`Brand: ${currentFilters.brand}`);
+    if (currentFilters.ram) active.push(`RAM: ${currentFilters.ram}`);
+    if (currentFilters.drive) active.push(`Drive: ${currentFilters.drive}`);
+    if (currentFilters.price[0] !== defaultPriceRange[0] || 
+        currentFilters.price[1] !== defaultPriceRange[1]) {
+      active.push(`Price Range: ₦${formatPrice(currentFilters.price[0])} - ₦${formatPrice(currentFilters.price[1])}`);
+    }
+    return active;
+  };
+
+  const applyFilters = (currentFilters) => {
+    let filteredResults = [...allProducts];
+
+    // Apply brand filter
+    if (currentFilters.brand) {
+      filteredResults = filteredResults.filter(
+        product => product.brand.toUpperCase().trim() === currentFilters.brand
+      );
+    }
+
+    // Apply RAM filter
+    if (currentFilters.ram) {
+      filteredResults = filteredResults.filter(product => 
+        product.computerProperty?.[0]?.ram &&
+        normalizeRam(product.computerProperty[0].ram) === currentFilters.ram
+      );
+    }
+
+    // Apply drive filter
+    if (currentFilters.drive) {
+      filteredResults = filteredResults.filter(product =>
+        product.computerProperty?.[0]?.drive &&
+        normalizeDrive(product.computerProperty[0].drive) === currentFilters.drive
+      );
+    }
+
+    // Apply price filter
+    filteredResults = filteredResults.filter(product =>
+      product.price >= currentFilters.price[0] &&
+      product.price <= currentFilters.price[1]
+    );
+
+    // Update active filters
+    const currentActiveFilters = getActiveFilters(currentFilters);
+    setActiveFilters(currentActiveFilters);
+
+    // Check if we have any results
+    if (filteredResults.length === 0 && currentActiveFilters.length > 0) {
+      setNoResultsMessage("No products match your selected filters.");
+      setShowNoResultsDialog(true);
+      setFilteredProducts([]);
+    } else {
+      setNoResultsMessage("");
+      setShowNoResultsDialog(false);
+      setFilteredProducts(filteredResults);
+    }
+  };
+
+  const resetFilters = () => {
+    const resetFilters = {
+      ram: "",
+      brand: "",
+      drive: "",
+      price: defaultPriceRange
+    };
+    setFilters(resetFilters);
+    setPriceRange(defaultPriceRange);
+    setShowNoResultsDialog(false);
+    applyFilters(resetFilters);
+  };
+
+  // const applyFilters = (currentFilters) => {
+  //   // Start with all products
+  //   let filteredResults = [...allProducts];
+
+  //   // Apply brand filter
+  //   if (currentFilters.brand) {
+  //     filteredResults = filteredResults.filter(
+  //       product => product.brand.toUpperCase().trim() === currentFilters.brand
+  //     );
+  //   }
+
+  //   // Apply RAM filter
+  //   if (currentFilters.ram) {
+  //     filteredResults = filteredResults.filter(product => 
+  //       product.computerProperty?.[0]?.ram &&
+  //       normalizeRam(product.computerProperty[0].ram) === currentFilters.ram
+  //     );
+  //   }
+
+  //   // Apply drive filter
+  //   if (currentFilters.drive) {
+  //     filteredResults = filteredResults.filter(product =>
+  //       product.computerProperty?.[0]?.drive &&
+  //       normalizeDrive(product.computerProperty[0].drive) === currentFilters.drive
+  //     );
+  //   }
+
+  //   // Apply price filter
+  //   filteredResults = filteredResults.filter(product =>
+  //     product.price >= currentFilters.price[0] &&
+  //     product.price <= currentFilters.price[1]
+  //   );
+
+  //   // Check if we have any results
+  //   if (filteredResults.length === 0) {
+  //     setNoResultsMessage("No products match your selected filters.");
+  //     setFilteredProducts([]);
+  //   } else {
+  //     setNoResultsMessage("");
+  //     setFilteredProducts(filteredResults);
+  //   }
+  // };
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
@@ -150,14 +260,12 @@ const ComputerFilter = ({ setFilteredProducts }) => {
 
   const handleCheckboxChange = (event) => {
     const { name, value, checked } = event.target;
-    setFilters((prevFilters) => {
-      const updatedFilters = {
-        ...prevFilters,
-        [name]: checked ? value : ""
-      };
-      applyFilters(updatedFilters);
-      return updatedFilters;
-    });
+    const updatedFilters = {
+      ...filters,
+      [name]: checked ? value : ""
+    };
+    setFilters(updatedFilters);
+    applyFilters(updatedFilters);
   };
 
   const handlePriceRangeChange = (event, newValue) => {
@@ -165,43 +273,12 @@ const ComputerFilter = ({ setFilteredProducts }) => {
   };
 
   const handlePriceChange = (event, newValue) => {
-    setFilters((prevFilters) => ({
-      ...prevFilters,
+    const updatedFilters = {
+      ...filters,
       price: newValue
-    }));
-  };
-
-  const handleApplyClick = () => {
-    applyFilters(filters);
-  };
-
-  const applyFilters = (updatedFilters) => {
-    let queryParams = [];
-    if (updatedFilters.ram) {
-      queryParams.push(`ram=${updatedFilters.ram.replace(/\D/g, "")}`);
-    }
-    if (updatedFilters.brand) {
-      queryParams.push(
-        `brand=${updatedFilters.brand.replace(/\s+/g, "").toLowerCase()}`
-      );
-    }
-    if (updatedFilters.drive) {
-      queryParams.push(`drive=${updatedFilters.drive.replace(/\D/g, "")}`);
-    }
-    if (
-      updatedFilters.price[0] !== 0 || 
-      updatedFilters.price[1] !== 1000000 
-    ) {
-      queryParams.push(`minPrice=${updatedFilters.price[0]}`);
-      queryParams.push(`maxPrice=${updatedFilters.price[1]}`);
-    }
-    const queryString = queryParams.length > 0 ? queryParams.join("&") : "";
-    fetch(`${BASEURL}/api/v1/product/filter?category=Computer&${queryString}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setFilteredProducts(data.data);
-      })
-      .catch((error) => console.error("Error:", error));
+    };
+    setFilters(updatedFilters);
+    applyFilters(updatedFilters);
   };
 
   const formatPrice = (price) => {
@@ -212,106 +289,131 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     const value = event.target.value.replace(/[^0-9]/g, "");
     const newPrice = [...filters.price];
     newPrice[index] = parseFloat(value) || 0;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
+    const updatedFilters = {
+      ...filters,
       price: newPrice
-    }));
+    };
+    setFilters(updatedFilters);
+  };
+
+  const handleCloseDialog = () => {
+    setShowNoResultsDialog(false);
   };
 
   return (
-    <div>
+    <div className="computer-filter">
+      {/* No Results Dialog */}
+      <Dialog
+        open={showNoResultsDialog}
+        onClose={handleCloseDialog}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          No Products Found
+        </DialogTitle>
+        <DialogContent>
+          <div id="alert-dialog-description">
+            <p style={{ marginBottom: '10px' }}>No products match your current filter criteria:</p>
+            <ul style={{ paddingLeft: '20px', marginBottom: '10px' }}>
+              {activeFilters.map((filter, index) => (
+                <li key={index} style={{ marginBottom: '5px' }}>{filter}</li>
+              ))}
+            </ul>
+            <p>Would you like to reset your filters and try again?</p>
+          </div>
+        </DialogContent>
+        <DialogActions style={{ padding: '16px' }}>
+          <Button 
+            onClick={resetFilters} 
+            variant="contained" 
+            color="primary"
+          >
+            Reset All Filters
+          </Button>
+          <Button 
+            onClick={handleCloseDialog} 
+            variant="outlined"
+          >
+            Keep Filters
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Existing warning message */}
       {noResultsMessage && (
-        <div className="no-results-message">
+        <div className="no-results-message alert alert-info">
           <p>{noResultsMessage}</p>
           <p>
-            Go back to the <a href="/computers">Computer page</a> to explore
-            more amazing products.
+            Please adjust your filters or go back to the <a href="/computers">Computer page</a> to explore
+            more products.
           </p>
         </div>
       )}
       <form>
-
         {/* Brand Filter */}
-        <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
+        <div className="filter-section">
           <label className="form-label">Brand:</label>
-          <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
-            {brands.length > 0 ? (
-              brands.map((brand) => (
-                <div className="form-check" key={brand}>
-                  <input
-                    type="checkbox"
-                    name="brand"
-                    value={brand}
-                    onChange={handleCheckboxChange}
-                    checked={filters.brand === brand}
-                    className="form-check-input"
-                  />
-                  <label className="form-check-label">{brand}</label>
-                </div>
-              ))
-            ) : (
-              <p>No brands available</p>
-            )}
+          <div className="filter-options">
+            {brands.map((brand) => (
+              <div className="form-check" key={brand}>
+                <input
+                  type="checkbox"
+                  name="brand"
+                  value={brand}
+                  onChange={handleCheckboxChange}
+                  checked={filters.brand === brand}
+                  className="form-check-input"
+                />
+                <label className="form-check-label">{brand}</label>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* RAM Filter */}
-        <div
-          style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
-          className="mb-3"
-        >
+        <div className="filter-section">
           <label className="form-label">RAM:</label>
-          <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
-            {rams.length > 0 ? (
-              rams.map((ram) => (
-                <div className="form-check" key={ram}>
-                  <input
-                    type="checkbox"
-                    name="ram"
-                    value={ram}
-                    onChange={handleCheckboxChange}
-                    checked={filters.ram === ram}
-                    className="form-check-input"
-                  />
-                  <label className="form-check-label">{ram}</label>
-                </div>
-              ))
-            ) : (
-              <p>No RAM options available</p>
-            )}
+          <div className="filter-options">
+            {rams.map((ram) => (
+              <div className="form-check" key={ram}>
+                <input
+                  type="checkbox"
+                  name="ram"
+                  value={ram}
+                  onChange={handleCheckboxChange}
+                  checked={filters.ram === ram}
+                  className="form-check-input"
+                />
+                <label className="form-check-label">{ram}</label>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Drive Filter */}
-        <div
-          style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }}
-          className="mb-3"
-        >
+        <div className="filter-section">
           <label className="form-label">Drive:</label>
-          <div style={{ maxHeight: "120px", overflowY: "scroll" }}>
-            {drives.length > 0 ? (
-              drives.map((drive) => (
-                <div className="form-check" key={drive}>
-                  <input
-                    type="checkbox"
-                    name="drive"
-                    value={drive}
-                    onChange={handleCheckboxChange}
-                    checked={filters.drive === drive}
-                    className="form-check-input"
-                  />
-                  <label className="form-check-label">{drive}</label>
-                </div>
-              ))
-            ) : (
-              <p>No drive options available</p>
-            )}
+          <div className="filter-options">
+            {drives.map((drive) => (
+              <div className="form-check" key={drive}>
+                <input
+                  type="checkbox"
+                  name="drive"
+                  value={drive}
+                  onChange={handleCheckboxChange}
+                  checked={filters.drive === drive}
+                  className="form-check-input"
+                />
+                <label className="form-check-label">{drive}</label>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Price Filter */}
         <div className="price-filter">
-          <label className="form-label">Filter by Price(₦)</label>
+          <label className="form-label">Price Range (₦)</label>
           <Slider
             className="custom-slider"
             value={filters.price}
@@ -320,9 +422,8 @@ const ComputerFilter = ({ setFilteredProducts }) => {
             max={priceRange[1]}
             step={5}
           />
-          <div className="price-range-values">
+          <div className="price-range-inputs">
             <input
-              style={{ width: "50%", borderRadius: "5px" }}
               type="text"
               value={formatPrice(filters.price[0])}
               onChange={(e) => handleInputPriceChange(e, 0)}
@@ -330,31 +431,17 @@ const ComputerFilter = ({ setFilteredProducts }) => {
             />
             <span className="separator">-</span>
             <input
-              style={{ width: "50%", borderRadius: "5px" }}
               type="text"
               value={formatPrice(filters.price[1])}
               onChange={(e) => handleInputPriceChange(e, 1)}
               className="price-input"
             />
           </div>
-        </div>
-        <div className="expand">
-          <button
-            type="button"
-            onClick={handleApplyClick}
-            className="apply-btn"
-            style={{ width: "100%" }}
-          >
-            Apply Price Range
-          </button>
-          <button
-            type="button"
-            onClick={resetPriceRange}
-            className="reset-btn"
-            style={{ width: "100%" }}
-          >
-            Reset Price Range
-          </button>
+          <div className="price-actions">
+            <button type="button" onClick={resetPriceRange} className="reset-btn">
+              Reset Price Range
+            </button>
+          </div>
         </div>
       </form>
     </div>

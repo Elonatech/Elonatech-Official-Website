@@ -15,7 +15,7 @@
     text-align: center;
     color: white;
     padding: 20px;
-    margin-bottom: 100px; /* Adjusted margin for spacing */
+    margin-bottom: 30px;
   }
   
   /* Text styling for desktop */
@@ -58,7 +58,7 @@
       font-size: 0.9rem;
       line-height: 1.2; 
       margin-bottom: 0;
-      display: none;
+      /* display: none; */
     }
   
     .live-streaming-section h2,
