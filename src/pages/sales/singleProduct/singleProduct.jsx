@@ -113,6 +113,7 @@ const SingleProduct = () => {
     const { id } = useParams();
     const [relatedProducts, setRelatedProducts] = useState([]);
     const [nextProductId, setNextProductId] = useState(null);
+    const [product, setProduct] = useState(null);
 
     const navigate = useNavigate();
   const location = useLocation();
@@ -138,6 +139,7 @@ const SingleProduct = () => {
           setImage(res.data.product.images);
           setCategory(res.data.product.category);
           setComputer(res.data.product.computerProperty);
+          setProduct(res.data.product);
           setIsLoading(true);
 
   
@@ -272,11 +274,11 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
     <>
 
 <Helmet>
-        <title>{`${product.name} - Your Company`}</title>
+        <title>{`${data.name} - Elonatech Nigeria`}</title>
         <meta name="description" content={sanitizedDescription} />
         
         {/* Essential Open Graph Meta Tags */}
-        <meta property="og:title" content={product.name} />
+        <meta property="og:title" content={data.name} />
         <meta property="og:description" content={sanitizedDescription} />
         <meta property="og:image" content={productImage} />
         <meta property="og:url" content={`${process.env.REACT_APP_FRONTEND_URL}/product/${id}`} />
@@ -284,7 +286,7 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={product.name} />
+        <meta name="twitter:title" content={data.name} />
         <meta name="twitter:description" content={sanitizedDescription} />
         <meta name="twitter:image" content={productImage} />
       </Helmet>
