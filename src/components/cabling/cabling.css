@@ -103,7 +103,7 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .structured-cabling-section {
-      min-height: 200px;
+      height: 200px;
       background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5),

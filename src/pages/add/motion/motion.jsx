@@ -27,7 +27,7 @@ const Motion = () =>{
 
 
 {/*  ================================================================================================================= */}
-<div class="container overflow-hidden mt-5  ">
+<div class="container spad">
           <div class="row  align-items-center">
             <div class="col-md-6">
             <div class="p-3 mt-5 ">

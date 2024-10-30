@@ -26,7 +26,7 @@ is composed of individuals that are familiar with the ins and outs of the device
 
 
 
-        <div className="container ">
+        <div className="container spad">
             <div className="">
             <div class="row g-5  pt-5 pb-5 align-items-center" >
                 <div class="col-md-4">
@@ -34,7 +34,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                            <img src='https://i.stack.imgur.com/qq8AE.gif' data-src="https://res.cloudinary.com/elonatech/image/upload/v1709227041/techSupportPage/Tech_support_l7kwim.jpg" alt="" className='img-fluid lazyload'/>
                     </div>
                 </div>
-                <div class="col-md-8" >
+                <div class="col-md-8 " >
                     <div className="tech-text">
                         <h2 className='fw-bold'>Our Technical Support Team</h2>
                         <p className=' p-text' >is composed of individuals that are familiar with the ins and outs of the device they are assigned to.

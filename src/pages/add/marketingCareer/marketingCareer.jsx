@@ -13,12 +13,12 @@ const MarketingCareer = () => {
        </Helmet>
         {/*============================================= header ============================*/}
         <div class="container-fluid careers-section">
-          <div class="text-content">
-            <h2></h2>
-            <h5></h5>
-            <p class="lead"></p>
-          </div>
-        </div>
+  <div class="text-content">
+    <h2>Career</h2>
+    <h5>Let's grow together</h5>
+    <p class="lead">We’re building a culture at Elonatech where amazing people (like you) can do their best work.<br /> If you’re ready to grow your career and help millions of organizations and SME grow better, you’ve come to the right place.</p>
+  </div>
+</div>
 
 
 

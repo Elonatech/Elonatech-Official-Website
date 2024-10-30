@@ -31,7 +31,7 @@ System software is the most important software in a computer, it enables other s
 
         
         {/*=============================================================== body ==========================================================*/}
-        <div className="container  mb-5" style={{marginTop:"100px"}}>
+        <div className="container  mb-5">
           <div class="row justify-content-center align-items-center  g-4">
             <div class="col-md-6 ps-5 mt-5">
             <h2 className='mb-4 mt-4 fw-bold'>How System Software works?</h2>

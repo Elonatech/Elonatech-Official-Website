@@ -192,6 +192,10 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     }
   };
 
+  const handleApplyClick = () => {
+    applyFilters(filters);
+  };
+
   const resetFilters = () => {
     const resetFilters = {
       ram: "",
@@ -413,7 +417,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
 
         {/* Price Filter */}
         <div className="price-filter">
-          <label className="form-label">Price Range (₦)</label>
+          <label className="form-label">Filter by Price(₦)</label>
           <Slider
             className="custom-slider"
             value={filters.price}
@@ -422,8 +426,9 @@ const ComputerFilter = ({ setFilteredProducts }) => {
             max={priceRange[1]}
             step={5}
           />
-          <div className="price-range-inputs">
+          <div className="price-range-values">
             <input
+              style={{ width: "50%", borderRadius: "5px" }}
               type="text"
               value={formatPrice(filters.price[0])}
               onChange={(e) => handleInputPriceChange(e, 0)}
@@ -431,17 +436,31 @@ const ComputerFilter = ({ setFilteredProducts }) => {
             />
             <span className="separator">-</span>
             <input
+              style={{ width: "50%", borderRadius: "5px" }}
               type="text"
               value={formatPrice(filters.price[1])}
               onChange={(e) => handleInputPriceChange(e, 1)}
               className="price-input"
             />
           </div>
-          <div className="price-actions">
-            <button type="button" onClick={resetPriceRange} className="reset-btn">
-              Reset Price Range
-            </button>
-          </div>
+        </div>
+        <div className="expand">
+          <button
+            type="button"
+            onClick={handleApplyClick}
+            className="apply-btn"
+            style={{ width: "100%" }}
+          >
+            Apply Price Range
+          </button>
+          <button
+            type="button"
+            onClick={resetPriceRange}
+            className="reset-btn"
+            style={{ width: "100%" }}
+          >
+            Reset Price Range
+          </button>
         </div>
       </form>
     </div>

@@ -27,8 +27,6 @@ const Cart = () => {
 <div class="container-fluid cart-section">
   <div class="text-content">
     <h2>Cart</h2>
-    <h5></h5>
-    <p class="lead"></p>
   </div>
 </div>
 

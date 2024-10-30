@@ -62,8 +62,8 @@ const Pos = () => {
 
   const Filter = (event) => {
     const searchTerm = event.target.value.toLowerCase();
-    setCurrentPage(1); // Reset to first page when filtering
-    setSearchParams({ page: '1' }); // Update URL params
+    setCurrentPage(1); 
+    setSearchParams({ page: '1' });
 
     if (searchTerm === "") {
       setFilteredProducts([]);

@@ -11,7 +11,7 @@
 
 
 .work__text {
-	padding: 70px;
+	padding: 20px;
 	background: #ffffff;
 	position: relative;
 }
@@ -351,6 +351,9 @@
 	}
   }
   
-
+.spad {
+	margin-top: -50px;
+	z-index: -1;
+}
 
 

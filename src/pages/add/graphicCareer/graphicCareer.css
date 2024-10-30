@@ -39,26 +39,37 @@
   /* Mobile view */
   @media (max-width: 576px) {
     .careers-section {
-      min-height: 135px; /* Minimum height for mobile */
-      background-size: contain;
+      min-height: 200px;
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523966/Career_2_mobile_tkr2uw.jpg');
+      background-size: cover;
       flex-direction: column;
       align-items: center;
       padding-top: 50px;
     }
-  
-    /* Adjusting text for mobile view */
     .careers-section h2 {
       font-size: 1.5rem;
       margin-bottom: 5px;
       line-height: 1.1;
     }
   
-    .careers-section h5,
+    .careers-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      /* display: none; */
+    }
+  
     .careers-section p {
       font-size: 0.9rem;
       line-height: 1.1;
       margin-bottom: 0;
-      display: none; /* Hide on mobile if not used */
+      display: none;
     }
   
     .careers-section h2,

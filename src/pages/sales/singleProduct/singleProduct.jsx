@@ -271,35 +271,23 @@ const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["stro
     return (
     <>
 
-    <Helmet>
-                <title>{`${data.name} - Elonatech Nigeria Limited`}</title>
-                <meta name="description" content={sanitizedDescription} />
-                <link rel="canonical" href={productUrl} />
-                
-                {/* Preload critical image */}
-                <link rel="preload" href={productImage} as="image" />
-                
-                {/* Open Graph Meta Tags */}
-                <meta property="og:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-                <meta property="og:description" content={sanitizedDescription} />
-                <meta property="og:image" content={productImage} />
-                <meta property="og:image:secure_url" content={productImage} />
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
-                <meta property="og:url" content={productUrl} />
-                <meta property="og:type" content="product" />
-                
-                {/* Twitter Card Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${data.name} - Elonatech Nigeria Limited`} />
-                <meta name="twitter:description" content={sanitizedDescription} />
-                <meta name="twitter:image" content={productImage} />
-
-                {/* Structured Data */}
-                <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
-                </script>
-            </Helmet>
+<Helmet>
+        <title>{`${product.name} - Your Company`}</title>
+        <meta name="description" content={sanitizedDescription} />
+        
+        {/* Essential Open Graph Meta Tags */}
+        <meta property="og:title" content={product.name} />
+        <meta property="og:description" content={sanitizedDescription} />
+        <meta property="og:image" content={productImage} />
+        <meta property="og:url" content={`${process.env.REACT_APP_FRONTEND_URL}/product/${id}`} />
+        <meta property="og:type" content="product" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={product.name} />
+        <meta name="twitter:description" content={sanitizedDescription} />
+        <meta name="twitter:image" content={productImage} />
+      </Helmet>
 
 {/*================================================================ header ==============================================*/}
 <div class="container-fluid shop-section">
