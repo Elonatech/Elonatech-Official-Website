@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import { BASEURL } from "../../../BaseURL/BaseURL";
+import "../printers/printers.css"
 
 const NetworkFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
@@ -147,7 +148,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
         </div>
 
         {/* Price Filter */}
-        <div className="price-filter">
+        <div className="price-filter price-mobile">
           <label className="form-label">Filter by Price(₦)</label>
           <Slider
             className="custom-slider"
@@ -156,7 +157,6 @@ const NetworkFilter = ({ setFilteredProducts }) => {
             min={priceRange[0]}
             max={priceRange[1]}
             step={5}
-            pearling
           />
           <div className="price-range-values">
             <input
@@ -175,14 +175,14 @@ const NetworkFilter = ({ setFilteredProducts }) => {
               className="price-input"
             />
           </div>
-        </div>
-        <div className="expand">
-          <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
-            Apply Price Range
-          </button>
-          <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
-            Reset Price Range
-          </button>
+          <div className="expand">
+            <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
+              Apply Price Range
+            </button>
+            <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
+              Reset Price Range
+            </button>
+          </div>
         </div>
       </form>
       <style jsx>{`

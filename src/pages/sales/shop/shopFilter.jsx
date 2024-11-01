@@ -155,7 +155,7 @@ const ShopFilter = ({ setFilteredProducts }) => {
       </button> */}
 
       {/* Filter by Price */}
-      <div className="price-filter">
+      <div className="price-filter price-mobile">
         <h4>Filter by Price(₦)</h4>
         <Slider
           className="slider"
@@ -197,22 +197,22 @@ const ShopFilter = ({ setFilteredProducts }) => {
             />
           </div>
         </div>
-      </div>
-      <div>
-        <button
-          style={{ width: "100%" }}
-          onClick={applyPriceFilter}
-          className="apply-btn"
-        >
-          Apply Price Range
-        </button>
-        <button
-          style={{ width: "100%" }}
-          onClick={resetPriceRange}
-          className="reset-btn"
-        >
-          Reset Price Range
-        </button>
+        <div>
+          <button
+            style={{ width: "100%" }}
+            onClick={applyPriceFilter}
+            className="apply-btn"
+          >
+            Apply Price Range
+          </button>
+          <button
+            style={{ width: "100%" }}
+            onClick={resetPriceRange}
+            className="reset-btn"
+          >
+            Reset Price Range
+          </button>
+        </div>
       </div>
 
       {/* Add custom CSS for better visuals */}

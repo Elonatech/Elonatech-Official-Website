@@ -241,6 +241,9 @@
       padding: 0.3rem 0.5rem;
       margin-top: auto;
     }
+    .position-sticky {
+      margin-bottom: -300px;
+    }
   }
   
   /* For very small screens */

@@ -131,7 +131,7 @@ const PosFilter = ({ setFilteredProducts }) => {
         </div>
 
         {/* Price Filter */}
-        <div className="price-filter">
+        <div className="price-filter price-mobile">
           <label className="form-label">Filter by Price(₦)</label>
           <Slider
             className="custom-slider"
@@ -159,14 +159,14 @@ const PosFilter = ({ setFilteredProducts }) => {
               className="price-input"
             />
           </div>
-        </div>
-        <div className="expand">
+          <div className="expand">
           <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
             Apply Price Range
           </button>
           <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
             Reset Price Range
           </button>
+        </div>
         </div>
         <style jsx>{`
         .shop-filter {

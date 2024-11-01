@@ -308,3 +308,27 @@
     padding-right: 3px;
     padding-left: 3px;
 }
+
+@media screen and (max-width: 767px) {
+  .price-mobile {
+    position: relative;
+    bottom: 475px;
+    left: 130px;
+  }
+  .price-mobile .form-label {
+    margin-left: 60px;
+    font-size: 18px;
+  }
+  .price-mobile .slider {
+    margin-top: -6px;
+  }
+  .price-mobile .price-range-values  {
+    margin-top: -15px;
+    padding: 15px;
+  }
+
+  .price-mobile .expand {
+    padding: 10px;
+    margin-top: -25px;
+  }
+}

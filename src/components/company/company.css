@@ -143,9 +143,9 @@
   }
   
   .taanet {
-    width: 100px;
+    width: 120px;
     height: auto;
-    margin-left: 50px; 
+    margin-left: 30px; 
 }
 
 .vivon {
@@ -159,4 +159,76 @@
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
+}
+
+.first {
+  height: 150px;
+}
+.second {
+  width: 150px;
+  height: 150px;
+  margin-left: 30px;
+  background-color: white;
+}
+.third {
+  height: 150px;
+  margin-left: 30px;
+}
+.fourth {
+  display: flex;
+  align-items: center;
+}
+.fifth {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 756px) {
+  .taanet {
+    width: 120px;
+    height: auto;
+    margin-left: 20px; 
+}
+
+.vivon {
+  width: 130px; 
+  height: 130px;
+  margin-left: 10px; 
+}
+
+.second {
+  width: 150px;
+  height: 150px;
+  margin-left: 10px;
+  background-color: white;
+}
+}
+
+
+.image-container {
+  min-height: 500px;
+}
+
+.position-relative {
+  position: relative;
+  overflow: hidden; 
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 100%; 
+  object-fit: contain; 
+}
+
+@media (max-width: 767px) {
+  .image {
+      position: static;
+      width: 100%;
+      height: auto; 
+  }
+  .image-container {
+    margin-top: -80px;
+    margin-bottom: -120px;
+  }
 }

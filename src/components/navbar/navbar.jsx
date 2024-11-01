@@ -8,7 +8,7 @@ import { FiPlus } from "react-icons/fi";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { useCart } from "react-use-cart";
 import  "./navbar.css"
-
+import { useAuth } from '../admin/AuthContext';
 
 
 
@@ -83,6 +83,7 @@ import SaleConsumbles from "./icons/Sales/home-office.png"
 const Navbar = () => {
 
 const [currentAdmin, setCurrentAdmin] = useState('');
+const { logout } = useAuth();
 
 let navigate = useNavigate();
 
@@ -93,14 +94,14 @@ useEffect(() =>{
  
 const { totalUniqueItems } = useCart();
  
-const logout = () =>{
-    const auth = localStorage.removeItem('token');
-    toast.success('Admin Successfully Logout');
-    setTimeout(() =>{
-      navigate(0)
-    }, 8000)
-    navigate('/')
-};
+// const logout = () =>{
+//     const auth = localStorage.removeItem('token');
+//     toast.success('Admin Successfully Logout');
+//     setTimeout(() =>{
+//       navigate(0)
+//     }, 8000)
+//     navigate('/')
+// };
 
 
 
@@ -615,16 +616,15 @@ return (
                 <ul className={techMouseEnter ? 'elonatechinnerListItemContentRightTechListActive' : 'elonatechinnerListItemContentRightTechList'}>
                   
                   {/*===================================== HARDWARE SOLUTIONS =============================================================*/}
-                  <li className={'elonatechinnerListItemContentRightTechListItem'} onMouseEnter={() => !isMobileView && setActiveDropdown('hardware')}
-        onClick={() => isMobileView && setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware')}>
+                  <li className={'elonatechinnerListItemContentRightTechListItem'} onMouseEnter={() => setActiveDropdown('hardware')}>
                     <div className="elonatechtest">
-                      <h6 className={activeDropdown === 'hardware' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
+                      <h6 onClick={() => setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware')}
+                          className={activeDropdown === 'hardware' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
                         Hardware Solutions
                       </h6>
                       <i className="bi bi-plus text-dark fs-3"></i>
                     </div>
                     <ul className={activeDropdown === 'hardware' ? 'elonatechhardwareSolutionsListActive' : 'elonatechhardwareSolutionsList'}>
-
                       <Link to={'/hardware-engineering'} className="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas">
                         <li className={'elonatechhardwareSolutionsListItem'}>
                           <img data-src={hardwareComputer} className='lazyload' alt="" style={{ width: "50px", height: "50px", objectFit: "contain", alignSelf: "center" }} />
@@ -800,15 +800,8 @@ return (
               <li className='elonatechinnerListContentRight'>
               <ul className={digitalMouseEnter ? 'elonatechinnerListItemContentRightDigitalListActive' : 'elonatechinnerListItemContentRightDigitalList'}>
               {/*============================================================ web solution ==============================================*/}
-              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => !isMobileView && setActiveDropdown('web')}
-        onClick={() => isMobileView && setActiveDropdown(activeDropdown === 'web' ? null : 'web')}>
-              <div className="elonatechtest">
-                <h6 className={activeDropdown === 'web' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>
-                  Web Solutions
-                </h6>
-                <i className="bi bi-plus text-dark fs-3"></i>
-              </div>
-              <ul className={activeDropdown === 'web' ? 'elonatechwebSolutionsListActive' : 'elonatechwebSolutionsList'}>
+              <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('web')}> <div className="elonatechtest">  <h6 onClick={() => setActiveDropdown(activeDropdown === 'web' ? null : 'web')} className={activeDropdown === 'web' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>Web Solutions </h6> <i className="bi bi-plus text-dark fs-3"></i> </div>
+              <ul className={activeDropdown === 'web'? 'elonatechwebSolutionsListActive' : 'elonatechwebSolutionsList'}>
               <Link to={'/web-design'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem'> <img  data-src={webDev} className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/>Web Design/Dev.</li></Link>
               <Link to={'/domain'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem'> <img   data-src={webDomain}  className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Domain Reg./DNS Mgt </li></Link>
               <Link to={'/hosting'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem '> <img   data-src={WebHost} className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'start'}}/>  <span className='text-'>Web Hosting</span> </li></Link>

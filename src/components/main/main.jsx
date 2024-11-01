@@ -317,7 +317,7 @@ const Main = () => {
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234750/homePage/clientLogo/pentecostal_cutbi5.png"  className='img-fluid lazyload' alt="" />
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1730310619/PFN_Web_Logo_Green_y4sbrw.png"  className='img-fluid lazyload pfn' alt="" />
               </div>
             </div>
             <div className="col-md-2 col-6">
@@ -364,17 +364,17 @@ const Main = () => {
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload' alt="" style={{width: "150px", height: "150px", marginLeft: "30px"}} />
-              </div>
-            </div>
-            <div className="col-md-2 col-6">
-              <div className="card border-0">
               <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707753249/homePage/clientLogo/diva_cakes_betw0b.png"  className='img-fluid lazyload' alt="" />
               </div>
             </div>
             <div className="col-md-2 col-6">
               <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707753250/homePage/clientLogo/cathenet_lgod6k.png"  className='img-fluid lazyload' alt="" />
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png"  className='img-fluid lazyload' alt="" style={{width: "150px", height: "150px", marginLeft: "10px"}} />
+              </div>
+            </div>
+            <div className="col-md-2 col-6">
+              <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1707753250/homePage/clientLogo/cathenet_lgod6k.png"  className='img-fluid lazyload' alt="" style={{ marginTop: "10px", marginLeft: "10px"}} />
               </div>
             </div>
             {/* <div className="col-md-2 col-6">
@@ -385,19 +385,44 @@ const Main = () => {
           </div>
     </div>
     </div>
-  </div>
-
-  <div class="carousel-item">
-  <div className="container">
-    <div className="row">
-      <div className="col-md-2 col-6">
-        <div className="card border-0">
-          <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png" className='img-fluid lazyload' alt="" />
+{/*=================================================================== carousel 5 ====================================================================*/}
+    <div class="carousel-item">
+      <div className="container last-slide">
+        <div className="row">
+          <div className="col-md-2 col-6">
+            <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png" className='img-fluid lazyload tannet' alt="" />
+            </div>
+          </div>
+          <div className="col-md-2 col-6">
+            <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1730310816/SHEKINAH_SACRED_PLACE_MINISTRIES_Logo_fu5map.png" className='img-fluid lazyload third' alt="" />
+            </div>
+          </div>
+          <div className="col-md-2 col-6">
+            <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1730310818/Logo_rqijd4.png" className='img-fluid lazyload second' alt="" />
+            </div>
+          </div>
+          <div className="col-md-2 col-6 move-up">
+            <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1730393956/Piers_Spectra_Consulting_logo_abcobj.jpg" className='img-fluid lazyload fourth' alt="" />
+            </div>
+          </div>
+          <div className="col-md-2 col-6 fifth">
+            <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1730310619/Kappachem_Labs_Web_logo_op3szo.png" className='img-fluid lazyload ' alt="" />
+            </div>
+          </div>
+          <div className="col-md-2 col-6 sixth">
+            <div className="card border-0">
+              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1730310618/Ozone_Cinemas_Logo-removebg-preview_e0aiav.png" className='img-fluid lazyload ' alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

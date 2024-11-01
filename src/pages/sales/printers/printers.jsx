@@ -269,7 +269,7 @@ const Printers = () => {
                   marginTop: "50px",
                   paddingTop: "30px",
                   paddingBottom: "30px",
-                  marginLeft: "15px"
+                  marginLeft: "5px"
                 }}
               >
                 <form

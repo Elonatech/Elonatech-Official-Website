@@ -276,13 +276,20 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     setPriceRange(newValue);
   };
 
+  // const handlePriceChange = (event, newValue) => {
+  //   const updatedFilters = {
+  //     ...filters,
+  //     price: newValue
+  //   };
+  //   setFilters(updatedFilters);
+  //   applyFilters(updatedFilters);
+  // };
+
   const handlePriceChange = (event, newValue) => {
-    const updatedFilters = {
-      ...filters,
-      price: newValue
-    };
-    setFilters(updatedFilters);
-    applyFilters(updatedFilters);
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      price: newValue,
+    }));
   };
 
   const formatPrice = (price) => {
@@ -356,7 +363,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
       )}
       <form>
         {/* Brand Filter */}
-        <div className="filter-section">
+        <div className="filter-section brand-mobile">
           <label className="form-label">Brand:</label>
           <div className="filter-options">
             {brands.map((brand) => (
@@ -376,7 +383,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
         </div>
 
         {/* RAM Filter */}
-        <div className="filter-section">
+        <div className="filter-section ram-mobile">
           <label className="form-label">RAM:</label>
           <div className="filter-options">
             {rams.map((ram) => (
@@ -396,7 +403,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
         </div>
 
         {/* Drive Filter */}
-        <div className="filter-section">
+        <div className="filter-section drive-mobile">
           <label className="form-label">Drive:</label>
           <div className="filter-options">
             {drives.map((drive) => (
@@ -416,7 +423,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
         </div>
 
         {/* Price Filter */}
-        <div className="price-filter">
+        <div className="price-filter price-mobile">
           <label className="form-label">Filter by Price(₦)</label>
           <Slider
             className="custom-slider"
@@ -443,24 +450,24 @@ const ComputerFilter = ({ setFilteredProducts }) => {
               className="price-input"
             />
           </div>
-        </div>
-        <div className="expand">
-          <button
-            type="button"
-            onClick={handleApplyClick}
-            className="apply-btn"
-            style={{ width: "100%" }}
-          >
-            Apply Price Range
-          </button>
-          <button
-            type="button"
-            onClick={resetPriceRange}
-            className="reset-btn"
-            style={{ width: "100%" }}
-          >
-            Reset Price Range
-          </button>
+          <div className="expand">
+            <button
+              type="button"
+              onClick={handleApplyClick}
+              className="apply-btn"
+              style={{ width: "100%" }}
+            >
+              Apply Price Range
+            </button>
+            <button
+              type="button"
+              onClick={resetPriceRange}
+              className="reset-btn"
+              style={{ width: "100%" }}
+            >
+              Reset Price Range
+            </button>
+          </div>
         </div>
       </form>
     </div>

@@ -115,3 +115,35 @@ button[type="submit"]:hover {
   margin: 5px 0;
   font-size: 0.9em;
 }
+
+
+@media (max-width: 767px) {
+  .price-mobile {
+
+    position: relative;
+    bottom: 750px;
+    left: 130px;
+  }
+  .price-mobile .form-label {
+    margin-left: 60px;
+    font-size: 18px;
+  }
+  .price-mobile .slider {
+    margin-top: -6px;
+  }
+  .price-mobile .price-range-values {
+    margin-top: -15px;
+  }
+  .ram-mobile {
+    position: relative;
+    bottom: 145px;
+    left: 150px;
+  }
+
+  .drive-mobile {
+    position: relative;
+    bottom: 100px;
+    /* left: 200px; */
+  }
+
+}

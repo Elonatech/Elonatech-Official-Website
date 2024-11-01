@@ -272,7 +272,7 @@ const Computer = () => {
                   marginTop: "50px",
                   paddingTop: "30px",
                   paddingBottom: "30px",
-                  marginLeft: "15px"
+                  marginLeft: "5px"
                 }}
               >
                 <form
@@ -377,7 +377,7 @@ const Computer = () => {
                 </ul>
               </div>
               <div
-                style={{ margin: "15px", width: "60%" }}
+                style={{ margin: "1px", width: "60%" }}
                 className="filter-section p-2 rounded shadow-sm"
               >
                 <h4

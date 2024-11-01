@@ -3,3 +3,13 @@
 @tailwind utilities;
 
 /* the other classes will come here */
+
+.user-select-none {
+    user-select: none;
+}
+
+.user-select-text {
+    user-select: text;
+}
+
+  

@@ -60,9 +60,57 @@
 }
 
 
+ .tannet {
+  width: 130px;
+  height: auto;
+  margin-left: 60px;
+}
 
+.second {
+  height: 150px;
+  background: white;
+}
 
+.move-up {
+  margin-top: -20px;
+}
 
+.third {
+  height: 150px;
+  width: 150px;
+  margin-left: 30px;
+}
 
+.fourth {
+  height: 150px;
+} 
+
+.pfn {
+    margin-top: 20px;
+}
+
+.fifth {
+  display: flex;
+  align-items: center;
+}
+
+.sixth {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 756px) {
+  .tannet {
+    width: 130px;
+    height: auto;
+    margin-left: 0px;
+      
+  }
+  .third {
+    height: 150px;
+    width: 150px;
+    margin-left: -10px;
+  }
+}
 
 

@@ -4,6 +4,8 @@ import { CartProvider } from 'react-use-cart';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import './index.css';
+import { useAuth } from './components/admin/AuthContext';
 
 import NewsPages from "./components/news/NewsPages";
 import TrendsPages from "./components/trends/TrendsPages";
@@ -553,7 +555,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-
+  const { isAuthenticated } = useAuth();
   useEffect(() => {
     const logVisit = async () => {
       try {
@@ -568,9 +570,10 @@ const App = () => {
 
 return (
 <>
-
-<ToastContainer  />
-<RouterProvider router={router}  /> 
+<div className={isAuthenticated ? 'user-select-text' : 'user-select-none'}>
+  <ToastContainer  />
+  <RouterProvider router={router}  /> 
+</div>
 
 </> 
 );

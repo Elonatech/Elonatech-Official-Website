@@ -319,7 +319,7 @@ const Shop = () => {
                 paddingTop: "30px",
                 paddingBottom: "30px",
 
-                marginLeft: "15px"
+                marginLeft: "5px"
               }}
             >
               <form

@@ -4,6 +4,8 @@ import { BASEURL } from "../../../BaseURL/BaseURL";
 
 import './printers.css';
 
+// import '../shop/shopFilter.css'
+
 const PrinterFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
     type: "",
@@ -141,7 +143,7 @@ const PrinterFilter = ({ setFilteredProducts }) => {
         </div>
 
         {/* Price Filter */}
-        <div className="price-filter">
+        <div className="price-filter price-mobile">
           <label className="form-label">Filter by Price(₦)</label>
           <Slider
             className="custom-slider"
@@ -169,15 +171,14 @@ const PrinterFilter = ({ setFilteredProducts }) => {
               className="price-input"
             />
           </div>
-        </div>
-
-        <div className="expand">
-          <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
-            Apply Price Range
-          </button>
-          <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
-            Reset Price Range
-          </button>
+          <div className="expand">
+            <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
+              Apply Price Range
+            </button>
+            <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
+              Reset Price Range
+            </button>
+          </div>
         </div>
       </form>
 
