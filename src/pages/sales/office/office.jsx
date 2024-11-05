@@ -356,7 +356,7 @@ const Office = () => {
               </div>
 
               <div
-                style={{ margin: "15px", width: "60%" }}
+                style={{ margin: "15px", width: "60%",  display: isLoading === true ? 'none' : 'block' }}
                 className="filter-section p-2 rounded shadow-sm"
               >
                 <h4

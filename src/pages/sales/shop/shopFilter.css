@@ -56,26 +56,33 @@
     background-color: #5c6bc0;
   } */
 
+.price-range-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .form-label {
-    color: #212529;
-    font-size: 22.86px;
-    font-weight: bold;
+.dash {
+  font-size: 31px;
+}
+
+.form-label {
+  color: #212529;
+  font-size: 22.86px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .price-mobile {
+    display: none;
   }
-
-  @media screen and (max-width: 767px) {
-    .price-mobile {
-      position: relative;
-      bottom: 545px;
-      left: 130px;
-    }
-    .price-mobile h4 {
-      margin-left: 50px;
-    }
-    .price-mobile .slider {
-      margin-top: -6px;
-    }
-    .price-mobile .price-range-values {
-      margin-top: -15px;
-    }
+  .price-mobile h4 {
+    margin-left: 50px;
+  }
+  .price-mobile .slider {
+    margin-top: -6px;
+  }
+  .price-mobile .price-range-values {
+    /* margin-top: -15px; */
+  }
 }

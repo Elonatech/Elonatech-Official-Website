@@ -3,6 +3,7 @@ import axios from "axios";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import Slider from "@mui/material/Slider";
 import "./shopFilter.css"
+import { GoDash } from "react-icons/go";
 
 const ShopFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
@@ -182,9 +183,10 @@ const ShopFilter = ({ setFilteredProducts }) => {
               className="price-input"
             />
           </div>
-          <span className="separator">-</span>
+          {/* <span className="separator">-</span> */}
+          <GoDash className="dash"/>
           <div>
-            <input
+            <input 
               style={{ width: "100%", borderRadius: "5px" }}
               type="text"
               value={
