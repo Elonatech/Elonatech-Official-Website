@@ -1,3 +1,4 @@
+
 import {  useEffect, useState, useCallback, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import axios from 'axios';
@@ -12,8 +13,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import sanitizeHtml from 'sanitize-html';
 import SocialShareButtons from './socialShareButton';
-import MetaData from '../metaService';
-import jsonld from 'jsonld'; 
 
 // Import Swiper styles
 import 'swiper/css';
@@ -49,25 +48,6 @@ const useWindowSize = () => {
   }, []);
 
   return windowSize;
-};
-
-// Define a function to inject JSON-LD
-const injectJsonLd = async (structuredData) => {
-  try {
-    const compacted = await jsonld.compact(structuredData, {
-      "@context": "https://schema.org/",
-      "@vocab": "https://schema.org/"
-    });
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.innerHTML = JSON.stringify(compacted);
-
-    document.head.appendChild(script);
-
-  } catch (error) {
-    console.error('Error injecting JSON-LD:', error);
-  }
 };
 
 const useScrollResetNavigation = () => {
@@ -117,38 +97,8 @@ const useScrollResetNavigation = () => {
   return { handleGoBack, scrollToTop, handleNavigateNext };
 };
 
-// Define the updateMetaData function
-const updateMetaData = (data) => {
-  <MetaData
-    title={data.title}
-    description={data.description}
-    author={data.author}
-    canonicalUrl={data.canonicalUrl}
-    ogImage={data.ogImage}
-  />;
 
-  // Create structuredData object here
-  const structuredData = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": data.name,
-    "image": data.ogImage, // Use ogImage from data
-    "description": data.description,
-    "brand": {
-        "@type": "Brand",
-        "name": data.brand
-    },
-    "offers": {
-        "@type": "Offer",
-        "url": data.canonicalUrl, // Use canonicalUrl from data
-        "priceCurrency": "NGN",
-        "price": data.price,
-        "availability": data.quantity > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
-    }
-  };
 
-  injectJsonLd(structuredData);
-};
 
 const SingleProduct = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState();
@@ -168,7 +118,7 @@ const SingleProduct = () => {
     const navigate = useNavigate();
   const location = useLocation();
 
-  const windowSize = useWindowSize(); 
+  const windowSize = useWindowSize(); // Get window dimensions
   const isMobile = windowSize.width < 768;
 
   
@@ -184,42 +134,31 @@ const SingleProduct = () => {
    useEffect(() => {
     const fetchData = async () => {
         try {
-            const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
+          const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
+          setData(res.data.product);
+          setImage(res.data.product.images);
+          setCategory(res.data.product.category);
+          setComputer(res.data.product.computerProperty);
+          setProduct(res.data.product);
+          setIsLoading(true);
 
-            // Update meta data before setting the data state
-
-            setData(res.data.product);
-            setImage(res.data.product.images);
-            setCategory(res.data.product.category);
-            setComputer(res.data.product.computerProperty); 
-            updateMetaData({
-              title: res.data.product.name,
-              description: res.data.product.description,
-              author: res.data.product.brand,
-              canonicalUrl: `/product/${res.data.product._id}`,
-              ogImage: res.data.product.images[0].url,
-          });
-            setIsLoading(true); // Set loading state
-
-            // Fetch next product
-            const nextRes = await axios.get(`${BASEURL}/api/v1/product/${id}/next`);
-            setNextProductId(nextRes.data.nextProduct._id);
+  
+          // Fetch next product
+          const nextRes = await axios.get(`${BASEURL}/api/v1/product/${id}/next`);
+          setNextProductId(nextRes.data.nextProduct._id);
+  
 
             // Fetch related products
             await fetchRelatedProducts();
-
+            
             await fetchRecentlyViewedProducts();
-
-            setIsLoading(false); 
         } catch (error) {
             setIsLoading(true);
             navigate('/shop');
-            console.error("Error fetching product details:", error); 
         } 
     }
     fetchData();
 }, [id]);
-
 
 
 useEffect(() => {
@@ -301,34 +240,61 @@ const ProductSection = ({ title, products }) => (
 
     const { addItem } = useCart();
 
-// Sanitize Html for description
-const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
+    const sanitizedDescription = sanitizeHtml(data.description, {allowedTags: ["strong"]});
     
     const productImage = image.length > 0 
         ? (image[0].url.startsWith('https') ? image[0].url : `https://elonatech.com.ng${image[0].url}`)
         : 'https://elonatech.com.ng/default-product-image.jpg';
-
-    const productUrl = `https://elonatech.com.ng/product/${id}`;
+  
+    const productUrl = `${process.env.REACT_APP_FRONTEND_URL}/product/${id}`;
+  
+    const structuredData = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": data.name,
+        "image": productImage,
+        "description": sanitizedDescription,
+        "brand": {
+            "@type": "Brand",
+            "name": data.brand
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": productUrl,
+            "priceCurrency": "NGN",
+            "price": data.price,
+            "availability": data.quantity > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+        }
+    };
+    console.log("Product Image URL:", productImage);
 
     return (
     <>
 
 <Helmet>
+        {/* Title Tag */}
         <title>{`${data.name} - Elonatech Nigeria`}</title>
+
+        {/* Description Meta Tag */}
         <meta name="description" content={sanitizedDescription} />
-        
+
         {/* Essential Open Graph Meta Tags */}
         <meta property="og:title" content={data.name} />
         <meta property="og:description" content={sanitizedDescription} />
         <meta property="og:image" content={productImage} />
-        <meta property="og:url" content={`${process.env.REACT_APP_FRONTEND_URL}/product/${id}`} />
+        <meta property="og:url" content={productUrl} />
         <meta property="og:type" content="product" />
-        
+
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={data.name} />
         <meta name="twitter:description" content={sanitizedDescription} />
         <meta name="twitter:image" content={productImage} />
+
+        {/* Schema.org for Rich Snippets */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
 
 {/*================================================================ header ==============================================*/}
