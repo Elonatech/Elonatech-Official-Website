@@ -53,15 +53,6 @@ const FilterByPrice = () => {
     setFilteredProducts([])
   }
 
-  const handleBrandChange = async brand => {
-    const updatedBrands = filters.brand.includes(brand)
-      ? filters.brand.filter(b => b !== brand)
-      : [...filters.brand, brand]
-
-    setFilters(prevFilters => ({ ...prevFilters, brand: updatedBrands }))
-    await applyFilters(updatedBrands, filters.price)
-  }
-
   const handleInputChange = (e, index) => {
     const rawValue = e.target.value.replace(/,/g, '') // Remove commas
 

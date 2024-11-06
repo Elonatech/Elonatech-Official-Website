@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import ShopPagination from './shopPagination/shopPagination'
+// import ShopPagination from './shopPagination/shopPagination'
 import Pagination from './../../../components/Pagination/Pagination'
 import './shop.css'
 import { BASEURL } from '../../../BaseURL/BaseURL'
@@ -16,8 +16,10 @@ import 'react-toastify/dist/ReactToastify.css'
 import { Helmet } from 'react-helmet-async'
 import 'rc-slider/assets/index.css'
 import ShopFilter from './shopFilter'
-import Slider from '@mui/material/Slider'
-import { GoDash } from 'react-icons/go'
+// import Slider from '@mui/material/Slider'
+// import { GoDash } from 'react-icons/go'
+import FilterByPrice from '../filterByPrice/FilterByPrice'
+import { startTransition } from 'react'
 
 const Shop = () => {
   const [data, setData] = useState([])
@@ -217,8 +219,21 @@ const Shop = () => {
       : [...filters.brand, brand]
 
     setFilters(prevFilters => ({ ...prevFilters, brand: updatedBrands }))
-    await applyFilters(updatedBrands, filters.price)
+
+    // Use startTransition to make the applyFilters call less urgent
+    startTransition(() => {
+      applyFilters(updatedBrands, filters.price)
+    })
   }
+
+  // const handleBrandChange = async brand => {
+  //   const updatedBrands = filters.brand.includes(brand)
+  //     ? filters.brand.filter(b => b !== brand)
+  //     : [...filters.brand, brand]
+
+  //   setFilters(prevFilters => ({ ...prevFilters, brand: updatedBrands }))
+  //   await applyFilters(updatedBrands, filters.price)
+  // }
 
   const handleInputChange = (e, index) => {
     const rawValue = e.target.value.replace(/,/g, '') // Remove commas
@@ -450,10 +465,7 @@ const Shop = () => {
             <div className='thix'>
               <div className='browse'>
                 <form class='d-flex'></form>
-                <div                 class='fw-bold tyu'
-                >
-                  Browse Categories
-                </div>
+                <div class='fw-bold tyu'>Browse Categories</div>
                 <ul className='list-unstyled'>
                   <li>
                     <Link
@@ -546,68 +558,7 @@ const Shop = () => {
               </div>
 
               {/* Filter by Price */}
-              <div className='price-filter price-mobile1'>
-                <div className='fw-bold'>Filter by Price(₦)</div>
-                <div className='sliding'>
-                  <Slider
-                    className='slider'
-                    // size="small"
-                    value={priceRange}
-                    min={defaultPriceRange[0]}
-                    max={defaultPriceRange[1]}
-                    step={50}
-                    onChange={handlePriceRangeChange}
-                    pearling
-                    minDistance={10}
-                  />
-                </div>
-                <div className='price-range-values'>
-                  <div style={{ width: '100%' }}>
-                    <input
-                      style={{ width: '100%', borderRadius: '5px' }}
-                      type='text'
-                      value={
-                        priceRange[0] !== undefined
-                          ? priceRange[0].toLocaleString()
-                          : ''
-                      }
-                      onChange={e => handleInputChange(e, 0)}
-                      className='price-input'
-                    />
-                  </div>
-                  <span className="separator">-</span>
-                  {/* <GoDash className='dash' /> */}
-                  <div>
-                    <input
-                      style={{ width: '100%', borderRadius: '5px' }}
-                      type='text'
-                      value={
-                        priceRange[1] !== undefined
-                          ? priceRange[1].toLocaleString()
-                          : ''
-                      }
-                      onChange={e => handleInputChange(e, 1)}
-                      className='price-input'
-                    />
-                  </div>
-                </div>
-                <div className='btnx'>
-                  <button
-                    style={{ width: '100%' }}
-                    onClick={applyPriceFilter}
-                    className='apply-btn'
-                  >
-                    Apply Price Range
-                  </button>
-                  <button
-                    style={{ width: '100%' }}
-                    onClick={resetPriceRange}
-                    className='reset-btn'
-                  >
-                    Reset Price Range
-                  </button>
-                </div>
-              </div>
+              <FilterByPrice />
             </div>
 
             {/* <h1>filters</h1> */}
