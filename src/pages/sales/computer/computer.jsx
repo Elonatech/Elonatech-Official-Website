@@ -384,14 +384,14 @@ const Computer = () => {
 
             <div
               style={{
-                margin: '1px',
+                // margin: '1px',
                 width: '60%',
                 display: isLoading === true ? 'none' : 'block'
               }}
-              className='filter-section p-2 rounded shadow-sm'
+              className='filter-section pt-2 rounded shadow-sm'
             >
               <h4
-                style={{ marginTop: '-8px', marginBottom: '16px' }}
+                style={{ marginTop: '-8px' }}
                 className='fw-bold'
               >
                 Sort Computers by

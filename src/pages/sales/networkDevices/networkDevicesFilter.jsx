@@ -202,6 +202,12 @@ const NetworkFilter = ({ setFilteredProducts }) => {
         </div>
       </form>
       <style jsx>{`
+        .expand {
+          width: 100%;
+          max-width: 100%;
+          padding: 0;
+          margin: 5px 0 0 -8px;
+        }
         .shop-filter {
           margin-bottom: 1rem;
         }

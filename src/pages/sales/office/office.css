@@ -102,6 +102,10 @@
 
 @media (max-width: 767px) {
 
+  .filter-section{
+    margin: 15px;
+  }
+
   .thix {
     display: flex;
     justify-content: space-around;

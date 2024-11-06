@@ -203,6 +203,10 @@
 
 
 @media (max-width: 767px) {
+.filter-section{
+  margin: 15px;
+}
+
   .thix {
     display: flex;
     justify-content: space-around;
@@ -233,7 +237,7 @@
 
   .tyu {
     margin-top: 0;
-  
+
   }
 
 
@@ -319,6 +323,13 @@
     height: 120px;
     /* Slightly larger image container for single-column layout */
   }
+}
+
+.expand {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 5px 0 0 -8px;
 }
 
 .computers-section {
