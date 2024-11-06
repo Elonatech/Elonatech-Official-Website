@@ -106,6 +106,10 @@ const useScrollResetNavigation = () => {
   return { handleGoBack, scrollToTop, handleNavigateNext, handleGoToShop }
 }
 
+
+// git remote add origin https://github.com/Elonatech/Elonatech-Official-Website.git
+
+
 const SingleProduct = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState()
   const [data, setData] = useState({})
