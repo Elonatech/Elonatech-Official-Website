@@ -287,7 +287,7 @@ const Computer = () => {
             <div className='thix'>
               <div className='browse'>
                 <form className='d-flex'></form>
-                <div className='fw-bold tyu'>Browse Categories</div>
+                <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>
                     <Link

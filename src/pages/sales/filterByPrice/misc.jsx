@@ -2,7 +2,7 @@
   <div className='thix'>
     <div className='browse'>
       <form class='d-flex'></form>
-      <div class='fw-bold tyu'>Browse Categories</div>
+      <h4 class='fw-bold tyu'>Browse Categories</h4>
       <ul className='list-unstyled'>
         <li>
           <Link

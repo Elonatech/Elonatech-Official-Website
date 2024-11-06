@@ -465,7 +465,7 @@ const Shop = () => {
             <div className='thix'>
               <div className='browse'>
                 <form class='d-flex'></form>
-                <div class='fw-bold tyu'>Browse Categories</div>
+                <h4 class='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>
                     <Link
@@ -564,16 +564,13 @@ const Shop = () => {
             {/* <h1>filters</h1> */}
             <div
               style={{
-                margin: '15px',
+                // margin: '15px',
                 width: '60%',
                 display: isLoading ? 'none' : 'block'
               }}
-              className='filter-section p-2 rounded shadow-sm'
+              className='filter-section pt-2 rounded shadow-sm'
             >
-              <h4
-                style={{ marginTop: '-8px', marginBottom: '16px' }}
-                class='fw-bold '
-              >
+              <h4 style={{ marginTop: '-8px' }} class='fw-bold '>
                 Sort Products by
               </h4>
               <ShopFilter setFilteredProducts={setFilteredProducts} />

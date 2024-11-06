@@ -1,143 +1,153 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { BASEURL } from "../../../BaseURL/BaseURL";
-import Slider from "@mui/material/Slider";
-import "./shopFilter.css"
-import { GoDash } from "react-icons/go";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { BASEURL } from '../../../BaseURL/BaseURL'
+import Slider from '@mui/material/Slider'
+import './shopFilter.css'
+import { GoDash } from 'react-icons/go'
 
 const ShopFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
     brand: [],
-    price: [0, 1000000000],
-  });
+    price: [0, 1000000000]
+  })
 
-  const [brands, setBrands] = useState([]);
-  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000000]);
-  const [priceRange, setPriceRange] = useState([0, 1000000000]);
+  const [brands, setBrands] = useState([])
+  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000000])
+  const [priceRange, setPriceRange] = useState([0, 1000000000])
 
   useEffect(() => {
     axios
       .get(`${BASEURL}/api/v1/product/brand`)
-      .then((response) => {
+      .then(response => {
         if (response.data.success) {
-          const { brands: fetchedBrands, minPrice, maxPrice } = response.data;
+          const { brands: fetchedBrands, minPrice, maxPrice } = response.data
 
           // Normalize, remove duplicates, and convert to uppercase
-          const normalizedBrands = fetchedBrands.map((brand) =>
+          const normalizedBrands = fetchedBrands.map(brand =>
             brand.trim().toUpperCase()
-          );
-          const uniqueBrands = [...new Set(normalizedBrands)];
+          )
+          const uniqueBrands = [...new Set(normalizedBrands)]
 
-          setBrands(uniqueBrands);
-          setDefaultPriceRange([minPrice, maxPrice]);
-          setPriceRange([minPrice, maxPrice]);
+          setBrands(uniqueBrands)
+          setDefaultPriceRange([minPrice, maxPrice])
+          setPriceRange([minPrice, maxPrice])
         }
       })
-      .catch((error) => {
-        console.error("Error fetching brands:", error);
-      });
-  }, []);
+      .catch(error => {
+        console.error('Error fetching brands:', error)
+      })
+  }, [])
 
   const resetBrands = async () => {
     // Clear the selected brands
-    setFilters((prevFilters) => ({
+    setFilters(prevFilters => ({
       ...prevFilters,
-      brand: [],
-    }));
+      brand: []
+    }))
 
     // Clear filtered products
-    setFilteredProducts([]);
-  };
+    setFilteredProducts([])
+  }
 
-  const handleBrandChange = async (brand) => {
+  const handleBrandChange = async brand => {
     const updatedBrands = filters.brand.includes(brand)
-      ? filters.brand.filter((b) => b !== brand)
-      : [...filters.brand, brand];
+      ? filters.brand.filter(b => b !== brand)
+      : [...filters.brand, brand]
 
-    setFilters((prevFilters) => ({ ...prevFilters, brand: updatedBrands }));
-    await applyFilters(updatedBrands, filters.price);
-  };
+    setFilters(prevFilters => ({ ...prevFilters, brand: updatedBrands }))
+    await applyFilters(updatedBrands, filters.price)
+  }
 
   const handleInputChange = (e, index) => {
-    const rawValue = e.target.value.replace(/,/g, ""); // Remove commas
+    const rawValue = e.target.value.replace(/,/g, '') // Remove commas
 
     // If the input is empty, set the value to an empty string
-    if (rawValue === "") {
-      const updatedPriceRange = [...priceRange];
-      updatedPriceRange[index] = ""; // Or use null if you prefer
-      setPriceRange(updatedPriceRange);
-      return;
+    if (rawValue === '') {
+      const updatedPriceRange = [...priceRange]
+      updatedPriceRange[index] = '' // Or use null if you prefer
+      setPriceRange(updatedPriceRange)
+      return
     }
 
     // Convert to number and handle invalid cases
-    const newValue = Number(rawValue);
+    const newValue = Number(rawValue)
 
     // Only update if it's a valid number
     if (!isNaN(newValue)) {
-      const updatedPriceRange = [...priceRange];
-      updatedPriceRange[index] = newValue;
-      setPriceRange(updatedPriceRange);
+      const updatedPriceRange = [...priceRange]
+      updatedPriceRange[index] = newValue
+      setPriceRange(updatedPriceRange)
     }
-  };
+  }
 
   const applyPriceFilter = async () => {
-    setFilters((prevFilters) => ({ ...prevFilters, price: priceRange }));
-    await applyFilters(filters.brand, priceRange);
-  };
+    setFilters(prevFilters => ({ ...prevFilters, price: priceRange }))
+    await applyFilters(filters.brand, priceRange)
+  }
 
   const resetPriceRange = () => {
-    setPriceRange(defaultPriceRange);
-    setFilters((prevFilters) => ({ ...prevFilters, price: defaultPriceRange }));
-    setFilteredProducts([]);
-  };
+    setPriceRange(defaultPriceRange)
+    setFilters(prevFilters => ({ ...prevFilters, price: defaultPriceRange }))
+    setFilteredProducts([])
+  }
 
   const applyFilters = async (brands, price) => {
     try {
-      const formattedBrands = brands.map((brand) => brand.trim().toUpperCase()).join(",");
+      const formattedBrands = brands
+        .map(brand => brand.trim().toUpperCase())
+        .join(',')
 
       const params = {
-        brand: formattedBrands || undefined,
-      };
+        brand: formattedBrands || undefined
+      }
 
       // If the user has specified a price range, add it to the query
-      if (price[0] !== defaultPriceRange[0] || price[1] !== defaultPriceRange[1]) {
-        params.minPrice = price[0];
-        params.maxPrice = price[1];
+      if (
+        price[0] !== defaultPriceRange[0] ||
+        price[1] !== defaultPriceRange[1]
+      ) {
+        params.minPrice = price[0]
+        params.maxPrice = price[1]
       }
 
-      const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`, { params });
+      const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`, {
+        params
+      })
 
       if (response.data.success) {
-        setFilteredProducts(response.data.data);
+        setFilteredProducts(response.data.data)
       }
     } catch (error) {
-      console.error("Error filtering products:", error);
+      console.error('Error filtering products:', error)
     }
-  };
+  }
 
-  const formatPrice = (value) => {
-    return value === "" || value === 0
-      ? "0"
-      : new Intl.NumberFormat().format(value);
-  };
+  const formatPrice = value => {
+    return value === '' || value === 0
+      ? '0'
+      : new Intl.NumberFormat().format(value)
+  }
 
   const handlePriceRangeChange = (event, newValue) => {
-    setPriceRange(newValue);
-  };
+    setPriceRange(newValue)
+  }
 
   return (
-    <div style={{ boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)" }} className="mb-3">
+    <div
+      style={{ boxShadow: '0px 1px 0px rgba(0, 0, 0, 0.1)' }}
+      className='mb-3'
+    >
       {/* Filter by Brand */}
-      <label className="form-label">Brand:</label>
-      <div style={{ maxHeight: "200px", overflowY: "scroll" }}>
+      <label className='form-label'>Brand:</label>
+      <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
         {brands
           .sort((a, b) => a.localeCompare(b))
-          .map((brand) => (
-            <div key={brand} className="text-dark">
+          .map(brand => (
+            <div key={brand} className='text-dark'>
               <input
-                type="checkbox"
+                type='checkbox'
                 id={brand}
-                name="brand"
+                name='brand'
                 value={brand}
                 checked={filters.brand.includes(brand)}
                 onChange={() => handleBrandChange(brand)}
@@ -156,10 +166,10 @@ const ShopFilter = ({ setFilteredProducts }) => {
       </button> */}
 
       {/* Filter by Price */}
-      <div className="price-filter price-mobile">
+      <div className='price-filter price-mobile'>
         <h4>Filter by Price(₦)</h4>
         <Slider
-          className="slider"
+          className='slider'
           value={priceRange}
           min={defaultPriceRange[0]}
           max={defaultPriceRange[1]}
@@ -169,48 +179,48 @@ const ShopFilter = ({ setFilteredProducts }) => {
           minDistance={10}
         />
 
-        <div className="price-range-values">
-          <div style={{ width: "100%" }}>
+        <div className='price-range-values'>
+          <div style={{ width: '100%' }}>
             <input
-              style={{ width: "100%", borderRadius: "5px" }}
-              type="text"
+              style={{ width: '100%', borderRadius: '5px' }}
+              type='text'
               value={
                 priceRange[0] !== undefined
                   ? priceRange[0].toLocaleString()
-                  : ""
+                  : ''
               }
-              onChange={(e) => handleInputChange(e, 0)}
-              className="price-input"
+              onChange={e => handleInputChange(e, 0)}
+              className='price-input'
             />
           </div>
-          {/* <span className="separator">-</span> */}
-          <GoDash className="dash"/>
+          <span className="separator">-</span>
+          {/* <GoDash className='dash' /> */}
           <div>
-            <input 
-              style={{ width: "100%", borderRadius: "5px" }}
-              type="text"
+            <input
+              style={{ width: '100%', borderRadius: '5px' }}
+              type='text'
               value={
                 priceRange[1] !== undefined
                   ? priceRange[1].toLocaleString()
-                  : ""
+                  : ''
               }
-              onChange={(e) => handleInputChange(e, 1)}
-              className="price-input"
+              onChange={e => handleInputChange(e, 1)}
+              className='price-input'
             />
           </div>
         </div>
-        <div>
+        <div className='btnd'>
           <button
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             onClick={applyPriceFilter}
-            className="apply-btn"
+            className='apply-btn'
           >
             Apply Price Range
           </button>
           <button
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             onClick={resetPriceRange}
-            className="reset-btn"
+            className='reset-btn'
           >
             Reset Price Range
           </button>
@@ -253,9 +263,16 @@ const ShopFilter = ({ setFilteredProducts }) => {
           font-size: 18px;
           margin-top: 20px;
         }
+
+        .btnd {
+          width: 100%;
+          max-width: 100%;
+          padding: 0;
+          margin: 5px 0 0 -8px;
+        }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
-export default ShopFilter;
+export default ShopFilter
