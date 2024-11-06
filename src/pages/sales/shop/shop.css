@@ -24,6 +24,10 @@
   display: flex;
 }
 
+.separator{
+  margin-inline: 10px;
+}
+
 .pageNumbers li {
   padding: 10px;
   border: 1px solid white;
@@ -313,6 +317,7 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
 
 .stars {
   font-size: 1.2em;

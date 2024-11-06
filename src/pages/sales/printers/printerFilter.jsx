@@ -217,6 +217,12 @@ const PrinterFilter = ({ setFilteredProducts }) => {
           font-size: 18px;
           margin-top: 20px;
         }
+
+        @media (max-width: 767px) {
+          .price-mobile {
+            display: none;
+          }
+        }
       `}</style>
     </div>
   );

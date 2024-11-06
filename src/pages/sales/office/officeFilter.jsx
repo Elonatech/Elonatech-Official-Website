@@ -1,178 +1,194 @@
-import React, { useState, useEffect } from "react";
-import Slider from "@mui/material/Slider";
-import { BASEURL } from "../../../BaseURL/BaseURL";
+import React, { useState, useEffect } from 'react'
+import Slider from '@mui/material/Slider'
+import { BASEURL } from '../../../BaseURL/BaseURL'
 import './office.css'
-
 
 const OfficeFilter = ({ setFilteredProducts }) => {
   const [filters, setFilters] = useState({
-    brand: "",
-    type: "",
+    brand: '',
+    type: '',
     price: [0, 1000000]
-  });
-  const [noResultsMessage, setNoResultsMessage] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 1000000]);
-  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
-  const [brands, setBrands] = useState([]); // Add state to hold brands
+  })
+  const [noResultsMessage, setNoResultsMessage] = useState('')
+  const [priceRange, setPriceRange] = useState([0, 1000000])
+  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000])
+  const [brands, setBrands] = useState([]) // Add state to hold brands
 
   useEffect(() => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Office`)
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         if (data.minPrice !== undefined && data.maxPrice !== undefined) {
-          const fetchedMinPrice = data.minPrice;
-          const fetchedMaxPrice = data.maxPrice;
-          setDefaultPriceRange([fetchedMinPrice, fetchedMaxPrice]);
-          setPriceRange([fetchedMinPrice, fetchedMaxPrice]);
-          setFilters((prevFilters) => ({
+          const fetchedMinPrice = data.minPrice
+          const fetchedMaxPrice = data.maxPrice
+          setDefaultPriceRange([fetchedMinPrice, fetchedMaxPrice])
+          setPriceRange([fetchedMinPrice, fetchedMaxPrice])
+          setFilters(prevFilters => ({
             ...prevFilters,
             price: [fetchedMinPrice, fetchedMaxPrice]
-          }));
+          }))
         }
-        setFilteredProducts(data.data);
-        
+        setFilteredProducts(data.data)
+
         // Use Set to ensure unique brands
-        const availableBrands = [...new Set(data.data.map((product) => product.brand.toUpperCase()))];
-        setBrands(availableBrands); // Set unique brands
+        const availableBrands = [
+          ...new Set(data.data.map(product => product.brand.toUpperCase()))
+        ]
+        setBrands(availableBrands) // Set unique brands
       })
-      .catch((error) => console.error("Error fetching initial data:", error));
-  }, [setFilteredProducts]);
+      .catch(error => console.error('Error fetching initial data:', error))
+  }, [setFilteredProducts])
 
   const resetPriceRange = () => {
-    setPriceRange(defaultPriceRange);
+    setPriceRange(defaultPriceRange)
     const updatedFilters = {
       ...filters,
       price: defaultPriceRange
-    };
-    setFilters(updatedFilters);
-    applyFilters(updatedFilters);
-  };
+    }
+    setFilters(updatedFilters)
+    applyFilters(updatedFilters)
+  }
 
-  const handleCheckboxChange = (event) => {
-    const { name, value, checked } = event.target;
-    setFilters((prevFilters) => {
+  const handleCheckboxChange = event => {
+    const { name, value, checked } = event.target
+    setFilters(prevFilters => {
       const updatedFilters = {
         ...prevFilters,
-        [name]: checked ? value : ""
-      };
-      applyFilters(updatedFilters);
-      return updatedFilters;
-    });
-  };
+        [name]: checked ? value : ''
+      }
+      applyFilters(updatedFilters)
+      return updatedFilters
+    })
+  }
 
   const handlePriceChange = (event, newValue) => {
-    setFilters((prevFilters) => ({
+    setFilters(prevFilters => ({
       ...prevFilters,
       price: newValue
-    }));
-  };
+    }))
+  }
 
   const handleApplyClick = () => {
-    applyFilters(filters);
-  };
+    applyFilters(filters)
+  }
 
-  const applyFilters = (updatedFilters) => {
-    let queryParams = [];
+  const applyFilters = updatedFilters => {
+    let queryParams = []
     if (updatedFilters.brand) {
-        queryParams.push(`brand=${encodeURIComponent(updatedFilters.brand.toLowerCase())}`);
+      queryParams.push(
+        `brand=${encodeURIComponent(updatedFilters.brand.toLowerCase())}`
+      )
     }
     if (updatedFilters.type) {
-        queryParams.push(`type=${updatedFilters.type.toLowerCase()}`);
+      queryParams.push(`type=${updatedFilters.type.toLowerCase()}`)
     }
     if (
-        updatedFilters.price[0] !== defaultPriceRange[0] ||
-        updatedFilters.price[1] !== defaultPriceRange[1]
+      updatedFilters.price[0] !== defaultPriceRange[0] ||
+      updatedFilters.price[1] !== defaultPriceRange[1]
     ) {
-        queryParams.push(`minPrice=${updatedFilters.price[0]}`);
-        queryParams.push(`maxPrice=${updatedFilters.price[1]}`);
+      queryParams.push(`minPrice=${updatedFilters.price[0]}`)
+      queryParams.push(`maxPrice=${updatedFilters.price[1]}`)
     }
 
-    const queryString = queryParams.length > 0 ? queryParams.join("&") : "";
+    const queryString = queryParams.length > 0 ? queryParams.join('&') : ''
     fetch(`${BASEURL}/api/v1/product/filter?category=Office&${queryString}`)
-        .then((response) => response.json())
-        .then((data) => {
-            setFilteredProducts(data.data);
-            setNoResultsMessage(data.data.length === 0 ? "No products match your filter criteria." : "");
-        })
-        .catch((error) => console.error("Error:", error));
-};
+      .then(response => response.json())
+      .then(data => {
+        setFilteredProducts(data.data)
+        setNoResultsMessage(
+          data.data.length === 0
+            ? 'No products match your filter criteria.'
+            : ''
+        )
+      })
+      .catch(error => console.error('Error:', error))
+  }
 
-
-  const formatPrice = (price) => {
-    return price.toLocaleString();
-  };
+  const formatPrice = price => {
+    return price.toLocaleString()
+  }
 
   const handleInputPriceChange = (event, index) => {
-    const value = event.target.value.replace(/[^0-9]/g, "");
-    const newPrice = [...filters.price];
-    newPrice[index] = parseFloat(value) || 0;
-    setFilters((prevFilters) => ({
+    const value = event.target.value.replace(/[^0-9]/g, '')
+    const newPrice = [...filters.price]
+    newPrice[index] = parseFloat(value) || 0
+    setFilters(prevFilters => ({
       ...prevFilters,
       price: newPrice
-    }));
-  };
+    }))
+  }
 
   return (
-    <div className="office-filter">
+    <div className='office-filter'>
       {noResultsMessage && (
-        <div className="no-results-message">
+        <div className='no-results-message'>
           <p>{noResultsMessage}</p>
         </div>
       )}
       <form>
         {/* Brand Filter */}
-        <div className="filter-section">
-          <label className="form-label">Brand:</label>
-          <div className="scrollable-options">
-            {brands.map((brand) => (
-              <div className="form-check" key={brand}>
+        <div className='filter-section'>
+          <label className='form-label'>Brand:</label>
+          <div className='scrollable-options'>
+            {brands.map(brand => (
+              <div className='form-check' key={brand}>
                 <input
-                  type="checkbox"
-                  name="brand"
+                  type='checkbox'
+                  name='brand'
                   value={brand}
                   onChange={handleCheckboxChange}
                   checked={filters.brand === brand}
-                  className="form-check-input"
+                  className='form-check-input'
                 />
-                <label className="form-check-label">{brand}</label>
+                <label className='form-check-label'>{brand}</label>
               </div>
             ))}
           </div>
         </div>
 
         {/* Price Filter */}
-        <div className="price-filter price-mobile">
-          <label className="form-label">Filter by Price (₦)</label>
+        <div className='price-filter price-mobile'>
+          <label className='form-label'>Filter by Price (₦)</label>
           <Slider
-            className="custom-slider"
+            className='custom-slider'
             value={filters.price}
             onChange={handlePriceChange}
             min={priceRange[0]}
             max={priceRange[1]}
             step={1000}
           />
-          <div className="price-range-values">
+          <div className='price-range-values'>
             <input
-              style={{ width: "50%", borderRadius: "5px" }}
-              type="text"
+              style={{ width: '50%', borderRadius: '5px' }}
+              type='text'
               value={formatPrice(filters.price[0])}
-              onChange={(e) => handleInputPriceChange(e, 0)}
-              className="price-input"
+              onChange={e => handleInputPriceChange(e, 0)}
+              className='price-input'
             />
-            <span className="separator">-</span>
+            <span className='separator'>-</span>
             <input
-              style={{ width: "50%", borderRadius: "5px" }}
-              type="text"
+              style={{ width: '50%', borderRadius: '5px' }}
+              type='text'
               value={formatPrice(filters.price[1])}
-              onChange={(e) => handleInputPriceChange(e, 1)}
-              className="price-input"
+              onChange={e => handleInputPriceChange(e, 1)}
+              className='price-input'
             />
           </div>
-          <div className="expand">
-            <button type="button" onClick={handleApplyClick} className="apply-btn" style={{ width: "100%" }}>
+          <div className='expand'>
+            <button
+              type='button'
+              onClick={handleApplyClick}
+              className='apply-btn'
+              style={{ width: '100%' }}
+            >
               Apply Price Range
             </button>
-            <button type="button" onClick={resetPriceRange} className="reset-btn" style={{ width: "100%" }}>
+            <button
+              type='button'
+              onClick={resetPriceRange}
+              className='reset-btn'
+              style={{ width: '100%' }}
+            >
               Reset Price Range
             </button>
           </div>
@@ -214,9 +230,16 @@ const OfficeFilter = ({ setFilteredProducts }) => {
           font-size: 18px;
           margin-top: 20px;
         }
+
+        @media (max-width: 767px) {
+          .price-mobile {
+            display: none;
+          }
+        }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
-export default OfficeFilter;
+
+export default OfficeFilter

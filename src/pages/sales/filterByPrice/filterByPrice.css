@@ -1,0 +1,80 @@
+.separator {
+    margin-inline: 10px;
+}
+
+.price-range-values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.apply-btn,
+.reset-btn {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.apply-btn {
+    background-color: rgb(52, 84, 140);
+    color: white;
+}
+
+.reset-btn {
+    background-color: rgb(220, 53, 69);
+    color: white;
+}
+
+.price-mobile1 {
+    display: none;
+    width: 40%;
+}
+
+.browse form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tyu {
+    margin-top: -8px;
+    /* margin-bottom: 16px; */
+}
+
+@media screen and (max-width: 767px) {
+    .thix {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .price-mobile1 {
+        display: inline-block;
+    }
+
+    .sliding {
+        margin-inline: 10px;
+    }
+
+    .btnx {
+        margin-left: -8px;
+        margin-top: 5px;
+    }
+
+    .browse form {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .browse h4 {
+        font-size: 16px;
+    }
+
+    .tyu {
+        margin-top: 0;
+    }
+
+    .price-range-values {
+        margin-top: -15px;
+    }
+}
