@@ -9,3 +9,4 @@ Disallow: https://elonatech.com.ng/thank-you
 
 Sitemap: https://elonatech.com.ng/sitemap.xml
   
+Allow: /
