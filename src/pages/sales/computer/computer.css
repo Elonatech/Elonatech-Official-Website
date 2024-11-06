@@ -198,10 +198,15 @@
 .tyu {
   margin-top: -8px;
   /* margin-bottom: 16px; */
+  font-size: 1.5rem;
 }
 
 
 @media (max-width: 767px) {
+.filter-section{
+  margin: 15px;
+}
+
   .thix {
     display: flex;
     justify-content: space-around;
@@ -232,7 +237,7 @@
 
   .tyu {
     margin-top: 0;
-  
+
   }
 
 
@@ -320,6 +325,13 @@
   }
 }
 
+.expand {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 5px 0 0 -8px;
+}
+
 .computers-section {
   min-height: 500px;
   background-image: linear-gradient(0deg,
@@ -335,7 +347,7 @@
   text-align: center;
   color: white;
   padding: 20px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 /* Text styling for desktop */

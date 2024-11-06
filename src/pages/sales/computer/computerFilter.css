@@ -112,6 +112,12 @@ button[type="submit"]:hover {
   margin-top: 20px;
 }
 
+.expand {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 5px 0 0 -8px;
+}
 
 .filter-list {
   margin: 10px 0;

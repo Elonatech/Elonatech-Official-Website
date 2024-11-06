@@ -218,6 +218,13 @@ const PosFilter = ({ setFilteredProducts }) => {
             margin-top: 20px;
           }
 
+          .expand {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin: 5px 0 0 -8px;
+          }
+
           @media (max-width: 767px) {
             .price-mobile {
               display: none;

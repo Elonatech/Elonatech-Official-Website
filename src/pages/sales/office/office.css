@@ -102,6 +102,10 @@
 
 @media (max-width: 767px) {
 
+  .filter-section{
+    margin: 15px;
+  }
+
   .thix {
     display: flex;
     justify-content: space-around;
@@ -231,7 +235,7 @@
   text-align: center;
   color: white;
   padding: 20px;
-  margin-bottom: 50px;
+      /* margin-bottom: 50px; */
 }
 
 /* Text styling for desktop */

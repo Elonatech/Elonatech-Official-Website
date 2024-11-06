@@ -291,7 +291,7 @@ const Pos = () => {
             <div className='thix'>
               <div className='browse'>
                 <form className='d-flex' />
-                <div className='fw-bold tyu'>Browse Categories</div>
+                <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>
                     <Link
@@ -386,14 +386,14 @@ const Pos = () => {
 
             <div
               style={{
-                margin: '15px',
+                // margin: '15px',
                 width: '60%',
                 display: isLoading === true ? 'none' : 'block'
               }}
-              className='filter-section p-2 rounded shadow-sm'
+              className='filter-section pt-2 rounded shadow-sm'
             >
               <h4
-                style={{ marginTop: '-8px', marginBottom: '16px' }}
+                style={{ marginTop: '-8px'}}
                 className='fw-bold'
               >
                 Sort Products by
