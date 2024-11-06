@@ -433,6 +433,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
             max={priceRange[1]}
             step={5}
           />
+          
           <div className="price-range-values">
             <input
               style={{ width: "50%", borderRadius: "5px" }}

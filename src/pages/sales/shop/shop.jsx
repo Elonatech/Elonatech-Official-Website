@@ -575,8 +575,8 @@ const Shop = () => {
                       className='price-input'
                     />
                   </div>
-                  {/* <span className="separator">-</span> */}
-                  <GoDash className='dash' />
+                  <span className="separator">-</span>
+                  {/* <GoDash className='dash' /> */}
                   <div>
                     <input
                       style={{ width: '100%', borderRadius: '5px' }}

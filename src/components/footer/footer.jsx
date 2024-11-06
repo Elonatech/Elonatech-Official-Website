@@ -118,7 +118,7 @@ return (
           <iframe name="f143a283b9937e8" 
           class="lazyload"
           data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin"
-          frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no"
+          frameborder="0" allowTransparency="true" allowFullScree="true" scrolling="no"
           allow="encrypted-media" src="https://web.facebook.com/v3.2/plugins/page.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_a
            rbiter%2F%3Fversion%3D46%23cb%3Df3bb415372bda7c%26domain%3Delonatech.com.ng%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Felonatech.com.ng%252Ff26e985fb3
            315e4%26relation%3Dparent.parent&amp;container_width=286&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2Felonatech&amp;locale=en_US&amp;sdk=joey&amp;sh
@@ -141,7 +141,7 @@ return (
       </div>
       
       <div class="form-check">
-      <label class="form-check-label" for="exampleCheck1"><input type="checkbox" class="form-check-input"  required="required"/>I accept the<Link className='ps-2 text-white' to={'/policy'}>Privacy Policy<span className='text-danger'>*</span></Link></label>
+      <label class="form-check-label" htmlFor="exampleCheck1"><input type="checkbox" class="form-check-input"  required="required"/>I accept the<Link className='ps-2 text-white' to={'/policy'}>Privacy Policy<span className='text-danger'>*</span></Link></label>
       </div>
       </form>
     
