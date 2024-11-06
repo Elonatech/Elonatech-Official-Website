@@ -158,8 +158,8 @@ const NetworkDevices = () => {
       <div className='container-fluid network-devices-section'>
         <div className='text-content'>
           <h2>Network Devices</h2>
-          <h5></h5>
-          <p className='lead'></p>
+          <h5>Rely on Scalable and Reliable IT Infrastructure for Fast and Efficient Running of a Company’s Business</h5>
+          <p className="lead">Organization that uses more than one computer or software platform needs network hardware such as servers, routers, switches, etc. to connect & configure all the different systems together</p>
         </div>
       </div>
 
