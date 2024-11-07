@@ -193,7 +193,7 @@ const ShopFilter = ({ setFilteredProducts }) => {
               className='price-input'
             />
           </div>
-          <span className="separator">-</span>
+          <span className='separator'>-</span>
           {/* <GoDash className='dash' /> */}
           <div>
             <input
@@ -229,8 +229,6 @@ const ShopFilter = ({ setFilteredProducts }) => {
 
       {/* Add custom CSS for better visuals */}
       <style jsx>{`
-
-
         .shop-filter {
           margin-bottom: 1rem;
         }
