@@ -257,53 +257,70 @@ const SingleProduct = () => {
 
   const { addItem } = useCart()
 
-  const sanitizedDescription = sanitizeHtml(data.description, {
-    allowedTags: ['strong']
-  })
+  // const sanitizedDescription = sanitizeHtml(data.description, {
+  //   allowedTags: ['strong']
+  // })
 
-  const productImage =
-    image.length > 0
-      ? image[0].url.startsWith('https')
-        ? image[0].url
-        : `https://elonatech.com.ng${image[0].url}`
-      : 'https://elonatech.com.ng/default-product-image.jpg'
+  // const productImage =
+  //   image.length > 0
+  //     ? image[0].url.startsWith('https')
+  //       ? image[0].url
+  //       : `https://elonatech.com.ng${image[0].url}`
+  //     : 'https://elonatech.com.ng/default-product-image.jpg'
 
-  const productUrl = `${process.env.REACT_APP_FRONTEND_URL}/product/${id}`
+  // const productUrl = `${process.env.REACT_APP_FRONTEND_URL}/product/${id}`
 
+  // const structuredData = {
+  //   '@context': 'https://schema.org/',
+  //   '@type': 'Product',
+  //   name: data.name,
+  //   image: productImage,
+  //   description: sanitizedDescription,
+  //   brand: {
+  //     '@type': 'Brand',
+  //     name: data.brand
+  //   },
+  //   offers: {
+  //     '@type': 'Offer',
+  //     url: productUrl,
+  //     priceCurrency: 'NGN',
+  //     price: data.price,
+  //     availability:
+  //       data.quantity > 0
+  //         ? 'https://schema.org/InStock'
+  //         : 'https://schema.org/OutOfStock'
+  //   }
+  // }
+  // console.log('Product Image URL:', productImage)
+
+  const data1 = {
+    name: "Default Product Name",
+    description: "This is a default description for testing.",
+  };
+  
+  const sanitizedDescription = data.description || "Default description for testing purposes.";
+  const productImage = "https://example.com/default-image.jpg";
+  const productUrl = "https://elonatech.com/product/default";
   const structuredData = {
-    '@context': 'https://schema.org/',
-    '@type': 'Product',
-    name: data.name,
-    image: productImage,
-    description: sanitizedDescription,
-    brand: {
-      '@type': 'Brand',
-      name: data.brand
-    },
-    offers: {
-      '@type': 'Offer',
-      url: productUrl,
-      priceCurrency: 'NGN',
-      price: data.price,
-      availability:
-        data.quantity > 0
-          ? 'https://schema.org/InStock'
-          : 'https://schema.org/OutOfStock'
-    }
-  }
-  console.log('Product Image URL:', productImage)
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": data1.name,
+    "description": sanitizedDescription,
+    "image": productImage,
+    "url": productUrl,
+  };
 
   return (
     <>
       <Helmet>
         {/* Title Tag */}
-        <title>{`${data.name} - Elonatech Nigeria`}</title>
+        <title>{`${data1.name} - Elonatech Nigeria`}</title>
 
         {/* Description Meta Tag */}
         <meta name='description' content={sanitizedDescription} />
 
         {/* Essential Open Graph Meta Tags */}
-        <meta property='og:title' content={data.name} />
+        <meta property='og:title' content={data1.name} />
         <meta property='og:description' content={sanitizedDescription} />
         <meta property='og:image' content={productImage} />
         <meta property='og:url' content={productUrl} />
@@ -311,7 +328,7 @@ const SingleProduct = () => {
 
         {/* Twitter Card Meta Tags */}
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content={data.name} />
+        <meta name='twitter:title' content={data1.name} />
         <meta name='twitter:description' content={sanitizedDescription} />
         <meta name='twitter:image' content={productImage} />
 

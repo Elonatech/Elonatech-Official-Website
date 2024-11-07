@@ -10,6 +10,7 @@ import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
 import sanitizeHtml from "sanitize-html";
 import BlogSocialShareButtons from './blogShareButton';
+import BlogComments from './blogComment';
 
 const BlogDetails = () => {
   const [data, setData] = useState({});
@@ -356,6 +357,7 @@ useEffect(() => {
                   </label>
                 </div>
               </form>
+              <BlogComments blogId={id} />
             </div>
           </div>
         </div>
