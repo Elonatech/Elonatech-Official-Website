@@ -4,20 +4,246 @@ import Pagination from './../../../components/Pagination/Pagination'
 import { BASEURL } from '../../../BaseURL/BaseURL'
 import Loading from '../../../components/Loading/Loading'
 import axios from 'axios'
-import {
-  LazyLoadImage,
-  trackWindowScroll
-} from 'react-lazy-load-image-component'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useCart } from 'react-use-cart'
-import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Helmet } from 'react-helmet-async'
 import 'rc-slider/assets/index.css'
 import ComputerFilter from './computerFilter'
 import './computer.css'
-import FilterByPrice from '../filterByPrice/FilterByPrice'
+import Slider from '@mui/material/Slider'
 
 const Computer = () => {
+  const [filters, setFilters] = useState({
+    ram: '',
+    brand: '',
+    drive: '',
+    price: [0, 1000000]
+  })
+  const [priceRange, setPriceRange] = useState([0, 1000000])
+  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000])
+  const [brands, setBrands] = useState([])
+  const [rams, setRams] = useState([])
+  const [drives, setDrives] = useState([])
+  const [allProducts, setAllProducts] = useState([])
+  const [showNoResultsDialog, setShowNoResultsDialog] = useState(false)
+  const [filteredProducts, setFilteredProducts] = useState([])
+
+  const normalizeRam = ramString => {
+    if (!ramString) return null
+    const ram = ramString.toUpperCase().trim()
+    const match = ram.match(/(\d+)\s*(?:GB|G)?/i)
+    if (match) {
+      return `${match[1]}GB RAM`
+    }
+    return null
+  }
+
+  const normalizeDrive = driveString => {
+    if (!driveString) return null
+    const drive = driveString.toUpperCase().trim()
+
+    if (drive.includes('PCIE') || drive.includes('RAM,')) {
+      return null
+    }
+
+    const matchSSD = drive.match(/(\d+)\s*(?:GB|G|TB|T)?\s*(?:SSD)?/i)
+    const matchHDD = drive.match(/(\d+)\s*(?:GB|G|TB|T)?\s*(?:HDD)?/i)
+
+    if (matchSSD || matchHDD) {
+      const match = matchSSD || matchHDD
+      const number = parseInt(match[1])
+      const isTerabyte = drive.includes('TB') || drive.includes('T')
+      const capacityGB = isTerabyte ? number * 1024 : number
+
+      const type = drive.includes('HDD') ? 'HDD' : 'SSD'
+
+      if (type === 'SSD' && (capacityGB < 128 || capacityGB > 4096)) {
+        return null
+      }
+      if (type === 'HDD' && (capacityGB < 500 || capacityGB > 18432)) {
+        return null
+      }
+
+      if (capacityGB >= 1024) {
+        return `${capacityGB / 1024}TB ${type}`
+      }
+      return `${capacityGB}GB ${type}`
+    }
+    return null
+  }
+
+  useEffect(() => {
+    fetch(`${BASEURL}/api/v1/product/filter?category=Computer`)
+      .then(response => response.json())
+      .then(data => {
+        setAllProducts(data.data)
+
+        if (data.minPrice !== undefined && data.maxPrice !== undefined) {
+          setDefaultPriceRange([data.minPrice, data.maxPrice])
+          setPriceRange([data.minPrice, data.maxPrice])
+          setFilters(prevFilters => ({
+            ...prevFilters,
+            price: [data.minPrice, data.maxPrice]
+          }))
+        }
+
+        const uniqueBrands = Array.from(
+          new Set(data.data.map(product => product.brand.toUpperCase().trim()))
+        ).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+        setBrands(uniqueBrands)
+
+        const uniqueRams = Array.from(
+          new Set(
+            data.data
+              .filter(
+                product =>
+                  product.computerProperty &&
+                  product.computerProperty[0] &&
+                  product.computerProperty[0].ram
+              )
+              .map(product => normalizeRam(product.computerProperty[0].ram))
+              .filter(ram => ram !== null)
+          )
+        ).sort((a, b) => {
+          const aSize = parseInt(a.match(/\d+/)[0])
+          const bSize = parseInt(b.match(/\d+/)[0])
+          return aSize - bSize
+        })
+        setRams(uniqueRams)
+
+        const uniqueDrives = Array.from(
+          new Set(
+            data.data
+              .filter(
+                product =>
+                  product.computerProperty &&
+                  product.computerProperty[0] &&
+                  product.computerProperty[0].drive
+              )
+              .map(product => normalizeDrive(product.computerProperty[0].drive))
+              .filter(drive => drive !== null)
+          )
+        ).sort((a, b) => {
+          const aMatch = a.match(/(\d+)(TB|GB)/)
+          const bMatch = b.match(/(\d+)(TB|GB)/)
+          if (aMatch && bMatch) {
+            const aSize = parseInt(aMatch[1]) * (aMatch[2] === 'TB' ? 1000 : 1)
+            const bSize = parseInt(bMatch[1]) * (bMatch[2] === 'TB' ? 1000 : 1)
+            return aSize - bSize
+          }
+          return a.localeCompare(b)
+        })
+        setDrives(uniqueDrives)
+
+        setFilteredProducts(data.data)
+      })
+      .catch(error => console.error('Error fetching initial data:', error))
+  }, [])
+
+  const applyFilters = currentFilters => {
+    let filteredResults = [...allProducts]
+
+    if (currentFilters.brand) {
+      filteredResults = filteredResults.filter(
+        product => product.brand.toUpperCase().trim() === currentFilters.brand
+      )
+    }
+
+    if (currentFilters.ram) {
+      filteredResults = filteredResults.filter(
+        product =>
+          product.computerProperty?.[0]?.ram &&
+          normalizeRam(product.computerProperty[0].ram) === currentFilters.ram
+      )
+    }
+
+    if (currentFilters.drive) {
+      filteredResults = filteredResults.filter(
+        product =>
+          product.computerProperty?.[0]?.drive &&
+          normalizeDrive(product.computerProperty[0].drive) ===
+            currentFilters.drive
+      )
+    }
+
+    filteredResults = filteredResults.filter(
+      product =>
+        product.price >= currentFilters.price[0] &&
+        product.price <= currentFilters.price[1]
+    )
+
+    if (filteredResults.length === 0) {
+      setShowNoResultsDialog(true)
+      setFilteredProducts([])
+    } else {
+      setShowNoResultsDialog(false)
+      setFilteredProducts(filteredResults)
+    }
+  }
+
+  const handleApplyClick = () => {
+    applyFilters(filters)
+  }
+
+  const resetFilters = () => {
+    const resetFilters = {
+      ram: '',
+      brand: '',
+      drive: '',
+      price: defaultPriceRange
+    }
+    setFilters(resetFilters)
+    setPriceRange(defaultPriceRange)
+    setShowNoResultsDialog(false)
+    applyFilters(resetFilters)
+  }
+
+  const resetPriceRange = () => {
+    setPriceRange(defaultPriceRange)
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: defaultPriceRange
+    }))
+    applyFilters(filters)
+  }
+
+  const handleCheckboxChange = event => {
+    const { name, value, checked } = event.target
+    const updatedFilters = {
+      ...filters,
+      [name]: checked ? value : ''
+    }
+    setFilters(updatedFilters)
+    applyFilters(updatedFilters)
+  }
+
+  const handlePriceRangeChange = (event, newValue) => {
+    setPriceRange(newValue)
+  }
+
+  const handlePriceChange = (event, newValue) => {
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: newValue
+    }))
+  }
+
+  const handleInputPriceChange = (event, index) => {
+    const value = event.target.value.replace(/[^0-9]/g, '')
+    const newPrice = [...filters.price]
+    newPrice[index] = parseFloat(value) || 0
+    const updatedFilters = {
+      ...filters,
+      price: newPrice
+    }
+    setFilters(updatedFilters)
+  }
+
+  const handleCloseDialog = () => {
+    setShowNoResultsDialog(false)
+  }
+
   const [data, setData] = useState([])
   const [records, setRecords] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -26,7 +252,6 @@ const Computer = () => {
   const [pageNumberLimit, setpageNumberLimit] = useState(4)
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(4)
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0)
-  const [filteredProducts, setFilteredProducts] = useState([])
   const [activeItem, setActiveItem] = useState('Item 2')
   const [noResultsMessage, setNoResultsMessage] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
@@ -286,7 +511,8 @@ const Computer = () => {
           <div className='col-md-3'>
             <div className='thix'>
               <div className='browse'>
-                <form className='d-flex'></form>
+              <form class='d-flex'></form>
+
                 <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>
@@ -379,21 +605,67 @@ const Computer = () => {
                 </ul>
               </div>
 
-              <FilterByPrice />
+              <div className='price-filter price-mobile1' style={{ marginTop: '0'}}>
+                <h4 style={{ fontSize: '16px'}} className='fw-bold'>Filter by Price(₦)</h4>
+                <Slider
+                  className='slider'
+                  value={filters.price}
+                  onChange={handlePriceChange}
+                  min={priceRange[0]}
+                  max={priceRange[1]}
+                  step={5}
+                />
+
+                <div className='price-range-values'>
+                  <div style={{ width: '100%' }}>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={formatPrice(filters.price[0])}
+                      onChange={e => handleInputPriceChange(e, 0)}
+                      className='price-input'
+                    />
+                  </div>
+                  <span className='separator'>-</span>
+                  <div>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={formatPrice(filters.price[1])}
+                      onChange={e => handleInputPriceChange(e, 1)}
+                      className='price-input'
+                    />
+                  </div>
+                </div>
+                <div className='btnd'>
+                  <button
+                    type='button'
+                    onClick={handleApplyClick}
+                    className='apply-btn'
+                    style={{ width: '100%' }}
+                  >
+                    Apply Price Range
+                  </button>
+                  <button
+                    type='button'
+                    onClick={resetPriceRange}
+                    className='reset-btn'
+                    style={{ width: '100%' }}
+                  >
+                    Reset Price Range
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div
               style={{
-                // margin: '1px',
                 width: '60%',
                 display: isLoading === true ? 'none' : 'block'
               }}
               className='filter-section pt-2 rounded shadow-sm'
             >
-              <h4
-                style={{ marginTop: '-8px' }}
-                className='fw-bold'
-              >
+              <h4 style={{ marginTop: '-8px' }} className='fw-bold shopyy'>
                 Sort Computers by
               </h4>
               <ComputerFilter setFilteredProducts={setFilteredProducts} />
@@ -405,4 +677,4 @@ const Computer = () => {
   )
 }
 
-export default trackWindowScroll(Computer)
+export default Computer

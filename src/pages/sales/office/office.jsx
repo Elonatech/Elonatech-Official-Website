@@ -10,12 +10,20 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './office.css'
 import OfficeFilter from './officeFilter'
-import FilterByPrice from '../filterByPrice/FilterByPrice'
+import Slider from '@mui/material/Slider'
 
 const Office = () => {
+  const [filters, setFilters] = useState({
+    brand: '',
+    type: '',
+    price: [0, 1000000]
+  })
+  const [filteredProducts, setFilteredProducts] = useState([])
+  const [priceRange, setPriceRange] = useState([0, 1000000])
+  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000])
+  const [brands, setBrands] = useState([])
   const [data, setData] = useState([])
   const [records, setRecords] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [searchParams, setSearchParams] = useSearchParams()
   const [currentPage, setCurrentPage] = useState(1)
@@ -24,10 +32,101 @@ const Office = () => {
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(4)
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
   const [activeItem, setActiveItem] = useState('Item 3')
-  const [noResultsMessage, setNoResultsMessage] = useState(false)
 
   const handleClick = item => {
     setActiveItem(item)
+  }
+
+  useEffect(() => {
+    fetch(`${BASEURL}/api/v1/product/filter?category=Office`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.minPrice !== undefined && data.maxPrice !== undefined) {
+          setDefaultPriceRange([data.minPrice, data.maxPrice])
+          setPriceRange([data.minPrice, data.maxPrice])
+          setFilters(prevFilters => ({
+            ...prevFilters,
+            price: [data.minPrice, data.maxPrice]
+          }))
+        }
+        setFilteredProducts(data.data)
+
+        const uniqueBrands = Array.from(
+          new Set(data.data.map(product => product.brand.toUpperCase()))
+        )
+        setBrands(uniqueBrands)
+      })
+      .catch(error => console.error('Error fetching initial data:', error))
+  }, [])
+
+  const resetPriceRange = () => {
+    setPriceRange(defaultPriceRange)
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: defaultPriceRange
+    }))
+    applyFilters(filters)
+  }
+
+  const handleCheckboxChange = event => {
+    const { name, value, checked } = event.target
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [name]: checked ? value : ''
+    }))
+    applyFilters(filters)
+  }
+
+  const handlePriceChange = (event, newValue) => {
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: newValue
+    }))
+  }
+
+  const handleApplyClick = () => {
+    applyFilters(filters)
+  }
+
+  const applyFilters = updatedFilters => {
+    let queryParams = []
+    if (updatedFilters.brand) {
+      queryParams.push(
+        `brand=${encodeURIComponent(updatedFilters.brand.toLowerCase())}`
+      )
+    }
+    if (updatedFilters.type) {
+      queryParams.push(`type=${updatedFilters.type.toLowerCase()}`)
+    }
+    if (
+      updatedFilters.price[0] !== defaultPriceRange[0] ||
+      updatedFilters.price[1] !== defaultPriceRange[1]
+    ) {
+      queryParams.push(`minPrice=${updatedFilters.price[0]}`)
+      queryParams.push(`maxPrice=${updatedFilters.price[1]}`)
+    }
+
+    const queryString = queryParams.length > 0 ? queryParams.join('&') : ''
+    fetch(`${BASEURL}/api/v1/product/filter?category=Office&${queryString}`)
+      .then(response => response.json())
+      .then(data => {
+        setFilteredProducts(data.data)
+      })
+      .catch(error => console.error('Error:', error))
+  }
+
+  const formatPrice = price => {
+    return price.toLocaleString()
+  }
+
+  const handleInputPriceChange = (event, index) => {
+    const value = event.target.value.replace(/[^0-9]/g, '')
+    const newPrice = [...filters.price]
+    newPrice[index] = parseFloat(value) || 0
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: newPrice
+    }))
   }
 
   useEffect(() => {
@@ -56,28 +155,23 @@ const Office = () => {
   useEffect(() => {
     if (filteredProducts.length > 0) {
       setRecords(filteredProducts)
-      setNoResultsMessage(false)
     } else if (filteredProducts.length === 0 && !isLoading) {
       setRecords(data)
-      setNoResultsMessage(false)
     }
   }, [filteredProducts, isLoading, data])
 
   const Filter = event => {
     const searchTerm = event.target.value.toLowerCase()
-    setCurrentPage(1) // Reset to first page when filtering
-    setSearchParams({ page: '1' }) // Update URL params
+    setCurrentPage(1)
+    setSearchParams({ page: '1' })
 
     if (searchTerm === '') {
       setFilteredProducts([])
-      setNoResultsMessage(false)
     } else {
       const filtered = data.filter(product =>
         product.name.toLowerCase().includes(searchTerm)
       )
-
       setFilteredProducts(filtered)
-      setNoResultsMessage(filtered.length === 0)
     }
   }
 
@@ -90,7 +184,6 @@ const Office = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const currentPosts = records.slice(indexOfFirstItem, indexOfLastItem)
 
-  // New variable to handle both filtered and unfiltered cases
   const displayedProducts =
     currentPosts.length > 0 ? currentPosts : records.slice(0, itemsPerPage)
 
@@ -128,20 +221,17 @@ const Office = () => {
 
   useEffect(() => {
     let returningUser = localStorage.getItem('OfficePopUp')
-    function showPopUp () {
-      if (!returningUser) {
-        toast.warn(
-          'Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase',
-          {
-            position: 'top-center',
-            autoClose: 20000,
-            className: 'pop-up-message'
-          },
-          closePopUp()
-        )
-      }
+    if (!returningUser) {
+      toast.warn(
+        'Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase',
+        {
+          position: 'top-center',
+          autoClose: 20000,
+          className: 'pop-up-message'
+        },
+        closePopUp()
+      )
     }
-    setInterval(showPopUp(), 604800000)
   }, [])
 
   return (
@@ -200,8 +290,6 @@ const Office = () => {
                         </div>
                       </div>
                     </div>
-                  ) : noResultsMessage ? (
-                    <h4>No products match your search criteria.</h4>
                   ) : (
                     displayedProducts.map(product => (
                       <div className='col-lg-3 mb-4' key={product.id}>
@@ -225,7 +313,6 @@ const Office = () => {
                             </h5>
                             <p className='lead fs-6'>{product.category}</p>
 
-                            {/* Star Rating */}
                             <div
                               className='stars'
                               style={{ color: 'black', marginBottom: '10px' }}
@@ -269,7 +356,6 @@ const Office = () => {
                   )}
                 </div>
 
-                {/* Pagination */}
                 <div className='mt-5'>
                   <Pagination
                     totalPosts={records.length}
@@ -286,15 +372,9 @@ const Office = () => {
             </section>
           </div>
 
-          {/* Sidebar */}
           <div className='col-md-3'>
-            {/* <div
-              className="position-sticky"
-              style={{ top: "2rem", marginTop: "20px" }}
-            > */}
             <div className='thix'>
               <div className='browse'>
-                <form className='d-flex' />
                 <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>
@@ -386,22 +466,71 @@ const Office = () => {
                 </ul>
               </div>
 
-              {/* Filter by Price */}
-              <FilterByPrice />
+              <div
+                className='price-filter price-mobile1'
+                style={{ marginTop: '0' }}
+              >
+                <h4 style={{ fontSize: '16px' }} className='fw-bold'>
+                  Filter by Price (₦)
+                </h4>
+                <Slider
+                  className='custom-slider slider'
+                  value={filters.price}
+                  onChange={handlePriceChange}
+                  min={priceRange[0]}
+                  max={priceRange[1]}
+                  step={1000}
+                />
+                <div className='price-range-values'>
+                  <div style={{ width: '100%' }}>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={formatPrice(filters.price[0])}
+                      onChange={e => handleInputPriceChange(e, 0)}
+                      className='price-input'
+                    />
+                  </div>
+                  <span className='separator'>-</span>
+                  <div>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={formatPrice(filters.price[1])}
+                      onChange={e => handleInputPriceChange(e, 1)}
+                      className='price-input'
+                    />
+                  </div>
+                </div>
+                <div className='expand btnd'>
+                  <button
+                    type='button'
+                    onClick={handleApplyClick}
+                    className='apply-btn'
+                    style={{ width: '100%' }}
+                  >
+                    Apply Price Range
+                  </button>
+                  <button
+                    type='button'
+                    onClick={resetPriceRange}
+                    className='reset-btn'
+                    style={{ width: '100%' }}
+                  >
+                    Reset Price Range
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div
               style={{
-                // margin: '15px',
                 width: '60%',
                 display: isLoading === true ? 'none' : 'block'
               }}
               className='filter-section pt-2 rounded shadow-sm'
             >
-              <h4
-                style={{ marginTop: '-8px'}}
-                className='fw-bold'
-              >
+              <h4 style={{ marginTop: '-8px' }} className='fw-bold shopyy'>
                 Sort Products by
               </h4>
               <OfficeFilter setFilteredProducts={setFilteredProducts} />

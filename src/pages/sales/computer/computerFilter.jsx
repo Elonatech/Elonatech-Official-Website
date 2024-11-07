@@ -14,6 +14,7 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     brand: "",
     drive: "",
     price: [0, 1000000]
+  
   });
   const [noResultsMessage, setNoResultsMessage] = useState("");
   const [priceRange, setPriceRange] = useState([0, 1000000]); 
@@ -208,49 +209,6 @@ const ComputerFilter = ({ setFilteredProducts }) => {
     setShowNoResultsDialog(false);
     applyFilters(resetFilters);
   };
-
-  // const applyFilters = (currentFilters) => {
-  //   // Start with all products
-  //   let filteredResults = [...allProducts];
-
-  //   // Apply brand filter
-  //   if (currentFilters.brand) {
-  //     filteredResults = filteredResults.filter(
-  //       product => product.brand.toUpperCase().trim() === currentFilters.brand
-  //     );
-  //   }
-
-  //   // Apply RAM filter
-  //   if (currentFilters.ram) {
-  //     filteredResults = filteredResults.filter(product => 
-  //       product.computerProperty?.[0]?.ram &&
-  //       normalizeRam(product.computerProperty[0].ram) === currentFilters.ram
-  //     );
-  //   }
-
-  //   // Apply drive filter
-  //   if (currentFilters.drive) {
-  //     filteredResults = filteredResults.filter(product =>
-  //       product.computerProperty?.[0]?.drive &&
-  //       normalizeDrive(product.computerProperty[0].drive) === currentFilters.drive
-  //     );
-  //   }
-
-  //   // Apply price filter
-  //   filteredResults = filteredResults.filter(product =>
-  //     product.price >= currentFilters.price[0] &&
-  //     product.price <= currentFilters.price[1]
-  //   );
-
-  //   // Check if we have any results
-  //   if (filteredResults.length === 0) {
-  //     setNoResultsMessage("No products match your selected filters.");
-  //     setFilteredProducts([]);
-  //   } else {
-  //     setNoResultsMessage("");
-  //     setFilteredProducts(filteredResults);
-  //   }
-  // };
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);

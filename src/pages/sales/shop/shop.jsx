@@ -18,10 +18,11 @@ import 'rc-slider/assets/index.css'
 import ShopFilter from './shopFilter'
 // import Slider from '@mui/material/Slider'
 // import { GoDash } from 'react-icons/go'
-import FilterByPrice from '../filterByPrice/FilterByPrice'
 import { startTransition } from 'react'
+import Slider from '@mui/material/Slider'
 
 const Shop = () => {
+  const [filteredProducts, setFilteredProducts] = useState([])
   const [data, setData] = useState([])
   const [records, setRecords] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +31,6 @@ const Shop = () => {
   const [pageNumberLimit, setpageNumberLimit] = useState(4)
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(4)
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0)
-  const [filteredProducts, setFilteredProducts] = useState([])
   const [activeItem, setActiveItem] = useState('Item 1')
   const [noResultsMessage, setNoResultsMessage] = useState(false)
   const [isFiltering, setIsFiltering] = useState(false)
@@ -558,7 +558,72 @@ const Shop = () => {
               </div>
 
               {/* Filter by Price */}
-              <FilterByPrice />
+              {/* <FilterByPrice /> */}
+
+              <div className='price-filter price-mobile1'
+                style={{ marginTop: '0' }}
+              >
+                <h4 style={{ fontSize: '16px' }} className='fw-bold'>
+                  Filter by Price(₦)
+                </h4>
+                <Slider
+                  className='slider'
+                  value={priceRange}
+                  min={defaultPriceRange[0]}
+                  max={defaultPriceRange[1]}
+                  step={50}
+                  onChange={handlePriceRangeChange}
+                  pearling
+                  minDistance={10}
+                />
+
+                <div className='price-range-values'>
+                  <div>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={
+                        priceRange[0] !== undefined
+                          ? priceRange[0].toLocaleString()
+                          : ''
+                      }
+                      onChange={e => handleInputChange(e, 0)}
+                      className='price-input'
+                    />
+                  </div>
+                  <span className='separator'>-</span>
+                  {/* <GoDash className='dash' /> */}
+                  <div>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={
+                        priceRange[1] !== undefined
+                          ? priceRange[1].toLocaleString()
+                          : ''
+                      }
+                      onChange={e => handleInputChange(e, 1)}
+                      className='price-input'
+                    />
+                  </div>
+                </div>
+                <div className='btnd'>
+                  <button
+                    style={{ width: '100%' }}
+                    onClick={applyPriceFilter}
+                    className='apply-btn'
+                  >
+                    Apply Price Range
+                  </button>
+                  <button
+                    style={{ width: '100%' }}
+                    onClick={resetPriceRange}
+                    className='reset-btn'
+                  >
+                    Reset Price Range
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* <h1>filters</h1> */}
@@ -570,7 +635,7 @@ const Shop = () => {
               }}
               className='filter-section pt-2 rounded shadow-sm'
             >
-              <h4 style={{ marginTop: '-8px' }} class='fw-bold '>
+              <h4 style={{ marginTop: '-8px' }} class='fw-bold shopyy'>
                 Sort Products by
               </h4>
               <ShopFilter setFilteredProducts={setFilteredProducts} />

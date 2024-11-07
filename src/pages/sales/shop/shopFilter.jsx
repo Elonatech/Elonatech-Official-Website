@@ -229,6 +229,8 @@ const ShopFilter = ({ setFilteredProducts }) => {
 
       {/* Add custom CSS for better visuals */}
       <style jsx>{`
+
+
         .shop-filter {
           margin-bottom: 1rem;
         }

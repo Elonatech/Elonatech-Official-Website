@@ -9,6 +9,9 @@
   }
   
   /*   Media Pop Up Message  */
+  .upperg{
+    text-transform: uppercase;
+  }
   
   @media only screen and (max-width: 1673px) {
     .pop-up-message{
