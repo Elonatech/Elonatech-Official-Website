@@ -12,4 +12,64 @@
     user-select: text;
 }
 
-  
+.price-mobile1 {
+    display: none;
+    width: 40%;
+}
+
+.price-filter {
+    margin-top: 0;
+}
+
+.browse form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tyu {
+    margin-top: -8px;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .filter-section {
+        margin: 15px;
+    }
+
+    .shopyy {
+        font-size: 16px;
+    }
+
+    .thix {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .price-mobile1 {
+        display: inline-block;
+    }
+
+    .sliding {
+        margin-inline: 10px;
+    }
+
+    .btnx {
+        margin-left: -8px;
+        margin-top: 5px;
+    }
+
+    .browse form {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .h4 {
+        font-size: 16px;
+    }
+
+    .tyu {
+        margin-top: 0;
+    }
+}

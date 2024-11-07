@@ -73,15 +73,22 @@
 }
 
 @media screen and (max-width: 767px) {
-  .price-mobile {
+  .form-label {
+    font-size: 16px;
+  }
+
+    .price-mobile {
     display: none;
   }
+
   .price-mobile h4 {
     margin-left: 50px;
   }
+
   .price-mobile .slider {
     margin-top: -6px;
   }
+
   .price-mobile .price-range-values {
     /* margin-top: -15px; */
   }

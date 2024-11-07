@@ -10,9 +10,19 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import PrinterFilter from './printerFilter'
 import './printers.css'
-import FilterByPrice from '../filterByPrice/FilterByPrice'
+import Slider from '@mui/material/Slider'
 
 const Printers = () => {
+  const [filters, setFilters] = useState({
+    type: '',
+    brand: '',
+    price: [0, 1000000]
+  })
+
+  const [filteredProducts, setFilteredProducts] = useState([])
+  const [priceRange, setPriceRange] = useState([0, 1000000])
+  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000])
+  const [brands, setBrands] = useState([])
   const [data, setData] = useState([])
   const [records, setRecords] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -20,14 +30,104 @@ const Printers = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage] = useState(12)
   const [pageNumberLimit] = useState(4)
-  const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(4)
-  const [minPageNumberLimit, setminPageNumberLimit] = useState(0)
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(4)
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
   const [activeItem, setActiveItem] = useState('Item 5')
-  const [filteredProducts, setFilteredProducts] = useState([])
-  const [noResultsMessage, setNoResultsMessage] = useState(false)
 
   const handleClick = item => {
     setActiveItem(item)
+  }
+
+  useEffect(() => {
+    fetch(`${BASEURL}/api/v1/product/filter?category=Printer`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.minPrice !== undefined && data.maxPrice !== undefined) {
+          setDefaultPriceRange([data.minPrice, data.maxPrice])
+          setPriceRange([data.minPrice, data.maxPrice])
+          setFilters(prevFilters => ({
+            ...prevFilters,
+            price: [data.minPrice, data.maxPrice]
+          }))
+        }
+
+        const uniqueBrands = Array.from(
+          new Set(data.data.map(product => product.brand.toUpperCase()))
+        )
+        setBrands(uniqueBrands)
+
+        setFilteredProducts(data.data)
+      })
+      .catch(error => console.error('Error fetching initial data:', error))
+  }, [])
+
+  const resetPriceRange = () => {
+    setPriceRange(defaultPriceRange)
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: defaultPriceRange
+    }))
+    applyFilters(filters)
+  }
+
+  const handleCheckboxChange = event => {
+    const { name, value, checked } = event.target
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [name]: checked ? value : ''
+    }))
+    applyFilters(filters)
+  }
+
+  const handlePriceChange = (event, newValue) => {
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: newValue
+    }))
+  }
+
+  const handleApplyClick = () => {
+    applyFilters(filters)
+  }
+
+  const applyFilters = updatedFilters => {
+    let queryParams = []
+    if (updatedFilters.type) {
+      queryParams.push(`type=${updatedFilters.type.toLowerCase()}`)
+    }
+    if (updatedFilters.brand) {
+      queryParams.push(
+        `brand=${updatedFilters.brand.replace(/\s+/g, '').toLowerCase()}`
+      )
+    }
+    if (
+      updatedFilters.price[0] !== defaultPriceRange[0] ||
+      updatedFilters.price[1] !== defaultPriceRange[1]
+    ) {
+      queryParams.push(`minPrice=${updatedFilters.price[0]}`)
+      queryParams.push(`maxPrice=${updatedFilters.price[1]}`)
+    }
+    const queryString = queryParams.length > 0 ? queryParams.join('&') : ''
+    fetch(`${BASEURL}/api/v1/product/filter?category=Printer&${queryString}`)
+      .then(response => response.json())
+      .then(data => {
+        setFilteredProducts(data.data)
+      })
+      .catch(error => console.error('Error:', error))
+  }
+
+  const formatPrice = price => {
+    return price.toLocaleString()
+  }
+
+  const handleInputPriceChange = (event, index) => {
+    const value = event.target.value.replace(/[^0-9]/g, '')
+    const newPrice = [...filters.price]
+    newPrice[index] = parseFloat(value) || 0
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      price: newPrice
+    }))
   }
 
   useEffect(() => {
@@ -56,28 +156,23 @@ const Printers = () => {
   useEffect(() => {
     if (filteredProducts.length > 0) {
       setRecords(filteredProducts)
-      setNoResultsMessage(false)
     } else if (filteredProducts.length === 0 && !isLoading) {
       setRecords(data)
-      setNoResultsMessage(false)
     }
   }, [filteredProducts, isLoading, data])
 
   const Filter = event => {
     const searchTerm = event.target.value.toLowerCase()
-    setCurrentPage(1) // Reset to first page when filtering
-    setSearchParams({ page: '1' }) // Update URL params
+    setCurrentPage(1)
+    setSearchParams({ page: '1' })
 
     if (searchTerm === '') {
       setFilteredProducts([])
-      setNoResultsMessage(false)
     } else {
       const filtered = data.filter(product =>
         product.name.toLowerCase().includes(searchTerm)
       )
-
       setFilteredProducts(filtered)
-      setNoResultsMessage(filtered.length === 0)
     }
   }
 
@@ -90,7 +185,6 @@ const Printers = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const currentPosts = records.slice(indexOfFirstItem, indexOfLastItem)
 
-  // New variable to handle both filtered and unfiltered cases
   const displayedProducts =
     currentPosts.length > 0 ? currentPosts : records.slice(0, itemsPerPage)
 
@@ -100,8 +194,8 @@ const Printers = () => {
     setSearchParams({ page: nextPage.toString() })
 
     if (nextPage > maxPageNumberLimit) {
-      setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
-      setminPageNumberLimit(minPageNumberLimit + pageNumberLimit)
+      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
+      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit)
     }
   }
 
@@ -111,14 +205,13 @@ const Printers = () => {
     setSearchParams({ page: prevPage.toString() })
 
     if ((prevPage - 1) % pageNumberLimit === 0) {
-      setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
-      setminPageNumberLimit(minPageNumberLimit - pageNumberLimit)
+      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
+      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit)
     }
   }
 
   const { addItem } = useCart()
 
-  // Pop up message
   const [displayPopUp, setDisplayPopUp] = useState(true)
 
   const closePopUp = () => {
@@ -128,25 +221,21 @@ const Printers = () => {
 
   useEffect(() => {
     let returningUser = localStorage.getItem('PrinterPopUp')
-    function showPopUp () {
-      if (!returningUser) {
-        toast.warn(
-          'Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase',
-          {
-            position: 'top-center',
-            autoClose: 20000,
-            className: 'pop-up-message'
-          },
-          closePopUp()
-        )
-      }
+    if (!returningUser) {
+      toast.warn(
+        'Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase',
+        {
+          position: 'top-center',
+          autoClose: 20000,
+          className: 'pop-up-message'
+        },
+        closePopUp()
+      )
     }
-    setInterval(showPopUp(), 604800000)
   }, [])
 
   return (
     <>
-      {/* Header */}
       <div className='container-fluid printers-section'>
         <div className='text-content'>
           <h2>Printers, Copiers and Scanners</h2>
@@ -202,8 +291,6 @@ const Printers = () => {
                         </div>
                       </div>
                     </div>
-                  ) : noResultsMessage ? (
-                    <h4>No products match your search criteria.</h4>
                   ) : (
                     displayedProducts.map(product => (
                       <div className='col-lg-3 mb-4' key={product.id}>
@@ -227,7 +314,6 @@ const Printers = () => {
                             </h5>
                             <p className='lead fs-6'>{product.category}</p>
 
-                            {/* Star Rating */}
                             <div
                               className='stars'
                               style={{ color: 'black', marginBottom: '10px' }}
@@ -289,7 +375,6 @@ const Printers = () => {
           <div className='col-md-3'>
             <div className='thix'>
               <div className='browse'>
-                <form className='d-flex'></form>
                 <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>
@@ -366,7 +451,7 @@ const Printers = () => {
                   </li>
                   <li>
                     <Link
-                      to={'/Network-devices'}
+                      to={'/network-devices'}
                       className='text-dark'
                       style={{ textDecoration: 'none' }}
                       onMouseEnter={e =>
@@ -382,21 +467,72 @@ const Printers = () => {
                 </ul>
               </div>
 
-              {/* Filter by Price */}
-              <FilterByPrice />
+              <div
+                className='price-filter price-mobile1'
+                style={{ marginTop: '0' }}
+              >
+                <h4 style={{ fontSize: '16px' }} className='fw-bold'>
+                  Filter by Price(₦)
+                </h4>
+                <Slider
+                  className='custom-slider slider'
+                  value={filters.price}
+                  onChange={handlePriceChange}
+                  min={priceRange[0]}
+                  max={priceRange[1]}
+                  step={5}
+                  valueLabelDisplay='auto'
+                />
+                <div className='price-range-values'>
+                  <div style={{ width: '100%' }}>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={formatPrice(filters.price[0])}
+                      onChange={e => handleInputPriceChange(e, 0)}
+                      className='price-input'
+                    />
+                  </div>
+                  <span className='separator'>-</span>
+                  <div>
+                    <input
+                      style={{ width: '100%', borderRadius: '5px' }}
+                      type='text'
+                      value={formatPrice(filters.price[1])}
+                      onChange={e => handleInputPriceChange(e, 1)}
+                      className='price-input'
+                    />
+                  </div>
+                </div>
+                <div className='expand btnd'>
+                  <button
+                    type='button'
+                    onClick={handleApplyClick}
+                    className='apply-btn'
+                    style={{ width: '100%' }}
+                  >
+                    Apply Price Range
+                  </button>
+                  <button
+                    type='button'
+                    onClick={resetPriceRange}
+                    className='reset-btn'
+                    style={{ width: '100%' }}
+                  >
+                    Reset Price Range
+                  </button>
+                </div>
+              </div>
             </div>
+
             <div
               style={{
-                // margin: '15px',
                 width: '60%',
                 display: isLoading === true ? 'none' : 'block'
               }}
               className='filter-section pt-2 rounded shadow-sm'
             >
-              <h4
-                style={{ marginTop: '-8px' }}
-                className='fw-bold'
-              >
+              <h4 style={{ marginTop: '-8px' }} className='fw-bold shopyy'>
                 Sort Products by
               </h4>
               <PrinterFilter setFilteredProducts={setFilteredProducts} />
@@ -404,7 +540,6 @@ const Printers = () => {
           </div>
         </div>
       </main>
-      {/* end */}
     </>
   )
 }
