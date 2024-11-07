@@ -17,6 +17,7 @@
     "axios": "^1.6.2",
     "bootstrap": "^5.3.2",
     "bulma": "^0.9.4",
+    "date-fns": "^4.1.0",
     "dompurify": "^3.1.7",
     "eslint-plugin-disable": "^2.0.3",
     "jquery": "^3.7.0",
