@@ -49,16 +49,18 @@ const Pos = () => {
             price: [data.minPrice, data.maxPrice]
           }))
         }
-
+  
         const uniqueBrands = Array.from(
           new Set(data.data.map(product => product.brand.toUpperCase()))
         )
         setAvailableBrands(uniqueBrands)
-
-        setFilteredProducts(data.data)
+  
+        const reversedProducts = [...data.data].reverse();
+        setFilteredProducts(reversedProducts);
       })
       .catch(error => console.error('Error fetching initial data:', error))
   }, [])
+  
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange)
