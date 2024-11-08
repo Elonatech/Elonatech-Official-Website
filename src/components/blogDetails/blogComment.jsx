@@ -4,11 +4,19 @@ import { BASEURL } from '../../BaseURL/BaseURL'
 import { formatDistanceToNowStrict } from 'date-fns'
 import { v4 as uuidv4 } from 'uuid'
 import { BsReply, BsTrash } from 'react-icons/bs'
+import React, { useState, useRef, useEffect } from 'react'
+import axios from 'axios'
+import { BASEURL } from '../../BaseURL/BaseURL'
+import { formatDistanceToNow } from 'date-fns'
+import { v4 as uuidv4 } from 'uuid'
+import { BsReply, BsTrash } from 'react-icons/bs'
 import './blogComment.css'
 import './new.css'
 import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
 import avatar from '../../../src/asset/avatar.png'
+import { MdEmojiEmotions } from 'react-icons/md'
+import EmojiPicker from 'emoji-picker-react'
 
 const BlogComments = ({ blogId }) => {
   const [comments, setComments] = useState([])
@@ -53,6 +61,53 @@ const BlogComments = ({ blogId }) => {
       )
     }
   }
+  const [comments, setComments] = useState([])
+  const [newComment, setNewComment] = useState('')
+  const [replies, setReplies] = useState({})
+  const [newReply, setNewReply] = useState('')
+  const [activeReplyId, setActiveReplyId] = useState(null)
+
+  // State to hold the selected gender
+  const [selectedGender, setSelectedGender] = useState('female')
+
+  // Function to handle the change in radio button selection
+  const handleChange = event => {
+    setSelectedGender(event.target.value)
+  }
+
+  // Ref for the textarea and emoji picker
+  const textAreaRef = useRef(null)
+  const pickerRef = useRef(null)
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false)
+
+  // Handle emoji selection
+  const onEmojiClick = emojiData => {
+    setNewComment(newComment + emojiData.emoji)
+  }
+
+  // Detect click outside to close the emoji picker
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (
+        pickerRef.current &&
+        !pickerRef.current.contains(event.target) &&
+        textAreaRef.current &&
+        !textAreaRef.current.contains(event.target)
+      ) {
+        setShowEmojiPicker(false)
+        textAreaRef.current.focus()
+        textAreaRef.current.setSelectionRange(
+          newComment.length,
+          newComment.length
+        )
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside)
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [])
 
   useEffect(() => {
     const handleClickOutside = event => {
@@ -101,7 +156,19 @@ const BlogComments = ({ blogId }) => {
   useEffect(() => {
     fetchComments()
   }, [blogId])
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`)
+        setComments(response.data)
+      } catch (error) {
+        console.error('Error fetching comments:', error)
+      }
+    }
+    fetchComments()
+  }, [blogId])
 
+  const handleCommentSubmit = async e => {
+    e.preventDefault()
   const handleCommentSubmit = async e => {
     e.preventDefault()
     try {
@@ -116,6 +183,11 @@ const BlogComments = ({ blogId }) => {
       setNewComment('')
       setUsername('')
       await fetchComments()
+        gender: selectedGender
+      }
+      await axios.post(`${BASEURL}/api/v1/comments`, newCommentData)
+      setNewComment('')
+      fetchComments()
     } catch (error) {
       console.error('Error submitting comment:', error)
     }
@@ -370,7 +442,7 @@ const BlogComments = ({ blogId }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogComments;
+export default BlogComments
