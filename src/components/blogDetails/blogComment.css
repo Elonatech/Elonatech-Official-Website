@@ -23,9 +23,12 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  padding-block: 8px;
 }
 
-.comment-form textarea {
+/* .comment-form textarea {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
@@ -33,7 +36,7 @@
   border-radius: 4px;
   resize: vertical;
   margin-bottom: 10px;
-}
+} */
 
 .comment-form button {
   align-self: flex-end;
@@ -94,7 +97,7 @@
 
 /* Comment Content */
 .comment-content {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   font-size: 1rem;
   color: #333;
 }
@@ -104,6 +107,8 @@
   margin-top: 15px;
   padding-left: 20px;
   border-left: 2px solid #f0f0f0;
+  max-height: 200px;
+   overflow-y: auto;
 }
 
 .reply {
@@ -115,6 +120,11 @@
   border: 1px solid #e0e0e0;
   font-size: 15px;
   padding: 5px;
+  max-height: 60px;
+}
+
+.boc{
+  max-height: 60px;
 }
 
 .reply-header {
@@ -147,7 +157,7 @@
 
 /* Reply Content */
 .reply-content {
-  margin-top: 5px;
+  /* margin-top: 5px; */
   font-size: 0.9rem;
   color: #333;
 }
@@ -163,7 +173,7 @@
   display: flex;
 }
 
-.reply-form textarea {
+/* .reply-form textarea {
   width: 100%;
   padding: 8px;
   font-size: 0.9rem;
@@ -171,7 +181,7 @@
   border-radius: 4px;
   resize: vertical;
   margin-bottom: 8px;
-}
+} */
 
 .reply-form-actions {
   display: flex;
@@ -205,6 +215,74 @@
   background-color: #5a6268;
 }
 
+.avatar {
+  width: 40px;
+  border: 1px solid red;
+  border-radius: 100%;
+}
+
+.avatar3 {
+  width: 20%;
+}
+
+.avatar2 {
+  width: 20px;
+  border: 1px solid red;
+  border-radius: 100%;
+}
+
+.commentview2 {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 2px;
+}
+
+.commentview {
+  display: flex;
+  gap: 2px;
+  /* justify-content: space-between; */
+}
+
+.nameTime {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reply2 {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  /* background: green; */
+  /* color: white; */
+}
+
+.delu{
+  /* background: red; */
+  border: none;
+  /* color: #fff; */
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.replyDel{
+  display: flex;
+  gap:0.5rem;
+  margin-top: 4px;
+}
+
 
 
 
@@ -225,11 +303,15 @@ textarea {
   padding-right: 2em;
   /* space for the emoji icon */
   box-sizing: border-box;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #ccc;
 }
 
 .emoji-icon {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
+  bottom: 0;
   right: 10px;
   transform: translateY(-50%);
   cursor: pointer;

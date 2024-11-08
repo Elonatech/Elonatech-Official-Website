@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { BASEURL } from '../../BaseURL/BaseURL'
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNowStrict } from 'date-fns'
 import { v4 as uuidv4 } from 'uuid'
 import { BsReply, BsTrash } from 'react-icons/bs'
 import './blogComment.css'
+import './new.css'
 import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
+import avatar from '../../../src/asset/avatar.png'
 
 const BlogComments = ({ blogId }) => {
   const [comments, setComments] = useState([])
@@ -167,7 +169,6 @@ const BlogComments = ({ blogId }) => {
 
   return (
     <div className='blog-comments-container'>
-      <h3>Comments</h3>
       <form onSubmit={handleCommentSubmit} className='comment-form'>
         <input type='text' name='name' id='name' placeholder='Enter name...' />
         <div className='gender-container'>
@@ -222,29 +223,40 @@ const BlogComments = ({ blogId }) => {
         <button type='submit'>Submit</button>
       </form>
 
+      <h3>Comments</h3>
       <div className='comments-list'>
         {comments.map(comment => (
           <div key={comment._id} className='comment'>
-            <div className='comment-header'>
-              <span className='comment-author'>Anonymous</span>
-              <span className='comment-date'>
-                {formatDistanceToNow(new Date(comment.createdAt))} ago
-              </span>
-              <button
-                className='delete-comment'
-                onClick={() => handleDeleteComment(comment._id)}
-              >
-                <BsTrash />
-              </button>
-            </div>
-            <div className='comment-content'>{comment.content}</div>
+            <div className='commentview2'>
+              <div className='avatar3'>
+                <img src={avatar} alt='profile pic' className='avatar' />
+              </div>
+              <div>
+                <div className='nameTime'>
+                  <span className='comment-author'>Anonymous</span>
+                  <span className='comment-date'>
+                    {formatDistanceToNowStrict(new Date(comment.createdAt))}
+                  </span>
+                </div>
 
-            <span
-              className='reply'
-              onClick={() => handleReplyToggle(comment._id)}
-            >
-              <BsReply /> Reply
-            </span>
+                <div className='comment-content'>{comment.content}</div>
+                <div className='replyDel'>
+                  {/* <button
+                    className='delu'
+                    onClick={() => handleDeleteComment(comment._id)}
+                  >
+                    <BsTrash />
+                  </button> */}
+
+                  <span
+                    className='reply2'
+                    onClick={() => handleReplyToggle(comment._id)}
+                  >
+                    <BsReply /> <span>Reply</span>
+                  </span>
+                </div>
+              </div>
+            </div>
 
             {showReplyForm && activeReplyId === comment._id && (
               <form
@@ -314,7 +326,7 @@ const BlogComments = ({ blogId }) => {
                     type='button'
                     onClick={() => handleReplyToggle(comment._id)}
                   >
-                    <BsReply /> Cancel
+                    Cancel
                   </button>
                 </div>
               </form>
@@ -324,21 +336,37 @@ const BlogComments = ({ blogId }) => {
               {replies[comment._id] && replies[comment._id].length > 0 ? (
                 replies[comment._id].map(reply => (
                   <div key={reply._id} className='reply'>
-                    <div className='reply-header'>
-                      <span className='reply-author'>Anonymous</span>
-                      <span className='reply-date'>
-                        {formatDistanceToNow(new Date(reply.createdAt))} ago
-                      </span>
-                      <button
-                        className='delete-reply'
-                        onClick={() =>
-                          handleDeleteReply(comment._id, reply._id)
-                        }
-                      >
-                        <BsTrash />
-                      </button>
+                    <div className='commentview'>
+                      <div className='avatar3'>
+                        <img
+                          src={avatar}
+                          alt='profile pic'
+                          className='avatar2'
+                        />
+                      </div>
+                      <div>
+                        <div className='nameTime'>
+                          <span className='reply-author'>Anonymous</span>
+                          <span className='reply-date'>
+                            {formatDistanceToNowStrict(
+                              new Date(reply.createdAt)
+                            )}{' '}
+                            {/* ago */}
+                          </span>
+                        </div>
+                        <div className='reply-content'>{reply.content}</div>
+                        <div className='replyDel'>
+                          {/* <button
+                            className='delu'
+                            onClick={() =>
+                              handleDeleteReply(comment._id, reply._id)
+                            }
+                          >
+                            <BsTrash />
+                          </button> */}
+                        </div>
+                      </div>
                     </div>
-                    <div className='reply-content'>{reply.content}</div>
                   </div>
                 ))
               ) : (

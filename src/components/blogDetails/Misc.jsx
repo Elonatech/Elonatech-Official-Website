@@ -349,3 +349,84 @@ const BlogComments = ({ blogId }) => {
 }
 
 export default BlogComments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div className='comment-header'>
+              <div className="avatar">
+                <img src={avatar} alt="profile pic" className='avatar'/>
+              </div>
+              <span className='comment-author'>Anonymous</span>
+              <span className='comment-date'>
+                {formatDistanceToNow(new Date(comment.createdAt))} ago
+              </span>
+              <button
+                className='delete-comment'
+                onClick={() => handleDeleteComment(comment._id)}
+              >
+                <BsTrash />
+              </button>
+            </div>
+            <div className='comment-content'>{comment.content}</div>
+
+            <span
+              className='reply'
+              onClick={() => handleReplyToggle(comment._id)}
+            >
+              <BsReply /> Reply
+            </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div className='replies-container'>
+{replies[comment._id] && replies[comment._id].length > 0 ? (
+  replies[comment._id].map(reply => (
+    <div key={reply._id} className='reply'>
+      <div className='reply-header'>
+        <span className='reply-author'>Anonymous</span>
+        <span className='reply-date'>
+          {formatDistanceToNow(new Date(reply.createdAt))} ago
+        </span>
+        <button
+          className='delete-reply'
+          onClick={() =>
+            handleDeleteReply(comment._id, reply._id)
+          }
+        >
+          <BsTrash />
+        </button>
+      </div>
+      <div className='reply-content'>{reply.content}</div>
+    </div>
+  ))
+) : (
+  <>
+    <div>No replies yet.</div>
+  </>
+)}
+</div>
