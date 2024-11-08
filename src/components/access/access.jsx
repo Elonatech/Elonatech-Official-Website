@@ -8,7 +8,7 @@ const Access = () => {
     <>
 
 <Helmet>
-       <title>Access Control  - Tech Solution, Digital Solution</title>
+       <title>{`Access Control  - Tech Solution, Digital Solution`}</title>
        <meta name="description" content="
 Access control is an essential element of security that determines who is allowed to access certain data, apps, and resources—and in what circumstances. In the same way that keys and preapproved guest lists protect physical spaces, access control policies protect digital spaces. In other words, they let the right people in and keep the wrong people out.
 What are the benefits of Access Control Systems?

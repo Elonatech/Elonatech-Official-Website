@@ -18,7 +18,7 @@ const Cart = () => {
     <>
 
 <Helmet>
-       <title>Cart - Tech Solution, Digital Solution</title>
+       <title>{`Cart - Tech Solution, Digital Solution`}</title>
        <meta name="description" content="cart" />
        <link rel="canonical" href="https://elonatech.com.ng/cart" />
 </Helmet>
