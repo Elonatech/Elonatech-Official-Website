@@ -85,7 +85,7 @@ const Computer = () => {
           setFilters(prevFilters => ({
             ...prevFilters,
             price: [data.minPrice, data.maxPrice]
-          }))
+          })) 
         }
 
         const uniqueBrands = Array.from(

@@ -623,6 +623,35 @@ const Main = () => {
             <div style={{ backgroundColor: "#dc3545", height: "2px", width: "80px", margin: "auto" }}></div>
             <div className="container-fluid mt-5">
                 <div className="row mt-5 justify-content-center">
+                {[
+      { name: "MAC PRO", category: "Shop", price: "1,400,000.00", image: MacImage, link: "/shop" },
+    ].map((product, index) => (
+      <div key={index} className="col-2 px-1">
+        <div className="border shadow-sm p-2 mb-3 bg-body product-card rounded" style={{height: "350px", display: "flex", flexDirection: "column"}}>
+          <Link to={product.link} className='text-decoration-none text-dark d-flex flex-column h-100'>
+            <div className="text-center" style={{height: "150px", overflow: "hidden"}}>
+              <img src="https://res.cloudinary.com/elonatech/image/upload/v1710503902/loaderImage/blurred_Loader_ufozvn.png" 
+                   data-src={product.image} 
+                   className="lazyload img-fluid" 
+                   alt={product.name} 
+                   style={{objectFit: "contain", width: "100%", height: "100%"}} />
+            </div>
+            <h5 className="fw-normal mt-2 text-truncate" title={product.name}>{product.name}</h5>
+            <p className="small mb-1">{product.category}</p>
+            <div className="stars mb-1" style={{color:'#f6b01e'}}>
+              <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
+            </div>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <p className='m-0 text-danger small'>₦{product.price}</p>
+              <i className="bi bi-cart" style={{fontSize:"18px"}}></i>
+            </div>
+            <div className="mt-auto">
+              <button className="btn btn-sm btn-dark w-100 rounded-pill">View More</button>
+            </div>
+          </Link>
+        </div>
+      </div>
+    ))}
                 {loadingLatest ? ( 
                     <Loading />
                 ) : (
