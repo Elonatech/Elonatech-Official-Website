@@ -15,8 +15,9 @@ const BlogComments = ({ blogId }) => {
   const [newComment, setNewComment] = useState('')
   const [replies, setReplies] = useState({})
   const [newReply, setNewReply] = useState('')
+  const [userName, setUsername] = useState('')
   const [activeReplyId, setActiveReplyId] = useState(null)
-  const [showReplyForm, setShowReplyForm] = useState(false) // State for reply form visibility
+  const [showReplyForm, setShowReplyForm] = useState(false)
 
   const [selectedGender, setSelectedGender] = useState('female')
 
@@ -81,25 +82,23 @@ const BlogComments = ({ blogId }) => {
     }
   }, [])
 
-  useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`)
-        setComments(response.data)
+  const fetchComments = async () => {
+    try {
+      const response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`)
+      setComments(response.data)
 
-        // Fetch replies for each comment
-        const repliesData = {}
-        for (const comment of response.data) {
-          const replyResponse = await axios.get(
-            `${BASEURL}/api/v1/replies/${comment._id}`
-          )
-          repliesData[comment._id] = replyResponse.data
-        }
-        setReplies(repliesData)
-      } catch (error) {
-        console.error('Error fetching comments:', error)
+      const repliesData = {}
+      for (const comment of response.data) {
+        const replyResponse = await axios.get(`${BASEURL}/api/v1/replies/${comment._id}`)
+        repliesData[comment._id] = replyResponse.data
       }
+      setReplies(repliesData)
+    } catch (error) {
+      console.error('Error fetching comments:', error)
     }
+  }
+
+  useEffect(() => {
     fetchComments()
   }, [blogId])
 
@@ -110,11 +109,13 @@ const BlogComments = ({ blogId }) => {
         blogId,
         content: newComment,
         createdAt: new Date().toISOString(),
-        gender: selectedGender
+        gender: selectedGender,
+        userName
       }
       await axios.post(`${BASEURL}/api/v1/comments`, newCommentData)
       setNewComment('')
-      fetchComments()
+      setUsername('')
+      await fetchComments()
     } catch (error) {
       console.error('Error submitting comment:', error)
     }
@@ -127,14 +128,16 @@ const BlogComments = ({ blogId }) => {
         blogId,
         commentId,
         content: newReply,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        userName,
+        gender: selectedGender
       }
       await axios.post(`${BASEURL}/api/v1/replies`, newReplyData)
       setNewReply('')
+      setUsername('')
       setActiveReplyId(null)
-      setShowReplyForm(false) // Hide the reply form after submitting
+      setShowReplyForm(false)
 
-      // Update replies state after posting
       setReplies(prevReplies => ({
         ...prevReplies,
         [commentId]: [...(prevReplies[commentId] || []), newReplyData]
@@ -164,13 +167,21 @@ const BlogComments = ({ blogId }) => {
 
   const handleReplyToggle = commentId => {
     setActiveReplyId(commentId === activeReplyId ? null : commentId)
-    setShowReplyForm(!showReplyForm) // Toggle the reply form visibility
+    setShowReplyForm(!showReplyForm)
   }
 
   return (
     <div className='blog-comments-container'>
       <form onSubmit={handleCommentSubmit} className='comment-form'>
-        <input type='text' name='name' id='name' placeholder='Enter name...' />
+      <input
+          type='text'
+          name='name'
+          id='name'
+          placeholder='Enter name...'
+          value={userName}
+          onChange={e => setUsername(e.target.value)}
+          required
+        />
         <div className='gender-container'>
           <label style={{ marginRight: '10px' }}>
             <input
@@ -229,24 +240,23 @@ const BlogComments = ({ blogId }) => {
           <div key={comment._id} className='comment'>
             <div className='commentview2'>
               <div className='avatar3'>
-                <img src={avatar} alt='profile pic' className='avatar' />
+                <img
+                  src={comment.userImage || avatar}
+                  alt={`${comment.userName}'s profile pic`}
+                  className='avatar'
+                />
               </div>
               <div>
                 <div className='nameTime'>
-                  <span className='comment-author'>Anonymous</span>
+                  <span className='comment-author'>{comment.userName || 'Anonymous'}</span>
+                  {/* <span className='comment-gender'>{comment.gender ? ` (${comment.gender})` : ''}</span> */}
                   <span className='comment-date'>
-                    {formatDistanceToNowStrict(new Date(comment.createdAt))}
+                    {formatDistanceToNowStrict(new Date(comment.createdAt))}{' '}
+                    {comment.updatedAt && comment.updatedAt !== comment.createdAt ? '(edited)' : ''}
                   </span>
                 </div>
-
                 <div className='comment-content'>{comment.content}</div>
                 <div className='replyDel'>
-                  {/* <button
-                    className='delu'
-                    onClick={() => handleDeleteComment(comment._id)}
-                  >
-                    <BsTrash />
-                  </button> */}
 
                   <span
                     className='reply2'
@@ -270,6 +280,9 @@ const BlogComments = ({ blogId }) => {
                   name='name'
                   id='name'
                   placeholder='Enter name...'
+                  value={userName} 
+                  onChange={e => setUsername(e.target.value)}
+                  required
                 />
                 <div className='gender-container'>
                   <label style={{ marginRight: '10px' }}>
@@ -338,15 +351,12 @@ const BlogComments = ({ blogId }) => {
                   <div key={reply._id} className='reply'>
                     <div className='commentview'>
                       <div className='avatar3'>
-                        <img
-                          src={avatar}
-                          alt='profile pic'
-                          className='avatar2'
-                        />
+                        <img src={reply.userImage || avatar} alt='profile pic' className='avatar2' />
+
                       </div>
                       <div>
                         <div className='nameTime'>
-                          <span className='reply-author'>Anonymous</span>
+                          <span className='reply-author'>{reply.userName || 'Anonymous'}</span>
                           <span className='reply-date'>
                             {formatDistanceToNowStrict(
                               new Date(reply.createdAt)
