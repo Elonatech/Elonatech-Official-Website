@@ -2,21 +2,28 @@ import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { BASEURL } from '../../BaseURL/BaseURL'
 import { formatDistanceToNowStrict } from 'date-fns'
+<<<<<<< HEAD
 import { v4 as uuidv4 } from 'uuid'
 import { BsReply, BsTrash } from 'react-icons/bs'
 import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { BASEURL } from '../../BaseURL/BaseURL'
 import { formatDistanceToNow } from 'date-fns'
+=======
+>>>>>>> 1dfba6d (blog done but to be reviewed)
 import { v4 as uuidv4 } from 'uuid'
 import { BsReply, BsTrash } from 'react-icons/bs'
 import './blogComment.css'
 import './new.css'
+<<<<<<< HEAD
 import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
 import avatar from '../../../src/asset/avatar.png'
+=======
+>>>>>>> 1dfba6d (blog done but to be reviewed)
 import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
+import avatar from '../../../src/asset/avatar.png'
 
 const BlogComments = ({ blogId }) => {
   const [comments, setComments] = useState([])
@@ -243,6 +250,7 @@ const BlogComments = ({ blogId }) => {
   }
 
   return (
+<<<<<<< HEAD
     <div className="blog-comments-container">
       <form onSubmit={handleCommentSubmit} className="comment-form">
         <input
@@ -255,6 +263,12 @@ const BlogComments = ({ blogId }) => {
           required
         />
         <div className="gender-container">
+=======
+    <div className='blog-comments-container'>
+      <form onSubmit={handleCommentSubmit} className='comment-form'>
+        <input type='text' name='name' id='name' placeholder='Enter name...' />
+        <div className='gender-container'>
+>>>>>>> 1dfba6d (blog done but to be reviewed)
           <label style={{ marginRight: '10px' }}>
             <input
               type="radio"
@@ -306,6 +320,7 @@ const BlogComments = ({ blogId }) => {
       </form>
 
       <h3>Comments</h3>
+<<<<<<< HEAD
       <div className="comments-list" style={{ maxHeight: '700px', overflowY: 'auto' }}>
         {comments.length > 0 ? (
           comments.map((comment) => (
@@ -317,6 +332,77 @@ const BlogComments = ({ blogId }) => {
                     alt={`${comment.userName}'s profile pic`}
                     className="avatar"
                   />
+=======
+      <div className='comments-list'>
+        {comments.map(comment => (
+          <div key={comment._id} className='comment'>
+            <div className='commentview2'>
+              <div className='avatar3'>
+                <img src={avatar} alt='profile pic' className='avatar' />
+              </div>
+              <div>
+                <div className='nameTime'>
+                  <span className='comment-author'>Anonymous</span>
+                  <span className='comment-date'>
+                    {formatDistanceToNowStrict(new Date(comment.createdAt))}
+                  </span>
+                </div>
+
+                <div className='comment-content'>{comment.content}</div>
+                <div className='replyDel'>
+                  {/* <button
+                    className='delu'
+                    onClick={() => handleDeleteComment(comment._id)}
+                  >
+                    <BsTrash />
+                  </button> */}
+
+                  <span
+                    className='reply2'
+                    onClick={() => handleReplyToggle(comment._id)}
+                  >
+                    <BsReply /> <span>Reply</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {showReplyForm && activeReplyId === comment._id && (
+              <form
+                onSubmit={e => handleReplySubmit(e, comment._id)}
+                className={`reply-form ${
+                  activeReplyId === comment._id ? 'active' : ''
+                }`}
+              >
+                <input
+                  type='text'
+                  name='name'
+                  id='name'
+                  placeholder='Enter name...'
+                />
+                <div className='gender-container'>
+                  <label style={{ marginRight: '10px' }}>
+                    <input
+                      type='radio'
+                      name='gender'
+                      value='female'
+                      checked={selectedGender === 'female'}
+                      onChange={handleChange}
+                    />
+                    Female
+                  </label>
+
+                  <label>
+                    <input
+                      type='radio'
+                      name='gender'
+                      value='male'
+                      checked={selectedGender === 'male'}
+                      onChange={handleChange}
+                    />
+                    Male
+                  </label>
+>>>>>>> 1dfba6d (blog done but to be reviewed)
                 </div>
                 <div>
                   <div className="nameTime">
@@ -382,6 +468,7 @@ const BlogComments = ({ blogId }) => {
                           placeholder="Write a reply..."
                           required
                         />
+<<<<<<< HEAD
                       )}
                       <MdEmojiEmotions
                         className="emoji-icon"
@@ -395,6 +482,58 @@ const BlogComments = ({ blogId }) => {
                           />
                         </div>
                       )}
+=======
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className='reply-form-actions'>
+                  <button type='submit'>Submit</button>
+                  <button
+                    type='button'
+                    onClick={() => handleReplyToggle(comment._id)}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            )}
+
+            <div className='replies-container'>
+              {replies[comment._id] && replies[comment._id].length > 0 ? (
+                replies[comment._id].map(reply => (
+                  <div key={reply._id} className='reply'>
+                    <div className='commentview'>
+                      <div className='avatar3'>
+                        <img
+                          src={avatar}
+                          alt='profile pic'
+                          className='avatar2'
+                        />
+                      </div>
+                      <div>
+                        <div className='nameTime'>
+                          <span className='reply-author'>Anonymous</span>
+                          <span className='reply-date'>
+                            {formatDistanceToNowStrict(
+                              new Date(reply.createdAt)
+                            )}{' '}
+                            {/* ago */}
+                          </span>
+                        </div>
+                        <div className='reply-content'>{reply.content}</div>
+                        <div className='replyDel'>
+                          {/* <button
+                            className='delu'
+                            onClick={() =>
+                              handleDeleteReply(comment._id, reply._id)
+                            }
+                          >
+                            <BsTrash />
+                          </button> */}
+                        </div>
+                      </div>
+>>>>>>> 1dfba6d (blog done but to be reviewed)
                     </div>
                   </div>
                   <div className="reply-form-actions">

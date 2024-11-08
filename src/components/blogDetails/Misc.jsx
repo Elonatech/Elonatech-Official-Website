@@ -429,6 +429,7 @@ export default BlogComments
     <div>No replies yet.</div>
   </>
 )}
+<<<<<<< HEAD
 </div>
 
 
@@ -607,3 +608,6 @@ div className='comments-list'>
           </div>
         )}
       </div>
+=======
+</div>
+>>>>>>> 1dfba6d (blog done but to be reviewed)

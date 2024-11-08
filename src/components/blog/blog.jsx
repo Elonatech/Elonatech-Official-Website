@@ -79,10 +79,13 @@ const Blog = () => {
       setminPageNumberLimit(minPageNumberLimit - pageNumberLimit)
     }
   }
+<<<<<<< HEAD
 
   const generateBlogLink = (item, currentPage) => {
     return `/blog/${item._id}?page=${currentPage}`
   }
+=======
+>>>>>>> 1dfba6d (blog done but to be reviewed)
 
   return (
     <>
@@ -114,7 +117,11 @@ const Blog = () => {
                 {isLoading ? (
                   currentPosts?.map(item => (
                     <div className='col-md-12' key={item.id}>
+<<<<<<< HEAD
                       {/* <Link
+=======
+                      <Link
+>>>>>>> 1dfba6d (blog done but to be reviewed)
                         className='text-decoration-none text-dark'
                         to={`${item._id}`}
                       > */}
@@ -124,6 +131,7 @@ const Blog = () => {
                       >
                         <div className='mt-4'>
                           <div className='row g-0 shim '>
+<<<<<<< HEAD
                             <div
                               className='col-md-6'
                               style={{
@@ -131,6 +139,9 @@ const Blog = () => {
                                 justifyContent: 'center'
                               }}
                             >
+=======
+                            <div className='col-md-6'>
+>>>>>>> 1dfba6d (blog done but to be reviewed)
                               <div className='card border-0'>
                                 <img
                                   src={item.cloudinary_id}
