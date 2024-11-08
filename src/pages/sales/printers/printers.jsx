@@ -375,6 +375,7 @@ const Printers = () => {
           <div className='col-md-3'>
             <div className='thix'>
               <div className='browse'>
+              <form class='d-flex'></form>
                 <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>

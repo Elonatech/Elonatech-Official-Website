@@ -311,8 +311,16 @@ const Pos = () => {
                             <h5 className='fw-normal pt-3 product-name'>
                               {product.name.slice(0, 23)}...
                             </h5>
-                            <p className='lead fs-6 upperg'>
+                            {/* <p className='lead fs-6 upperg'>
                               {product.category}
+                            </p> */}
+
+                            <p className='lead fs-6'>
+                              {product.category === 'Office'
+                                ? 'Office Equipment'
+                                : product.category === 'Pos'
+                                ? 'POS' // Use 'POS' for the POS category
+                                : product.category}
                             </p>
 
                             <div
@@ -377,6 +385,7 @@ const Pos = () => {
           <div className='col-md-3'>
             <div className='thix'>
               <div className='browse'>
+                <form class='d-flex'></form>
                 <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>

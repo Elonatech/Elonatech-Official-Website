@@ -385,7 +385,14 @@ const Shop = () => {
                               <h5 className='fw-normal pt-3 product-name'>
                                 {product.name.slice(0, 23)}...
                               </h5>
-                              <p className='lead fs-6'>{product.category}</p>
+                              {/* <p className='lead fs-6'>{product.category}</p> */}
+                              <p className='lead fs-6'>
+                                {product.category === 'Office'
+                                  ? 'Office Equipment'
+                                  : product.category === 'Pos'
+                                  ? 'POS' : product.category === 'Network' ? 'Network Device' // Use 'POS' for the POS category
+                                  : product.category}
+                              </p>
 
                               {/* Star Rating */}
                               <div
@@ -560,7 +567,8 @@ const Shop = () => {
               {/* Filter by Price */}
               {/* <FilterByPrice /> */}
 
-              <div className='price-filter price-mobile1'
+              <div
+                className='price-filter price-mobile1'
                 style={{ marginTop: '0' }}
               >
                 <h4 style={{ fontSize: '16px' }} className='fw-bold'>
