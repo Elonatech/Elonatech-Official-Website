@@ -20,7 +20,7 @@ const Cabling = () => {
     return (
     <>
     <Helmet>
-       <title>Structured Cabling  - Tech Solution, Digital Solution</title>
+       <title>{`Structured Cabling  - Tech Solution, Digital Solution`}</title>
        <meta name="description" content="The standardized infrastructure of communications cabling that supports network components
         Structured cabling design and installation is governed by a set of standards that 
         specify wiring data centers, offices, and apartment buildings for 

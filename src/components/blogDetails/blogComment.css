@@ -107,11 +107,14 @@
 }
 
 .reply {
-  margin-bottom: 10px;
-  padding: 10px;
+  /* margin-bottom: 10px; */
+  /* padding: 10px; */
+  margin-top: 10px;
   background-color: #f8f9fa;
   border-radius: 6px;
   border: 1px solid #e0e0e0;
+  font-size: 15px;
+  padding: 5px;
 }
 
 .reply-header {

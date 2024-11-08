@@ -13,8 +13,6 @@ import NewsDetails from "./components/news/newsDetails/newsDetails";
 import NewsRelated from "./components/news/newsDetails/newsRelated";
 import TrendDetails from "./components/trends/TrendDetails/trendDetails";
 import TrendRelated from "./components/trends/TrendDetails/trendRelated";
-import FilterByPrice from './pages/sales/filterByPrice/FilterByPrice';
-import Trial from './components/blogDetails/Trial';
 
 
 
@@ -170,10 +168,10 @@ const router = createBrowserRouter([
       path:'/',
       element:<Home/>
     },
-    {
-      path:'/trial',
-      element:<Trial/>
-    },
+    // {
+    //   path:'/trial',
+    //   element:<EmojiInput/>
+    // },
     {
       path:'/network',
       element:<Network/>

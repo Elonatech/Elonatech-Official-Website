@@ -14,7 +14,6 @@ const BlogComments = ({ blogId }) => {
   const [replies, setReplies] = useState({})
   const [newReply, setNewReply] = useState('')
   const [activeReplyId, setActiveReplyId] = useState(null)
-  const [showReplyForm, setShowReplyForm] = useState(false) // State for reply form visibility
 
   const [selectedGender, setSelectedGender] = useState('female')
 
@@ -24,24 +23,11 @@ const BlogComments = ({ blogId }) => {
 
   const textAreaRef = useRef(null)
   const pickerRef = useRef(null)
-  const pickerRef2 = useRef(null)
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
-  const [showEmojiPicker2, setShowEmojiPicker2] = useState(false)
 
   const onEmojiClick = emojiData => {
     setNewComment(newComment + emojiData.emoji)
     setShowEmojiPicker(false)
-    if (textAreaRef.current) {
-      textAreaRef.current.focus()
-      textAreaRef.current.setSelectionRange(
-        newComment.length,
-        newComment.length
-      )
-    }
-  }
-  const onEmojiClick2 = emojiData => {
-    setNewReply(newReply + emojiData.emoji)
-    setShowEmojiPicker2(false)
     if (textAreaRef.current) {
       textAreaRef.current.focus()
       textAreaRef.current.setSelectionRange(
@@ -62,15 +48,6 @@ const BlogComments = ({ blogId }) => {
         setShowEmojiPicker(false)
         textAreaRef.current.focus()
       }
-      if (
-        pickerRef2.current &&
-        !pickerRef2.current.contains(event.target) &&
-        textAreaRef.current &&
-        !textAreaRef.current.contains(event.target)
-      ) {
-        setShowEmojiPicker2(false)
-        textAreaRef.current.focus()
-      }
     }
 
     document.addEventListener('click', handleClickOutside)
@@ -80,6 +57,14 @@ const BlogComments = ({ blogId }) => {
   }, [])
 
   useEffect(() => {
+    // const fetchComments = async () => {
+    //   try {
+    //     const response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`)
+    //     setComments(response.data)
+    //   } catch (error) {
+    //     console.error('Error fetching comments:', error)
+    //   }
+    // }
     const fetchComments = async () => {
       try {
         const response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`)
@@ -118,29 +103,50 @@ const BlogComments = ({ blogId }) => {
     }
   }
 
+  // const handleReplySubmit = async (e, commentId) => {
+  //   e.preventDefault()
+  //   try {
+  //     const newReplyData = {
+  //       blogId,
+  //       commentId,
+  //       content: newReply,
+  //       createdAt: new Date().toISOString()
+  //     }
+  //     await axios.post(`${BASEURL}/api/v1/replies`, newReplyData)
+  //     setNewReply('')
+  //     setActiveReplyId(null)
+  //     fetchComments()
+  //   } catch (error) {
+  //     console.error('Error submitting reply:', error)
+  //   }
+  // }
+
+
   const handleReplySubmit = async (e, commentId) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const newReplyData = {
         blogId,
         commentId,
         content: newReply,
         createdAt: new Date().toISOString()
-      }
-      await axios.post(`${BASEURL}/api/v1/replies`, newReplyData)
-      setNewReply('')
-      setActiveReplyId(null)
-      setShowReplyForm(false) // Hide the reply form after submitting
-
+      };
+      await axios.post(`${BASEURL}/api/v1/replies`, newReplyData);
+      setNewReply('');
+      setActiveReplyId(null);
+  
       // Update replies state after posting
       setReplies(prevReplies => ({
         ...prevReplies,
         [commentId]: [...(prevReplies[commentId] || []), newReplyData]
-      }))
+      }));
     } catch (error) {
-      console.error('Error submitting reply:', error)
+      console.error('Error submitting reply:', error);
     }
-  }
+  };
+  
+
+
 
   const handleDeleteComment = async commentId => {
     try {
@@ -162,7 +168,6 @@ const BlogComments = ({ blogId }) => {
 
   const handleReplyToggle = commentId => {
     setActiveReplyId(commentId === activeReplyId ? null : commentId)
-    setShowReplyForm(!showReplyForm) // Toggle the reply form visibility
   }
 
   return (
@@ -238,87 +243,53 @@ const BlogComments = ({ blogId }) => {
               </button>
             </div>
             <div className='comment-content'>{comment.content}</div>
-
-            <span
-              className='reply'
-              onClick={() => handleReplyToggle(comment._id)}
-            >
-              <BsReply /> Reply
-            </span>
-
-            {showReplyForm && activeReplyId === comment._id && (
+            {/* <div className='replies-container'>
+              {comment._id in replies
+                ? replies[comment._id].map(reply => (
+                    <div key={reply._id} className='reply'>
+                      <div className='reply-header'>
+                        <span className='reply-author'>Anonymous</span>
+                        <span className='reply-date'>
+                          {formatDistanceToNow(new Date(reply.createdAt))} ago
+                        </span>
+                        <button
+                          className='delete-reply'
+                          onClick={() =>
+                            handleDeleteReply(comment._id, reply._id)
+                          }
+                        >
+                          <BsTrash />
+                        </button>
+                      </div>
+                      <div className='reply-content'>{reply.content}</div>
+                    </div>
+                  ))
+                : null}
               <form
                 onSubmit={e => handleReplySubmit(e, comment._id)}
                 className={`reply-form ${
                   activeReplyId === comment._id ? 'active' : ''
                 }`}
               >
-                <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  placeholder='Enter name...'
+                <textarea
+                  value={newReply}
+                  onChange={e => setNewReply(e.target.value)}
+                  placeholder='Write a reply...'
+                  required
                 />
-                <div className='gender-container'>
-                  <label style={{ marginRight: '10px' }}>
-                    <input
-                      type='radio'
-                      name='gender'
-                      value='female'
-                      checked={selectedGender === 'female'}
-                      onChange={handleChange}
-                    />
-                    Female
-                  </label>
-
-                  <label>
-                    <input
-                      type='radio'
-                      name='gender'
-                      value='male'
-                      checked={selectedGender === 'male'}
-                      onChange={handleChange}
-                    />
-                    Male
-                  </label>
-                </div>
-                <div className='comment-box'>
-                  <div className='textarea-container'>
-                    {!showEmojiPicker2 && (
-                      <textarea
-                        style={{ resize: 'none' }}
-                        ref={textAreaRef}
-                        value={newReply}
-                        onChange={e => setNewReply(e.target.value)}
-                        placeholder='Write a comment...'
-                        required
-                      />
-                    )}
-                    <MdEmojiEmotions
-                      className='emoji-icon'
-                      onClick={() => setShowEmojiPicker2(!showEmojiPicker2)}
-                    />
-                    {showEmojiPicker2 && (
-                      <div className='emoji-picker2' ref={pickerRef2}>
-                        <EmojiPicker
-                          onEmojiClick={onEmojiClick2}
-                          onOpen={event => event.preventDefault()}
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
                 <div className='reply-form-actions'>
                   <button type='submit'>Submit</button>
                   <button
                     type='button'
                     onClick={() => handleReplyToggle(comment._id)}
                   >
-                    <BsReply /> Cancel
+                    <BsReply /> Reply
                   </button>
                 </div>
               </form>
-            )}
+            </div> */}
+
+            <button className='reply'>reply</button>
 
             <div className='replies-container'>
               {replies[comment._id] && replies[comment._id].length > 0 ? (
@@ -344,6 +315,31 @@ const BlogComments = ({ blogId }) => {
               ) : (
                 <div>No replies yet.</div>
               )}
+
+              {/* <div className='reply'>
+                <form
+                  onSubmit={e => handleReplySubmit(e, comment._id)}
+                  className={`reply-form ${
+                    activeReplyId === comment._id ? 'active' : ''
+                  }`}
+                >
+                  <textarea
+                    value={newReply}
+                    onChange={e => setNewReply(e.target.value)}
+                    placeholder='Write a reply...'
+                    required
+                  />
+                  <div className='reply-form-actions'>
+                    <button type='submit'>Submit</button>
+                    <button
+                      type='button'
+                      onClick={() => handleReplyToggle(comment._id)}
+                    >
+                      <BsReply /> Reply now
+                    </button>
+                  </div>
+                </form>
+              </div> */}
             </div>
           </div>
         ))}
