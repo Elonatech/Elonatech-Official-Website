@@ -331,7 +331,14 @@ const NetworkDevices = () => {
                             <h5 className='fw-normal pt-3 product-name'>
                               {product.name.slice(0, 23)}...
                             </h5>
-                            <p className='lead fs-6'>{product.category}</p>
+                            {/* <p className='lead fs-6'>{product.category}</p> */}
+                            <p className='lead fs-6'>
+                                {product.category === 'Network'
+                                  ? 'Network Device'
+                                  : product.category === 'Pos'
+                                  ? 'POS' // Use 'POS' for the POS category
+                                  : product.category}
+                              </p>
 
                             {/* Star Rating */}
                             <div
@@ -398,6 +405,7 @@ const NetworkDevices = () => {
           <div className='col-md-3'>
             <div className='thix'>
               <div className='browse'>
+              <form class='d-flex'></form>
                 <h4 className='fw-bold tyu'>Browse Categories</h4>
                 <ul className='list-unstyled'>
                   <li>
