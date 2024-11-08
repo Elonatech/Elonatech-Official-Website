@@ -16,7 +16,9 @@ const BlogComments = ({ blogId }) => {
   const [replies, setReplies] = useState({})
   const [newReply, setNewReply] = useState('')
   const [userName, setUsername] = useState('')
+  const [userName, setUsername] = useState('')
   const [activeReplyId, setActiveReplyId] = useState(null)
+  const [showReplyForm, setShowReplyForm] = useState(false)
   const [showReplyForm, setShowReplyForm] = useState(false)
 
   const [selectedGender, setSelectedGender] = useState('female')
@@ -135,6 +137,7 @@ const BlogComments = ({ blogId }) => {
         content: newComment,
         createdAt: new Date().toISOString(),
         gender: selectedGender,
+        userName,
         userName
       }
       await axios.post(`${BASEURL}/api/v1/comments`, newCommentData)
@@ -154,6 +157,8 @@ const BlogComments = ({ blogId }) => {
         commentId,
         content: newReply,
         createdAt: new Date().toISOString(),
+        userName,
+        gender: selectedGender,
         userName,
         gender: selectedGender
       }
@@ -193,11 +198,21 @@ const BlogComments = ({ blogId }) => {
   const handleReplyToggle = commentId => {
     setActiveReplyId(commentId === activeReplyId ? null : commentId)
     setShowReplyForm(!showReplyForm)
+    setShowReplyForm(!showReplyForm)
   }
 
   return (
     <div className='blog-comments-container'>
       <form onSubmit={handleCommentSubmit} className='comment-form'>
+      <input
+          type='text'
+          name='name'
+          id='name'
+          placeholder='Enter name...'
+          value={userName}
+          onChange={e => setUsername(e.target.value)}
+          required
+        />
       <input
           type='text'
           name='name'
@@ -320,6 +335,33 @@ const BlogComments = ({ blogId }) => {
                     />
                     Female
                   </label>
+            {showReplyForm && activeReplyId === comment._id && (
+              <form
+                onSubmit={e => handleReplySubmit(e, comment._id)}
+                className={`reply-form ${
+                  activeReplyId === comment._id ? 'active' : ''
+                }`}
+              >
+                <input
+                  type='text'
+                  name='name'
+                  id='name'
+                  placeholder='Enter name...'
+                  value={userName} 
+                  onChange={e => setUsername(e.target.value)}
+                  required
+                />
+                <div className='gender-container'>
+                  <label style={{ marginRight: '10px' }}>
+                    <input
+                      type='radio'
+                      name='gender'
+                      value='female'
+                      checked={selectedGender === 'female'}
+                      onChange={handleChange}
+                    />
+                    Female
+                  </label>
 
                     <label>
                       <input
@@ -370,6 +412,28 @@ const BlogComments = ({ blogId }) => {
                 </form>
               )}
 
+            <div className='replies-container'>
+              {replies[comment._id] && replies[comment._id].length > 0 ? (
+                replies[comment._id].map(reply => (
+                  <div key={reply._id} className='reply'>
+                    <div className='commentview'>
+                      <div className='avatar3'>
+                        <img src={reply.userImage || avatar} alt='profile pic' className='avatar2' />
+
+                      </div>
+                      <div>
+                        <div className='nameTime'>
+                          <span className='reply-author'>{reply.userName || 'Anonymous'}</span>
+                          <span className='reply-date'>
+                            {formatDistanceToNowStrict(
+                              new Date(reply.createdAt)
+                            )}{' '}
+                            {/* ago */}
+                          </span>
+                        </div>
+                        <div className='reply-content'>{reply.content}</div>
+                        <div className='replyDel'>
+                          {/* <button
             <div className='replies-container'>
               {replies[comment._id] && replies[comment._id].length > 0 ? (
                 replies[comment._id].map(reply => (
