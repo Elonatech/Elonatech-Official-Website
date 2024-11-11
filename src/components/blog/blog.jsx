@@ -87,6 +87,10 @@ const Blog = () => {
 =======
 >>>>>>> 1dfba6d (blog done but to be reviewed)
 
+  const generateBlogLink = (item, currentPage) => {
+    return `/blog/${item._id}?page=${currentPage}`
+  }
+
   return (
     <>
       <Helmet>
@@ -118,10 +122,14 @@ const Blog = () => {
                   currentPosts?.map(item => (
                     <div className='col-md-12' key={item.id}>
 <<<<<<< HEAD
+<<<<<<< HEAD
                       {/* <Link
 =======
                       <Link
 >>>>>>> 1dfba6d (blog done but to be reviewed)
+=======
+                      {/* <Link
+>>>>>>> 88ff95f (blog done)
                         className='text-decoration-none text-dark'
                         to={`${item._id}`}
                       > */}
@@ -132,6 +140,9 @@ const Blog = () => {
                         <div className='mt-4'>
                           <div className='row g-0 shim '>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88ff95f (blog done)
                             <div
                               className='col-md-6'
                               style={{
@@ -139,9 +150,12 @@ const Blog = () => {
                                 justifyContent: 'center'
                               }}
                             >
+<<<<<<< HEAD
 =======
                             <div className='col-md-6'>
 >>>>>>> 1dfba6d (blog done but to be reviewed)
+=======
+>>>>>>> 88ff95f (blog done)
                               <div className='card border-0'>
                                 <img
                                   src={item.cloudinary_id}

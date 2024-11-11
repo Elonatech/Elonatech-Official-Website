@@ -123,6 +123,7 @@ const BlogDetails = () => {
     <>
       {/* header */}
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div class='container-fluid bg-dark py-5 blog-detail-heaad'>
         <div class='py-5 mt-5 yyyy'>
 =======
@@ -138,6 +139,10 @@ const BlogDetails = () => {
       >
         <div class='py-5 mt-5 '>
 >>>>>>> b30582c (not yet done)
+=======
+      <div class='container-fluid bg-dark py-5 blog-detail-heaad'>
+        <div class='py-5 mt-5 yyyy'>
+>>>>>>> 88ff95f (blog done)
           <h2 class=' mt-5 text-white text-center'>Blog Details</h2>
           <h5 class=' mt-4 text-white text-center'></h5>
           <p class='lead text-white text-center'></p>
@@ -307,6 +312,10 @@ const BlogDetails = () => {
 
             <div
               className='comments-container-mobile'
+<<<<<<< HEAD
+=======
+              ref={commentsContainerRef}
+>>>>>>> 88ff95f (blog done)
             >
               {' '}
               {/* Wrap the comments container */}
@@ -315,10 +324,14 @@ const BlogDetails = () => {
 
             {/*================================== related posts ===================================*/}
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div className='container bg-light related-post'>
 =======
             <div className='container bg-light'>
 >>>>>>> b30582c (not yet done)
+=======
+            <div className='container bg-light related-post'>
+>>>>>>> 88ff95f (blog done)
               <h3
                 className='fw-bold mb-3 mt-5 pt-4'
                 style={{ color: '#0b159d' }}
@@ -431,6 +444,7 @@ const BlogDetails = () => {
               </form>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 className='comments-container'
 
@@ -472,6 +486,45 @@ const BlogDetails = () => {
                 {/* Wrap the comments container */}
                 <BlogComments blogId={id} />
 >>>>>>> b30582c (not yet done)
+=======
+              <div
+                className='comments-container'
+                // ref={commentsContainerRef}
+              >
+                {' '}
+                {/* Wrap the comments container */}
+                <BlogComments blogId={id}/>
+              </div>
+
+              <div className='container bg-light related-post2'>
+                <h3
+                  className='fw-bold mb-3 mt-5 pt-4'
+                  style={{ color: '#0b159d' }}
+                >
+                  Related Posts
+                </h3>
+                <div className='rel'>
+                  {/* <div className='row'> */}
+                  {relatedPosts.map(post => (
+                    <div className='relIn' key={post.id}>
+                      {/* <div className='col col-md-3 col-sm-11' key={post.id}> */}
+                      <div className=''>
+                        <Link
+                          className='text-decoration-none text-dark'
+                          to={`/blog/related/${post._id}`}
+                        >
+                          <h6 className='related-post-title'>
+                            {post.title.slice(0, 300)}
+                          </h6>
+                        </Link>
+                        <h6 className='text-danger related-post-date'>
+                          {new Date(post.createdAt).toDateString()}{' '}
+                        </h6>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+>>>>>>> 88ff95f (blog done)
               </div>
             </div>
           </div>
