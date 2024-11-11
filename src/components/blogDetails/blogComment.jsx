@@ -283,15 +283,15 @@ const BlogComments = ({ blogId }) => {
                 <div className='comment-content'>{comment.content}</div>
                 <div className='replyDel'>
 
-                  <span
-                    className='reply2'
-                    onClick={() => handleReplyToggle(comment._id)}
-                  >
-                    <BsReply /> <span>Reply</span>
-                  </span>
+                    <span
+                      className='reply2'
+                      onClick={() => handleReplyToggle(comment._id)}
+                    >
+                      <BsReply /> <span>Reply</span>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
             {showReplyForm && activeReplyId === comment._id && (
               <form
@@ -321,54 +321,54 @@ const BlogComments = ({ blogId }) => {
                     Female
                   </label>
 
-                  <label>
-                    <input
-                      type='radio'
-                      name='gender'
-                      value='male'
-                      checked={selectedGender === 'male'}
-                      onChange={handleChange}
-                    />
-                    Male
-                  </label>
-                </div>
-                <div className='comment-box'>
-                  <div className='textarea-container'>
-                    {!showEmojiPicker2 && (
-                      <textarea
-                        style={{ resize: 'none' }}
-                        ref={textAreaRef}
-                        value={newReply}
-                        onChange={e => setNewReply(e.target.value)}
-                        placeholder='Write a comment...'
-                        required
+                    <label>
+                      <input
+                        type='radio'
+                        name='gender'
+                        value='male'
+                        checked={selectedGender === 'male'}
+                        onChange={handleChange}
                       />
-                    )}
-                    <MdEmojiEmotions
-                      className='emoji-icon'
-                      onClick={() => setShowEmojiPicker2(!showEmojiPicker2)}
-                    />
-                    {showEmojiPicker2 && (
-                      <div className='emoji-picker2' ref={pickerRef2}>
-                        <EmojiPicker
-                          onEmojiClick={onEmojiClick2}
-                          onOpen={event => event.preventDefault()}
-                        />
-                      </div>
-                    )}
+                      Male
+                    </label>
                   </div>
-                </div>
-                <div className='reply-form-actions'>
-                  <button type='submit'>Submit</button>
-                  <button
-                    type='button'
-                    onClick={() => handleReplyToggle(comment._id)}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </form>
-            )}
+                  <div className='comment-box'>
+                    <div className='textarea-container'>
+                      {!showEmojiPicker2 && (
+                        <textarea
+                          style={{ resize: 'none' }}
+                          ref={textAreaRef}
+                          value={newReply}
+                          onChange={e => setNewReply(e.target.value)}
+                          placeholder='Write a comment...'
+                          required
+                        />
+                      )}
+                      <MdEmojiEmotions
+                        className='emoji-icon'
+                        onClick={() => setShowEmojiPicker2(!showEmojiPicker2)}
+                      />
+                      {showEmojiPicker2 && (
+                        <div className='emoji-picker2' ref={pickerRef2}>
+                          <EmojiPicker
+                            onEmojiClick={onEmojiClick2}
+                            onOpen={event => event.preventDefault()}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className='reply-form-actions'>
+                    <button type='submit'>Submit</button>
+                    <button
+                      type='button'
+                      onClick={() => handleReplyToggle(comment._id)}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              )}
 
             <div className='replies-container'>
               {replies[comment._id] && replies[comment._id].length > 0 ? (
@@ -399,17 +399,22 @@ const BlogComments = ({ blogId }) => {
                           >
                             <BsTrash />
                           </button> */}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))
-              ) : (
-                <div>No replies yet.</div>
-              )}
+                  ))
+                ) : (
+                  <div>No replies yet.</div>
+                )}
+              </div>
             </div>
+          ))
+        ) : (
+          <div className='no-comments'>
+            No comments have been added to this post.
           </div>
-        ))}
+        )}
       </div>
     </div>
   )
