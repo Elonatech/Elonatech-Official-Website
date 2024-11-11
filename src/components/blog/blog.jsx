@@ -80,6 +80,10 @@ const Blog = () => {
     }
   }
 
+  const generateBlogLink = (item, currentPage) => {
+    return `/blog/${item._id}?page=${currentPage}`
+  }
+
   return (
     <>
       <Helmet>
@@ -110,13 +114,23 @@ const Blog = () => {
                 {isLoading ? (
                   currentPosts?.map(item => (
                     <div className='col-md-12' key={item.id}>
-                      <Link
+                      {/* <Link
                         className='text-decoration-none text-dark'
                         to={`${item._id}`}
+                      > */}
+                      <Link
+                        className='text-decoration-none text-dark'
+                        to={generateBlogLink(item, currentPage)}
                       >
                         <div className='mt-4'>
                           <div className='row g-0 shim '>
-                            <div className='col-md-6'>
+                            <div
+                              className='col-md-6'
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'center'
+                              }}
+                            >
                               <div className='card border-0'>
                                 <img
                                   src={item.cloudinary_id}

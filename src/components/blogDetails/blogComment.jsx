@@ -170,6 +170,7 @@ const BlogComments = ({ blogId }) => {
   return (
     <div className='blog-comments-container'>
       <form onSubmit={handleCommentSubmit} className='comment-form'>
+        <h3>Add Comment</h3>
         <input type='text' name='name' id='name' placeholder='Enter name...' />
         <div className='gender-container'>
           <label style={{ marginRight: '10px' }}>
@@ -225,138 +226,139 @@ const BlogComments = ({ blogId }) => {
 
       <h3>Comments</h3>
       <div className='comments-list'>
-        {comments.map(comment => (
-          <div key={comment._id} className='comment'>
-            <div className='commentview2'>
-              <div className='avatar3'>
-                <img src={avatar} alt='profile pic' className='avatar' />
-              </div>
-              <div>
-                <div className='nameTime'>
-                  <span className='comment-author'>Anonymous</span>
-                  <span className='comment-date'>
-                    {formatDistanceToNowStrict(new Date(comment.createdAt))}
-                  </span>
+        {comments.length > 0 ? (
+          comments.map(comment => (
+            <div key={comment._id} className='comment'>
+              <div className='commentview2'>
+                <div className='avatar3'>
+                  <img src={avatar} alt='profile pic' className='avatar' />
                 </div>
+                <div>
+                  <div className='nameTime'>
+                    <span className='comment-author'>Anonymous</span>
+                    <span className='comment-date'>
+                      {formatDistanceToNowStrict(new Date(comment.createdAt))}
+                    </span>
+                  </div>
 
-                <div className='comment-content'>{comment.content}</div>
-                <div className='replyDel'>
-                  {/* <button
+                  <div className='comment-content'>{comment.content}</div>
+                  <div className='replyDel'>
+                    {/* <button
                     className='delu'
                     onClick={() => handleDeleteComment(comment._id)}
                   >
                     <BsTrash />
                   </button> */}
 
-                  <span
-                    className='reply2'
-                    onClick={() => handleReplyToggle(comment._id)}
-                  >
-                    <BsReply /> <span>Reply</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {showReplyForm && activeReplyId === comment._id && (
-              <form
-                onSubmit={e => handleReplySubmit(e, comment._id)}
-                className={`reply-form ${
-                  activeReplyId === comment._id ? 'active' : ''
-                }`}
-              >
-                <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  placeholder='Enter name...'
-                />
-                <div className='gender-container'>
-                  <label style={{ marginRight: '10px' }}>
-                    <input
-                      type='radio'
-                      name='gender'
-                      value='female'
-                      checked={selectedGender === 'female'}
-                      onChange={handleChange}
-                    />
-                    Female
-                  </label>
-
-                  <label>
-                    <input
-                      type='radio'
-                      name='gender'
-                      value='male'
-                      checked={selectedGender === 'male'}
-                      onChange={handleChange}
-                    />
-                    Male
-                  </label>
-                </div>
-                <div className='comment-box'>
-                  <div className='textarea-container'>
-                    {!showEmojiPicker2 && (
-                      <textarea
-                        style={{ resize: 'none' }}
-                        ref={textAreaRef}
-                        value={newReply}
-                        onChange={e => setNewReply(e.target.value)}
-                        placeholder='Write a comment...'
-                        required
-                      />
-                    )}
-                    <MdEmojiEmotions
-                      className='emoji-icon'
-                      onClick={() => setShowEmojiPicker2(!showEmojiPicker2)}
-                    />
-                    {showEmojiPicker2 && (
-                      <div className='emoji-picker2' ref={pickerRef2}>
-                        <EmojiPicker
-                          onEmojiClick={onEmojiClick2}
-                          onOpen={event => event.preventDefault()}
-                        />
-                      </div>
-                    )}
+                    <span
+                      className='reply2'
+                      onClick={() => handleReplyToggle(comment._id)}
+                    >
+                      <BsReply /> <span>Reply</span>
+                    </span>
                   </div>
                 </div>
-                <div className='reply-form-actions'>
-                  <button type='submit'>Submit</button>
-                  <button
-                    type='button'
-                    onClick={() => handleReplyToggle(comment._id)}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </form>
-            )}
+              </div>
 
-            <div className='replies-container'>
-              {replies[comment._id] && replies[comment._id].length > 0 ? (
-                replies[comment._id].map(reply => (
-                  <div key={reply._id} className='reply'>
-                    <div className='commentview'>
-                      <div className='avatar3'>
-                        <img
-                          src={avatar}
-                          alt='profile pic'
-                          className='avatar2'
+              {showReplyForm && activeReplyId === comment._id && (
+                <form
+                  onSubmit={e => handleReplySubmit(e, comment._id)}
+                  className={`reply-form ${
+                    activeReplyId === comment._id ? 'active' : ''
+                  }`}
+                >
+                  <input
+                    type='text'
+                    name='name'
+                    id='name'
+                    placeholder='Enter name...'
+                  />
+                  <div className='gender-container'>
+                    <label style={{ marginRight: '10px' }}>
+                      <input
+                        type='radio'
+                        name='gender'
+                        value='female'
+                        checked={selectedGender === 'female'}
+                        onChange={handleChange}
+                      />
+                      Female
+                    </label>
+
+                    <label>
+                      <input
+                        type='radio'
+                        name='gender'
+                        value='male'
+                        checked={selectedGender === 'male'}
+                        onChange={handleChange}
+                      />
+                      Male
+                    </label>
+                  </div>
+                  <div className='comment-box'>
+                    <div className='textarea-container'>
+                      {!showEmojiPicker2 && (
+                        <textarea
+                          style={{ resize: 'none' }}
+                          ref={textAreaRef}
+                          value={newReply}
+                          onChange={e => setNewReply(e.target.value)}
+                          placeholder='Write a comment...'
+                          required
                         />
-                      </div>
-                      <div>
-                        <div className='nameTime'>
-                          <span className='reply-author'>Anonymous</span>
-                          <span className='reply-date'>
-                            {formatDistanceToNowStrict(
-                              new Date(reply.createdAt)
-                            )}{' '}
-                            {/* ago */}
-                          </span>
+                      )}
+                      <MdEmojiEmotions
+                        className='emoji-icon'
+                        onClick={() => setShowEmojiPicker2(!showEmojiPicker2)}
+                      />
+                      {showEmojiPicker2 && (
+                        <div className='emoji-picker2' ref={pickerRef2}>
+                          <EmojiPicker
+                            onEmojiClick={onEmojiClick2}
+                            onOpen={event => event.preventDefault()}
+                          />
                         </div>
-                        <div className='reply-content'>{reply.content}</div>
-                        <div className='replyDel'>
-                          {/* <button
+                      )}
+                    </div>
+                  </div>
+                  <div className='reply-form-actions'>
+                    <button type='submit'>Submit</button>
+                    <button
+                      type='button'
+                      onClick={() => handleReplyToggle(comment._id)}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              )}
+
+              <div className='replies-container'>
+                {replies[comment._id] && replies[comment._id].length > 0 ? (
+                  replies[comment._id].map(reply => (
+                    <div key={reply._id} className='reply'>
+                      <div className='commentview'>
+                        <div className='avatar3'>
+                          <img
+                            src={avatar}
+                            alt='profile pic'
+                            className='avatar2'
+                          />
+                        </div>
+                        <div>
+                          <div className='nameTime'>
+                            <span className='reply-author'>Anonymous</span>
+                            <span className='reply-date'>
+                              {formatDistanceToNowStrict(
+                                new Date(reply.createdAt)
+                              )}{' '}
+                              {/* ago */}
+                            </span>
+                          </div>
+                          <div className='reply-content'>{reply.content}</div>
+                          <div className='replyDel'>
+                            {/* <button
                             className='delu'
                             onClick={() =>
                               handleDeleteReply(comment._id, reply._id)
@@ -364,17 +366,22 @@ const BlogComments = ({ blogId }) => {
                           >
                             <BsTrash />
                           </button> */}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))
-              ) : (
-                <div>No replies yet.</div>
-              )}
+                  ))
+                ) : (
+                  <div>No replies yet.</div>
+                )}
+              </div>
             </div>
+          ))
+        ) : (
+          <div className='no-comments'>
+            No comments have been added to this post.
           </div>
-        ))}
+        )}
       </div>
     </div>
   )
