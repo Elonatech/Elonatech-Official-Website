@@ -31,12 +31,12 @@ const BlogDetails = () => {
   const commentsContainerRef = useRef(null) // Ref for the comments container
 
   useEffect(() => {
-    // Function to update the comments container height
     const resizeCommentsContainer = () => {
       const leftColumnHeight = leftColumnRef.current?.offsetHeight || 0
-      // Only resize the BlogComments container
-      commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
-      commentsContainerRef.current.style.overflowY = 'auto'
+      if (commentsContainerRef.current) {
+        commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
+        commentsContainerRef.current.style.overflowY = 'auto'
+      }
     }
 
     // Resize on initial render and when the left column changes
@@ -493,7 +493,7 @@ const BlogDetails = () => {
               >
                 {' '}
                 {/* Wrap the comments container */}
-                <BlogComments blogId={id}/>
+                <BlogComments blogId={id} />
               </div>
 
               <div className='container bg-light related-post2'>

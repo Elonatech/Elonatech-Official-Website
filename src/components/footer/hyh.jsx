@@ -232,7 +232,7 @@ const Footer = () => {
                   title='fb:page Facebook Social Plugin'
                   frameborder='0'
                   allowTransparency='true'
-                  allowFullScreen='true'
+                  allowFullScree='true'
                   scrolling='no'
                   allow='encrypted-media'
                   src='https://web.facebook.com/v3.2/plugins/page.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_a
