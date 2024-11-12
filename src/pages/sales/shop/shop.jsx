@@ -464,11 +464,6 @@ const Shop = () => {
             </section>
           </div>
           <div class='col-md-3'>
-            {/* <
-              class="position-sticky "
-              style={{ top: "2rem", marginTop: "20px" }}
-            > */}
-
             <div className='thix'>
               <div className='browse'>
                 <form class='d-flex'></form>
@@ -563,10 +558,6 @@ const Shop = () => {
                   </li>
                 </ul>
               </div>
-
-              {/* Filter by Price */}
-              {/* <FilterByPrice /> */}
-
               <div
                 className='price-filter price-mobile1'
                 style={{ marginTop: '0' }}
@@ -600,7 +591,6 @@ const Shop = () => {
                     />
                   </div>
                   <span className='separator'>-</span>
-                  {/* <GoDash className='dash' /> */}
                   <div>
                     <input
                       style={{ width: '100%', borderRadius: '5px' }}
@@ -633,11 +623,8 @@ const Shop = () => {
                 </div>
               </div>
             </div>
-
-            {/* <h1>filters</h1> */}
             <div
               style={{
-                // margin: '15px',
                 width: '60%',
                 display: isLoading ? 'none' : 'block'
               }}
@@ -648,7 +635,6 @@ const Shop = () => {
               </h4>
               <ShopFilter setFilteredProducts={setFilteredProducts} />
             </div>
-            {/* end */}
           </div>
         </div>
       </main>
