@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASEURL } from "../../../BaseURL/BaseURL";
@@ -9,6 +9,7 @@ import Loading from "../../Loading/Loading";
 import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
 import sanitizeHtml from "sanitize-html";
+import BlogComments from '../../blogDetails/blogComment'
 
 const NewsDetails = () => {
   const [data, setData] = useState({});
@@ -19,6 +20,31 @@ const NewsDetails = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [activeItem, setActiveItem] = useState("Item 2");
+  const [blogUrl, setBlogUrl] = useState('')
+  const leftColumnRef = useRef(null)
+  const commentsContainerRef = useRef(null) // Ref for the comments container
+
+  useEffect(() => {
+    // Function to update the comments container height
+    const resizeCommentsContainer = () => {
+      const leftColumnHeight = leftColumnRef.current?.offsetHeight || 0
+      // Only resize the BlogComments container
+      commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
+      commentsContainerRef.current.style.overflowY = 'auto'
+    }
+
+    // Resize on initial render and when the left column changes
+    resizeCommentsContainer()
+    window.addEventListener('resize', resizeCommentsContainer)
+
+    return () => {
+      window.removeEventListener('resize', resizeCommentsContainer)
+    }
+  }, [])
+
+  useEffect(() => {
+    setBlogUrl(window.location.href)
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -334,6 +360,12 @@ const NewsDetails = () => {
                   </label>
                 </div>
               </form>
+
+              <div className='comments-container' ref={commentsContainerRef}>
+                {' '}
+                {/* Wrap the comments container */}
+                <BlogComments pageType="news" newsId={id} />
+              </div>
             </div>
           </div>
         </div>

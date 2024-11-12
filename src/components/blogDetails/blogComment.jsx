@@ -10,7 +10,7 @@ import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
 import avatar from '../../../src/asset/avatar.png'
 
-const BlogComments = ({ blogId }) => {
+const BlogComments = ({  pageType, blogId, newsId, trendId  }) => {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
   const [replies, setReplies] = useState({})
@@ -82,21 +82,46 @@ const BlogComments = ({ blogId }) => {
     }
   }, [])
 
+  // const fetchComments = async () => {
+  //   try {
+  //     const response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`)
+  //     setComments(response.data)
+
+  //     const repliesData = {}
+  //     for (const comment of response.data) {
+  //       const replyResponse = await axios.get(`${BASEURL}/api/v1/replies/${comment._id}`)
+  //       repliesData[comment._id] = replyResponse.data
+  //     }
+  //     setReplies(repliesData)
+  //   } catch (error) {
+  //     console.error('Error fetching comments:', error)
+  //   }
+  // }
+
   const fetchComments = async () => {
     try {
-      const response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`)
-      setComments(response.data)
-
-      const repliesData = {}
-      for (const comment of response.data) {
-        const replyResponse = await axios.get(`${BASEURL}/api/v1/replies/${comment._id}`)
-        repliesData[comment._id] = replyResponse.data
+      let response;
+      if (pageType === 'blog') {
+        response = await axios.get(`${BASEURL}/api/v1/comments/${blogId}`);
+      } else if (pageType === 'news') {
+        response = await axios.get(`${BASEURL}/api/v1/comments/${newsId}`);
+      } else if (pageType === 'trends') {
+        response = await axios.get(`${BASEURL}/api/v1/comments/${trendId}`);
+      } else {
+        return;
       }
-      setReplies(repliesData)
+      setComments(response.data);
+  
+      const repliesData = {};
+      for (const comment of response.data) {
+        const replyResponse = await axios.get(`${BASEURL}/api/v1/replies/${comment._id}`);
+        repliesData[comment._id] = replyResponse.data;
+      }
+      setReplies(repliesData);
     } catch (error) {
-      console.error('Error fetching comments:', error)
+      console.error('Error fetching comments:', error);
     }
-  }
+  };
 
   useEffect(() => {
     fetchComments()

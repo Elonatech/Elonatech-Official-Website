@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASEURL } from "../../../BaseURL/BaseURL";
@@ -9,6 +9,7 @@ import Loading from "../../Loading/Loading";
 import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
 import sanitizeHtml from "sanitize-html";
+import BlogComments from '../../blogDetails/blogComment'
 
 const TrendDetails = () => {
   const [data, setData] = useState({});
@@ -334,6 +335,8 @@ const TrendDetails = () => {
                   </label>
                 </div>
               </form>
+
+                <BlogComments trendId={id} />
             </div>
           </div>
         </div>
