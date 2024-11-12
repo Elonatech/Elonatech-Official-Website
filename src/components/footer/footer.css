@@ -35,9 +35,11 @@
     width: 19rem;
   }
 
+
+
   @media (max-width: 768px) { /* Adjust breakpoint as needed */
     .center-uip iframe {
-        width: 100%; 
+        max-width: 100%; 
         height: auto;
     }
 }

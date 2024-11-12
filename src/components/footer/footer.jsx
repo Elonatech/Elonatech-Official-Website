@@ -223,22 +223,24 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div class='col-lg-2 col-md-12 footer-contact text-center text-md-start'>
+
+            {/* style={{maxWidth: '286px', margin: '0 auto'}} */}
+            <div
+              class='col-lg-2 col-md-12 footer-contact text-center text-md-start'
+              minnn
+            >
               <div className='center-uip'>
                 <iframe
                   name='f143a283b9937e8'
-                  class='lazyload'
+                  class='embed-responsive-item'
                   data-testid='fb:page Facebook Social Plugin'
                   title='fb:page Facebook Social Plugin'
                   frameborder='0'
-                  allowTransparency='true'
-                  allowFullScreen='true'
+                  allowtransparency='true'
+                  allowfullscreen='true'
                   scrolling='no'
                   allow='encrypted-media'
-                  src='https://web.facebook.com/v3.2/plugins/page.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_a
-           rbiter%2F%3Fversion%3D46%23cb%3Df3bb415372bda7c%26domain%3Delonatech.com.ng%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Felonatech.com.ng%252Ff26e985fb3
-           315e4%26relation%3Dparent.parent&amp;container_width=286&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2Felonatech&amp;locale=en_US&amp;sdk=joey&amp;sh
-           ow_facepile=true&amp;small_header=false&amp;tabs=&amp;width=500'
+                  src='https://www.facebook.com/v3.2/plugins/page.php?app_id=&container_width=286&hide_cover=true&href=https%3A%2F%2Fwww.facebook.com%2Felonatech&locale=en_US&sdk=joey&show_facepile=true&small_header=false&tabs='
                 ></iframe>
               </div>
               {mailchimp === 'visible' ? (
