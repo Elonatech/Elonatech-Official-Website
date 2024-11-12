@@ -103,54 +103,22 @@ const AppDevelopment = () => {
   // Sample showcase apps (placeholder data)
   const showcaseApps = [
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6fcd92d (commit)
-      title: "HealthTrack Pro",
-      description: "Fitness & wellness tracking application",
-      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
-      category: "Healthcare"
-<<<<<<< HEAD
-    },
-    {
-      title: "EduLearn",
-      description: "Interactive learning platform",
-      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
-      category: "Education"
-    },
-    {
-      title: "SmartCommerce",
-      description: "E-commerce solution with AR features",
-      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
-      category: "Retail"
-=======
       title: 'HealthTrack Pro',
       description: 'Fitness & wellness tracking application',
       image: '/api/placeholder/400/300',
       category: 'Healthcare'
-=======
->>>>>>> 6fcd92d (commit)
     },
     {
-      title: "EduLearn",
-      description: "Interactive learning platform",
-      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
-      category: "Education"
+      title: 'EduLearn',
+      description: 'Interactive learning platform',
+      image: '/api/placeholder/400/300',
+      category: 'Education'
     },
     {
-<<<<<<< HEAD
       title: 'SmartCommerce',
       description: 'E-commerce solution with AR features',
       image: '/api/placeholder/400/300',
       category: 'Retail'
->>>>>>> 388f3fa (app-page)
-=======
-      title: "SmartCommerce",
-      description: "E-commerce solution with AR features",
-      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
-      category: "Retail"
->>>>>>> 6fcd92d (commit)
     }
   ]
 
@@ -166,24 +134,16 @@ const AppDevelopment = () => {
       </Helmet>
 
       {/* Hero Section */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6fcd92d (commit)
+
       <div className="relative h-[600px] overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700">
         <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg')] opacity-10 bg-cover bg-center" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
             <motion.h1 
-<<<<<<< HEAD
-=======
       <div class='container-fluid app-design-section'>
         <div class='text-content'>
           <div className='max-w-2xl'>
             <motion.h1
->>>>>>> 388f3fa (app-page)
-=======
->>>>>>> 6fcd92d (commit)
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}

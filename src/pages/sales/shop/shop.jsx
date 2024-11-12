@@ -390,7 +390,9 @@ const Shop = () => {
                                 {product.category === 'Office'
                                   ? 'Office Equipment'
                                   : product.category === 'Pos'
-                                  ? 'POS' : product.category === 'Network' ? 'Network Device' // Use 'POS' for the POS category
+                                  ? 'POS'
+                                  : product.category === 'Network'
+                                  ? 'Network Device' // Use 'POS' for the POS category
                                   : product.category}
                               </p>
 
@@ -463,22 +465,14 @@ const Shop = () => {
               </div>
             </section>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7cb9989 (commit)
+
           <div class='col-md-3 pad'>
             {/* <
               class="position-sticky "
               style={{ top: "2rem", marginTop: "20px" }}
             > */}
 
-<<<<<<< HEAD
-=======
-          <div class='col-md-3'>
->>>>>>> 8c946a8 (today)
-=======
->>>>>>> 7cb9989 (commit)
+
             <div className='thix'>
               <div className='browse'>
                 <form class='d-flex'></form>

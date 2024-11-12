@@ -2,25 +2,10 @@ import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { BASEURL } from '../../BaseURL/BaseURL'
 import { formatDistanceToNowStrict } from 'date-fns'
-<<<<<<< HEAD
-import { v4 as uuidv4 } from 'uuid'
-import { BsReply, BsTrash } from 'react-icons/bs'
-import React, { useState, useRef, useEffect } from 'react'
-import axios from 'axios'
-import { BASEURL } from '../../BaseURL/BaseURL'
-import { formatDistanceToNow } from 'date-fns'
-=======
->>>>>>> 1dfba6d (blog done but to be reviewed)
 import { v4 as uuidv4 } from 'uuid'
 import { BsReply, BsTrash } from 'react-icons/bs'
 import './blogComment.css'
 import './new.css'
-<<<<<<< HEAD
-import { MdEmojiEmotions } from 'react-icons/md'
-import EmojiPicker from 'emoji-picker-react'
-import avatar from '../../../src/asset/avatar.png'
-=======
->>>>>>> 1dfba6d (blog done but to be reviewed)
 import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
 import avatar from '../../../src/asset/avatar.png'
@@ -250,26 +235,6 @@ const BlogComments = ({ blogId }) => {
   }
 
   return (
-<<<<<<< HEAD
-    <div className="blog-comments-container">
-      <form onSubmit={handleCommentSubmit} className="comment-form">
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Enter name..."
-          value={userName}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <div className="gender-container">
-=======
-    <div className='blog-comments-container'>
-      <form onSubmit={handleCommentSubmit} className='comment-form'>
-        <h3>Add Comment</h3>
-        <input type='text' name='name' id='name' placeholder='Enter name...' />
-        <div className='gender-container'>
->>>>>>> 1dfba6d (blog done but to be reviewed)
           <label style={{ marginRight: '10px' }}>
             <input
               type="radio"
@@ -321,181 +286,7 @@ const BlogComments = ({ blogId }) => {
       </form>
 
       <h3>Comments</h3>
-<<<<<<< HEAD
-      <div className="comments-list" style={{ maxHeight: '700px', overflowY: 'auto' }}>
-        {comments.length > 0 ? (
-          comments.map((comment) => (
-            <div key={comment._id} className="comment">
-              <div className="commentview2">
-                <div className="avatar3">
-                  <img
-                    src={comment.userImage || avatar}
-                    alt={`${comment.userName}'s profile pic`}
-                    className="avatar"
-                  />
-=======
-      <div className='comments-list'>
-        {comments.length > 0 ? (
-          comments.map(comment => (
-            <div key={comment._id} className='comment'>
-              <div className='commentview2'>
-                <div className='avatar3'>
-                  <img src={avatar} alt='profile pic' className='avatar' />
-                </div>
-                <div>
-                  <div className='nameTime'>
-                    <span className='comment-author'>Anonymous</span>
-                    <span className='comment-date'>
-                      {formatDistanceToNowStrict(new Date(comment.createdAt))}
-                    </span>
-                  </div>
 
-                  <div className='comment-content'>{comment.content}</div>
-                  <div className='replyDel'>
-                    {/* <button
-                    className='delu'
-                    onClick={() => handleDeleteComment(comment._id)}
-                  >
-                    <BsTrash />
-                  </button> */}
-
-<<<<<<< HEAD
-                  <span
-                    className='reply2'
-                    onClick={() => handleReplyToggle(comment._id)}
-                  >
-                    <BsReply /> <span>Reply</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {showReplyForm && activeReplyId === comment._id && (
-              <form
-                onSubmit={e => handleReplySubmit(e, comment._id)}
-                className={`reply-form ${
-                  activeReplyId === comment._id ? 'active' : ''
-                }`}
-              >
-                <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  placeholder='Enter name...'
-                />
-                <div className='gender-container'>
-                  <label style={{ marginRight: '10px' }}>
-                    <input
-                      type='radio'
-                      name='gender'
-                      value='female'
-                      checked={selectedGender === 'female'}
-                      onChange={handleChange}
-                    />
-                    Female
-                  </label>
-
-                  <label>
-                    <input
-                      type='radio'
-                      name='gender'
-                      value='male'
-                      checked={selectedGender === 'male'}
-                      onChange={handleChange}
-                    />
-                    Male
-                  </label>
->>>>>>> 1dfba6d (blog done but to be reviewed)
-                </div>
-                <div>
-                  <div className="nameTime">
-                    <span className="comment-author">{comment.userName || 'Anonymous'}</span>
-                    <span className="comment-date">
-                      {formatDistanceToNowStrict(new Date(comment.createdAt))}{' '}
-                      {comment.updatedAt && comment.updatedAt !== comment.createdAt ? '(edited)' : ''}
-                    </span>
-                  </div>
-                  <div className="comment-content">{comment.content}</div>
-                  <div className="replyDel">
-                    <span className="reply2" onClick={() => handleReplyToggle(comment._id)}>
-                      <BsReply /> <span>Reply</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {showReplyForm && activeReplyId === comment._id && (
-                <form
-                  onSubmit={(e) => handleReplySubmit(e, comment._id)}
-                  className={`reply-form ${activeReplyId === comment._id ? 'active' : ''}`}
-                >
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter name..."
-                    value={userName}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                  />
-                  <div className="gender-container">
-                    <label style={{ marginRight: '10px' }}>
-                      <input
-                        type="radio"
-                        name="gender"
-                        value="female"
-                        checked={selectedGender === 'female'}
-                        onChange={handleChange}
-                      />
-                      Female
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name="gender"
-                        value="male"
-                        checked={selectedGender === 'male'}
-                        onChange={handleChange}
-                      />
-                      Male
-                    </label>
-                  </div>
-                  <div className="comment-box">
-                    <div className="textarea-container">
-                      {!showEmojiPicker2 && (
-                        <textarea
-                          style={{ resize: 'none' }}
-                          ref={textAreaRef}
-                          value={newReply}
-                          onChange={(e) => setNewReply(e.target.value)}
-                          placeholder="Write a reply..."
-                          required
-                        />
-<<<<<<< HEAD
-                      )}
-                      <MdEmojiEmotions
-                        className="emoji-icon"
-                        onClick={() => setShowEmojiPicker2(!showEmojiPicker2)}
-                      />
-                      {showEmojiPicker2 && (
-                        <div className="emoji-picker2" ref={pickerRef2}>
-                          <EmojiPicker
-                            onEmojiClick={onEmojiClick2}
-                            onOpen={(event) => event.preventDefault()}
-                          />
-                        </div>
-                      )}
-=======
-                      </div>
-                    )}
-=======
-                    <span
-                      className='reply2'
-                      onClick={() => handleReplyToggle(comment._id)}
-                    >
-                      <BsReply /> <span>Reply</span>
-                    </span>
->>>>>>> 88ff95f (blog done)
                   </div>
                 </div>
               </div>
@@ -608,65 +399,4 @@ const BlogComments = ({ blogId }) => {
                           </button> */}
                           </div>
                         </div>
-                      </div>
->>>>>>> 1dfba6d (blog done but to be reviewed)
-                    </div>
-<<<<<<< HEAD
-                  </div>
-                  <div className="reply-form-actions">
-                    <button type="submit">Submit</button>
-                    <button type="button" onClick={() => handleReplyToggle(comment._id)}>
-                      Cancel
-                    </button>
-                  </div>
-                </form>
-              )}
 
-              <div className="replies-container">
-                {replies[comment._id] && replies[comment._id].length > 0 ? (
-                  replies[comment._id].map((reply) => (
-                    <div key={reply._id} className="reply">
-                      <div className="commentview">
-                        <div className="avatar3">
-                          <img
-                            src={reply.userImage || avatar}
-                            alt="profile pic"
-                            className="avatar2"
-                          />
-                        </div>
-                        <div>
-                          <div className="nameTime">
-                            <span className="reply-author">{reply.userName || 'Anonymous'}</span>
-                            <span className="reply-date">
-                              {formatDistanceToNowStrict(new Date(reply.createdAt))}
-                            </span>
-                          </div>
-                          <div className="reply-content">{reply.content}</div>
-                          <div className="replyDel" />
-                        </div>
-                      </div>
-                    </div>
-=======
->>>>>>> 88ff95f (blog done)
-                  ))
-                ) : (
-                  <div>No replies yet.</div>
-                )}
-              </div>
-            </div>
-          ))
-        ) : (
-<<<<<<< HEAD
-          <div className="no-comments">No comments have been added to this post.</div>
-=======
-          <div className='no-comments'>
-            No comments have been added to this post.
-          </div>
->>>>>>> 88ff95f (blog done)
-        )}
-      </div>
-    </div>
-  )
-}
-
-export default BlogComments
