@@ -20,31 +20,6 @@ const NewsDetails = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [activeItem, setActiveItem] = useState("Item 2");
-  const [blogUrl, setBlogUrl] = useState('')
-  const leftColumnRef = useRef(null)
-  const commentsContainerRef = useRef(null) // Ref for the comments container
-
-  useEffect(() => {
-    // Function to update the comments container height
-    const resizeCommentsContainer = () => {
-      const leftColumnHeight = leftColumnRef.current?.offsetHeight || 0
-      // Only resize the BlogComments container
-      commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
-      commentsContainerRef.current.style.overflowY = 'auto'
-    }
-
-    // Resize on initial render and when the left column changes
-    resizeCommentsContainer()
-    window.addEventListener('resize', resizeCommentsContainer)
-
-    return () => {
-      window.removeEventListener('resize', resizeCommentsContainer)
-    }
-  }, [])
-
-  useEffect(() => {
-    setBlogUrl(window.location.href)
-  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -361,10 +336,10 @@ const NewsDetails = () => {
                 </div>
               </form>
 
-              <div className='comments-container' ref={commentsContainerRef}>
+              <div className='comments-container' >
                 {' '}
                 {/* Wrap the comments container */}
-                <BlogComments pageType="news" newsId={id} />
+                <BlogComments blogId={id} />
               </div>
             </div>
           </div>

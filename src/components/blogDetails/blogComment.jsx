@@ -10,7 +10,7 @@ import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
 import avatar from '../../../src/asset/avatar.png'
 
-const BlogComments = ({  pageType, blogId, newsId, trendId  }) => {
+const BlogComments = ({ blogId }) => {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
   const [replies, setReplies] = useState({})

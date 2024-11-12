@@ -336,7 +336,10 @@ const TrendDetails = () => {
                 </div>
               </form>
 
-                <BlogComments trendId={id} />
+              <div className='comments-container'>
+                {' '}
+                <BlogComments blogId={id} />
+              </div>
             </div>
           </div>
         </div>
