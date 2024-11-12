@@ -124,19 +124,43 @@ const SingleProduct = () => {
   const [relatedProducts, setRelatedProducts] = useState([])
   const [nextProductId, setNextProductId] = useState(null)
   const [product, setProduct] = useState(null)
+  const [allProductsInCategory, setAllProductsInCategory] = useState([])
 
   const navigate = useNavigate()
   const location = useLocation()
 
-  const windowSize = useWindowSize() // Get window dimensions
+  const windowSize = useWindowSize() 
   const isMobile = windowSize.width < 768
+
+
+  let currentProductCat;
+
+  switch (category) {
+    case 'Computer':
+      currentProductCat = 'computers';
+      break;
+    case 'Office':
+      currentProductCat = 'office-equipment';
+      break;
+    case 'Network':
+      currentProductCat = 'network-devices';
+      break;
+    case 'Printer':
+      currentProductCat = 'printers';
+      break;
+    case 'Pos':
+      currentProductCat = 'pos-system';
+      break;
+    default:
+      currentProductCat = category.toLowerCase();
+  }
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem('token'))
     setCurrentAdmin(auth)
   }, [])
 
-  const { handleGoBack, handleNavigateNext, handleGoToShop } = useScrollResetNavigation()
+  const { handleGoBack, handleNavigateNext} = useScrollResetNavigation()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -153,10 +177,13 @@ const SingleProduct = () => {
         const nextRes = await axios.get(`${BASEURL}/api/v1/product/${id}/next`)
         setNextProductId(nextRes.data.nextProduct._id)
 
+        await fetchAllProductsInCategory()
+        console.log('allProductsInCategory:', allProductsInCategory);
         // Fetch related products
         await fetchRelatedProducts()
 
         await fetchRecentlyViewedProducts()
+
       } catch (error) {
         setIsLoading(true)
         navigate('/shop')
@@ -164,6 +191,31 @@ const SingleProduct = () => {
     }
     fetchData()
   }, [id])
+
+  const fetchAllProductsInCategory = () => {
+    fetch(`${BASEURL}/api/v1/product/filter?category=${category}`)
+      .then(response => response.json())
+      .then(data => {
+        setAllProductsInCategory(data.data.reverse());
+        console.log('allProductsInCategory:', allProductsInCategory);
+      })
+      .catch(error => {
+        console.error('Error fetching products in the same category:', error);
+      });
+  };
+
+  const calculatePageNumber = () => {
+    if (allProductsInCategory.length > 0 && category) {
+      const productIndex = allProductsInCategory.findIndex(product => product._id === id)
+      return Math.floor((productIndex + 1) / 12) + 1
+    }
+    return 1
+  }
+
+  const handleGoToShop = () => {
+    const pageNumber = calculatePageNumber()
+    navigate(`/${currentProductCat}?page=${pageNumber}`)
+  }
 
   useEffect(() => {
     const storedRecentlyViewed = JSON.parse(
@@ -181,6 +233,7 @@ const SingleProduct = () => {
       setRecentlyViewed(storedRecentlyViewed)
     }
   }, [id])
+
 
   const fetchRecentlyViewedProducts = async () => {
     try {
@@ -256,42 +309,6 @@ const SingleProduct = () => {
   }
 
   const { addItem } = useCart()
-
-  // const sanitizedDescription = sanitizeHtml(data.description, {
-  //   allowedTags: ['strong']
-  // })
-
-  // const productImage =
-  //   image.length > 0
-  //     ? image[0].url.startsWith('https')
-  //       ? image[0].url
-  //       : `https://elonatech.com.ng${image[0].url}`
-  //     : 'https://elonatech.com.ng/default-product-image.jpg'
-
-  // const productUrl = `${process.env.REACT_APP_FRONTEND_URL}/product/${id}`
-
-  // const structuredData = {
-  //   '@context': 'https://schema.org/',
-  //   '@type': 'Product',
-  //   name: data.name,
-  //   image: productImage,
-  //   description: sanitizedDescription,
-  //   brand: {
-  //     '@type': 'Brand',
-  //     name: data.brand
-  //   },
-  //   offers: {
-  //     '@type': 'Offer',
-  //     url: productUrl,
-  //     priceCurrency: 'NGN',
-  //     price: data.price,
-  //     availability:
-  //       data.quantity > 0
-  //         ? 'https://schema.org/InStock'
-  //         : 'https://schema.org/OutOfStock'
-  //   }
-  // }
-  // console.log('Product Image URL:', productImage)
 
   const data1 = {
     name: "Default Product Name",

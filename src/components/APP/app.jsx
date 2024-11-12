@@ -77,19 +77,19 @@ const AppDevelopment = () => {
     {
       title: "HealthTrack Pro",
       description: "Fitness & wellness tracking application",
-      image: "/api/placeholder/400/300",
+      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
       category: "Healthcare"
     },
     {
       title: "EduLearn",
       description: "Interactive learning platform",
-      image: "/api/placeholder/400/300",
+      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
       category: "Education"
     },
     {
       title: "SmartCommerce",
       description: "E-commerce solution with AR features",
-      image: "/api/placeholder/400/300",
+      image: "https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg",
       category: "Retail"
     }
   ];
@@ -104,7 +104,7 @@ const AppDevelopment = () => {
 
       {/* Hero Section */}
       <div className="relative h-[600px] overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700">
-        <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] opacity-10 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg')] opacity-10 bg-cover bg-center" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
             <motion.h1 
