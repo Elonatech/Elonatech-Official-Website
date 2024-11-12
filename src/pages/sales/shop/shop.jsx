@@ -463,7 +463,7 @@ const Shop = () => {
               </div>
             </section>
           </div>
-          <div class='col-md-3'>
+          <div class='col-md-3 pad'>
             {/* <
               class="position-sticky "
               style={{ top: "2rem", marginTop: "20px" }}
