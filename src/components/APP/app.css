@@ -1,0 +1,159 @@
+.img-rou {
+  border-radius: 50%;
+  width: 5vmin;
+  height: 5vmin;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.2s ease;
+}
+
+.ko:hover {
+  cursor: pointer;
+  position: relative;
+  bottom: 20px;
+  transition: all 0.25s ease 0s;
+}
+.WebDesignAndDevelopment {
+  background-position: top !important;
+  background-size: cover !important;
+  width: 90%;
+  height: 350px;
+  position: relative;
+  cursor: pointer;
+}
+
+.webOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 4;
+  background: linear-gradient(
+    0deg,
+    rgba(52, 84, 140, 0.9),
+    rgba(52, 84, 140, 0.9)
+  );
+  overflow: hidden;
+  width: 90%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.webContainer:hover .webOverlay {
+  height: 23%;
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+
+.app-design-section {
+  height: 500px; /* Fixed height for desktop */
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1731418395/this_jal1q1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* margin-bottom: 100px; */
+}
+
+/* Text styling for desktop */
+.web-design-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.web-design-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.web-design-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.myCard {
+  background: #818ec3;
+  color: white;
+}
+
+.icon-container {
+  background-color: #e5e7eb;
+  border-radius: 50px; /* Makes it circular */
+  padding: 1rem; /* Adjust padding as needed */
+  display: flex; /* To center the icon */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 50px; /* Make width match height*/
+  height: 50px;
+}
+.icon-container svg {
+  /* Adjust size of svg*/
+  width: 50px;
+  height: 50px;
+}
+
+.blueColo {
+  color: rgb(2, 16, 72);
+  width: 300px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .web-design-section {
+    height: 200px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523989/web_dev_mobile_view_ynztpi.jpg');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .web-design-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .web-design-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .web-design-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .web-design-section h2,
+  .web-design-section h5,
+  .web-design-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
