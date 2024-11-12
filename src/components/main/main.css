@@ -1,15 +1,16 @@
-
 .form-controli:focus {
-  border-color: #ced4da; 
-  border: none !important; 
+  border-color: #ced4da;
+  border: none !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
 
 .rmFocus:focus {
-  border-color: #ced4da; /* default B5 color or set your own color*/
-  border: none !important; /* if you want to remove borders at all*/
+  border-color: #ced4da;
+  /* default B5 color or set your own color*/
+  border: none !important;
+  /* if you want to remove borders at all*/
   outline: none !important;
   box-shadow: none !important;
 }
@@ -21,7 +22,7 @@
     flex-wrap: wrap;
   }
 
-  .row.mt-5.justify-content-center > .col-2 {
+  .row.mt-5.justify-content-center>.col-2 {
     flex: 0 0 50%;
     max-width: 50%;
     padding: 0 5px;
@@ -60,7 +61,7 @@
 }
 
 
- .tannet {
+.tannet {
   width: 130px;
   height: auto;
   margin-left: 60px;
@@ -83,10 +84,10 @@
 
 .fourth {
   height: 150px;
-} 
+}
 
 .pfn {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .fifth {
@@ -104,8 +105,9 @@
     width: 130px;
     height: auto;
     margin-left: 0px;
-      
+
   }
+
   .third {
     height: 150px;
     width: 150px;
@@ -113,4 +115,17 @@
   }
 }
 
+.fst {
+  order: 1;
+}
 
+
+@media (max-width: 767px) {
+  .fst {
+    order: 1;
+  }
+
+  .snd {
+    order: 2;
+  }
+}
