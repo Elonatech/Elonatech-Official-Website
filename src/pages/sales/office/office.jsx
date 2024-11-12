@@ -49,15 +49,18 @@ const Office = () => {
             price: [data.minPrice, data.maxPrice]
           }))
         }
-        setFilteredProducts(data.data)
-
+  
+        const reversedProducts = [...data.data].reverse(); 
+        setFilteredProducts(reversedProducts);
+  
         const uniqueBrands = Array.from(
           new Set(data.data.map(product => product.brand.toUpperCase()))
         )
-        setBrands(uniqueBrands)
+        setBrands(uniqueBrands);
       })
       .catch(error => console.error('Error fetching initial data:', error))
-  }, [])
+  }, []);
+  
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange)

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASEURL } from "../../../BaseURL/BaseURL";
@@ -9,6 +9,8 @@ import Loading from "../../Loading/Loading";
 import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
 import sanitizeHtml from "sanitize-html";
+import BlogComments from '../../blogDetails/blogComment'
+import BlogSocialShareButtons from '../../blogDetails/blogShareButton'
 
 const NewsDetails = () => {
   const [data, setData] = useState({});
@@ -19,6 +21,7 @@ const NewsDetails = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [activeItem, setActiveItem] = useState("Item 2");
+  const [blogUrl, setBlogUrl] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +45,11 @@ const NewsDetails = () => {
   const handleClick = (item) => {
     setActiveItem(item);
   };
+
+  useEffect(() => {
+    setBlogUrl(window.location.href)
+  }, [])
+
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem("token"));
@@ -202,6 +210,11 @@ const NewsDetails = () => {
                               <div></div>
                             )}
                           </div>
+                          <BlogSocialShareButtons
+                            url={blogUrl}
+                            title={data.title}
+                            image={data.cloudinary_id}
+                          />
                         </div>
                       </div>
                       <div
@@ -334,6 +347,12 @@ const NewsDetails = () => {
                   </label>
                 </div>
               </form>
+
+              <div className='comments-container' >
+                {' '}
+                {/* Wrap the comments container */}
+                <BlogComments blogId={id} />
+              </div>
             </div>
           </div>
         </div>

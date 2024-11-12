@@ -390,7 +390,9 @@ const Shop = () => {
                                 {product.category === 'Office'
                                   ? 'Office Equipment'
                                   : product.category === 'Pos'
-                                  ? 'POS' : product.category === 'Network' ? 'Network Device' // Use 'POS' for the POS category
+                                  ? 'POS'
+                                  : product.category === 'Network'
+                                  ? 'Network Device' // Use 'POS' for the POS category
                                   : product.category}
                               </p>
 
@@ -558,6 +560,10 @@ const Shop = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* Filter by Price */}
+              {/* <FilterByPrice /> */}
+
               <div
                 className='price-filter price-mobile1'
                 style={{ marginTop: '0' }}

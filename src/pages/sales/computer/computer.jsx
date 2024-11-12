@@ -77,7 +77,7 @@ const Computer = () => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Computer`)
       .then(response => response.json())
       .then(data => {
-        setAllProducts(data.data)
+        setAllProducts(data.data.reverse())
 
         if (data.minPrice !== undefined && data.maxPrice !== undefined) {
           setDefaultPriceRange([data.minPrice, data.maxPrice])
@@ -85,7 +85,7 @@ const Computer = () => {
           setFilters(prevFilters => ({
             ...prevFilters,
             price: [data.minPrice, data.maxPrice]
-          }))
+          })) 
         }
 
         const uniqueBrands = Array.from(

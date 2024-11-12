@@ -37,7 +37,8 @@ const NetworkDevices = () => {
             price: [data.minPrice, data.maxPrice]
           }))
         }
-        setFilteredProducts(data.data)
+        const reversedProducts = [...data.data].reverse(); 
+        setFilteredProducts(reversedProducts);
 
         const uniqueBrands = Array.from(
           new Set(data.data.map(product => product.brand.toUpperCase().trim()))
