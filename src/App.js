@@ -21,6 +21,7 @@ const Navbar = lazy(() => import("./components/navbar/navbar"));
 const Footer = lazy(() => import("./components/footer/footer"));
 const Error = lazy(() => import("./components/error/error"));
 const Web = lazy(() => import("./components/web/web"));
+const AppDevelopment = lazy(() => import("./components/APP/app"));
 const Portfolio = lazy(() => import("./components/portfolio/portfolio"));
 const Team = lazy(() => import("./components/team/team"));
 const Company = lazy(() => import("./components/company/company"));
@@ -195,6 +196,10 @@ const router = createBrowserRouter([
     {
       path:'/web-design',
       element:<Web/>
+    },
+    {
+      path:'/app-development',
+      element:<AppDevelopment/>
     },
     {
       path:'/shop',

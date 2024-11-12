@@ -21,8 +21,10 @@
     "dompurify": "^3.1.7",
     "emoji-picker-react": "^4.12.0",
     "eslint-plugin-disable": "^2.0.3",
+    "framer-motion": "^11.11.11",
     "jquery": "^3.7.0",
     "jsonld": "^8.3.2",
+    "lucide-react": "^0.456.0",
     "moment": "^2.29.4",
     "next": "^15.0.0",
     "oaf-react-router": "^4.1.0",
@@ -88,6 +90,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@shadcn/ui": "^0.0.4",
     "sass": "^1.69.5"
   }
 }
