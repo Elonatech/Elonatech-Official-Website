@@ -266,7 +266,6 @@ const BlogDetails = () => {
 
             <div
               className='comments-container-mobile'
-              style={{ maxHeight: '300px', overflowY: 'auto' }}
             >
               {' '}
               {/* Wrap the comments container */}
