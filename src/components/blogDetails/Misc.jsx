@@ -429,6 +429,10 @@ export default BlogComments
     <div>No replies yet.</div>
   </>
 )}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88ff95f (blog done)
 </div>
 
 
@@ -606,4 +610,11 @@ div className='comments-list'>
             No comments have been added to this post.
           </div>
         )}
+<<<<<<< HEAD
       </div>
+=======
+</div>
+>>>>>>> 1dfba6d (blog done but to be reviewed)
+=======
+      </div>
+>>>>>>> 88ff95f (blog done)

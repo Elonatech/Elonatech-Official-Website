@@ -394,3 +394,10 @@
     margin-top: -25px;
   }
 }
+
+
+@media screen and (min-width: 767px ){
+  .pad {
+    padding: 0 15px;
+  }
+}
