@@ -23,26 +23,8 @@ const BlogDetails = () => {
   const [activeItem, setActiveItem] = useState('Item 1')
   const [blogUrl, setBlogUrl] = useState('')
 
-  const leftColumnRef = useRef(null)
-  const commentsContainerRef = useRef(null) // Ref for the comments container
 
-  useEffect(() => {
-    // Function to update the comments container height
-    const resizeCommentsContainer = () => {
-      const leftColumnHeight = leftColumnRef.current?.offsetHeight || 0
-      // Only resize the BlogComments container
-      commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
-      commentsContainerRef.current.style.overflowY = 'auto'
-    }
 
-    // Resize on initial render and when the left column changes
-    resizeCommentsContainer()
-    window.addEventListener('resize', resizeCommentsContainer)
-
-    return () => {
-      window.removeEventListener('resize', resizeCommentsContainer)
-    }
-  }, [])
 
   useEffect(() => {
     setBlogUrl(window.location.href)
@@ -149,7 +131,7 @@ const BlogDetails = () => {
           </li>
         </ol>
         <div className='row mt-3'>
-          <div className='col-md-9 leftt' ref={leftColumnRef}>
+          <div className='col-md-9 leftt' >
             <div className='container'>
               <div className='row'>
                 <div className='col-md-12 mt-4'>
@@ -284,7 +266,7 @@ const BlogDetails = () => {
 
             <div
               className='comments-container-mobile'
-              ref={commentsContainerRef}
+              style={{ maxHeight: '300px', overflowY: 'auto' }}
             >
               {' '}
               {/* Wrap the comments container */}
@@ -406,10 +388,8 @@ const BlogDetails = () => {
 
               <div
                 className='comments-container'
-                // ref={commentsContainerRef}
+
               >
-                {' '}
-                {/* Wrap the comments container */}
                 <BlogComments blogId={id}/>
               </div>
 
