@@ -1,8 +1,10 @@
+/* src/index.css */
+
+/* Import the Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* the other classes will come here */
 
 .user-select-none {
     user-select: none;
