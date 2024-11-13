@@ -803,7 +803,17 @@ return (
               {/*============================================================ web solution ==============================================*/}
               <li className={'elonatechinnerListItemContentRightDigitalListItem'} onMouseEnter={() => setActiveDropdown('web')}> <div className="elonatechtest">  <h6 onClick={() => setActiveDropdown(activeDropdown === 'web' ? null : 'web')} className={activeDropdown === 'web' ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle' : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'}>Web & App Solutions </h6> <i className="bi bi-plus text-dark fs-3"></i> </div>
               <ul className={activeDropdown === 'web'? 'elonatechwebSolutionsListActive' : 'elonatechwebSolutionsList'}>
-              <Link to={'/web-design'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem'> <img  data-src={webDev} className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/>Web Design/Dev.</li></Link>
+              <Link to={'/web-design'} className="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas">
+                <li className='elonatechwebSolutionsListItem'>
+                  <img 
+                    data-src={webDev} 
+                    className='lazyload'   
+                    alt="Web design and development" 
+                    style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}} 
+                  />
+                  Learn More About Web Design & Development
+                </li>
+              </Link>
               <Link to={'/app-development'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem'> <img  data-src={appDev} className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/>App Design/Dev.</li></Link>
               <Link to={'/domain'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem'> <img   data-src={webDomain}  className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'center'}}/> Domain Reg./DNS Mgt </li></Link>
               <Link to={'/hosting'} class="text-decoration-none text-dark dismiss-nav-man" data-bs-dismiss="offcanvas"><li className='elonatechwebSolutionsListItem '> <img   data-src={WebHost} className='lazyload'   alt="" style={{width: "50px", height: "50px", objectFit: "contain", alignSelf: 'start'}}/>  <span className='text-'>Web Hosting</span> </li></Link>
