@@ -172,7 +172,7 @@ const BlogComments = ({ blogId }) => {
 
   return (
     <div className="blog-comments-container">
-       <h3 style={{marginBottom: '10px', border: 'none', textDecoration: 'underline'}}>Respond to Post</h3>
+       <h3 style={{marginBottom: '5px', border: 'none', textDecoration: 'underline'}}>Respond to Post</h3>
       <form onSubmit={handleCommentSubmit} className="comment-form">
        
         <input
