@@ -105,19 +105,19 @@ const AppDevelopment = () => {
     {
       title: 'HealthTrack Pro',
       description: 'Fitness & wellness tracking application',
-      image: '/api/placeholder/400/300',
+      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490847/healthcare_app_mm7wic.png',
       category: 'Healthcare'
     },
     {
       title: 'EduLearn',
       description: 'Interactive learning platform',
-      image: '/api/placeholder/400/300',
+      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490847/Edu_learn_app_dnhjwj.png',
       category: 'Education'
     },
     {
       title: 'SmartCommerce',
       description: 'E-commerce solution with AR features',
-      image: '/api/placeholder/400/300',
+      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490846/e-commerce_bsvqan.png',
       category: 'Retail'
     }
   ]
@@ -134,37 +134,48 @@ const AppDevelopment = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <div class='container-fluid app-design-section'>
-        <div class='text-content'>
-          <div className='max-w-2xl'>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className='text-5xl font-bold text-white mb-6'
-            >
-              Transform Your Ideas Into Powerful Mobile Apps
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className='text-xl text-gray-200 mb-8'
-            >
-              We develop innovative mobile applications that engage users and
-              drive business growth
-            </motion.p>
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className='bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors'
-            >
-              Start Your Project
-            </motion.button>
-          </div>
-        </div>
-      </div>
+      <div className="container-fluid app-design-section">
+  {/* Video background */}
+  <video
+    autoPlay
+    loop
+    muted
+    className="background-video"
+  >
+    <source src="https://res.cloudinary.com/elonatech/video/upload/v1731490848/background_video_mobile_app_zp2jgl.mp4" type="video/mp4" />
+  </video>
+
+  {/* Text Content */}
+  <div className="text-content">
+    <div className="max-w-2xl">
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-5xl font-bold text-white mb-6"
+      >
+        Transform Your Ideas Into Powerful Mobile Apps
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-xl text-gray-200 mb-8"
+      >
+        We develop innovative mobile applications that engage users and drive business growth
+      </motion.p>
+      {/* <motion.button
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors"
+      >
+        Start Your Project
+        <ProjectForm />
+      </motion.button> */}
+    </div>
+  </div>
+</div>
 
       <div
         className='container-fluid '

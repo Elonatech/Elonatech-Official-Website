@@ -59,7 +59,7 @@ const ProjectForm = () => {
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-4 text-dark fw-bold" id="exampleModalLabel">Request A Quote</h1>
+                            <h1 className="modal-title fs-4 text-dark fw-bold" id="exampleModalLabel">Start A Project With Us</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body text-dark">

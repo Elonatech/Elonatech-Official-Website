@@ -370,7 +370,7 @@ const BlogComments = ({ blogId }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlogComments
+export default BlogComments;

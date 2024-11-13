@@ -5,6 +5,7 @@ import { BASEURL } from '../../BaseURL/BaseURL';
 import './blogDetails.css';
 import Loading from '../Loading/Loading';
 import DOMPurify from 'dompurify';
+import BlogComments from './blogComment'
 
 
 const BlogRelated = () => {
@@ -257,6 +258,14 @@ return (
                 </label>
               </div>
             </form>
+            <div
+                className='comments-container'
+                // ref={commentsContainerRef}
+              >
+                {' '}
+                {/* Wrap the comments container */}
+                <BlogComments blogId={id}/>
+              </div>
           </div>
         </div>
       </div>
