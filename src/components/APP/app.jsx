@@ -211,7 +211,6 @@ const AppDevelopment = () => {
       </div>
 
       {/* Development Process */}
-
       <div className='py-20 bg-white'>
         <div className='container mx-auto px-4'>
           <h2 className='text-3xl font-bold text-center'>
