@@ -364,3 +364,9 @@
   padding-right: 3px;
   padding-left: 3px;
 }
+
+@media screen and (min-width: 767px ){
+  .pad {
+    padding: 0 15px;
+  }
+}

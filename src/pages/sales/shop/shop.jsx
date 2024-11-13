@@ -465,7 +465,14 @@ const Shop = () => {
               </div>
             </section>
           </div>
-          <div class='col-md-3'>
+
+          <div class='col-md-3 pad'>
+            {/* <
+              class="position-sticky "
+              style={{ top: "2rem", marginTop: "20px" }}
+            > */}
+
+
             <div className='thix'>
               <div className='browse'>
                 <form class='d-flex'></form>
@@ -560,10 +567,6 @@ const Shop = () => {
                   </li>
                 </ul>
               </div>
-
-              {/* Filter by Price */}
-              {/* <FilterByPrice /> */}
-
               <div
                 className='price-filter price-mobile1'
                 style={{ marginTop: '0' }}
