@@ -106,7 +106,7 @@ const Trends = () => {
 
       <div className="container mb-5">
         <div className="row">
-          <div className="col-md-9">
+          <div className="col-lg-9 col-md-8">
             <div className="container">
               <div className="row">
                 {isLoading ? (
@@ -118,8 +118,8 @@ const Trends = () => {
                       >
                         <div className="mt-4">
                           <div className="row g-0 shim ">
-                            <div className="col-md-6">
-                              <div className="card border-0">
+                            <div className="col-lg-7 col-md-5">
+                              <div className="card border-0 myTab">
                                 <img
                                   src={item.cloudinary_id}
                                   className="img-fluid blogsImg "
@@ -127,7 +127,7 @@ const Trends = () => {
                                 />
                               </div>
                             </div>
-                            <div className="col-md-6 ">
+                            <div className="col-lg-5 col-md-7">
                               <div className="ms-3">
                                 <h6 className="fs-6 pb-3 pt-4">
                                   {item.category +
@@ -196,7 +196,7 @@ const Trends = () => {
             </div>
           </div>
 
-          <div className="col-md-3">
+          <div className="col-lg-3 col-md-4">
             <div className="mt-4">
               <h5 style={{ color: "#34548c" }}>Categories</h5>
               <ul className="list-unstyled mt-2">
@@ -248,7 +248,7 @@ const Trends = () => {
                   <input
                     type="email"
                     class="form-control rounded-0 "
-                    style={{ width: "18rem" }}
+                    style={{ width: "15rem" }}
                     id="exampleInputEmail1"
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your email*"
@@ -260,7 +260,7 @@ const Trends = () => {
                   <button
                     onClick={handleSubmit}
                     class="btn btn-danger mb-3 "
-                    style={{ width: "18rem" }}
+                    style={{ width: "15rem" }}
                   >
                     Subscribe
                   </button>

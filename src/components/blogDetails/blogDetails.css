@@ -1,20 +1,36 @@
-.blog-detail-heaad{
+.blog-detail-heaad {
   height: 500px;
+
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+.blogHead {
+  margin-top: 48px;
+}
+
+
+
 @media (max-width: 767px) {
-  .blog-detail-heaad{
-    height: 300px;
-    /* background-size: contain; */
+  .blog-detail-heaad {
+    height: 200px;
   }
 
-  /* .yyyy{
-margin-top: 10px;
-  } */
+  .blog-detail-heaad .blogHead {
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 835px) {
+  .blog-detail-heaad {
+    height: 300px;
+  }
+
+  .blog-detail-heaad .blogHead {
+    margin-top: 10px;
+  }
 }
 
 .singlePostImg {
@@ -45,12 +61,12 @@ margin-top: 10px;
   display: none;
 }
 
-.rel{
+.rel {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.related-post-title{
+.related-post-title {
   height: 60px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -65,8 +81,8 @@ margin-top: 10px;
     display: block;
   }
 
-  .comments-container{
-  display: none;
+  .comments-container {
+    display: none;
   }
 
   .related-post2 {
@@ -77,12 +93,26 @@ margin-top: 10px;
     display: none;
   }
 
-  .related-post-title{
-    height: 40px;
-    display: -webkit-box;
+  .rel {
+    grid-template-columns: repeat(1, 1fr);
+    /* gap: 4px; */
+  }
+
+  .relIn {
+    margin-bottom: 20px;
+  }
+
+  .relIn:last-child {
+    margin-bottom: 0px;
+  }
+
+  .related-post-title {
+    height: auto;
+
+    /* display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
   }
 }
