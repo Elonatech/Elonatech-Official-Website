@@ -39,7 +39,7 @@ const Footer = () => {
       <footer id='footer' class='footer' style={{ backgroundColor: '#11253D' }}>
         <div class='container text-white'>
           <div class='row gy-4 '>
-            <div class='col-lg-3 col-6 footer-info'>
+            <div class='col-lg-3 col-md-5 col-6 footer-info'>
               <div className=''>
                 <img
                   data-src={eloa2}
@@ -115,7 +115,7 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div class='col-lg-2 col-6 footer-links'>
+            <div class='col-lg-2 col-md-3 col-6 footer-links'>
               <h4>Who We Are</h4>
               <div>
                 <ul>
@@ -149,7 +149,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div class='col-lg-2 col-6 footer-links'>
+            <div class='col-lg-2 col-md-3 col-6 footer-links'>
               <h4>Our Services</h4>
               <div>
                 <ul>
@@ -191,7 +191,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div class='col-lg-2 col-6 footer-links'>
+            <div class='col-lg-2 col-md-3  col-6 footer-links'>
               <h4>Our Services</h4>
               <ul className=''>
                 <li className=''>
@@ -226,7 +226,7 @@ const Footer = () => {
 
             {/* style={{maxWidth: '286px', margin: '0 auto'}} */}
             <div
-              class='col-lg-2 col-md-12 footer-contact text-center text-md-start'
+              class='col-lg-2 col-md-8 footer-contact text-center text-md-start'
               minnn
             >
               <div className='center-uip'>

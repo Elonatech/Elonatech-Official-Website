@@ -119,7 +119,7 @@ const BlogDetails = () => {
       {/* header */}
       <div class='container-fluid bg-dark py-5 blog-detail-heaad'>
         <div class='py-5 mt-5 yyyy'>
-          <h2 class=' mt-5 text-white text-center'>Blog Details</h2>
+          <h2 class='text-white text-center blogHead'>Blog Details</h2>
           <h5 class=' mt-4 text-white text-center'></h5>
           <p class='lead text-white text-center'></p>
         </div>
@@ -149,7 +149,7 @@ const BlogDetails = () => {
           </li>
         </ol>
         <div className='row mt-3'>
-          <div className='col-md-9 leftt' ref={leftColumnRef}>
+          <div className='col-lg-9 col-md-7 leftt' ref={leftColumnRef}>
             <div className='container'>
               <div className='row'>
                 <div className='col-md-12 mt-4'>
@@ -321,7 +321,7 @@ const BlogDetails = () => {
             </div>
           </div>
           {/*================================== Categories ========================================*/}
-          <div className='col-md-3 rightt'>
+          <div className='col-lg-3 col-md-5 rightt'>
             <div className='mt-4'>
               <h5 style={{ color: '#34548c' }}>Categories</h5>
               <ul className='list-unstyled mt-2'>
@@ -406,10 +406,8 @@ const BlogDetails = () => {
 
               <div
                 className='comments-container'
-                // ref={commentsContainerRef}
               >
                 {' '}
-                {/* Wrap the comments container */}
                 <BlogComments blogId={id}/>
               </div>
 
@@ -421,7 +419,6 @@ const BlogDetails = () => {
                   Related Posts
                 </h3>
                 <div className='rel'>
-                  {/* <div className='row'> */}
                   {relatedPosts.map(post => (
                     <div className='relIn' key={post.id}>
                       {/* <div className='col col-md-3 col-sm-11' key={post.id}> */}
