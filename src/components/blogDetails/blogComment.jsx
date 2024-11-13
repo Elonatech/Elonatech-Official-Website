@@ -172,7 +172,9 @@ const BlogComments = ({ blogId }) => {
 
   return (
     <div className="blog-comments-container">
+       <h3 style={{marginBottom: '10px', border: 'none', textDecoration: 'underline'}}>Respond to Post</h3>
       <form onSubmit={handleCommentSubmit} className="comment-form">
+       
         <input
           type="text"
           name="name"
@@ -233,7 +235,7 @@ const BlogComments = ({ blogId }) => {
         <button type="submit">Submit</button>
       </form>
 
-      <h3>Comments</h3>
+      <h3  style={{marginBottom: '20px', border: 'none', textDecoration: 'underline'}}>Comments</h3>
       <div className="comments-list" style={{ maxHeight: '700px', overflowY: 'auto' }}>
         {comments.length > 0 ? (
           comments.map((comment) => (
