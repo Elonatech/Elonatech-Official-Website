@@ -157,17 +157,9 @@ const ShopFilter = ({ setFilteredProducts }) => {
           ))}
       </div>
 
-      {/* <button
-        style={{ width: "100%" }}
-        onClick={resetBrands}
-        className="reset-btn"
-      >
-        Reset Brand
-      </button> */}
-
       {/* Filter by Price */}
       <div className='price-filter price-mobile'>
-        <h4>Filter by Price(₦)</h4>
+        <h4 className='fw-bold'>Filter by Price(₦)</h4>
         <Slider
           className='slider'
           value={priceRange}

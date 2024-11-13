@@ -333,7 +333,7 @@ const Shop = () => {
 
       <main className='container-fluid custom-container'>
         <div className='row g-0'>
-          <div className='col-md-9'>
+          <div className='col-lg-9 col-md-8'>
             <section className='ftco-section' id='skills-section'>
               <div className='container custom-container'>
                 <div className='row justify-content-center pt-3 pb-4'>
@@ -466,7 +466,7 @@ const Shop = () => {
             </section>
           </div>
 
-          <div class='col-md-3 pad'>
+          <div class='col-lg-3 col-md-4 pad'>
             {/* <
               class="position-sticky "
               style={{ top: "2rem", marginTop: "20px" }}
