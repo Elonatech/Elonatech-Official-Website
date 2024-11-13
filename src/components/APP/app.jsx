@@ -105,19 +105,19 @@ const AppDevelopment = () => {
     {
       title: 'HealthTrack Pro',
       description: 'Fitness & wellness tracking application',
-      image: '/api/placeholder/400/300',
+      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490847/healthcare_app_mm7wic.png',
       category: 'Healthcare'
     },
     {
       title: 'EduLearn',
       description: 'Interactive learning platform',
-      image: '/api/placeholder/400/300',
+      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490847/Edu_learn_app_dnhjwj.png',
       category: 'Education'
     },
     {
       title: 'SmartCommerce',
       description: 'E-commerce solution with AR features',
-      image: '/api/placeholder/400/300',
+      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490846/e-commerce_bsvqan.png',
       category: 'Retail'
     }
   ]
@@ -134,43 +134,48 @@ const AppDevelopment = () => {
       </Helmet>
 
       {/* Hero Section */}
+      <div className="container-fluid app-design-section">
+  {/* Video background */}
+  <video
+    autoPlay
+    loop
+    muted
+    className="background-video"
+  >
+    <source src="https://res.cloudinary.com/elonatech/video/upload/v1731490848/background_video_mobile_app_zp2jgl.mp4" type="video/mp4" />
+  </video>
 
-      <div className="relative h-[600px] overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/elonatech/image/upload/v1709817850/webDesignPage/web_dev_prchtz.jpg')] opacity-10 bg-cover bg-center" />
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl">
-            <motion.h1 
-      <div class='container-fluid app-design-section'>
-        <div class='text-content'>
-          <div className='max-w-2xl'>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className='text-5xl font-bold text-white mb-6'
-            >
-              Transform Your Ideas Into Powerful Mobile Apps
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className='text-xl text-gray-200 mb-8'
-            >
-              We develop innovative mobile applications that engage users and
-              drive business growth
-            </motion.p>
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className='bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors'
-            >
-              Start Your Project
-            </motion.button>
-          </div>
-        </div>
-      </div>
+  {/* Text Content */}
+  <div className="text-content">
+    <div className="max-w-2xl">
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-5xl font-bold text-white mb-6"
+      >
+        Transform Your Ideas Into Powerful Mobile Apps
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-xl text-gray-200 mb-8"
+      >
+        We develop innovative mobile applications that engage users and drive business growth
+      </motion.p>
+      {/* <motion.button
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors"
+      >
+        Start Your Project
+        <ProjectForm />
+      </motion.button> */}
+    </div>
+  </div>
+</div>
 
       <div
         className='container-fluid '

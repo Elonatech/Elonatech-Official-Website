@@ -23,20 +23,16 @@ const BlogDetails = () => {
   const [activeItem, setActiveItem] = useState('Item 1')
   const [blogUrl, setBlogUrl] = useState('')
 
-<<<<<<< HEAD
-
-
-=======
   const leftColumnRef = useRef(null)
   const commentsContainerRef = useRef(null) // Ref for the comments container
 
   useEffect(() => {
+    // Function to update the comments container height
     const resizeCommentsContainer = () => {
       const leftColumnHeight = leftColumnRef.current?.offsetHeight || 0
-      if (commentsContainerRef.current) {
-        commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
-        commentsContainerRef.current.style.overflowY = 'auto'
-      }
+      // Only resize the BlogComments container
+      commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
+      commentsContainerRef.current.style.overflowY = 'auto'
     }
 
     // Resize on initial render and when the left column changes
@@ -47,7 +43,6 @@ const BlogDetails = () => {
       window.removeEventListener('resize', resizeCommentsContainer)
     }
   }, [])
->>>>>>> b30582c (not yet done)
 
   useEffect(() => {
     setBlogUrl(window.location.href)
@@ -122,27 +117,8 @@ const BlogDetails = () => {
   return (
     <>
       {/* header */}
-<<<<<<< HEAD
-<<<<<<< HEAD
       <div class='container-fluid bg-dark py-5 blog-detail-heaad'>
         <div class='py-5 mt-5 yyyy'>
-=======
-      <div
-        class='container-fluid bg-dark py-5 '
-        style={{
-          height: '500px',
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg)`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover'
-        }}
-      >
-        <div class='py-5 mt-5 '>
->>>>>>> b30582c (not yet done)
-=======
-      <div class='container-fluid bg-dark py-5 blog-detail-heaad'>
-        <div class='py-5 mt-5 yyyy'>
->>>>>>> 88ff95f (blog done)
           <h2 class=' mt-5 text-white text-center'>Blog Details</h2>
           <h5 class=' mt-4 text-white text-center'></h5>
           <p class='lead text-white text-center'></p>
@@ -173,11 +149,7 @@ const BlogDetails = () => {
           </li>
         </ol>
         <div className='row mt-3'>
-<<<<<<< HEAD
-          <div className='col-md-9 leftt' >
-=======
           <div className='col-md-9 leftt' ref={leftColumnRef}>
->>>>>>> b30582c (not yet done)
             <div className='container'>
               <div className='row'>
                 <div className='col-md-12 mt-4'>
@@ -312,10 +284,7 @@ const BlogDetails = () => {
 
             <div
               className='comments-container-mobile'
-<<<<<<< HEAD
-=======
               ref={commentsContainerRef}
->>>>>>> 88ff95f (blog done)
             >
               {' '}
               {/* Wrap the comments container */}
@@ -323,15 +292,7 @@ const BlogDetails = () => {
             </div>
 
             {/*================================== related posts ===================================*/}
-<<<<<<< HEAD
-<<<<<<< HEAD
             <div className='container bg-light related-post'>
-=======
-            <div className='container bg-light'>
->>>>>>> b30582c (not yet done)
-=======
-            <div className='container bg-light related-post'>
->>>>>>> 88ff95f (blog done)
               <h3
                 className='fw-bold mb-3 mt-5 pt-4'
                 style={{ color: '#0b159d' }}
@@ -443,12 +404,12 @@ const BlogDetails = () => {
                 </div>
               </form>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
               <div
                 className='comments-container'
-
+                // ref={commentsContainerRef}
               >
+                {' '}
+                {/* Wrap the comments container */}
                 <BlogComments blogId={id}/>
               </div>
 
@@ -480,51 +441,6 @@ const BlogDetails = () => {
                     </div>
                   ))}
                 </div>
-=======
-              <div className='comments-container' ref={commentsContainerRef}>
-                {' '}
-                {/* Wrap the comments container */}
-                <BlogComments blogId={id} />
->>>>>>> b30582c (not yet done)
-=======
-              <div
-                className='comments-container'
-                // ref={commentsContainerRef}
-              >
-                {' '}
-                {/* Wrap the comments container */}
-                <BlogComments blogId={id} />
-              </div>
-
-              <div className='container bg-light related-post2'>
-                <h3
-                  className='fw-bold mb-3 mt-5 pt-4'
-                  style={{ color: '#0b159d' }}
-                >
-                  Related Posts
-                </h3>
-                <div className='rel'>
-                  {/* <div className='row'> */}
-                  {relatedPosts.map(post => (
-                    <div className='relIn' key={post.id}>
-                      {/* <div className='col col-md-3 col-sm-11' key={post.id}> */}
-                      <div className=''>
-                        <Link
-                          className='text-decoration-none text-dark'
-                          to={`/blog/related/${post._id}`}
-                        >
-                          <h6 className='related-post-title'>
-                            {post.title.slice(0, 300)}
-                          </h6>
-                        </Link>
-                        <h6 className='text-danger related-post-date'>
-                          {new Date(post.createdAt).toDateString()}{' '}
-                        </h6>
-                      </div>
-                    </div>
-                  ))}
-                </div>
->>>>>>> 88ff95f (blog done)
               </div>
             </div>
           </div>
