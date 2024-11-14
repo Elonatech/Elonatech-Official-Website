@@ -37,7 +37,7 @@ autoplay={{delay: 5000 ,  pauseOnMouseEnter: true}}>
     <div className="col-md-12">
       <div className="">                     
       <div className="text-center">
-       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571472/TestimonialSection/Mary-Ephraim-Egbas_kcv6sr.jpg" class="lazyload mt-5" style={{width:"100px", borderRadius:'60%'}}/>
+       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571472/TestimonialSection/Mary-Ephraim-Egbas_kcv6sr.jpg" class="lazyload mt-5" alt='image fail to load' style={{width:"100px", borderRadius:'60%'}}/>
        <h3 style={{fontSize:"20px"}} className='text-white'>Mary Ephraim Egbas</h3>
         <h4 style={{fontSize:"14px"}} className='text-white'>CEO, Okhma Consult</h4>
         <div class="stars mt-3 mb-4" style={{color:'yellow'}}>
@@ -69,7 +69,7 @@ autoplay={{delay: 5000 ,  pauseOnMouseEnter: true}}>
     <div className="col-md-12">
       <div className="">                     
       <div className="text-center">
-       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571469/TestimonialSection/Remeben-MD-1_mueqml.png" class="lazyload mt-5"  style={{width:"100px", borderRadius:'60%'}}/>
+       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571469/TestimonialSection/Remeben-MD-1_mueqml.png" class="lazyload mt-5" alt='image fail to load'  style={{width:"100px", borderRadius:'60%'}}/>
        <h3 style={{fontSize:"20px"}} className='text-white'>Benjamin Miachi</h3>
         <h4 style={{fontSize:"14px"}} className='text-white'>CEO/Chief Analyst, Remaben Scientific Services Ltd.</h4>
         <div class="stars mt-3 mb-4" style={{color:'yellow'}}>
@@ -99,7 +99,7 @@ autoplay={{delay: 5000 ,  pauseOnMouseEnter: true}}>
     <div className="col-md-12">
       <div className="">                     
       <div className="text-center">
-       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571470/TestimonialSection/Chunyere-Nganwuchu_thzpc7.jpg" class="lazyload mt-5" style={{width:"100px", borderRadius:'60%'}}/>
+       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571470/TestimonialSection/Chunyere-Nganwuchu_thzpc7.jpg" class="lazyload mt-5" alt='image fail to load' style={{width:"100px", borderRadius:'60%'}}/>
        <h3 style={{fontSize:"20px"}} className='text-white'>Chinyere Iziogu</h3>
         <h4 style={{fontSize:"14px"}} className='text-white'>Admin Manager, Shepherd Specialist Hospital</h4>
         <div class="stars mt-3 mb-4" style={{color:'yellow'}}>
@@ -129,7 +129,7 @@ autoplay={{delay: 5000 ,  pauseOnMouseEnter: true}}>
     <div className="col-md-12">
       <div className="">                     
       <div className="text-center">
-       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571469/TestimonialSection/Abayomi-Kakanfo_mmqbbt.jpg" class="lazyload mt-5" style={{width:"100px", borderRadius:'60%'}}/>
+       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571469/TestimonialSection/Abayomi-Kakanfo_mmqbbt.jpg" class="lazyload mt-5" alt='image fail to load' style={{width:"100px", borderRadius:'60%'}}/>
        <h3 style={{fontSize:"20px"}} className='text-white'>Abayomi Akakanfo</h3>
         <h4 style={{fontSize:"14px"}} className='text-white'>Business Dev. Manager, Hyperthread Ventures Limited </h4>
         <div class="stars mt-3 mb-4" style={{color:'yellow'}}>
@@ -159,7 +159,7 @@ autoplay={{delay: 5000 ,  pauseOnMouseEnter: true}}>
     <div className="col-md-12">
       <div className="">                     
       <div className="text-center">
-       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571473/TestimonialSection/Mr._Yahaya_Olajide_upu7uz.jpg" class="lazyload mt-5" style={{width:"100px", borderRadius:'60%'}}/>
+       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571473/TestimonialSection/Mr._Yahaya_Olajide_upu7uz.jpg" class="lazyload mt-5" alt='image fail to load' style={{width:"100px", borderRadius:'60%'}}/>
        <h3 style={{fontSize:"20px"}} className='text-white'>Mr. Yahaya Olajide</h3>
         <h4 style={{fontSize:"14px"}} className='text-white'>Managing Partner, Olajide & Associates Ltd</h4>
         <div class="stars mt-3 mb-4" style={{color:'yellow'}}>
@@ -187,7 +187,7 @@ autoplay={{delay: 5000 ,  pauseOnMouseEnter: true}}>
     <div className="col-md-12">
       <div className="">                     
       <div className="text-center">
-       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571471/TestimonialSection/Gabriel-Osondu_jvgsjv.jpg" class="lazyload mt-5"  style={{width:"100px", borderRadius:'60%'}}/>
+       <img src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571471/TestimonialSection/Gabriel-Osondu_jvgsjv.jpg" class="lazyload mt-5" alt='image fail to load'  style={{width:"100px", borderRadius:'60%'}}/>
        <h3 style={{fontSize:"20px"}} className='text-white'>Gabriel Osondu</h3>
         <h4 style={{fontSize:"14px"}} className='text-white'>COO/Water Specialist, Safebrooks Nig. Ltd.</h4>
         <div class="stars mt-3 mb-4" style={{color:'yellow'}}>

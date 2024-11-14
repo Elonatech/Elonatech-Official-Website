@@ -41,11 +41,14 @@ const Footer = () => {
           <div class='row gy-4 '>
             <div class='col-lg-3 col-md-5 col-6 footer-info'>
               <div className=''>
-                <img
-                  data-src={eloa2}
-                  class='lazyload mx-4'
-                  style={{ height: '5rem', width: '5rem' }}
-                />
+              <img
+                data-src={eloa2}
+                className="lazyload mx-4"
+                style={{ height: '5rem', width: '5rem' }}
+                alt="Description of the image content" 
+              />
+
+
               </div>
               <div className=''>
                 <span>

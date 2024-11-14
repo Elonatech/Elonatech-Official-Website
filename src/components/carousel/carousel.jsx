@@ -71,7 +71,13 @@ const Carousel = () => {
                 <div className="text-start carouselText">
                   <h1 className='mb-3 title'>We are IT Consultants</h1>
                   <h5 className='mb-4 para'>Information technology consulting services help improve the performance, scalability<br />and competitiveness of your company through right technology enablement and usage</h5>
-                  <Link to={'/consulting'} className='btn btn-lg btn-danger cta'>Know More</Link>
+                  <Link 
+                    to={'/consulting'} 
+                    className='btn btn-lg btn-danger cta' 
+                    aria-label="Learn more about our Consulting Services"
+                  >
+                    Know More
+                  </Link>
                 </div>
               </div>
             </div>
@@ -83,7 +89,13 @@ const Carousel = () => {
                 <div className="text-start carouselText">
                   <h1 className='mb-3 title'>We are Digital Marketers</h1>
                   <h5 className='mb-4 para'>Experts in providing digital marketing strategies that convert engagement</h5>
-                  <Link to={'/digital-marketing'} className='btn btn-lg btn-danger cta'>Know More</Link>
+                  <Link 
+                    to={'/digital-marketing'} 
+                    className='btn btn-lg btn-danger cta' 
+                    aria-label="Learn more about our Digital Marketing Services"
+                  >
+                    Know More
+                  </Link>
                 </div>
               </div>
             </div>
@@ -95,7 +107,13 @@ const Carousel = () => {
                 <div className="text-start carouselText">
                   <h1 className='mb-3 title'>We are Web Developers</h1>
                   <h5 className='mb-4 para'>We offer bespoke user experience, web design, app design, and software development services</h5>
-                  <Link to={'/web-design'} className='btn btn-lg btn-danger cta down'>Know More</Link>
+                  <Link 
+                    to={'/web-design'} 
+                    className='btn btn-lg btn-danger cta down' 
+                    aria-label="Learn more about our Web Design Services"
+                  >
+                    Know More
+                  </Link>
                 </div>
               </div>
             </div>
@@ -107,7 +125,7 @@ const Carousel = () => {
                 <div className="text-start carouselText">
                   <h1 className='mb-3 title'>We are Tech Support Engineers</h1>
                   <h5 className='mb-4 para'>We implement and design both complex and simple data/voice networks and maintenance of all types of computer systems</h5>
-                  <Link to={'/hardware-engineering'} className='btn btn-lg btn-danger cta'>Know More</Link>
+                  <Link to={'/hardware-engineering'} className='btn btn-lg btn-danger cta' aria-label="Learn more about hardware engineering and related technologies">Know More</Link>
                 </div>
               </div>
             </div>
