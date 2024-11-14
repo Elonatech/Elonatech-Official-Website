@@ -24,25 +24,6 @@ const BlogDetails = () => {
   const [blogUrl, setBlogUrl] = useState('')
 
   const leftColumnRef = useRef(null)
-  const commentsContainerRef = useRef(null) // Ref for the comments container
-
-  useEffect(() => {
-    // Function to update the comments container height
-    const resizeCommentsContainer = () => {
-      const leftColumnHeight = leftColumnRef.current?.offsetHeight || 0
-      // Only resize the BlogComments container
-      commentsContainerRef.current.style.maxHeight = `${leftColumnHeight}px`
-      commentsContainerRef.current.style.overflowY = 'auto'
-    }
-
-    // Resize on initial render and when the left column changes
-    resizeCommentsContainer()
-    window.addEventListener('resize', resizeCommentsContainer)
-
-    return () => {
-      window.removeEventListener('resize', resizeCommentsContainer)
-    }
-  }, [])
 
   useEffect(() => {
     setBlogUrl(window.location.href)
@@ -284,7 +265,6 @@ const BlogDetails = () => {
 
             <div
               className='comments-container-mobile'
-              ref={commentsContainerRef}
             >
               {' '}
               {/* Wrap the comments container */}

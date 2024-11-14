@@ -44,6 +44,54 @@ padding: 2rem 0 8rem 0 !important;
 }
 
 
+.cart-section {
+  height: 500px; /* Fixed height for desktop */
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1710840087/productHeaderPage/shopping_cart_page_q2r8rq.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* margin-bottom: 50px; */
+}
+
+/* Text styling for desktop */
+.cart-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .cart-section {
+  height: 200px; 
+  background-image: linear-gradient(
+  0deg,
+  rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.5)
+),
+url('https://res.cloudinary.com/elonatech/image/upload/v1730211777/shopping_cart_qctior.png');
+  background-size: cover;
+  /* flex-direction: column; */
+  align-items: center;
+  padding-top: 50px;
+  }
+
+  .cart-section h2 {
+    margin: 0;
+    padding: 0;
+  }
+
 .cart-btn {
     font-weight: 600;
     padding: 12px 30px;
@@ -61,6 +109,8 @@ padding: 2rem 0 8rem 0 !important;
   background: #dc3545;
   border-color: #dc3545; 
  }
+
+}
 
   
  .rmFocus:focus {
@@ -82,68 +132,6 @@ padding: 2rem 0 8rem 0 !important;
     height: 50px;
     border-radius: 50%;
     background: rgba(59, 93, 80, 0.2); }
-
-    
-    .cart-section {
-      height: 500px; /* Fixed height for desktop */
-      background-image: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-        ),
-        url('https://res.cloudinary.com/elonatech/image/upload/v1710840087/productHeaderPage/shopping_cart_page_q2r8rq.jpg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
-      /* margin-bottom: 50px; */
-    }
-    
-    /* Text styling for desktop */
-    .cart-section h2 {
-      font-size: 2rem;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-    
-    /* .cart-section h5 {
-      font-size: 1.3rem;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-    
-    .cart-section p {
-      font-size: 1.1rem;
-      line-height: 1.2;
-      margin-bottom: 5px;
-    } */
-    
-    /* Mobile view */
-    @media (max-width: 576px) {
-      .cart-section {
-      height: 200px; 
-      background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('https://res.cloudinary.com/elonatech/image/upload/v1730211777/shopping_cart_qctior.png');
-      background-size: cover;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 50px;
-      }
-    
-      .cart-section h2 {
-        margin: 0;
-        padding: 0;
-      }
-    }
     
 
 

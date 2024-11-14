@@ -155,12 +155,10 @@ const CartEmpty = () =>{
     return(
      <>
 {/* ====================================================================================================== */}
-<div class="container-fluid  py-5 " style={{height:"500px" ,background:"#11253d" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1710840087/productHeaderPage/shopping_cart_page_q2r8rq.jpg)`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
- <div class="py-5 mt-5 ">
-   <h2 class=" mt-5 text-white text-center">Cart</h2>
-   <h5 class=" mt-4 text-white text-center"></h5>
-   <p class="lead text-white text-center"></p>
- </div>
+<div class="container-fluid cart-section">
+  <div class="text-content">
+    <h2>Cart</h2>
+  </div>
 </div>
 {/* ===================================================================== */}
    <div class="untree_co-section" style={{background:"#eff2f1"}}>

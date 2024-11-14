@@ -258,6 +258,15 @@ return (
                 </label>
               </div>
             </form>
+
+            <div
+              className='comments-container-mobile'
+            >
+              {' '}
+              {/* Wrap the comments container */}
+              <BlogComments blogId={id} />
+            </div>
+
             <div
                 className='comments-container'
                 // ref={commentsContainerRef}
