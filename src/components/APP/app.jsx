@@ -170,7 +170,7 @@ const AppDevelopment = () => {
 
       <div className='container mb-5 mt-5'>
         <div className='row align-items-center'>
-          <div className='col-md-6'>
+          <div className='col-lg-6 col-md-12'>
             <div className=''>
               <h4 className='fw-bold'>
                 What is Mobile Application Development?
@@ -208,7 +208,7 @@ const AppDevelopment = () => {
               </p>
             </div>
           </div>
-          <div className='col-md-6'>
+          <div className='col-lg-6 col-md-12'>
             <div className='text-center'>
               <video autoPlay loop muted className='background-video'>
                 <source
@@ -241,7 +241,7 @@ const AppDevelopment = () => {
       {/* Text Content */}
 
       <div
-        className='container-fluid '
+        className=''
         style={{
           background: 'linear-gradient(90deg, #021048 0%, #1E38A3 100%)'
         }}
@@ -256,7 +256,7 @@ const AppDevelopment = () => {
             background: '#f00'
           }}
         ></div>
-        <div className='container pt-5 pb-5'>
+        <div className='container py-5'>
           <div className='row'>
             {features.map((feature, index) => (
               <motion.div
@@ -265,10 +265,10 @@ const AppDevelopment = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className='col-lg-4 col-md-6 my-4 yb'
+                className='col-lg-4 col-md-6 g-3'
               >
                 <Card className='p-4' style={{ color: 'rgb(2, 16, 72)' }}>
-                  <CardContent className='p-6 '>
+                  <CardContent className='p-6'>
                     <div className='mb-4 icon-container'>{feature.icon}</div>
                     <h3 className='yc pt-2 fw-bold'>{feature.title}</h3>
                     <p className=''>{feature.description}</p>
