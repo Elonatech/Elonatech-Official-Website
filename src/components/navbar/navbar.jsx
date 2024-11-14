@@ -530,7 +530,7 @@ return (
       >
   <div className="container-fluid">
     <Link to={'/'} className='navbar-brand border-0'>
-       <img src={logo} id='elonatech-logo-home' className="lazyload border-0" alt="Elonatech Logo" />
+      <img src={logo} id='elonatech-logo-home' className="lazyload border-0" alt="Elonatech Logo" />
     </Link>
     <button className="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>

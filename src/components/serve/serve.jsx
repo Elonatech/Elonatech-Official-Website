@@ -36,9 +36,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">WEB DESIGN & DEVELOPMENT</h4>
             <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632436/homePage/What%20we%20do/icons/website_svappk.png" class="lazyload mb-4"  />
             <p class="text-white">At Elonatech, we build websites that are not only visually beautiful but also functionally effective. Our team of web strategists.</p>
-            <Link to={'/web-design'} className="btn btn-danger" aria-label="Explore more about web design services and features">
-              <h5>Explore Our Web Design Services</h5>
-            </Link>
+            <Link  to={'/web-design'}    class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
           </div>
@@ -55,10 +53,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">DIGITIAL MARKETING</h4>
             <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632429/homePage/What%20we%20do/icons/network_2_hbxvaz.png" class="lazyload mb-4"  />
             <p class="text-white">With Digital marketing, we have successfully changed the way brands and businesses use technology for marketing. Digital platforms are..</p>
-            <Link to={'/digital-marketing'} className="btn btn-danger">
-              <h5>Learn More About Digital Marketing Services</h5>
-            </Link>
-
+            <Link  to={'/digital-marketing'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>
@@ -75,9 +70,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">GRAPHICS & BRANDING</h4>
             <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632428/homePage/What%20we%20do/icons/graphic_pkt8ib.png" class="lazyload mb-4"  />
             <p class="text-white">Brand identity is not limited to a specific mark or name. Branding can incorporate multiple touch points...</p>
-            <Link to={'/graphics-design'} className="btn btn-danger">
-              <h5>Learn More About Our Graphics Design Services</h5>
-            </Link>
+            <Link to={'/graphics-design'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>
@@ -94,10 +87,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">NETWORK ENGINEERING / ADMINISTRATION</h4>
             <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632430/homePage/What%20we%20do/icons/network_bcyqi7.png" class="lazyload mb-4"  />
             <p class="text-white">Responsible for installing, implementing, and maintaining business applications for organizations...</p>
-            <Link to={'/network-administration-implementation'} className="btn btn-danger">
-              <h5>Learn More About Network Administration Implementation</h5>
-            </Link>
-
+            <Link to={'/network-administration-implementation'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>
@@ -114,10 +104,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">COMPUTER ENGINEERING</h4>
             <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632438/homePage/What%20we%20do/icons/computer_rzvqra.png" class="lazyload mb-4"  />
             <p class="text-white">While computer hardware configurations vary widely, we work on a broad range of hardware systems..</p>
-            <Link to={'/hardware-engineering'} className="btn btn-danger">
-              <h5>Learn More About Hardware Engineering Services</h5>
-            </Link>
-
+            <Link  to={'/hardware-engineering'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>
@@ -134,9 +121,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">ACCESS CONTROL & SURVEILLANCE</h4>
             <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632432/homePage/What%20we%20do/icons/suvalliance_tbxssd.png" class="lazyload mb-4"  />
             <p class="text-white">While network security should always be a prime concern for your business, you shouldn’t neglect your physical security either...</p>
-            <Link to={'/surveillance'} className="btn btn-danger">
-              <h5>Learn More About Surveillance Services</h5>
-            </Link>
+            <Link to={'/surveillance'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>
@@ -153,10 +138,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">ANIMATIONS & VIDEO GRAPHIC</h4>
             <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632435/homePage/What%20we%20do/icons/video-gallery_ymfxwv.png" class="lazyload mb-4"  />
             <p class="text-white">Animations have the power to convey complex concepts, evoke emotions, and leave a lasting impression on your audience.</p>
-            <Link to={'/animation'} className="btn btn-danger">
-              <h5>Learn More About Animation Services</h5>
-            </Link>
-
+            <Link to={'/animation'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>
@@ -173,10 +155,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">LIVESTREAMING & VIDEOCONFERENCING</h4>
             <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632433/homePage/What%20we%20do/icons/video_shovcl.png" class="lazyload mb-4"  />
             <p class="text-white">As we adjust to the new normal, everyone is moving their social life online. Happy hours, concerts, events, seminars, late night talk shows...</p>
-            <Link to={'/livestreaming'} className="btn btn-danger">
-              <h5>Learn More About Live Streaming Services</h5>
-            </Link>
-
+            <Link to={'/livestreaming'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>
@@ -193,9 +172,7 @@ const Serve = () => {
             <h4 class="mt-5 text-white">CONSULTING</h4>
             <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632439/homePage/What%20we%20do/icons/consult_lwwnnq.png"  class="lazyload mb-4"  />
             <p class="text-white">We help brands & businesses gain a competitive advantage in the connected world helping business find the best solutions. With over 12 years of experience...</p>
-            <Link to={'/consulting'} className="btn btn-danger">
-              <h5>Learn More About Our Consulting Services</h5>
-            </Link>
+            <Link to={'/consulting'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
           </div>
            </div>

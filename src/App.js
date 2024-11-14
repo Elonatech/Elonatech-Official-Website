@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import './index.css';
 import { useAuth } from './components/admin/AuthContext';
+import ReactGA from 'react-ga4';
 
 import NewsPages from "./components/news/NewsPages";
 import TrendsPages from "./components/trends/TrendsPages";
@@ -566,7 +567,18 @@ const router = createBrowserRouter([
 
 const App = () => {
   const { isAuthenticated } = useAuth();
+  const MEASUREMENT_ID = 'G-T9V3LN3YLR';
   useEffect(() => {
+    // Initialize GA
+    ReactGA.initialize(MEASUREMENT_ID);
+
+    // Log page views for the initial load and route changes
+    const logPageView = () => {
+      ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
+    };
+    logPageView();
+
+    // Log visit to your backend
     const logVisit = async () => {
       try {
         await axios.post('/api/v1/visitors/log');
@@ -574,8 +586,12 @@ const App = () => {
         console.error('Error logging visitor:', error);
       }
     };
-
     logVisit();
+
+    // Update GA on route changes
+    window.addEventListener('popstate', logPageView);
+
+    return () => window.removeEventListener('popstate', logPageView);
   }, []);
 
 return (
