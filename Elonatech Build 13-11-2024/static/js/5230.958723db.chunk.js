@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkweb=self.webpackChunkweb||[]).push([[5230],{55230:(e,s,n)=>{n.r(s),n.d(s,{default:()=>a});var c=n(70579);const a=()=>(0,c.jsx)("div",{children:(0,c.jsx)("div",{id:"spinner",class:"elonatech-container",children:(0,c.jsx)("div",{class:"elonatech-loading"})})})}}]);
-//# sourceMappingURL=5230.958723db.chunk.js.map
