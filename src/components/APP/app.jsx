@@ -105,19 +105,22 @@ const AppDevelopment = () => {
     {
       title: 'HealthTrack Pro',
       description: 'Fitness & wellness tracking application',
-      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490847/healthcare_app_mm7wic.png',
+      image:
+        'https://res.cloudinary.com/elonatech/image/upload/v1731490847/healthcare_app_mm7wic.png',
       category: 'Healthcare'
     },
     {
       title: 'EduLearn',
       description: 'Interactive learning platform',
-      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490847/Edu_learn_app_dnhjwj.png',
+      image:
+        'https://res.cloudinary.com/elonatech/image/upload/v1731490847/Edu_learn_app_dnhjwj.png',
       category: 'Education'
     },
     {
       title: 'SmartCommerce',
       description: 'E-commerce solution with AR features',
-      image: 'https://res.cloudinary.com/elonatech/image/upload/v1731490846/e-commerce_bsvqan.png',
+      image:
+        'https://res.cloudinary.com/elonatech/image/upload/v1731490846/e-commerce_bsvqan.png',
       category: 'Retail'
     }
   ]
@@ -134,48 +137,108 @@ const AppDevelopment = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="container-fluid app-design-section">
-  {/* Video background */}
-  <video
-    autoPlay
-    loop
-    muted
-    className="background-video"
-  >
-    <source src="https://res.cloudinary.com/elonatech/video/upload/v1731490848/background_video_mobile_app_zp2jgl.mp4" type="video/mp4" />
-  </video>
+      <div className='container-fluid app-design-section'>
+        <div>
+          <div className='text-content'>
+            <div className='max-w-2xl'>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className='text-5xl font-bold text-white mb-6'
+              >
+                <h2>Mobile App Design & Development</h2>
+                <h5>Transform Your Ideas Into Powerful Mobile Apps</h5>
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className='text-xl text-gray-200 mb-8'
+              >
+                <p class='lead'>
+                  We develop innovative mobile applications that engage users
+                  and drive business growth
+                </p>
+              </motion.p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  {/* Text Content */}
-  <div className="text-content">
-    <div className="max-w-2xl">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-5xl font-bold text-white mb-6"
-      >
-        Transform Your Ideas Into Powerful Mobile Apps
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-xl text-gray-200 mb-8"
-      >
-        We develop innovative mobile applications that engage users and drive business growth
-      </motion.p>
-      {/* <motion.button
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors"
-      >
-        Start Your Project
-        <ProjectForm />
-      </motion.button> */}
-    </div>
-  </div>
-</div>
+      {/* first row */}
+
+      <div className='container mb-5 mt-5'>
+        <div className='row align-items-center'>
+          <div className='col-md-6'>
+            <div className=''>
+              <h4 className='fw-bold'>
+                What is Mobile Application Development?
+              </h4>
+              <div
+                className='underline-w mt-1 mb-2'
+                style={{ width: '40px', height: '3px', background: '#f00' }}
+              ></div>
+              <p>
+                Mobile application development is the process of making software
+                for smartphones, tablets and digital assistants, most commonly
+                for the Android and iOS operating systems. The software can be
+                preinstalled on the device, downloaded from a mobile app store
+                or accessed through a mobile web browser. Mobile app development
+                is rapidly growing. From retail, telecommunications and
+                e-commerce to insurance, healthcare and government,
+                organizations across industries must meet user expectations for
+                real-time, convenient ways to conduct transactions and access
+                information. Today, mobile devices and the mobile applications
+                that unlock their value are the most popular way for people and
+                businesses to connect to the internet. To stay relevant,
+                responsive and successful, organizations need to develop the
+                mobile applications that their customers, partners and employees
+                demand.Whether you choose native or hybrid mobile application
+                development, one of the first hurdles you’ll need to overcome is
+                the relatively limited resources on mobile devices. Your target
+                mobile device has much less processing power and memory than
+                desktop computers or enterprise servers. Delivering a great user
+                experience is vital. It starts with understanding that your user
+                interface for a mobile app should be simpler than a desktop
+                application interface. By creating a straightforward UX design
+                that is focused on critical functions, you can provide a better
+                user experience while consuming fewer resources. Elonatech's
+                Mobile App Developers are versed in getting these achieved.
+              </p>
+            </div>
+          </div>
+          <div className='col-md-6'>
+            <div className='text-center'>
+              <video autoPlay loop muted className='background-video'>
+                <source
+                  src='https://res.cloudinary.com/elonatech/video/upload/v1731490848/background_video_mobile_app_zp2jgl.mp4'
+                  type='video/mp4'
+                  className='img-fluid rounded lazyload '
+                />
+              </video>
+            </div>
+          </div>
+          <p>
+            {' '}
+            Whether you choose native or hybrid mobile application development,
+            one of the first hurdles you’ll need to overcome is the relatively
+            limited resources on mobile devices. Your target mobile device has
+            much less processing power and memory than desktop computers or
+            enterprise servers. Delivering a great user experience is vital. It
+            starts with understanding that your user interface for a mobile app
+            should be simpler than a desktop application interface. By creating
+            a straightforward UX design that is focused on critical functions,
+            you can provide a better user experience while consuming fewer
+            resources. Elonatech's Mobile App Developers are versed in getting
+            these achieved.
+          </p>
+        </div>
+      </div>
+
+      {/* end of first row */}
+
+      {/* Text Content */}
 
       <div
         className='container-fluid '
@@ -183,9 +246,7 @@ const AppDevelopment = () => {
           background: 'linear-gradient(90deg, #021048 0%, #1E38A3 100%)'
         }}
       >
-        <h2 className='text-3xl font-bold text-center text-white pt-4'>
-          Why Choose Our App Development Services?
-        </h2>
+        <h2 className='ya'>Why Choose Our App Development Services?</h2>
         <div
           className='underline-w mt-1'
           style={{
@@ -204,14 +265,12 @@ const AppDevelopment = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className='col-md-4 my-4'
+                className='col-lg-4 col-md-6 my-4 yb'
               >
-                <Card className='h-full hover:shadow-lg transition-shadow'>
-                  <CardContent className='p-6 myCard'>
+                <Card className='p-4' style={{ color: 'rgb(2, 16, 72)' }}>
+                  <CardContent className='p-6 '>
                     <div className='mb-4 icon-container'>{feature.icon}</div>
-                    <h3 className='text-xl font-semibold mb-2'>
-                      {feature.title}
-                    </h3>
+                    <h3 className='yc pt-2 fw-bold'>{feature.title}</h3>
                     <p className=''>{feature.description}</p>
                   </CardContent>
                 </Card>
@@ -222,11 +281,9 @@ const AppDevelopment = () => {
       </div>
 
       {/* Development Process */}
-      <div className='py-20 bg-white'>
+      <div className='A'>
         <div className='container mx-auto px-4'>
-          <h2 className='text-3xl font-bold text-center'>
-            Our Development Process
-          </h2>
+          <h2 className='B'>Our Development Process</h2>
           <div
             className='underline-w mt-1 mb-4'
             style={{
@@ -236,7 +293,7 @@ const AppDevelopment = () => {
               background: '#f00'
             }}
           ></div>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          <div className='C'>
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
@@ -244,17 +301,12 @@ const AppDevelopment = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className='relative'
+                className='Da'
               >
-                <div
-                  className='absolute-left-4 top-0 text-6xl font-bold '
-                  color='rgb(2, 16, 72);'
-                >
-                  {step.number}
-                </div>
-                <div className='relative z-10 pl-4'>
-                  <h3 className='text-xl font-semibold mb-2'>{step.title}</h3>
-                  <p className='text-gray-600'>{step.description}</p>
+                <div className='D'>{step.number}</div>
+                <div className='E'>
+                  <h3 className='F'>{step.title}</h3>
+                  <p className='G'>{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -263,12 +315,10 @@ const AppDevelopment = () => {
       </div>
 
       {/* App Showcase */}
-      <div className='py-20 bg-gray-900 text-white'>
+      <div className='oneLane'>
         <div className='container mx-auto px-4'>
-          <h2 className='text-3xl font-bold text-center mb-12'>
-            Featured Apps
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          <h2 className='twoLane'>Featured Apps</h2>
+          <div className='threeLane'>
             {showcaseApps.map((app, index) => (
               <motion.div
                 key={index}
@@ -276,19 +326,13 @@ const AppDevelopment = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className='group relative overflow-hidden rounded-lg'
+                className='fourLane'
               >
-                <img
-                  src={app.image}
-                  alt={app.title}
-                  className='w-full h-64 object-cover transition-transform group-hover:scale-105'
-                />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end'>
-                  <span className='text-sm text-gray-300 mb-2'>
-                    {app.category}
-                  </span>
-                  <h3 className='text-xl font-semibold mb-1'>{app.title}</h3>
-                  <p className='text-gray-300'>{app.description}</p>
+                <img src={app.image} alt={app.title} className='fiveLane' />
+                <div className='sixLane'>
+                  <span className='sevenLane'>{app.category}</span>
+                  <h3 className='eightLane'>{app.title}</h3>
+                  <p className='nineLane'>{app.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -297,11 +341,9 @@ const AppDevelopment = () => {
       </div>
 
       {/* Technologies Section */}
-      <div className='py-20 bg-white'>
-        <div className='container mx-auto px-4'>
-          <h2 className='text-3xl font-bold text-center mb-2'>
-            Technologies We Use
-          </h2>
+      <div className='technology-lnOne'>
+        <div className='container lnTwo'>
+          <h2 className='lnThree'>Technologies We Use</h2>
           <div
             className='underline-w mt-1 mb-4'
             style={{
@@ -311,12 +353,31 @@ const AppDevelopment = () => {
               background: '#f00'
             }}
           ></div>
-          <div className='grid grid-cols-2 md:grid-cols-4 gap-8 text-center'>
+          <div className='lnFive'>
             {[
-              { name: 'React Native', icon: <TbBrandReactNative className='w-20 h-20'/> },
-              { name: 'Flutter', icon: <RiFlutterFill className='w-20 h-20'/> },
-              { name: 'iOS (Swift)', icon: <GrSwift className='w-20 h-20'/> },
-              { name: 'Android (Kotlin)', icon: <SiKotlin className='w-20 h-20'/> }
+              {
+                name: 'React Native',
+                icon: <TbBrandReactNative className='lnSix' />,
+                shortNote: `React Native lets you build mobile apps for both iOS and
+                Android with one code base. It gives native-like
+                performance, fast development, and costs less than building
+                separate apps for each platform.`
+              },
+              {
+                name: 'Flutter',
+                icon: <RiFlutterFill className='lnSix' />,
+                shortNote: `Flutter is Google's toolkit for building beautiful native apps for mobile, web, and desktop from a single codebase. It uses Dart language, has rich built-in widgets, and delivers fast performance with smooth animations.`
+              },
+              {
+                name: 'iOS (Swift)',
+                icon: <GrSwift className='lnSix' />,
+                shortNote: `Swift is Apple's powerful programming language for iOS apps. It offers fast performance, strong security, and clean syntax. Perfect for creating sleek, native iPhone and iPad apps with full access to Apple's ecosystem.`
+              },
+              {
+                name: 'Android (Kotlin)',
+                icon: <SiKotlin className='lnSix' />,
+                shortNote: `Kotlin is a modern Android development language backed by Google. It's simpler and safer than Java, reduces code errors, and makes building Android apps faster and easier. Works perfectly with existing Android tools and libraries.`
+              }
             ].map((tech, index) => (
               <motion.div
                 key={index}
@@ -324,13 +385,14 @@ const AppDevelopment = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className='p-6 rounded-lg bg-gray-50   flex items-center justify-center'
+                className='lnFour'
               >
-                <div className='flex items-center space-x-2'>
-                  <h3 className='text-lg font-semibold' color='rgb(2, 16, 72);'>
+                <div className='lnSev'>
+                  <h3 className='lnEig'>
                     {tech.name}
-                    <span>{tech.icon}</span>
+                    <div>{tech.icon}</div>
                   </h3>
+                  <div className='shortNote'>{tech.shortNote}</div>
                 </div>
               </motion.div>
             ))}

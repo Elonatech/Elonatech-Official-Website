@@ -1,9 +1,9 @@
 /* src/index.css */
 
 /* Import the Tailwind directives */
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 
 .user-select-none {
@@ -14,7 +14,7 @@
     user-select: text;
 }
 
-.price-mobile1 {
+/* .price-mobile1 {
     display: none;
     width: 40%;
 }
@@ -74,4 +74,4 @@
     .tyu {
         margin-top: 0;
     }
-}
+} */
