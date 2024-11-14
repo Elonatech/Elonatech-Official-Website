@@ -530,7 +530,7 @@ return (
       >
   <div className="container-fluid">
     <Link to={'/'} className='navbar-brand border-0'>
-      <img src={logo} id='elonatech-logo-home' className="lazyload border-0" />
+       <img src={logo} id='elonatech-logo-home' className="lazyload border-0" alt="Elonatech Logo" />
     </Link>
     <button className="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -557,9 +557,10 @@ return (
                   onMouseEnter={handleProductHover}
                 >
                   <a
+                    href=""
                     onClick={handleProductClick}
                     style={{ fontWeight: "bold" }}
-                    class="nav-link e-fonte text-white dropdown-toggle"
+                    className="nav-link e-fonte text-white dropdown-toggle"
                   >
                     Solutions
                   </a>
@@ -888,7 +889,7 @@ return (
               </li>
            {/*==================================================================================================  second drop down ===============================================*/}
             <li id='here' class="nav-item   drop-show dropdown  pe-1">
-              <a class="nav-link active e-fonte active  dropdown-toggle" role="button" onClick={handleSupportClick} data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+              <a href="javascript:void(0)" class="nav-link active e-fonte active  dropdown-toggle" role="button" onClick={handleSupportClick} data-bs-toggle="dropdown" aria-expanded="false">Support</a>
               <ul class="dropdown-menu drop-menu border-0 text-center p-4">
               <ul class="solutions-items list-unstyled">
                 <Link to={'/technical-support'} class="text-decoration-none text-dark"><li class="solutions-items-active dropdown-item  mt-1 p-2 dismiss-nav-man" data-bs-dismiss="offcanvas" aria-label="Close">Technical Support </li></Link>
@@ -899,7 +900,7 @@ return (
             </li>
     {/*=====================================================================================================  third drop down =============================================*/}
             <li id='here3' class="nav-item dropdown drop-show  pe-1">
-              <a class="nav-link active e-fonte   dropdown-toggle" role="button" onClick={handleSupportClick} data-bs-toggle="dropdown" aria-expanded="false">Strategic Services</a>
+              <a href="javascript:void(0)" class="nav-link active e-fonte   dropdown-toggle" role="button" onClick={handleSupportClick} data-bs-toggle="dropdown" aria-expanded="false">Strategic Services</a>
               <ul class="dropdown-menu border-0 drop-menu  text-center p-4">
               <ul class="strategic-items  list-unstyled">
                 <Link to={'/consulting'} class="text-decoration-none text-dark"><li class="strategic-items-active dropdown-item mt-1 p-2 dismiss-nav-man" data-bs-dismiss="offcanvas">Consulting</li></Link>
@@ -910,7 +911,7 @@ return (
             </li>
     {/*=========================================================================================================  fourth drop down ==================================================*/}
             <li id='here4' class="nav-item  dropdown drop-show pe-1">
-              <a class="nav-link active  e-fonte  dropdown-toggle"  onClick={handleSupportClick} role="button" data-bs-toggle="dropdown"  aria-expanded="false">Products</a>
+              <a href="javascript:void(0)" class="nav-link active  e-fonte  dropdown-toggle"  onClick={handleSupportClick} role="button" data-bs-toggle="dropdown"  aria-expanded="false">Products</a>
               <ul class="dropdown-menu border-0 drop-menu text-center p-4">
                 <ul class="productss-items list-unstyled">
                 <Link to={'/shop'} class="text-decoration-none text-dark"><li class="productss-items-active dropdown-item  mt-1 p-2 dismiss-nav-man" data-bs-dismiss="offcanvas">Shop</li></Link>
@@ -924,7 +925,7 @@ return (
             </li>
     {/*======================================================================================================================  fifth drop down  ===============================================*/}
             <li id='here5' class="nav-item  dropdown drop-show pe-1">
-              <a class="nav-link active e-fonte  dropdown-toggle" role="button" onClick={handleSupportClick} data-bs-toggle="dropdown" aria-expanded="false">Who we are</a>
+              <a href="javascript:void(0)" class="nav-link active e-fonte  dropdown-toggle" role="button" onClick={handleSupportClick} data-bs-toggle="dropdown" aria-expanded="false">Who we are</a>
               <ul class="dropdown-menu border-0 drop-menu drop-menu text-center p-2" style={{transition:"0.3s"}}>
                 <ul class="whoo-items list-unstyled">
                 <Link to={'/who-we-are'} class="text-decoration-none text-dark"><li class="whoo-items-active dropdown-item  mt-1 p-2 dismiss-nav-man" data-bs-dismiss="offcanvas">Company</li></Link>

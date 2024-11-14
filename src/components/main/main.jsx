@@ -158,9 +158,9 @@ const Main = () => {
                     work together to help clients meet their business objective
                   </p>
                   <div class='d-flex justify-content-between align-items-center pt-3'>
-                    <Link className='btn btn-danger' to={'/web-design'}>
-                      Read More
-                    </Link>
+                  <Link className='btn btn-danger' to={'/web-design'} aria-label="Learn more about web design services and trends">
+                    Learn More About Web Design Services
+                  </Link>
                   </div>
                 </div>
               </div>
@@ -184,9 +184,9 @@ const Main = () => {
                     to the desired level.
                   </p>
                   <div class='d-flex justify-content-between align-items-center pt-3'>
-                    <Link className='btn btn-danger' to={'/system-integration'}>
-                      Read More
-                    </Link>
+                  <Link className='btn btn-danger' to={'/system-integration'}>
+                    Learn More About System Integration Services
+                  </Link>
                   </div>
                 </div>
               </div>

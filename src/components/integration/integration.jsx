@@ -38,7 +38,7 @@ const Integration = () => {
         <div className="col-md-6">
             <div className="card mb-3" style={{boxShadow:" 0 0 10px 5px rgba(0,0,0,0.6)"}}>
             <div className="text-center">
-               <img src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif' data-src={FirstInfastructureImage} className='img-fluid lazyload mt-5' alt="" />
+               <img src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif' data-src={FirstInfastructureImage} className='img-fluid lazyload mt-5' alt='image fail to load' />
           </div>
             </div>
         </div>

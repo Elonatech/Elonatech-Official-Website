@@ -1,12 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow: /login
-Disallow: https://elonatech.com.ng/login
 Disallow: /checkout
-Disallow: https://elonatech.com.ng/checkout
 Disallow: /thank-you
-Disallow: https://elonatech.com.ng/thank-you
 
 Sitemap: https://elonatech.com.ng/sitemap.xml
   
-Allow: /
+Allow: /picture
