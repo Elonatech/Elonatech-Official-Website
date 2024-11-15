@@ -1,7 +1,4 @@
-
-
-
-.drop-show:hover .drop-menu{
+.drop-show:hover .drop-menu {
   display: block;
 }
 
@@ -10,71 +7,72 @@
 } */
 
 
-.dropdown-item:hover{
- background-color: #dc3545 ;
- border-radius: 100px;
- color: white;
+.dropdown-item:hover {
+  background-color: #dc3545;
+  border-radius: 100px;
+  color: white;
 }
 
 /* ====================== */
 
-.solutions-items-active { 
-  background-color: #dc3545 ;
-  border-radius: 100px;
-  color: white;
-}
-/* ================== */
-
-.strategic-items-active{
-  background-color: #dc3545 ;
+.solutions-items-active {
+  background-color: #dc3545;
   border-radius: 100px;
   color: white;
 }
 
 /* ================== */
 
-.productss-items-active{
-  background-color: #dc3545 ;
+.strategic-items-active {
+  background-color: #dc3545;
   border-radius: 100px;
-  color: white; 
+  color: white;
+}
+
+/* ================== */
+
+.productss-items-active {
+  background-color: #dc3545;
+  border-radius: 100px;
+  color: white;
 }
 
 /* ===================== */
 
-.whoo-items-active{
-  background-color: #dc3545 ;
+.whoo-items-active {
+  background-color: #dc3545;
   border-radius: 100px;
-  color: white; 
+  color: white;
 }
 
 /* ===================== */
 
-.van:hover{
-   width: 300px;
-   height: 400px;
- }
-
-.first-drop{
-position: absolute;
-left: -500px;
-width: 1020px;
-top: 50px;
-transition-delay: 2s;
+.van:hover {
+  width: 300px;
+  height: 400px;
 }
 
- .NAVba{
+.first-drop {
+  position: absolute;
+  left: -500px;
+  width: 1020px;
+  top: 50px;
+  transition-delay: 2s;
+}
+
+.NAVba {
   background: transparent;
 
 
- }
+}
 
-.NAVbar{
+.NAVbar {
   background-color: #11253D;
   -webkit-transition: background-color 1ms linear;
   -ms-transition: background-color 1ms linear;
   transition: background-color 1ms linear;
- 
-  
+
+
 }
 
 
@@ -82,10 +80,10 @@ transition-delay: 2s;
 
 
 .navbar-toggler {
-   border: none;
+  border: none;
 }
 
-.navbar-toggler:focus{
+.navbar-toggler:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -106,15 +104,16 @@ transition-delay: 2s;
 
 
 
-.e-fonte{
+.e-fonte {
   font-size: 17px;
   font-weight: bold;
 
 }
-.e-fonte:hover{
+
+.e-fonte:hover {
   font-size: 17px;
   font-weight: bold;
-  color: #dc3545  !important;
+  color: #dc3545 !important;
 }
 
 
@@ -126,26 +125,26 @@ transition-delay: 2s;
   background-color: #dc3545;
 } */
 
-.i-fonte{
+.i-fonte {
   font-size: 17px;
-  
+
 }
 
-.i-fonte:hover{
+.i-fonte:hover {
   color: #dc3545;
 }
 
-.t-fonte:hover{
+.t-fonte:hover {
   color: #dc3545;
 }
 
-.nav-item .nav-link{
-  color:"#dc3545"
+.nav-item .nav-link {
+  color: "#dc3545"
 }
 
 
 /* ============================================================ */
-      
+
 .elonatechContainer {
   height: 100px;
   width: 100%;
@@ -159,6 +158,7 @@ transition-delay: 2s;
   left: 0;
   z-index: 999;
 }
+
 .elonatechactiveContainer {
   height: 100px;
   width: 100%;
@@ -176,7 +176,7 @@ transition-delay: 2s;
 }
 
 
-.elonatechlogoBox{
+.elonatechlogoBox {
   width: 150px;
   height: auto;
   cursor: pointer;
@@ -195,29 +195,31 @@ transition-delay: 2s;
   cursor: pointer;
   color: #fff;
 }
+
 .elonatechlistItem:first-child {
   font-size: 1.3rem;
 }
 
-.elonatechmainDropdown{
+.elonatechmainDropdown {
   background: #fff;
   position: absolute;
   overflow: hidden;
   width: 0;
 
 }
-.elonatechmainDropdownDone{
+
+.elonatechmainDropdownDone {
   display: none;
   background: #fff;
 }
 
-.elonatechlistItem:hover .elonatechmainDropdown{
+.elonatechlistItem:hover .elonatechmainDropdown {
   background: #fff;
   display: flex;
   width: auto;
 }
 
-.elonatechmainDropdownActive{
+.elonatechmainDropdownActive {
   background: #fff;
   position: absolute;
 
@@ -226,30 +228,30 @@ transition-delay: 2s;
 
 }
 
-.elonatechlistItem:hover .elonatechmainDropdownActive{
+.elonatechlistItem:hover .elonatechmainDropdownActive {
   background: #fff;
   display: flex;
   width: auto;
   left: 50%;
   transform: translate(-50%);
   border-radius: 10px;
- 
+
 }
 
-.elonatechmainDropdownLeft{
+.elonatechmainDropdownLeft {
   flex: 1;
   padding: 2rem;
   border-right: 1px solid #ccc;
   transition: all 1s ease;
 }
 
-.elonatechmainDropdownLeftList{
+.elonatechmainDropdownLeftList {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.elonatechmainDropdownLeftListItem{
+.elonatechmainDropdownLeftListItem {
   display: flex;
   justify-content: space-between;
   color: #000;
@@ -262,11 +264,11 @@ transition-delay: 2s;
 
 }
 
-.elonatechdisplayArrow{
+.elonatechdisplayArrow {
   color: #fff;
 }
 
-.elonatechmainDropdownLeftListItemActive{
+.elonatechmainDropdownLeftListItemActive {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
@@ -274,58 +276,62 @@ transition-delay: 2s;
   width: 160px;
   cursor: pointer;
   transition: border-radius .5s ease;
-  color: #fff;
-  background-color: #dc3545;
-  border-radius: 1rem;
-}
-.elonatechmainDropdownLeftListItemActive2{
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  padding: 1rem;
-  width: 160px;
-  cursor: pointer;
-  transition: border-radius .5s ease;
-  color: #fff;
-  background-color: #dc3545;
-  border-radius: 1rem;
-}
-.elonatechmainDropdownLeftListItemActive3{
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  padding: 1rem;
-  width: 160px;
-  cursor: pointer;
-  transition: border-radius .5s ease;
-  color: #fff;
-  background-color: #dc3545;
-  border-radius: 1rem;
-}
-.elonatechmainDropdownLeftListItem:hover{
   color: #fff;
   background-color: #dc3545;
   border-radius: 1rem;
 }
 
-.elonatechmainDropdownRight{
+.elonatechmainDropdownLeftListItemActive2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 1rem;
+  width: 160px;
+  cursor: pointer;
+  transition: border-radius .5s ease;
+  color: #fff;
+  background-color: #dc3545;
+  border-radius: 1rem;
+}
+
+.elonatechmainDropdownLeftListItemActive3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 1rem;
+  width: 160px;
+  cursor: pointer;
+  transition: border-radius .5s ease;
+  color: #fff;
+  background-color: #dc3545;
+  border-radius: 1rem;
+}
+
+.elonatechmainDropdownLeftListItem:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-radius: 1rem;
+}
+
+.elonatechmainDropdownRight {
   flex: 0;
   padding: 0;
   width: 0;
   transition: all 1s ease;
 }
 
-.elonatechmainDropdownRightActive{
+.elonatechmainDropdownRightActive {
   flex: 3;
   padding: 2rem;
   min-width: auto;
   transition: 1s ease;
 }
 
-.elonatechmainDropdownRightList{
+.elonatechmainDropdownRightList {
   display: none;
 }
-.elonatechmainDropdownRightListActive{
+
+.elonatechmainDropdownRightListActive {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -336,7 +342,7 @@ transition-delay: 2s;
   border-bottom: 2px solid #ddd;
 }
 
-.elonatechmainDropdownRightListItem{
+.elonatechmainDropdownRightListItem {
   color: #000;
   font-size: 12px;
   width: 120px;
@@ -344,14 +350,14 @@ transition-delay: 2s;
   transition: padding .25s ease;
 }
 
-.elonatechmainDropdownRightListItem:hover{
+.elonatechmainDropdownRightListItem:hover {
   background-color: aquamarine;
   border-radius: 10px;
   font-size: 9px;
   padding: 3px;
 }
 
-.elonatechmainDropdownRightListItemList{
+.elonatechmainDropdownRightListItemList {
   padding: 0;
   margin: 0;
   margin-top: 3rem;
@@ -361,7 +367,7 @@ transition-delay: 2s;
   position: absolute;
 }
 
-.elonatechmainDropdownRightListItem:hover .elonatechmainDropdownRightListItemList{
+.elonatechmainDropdownRightListItem:hover .elonatechmainDropdownRightListItemList {
   padding: 3rem 0;
   margin: 0;
   list-style: none;
@@ -371,13 +377,13 @@ transition-delay: 2s;
   left: 32%;
 }
 
-.elonatechmainDropdownRightListItemListItem{
+.elonatechmainDropdownRightListItemListItem {
   width: 100px;
 }
 
 
 /* SOLUTION */
-.elonatechinnerListContainer{
+.elonatechinnerListContainer {
   background-color: #fff;
   color: #000;
   visibility: hidden;
@@ -390,7 +396,7 @@ transition-delay: 2s;
 
 
 /* left: 34%; */
-.elonatechlistItem:hover .elonatechinnerListContainer{
+.elonatechlistItem:hover .elonatechinnerListContainer {
   background-color: #fff;
   color: #000;
   display: flex;
@@ -404,26 +410,30 @@ transition-delay: 2s;
   width: 1100px;
 }
 
-.bi-plus{
+.bi-plus {
   display: none;
 }
 
 /* ===================================================== */
-.elonatechinnerListItemLeft, .elonatechinnerListItemRight{
+.elonatechinnerListItemLeft,
+.elonatechinnerListItemRight {
   padding: 1rem;
 }
-.elonatechinnerListContentLeft, .elonatechinnerListContentRight{
+
+.elonatechinnerListContentLeft,
+.elonatechinnerListContentRight {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.elonatechline{
+
+.elonatechline {
   width: 2px;
   height: 209px !important;
   background: #000;
 }
 
-.elonatechinnerListItemContentLeftActive{
+.elonatechinnerListItemContentLeftActive {
   display: flex;
   justify-content: space-between;
   color: #fff;
@@ -436,7 +446,7 @@ transition-delay: 2s;
   transition: border-radius .5s ease;
 }
 
-.elonatechinnerListItemContentLeft{
+.elonatechinnerListItemContentLeft {
   display: flex;
   justify-content: space-between;
   color: #000;
@@ -448,7 +458,7 @@ transition-delay: 2s;
   transition: border-radius .5s ease;
 }
 
-.salePad{
+.salePad {
   padding-right: 60px;
 }
 
@@ -459,61 +469,70 @@ transition-delay: 2s;
 
 
 @media screen and (max-width:500px) {
-  .salePad{
+  .salePad {
     padding-right: 3px;
   }
 
 }
 
 
-.elonatechinnerListItemContentRight{
+.elonatechinnerListItemContentRight {
   font-size: 12px;
 }
 
-.elonatechicon{
-display: none;
+.elonatechicon {
+  display: none;
 }
 
-.elonatechinnerListItemContentRightTechListActive, .elonatechinnerListItemContentRightDigitalListActive, .elonatechinnerListItemContentRightSalesListActive{
+.elonatechinnerListItemContentRightTechListActive,
+.elonatechinnerListItemContentRightDigitalListActive,
+.elonatechinnerListItemContentRightSalesListActive {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   gap: 1rem;
 }
-.elonatechinnerListItemContentRightDigitalListItem{
+
+.elonatechinnerListItemContentRightDigitalListItem {
   font-size: 12px;
 }
 
-.elonatechinnerListItemContentRightSalesListActive{
+.elonatechinnerListItemContentRightSalesListActive {
   margin-top: 3rem;
   margin-left: 5rem;
 }
 
-.elonatechinnerListItemContentRightSalesListItem{
+.elonatechinnerListItemContentRightSalesListItem {
   display: flex;
   flex-direction: column;
   font-size: 9px;
   transition: transform .25s ease;
 }
-.elonatechinnerListItemContentRightSalesListItem:hover{
+
+.elonatechinnerListItemContentRightSalesListItem:hover {
   transform: scale(1.2);
   color: #dc3545;
 }
 
-.elonatechinnerListItemContentRightTechList, .elonatechinnerListItemContentRightDigitalList, .elonatechinnerListItemContentRightSalesList{
+.elonatechinnerListItemContentRightTechList,
+.elonatechinnerListItemContentRightDigitalList,
+.elonatechinnerListItemContentRightSalesList {
   display: none;
 }
 
-.elonatechinnerListItemContentRightTechListTitleActive{
+.elonatechinnerListItemContentRightTechListTitleActive {
   color: #dc3545;
 }
-.elonatechinnerListItemContentRightTechListTitle{
+
+.elonatechinnerListItemContentRightTechListTitle {
   color: #222;
 }
 
-.elonatechhardwareSolutionsListActive, .elonatechsystemSecurityListActive,
-.elonatechtelecomsListActive, .elonatechsoftwareSolutionsListActive{
+.elonatechhardwareSolutionsListActive,
+.elonatechsystemSecurityListActive,
+.elonatechtelecomsListActive,
+.elonatechsoftwareSolutionsListActive {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -524,11 +543,11 @@ display: none;
   margin-top: 3rem;
   font-size: 9px;
   text-align: center;
- 
+
 }
 
 
-.elonatechnetworkAdministrationListActive{
+.elonatechnetworkAdministrationListActive {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -541,7 +560,11 @@ display: none;
   text-align: center;
 }
 
-.elonatechwebSolutionsListActive, .elonatechdigitalMarketingListActive, .elonatechgraphicsListActive, .elonatechvideoAnimationsListActive, .elonatechteleconferencingListActive{
+.elonatechwebSolutionsListActive,
+.elonatechdigitalMarketingListActive,
+.elonatechgraphicsListActive,
+.elonatechvideoAnimationsListActive,
+.elonatechteleconferencingListActive {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -554,8 +577,16 @@ display: none;
   text-align: center;
 }
 
-.elonatechhardwareSolutionsList, .elonatechnetworkAdministrationList, .elonatechsystemSecurityList, .elonatechtelecomsList, .elonatechsoftwareSolutionsList, .elonatechwebSolutionsList,
-.elonatechdigitalMarketingList, .elonatechgraphicsList, .elonatechvideoAnimationsList, .elonatechteleconferencingList{
+.elonatechhardwareSolutionsList,
+.elonatechnetworkAdministrationList,
+.elonatechsystemSecurityList,
+.elonatechtelecomsList,
+.elonatechsoftwareSolutionsList,
+.elonatechwebSolutionsList,
+.elonatechdigitalMarketingList,
+.elonatechgraphicsList,
+.elonatechvideoAnimationsList,
+.elonatechteleconferencingList {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -566,38 +597,54 @@ display: none;
 }
 
 
-.elonatechhardwareSolutionsListItem, .elonatechnetworkAdministrationListItem, .elonatechsystemSecurityListListItem, .elonatechtelecomsListListItem,
-.elonatechsoftwareSolutionsListListItem{
+.elonatechhardwareSolutionsListItem,
+.elonatechnetworkAdministrationListItem,
+.elonatechsystemSecurityListListItem,
+.elonatechtelecomsListListItem,
+.elonatechsoftwareSolutionsListListItem {
   display: flex;
   flex-direction: column;
   transition: transform .25s ease;
 }
-.elonatechhardwareSolutionsListItem:hover, .elonatechnetworkAdministrationListItem:hover, .elonatechsystemSecurityListListItem:hover, .elonatechtelecomsListListItem:hover,
-.elonatechsoftwareSolutionsListListItem:hover{
+
+.elonatechhardwareSolutionsListItem:hover,
+.elonatechnetworkAdministrationListItem:hover,
+.elonatechsystemSecurityListListItem:hover,
+.elonatechtelecomsListListItem:hover,
+.elonatechsoftwareSolutionsListListItem:hover {
   transform: scale(1.2);
   color: #dc3545;
 }
 
-.elonatechwebSolutionsListItem, .elonatechdigitalMarketingListItem, .elonatechgraphicsListListItem, .elonatechvideoAnimationsListListItem, .elonatechteleconferencingListListItem{
+.elonatechwebSolutionsListItem,
+.elonatechdigitalMarketingListItem,
+.elonatechgraphicsListListItem,
+.elonatechvideoAnimationsListListItem,
+.elonatechteleconferencingListListItem {
   display: flex;
   flex-direction: column;
   transition: transform .25s ease;
 }
-.elonatechwebSolutionsListItem:hover, .elonatechdigitalMarketingListItem:hover, .elonatechgraphicsListListItem:hover, .elonatechvideoAnimationsListListItem:hover, .elonatechteleconferencingListListItem:hover{
+
+.elonatechwebSolutionsListItem:hover,
+.elonatechdigitalMarketingListItem:hover,
+.elonatechgraphicsListListItem:hover,
+.elonatechvideoAnimationsListListItem:hover,
+.elonatechteleconferencingListListItem:hover {
   transform: scale(1.2);
   color: #dc3545;
 }
 
 
 @media screen and (max-width:913px) {
- .elonatechtest{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
- }
+  .elonatechtest {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
 
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -612,163 +659,173 @@ display: none;
     width: 100%;
   }
 
-  .elonatechSolutionsTitle{
+  .elonatechSolutionsTitle {
     position: relative;
     left: -7%;
   }
 
-  .elonatechline{
-    width:113% ;
+  .elonatechline {
+    width: 113%;
     height: 2px !important;
     background-color: black !important;
     position: relative;
     right: 12%;
     margin-top: 0;
-    
+
   }
 
-  
-.bi-plus{
-  display: block;
-}
 
-  .elonatechinnerListContainer{
+  .bi-plus {
+    display: block;
+  }
+
+  .elonatechinnerListContainer {
     top: 0;
     left: 0;
     background: #000;
   }
 
-  .elonatechicon{
+  .elonatechicon {
     display: block;
     margin-left: 8rem;
-   }
-   .elonatechicon:hover{
+  }
+
+  .elonatechicon:hover {
     color: #dc3545;
-   }
-  
+  }
 
-.elonatechinnerListItemLeft, .elonatechinnerListItemRight{
-  padding: 10px;
+
+  .elonatechinnerListItemLeft,
+  .elonatechinnerListItemRight {
+    padding: 10px;
+  }
+
+  .elonatechinnerListContentLeft {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: relative;
+    left: -7%;
+  }
+
+  .elonatechinnerListItemContentRightTechListActive,
+  .elonatechinnerListItemContentRightDigitalListActive,
+  .elonatechinnerListItemContentRightSalesListActive {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
+
+
+  .elonatechhardwareSolutionsListActive,
+  .elonatechsystemSecurityListActive,
+  .elonatechtelecomsListActive,
+  .elonatechsoftwareSolutionsListActive {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    position: relative;
+    left: -2%;
+    top: 20%;
+    margin: 2rem 0;
+    font-size: 9px;
+    text-align: center;
+
+
+
+  }
+
+
+  .elonatechnetworkAdministrationListActive {
+
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    position: relative;
+    left: -10%;
+    top: 20%;
+    margin: 2rem 0;
+    font-size: 9px;
+    text-align: center;
+
+
+  }
+
+  .elonatechwebSolutionsListActive,
+  .elonatechdigitalMarketingListActive,
+  .elonatechgraphicsListActive,
+  .elonatechvideoAnimationsListActive,
+  .elonatechteleconferencingListActive {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    position: relative;
+    left: -7%;
+    top: 20%;
+    margin: 2rem 0;
+    font-size: 9px;
+    text-align: center;
+  }
+
+
+
+  .elonatechinnerListItemContentRightSalesListActive {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    position: relative;
+    left: -10%;
+    font-size: 9px;
+    text-align: center;
+  }
+
+
+
+
+  .elonatechlistItem:hover .elonatechmainDropdown {
+    background: #fff;
+    position: relative;
+    display: flex;
+    width: auto;
+
+  }
+
 }
-
-.elonatechinnerListContentLeft{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  position: relative;
-  left: -7%;
-}
-
-.elonatechinnerListItemContentRightTechListActive, .elonatechinnerListItemContentRightDigitalListActive, .elonatechinnerListItemContentRightSalesListActive{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-
-
-
-.elonatechhardwareSolutionsListActive, .elonatechsystemSecurityListActive, 
-.elonatechtelecomsListActive, .elonatechsoftwareSolutionsListActive{
-  list-style: none;
-  padding: 0;
-  margin: auto;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3rem;
-  position: relative;
-  left: -2%;
-  top: 20%;
-  margin: 2rem 0;
-  font-size: 9px;
-  text-align: center;
-
-
-
-}
-
-
-.elonatechnetworkAdministrationListActive{
-
-  list-style: none;
-  padding: 0;
-  margin: auto;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-  position: relative;
-  left: -10%;
-  top: 20%;
-  margin: 2rem 0;
-  font-size: 9px;
-  text-align: center;
-
-
-}
-
-.elonatechwebSolutionsListActive, .elonatechdigitalMarketingListActive, .elonatechgraphicsListActive, .elonatechvideoAnimationsListActive, .elonatechteleconferencingListActive{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4rem;
-  position: relative;
-  left: -7%;
-  top: 20%;
-  margin: 2rem 0;
-  font-size: 9px;
-  text-align: center;
-}
-
-
-
-.elonatechinnerListItemContentRightSalesListActive{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4rem;
-  position: relative;
-  left: -10%;
-  font-size: 9px;
-  text-align: center;
-}
-
-
-
-
- .elonatechlistItem:hover .elonatechmainDropdown{
-  background: #fff;
-  position: relative;
-  display: flex;
-  width: auto;
-
-} 
-
-} 
 
 
 
 
 @media screen and (max-width:480px) {
- .elonatechtest{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
- }
+  .elonatechtest {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
 
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -783,155 +840,165 @@ display: none;
     width: 100%;
   }
 
-  .elonatechSolutionsTitle{
+  .elonatechSolutionsTitle {
     position: relative;
     left: -7%;
   }
 
-  .elonatechline{
-    width:113% ;
+  .elonatechline {
+    width: 113%;
     height: 2px !important;
     background-color: black !important;
     position: relative;
     right: 12%;
     margin-top: 0;
-    
+
   }
 
-  
-.bi-plus{
-  display: block;
-}
 
-  .elonatechinnerListContainer{
+  .bi-plus {
+    display: block;
+  }
+
+  .elonatechinnerListContainer {
     top: 0;
     left: 0;
     background: #000;
   }
 
-  .elonatechicon{
+  .elonatechicon {
     display: block;
     margin-left: 8rem;
-   }
-   .elonatechicon:hover{
+  }
+
+  .elonatechicon:hover {
     color: #dc3545;
-   }
-  
+  }
 
-.elonatechinnerListItemLeft, .elonatechinnerListItemRight{
-  padding: 10px;
+
+  .elonatechinnerListItemLeft,
+  .elonatechinnerListItemRight {
+    padding: 10px;
+  }
+
+  .elonatechinnerListContentLeft {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: relative;
+    left: -7%;
+  }
+
+  .elonatechinnerListItemContentRightTechListActive,
+  .elonatechinnerListItemContentRightDigitalListActive,
+  .elonatechinnerListItemContentRightSalesListActive {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
+
+
+  .elonatechhardwareSolutionsListActive,
+  .elonatechsystemSecurityListActive,
+  .elonatechtelecomsListActive,
+  .elonatechsoftwareSolutionsListActive {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    position: relative;
+    left: -2%;
+    top: 20%;
+    margin: 2rem 0;
+    font-size: 9px;
+    text-align: center;
+
+
+
+  }
+
+
+  .elonatechnetworkAdministrationListActive {
+
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    position: relative;
+    left: -10%;
+    top: 20%;
+    margin: 2rem 0;
+    font-size: 9px;
+    text-align: center;
+
+
+  }
+
+  .elonatechwebSolutionsListActive,
+  .elonatechdigitalMarketingListActive,
+  .elonatechgraphicsListActive,
+  .elonatechvideoAnimationsListActive,
+  .elonatechteleconferencingListActive {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    position: relative;
+    left: -7%;
+    top: 20%;
+    margin: 2rem 0;
+    font-size: 9px;
+    text-align: center;
+  }
+
+
+
+  .elonatechinnerListItemContentRightSalesListActive {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    position: relative;
+    left: -10%;
+    /* margin-top: 3rem; */
+    font-size: 9px;
+    text-align: center;
+  }
+
+
+
+
+  .elonatechlistItem:hover .elonatechmainDropdown {
+    background: #fff;
+    position: relative;
+    display: flex;
+    width: auto;
+
+  }
+
 }
 
-.elonatechinnerListContentLeft{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  position: relative;
-  left: -7%;
-}
-
-.elonatechinnerListItemContentRightTechListActive, .elonatechinnerListItemContentRightDigitalListActive, .elonatechinnerListItemContentRightSalesListActive{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
 
 
-
-
-.elonatechhardwareSolutionsListActive, .elonatechsystemSecurityListActive, 
-.elonatechtelecomsListActive, .elonatechsoftwareSolutionsListActive{
-  list-style: none;
-  padding: 0;
-  margin: auto;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3rem;
-  position: relative;
-  left: -2%;
-  top: 20%;
-  margin: 2rem 0;
-  font-size: 9px;
-  text-align: center;
-
-
-
-}
-
-
-.elonatechnetworkAdministrationListActive{
-
-  list-style: none;
-  padding: 0;
-  margin: auto;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-  position: relative;
-  left: -10%;
-  top: 20%;
-  margin: 2rem 0;
-  font-size: 9px;
-  text-align: center;
-
-
-}
-
-.elonatechwebSolutionsListActive, .elonatechdigitalMarketingListActive, .elonatechgraphicsListActive, .elonatechvideoAnimationsListActive, .elonatechteleconferencingListActive{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4rem;
-  position: relative;
-  left: -7%;
-  top: 20%;
-  margin: 2rem 0;
-  font-size: 9px;
-  text-align: center;
-}
-
-
-
-.elonatechinnerListItemContentRightSalesListActive{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4rem;
-  position: relative;
-  left: -10%;
-  /* margin-top: 3rem; */
-  font-size: 9px;
-  text-align: center;
-}
-
-
-
-
- .elonatechlistItem:hover .elonatechmainDropdown{
-  background: #fff;
-  position: relative;
-  display: flex;
-  width: auto;
-
-} 
-
-} 
-
-
-
-#elonatech-logo-home{
+#elonatech-logo-home {
   height: 4rem;
   width: 10rem;
   border: 0;
@@ -940,16 +1007,16 @@ display: none;
 
 
 @media only screen and (max-width: 500px) {
-#elonatech-logo-home{
-  height: 2.5rem;
-  width: 6rem ;
-  border: 0;
+  #elonatech-logo-home {
+    height: 2.5rem;
+    width: 6rem;
+    border: 0;
+  }
+
 }
 
-}  
-
 @media only screen and (max-width: 1573px) {
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -963,9 +1030,10 @@ display: none;
     width: 1100px;
   }
 
-} 
+}
+
 @media only screen and (max-width: 1538px) {
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -979,12 +1047,12 @@ display: none;
     width: 1100px;
   }
 
-} 
+}
 
 
 
 @media only screen and (max-width: 1428px) {
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -998,9 +1066,10 @@ display: none;
     width: 1100px;
   }
 
-}  
+}
+
 @media only screen and (max-width: 1399px) {
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -1014,9 +1083,10 @@ display: none;
     width: 1100px;
   }
 
-}  
+}
+
 @media only screen and (max-width: 1368px) {
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -1030,11 +1100,11 @@ display: none;
     width: 1100px;
   }
 
-}  
+}
 
 
 @media only screen and (max-width: 1290px) {
-  .elonatechlistItem:hover .elonatechinnerListContainer{
+  .elonatechlistItem:hover .elonatechinnerListContainer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -1055,12 +1125,13 @@ display: none;
 
 @media only screen and (max-width: 500px) {
 
-  .navbar-bg-change{
-  background: #11253df7;
- 
-  
+  .navbar-bg-change {
+    background: #11253df7;
+
+
   }
-  .dropdown-item{
+
+  .dropdown-item {
     width: 10rem;
     text-align: center;
     position: relative;
@@ -1071,38 +1142,46 @@ display: none;
 
 }
 
-.salesSupply{
+.salesSupply {
   display: none;
+}
+
+
+@media (max-width: 1236px) {
+  #offcanvasNavbar2 {
+    background: #11253df7;
+    width: 350px; height: 608px;
+  }
 }
 
 
 
 @media only screen and (max-width: 993px) {
-  
-  .navbar-bg-change{
+
+  .navbar-bg-change {
     background: #11253df7;
-    
+
   }
 
-  .salesSupply{
+  .salesSupply {
     display: block;
   }
 
-  .saleSupplyAnd{
+  .saleSupplyAnd {
     display: none;
   }
 
 
-.techCenter{
-  text-align: center;
-}
+  .techCenter {
+    text-align: center;
+  }
 
 }
 
 /*=============================================== carousel ================================ */
 
-.carousel-navbar-item{
-display: none;
+.carousel-navbar-item {
+  display: none;
 }
 
 .carousel-navbar-item-show {
