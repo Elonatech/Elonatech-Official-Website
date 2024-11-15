@@ -87,22 +87,13 @@ navigate('/blog')
 return (
   <>
     {/* header */}
-    <div
-      class="container-fluid bg-dark py-5 "
-      style={{
-        height: "500px",
-        backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg)`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover"
-      }}
-    >
-      <div class="py-5 mt-5 ">
-        <h2 class=" mt-5 text-white text-center">Blog Details</h2>
-        <h5 class=" mt-4 text-white text-center"></h5>
-        <p class="lead text-white text-center"></p>
+    <div class='container-fluid bg-dark py-5 blog-detail-heaad'>
+        <div class='py-5 mt-5 yyyy'>
+          <h2 class='text-white text-center blogHead'>Blog Details</h2>
+          <h5 class=' mt-4 text-white text-center'></h5>
+          <p class='lead text-white text-center'></p>
+        </div>
       </div>
-    </div>
 
     <div className="container mb-5">
       <ol class="breadcrumb mt-5 ms-4">

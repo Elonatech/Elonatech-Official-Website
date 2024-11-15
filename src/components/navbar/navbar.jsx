@@ -557,7 +557,6 @@ return (
                   onMouseEnter={handleProductHover}
                 >
                   <a
-                    href=""
                     onClick={handleProductClick}
                     style={{ fontWeight: "bold" }}
                     className="nav-link e-fonte text-white dropdown-toggle"
