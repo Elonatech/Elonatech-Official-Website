@@ -130,7 +130,7 @@ const BlogDetails = () => {
           </li>
         </ol>
         <div className='row mt-3'>
-          <div className='col-lg-9 col-md-7 leftt' ref={leftColumnRef}>
+          <div className='col-lg-9 col-md-7 leftt'>
             <div className='container'>
               <div className='row'>
                 <div className='col-md-12 mt-4'>
