@@ -57,7 +57,7 @@ const BlogRelated = () => {
       }
     }
     fetchBlog()
-  }, [])
+  }, [id])
 
   useEffect(() => {
     const fetchData = async () => {
