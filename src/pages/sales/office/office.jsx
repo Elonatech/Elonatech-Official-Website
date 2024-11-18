@@ -299,7 +299,7 @@ const Office = () => {
                         <div className='mx-1 shadow-lg p-3 bg-body rounded showbutton'>
                           <Link
                             className='text-decoration-none text-dark'
-                            to={`/product/${product._id}?fromPage=${currentPage}`}
+                            to={`/product/${product.slug}?fromPage=${currentPage}`}
                           >
                             <div className='text-center take'>
                               <LazyLoadImage

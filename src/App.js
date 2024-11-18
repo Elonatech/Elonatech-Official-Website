@@ -402,7 +402,7 @@ const router = createBrowserRouter([
  
       //===================================== single product
       {
-        path:"/product/:id",
+        path:"/product/:slug",
         element:<SingleProduct/> 
       },
       {

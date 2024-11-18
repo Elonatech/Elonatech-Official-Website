@@ -121,6 +121,7 @@ const SingleProduct = () => {
   const [image, setImage] = useState([])
   const [recentlyViewed, setRecentlyViewed] = useState([])
   const { id } = useParams()
+  const { slug } = useParams()
   const [relatedProducts, setRelatedProducts] = useState([])
   const [nextProductId, setNextProductId] = useState(null)
   const [product, setProduct] = useState(null)
@@ -134,6 +135,7 @@ const SingleProduct = () => {
 
 
   let currentProductCat;
+  let productId;
 
   switch (category) {
     case 'Computer':
@@ -165,7 +167,7 @@ const SingleProduct = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/product/${id}`)
+        const res = await axios.get(`${BASEURL}/api/v1/product/${slug}`)
         setData(res.data.product)
         setImage(res.data.product.images)
         setCategory(res.data.product.category)
@@ -173,14 +175,16 @@ const SingleProduct = () => {
         setProduct(res.data.product)
         setIsLoading(true)
 
+        productId = res.data.product._id
+
         // Fetch next product
-        const nextRes = await axios.get(`${BASEURL}/api/v1/product/${id}/next`)
-        setNextProductId(nextRes.data.nextProduct._id)
+        const nextRes = await axios.get(`${BASEURL}/api/v1/product/${res.data.product._id}/next`)
+        setNextProductId(nextRes.data.nextProduct.slug)
 
         await fetchAllProductsInCategory()
         console.log('allProductsInCategory:', allProductsInCategory);
         // Fetch related products
-        await fetchRelatedProducts()
+        await fetchRelatedProducts(res.data.product._id)
 
         await fetchRecentlyViewedProducts()
 
@@ -190,7 +194,7 @@ const SingleProduct = () => {
       }
     }
     fetchData()
-  }, [id])
+  }, [slug])
 
   const fetchAllProductsInCategory = () => {
     fetch(`${BASEURL}/api/v1/product/filter?category=${category}`)
@@ -222,8 +226,8 @@ const SingleProduct = () => {
       localStorage.getItem('recentlyViewed') || '[]'
     )
 
-    if (!storedRecentlyViewed.includes(id)) {
-      const updatedRecentlyViewed = [id, ...storedRecentlyViewed.slice(0, 4)]
+    if (!storedRecentlyViewed.includes(productId)) {
+      const updatedRecentlyViewed = [productId, ...storedRecentlyViewed.slice(0, 4)]
       localStorage.setItem(
         'recentlyViewed',
         JSON.stringify(updatedRecentlyViewed)
@@ -249,9 +253,18 @@ const SingleProduct = () => {
     }
   }
 
-  const fetchRelatedProducts = async () => {
+  // const fetchRelatedProducts = async () => {
+  //   try {
+  //     const res = await axios.get(`${BASEURL}/api/v1/product/${id}/related`)
+  //     setRelatedProducts(res.data.relatedProducts)
+  //   } catch (error) {
+  //     console.error('Error fetching related products:', error)
+  //   }
+  // }
+
+  const fetchRelatedProducts = async (ids) => {
     try {
-      const res = await axios.get(`${BASEURL}/api/v1/product/${id}/related`)
+      const res = await axios.get(`${BASEURL}/api/v1/product/${ids}/related`)
       setRelatedProducts(res.data.relatedProducts)
     } catch (error) {
       console.error('Error fetching related products:', error)
@@ -280,7 +293,7 @@ const SingleProduct = () => {
           </p>
           <div className='mt-auto'>
             <Link
-              to={`/product/${product._id}`}
+              to={`/product/${product.slug}`}
               className='btn btn-dark btn-sm w-100'
               style={{ backgroundColor: 'black', borderColor: 'black' }}
             >
@@ -297,14 +310,14 @@ const SingleProduct = () => {
       <h2 className='mb-4'>{title}</h2>
       <div className='row product-grid'>
         {products.slice(0, 5).map((product, index) => (
-          <ProductCard key={product._id} product={product} index={index} />
+          <ProductCard key={productId} product={product} index={index} />
         ))}
       </div>
     </div>
   )
 
   const handleDelete = async () => {
-    const res = await axios.delete(`${BASEURL}/api/v1/product/${id}`)
+    const res = await axios.delete(`${BASEURL}/api/v1/product/${productId}`)
     navigate('/shop')
   }
 
@@ -545,7 +558,7 @@ const SingleProduct = () => {
                         {currentAdmin ? (
                           <div className='text-end'>
                             <div className='d-flex justify-content-md-end mt-3 '>
-                              <Link to={`/product/${id}/update`}>
+                              <Link to={`/product/${productId}/update`}>
                                 <i
                                   class='bi bi-pencil-square text-warning fs-3 me-4'
                                   style={{ cursor: 'pointer' }}
@@ -772,14 +785,14 @@ const SingleProduct = () => {
             products={relatedProducts}
           />
         )}
-        {recentlyViewed.length > 0 && (
+        {/* {recentlyViewed.length > 0 && (
           <ProductSection
             title={
               <h4 className='fw-bold mb-3 mt-3'>Recently Viewed Products</h4>
             }
             products={recentlyViewed}
           />
-        )}
+        )} */}
       </section>
     </>
   )

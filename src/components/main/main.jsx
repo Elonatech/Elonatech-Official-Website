@@ -45,38 +45,42 @@ const Main = () => {
 
   useEffect(() => {
     const fetchLatestProducts = async () => {
-      setLoadingLatest(true)
+      setLoadingLatest(true);
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`)
+        const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`);
         if (response.data.success) {
-          const allProducts = response.data.data
-
+          const allProducts = response.data.data;
+          console.log('All products:', allProducts);
+  
           const productsByCategory = allProducts.reduce((acc, product) => {
-            acc[product.category] = acc[product.category] || []
-            acc[product.category].push(product)
-            return acc
-          }, {})
-
-          const latest = Object.values(productsByCategory).map(products => {
+            acc[product.category] = acc[product.category] || [];
+            acc[product.category].push(product);
+            return acc;
+          }, {});
+  
+          const latest = Object.values(productsByCategory).map((products) => {
             return products.sort(
               (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-            )[0]
-          })
-
-          setLatestProducts(latest)
-          if (allProducts.length >= 2) {
-            setFeaturedProduct(allProducts[1])
+            )[0];
+          });
+  
+          setLatestProducts(latest);
+  
+          const computerProducts = productsByCategory["Computer"];
+          if (computerProducts && computerProducts.length >= 2) {
+            setFeaturedProduct(computerProducts[1]);
           }
         }
       } catch (error) {
-        console.error('Error fetching latest products:', error)
+        console.error('Error fetching latest products:', error);
       } finally {
-        setLoadingLatest(false)
+        setLoadingLatest(false);
       }
-    }
-
-    fetchLatestProducts()
-  }, [])
+    };
+  
+    fetchLatestProducts();
+  }, []);
+  
 
   const handleChangeCost = e => {
     const value = e.target.value.replace(/\D/g, '')
@@ -1048,7 +1052,7 @@ const Main = () => {
                 }}
               >
                 <Link
-                  to={`/product/${featuredProduct._id}`}
+                  to={`/product/${featuredProduct.slug}`}
                   className='text-decoration-none text-dark d-flex flex-column h-100'
                 >
                   <div
@@ -1108,7 +1112,7 @@ const Main = () => {
                   }}
                 >
                   <Link
-                    to={`/product/${product._id}`}
+                    to={`/product/${product.slug}`}
                     className='text-decoration-none text-dark d-flex flex-column h-100'
                   >
                     <div
