@@ -1,12 +1,19 @@
 import './software.css'
 import Getintouch2 from '../../../components/GetInTouch/getintouch2'
 import { Helmet } from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 
 const SystemSoftware = () => {
   return (
     <>
       <Helmet>
+  return (
+    <>
+      <Helmet>
         <title>System Software - Tech Solution, Digital Solution</title>
+        <meta
+          name='description'
+          content='How System Software works?
         <meta
           name='description'
           content='How System Software works?
@@ -18,7 +25,23 @@ System software is the most important software in a computer, it enables other s
         />
         <link rel='canonical' href='https://elonatech.com.ng/system-software' />
       </Helmet>
+System software is the most important software in a computer, it enables other software to run properly, by interfacing with hardware and software; and drivers which is responsible for every part of a computer to work and function properly. '
+        />
+        <link rel='canonical' href='https://elonatech.com.ng/system-software' />
+      </Helmet>
 
+      {/*==================================================================== header =================================================*/}
+      <div class='container-fluid system-software-section'>
+        <div class='text-content'>
+          <h2>System Software</h2>
+          <h5>
+            Computer program designed to run a computer’s hardware and
+            application programs
+          </h5>
+          <p class='lead'>
+            Minimizing downtimes while maximizing reliability in order to meet
+            the needs of organizations over time.
+          </p>
       {/*==================================================================== header =================================================*/}
       <div class='container-fluid system-software-section'>
         <div class='text-content'>
@@ -38,7 +61,31 @@ System software is the most important software in a computer, it enables other s
       <div className='container  mb-5'>
         <div class='row justify-content-center align-items-center  g-4'>
           <div class='col-lg-6 col-sm-12 mt-5'>
+      </div>
+
+      {/*=============================================================== body ==========================================================*/}
+      <div className='container  mb-5'>
+        <div class='row justify-content-center align-items-center  g-4'>
+          <div class='col-lg-6 col-sm-12 mt-5'>
             <h2 className='mb-4 mt-4 fw-bold'>How System Software works?</h2>
+            <p className='fs-6 ' style={{ textAlign: 'justify' }}>
+              Software engineering is one of the most important aspects of
+              computer engineering, and Elonatech understands its unique
+              importance since no computer system can function properly without
+              a software.
+              <br />
+              <br />
+              Computer software has to be “loaded” into the computer’s storage
+              (such as a hard drive, memory, or ROM). Once the software is
+              loaded, the computer is able to execute the software. The process
+              of loading the software into the computer, and executing the
+              appropriate functions is another unique aspect Elonatech handles.
+              <br />
+              <br />
+              System software is the most important software in a computer, it
+              enables other software to run properly, by interfacing with
+              hardware and software; and drivers which is responsible for every
+              part of a computer to work and function properly.
             <p className='fs-6 ' style={{ textAlign: 'justify' }}>
               Software engineering is one of the most important aspects of
               computer engineering, and Elonatech understands its unique
@@ -126,7 +173,7 @@ System software is the most important software in a computer, it enables other s
                   data-aos-delay='100'
                 >
                   <h4>Programming Language Translator</h4>
-                  <p class='fst-italic'  style={{textAlign: 'justify'}}>
+                  <p class='fst-italic'>
                     These are the intermediate system software through which
                     programmers convert the high-level language programming code
                     to machine-level language code. Assembler, Interpreter, and
@@ -376,4 +423,5 @@ System software is the most important software in a computer, it enables other s
   )
 }
 
+export default SystemSoftware
 export default SystemSoftware
