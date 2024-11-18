@@ -34,6 +34,30 @@ const Footer = () => {
     }
   }
 
+  useEffect(() => {
+    // Load the Facebook SDK
+    const loadFacebookSDK = () => {
+      if (!window.FB) {
+        const script = document.createElement('script')
+        script.id = 'facebook-jssdk'
+        script.src = 'https://connect.facebook.net/en_US/sdk.js'
+        script.async = true
+        script.defer = true
+        script.onload = () => {
+          window.FB.init({
+            xfbml: true,
+            version: 'v15.0'
+          })
+        }
+        document.body.appendChild(script)
+      } else {
+        window.FB.XFBML.parse() // Reinitialize SDK if it's already loaded
+      }
+    }
+
+    loadFacebookSDK()
+  }, [])
+
   return (
     <>
       <footer id='footer' class='footer' style={{ backgroundColor: '#11253D' }}>
@@ -41,14 +65,12 @@ const Footer = () => {
           <div class='row gy-4 '>
             <div class='col-lg-3 col-md-5 col-6 footer-info'>
               <div className=''>
-              <img
-                data-src={eloa2}
-                className="lazyload mx-4"
-                style={{ height: '5rem', width: '5rem' }}
-                alt="Description of the image content" 
-              />
-
-
+                <img
+                  data-src={eloa2}
+                  className='lazyload mx-4'
+                  style={{ height: '5rem', width: '5rem' }}
+                  alt='Description of the image content'
+                />
               </div>
               <div className=''>
                 <span>
@@ -233,18 +255,19 @@ const Footer = () => {
               minnn
             >
               <div className='center-uip'>
-                <iframe
-                  name='f143a283b9937e8'
-                  class='embed-responsive-item'
-                  data-testid='fb:page Facebook Social Plugin'
-                  title='fb:page Facebook Social Plugin'
-                  frameborder='0'
-                  allowtransparency='true'
-                  allowfullscreen='true'
-                  scrolling='no'
-                  allow='encrypted-media'
-                  src='https://www.facebook.com/v3.2/plugins/page.php?app_id=&container_width=286&hide_cover=true&href=https%3A%2F%2Fwww.facebook.com%2Felonatech&locale=en_US&sdk=joey&show_facepile=true&small_header=false&tabs='
-                ></iframe>
+                <div id='fb-root'></div>
+                <div
+                  className='fb-page'
+                  data-href='https://www.facebook.com/elonatech'
+                  data-tabs=''
+                  data-width=''
+                  data-height=''
+                  data-small-header='false'
+                  data-adapt-container-width='true'
+                  data-hide-cover='true'
+                  data-show-facepile='true'
+                ></div>
+                {/* </div> */}
               </div>
               {mailchimp === 'visible' ? (
                 <div>
