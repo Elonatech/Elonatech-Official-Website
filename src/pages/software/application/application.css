@@ -1,7 +1,7 @@
 
 
   .services .service-item {
-    padding: 40px;
+    /* padding: 40px; */
     /* background: #fff; */
     height: 100%;
     border-radius: 10px;
@@ -86,7 +86,7 @@
     text-align: center;
     color: white;
     padding: 20px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
   
   /* Text styling for desktop */
