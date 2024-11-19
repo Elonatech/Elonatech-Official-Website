@@ -1,8 +1,38 @@
 import './domain.css'
 import Getintouch from '../../../components/GetInTouch/getintouch'
 import { Helmet } from 'react-helmet-async'
+import './domain.css'
+import Getintouch from '../../../components/GetInTouch/getintouch'
+import { Helmet } from 'react-helmet-async'
 
 const Domain = () => {
+  const domainFeatures = [
+    {
+      icon: 'bi bi-file-earmark-pdf-fill',
+      title: 'Content Management',
+      description:
+        'Manage domain registrant, admin, and technical contacts. Change them, execute trade or transfers, and update contact details in bulk.'
+    },
+    {
+      icon: 'bi bi-clipboard-check-fill',
+      title: 'Always in Your Name',
+      description:
+        'Your domain will always be registered under your own name. No compromises or losing it in the future.'
+    },
+    {
+      icon: 'bi bi-shield-lock-fill',
+      title: 'Free Privacy Protection',
+      description:
+        'Privacy is paramount to us, so full WHOIS privacy protection is included and enabled as a standard at no extra cost.'
+    },
+    {
+      icon: 'bi bi-usb-mini-fill',
+      title: 'Transfer Free Of Charges',
+      description:
+        'No stealth fees for transferring out. Generate your authorization codes and lock your domain via our control panel.'
+    }
+  ]
+  return (
   const domainFeatures = [
     {
       icon: 'bi bi-file-earmark-pdf-fill',
@@ -36,7 +66,16 @@ const Domain = () => {
         <meta
           name='description'
           content='At Elonatech we take pride in providing secure, reliable & affordable Domain Registration to all our clients. That is why we offer the best industry prices not only for new domains registered with us but also for Domain Renewals & hassle free Domain Transfers to us.
+      <Helmet>
+        <title>Domain Registration - Tech Solution, Digital Solution</title>
+        <meta
+          name='description'
+          content='At Elonatech we take pride in providing secure, reliable & affordable Domain Registration to all our clients. That is why we offer the best industry prices not only for new domains registered with us but also for Domain Renewals & hassle free Domain Transfers to us.
 
+You can easily register any domain name of your choice with us. We offer several global domain extensions including major TLDs like .com, .net, .biz, .org & also popular ccTLDs including .ng (NIRA), .com.ng, .in, .co.in, .co, .co.uk, .pw and many other popular domain extensions. Our domain registration prices start from as low as $9. '
+        />
+        <link rel='canonical' href='https://elonatech.com.ng/domain' />
+      </Helmet>
 You can easily register any domain name of your choice with us. We offer several global domain extensions including major TLDs like .com, .net, .biz, .org & also popular ccTLDs including .ng (NIRA), .com.ng, .in, .co.in, .co, .co.uk, .pw and many other popular domain extensions. Our domain registration prices start from as low as $9. '
         />
         <link rel='canonical' href='https://elonatech.com.ng/domain' />
@@ -61,7 +100,7 @@ You can easily register any domain name of your choice with us. We offer several
       <section class='register-domain spad'>
         <div class='container'>
           <div class='row d-flex justify-content-center'>
-            <div class=''>
+            <div class='col-lg-8'>
               <div class='register__text'>
                 <div class='section-title'>
                   <h3 className='text-center mb-4 fw-bold'>
@@ -110,7 +149,27 @@ You can easily register any domain name of your choice with us. We offer several
                               .dev <span>$21.99</span>
                             </li>
                           </ul>
+                      </div>
+                    </div>
+                    <div class='col-6 col-md-3'>
+                      <div className='text-center'>
+                        <div class='register__result'>
+                          <ul>
+                            <li>
+                              .dev <span>$21.99</span>
+                            </li>
+                          </ul>
                         </div>
+                      </div>
+                    </div>
+                    <div class='col-6 col-md-3'>
+                      <div className='text-center'>
+                        <div class='register__result'>
+                          <ul>
+                            <li>
+                              .org <span>$18.99</span>
+                            </li>
+                          </ul>
                       </div>
                     </div>
                     <div class='col-6 col-md-3'>
@@ -132,12 +191,22 @@ You can easily register any domain name of your choice with us. We offer several
                               .com.ng <span>$9.00</span>
                             </li>
                           </ul>
+                      </div>
+                    </div>
+                    <div class='col-6 col-md-3'>
+                      <div className='text-center'>
+                        <div class='register__result'>
+                          <ul>
+                            <li>
+                              .com.ng <span>$9.00</span>
+                            </li>
+                          </ul>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <p className='' style={{textAlign: 'justify'}}>
+                <p className=''>
                   The right domain name goes a long way. Expect greater traction
                   with your target audience, a unique online presence and your
                   own identity in an ever-growing market. Find your perfect
@@ -147,6 +216,7 @@ You can easily register any domain name of your choice with us. We offer several
             </div>
           </div>
         </div>
+      </section>
       </section>
 
       {/*==============================================      ============================================*/}
@@ -165,7 +235,7 @@ You can easily register any domain name of your choice with us. We offer several
 
           <div className='col-lg-6 order-lg-1 order-md-2 order-sm-2'>
             <div className='mt-4'>
-              <p className='' style={{textAlign: 'justify'}}>
+              <p className=''>
                 At Elonatech we take pride in providing secure, reliable &
                 affordable Domain Registration to all our clients. That is why
                 we offer the best industry prices not only for new domains
@@ -209,9 +279,12 @@ You can easily register any domain name of your choice with us. We offer several
                   <i className={`${feature.icon} fs-3 ms-2`}></i>
                   <h5 className='ms-3 mt-2'>{feature.title}</h5>
                 </div>
-                <p className='ms-5' style={{textAlign: 'justify'}}>{feature.description}</p>
+                <p className='ms-5'>{feature.description}</p>
               </div>
             </div>
+          ))}
+        </div>
+      </div>
           ))}
         </div>
       </div>
@@ -232,7 +305,7 @@ You can easily register any domain name of your choice with us. We offer several
             </div>
             <div class='col-lg-6 col-md-6'>
               <div class='plan__text'>
-                <h3 style={{textAlign: 'justify'}}>
+                <h3>
                   Every great website starts with a domain. Our domain name
                   registration includes!
                 </h3>
@@ -272,6 +345,13 @@ You can easily register any domain name of your choice with us. We offer several
       {/* ============================================================================= */}
     </>
   )
+      </section>
+      {/* ============================================================================= */}
+      <Getintouch />
+      {/* ============================================================================= */}
+    </>
+  )
 }
 
+export default Domain
 export default Domain
