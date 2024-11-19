@@ -286,23 +286,23 @@ const router = createBrowserRouter([
       element: <Blog />
     },
     {
-      path:'/blog/:id',
+      path:'/blog/:slug',
       element:<BlogDetails/>
     },
     {
-      path:'/blog/related/:id',
+      path:'/blog/related/:slug',
       element:< BlogRelated/>
     },
     { path: '/news', element: <News /> },
     { path: '/news/page/:pagenumber', element: <News /> },
-    { path: '/news/:id', element: <NewsDetails /> },
-    { path: '/news/page/:pagenumber/:id', element: <NewsDetails /> },
-    { path: '/news/related/:id', element: <NewsRelated /> },
+    { path: '/news/:slug', element: <NewsDetails /> },
+    { path: '/news/page/:pagenumber/:slug', element: <NewsDetails /> },
+    { path: '/news/related/:slug', element: <NewsRelated /> },
     { path: '/trends', element: <Trends /> },
     { path: '/trends/page/:pagenumber', element: <Trends /> },
-    { path: '/trends/:id', element: <TrendDetails /> },
-    { path: '/trends/page/:pagenumber/:id', element: <TrendDetails /> },
-    { path: '/trends/related/:id', element: <TrendRelated /> },
+    { path: '/trends/:slug', element: <TrendDetails /> },
+    { path: '/trends/page/:pagenumber/:slug', element: <TrendDetails /> },
+    { path: '/trends/related/:slug', element: <TrendRelated /> },
     {
       path:'/surveillance',
       element:<Suvalliance/>

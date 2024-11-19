@@ -176,6 +176,7 @@ const SingleProduct = () => {
         setIsLoading(true)
 
         productId = res.data.product._id
+        updateRecentlyViewedInLocalStorage(res.data.product._id);
 
         // Fetch next product
         const nextRes = await axios.get(`${BASEURL}/api/v1/product/${res.data.product._id}/next`)
@@ -221,23 +222,23 @@ const SingleProduct = () => {
     navigate(`/${currentProductCat}?page=${pageNumber}`)
   }
 
-  useEffect(() => {
-    const storedRecentlyViewed = JSON.parse(
-      localStorage.getItem('recentlyViewed') || '[]'
-    )
-
-    if (!storedRecentlyViewed.includes(productId)) {
-      const updatedRecentlyViewed = [productId, ...storedRecentlyViewed.slice(0, 4)]
-      localStorage.setItem(
-        'recentlyViewed',
-        JSON.stringify(updatedRecentlyViewed)
-      )
-      setRecentlyViewed(updatedRecentlyViewed)
-    } else {
-      setRecentlyViewed(storedRecentlyViewed)
+  const updateRecentlyViewedInLocalStorage = (product_Id) => {
+    if (!product_Id) {
+      console.warn("Invalid product ID, cannot update recently viewed.");
+      return;
     }
-  }, [id])
-
+  
+    const storedRecentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+  
+    if (!storedRecentlyViewed.includes(product_Id)) {
+      const updatedRecentlyViewed = [product_Id, ...storedRecentlyViewed.slice(0, 4)];
+      localStorage.setItem('recentlyViewed', JSON.stringify(updatedRecentlyViewed));
+      setRecentlyViewed(updatedRecentlyViewed);
+    } else {
+      setRecentlyViewed(storedRecentlyViewed);
+    }
+  };
+  
 
   const fetchRecentlyViewedProducts = async () => {
     try {
@@ -271,50 +272,123 @@ const SingleProduct = () => {
     }
   }
 
-  const ProductCard = ({ product }) => (
-    <div className='col-custom-5 mb-4'>
-      <div className='card h-100 d-flex flex-column'>
-        <LazyLoadImage
-          alt={product.name}
-          src={
-            product.images && product.images.length > 0
-              ? product.images[0].url
-              : 'placeholder-image-url.jpg'
-          }
-          effect='blur'
-          className='card-img-top'
-          style={{ height: '160px', objectFit: 'cover' }}
-          placeholderSrc='https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif'
-        />
-        <div className='card-body d-flex flex-column'>
-          <h6 className='card-title'>{product.name}</h6>
-          <p className='card-text'>
-            ₦ {Number(product.price).toLocaleString()}.00
-          </p>
-          <div className='mt-auto'>
-            <Link
-              to={`/product/${product.slug}`}
-              className='btn btn-dark btn-sm w-100'
-              style={{ backgroundColor: 'black', borderColor: 'black' }}
-            >
-              View Product
-            </Link>
+  // const ProductCard = ({ product }) => (
+  //   <div className='col-custom-5 mb-4'>
+  //     <div className='card h-100 d-flex flex-column'>
+  //       <LazyLoadImage
+  //         alt={product.name}
+  //         src={
+  //           product.images && product.images.length > 0
+  //             ? product.images[0].url
+  //             : 'placeholder-image-url.jpg'
+  //         }
+  //         effect='blur'
+  //         className='card-img-top'
+  //         style={{ height: '160px', objectFit: 'cover' }}
+  //         placeholderSrc='https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif'
+  //       />
+  //       <div className='card-body d-flex flex-column'>
+  //         {/* <h6 className='card-title'>{product.name}</h6> */}
+  //         <p className='card-text'>
+  //           ₦ {Number(product.price).toLocaleString()}.00
+  //         </p>
+  //         <div className='mt-auto'>
+  //           <Link
+  //             to={`/product/${product.slug}`}
+  //             className='btn btn-dark btn-sm w-100'
+  //             style={{ backgroundColor: 'black', borderColor: 'black' }}
+  //           >
+  //             View Product
+  //           </Link>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // )
+
+
+  const ProductCard = ({ product }) => {
+    // Add null check for product
+    if (!product) {
+      return null; // Or return a placeholder/loading state
+    }
+  
+    // Destructure with default values to prevent null/undefined errors
+    const { 
+      name = '',
+      price = 0,
+      images = [],
+      slug = ''
+    } = product;
+  
+    return (
+      <div className='col-custom-5 mb-4'>
+        <div className='card h-100 d-flex flex-column'>
+          <LazyLoadImage
+            alt={name}
+            src={
+              images && images.length > 0
+                ? images[0].url
+                : 'placeholder-image-url.jpg'
+            }
+            effect='blur'
+            className='card-img-top'
+            style={{ height: '160px', objectFit: 'cover' }}
+            placeholderSrc='https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif'
+          />
+          <div className='card-body d-flex flex-column'>
+          <h6 className='card-title'>{name}</h6>
+            <p className='card-text'>
+              ₦ {Number(price).toLocaleString()}.00
+            </p>
+            <div className='mt-auto'>
+              <Link
+                to={`/product/${slug}`}
+                className='btn btn-dark btn-sm w-100'
+                style={{ backgroundColor: 'black', borderColor: 'black' }}
+              >
+                View Product
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    );
+  };
 
-  const ProductSection = ({ title, products }) => (
-    <div className='container mt-5'>
-      <h2 className='mb-4'>{title}</h2>
-      <div className='row product-grid'>
-        {products.slice(0, 5).map((product, index) => (
-          <ProductCard key={productId} product={product} index={index} />
-        ))}
+  // const ProductSection = ({ title, products }) => (
+  //   <div className='container mt-5'>
+  //     <h2 className='mb-4'>{title}</h2>
+  //     <div className='row product-grid'>
+  //       {products.slice(0, 5).map((product, index) => (
+  //         <ProductCard key={productId} product={product} index={index} />
+  //       ))}
+  //     </div>
+  //   </div>
+  // )
+
+
+  const ProductSection = ({ title, products }) => {
+    // Add null check for products array
+    if (!products || !Array.isArray(products)) {
+      return null; // Or return a placeholder/loading state
+    }
+  
+    return (
+      <div className='container mt-5'>
+        <h2 className='mb-4'>{title}</h2>
+        <div className='row product-grid'>
+          {products.slice(0, 5).map((product, index) => (
+            <ProductCard 
+              key={product?._id || index} 
+              product={product} 
+              index={index} 
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  )
+    );
+  };
 
   const handleDelete = async () => {
     const res = await axios.delete(`${BASEURL}/api/v1/product/${productId}`)
@@ -343,30 +417,32 @@ const SingleProduct = () => {
   return (
     <>
       <Helmet>
-        {/* Title Tag */}
-        <title>{`${data1.name} - Elonatech Nigeria`}</title>
+          {/* Title Tag */}
+          <title>{`${data1.name} - Elonatech Nigeria`}</title>
 
-        {/* Description Meta Tag */}
-        <meta name='description' content={sanitizedDescription} />
+          {/* Description Meta Tag */}
+          <meta name="description" content={sanitizedDescription} />
 
-        {/* Essential Open Graph Meta Tags */}
-        <meta property='og:title' content={data1.name} />
-        <meta property='og:description' content={sanitizedDescription} />
-        <meta property='og:image' content={productImage} />
-        <meta property='og:url' content={productUrl} />
-        <meta property='og:type' content='product' />
+          {/* Essential Open Graph Meta Tags */}
+          <meta property="og:title" content={data1.name} />
+          <meta property="og:description" content={sanitizedDescription} />
+          <meta property="og:image" content={productImage || fallbackImage} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:url" content={productUrl} />
+          <meta property="og:type" content="product" />
 
-        {/* Twitter Card Meta Tags */}
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content={data1.name} />
-        <meta name='twitter:description' content={sanitizedDescription} />
-        <meta name='twitter:image' content={productImage} />
+          {/* Twitter Card Meta Tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={data1.name} />
+          <meta name="twitter:description" content={sanitizedDescription} />
+          <meta name="twitter:image" content={productImage || fallbackImage} />
 
-        {/* Schema.org for Rich Snippets */}
-        <script type='application/ld+json'>
-          {JSON.stringify(structuredData)}
-        </script>
-      </Helmet>
+          {/* Schema.org for Rich Snippets */}
+          <script type="application/ld+json">
+            {JSON.stringify(structuredData)}
+          </script>
+        </Helmet>
 
       {/*================================================================ header ==============================================*/}
       <div class='container-fluid shop-section'>
@@ -785,14 +861,14 @@ const SingleProduct = () => {
             products={relatedProducts}
           />
         )}
-        {/* {recentlyViewed.length > 0 && (
+        {recentlyViewed.length > 0 && (
           <ProductSection
             title={
               <h4 className='fw-bold mb-3 mt-3'>Recently Viewed Products</h4>
             }
             products={recentlyViewed}
           />
-        )} */}
+        )}
       </section>
     </>
   )

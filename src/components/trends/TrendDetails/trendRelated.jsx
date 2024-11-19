@@ -12,9 +12,10 @@ const [data , setData] = useState({})
 const [relatedPosts, setRelatedPosts] = useState([]);
 const [currentAdmin, setCurrentAdmin] = useState('');
 const [isLoading, setIsLoading] = useState(false);
-const { id } = useParams()
+const { slug } = useParams()
 const navigate = useNavigate();
 const [activeItem, setActiveItem] = useState("Item 3");
+const [id, setId] = useState(null);
 
 const handleClick = (item) => {
   setActiveItem(item);
@@ -50,9 +51,10 @@ useEffect(() =>{
 useEffect(() =>{
 const fetchBlog = async ()=>{
     try {
-    const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`);
-    setData(res.data.getBlogById)  
+    const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`);
+    setData(res.data)  
     setIsLoading(true);
+    setId(res.data._id);
     } catch (error) {
     console.log(error);
     setIsLoading(true);
@@ -67,7 +69,12 @@ useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASEURL}/api/v1/blog/`);
-        setRelatedPosts(response.data.getAllBlogs.sort(() => Math.random() - Math.random()).slice(0, 4));
+        setRelatedPosts(
+          response.data.getAllBlogs
+            .filter(post => post.slug !== slug)
+            .sort(() => Math.random() - Math.random())
+            .slice(0, 4)
+        );
       } catch (error) {
         console.error('Error fetching data:', error);
       }
