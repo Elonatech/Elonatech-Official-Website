@@ -17,6 +17,12 @@
     padding: 20px;
     /* margin-bottom: 30px; */
   }
+
+  @media (max-width: 834px) {
+    .pyx {
+      order: -1;
+    }
+  }
   
   /* Text styling for desktop */
   .ip-telephony-section h2 {

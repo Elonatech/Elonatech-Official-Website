@@ -2,6 +2,9 @@
   Work Section
 -----------------------*/
 
+
+
+
 .work-section {
 	position: relative;
 	z-index: 9;
@@ -60,7 +63,7 @@
 
 
 
-.prim{
+.prim {
 	font-size: 16px;
 	color: #ffffff;
 	font-weight: 700;
@@ -70,12 +73,12 @@
 	background: #4c57d6;
 	border: none;
 	border-radius: 50px;
-  text-decoration: none;
+	text-decoration: none;
 }
 
-.prim:hover{
-  color: #ffffff;
-  text-decoration: none;
+.prim:hover {
+	color: #ffffff;
+	text-decoration: none;
 }
 
 
@@ -161,6 +164,14 @@
 	border: 1px solid #e1e1e1;
 	text-align: center;
 }
+
+@media (max-width: 768px) {
+	.hosting__feature__table table {
+		overflow-x: auto;
+	}
+}
+
+
 
 .hosting__feature__table table thead {
 	border-bottom: 1px solid #e1e1e1;
@@ -268,13 +279,12 @@
 
 
 .website-hosting-section {
-	min-height: 500px; /* Fixed height for desktop */
-	background-image: linear-gradient(
-		0deg,
-		rgba(0, 0, 0, 0.5),
-		rgba(0, 0, 0, 0.5)
-	  ),
-	  url('https://res.cloudinary.com/elonatech/image/upload/v1709818006/hostingPage/web_hosting_qjzs89.jpg');
+	min-height: 500px;
+	/* Fixed height for desktop */
+	background-image: linear-gradient(0deg,
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.5)),
+		url('https://res.cloudinary.com/elonatech/image/upload/v1709818006/hostingPage/web_hosting_qjzs89.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -285,75 +295,71 @@
 	color: white;
 	padding: 20px;
 	/* margin-bottom: 100px; */
-  }
-  
-  /* Text styling for desktop */
-  .website-hosting-section h2 {
+}
+
+/* Text styling for desktop */
+.website-hosting-section h2 {
 	font-size: 2rem;
 	line-height: 1.2;
 	margin-bottom: 10px;
-  }
-  
-  .website-hosting-section h5 {
+}
+
+.website-hosting-section h5 {
 	font-size: 1.3rem;
 	line-height: 1.2;
 	margin-bottom: 8px;
-  }
-  
-  .website-hosting-section p {
+}
+
+.website-hosting-section p {
 	font-size: 1.1rem;
 	line-height: 1.2;
 	margin-bottom: 5px;
-  }
-  
-  /* Mobile view */
-  @media (max-width: 576px) {
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
 	.website-hosting-section {
-	  min-height: 200px;
-	  background-image: linear-gradient(
-		  0deg,
-		  rgba(0, 0, 0, 0.5),
-		  rgba(0, 0, 0, 0.5)
-		),
-		url('https://res.cloudinary.com/elonatech/image/upload/v1729523989/WEB_HOSTINH_MOBILE_hlaq1v.jpg'); 
-	  background-size: cover;
-	  flex-direction: column;
-	  align-items: center;
-	  padding-top: 50px;
+		min-height: 200px;
+		background-image: linear-gradient(0deg,
+				rgba(0, 0, 0, 0.5),
+				rgba(0, 0, 0, 0.5)),
+			url('https://res.cloudinary.com/elonatech/image/upload/v1729523989/WEB_HOSTINH_MOBILE_hlaq1v.jpg');
+		background-size: cover;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 50px;
 	}
-  
+
 	.website-hosting-section h2 {
-	  font-size: 1.5rem;
-	  margin-bottom: 5px;
-	  line-height: 1.1;
+		font-size: 1.5rem;
+		margin-bottom: 5px;
+		line-height: 1.1;
 	}
-  
+
 	.website-hosting-section h5 {
-	  font-size: 1rem;
-	  margin-bottom: 3px;
-	  line-height: 1.1;
-	  font-weight: 200;
-	  /* display: none; */
+		font-size: 1rem;
+		margin-bottom: 3px;
+		line-height: 1.1;
+		font-weight: 200;
+		/* display: none; */
 	}
-  
+
 	.website-hosting-section p {
-	  font-size: 0.9rem;
-	  line-height: 1.1;
-	  margin-bottom: 0;
-	  display: none;
+		font-size: 0.9rem;
+		line-height: 1.1;
+		margin-bottom: 0;
+		display: none;
 	}
-  
+
 	.website-hosting-section h2,
 	.website-hosting-section h5,
 	.website-hosting-section p {
-	  margin: 0;
-	  padding: 0;
+		margin: 0;
+		padding: 0;
 	}
-  }
-  
+}
+
 .spad {
 	margin-top: -50px;
 	z-index: -1;
 }
-
-
