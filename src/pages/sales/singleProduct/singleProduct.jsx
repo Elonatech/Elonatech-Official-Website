@@ -397,18 +397,19 @@ const SingleProduct = () => {
 
   const { addItem } = useCart()
 
-  const data1 = {
-    name: product.name,
-    description: product.description,
-  };
+  // const data1 = {
+  //   name: product.name,
+  //   description: product.description,
+  // };
+  const fallbackImage = "https://res.cloudinary.com/elonatech/image/upload/v1729523978/product_computer_qq8vkk.jpg";
   
-  const sanitizedDescription = data.description || "Default description for testing purposes.";
-  const productImage = "https://example.com/default-image.jpg";
-  const productUrl = "https://elonatech.com.ng/product/${slug}";
+  const sanitizedDescription = product.description || "product description";
+  const productImage = product.images[0].url;
+  const productUrl = `https://elonatech.com.ng/product/${slug}`;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": data1.name,
+    "name": product.name,
     "description": sanitizedDescription,
     "image": productImage,
     "url": productUrl,
@@ -424,17 +425,17 @@ const SingleProduct = () => {
           <meta name="description" content={sanitizedDescription} />
 
           {/* Essential Open Graph Meta Tags */}
-          <meta property="og:title" content={data1.name} />
-          <meta property="og:description" content={sanitizedDescription} />
-          <meta property="og:image" content={productImage || fallbackImage} />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
+          <meta property="og:title" content={product.name} />
+          <meta property="og:description" content={product.description} />
+          <meta property="og:image" content={product.images[0].url || fallbackImage} />
+          <meta property="og:image:width" content="600" />
+          <meta property="og:image:height" content="600" />
           <meta property="og:url" content={productUrl} />
           <meta property="og:type" content="product" />
 
           {/* Twitter Card Meta Tags */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={data1.name} />
+          <meta name="twitter:title" content={product.name} />
           <meta name="twitter:description" content={sanitizedDescription} />
           <meta name="twitter:image" content={productImage || fallbackImage} />
 
