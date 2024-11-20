@@ -46,13 +46,24 @@ const Main = () => {
   useEffect(() => {
     const fetchLatestProducts = async () => {
       setLoadingLatest(true)
+      setLoadingLatest(true)
       try {
+        const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`)
         const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`)
         if (response.data.success) {
           const allProducts = response.data.data
           console.log('All products:', allProducts)
 
+          const allProducts = response.data.data
+          console.log('All products:', allProducts)
+
           const productsByCategory = allProducts.reduce((acc, product) => {
+            acc[product.category] = acc[product.category] || []
+            acc[product.category].push(product)
+            return acc
+          }, {})
+
+          const latest = Object.values(productsByCategory).map(products => {
             acc[product.category] = acc[product.category] || []
             acc[product.category].push(product)
             return acc
@@ -67,15 +78,28 @@ const Main = () => {
           setLatestProducts(latest)
 
           const computerProducts = productsByCategory['Computer']
+            )[0]
+          })
+
+          setLatestProducts(latest)
+
+          const computerProducts = productsByCategory['Computer']
           if (computerProducts && computerProducts.length >= 2) {
+            setFeaturedProduct(computerProducts[1])
             setFeaturedProduct(computerProducts[1])
           }
         }
       } catch (error) {
         console.error('Error fetching latest products:', error)
+        console.error('Error fetching latest products:', error)
       } finally {
         setLoadingLatest(false)
+        setLoadingLatest(false)
       }
+    }
+
+    fetchLatestProducts()
+  }, [])
     }
 
     fetchLatestProducts()
@@ -730,15 +754,17 @@ const Main = () => {
       {/*=============================================================  Three cards ================================================================ */}
       <div className='text-center mb-5'>
         <div className='container'>
-          <div className='row mt-5 row-sm-gutter'>
+          <div className='row mt-5'>
             <div className='col-md-4'>
               <div
+                class='rounded bg-lazy h-100'
                 class='rounded bg-lazy h-100'
                 style={{
                   backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1707488914/homePage/main/User_experience_t6dbvw.png)`
                 }}
               >
                 <div class='text-center'>
+                  <p class='p-5 text-white'>
                   <p class='p-5 text-white'>
                     We offer bespoke user experience, web design, app design and
                     software development services.
@@ -749,11 +775,13 @@ const Main = () => {
             <div className='col-md-4'>
               <div
                 class='rounded bg-lazy h-100'
+                class='rounded bg-lazy h-100'
                 style={{
                   backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1707488913/homePage/main/Solution_client_expectation_doxygk.png)`
                 }}
               >
                 <div class='text-center'>
+                  <p class='p-5 text-white'>
                   <p class='p-5 text-white'>
                     We endeavor to exceed our clients’ expectations with the
                     solutions we provide, at competitive prices.
@@ -764,11 +792,13 @@ const Main = () => {
             <div className='col-md-4'>
               <div
                 class='rounded bg-lazy h-100'
+                class='rounded bg-lazy h-100'
                 style={{
                   backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1707488915/homePage/main/budget_and_time_xv2dk6.png)`
                 }}
               >
                 <div class='text-center text-white'>
+                  <p class='p-5'>
                   <p class='p-5'>
                     We deliver projects within budget and deadline while
                     continuously maintain quality & standard.{' '}
@@ -782,86 +812,90 @@ const Main = () => {
       {/* ============================================================== Consult ==================================================================*/}
       <nav class='' style={{ backgroundColor: '#cccccc ' }}>
         <div class='container '>
-          <div className='row'>
-            <div className='col-lg-7 snd'>
-              <div className='mt-5'>
-                <h3 class='fs-5 mt-5 fw-bold '>
-                  How about a FREE Consultation on the Best Digital Marketing
-                  Strategy for your Business?
-                </h3>
-                <p className='fs-6 mt-4'>
-                  Want to know how to increase your brand visibility, boost
-                  audience engagement, drive traffic, increase social media
-                  followers, promote your products and service online and
-                  increase sales for your business? Elonatech offers tailored
-                  advice on how to reach and engage your audience better,
-                  increase conversion and maximize profit through a bespoke
-                  monthly/yearly digital marketing <span className='d-sm-none'><br /></span> plan for your business.
-                </p>
-              </div>
-              {/* ========================================================== ConsultForm  ===============================================================*/}
-              <div
-                className='btn btn-danger form-controli btn-md  mt-4 mb-2 d-none d-md-inline'
-                data-bs-toggle='modal'
-                data-bs-target='#exampleModal2'
-              >
-                {' '}
-                Get Free Consultation
-              </div>
-              {/* ================================================ body  ============================================== */}
-              <div
-                class='modal fade'
-                id='exampleModal2'
-                tabindex='-1'
-                aria-labelledby='exampleModalLabel'
-                aria-hidden='true'
-              >
-                <div class='modal-dialog modal-dialog-centered modal-dialog-scrollable'>
-                  <div class='modal-content'>
-                    <div class='modal-header'>
-                      <h1
-                        class='modal-title fs-4 fw-bold text-dark'
-                        id='exampleModalLabel'
-                      >
-                        Free Consulting
-                      </h1>
-                      <button
-                        type='button'
-                        class='btn-close'
-                        data-bs-dismiss='modal'
-                        aria-label='Close'
-                      ></button>
+          <div class='row'>
+            <div class=' '>
+              <div>
+                <div className='row'>
+                  <div className='col-lg-7 snd'>
+                    <div className='mt-5'>
+                      <h3 class='fs-5 mt-5 fw-bold '>
+                        How about a FREE Consultation on the Best Digital
+                        Marketing Strategy for your Business?
+                      </h3>
+                      <p className='fs-6 mt-4'>
+                        Want to know how to increase your brand visibility,
+                        boost audience engagement, drive traffic, increase
+                        social media followers, promote your products and
+                        service online and increase sales for your business?
+                        Elonatech offers tailored advice on how to reach and
+                        engage your audience better, increase conversion and
+                        maximize profit through a bespoke monthly/yearly digital
+                        marketing plan for your business.
+                      </p>
                     </div>
-                    <div class='modal-body text-dark'>
-                      <form>
-                        <div class='mb-2 mt-4'>
-                          <label
-                            for='name'
-                            class='form-label float-start fw-bold'
-                          >
-                            Name<span className='text-danger'>*</span>
-                          </label>
-                          <input
-                            type='text'
-                            class='form-control'
-                            onChange={e => setName(e.target.value)}
-                            id='name'
-                            aria-describedby='nameHelp'
-                          />
-                          <label
-                            for='exampleInputEmail1'
-                            class='form-label float-start fw-bold  mt-2'
-                          >
-                            Email address
-                            <span className='text-danger'>*</span>
-                          </label>
-                          <input
-                            type='email'
-                            class='form-control'
-                            onChange={e => setEmail(e.target.value)}
-                            id='exampleInputEmail1'
-                            aria-describedby='emailHelp'
-                          />
+                    {/* ========================================================== ConsultForm  ===============================================================*/}
+                    <div
+                      className='btn btn-danger form-controli btn-md  mt-4 mb-2'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal2'
+                    >
+                      {' '}
+                      Get Free Consultation
+                    </div>
+                    {/* ================================================ body  ============================================== */}
+                    <div
+                      class='modal fade'
+                      id='exampleModal2'
+                      tabindex='-1'
+                      aria-labelledby='exampleModalLabel'
+                      aria-hidden='true'
+                    >
+                      <div class='modal-dialog modal-dialog-centered modal-dialog-scrollable'>
+                        <div class='modal-content'>
+                          <div class='modal-header'>
+                            <h1
+                              class='modal-title fs-4 fw-bold text-dark'
+                              id='exampleModalLabel'
+                            >
+                              Free Consulting
+                            </h1>
+                            <button
+                              type='button'
+                              class='btn-close'
+                              data-bs-dismiss='modal'
+                              aria-label='Close'
+                            ></button>
+                          </div>
+                          <div class='modal-body text-dark'>
+                            <form>
+                              <div class='mb-2 mt-4'>
+                                <label
+                                  for='name'
+                                  class='form-label float-start fw-bold'
+                                >
+                                  Name<span className='text-danger'>*</span>
+                                </label>
+                                <input
+                                  type='text'
+                                  class='form-control'
+                                  onChange={e => setName(e.target.value)}
+                                  id='name'
+                                  aria-describedby='nameHelp'
+                                />
+                                <label
+                                  for='exampleInputEmail1'
+                                  class='form-label float-start fw-bold  mt-2'
+                                >
+                                  Email address
+                                  <span className='text-danger'>*</span>
+                                </label>
+                                <input
+                                  type='email'
+                                  class='form-control'
+                                  onChange={e => setEmail(e.target.value)}
+                                  id='exampleInputEmail1'
+                                  aria-describedby='emailHelp'
+                                />
 
                           <label
                             for='what'
@@ -934,51 +968,44 @@ const Main = () => {
                             onChange={handleChangeInvest}
                           />
 
-                          <div id='emailHelp' class='form-text mt-2'>
-                            We'll never share your email with anyone else.
+                                <div id='emailHelp' class='form-text mt-2'>
+                                  We'll never share your email with anyone else.
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          <div class='modal-footer border-0'>
+                            <button
+                              type='button'
+                              class='btn btn-secondary'
+                              data-bs-dismiss='modal'
+                            >
+                              Close
+                            </button>
+                            <button
+                              type='button'
+                              className='btn btn-primary onliyu'
+                              onClick={handleSubmit}
+                              disabled={isSubmitting}
+                            >
+                              <h6>
+                                {isSubmitting ? 'Submitting...' : 'Submit'}
+                              </h6>
+                            </button>
                           </div>
                         </div>
-                      </form>
-                    </div>
-                    <div class='modal-footer border-0'>
-                      <button
-                        type='button'
-                        class='btn btn-secondary'
-                        data-bs-dismiss='modal'
-                      >
-                        Close
-                      </button>
-                      <button
-                        type='button'
-                        className='btn btn-primary onliyu'
-                        onClick={handleSubmit}
-                        disabled={isSubmitting}
-                      >
-                        <h6>{isSubmitting ? 'Submitting...' : 'Submit'}</h6>
-                      </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className='col-lg-5  align-self-center fst'>
-              <div className='d-none d-md-inline'>
-                <img
-                  data-src={MDImage}
-                  class='lazyload img-fluid mt-2'
-                  alt=''
-                />
-              </div>
-            </div>
-
-            <div className=' d-sm-none showOnMobile'>
-              <div className='row'>
-                <div
-                  className='btn btn-danger form-controli btn-md mt-4 mb-2 col-6 h-25 align-self-center'
-                  data-bs-toggle='modal'
-                  data-bs-target='#exampleModal2'
-                >
-                  Get Free Consultation
+                  <div className='col-lg-5  align-self-center fst'>
+                    <div className=''>
+                      <img
+                        data-src={MDImage}
+                        class='lazyload img-fluid mt-2'
+                        alt=''
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div className='col-6'>
