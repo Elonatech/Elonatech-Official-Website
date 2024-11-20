@@ -120,12 +120,12 @@ const SingleProduct = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [image, setImage] = useState([])
   const [recentlyViewed, setRecentlyViewed] = useState([])
-  const { id } = useParams()
   const { slug } = useParams()
   const [relatedProducts, setRelatedProducts] = useState([])
   const [nextProductId, setNextProductId] = useState(null)
   const [product, setProduct] = useState(null)
   const [allProductsInCategory, setAllProductsInCategory] = useState([])
+  const [id, setId] = useState(null);
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -175,7 +175,7 @@ const SingleProduct = () => {
         setProduct(res.data.product)
         setIsLoading(true)
 
-        productId = res.data.product._id
+        setId(res.data.product._id);
         updateRecentlyViewedInLocalStorage(res.data.product._id);
 
         // Fetch next product
@@ -254,14 +254,6 @@ const SingleProduct = () => {
     }
   }
 
-  // const fetchRelatedProducts = async () => {
-  //   try {
-  //     const res = await axios.get(`${BASEURL}/api/v1/product/${id}/related`)
-  //     setRelatedProducts(res.data.relatedProducts)
-  //   } catch (error) {
-  //     console.error('Error fetching related products:', error)
-  //   }
-  // }
 
   const fetchRelatedProducts = async (ids) => {
     try {
@@ -271,40 +263,6 @@ const SingleProduct = () => {
       console.error('Error fetching related products:', error)
     }
   }
-
-  // const ProductCard = ({ product }) => (
-  //   <div className='col-custom-5 mb-4'>
-  //     <div className='card h-100 d-flex flex-column'>
-  //       <LazyLoadImage
-  //         alt={product.name}
-  //         src={
-  //           product.images && product.images.length > 0
-  //             ? product.images[0].url
-  //             : 'placeholder-image-url.jpg'
-  //         }
-  //         effect='blur'
-  //         className='card-img-top'
-  //         style={{ height: '160px', objectFit: 'cover' }}
-  //         placeholderSrc='https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif'
-  //       />
-  //       <div className='card-body d-flex flex-column'>
-  //         {/* <h6 className='card-title'>{product.name}</h6> */}
-  //         <p className='card-text'>
-  //           ₦ {Number(product.price).toLocaleString()}.00
-  //         </p>
-  //         <div className='mt-auto'>
-  //           <Link
-  //             to={`/product/${product.slug}`}
-  //             className='btn btn-dark btn-sm w-100'
-  //             style={{ backgroundColor: 'black', borderColor: 'black' }}
-  //           >
-  //             View Product
-  //           </Link>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-  // )
 
 
   const ProductCard = ({ product }) => {
@@ -356,17 +314,6 @@ const SingleProduct = () => {
     );
   };
 
-  // const ProductSection = ({ title, products }) => (
-  //   <div className='container mt-5'>
-  //     <h2 className='mb-4'>{title}</h2>
-  //     <div className='row product-grid'>
-  //       {products.slice(0, 5).map((product, index) => (
-  //         <ProductCard key={productId} product={product} index={index} />
-  //       ))}
-  //     </div>
-  //   </div>
-  // )
-
 
   const ProductSection = ({ title, products }) => {
     // Add null check for products array
@@ -391,59 +338,80 @@ const SingleProduct = () => {
   };
 
   const handleDelete = async () => {
-    const res = await axios.delete(`${BASEURL}/api/v1/product/${productId}`)
+    const res = await axios.delete(`${BASEURL}/api/v1/product/${id}`)
     navigate('/shop')
   }
 
   const { addItem } = useCart()
 
-  // const data1 = {
-  //   name: product.name,
-  //   description: product.description,
-  // };
-  const fallbackImage = "https://res.cloudinary.com/elonatech/image/upload/v1729523978/product_computer_qq8vkk.jpg";
-  
-  const sanitizedDescription = product.description || "product description";
-  const productImage = product.images[0].url;
-  const productUrl = `https://elonatech.com.ng/product/${slug}`;
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.name,
-    "description": sanitizedDescription,
-    "image": productImage,
-    "url": productUrl,
+  const prepareSEOData = () => {
+    if (!product) return null;
+
+    const fallbackImage = "https://res.cloudinary.com/elonatech/image/upload/v1729523978/product_computer_qq8vkk.jpg";
+    const productImage = product.images?.[0]?.url || fallbackImage;
+    const productUrl = `https://elonatech.com.ng/product/${slug}`;
+    
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": product?.name || "",
+      "description": product?.description || "",
+      "image": productImage,
+      "url": productUrl,
+      "brand": {
+        "@type": "Brand",
+        "name": product?.brand || ""
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": product?.price || "",
+        "priceCurrency": "NGN",
+        "availability": product?.quantity > 0 ? "InStock" : "OutOfStock",
+        "url": productUrl
+      }
+    };
+
+    return {
+      title: `${product.name} - Elonatech Nigeria`,
+      description: product.description || "Product description unavailable",
+      image: productImage,
+      url: productUrl,
+      structuredData
+    };
   };
+
+  const seoData = prepareSEOData();
 
   return (
     <>
-      <Helmet>
-          {/* Title Tag */}
-          <title>{`${data1.name} - Elonatech Nigeria`}</title>
-
-          {/* Description Meta Tag */}
-          <meta name="description" content={sanitizedDescription} />
-
-          {/* Essential Open Graph Meta Tags */}
-          <meta property="og:title" content={product.name} />
-          <meta property="og:description" content={product.description} />
-          <meta property="og:image" content={product.images[0].url || fallbackImage} />
-          <meta property="og:image:width" content="600" />
-          <meta property="og:image:height" content="600" />
-          <meta property="og:url" content={productUrl} />
+       {seoData && (
+        <Helmet>
+          <title>{seoData.title}</title>
+          <meta name="description" content={seoData.description} />
+          
+          {/* Open Graph Tags */}
+          <meta property="og:title" content={seoData.title} />
+          <meta property="og:description" content={seoData.description} />
+          <meta property="og:image" content={seoData.image} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:url" content={seoData.url} />
           <meta property="og:type" content="product" />
+          <meta property="og:site_name" content="Elonatech Nigeria" />
 
-          {/* Twitter Card Meta Tags */}
+          {/* Twitter Card Tags */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={product.name} />
-          <meta name="twitter:description" content={sanitizedDescription} />
-          <meta name="twitter:image" content={productImage || fallbackImage} />
+          <meta name="twitter:site" content="@elonatech" />
+          <meta name="twitter:title" content={seoData.title} />
+          <meta name="twitter:description" content={seoData.description} />
+          <meta name="twitter:image" content={seoData.image} />
 
-          {/* Schema.org for Rich Snippets */}
+          {/* Product Schema */}
           <script type="application/ld+json">
-            {JSON.stringify(structuredData)}
+            {JSON.stringify(seoData.structuredData)}
           </script>
         </Helmet>
+      )}
 
       {/*================================================================ header ==============================================*/}
       <div class='container-fluid shop-section'>
@@ -573,11 +541,11 @@ const SingleProduct = () => {
                   <div class=''>
                     <div className='container' style={{ display: 'none' }}>
                       <h1>{data.name}</h1>
-                      <img src={productImage} alt={data.name} />
+                      <img src={product.images[0].url} alt={data.name} />
                       <p>Price: ₦{Number(data.price).toLocaleString()}.00</p>
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: sanitizedDescription
+                          __html: product.description
                         }}
                       ></div>
                     </div>
@@ -635,7 +603,7 @@ const SingleProduct = () => {
                         {currentAdmin ? (
                           <div className='text-end'>
                             <div className='d-flex justify-content-md-end mt-3 '>
-                              <Link to={`/product/${productId}/update`}>
+                              <Link to={`/product/${id}/update`}>
                                 <i
                                   class='bi bi-pencil-square text-warning fs-3 me-4'
                                   style={{ cursor: 'pointer' }}
@@ -669,9 +637,9 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <SocialShareButtons
-                    url={productUrl}
-                    title={data.name}
-                    image={productImage}
+                    url={`https://elonatech.com.ng/product/${product.slug}`}
+                    title={product.name}
+                    image={product.images[0].url}
                   />
                 </div>
               </div>
