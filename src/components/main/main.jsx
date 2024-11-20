@@ -331,11 +331,12 @@ const Main = () => {
       <div className='container marketing'>
         <div class='row  mt-5 '>
           <div class='col-lg-7'>
+          <div class='col-lg-7'>
             <h3 class='fw-bold'>
               {' '}
               The IT Solutions and Corporate Consultant Company
             </h3>
-            <p class='fs-6 p-2' style={{ textAlign: 'justify' }}>
+            <p class='fs-6 p-2' style={{textAlign: 'justify'}}>
               We, at Elonatech are aware of your need for quality IT Services.
               Beyond reasonable doubt, the management of information technology
               for business is not inherently a do-it-yourself project. Business
@@ -354,6 +355,7 @@ const Main = () => {
               solution
             </p>
           </div>
+          <div class='col-lg-5'>
           <div class='col-lg-5'>
             <img
               src=''
@@ -382,6 +384,7 @@ const Main = () => {
         ></div>
         <div
           id='carouselExampleControls'
+          class='carousel slide mt-5 mySSSS'
           class='carousel slide mt-5 mySSSS'
           data-bs-ride='carousel'
         >
@@ -1006,15 +1009,6 @@ const Main = () => {
                       />
                     </div>
                   </div>
-                </div>
-
-                <div className='col-6'>
-                  <img
-                    data-src={MDImage}
-                    class='lazyload img-fluid mt-2 w-100 justify-self-end'
-                    alt=''
-                    style={{ objectFit: 'cover', height: '200px' }}
-                  />
                 </div>
               </div>
             </div>

@@ -19,15 +19,16 @@
   height: 150px;
 }
 
+.mySSSS{
+  height: 150px;
+}
+
 
 @media (max-width: 767px) {
   .mySSSS{
     height: 500px;
   }
 
-  .row-sm-gutter {
-    gap: 1rem;
-  }
 
   .row.mt-5.justify-content-center {
     display: flex;
@@ -110,14 +111,6 @@
 .sixth {
   display: flex;
   align-items: center;
-}
-
-.uniform-img {
-  width: 100%;
-  height: 100px;
-  object-fit: contain;
-  display: block;
-  margin: auto;
 }
 
 
