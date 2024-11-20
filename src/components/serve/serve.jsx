@@ -23,7 +23,7 @@ const Serve = () => {
       <div style={{backgroundColor:"#dc3545", height:"2px", width:"80px", margin:"auto"}}></div>
        <div class="about-border"></div>
       <div class="container ">
-         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-5">
+         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3 mt-5">
             {/*=================================== card 1 ===========================*/}
           <div class="col border-0">
           <div class="card card-1 border-0  bg-lazy" style={{backgroundImage:`url(${WebBackground}) `, height:" 360px" , backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
@@ -79,7 +79,7 @@ const Serve = () => {
           <div class="col border-0">
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${NetworkBackground})`, height:" 360px", backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
-          <h5 class="mt-4 text-white">NETWORK ENGINEERING / ADMINISTRATION</h5>
+          <h5 class="mt-2 text-white">NETWORK ENGINEERING / ADMINISTRATION</h5>
           <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632430/homePage/What%20we%20do/icons/network_bcyqi7.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
@@ -147,7 +147,7 @@ const Serve = () => {
           <div class="col border-0">
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${LiveStreamBackground})`, height:" 360px" ,backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
-          <h5 class="mt-4 text-white">LIVESTREAMING & VIDEOCONFERENCING</h5>
+          <h5 class="mt-2 text-white">LIVESTREAMING & VIDEOCONFERENCING</h5>
           <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632433/homePage/What%20we%20do/icons/video_shovcl.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">

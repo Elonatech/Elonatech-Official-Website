@@ -306,12 +306,12 @@ const Main = () => {
       {/*==================================================================== Marketing ============================================================*/}
       <div className='container marketing'>
         <div class='row  mt-5 '>
-          <div class='col-md-7'>
+          <div class='col-lg-7'>
             <h3 class='fw-bold'>
               {' '}
               The IT Solutions and Corporate Consultant Company
             </h3>
-            <p class='fs-6 p-2'>
+            <p class='fs-6 p-2' style={{textAlign: 'justify'}}>
               We, at Elonatech are aware of your need for quality IT Services.
               Beyond reasonable doubt, the management of information technology
               for business is not inherently a do-it-yourself project. Business
@@ -330,7 +330,7 @@ const Main = () => {
               solution
             </p>
           </div>
-          <div class='col-md-5'>
+          <div class='col-lg-5'>
             <img
               src=''
               data-src={ElonatechOneStop}
@@ -358,7 +358,7 @@ const Main = () => {
         ></div>
         <div
           id='carouselExampleControls'
-          class='carousel slide mt-5'
+          class='carousel slide mt-5 mySSSS'
           data-bs-ride='carousel'
         >
           <div class='carousel-inner'>
@@ -633,11 +633,6 @@ const Main = () => {
                       />
                     </div>
                   </div>
-                  {/* <div className="col-md-2 col-6">
-              <div className="card border-0">
-              <img src="" data-src="https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png"  className='img-fluid lazyload' alt="" />
-              </div>
-            </div> */}
                 </div>
               </div>
             </div>
@@ -987,47 +982,6 @@ const Main = () => {
           </div>
         </div>
       </nav>
-      {/* ================================================================= Products ================================================================*/}
-      {/* <h2 className='text-center fw-bold mt-5'>Latest Products</h2>
-<div style={{backgroundColor:"#dc3545", height:"2px", width:"80px", margin:"auto"}}></div>
-<div className="container-fluid mt-5">
-  <div className="row mt-5 justify-content-center">
-    {[
-      { name: "MAC PRO", category: "Shop", price: "1,400,000.00", image: MacImage, link: "/shop" },
-      { name: "HP Notebook", category: "Computers", price: "450,000", image: HpImage, link: "/computers" },
-      { name: "Sam Tc Touch", category: "Pos", price: "200,000", image: posImage, link: "/pos-system" },
-      { name: "CANON PIXMA", category: "Printers", price: "500,000", image: OfficePrinterImage, link: "/printers" },
-      { name: "Cisco Routers", category: "Network Devices", price: "900,000", image: CiscoRouter, link: "/network-devices" },
-      { name: "Logitech Wireless Keyboard and Mouse Mk220", category: "Office Equipment", price: "23,500", image: "https://res.cloudinary.com/elonatech/image/upload/v1708526760/products/qsqfyemncrcoytwtk0br.webp", link: "/office-equipment" }
-    ].map((product, index) => (
-      <div key={index} className="col-2 px-1">
-        <div className="border shadow-sm p-2 mb-3 bg-body product-card rounded" style={{height: "350px", display: "flex", flexDirection: "column"}}>
-          <Link to={product.link} className='text-decoration-none text-dark d-flex flex-column h-100'>
-            <div className="text-center" style={{height: "150px", overflow: "hidden"}}>
-              <img src="https://res.cloudinary.com/elonatech/image/upload/v1710503902/loaderImage/blurred_Loader_ufozvn.png" 
-                   data-src={product.image} 
-                   className="lazyload img-fluid" 
-                   alt={product.name} 
-                   style={{objectFit: "contain", width: "100%", height: "100%"}} />
-            </div>
-            <h5 className="fw-normal mt-2 text-truncate" title={product.name}>{product.name}</h5>
-            <p className="small mb-1">{product.category}</p>
-            <div className="stars mb-1" style={{color:'#f6b01e'}}>
-              <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
-            </div>
-            <div className="d-flex justify-content-between align-items-center mb-2">
-              <p className='m-0 text-danger small'>₦{product.price}</p>
-              <i className="bi bi-cart" style={{fontSize:"18px"}}></i>
-            </div>
-            <div className="mt-auto">
-              <button className="btn btn-sm btn-dark w-100 rounded-pill">View More</button>
-            </div>
-          </Link>
-        </div>
-      </div>
-    ))}
-  </div>
-</div> */}
 
       <h2 className='text-center fw-bold mt-5'>Latest Products</h2>
       <div
