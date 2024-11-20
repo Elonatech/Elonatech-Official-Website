@@ -398,13 +398,13 @@ const SingleProduct = () => {
   const { addItem } = useCart()
 
   const data1 = {
-    name: "Default Product Name",
-    description: "This is a default description for testing.",
+    name: product.name,
+    description: product.description,
   };
   
   const sanitizedDescription = data.description || "Default description for testing purposes.";
   const productImage = "https://example.com/default-image.jpg";
-  const productUrl = "https://elonatech.com/product/default";
+  const productUrl = "https://elonatech.com.ng/product/${slug}";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
