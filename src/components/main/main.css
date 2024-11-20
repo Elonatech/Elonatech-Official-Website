@@ -100,6 +100,15 @@
   align-items: center;
 }
 
+.uniform-img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+
 @media screen and (max-width: 756px) {
   .tannet {
     width: 130px;
@@ -120,7 +129,8 @@
 }
 
 
-@media (max-width: 767px) {
+
+/* @media (max-width: 767px) {
   .fst {
     order: 1;
   }
@@ -128,4 +138,4 @@
   .snd {
     order: 2;
   }
-}
+} */
