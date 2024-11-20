@@ -20,6 +20,7 @@ const NetworkDevices = () => {
     portSpeed: '',
     price: [0, 1000000]
   })
+  
   const [filteredProducts, setFilteredProducts] = useState([])
   const [brands, setBrands] = useState([])
   const [priceRange, setPriceRange] = useState([0, 1000000])

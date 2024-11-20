@@ -1,85 +1,86 @@
 .mobile-device-repair-section {
-    min-height: 500px;
-    background-image: linear-gradient(
-        0deg,
+  min-height: 500px;
+  background-image: linear-gradient(0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)),
+    url('./captions/phone_rep_nwjtv1.jpg');
+  /* Replace with actual URL */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.nyyy {
+  height: 3rem;
+  width: 4rem;
+}
+
+/* Text styling for desktop */
+.mobile-device-repair-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.mobile-device-repair-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.mobile-device-repair-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .mobile-device-repair-section {
+    min-height: 200px;
+    background-image: linear-gradient(0deg,
         rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ),
-      url('./captions/phone_rep_nwjtv1.jpg'); /* Replace with actual URL */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  /* Text styling for desktop */
-  .mobile-device-repair-section h2 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-  
-  .mobile-device-repair-section h5 {
-    font-size: 1.3rem;
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  
-  .mobile-device-repair-section p {
-    font-size: 1.1rem;
-    line-height: 1.2;
-    margin-bottom: 5px;
-  }
-  
-  /* Mobile view */
-  @media (max-width: 576px) {
-    .mobile-device-repair-section {
-      min-height: 200px;
-      background-image: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ),
+        rgba(0, 0, 0, 0.5)),
       url('https://res.cloudinary.com/elonatech/image/upload/v1729523977/phone_rep_mobile_nimnvi.jpg');
-      background-size: cover;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 50px;
-    }
-  
-    /* Adjusting text for mobile view */
-    .mobile-device-repair-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 5px;
-      line-height: 1.1;
-    }
-  
-    .mobile-device-repair-section h5 {
-      font-size: 1rem;
-      margin-bottom: 3px;
-      line-height: 1.1;
-      font-weight: 200;
-      /* display: none; */
-    }
-  
-    .mobile-device-repair-section p {
-      font-size: 0.9rem;
-      line-height: 1.1;
-      margin-bottom: 0;
-      display: none;
-    }
-  
-    .mobile-device-repair-section h2,
-    .mobile-device-repair-section h5,
-    .mobile-device-repair-section p {
-      margin: 0;
-      padding: 0;
-    }
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
   }
-  
+
+  /* Adjusting text for mobile view */
+  .mobile-device-repair-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .mobile-device-repair-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .mobile-device-repair-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .mobile-device-repair-section h2,
+  .mobile-device-repair-section h5,
+  .mobile-device-repair-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
