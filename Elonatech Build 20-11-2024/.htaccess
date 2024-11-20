@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+
+  # Enable Rewrite Engine for URL rewriting
+  RewriteEngine On
+
+  # Set the base directory for all relative paths
+  RewriteBase /
+
+  # Prevent processing if accessing "index.html" directly
+  RewriteRule ^index\.html$ - [L]
+
+  # Prerender.io: Forward requests from search engine crawlers to PreRender.io
+  RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|yahoo|facebookexternalhit|twitterbot|linkedinbot|embedly|pinterest|slackbot|vkShare|Facebot|WhatsApp) [NC]
+  RewriteRule ^(.*)$ http://service.prerender.io/https://elonatech.com.ng/$1 [P]
+
+  # Conditions to check if the requested file, directory, or symbolic link does not exist
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+
+  # If no file, directory, or symbolic link matches, serve index.html (React SPA fallback)
+  RewriteRule . /index.html [L]
+
+</IfModule>
