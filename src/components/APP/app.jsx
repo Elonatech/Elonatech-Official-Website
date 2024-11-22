@@ -100,7 +100,6 @@ const AppDevelopment = () => {
     }
   ]
 
-  // Sample showcase apps (placeholder data)
   const showcaseApps = [
     {
       title: 'HealthTrack Pro',
@@ -179,7 +178,7 @@ const AppDevelopment = () => {
                 className='underline-w mt-1 mb-2'
                 style={{ width: '40px', height: '3px', background: '#f00' }}
               ></div>
-              <p>
+              <p style={{textAlign: 'justify'}}>
                 Mobile application development is the process of making software
                 for smartphones, tablets and digital assistants, most commonly
                 for the Android and iOS operating systems. The software can be
@@ -219,7 +218,7 @@ const AppDevelopment = () => {
               </video>
             </div>
           </div>
-          <p>
+          <p style={{textAlign: 'justify'}}>
             {' '}
             Whether you choose native or hybrid mobile application development,
             one of the first hurdles you’ll need to overcome is the relatively
@@ -306,7 +305,7 @@ const AppDevelopment = () => {
                 <div className='D'>{step.number}</div>
                 <div className='E'>
                   <h3 className='F'>{step.title}</h3>
-                  <p className='G'>{step.description}</p>
+                  <p className='G' style={{textAlign: 'justify'}}>{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -392,7 +391,7 @@ const AppDevelopment = () => {
                     {tech.name}
                     <div>{tech.icon}</div>
                   </h3>
-                  <div className='shortNote'>{tech.shortNote}</div>
+                  <div className='shortNote' style={{textAlign: 'justify'}}>{tech.shortNote}</div>
                 </div>
               </motion.div>
             ))}

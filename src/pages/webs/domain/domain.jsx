@@ -61,7 +61,7 @@ You can easily register any domain name of your choice with us. We offer several
       <section class='register-domain spad'>
         <div class='container'>
           <div class='row d-flex justify-content-center'>
-            <div class='col-lg-8'>
+            <div class=''>
               <div class='register__text'>
                 <div class='section-title'>
                   <h3 className='text-center mb-4 fw-bold'>
@@ -137,7 +137,7 @@ You can easily register any domain name of your choice with us. We offer several
                     </div>
                   </div>
                 </div>
-                <p className=''>
+                <p className='' style={{textAlign: 'justify'}}>
                   The right domain name goes a long way. Expect greater traction
                   with your target audience, a unique online presence and your
                   own identity in an ever-growing market. Find your perfect
@@ -165,7 +165,7 @@ You can easily register any domain name of your choice with us. We offer several
 
           <div className='col-lg-6 order-lg-1 order-md-2 order-sm-2'>
             <div className='mt-4'>
-              <p className=''>
+              <p className='' style={{textAlign: 'justify'}}>
                 At Elonatech we take pride in providing secure, reliable &
                 affordable Domain Registration to all our clients. That is why
                 we offer the best industry prices not only for new domains
@@ -209,7 +209,7 @@ You can easily register any domain name of your choice with us. We offer several
                   <i className={`${feature.icon} fs-3 ms-2`}></i>
                   <h5 className='ms-3 mt-2'>{feature.title}</h5>
                 </div>
-                <p className='ms-5'>{feature.description}</p>
+                <p className='ms-5' style={{textAlign: 'justify'}}>{feature.description}</p>
               </div>
             </div>
           ))}
@@ -232,7 +232,7 @@ You can easily register any domain name of your choice with us. We offer several
             </div>
             <div class='col-lg-6 col-md-6'>
               <div class='plan__text'>
-                <h3>
+                <h3 style={{textAlign: 'justify'}}>
                   Every great website starts with a domain. Our domain name
                   registration includes!
                 </h3>

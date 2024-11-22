@@ -71,20 +71,20 @@ We help organizations to communicate better. We provide the leading VoIP phone s
         <div className='row'>
           <div className='col-md-4'>
             <h5>High-definition video</h5>
-            <h6>
+            <p>
               Watch what’s happening in 1080p HD video with 8x digital zoom.
-            </h6>
+            </p>
           </div>
           <div className='col-md-4'>
             <h5>Unlimited cloud storage</h5>
-            <h6>
+            <p>
               Your videos are saved automatically on our secure servers for 30
               days.*
-            </h6>
+            </p>
           </div>
           <div className='col-md-4 mt-3'>
             <h5>Rechargeable battery</h5>
-            <h6>Lasts up to 3-6 months before it needs a recharge.*</h6>
+            <p>Lasts up to 3-6 months before it needs a recharge.*</p>
           </div>
         </div>
       </div>

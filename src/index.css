@@ -33,6 +33,10 @@
     margin-bottom: 16px;
 }
 
+.taj{
+    text-align: justify;
+}
+
 @media screen and (max-width: 767px) {
 
     .filter-section {
