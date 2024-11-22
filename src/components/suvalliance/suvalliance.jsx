@@ -105,9 +105,9 @@ These systems can be applied to both interior and exterior areas of a building o
               <br />
               <h5>High-definition video</h5>
             </div>
-            <h6>
+            <p>
               Watch what’s happening in 1080p HD video with 8x digital zoom.
-            </h6>
+            </p>
           </div>
           <div className='col-md-4'>
             <div className='d-flex d-md-block align-items-center gap-2'>
@@ -119,10 +119,10 @@ These systems can be applied to both interior and exterior areas of a building o
               <br />
               <h5>Unlimited cloud storage</h5>
             </div>
-            <h6>
+            <p>
               Your videos are saved automatically on our secure servers for 30
               days.*
-            </h6>
+            </p>
           </div>
           <div className='col-md-4 mt-3'>
             <div className='d-flex d-md-block align-items-center gap-2'>
@@ -133,7 +133,7 @@ These systems can be applied to both interior and exterior areas of a building o
               />
               <h5 className=''>Rechargeable battery</h5>
             </div>
-            <h6>Lasts up to 3-6 months before it needs a recharge.*</h6>
+            <p>Lasts up to 3-6 months before it needs a recharge.*</p>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ These systems can be applied to both interior and exterior areas of a building o
                 What Makes a Video Surveillance System?
               </h4>
               {/*  */}
-              <p className='mt-3'>
+              <p className='mt-3' style={{textAlign: 'justify'}}>
                 A video surveillance system / CCTV is composed of a system of
                 cameras, monitors/display units, and recorders. Cameras may be
                 either analog or digital with a host of possible design features
@@ -203,13 +203,13 @@ These systems can be applied to both interior and exterior areas of a building o
             <h1>
               <strong>Steadfast & reliable</strong>
             </h1>
-            <h6 className='mt-3'>
+            <p className='mt-3'>
               Built to work in any environment. That way you don't have to worry
               about your security feed cutting out when you need it most.
-            </h6>
+            </p>
 
             <ul className='list-unstyled'>
-              <li className='mt-4'>
+              <li className=''>
                 <div className='d-flex'>
                   <img
                     src='https://res.cloudinary.com/elonatech/image/upload/v1709635934/surveillance/Battery_s82mei.svg'
@@ -217,13 +217,13 @@ These systems can be applied to both interior and exterior areas of a building o
                     className='mb-4'
                   />
                   <div className='mt-5'>
-                    <h5 className='ps-5'>Premium power supply </h5>{' '}
-                    <h6 className='ps-5 '>
+                    <h5 className='ps-2'>Premium power supply </h5>{' '}
+                    <p className='ps-2' style={{textAlign: 'justify'}}>
                       Runs on a removable battery that recharges in ~5 hours.
                       Plus you can swap in a backup battery (sold separately)
                       while it’s charging — virtually eliminating security
                       downtime.
-                    </h6>
+                    </p>
                   </div>
                 </div>
               </li>
@@ -232,11 +232,11 @@ These systems can be applied to both interior and exterior areas of a building o
                 <div className='d-flex'>
                   <i class='bi bi-camera-video fs-2 mb-4'></i>
                   <div className='mt-2'>
-                    <h5 className='ps-5'>High-definition video</h5>{' '}
-                    <h6 className='ps-5'>
+                    <h5 className='ps-2'>High-definition video</h5>{' '}
+                    <p className='ps-2'>
                       Watch what’s happening in 1080p HD video with 8x digital
                       zoom.
-                    </h6>
+                    </p>
                   </div>
                 </div>
               </li>
@@ -245,10 +245,10 @@ These systems can be applied to both interior and exterior areas of a building o
                 <div className='d-flex'>
                   <i class='bi bi-moon-stars fs-2'></i>
                   <div className='mt-2'>
-                    <h5 className='ps-5'>See in color at night</h5>{' '}
-                    <h6 className='ps-5 '>
+                    <h5 className='ps-2'>See in color at night</h5>{' '}
+                    <p className='ps-2 '>
                       A built-in spotlight + HDR let you see clearly 24/7.
-                    </h6>
+                    </p>
                   </div>
                 </div>
               </li>

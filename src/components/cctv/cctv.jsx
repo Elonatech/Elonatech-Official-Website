@@ -1,16 +1,28 @@
 import './cctv.css'
 import Getintouch2 from '../GetInTouch/getintouch2'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import './cctv.css'
+import Getintouch2 from '../GetInTouch/getintouch2'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
+import 'swiper/css'
 import 'swiper/css'
 
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
+import { Helmet } from 'react-helmet-async'
 import { Helmet } from 'react-helmet-async'
 
 const Cctv = () => {
   return (
+  return (
     <>
+      <Helmet>
+        <title>Closed-Circuit Television (CCTV) - Tech Solution</title>
+        <meta
+          name='description'
+          content='Surveillance is the monitoring of behavior, many activities, or information for the purpose of information gathering, influencing, managing or directing. This can include observation from a distance by means of electronic equipment, such as closed-circuit television (CCTV), or interception of electronically transmitted information like Internet traffic. It can also include simple technical methods, such as human intelligence gathering and postal interception.
       <Helmet>
         <title>Closed-Circuit Television (CCTV) - Tech Solution</title>
         <meta
@@ -21,7 +33,25 @@ const Cctv = () => {
         />
         <link rel='canonical' href='https://elonatech.com.ng/cctv' />
       </Helmet>
+       '
+        />
+        <link rel='canonical' href='https://elonatech.com.ng/cctv' />
+      </Helmet>
 
+      {/*===================================================== header =============================================*/}
+      <div class='container-fluid cctv-section'>
+        <div class='text-content'>
+          <h2>Closed-Circuit Television (CCTV)</h2>
+          <h5>
+            Monitoring of Behavior, Activities, or Information for The Purpose
+            of Information Gathering
+          </h5>
+          <p class='lead'>
+            The use of video cameras to transmit a signal to a specific place,
+            on a limited set of monitors, known as video surveillance
+          </p>
+        </div>
+      </div>
       {/*===================================================== header =============================================*/}
       <div class='container-fluid cctv-section'>
         <div class='text-content'>
@@ -61,7 +91,7 @@ const Cctv = () => {
       </div>
 
       {/*============================================================ slider ====================================================*/}
-      <div className=' mb-5'>
+      <div className='container mb-5'>
         <Swiper
           spaceBetween={23}
           slidesPerView={1}
@@ -269,6 +299,35 @@ const Cctv = () => {
                     Quality video evidence helps solve crime and increases
                     apprehensions by private security and police agencies
                   </p>
+      {/* invest */}
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-6'>
+            <div className=''>
+              <h4 className='fw-bold'>Why Invest In Cctv</h4>
+              <div
+                style={{
+                  backgroundColor: '#dc3545',
+                  height: '2px',
+                  width: '80px'
+                }}
+              ></div>
+              <div
+                style={{
+                  backgroundColor: '#dc3545',
+                  height: '2px',
+                  width: '80px',
+                  marginTop: '2px'
+                }}
+              ></div>
+              <div className='mt-2'>
+                <div className='d-flex pt-2'>
+                  <i class='bi bi-circle-fill me-3'></i>
+                  <p className=''>
+                    {' '}
+                    Quality video evidence helps solve crime and increases
+                    apprehensions by private security and police agencies
+                  </p>
                 </div>
                 <div className='d-flex'>
                   <i class='bi bi-circle-fill me-3'></i>
@@ -276,7 +335,18 @@ const Cctv = () => {
                     Acts as a deterrent to those that would consider being
                     dishonest.
                   </p>
+                <div className='d-flex'>
+                  <i class='bi bi-circle-fill me-3'></i>
+                  <p className=''>
+                    Acts as a deterrent to those that would consider being
+                    dishonest.
+                  </p>
                 </div>
+                <div className='d-flex '>
+                  <i class='bi bi-circle-fill me-3'></i>
+                  <p className=''>
+                    Saves money by identifying operational issues.
+                  </p>
                 <div className='d-flex '>
                   <i class='bi bi-circle-fill me-3'></i>
                   <p className=''>
@@ -290,7 +360,22 @@ const Cctv = () => {
                     weeks after the fact. Having video archives available to go
                     back and review often solves these mysteries
                   </p>
+                <div className='d-flex'>
+                  <i class='bi bi-circle-fill me-3'></i>
+                  <p className=''>
+                    All too often businesses discover product or money missing
+                    weeks after the fact. Having video archives available to go
+                    back and review often solves these mysteries
+                  </p>
                 </div>
+                <div className='d-flex'>
+                  <i class='bi bi-circle-fill me-3'></i>
+                  <p className=''>
+                    {' '}
+                    Video analytics – let video help the operational side of
+                    your business by mapping customer patterns, counting people,
+                    capturing license plates and more.
+                  </p>
                 <div className='d-flex'>
                   <i class='bi bi-circle-fill me-3'></i>
                   <p className=''>
@@ -340,11 +425,55 @@ const Cctv = () => {
           </div>
         </div>
       </div>
+            </div>
+          </div>
+          <div className='col-md-6 mt-2'>
+            <div className='mt-5'>
+              <h4 className='fw-bold'> Different Types of CCTV Camera</h4>
+              <p className=' mt-0'>
+                When it comes to securing your business, there are many
+                different types of CCTV to choose from. Surveillance plays a
+                huge part in today’s society, and with cameras all around us,
+                our day-to-day lives are experiencing higher levels of security
+                each day.
+              </p>
+              <h4 className='fw-bold'>What are the different types of CCTV cameras?</h4>
+              <ul className='list-unstyled'>
+                <li className=''>
+                  {' '}
+                  <i class='bi bi-circle-fill me-2'></i>Dome Camera
+                </li>
+                <li className=''>
+                  {' '}
+                  <i class='bi bi-circle-fill me-2'></i>Bullet Camera
+                </li>
+                <li className=''>
+                  {' '}
+                  <i class='bi bi-circle-fill me-2'></i>C-mount Camera
+                </li>
+                <li className=''>
+                  {' '}
+                  <i class='bi bi-circle-fill me-2'></i>Day/Night Camera
+                </li>
+                <li className=''>
+                  {' '}
+                  <i class='bi bi-circle-fill me-2'></i>PTZ Camera
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      {/*================================================================================ contact us ======================================================*/}
+      <Getintouch2 />
+    </>
+  )
       {/*================================================================================ contact us ======================================================*/}
       <Getintouch2 />
     </>
   )
 }
 
+export default Cctv
 export default Cctv

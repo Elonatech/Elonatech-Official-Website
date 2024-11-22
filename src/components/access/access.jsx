@@ -59,8 +59,8 @@ What are the benefits of Access Control Systems?
             </div>
           </div>
           <div class='col-lg-6'>
-            <div className=''>
-              <p className=''>
+            <div className='' style={{textAlign: 'justify'}}>
+              <p className='' >
                 <span className='fw-bold'>Access control</span> is an essential
                 element of security that determines who is allowed to access
                 certain data, apps, and resources—and in what circumstances. In
@@ -97,7 +97,7 @@ What are the benefits of Access Control Systems?
         <div className='row'>
           <div className='col-lg-7 order-lg-1 order-md-2'>
             <div className='mt-3'>
-              <p className=''>
+              <p className='' style={{textAlign: 'justify'}}>
                 When referring to a ‘physical’ Access Control system this
                 typically includes locked gates, doors or barriers which can be
                 opened using identity authentication methods such RFID access
@@ -142,7 +142,7 @@ What are the benefits of Access Control Systems?
             </div>
           </div>
           <div className='col-lg-6'>
-            <p className='pt-5'>
+            <p className='pt-5' style={{textAlign: 'justify'}}>
               Access Control can help protect employees and contents and control
               & monitor who accesses the premises. The main benefits of access
               control systems are

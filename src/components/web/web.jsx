@@ -440,9 +440,9 @@ const Web = () => {
                     </div>
                   </div>
                   <div className='new'>
-                    <p className='text-primary fw-bold mb-0'>{step.step}</p>
+                    <p className='text-primary fw-bold mb-0' >{step.step}</p>
                     <p className='fw-bold mb-0'>{step.title}</p>
-                    <p>{step.description}</p>
+                    <p style={{textAlign: 'justify'}}>{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -546,7 +546,7 @@ const Web = () => {
         <div className='container '>
           <div className='row pt-5'>
             <div className='col-lg-6 col-md-12 mb-5'>
-              <h3 className='text-center ' style={{ color: '#34548c' }}>
+              <h3 style={{textAlign: 'justify', color: '#34548c' }}>
                 Our Web Design And Development
               </h3>
               <hr
@@ -587,7 +587,7 @@ const Web = () => {
                         >
                           Responsive Website
                         </h5>
-                        <p className='text-center'>
+                        <p style={{textAlign: 'justify'}}>
                           Responsive Web design is the approach that suggests
                           that design and development should respond to the
                           users behavior and environment based on screen size,
@@ -642,7 +642,7 @@ const Web = () => {
                         >
                           Portfolio website
                         </h5>
-                        <p className='text-center'>
+                        <p style={{textAlign: 'justify'}}>
                           A portfolio website allows creative professionals a
                           place for showcasing their best work. This is perfect
                           for artists, writers, designers, filmmakers, furniture

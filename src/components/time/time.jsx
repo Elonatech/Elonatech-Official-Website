@@ -308,7 +308,7 @@ const Time = () => {
                     background: '#f00'
                   }}
                 ></div>
-                <h6 className='text-white'>
+                <h6 className='text-white' style={{textAlign: 'justify'}}>
                   The All Hours online time clock encourages the growth of your
                   company, and can support even the most complex time and
                   attendance cases. You can set up different rules for different
@@ -340,7 +340,7 @@ const Time = () => {
                   className='underline-w mx-auto mt-2 mb-2'
                   style={{ width: '70px', height: '3px', background: '#f00' }}
                 ></div>
-                <p>
+                <p style={{textAlign: 'justify'}}>
                   With the All Hours online time and attendance solution you can
                   easily manage absences. Receive requests for absences from the
                   mobile or web app, including the type (annual leave, business
@@ -348,27 +348,27 @@ const Time = () => {
                   deny them based on the request.
                 </p>
                 <ul className='list-unstyled mt-2'>
-                  <li className='d-flex'>
-                    <i class='bi bi-check-circle fs-3 me-3 text-danger'></i>
-                    <p className='text-start mt-lg-2'>
+                  <li className='d-flex align-items-center flex-nowrap'>
+                    <i class='bi bi-check-circle fs-3 me-2 text-danger'></i>
+                    <p className='text-start mb-0'>
                       Absence requests and approvals on the mobile app{' '}
                     </p>
                   </li>
-                  <li className='d-flex'>
-                    <i class='bi bi-check-circle fs-3 me-3 text-danger'></i>
-                    <p className='text-start mt-lg-2'>
+                  <li className='d-flex align-items-center flex-nowrap'>
+                    <i class='bi bi-check-circle fs-3 me-2 text-danger'></i>
+                    <p className='text-start mb-0'>
                       Notifications for each request and approval
                     </p>
                   </li>
-                  <li className='d-flex'>
-                    <i class='bi bi-check-circle fs-3 me-3 text-danger'></i>
-                    <p className='text-start mt-lg-2'>
+                  <li className='d-flex align-items-center flex-nowrap'>
+                    <i class='bi bi-check-circle fs-3 me-2 text-danger'></i>
+                    <p className='text-start mb-0'>
                       Notifications for each request and approval
                     </p>
                   </li>
-                  <li className='d-flex'>
-                    <i class='bi bi-check-circle fs-3 me-3 text-danger'></i>
-                    <p className='text-start mt-lg-2'>
+                  <li className='d-flex align-items-center flex-nowrap'>
+                    <i class='bi bi-check-circle fs-3 me-2 text-danger'></i>
+                    <p className='text-start mb-0'>
                       Paid and unpaid absence status
                     </p>
                   </li>
