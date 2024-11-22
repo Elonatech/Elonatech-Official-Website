@@ -287,7 +287,7 @@ const Consulting = () => {
       <div className='container mb-5 mt-5 last-section'>
         <div className='row g-0'>
           <div className='col-lg-3 col-md-6 col-sm-6'>
-            <div className=' border-top-0 border-bottom-0 border-start-0 rounded-0 border-dark'>
+            <div className='border-top-0 border-bottom-0 border-start-0 rounded-0 border-dark'>
               <h4 className='text-center'>#1 Provider</h4>
               <p className='text-center'>
                 of core Information Technology systems
@@ -295,19 +295,19 @@ const Consulting = () => {
             </div>
           </div>
           <div className='col-lg-3 col-md-6 col-sm-6'>
-            <div className=' border-top-0 border-bottom-0 rounded-0 border-dark'>
+            <div className='border-top-0 border-bottom-0 rounded-0 border-dark'>
               <h4 className='text-center'>13+ Years</h4>
               <p className='text-center'>of innovation in the IT industry</p>
             </div>
           </div>
           <div className='col-lg-3 col-md-6 col-sm-6'>
-            <div className=' border-top-0 border-bottom-0 rounded-0 border-dark'>
+            <div className='border-top-0 border-bottom-0 rounded-0 border-dark'>
               <h4 className='text-center'>4.8</h4>
               <p className='text-center'>Average rating from 300 reviews</p>
             </div>
           </div>
           <div className='col-lg-3 col-md-6 col-sm-6'>
-            <div className=' border-top-0 border-bottom-0 border-end-0 rounded-0 border-dark'>
+            <div className='border-top-0 border-bottom-0 border-end-0 rounded-0 border-dark'>
               <h4 className='text-center'>80%</h4>
               <p className='text-center'>Clients with us for 8 years or more</p>
             </div>
