@@ -126,7 +126,7 @@ System software is the most important software in a computer, it enables other s
                   data-aos-delay='100'
                 >
                   <h4>Programming Language Translator</h4>
-                  <p class='fst-italic'>
+                  <p class='fst-italic'  style={{textAlign: 'justify'}}>
                     These are the intermediate system software through which
                     programmers convert the high-level language programming code
                     to machine-level language code. Assembler, Interpreter, and

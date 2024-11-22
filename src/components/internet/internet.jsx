@@ -122,7 +122,7 @@ const Internet = () => {
             <div className=''>
               <div className='card-body'>
                 <h2 className='text-danger'>Featured Solutions</h2>
-                <p className='fw-3 mt-3'>
+                <p className='fw-3 mt-3'  style={{textAlign: 'justify'}}>
                   Embracing the Widest Range of Possibilities in the World of
                   Internet Services, Seamless Connectivity, Lightning-Fast
                   Speeds, Enhanced Security, and Unparalleled Customer Support
