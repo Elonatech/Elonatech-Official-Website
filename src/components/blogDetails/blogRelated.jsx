@@ -13,9 +13,11 @@ const BlogRelated = () => {
   const [relatedPosts, setRelatedPosts] = useState([])
   const [currentAdmin, setCurrentAdmin] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const { id } = useParams()
+  const { slug } = useParams()
   const navigate = useNavigate()
+  const [id, setId] = useState(null);
   const [activeItem, setActiveItem] = useState('Item 1')
+
 
   const handleClick = item => {
     setActiveItem(item)
@@ -48,32 +50,35 @@ const BlogRelated = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`)
-        setData(res.data.getBlogById)
+        const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`)
+        setData(res.data)
         setIsLoading(true)
+        setId(res.data._id);
       } catch (error) {
         console.log(error)
         setIsLoading(true)
       }
     }
     fetchBlog()
-  }, [id])
+  }, [slug])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/blog/`)
+        const response = await axios.get(`${BASEURL}/api/v1/blog/`);
         setRelatedPosts(
           response.data.getAllBlogs
+            .filter(post => post.slug !== slug) 
             .sort(() => Math.random() - Math.random())
             .slice(0, 4)
-        )
+        );
       } catch (error) {
-        console.error('Error fetching data:', error)
+        console.error('Error fetching data:', error);
       }
-    }
-    fetchData()
-  }, [])
+    };
+    fetchData();
+  }, [slug]);
+  
 
   const handleDelete = async () => {
     const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`)
@@ -169,7 +174,7 @@ const BlogRelated = () => {
                               <div className=''>
                                 <Link
                                   className='text-decoration-none text-dark'
-                                  to={`/blog/related/${post._id}`}
+                                  to={`/blog/related/${post.slug}`}
                                 >
                                   <h6 className='related-post-title'>
                                     {post.title.slice(0, 300)}
@@ -302,7 +307,7 @@ const BlogRelated = () => {
                       <div className=''>
                         <Link
                           className='text-decoration-none text-dark'
-                          to={`/blog/related/${post._id}`}
+                          to={`/blog/related/${post.slug}`}
                         >
                           <h6 className='related-post-title'>
                             {post.title.slice(0, 300)}

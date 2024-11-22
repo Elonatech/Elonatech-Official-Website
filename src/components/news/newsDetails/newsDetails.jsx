@@ -17,11 +17,13 @@ const NewsDetails = () => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [currentAdmin, setCurrentAdmin] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [activeItem, setActiveItem] = useState("Item 2");
   const [blogUrl, setBlogUrl] = useState('')
+  const [id, setId] = useState(null);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,9 +61,10 @@ const NewsDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`);
-        setData(res.data.getBlogById);
+        const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`);
+        setData(res.data);
         setIsLoading(true);
+        setId(res.data._id);
       } catch (error) {
         console.log(error);
         setIsLoading(true);
@@ -76,6 +79,7 @@ const NewsDetails = () => {
         const response = await axios.get(`${BASEURL}/api/v1/blog/news`);
         setRelatedPosts(
           response.data.getAllNews
+            .filter(post => post.slug !== slug)
             .sort(() => Math.random() - Math.random())
             .slice(0, 4)
         );
@@ -238,7 +242,7 @@ const NewsDetails = () => {
                     <div className="">
                       <Link
                         className="text-decoration-none text-dark"
-                        to={`/blog/related/${post._id}`}
+                        to={`/blog/related/${post.slug}`}
                       >
                         <h6 className="related-post-title">
                           {post.title.slice(0, 300)}

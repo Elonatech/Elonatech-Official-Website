@@ -113,7 +113,7 @@ const News = () => {
                     <div className="col-md-12" key={item.id}>
                       <Link
                         className="text-decoration-none text-dark"
-                        to={`${item._id}`}
+                        to={`${item.slug}`}
                       >
                         <div className="mt-4">
                           <div className="row g-0 shim ">
