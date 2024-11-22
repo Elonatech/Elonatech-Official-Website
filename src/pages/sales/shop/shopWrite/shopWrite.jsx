@@ -54,7 +54,6 @@ const shopWrite = () => {
 
   const navigate = useNavigate();
 
-  //==============  Submit the form
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -68,17 +67,24 @@ const shopWrite = () => {
         category,
         images,
       };
-      const data = await axios.post(
+  
+      const response = await axios.post(
         `${BASEURL}/api/v1/product/create`,
         newData
       );
+  
+      console.log("API Response:", response);
+  
+      // Success handling
       toast.success("Product Added Successfully");
       setImages([]);
       navigate("/shop");
     } catch (error) {
+      console.error("Error during API call:", error);
       toast.warning("Please Fill All Required Fields");
     }
   };
+  
 
   return (
     <>

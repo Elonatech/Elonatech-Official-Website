@@ -147,15 +147,26 @@ const BlogPages = lazy(() => import("./components/blog/blogPages"));
 
 const Layout = () =>{
   return(
+  // <>
+  //   <Suspense fallback={<><LoadingPages /></>}>
+  //   <CartProvider>
+  //   <Navbar />
+  //   <ScrollTop/>
+  //   <Outlet/>
+  //   <Footer />
+  //   </CartProvider>
+  //   </Suspense>
+  // </>
+
   <>
-    <Suspense fallback={<><LoadingPages /></>}>
     <CartProvider>
-    <Navbar />
-    <ScrollTop/>
-    <Outlet/>
-    <Footer />
+      <Navbar />
+      <ScrollTop />
+      <Suspense fallback={<LoadingPages />}>
+      <Outlet />
+      </Suspense>
+      <Footer />
     </CartProvider>
-    </Suspense>
   </>
   )
 }

@@ -58,6 +58,11 @@ const useScrollResetNavigation = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const isNavigatingRef = useRef(false)
+  const [previousUrl, setPreviousUrl] = useState(null)
+
+  useEffect(() => {
+    setPreviousUrl(window.location.href)
+  }, [location])
 
   const scrollToTop = useCallback(() => {
     window.scrollTo({
@@ -103,7 +108,7 @@ const useScrollResetNavigation = () => {
     }
   }
 
-  return { handleGoBack, scrollToTop, handleNavigateNext, handleGoToShop }
+  return { previousUrl, handleGoBack, scrollToTop, handleNavigateNext, handleGoToShop }
 }
 
 
@@ -157,12 +162,21 @@ const SingleProduct = () => {
       currentProductCat = category.toLowerCase();
   }
 
+
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem('token'))
     setCurrentAdmin(auth)
   }, [])
 
   const { handleGoBack, handleNavigateNext} = useScrollResetNavigation()
+
+  const [previousUrl, setPreviousUrl] = useState(null)
+
+  useEffect(() => {
+    setPreviousUrl(document.referrer || localStorage.getItem('previousUrl') || '/shop')
+    localStorage.setItem('previousUrl', 'yegduyewgduwdiuwduw', window.location.href)
+  }, [])
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -842,5 +856,5 @@ const SingleProduct = () => {
     </>
   )
 }
-
+0
 export default SingleProduct
