@@ -92,7 +92,7 @@ const Trends = () => {
         <link rel="canonical" href="https://elonatech.com.ng/blog" />
       </Helmet>
 
-      <div class="container-fluid blog-section">
+<div class="container-fluid blog-section">
   <div class="text-content">
     <h2>Trends</h2>
     <h5>Offering regularly updated and trendy contents</h5>

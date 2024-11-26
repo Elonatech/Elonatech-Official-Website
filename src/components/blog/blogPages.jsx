@@ -120,16 +120,16 @@ const BlogPages = () => {
           backgroundSize: "cover"
         }}
       >
-        <div class="py-5 mt-5 ">
-          <h2 class=" mt-5 text-white text-center">Blog</h2>
-          <h5 class=" mt-4 text-white text-center">
-            Offering regularly updated and trendy contents
-          </h5>
-          <p class="lead text-white text-center">
+        <div class='container-fluid blog-section'>
+        <div class='text-content'>
+          <h2>Blog</h2>
+          <h5>Offering regularly updated and trendy contents</h5>
+          <p class='lead'>
             We'd love to share our knowledge, experiences and the latest news,
-            trends and info with you
+            trends and info with you.
           </p>
         </div>
+      </div>
       </div>
 
       <div className="container mb-5">

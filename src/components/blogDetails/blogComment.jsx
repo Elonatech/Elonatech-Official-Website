@@ -19,7 +19,7 @@ const BlogComments = ({ blogId }) => {
   const [activeReplyId, setActiveReplyId] = useState(null)
   const [showReplyForm, setShowReplyForm] = useState(false)
 
-  const [selectedGender, setSelectedGender] = useState('female')
+  const [selectedGender, setSelectedGender] = useState('male')
 
   const handleChange = event => {
     setSelectedGender(event.target.value)
@@ -185,17 +185,7 @@ const BlogComments = ({ blogId }) => {
           required
         />
         <div className="gender-container">
-          <label style={{ marginRight: '10px' }}>
-            <input
-              type="radio"
-              name="gender"
-              value="female"
-              checked={selectedGender === 'female'}
-              onChange={handleChange}
-            />
-            Female
-          </label>
-          <label>
+        <label>
             <input
               type="radio"
               name="gender"
@@ -204,6 +194,16 @@ const BlogComments = ({ blogId }) => {
               onChange={handleChange}
             />
             Male
+          </label>
+          <label style={{ marginLeft: '10px' }}>
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              checked={selectedGender === 'female'}
+              onChange={handleChange}
+            />
+            Female
           </label>
         </div>
         <div className="comment-box">
@@ -280,17 +280,7 @@ const BlogComments = ({ blogId }) => {
                     required
                   />
                   <div className="gender-container">
-                    <label style={{ marginRight: '10px' }}>
-                      <input
-                        type="radio"
-                        name="gender"
-                        value="female"
-                        checked={selectedGender === 'female'}
-                        onChange={handleChange}
-                      />
-                      Female
-                    </label>
-                    <label>
+                  <label>
                       <input
                         type="radio"
                         name="gender"
@@ -299,6 +289,17 @@ const BlogComments = ({ blogId }) => {
                         onChange={handleChange}
                       />
                       Male
+                    </label>
+
+                    <label style={{ marginLeft: '10px' }}>
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        checked={selectedGender === 'female'}
+                        onChange={handleChange}
+                      />
+                      Female
                     </label>
                   </div>
                   <div className="comment-box">

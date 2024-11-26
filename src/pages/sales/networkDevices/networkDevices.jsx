@@ -337,7 +337,7 @@ const NetworkDevices = () => {
                                 {product.category === 'Network'
                                   ? 'Network Device'
                                   : product.category === 'Pos'
-                                  ? 'POS' // Use 'POS' for the POS category
+                                  ? 'POS' 
                                   : product.category}
                               </p>
 
