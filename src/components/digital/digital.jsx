@@ -31,6 +31,9 @@ import 'swiper/css'
 import 'swiper/css'
 
 import rema from './captions/rema_360.jpg'
+import mary from './captions/mary okhma.jpg'
+import osundu from './captions/osundu.jpg'
+import abayomi from './captions/abayomi.jpg'
 import remaben from './captions/remaben_480.jpg'
 import quoteRight from './captions/quote-right.webp'
 import quoteLeft from './captions/quote-left.webp'
@@ -93,24 +96,21 @@ const Digital = () => {
       position: 'COO/Water Specialist, Safebrooks Nig. Ltd.',
       quote: "They'll move mountains for us.",
       testimonial: `"Safebrooks Nigeria Limited" relies on Elonatech for its digital marketing and web development expertise, with a particular focus on the area of social media marketing and digital advertising. Elonatech provides the best advice and is superbly knowledgeable as well as being fully committed and responsive to our needs and supporting the ideas and initiatives we have presented. Oreva and all of the team at Elonatech have become invaluable partners for our company in creating brand awareness and being instrumental in generating new business ideas.`,
-      imageUrl:
-        'https://elonatech.com.ng/wp-content/uploads/2021/09/Gabriel-Osondu.jpeg'
+      imageUrl: osundu
     },
     {
       name: 'Mary Ephraim-Egbas',
       position: 'CEO, Okhma Consult',
       quote: 'A great partner to us.',
       testimonial: `"The challenge we face is that we are big enough to need a network with specific functionality, but not necessarily requiring a full-time IT staff person. Elonatech Nigeria Ltd. provided the perfect solution; they have the technical expertise and mindshare we needed coupled with flexibility in the level of support. They are really responsive, prioritizing important issues that arise and dealing with them quickly and effectively. I also appreciate their detailed follow-up and preventive maintenance; more than once this has helped us avoid a major problem with our network. A lot of companies these days make claims about customer service and looking out for the best interest of their clients, but Elonatech can be trusted to do what they say—and for a competitive price."`,
-      imageUrl:
-        'https://elonatech.com.ng/wp-content/uploads/2021/06/Mary-Ephraim-Egbas.jpeg'
+      imageUrl: mary
     },
     {
       name: 'Abayomi Kakanfo',
       position: 'Business Dev. Manager, Hyperthread Ventures Limited',
       quote: 'Not a typical agency.',
       testimonial: `"I have worked with other web designers before but was never satisfied with the end result. From start to finish my interaction with the team at Elonatech was professional, stress-free and I had complete trust in their ability to deliver. Their difference is: They took the time to listen to what I wanted but also brought their own ideas, experience and creativity so that the end design was more rounded. They understood that I needed to see things in a visual context and have some flexibility to 'play' around with a few ideas. All of this was done face to face at their office making the process highly personal."`,
-      imageUrl:
-        'https://elonatech.com.ng/wp-content/uploads/2021/06/Abayomi-Kakanfo.jpg'
+      imageUrl: abayomi
     },
     {
       name: 'Benjamin Miachi',

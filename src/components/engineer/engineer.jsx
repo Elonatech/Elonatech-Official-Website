@@ -84,7 +84,7 @@ const Engineer = () => {
             </div>
           </div>
           <div class='col-md-6'>
-            <p className='' style={{ textAlign: 'justify',  }}>
+            <p className='' style={{ textAlign: 'justify' }}>
               For specialized hardware services, we have highly skilled
               full-time computer hardware techs who can fix all types of
               hardware problems including power jacks, keyboards, screens, fans,
@@ -107,24 +107,19 @@ const Engineer = () => {
         </div>
       </div>
       {/*========================================================================================================================*/}
-      <div
-        className='container-fluid'
-        style={{ backgroundColor: '#cccccc ' }}
-      >
-        <div className='container'>
+      <div style={{ backgroundColor: '#cccccc ' }}>
+        <div className='container-md'>
           <div class='row d-flex align-items-center justify-content-center '>
             <div class='col-md-6'>
-              <div class=''>
-                <h4 class='text-dark fw-bold pt-2'>Desktop and Laptop PCs</h4>
-                <p class='text-dark' style={{ textAlign: 'justify'}}>
-                  We offer all kinds of laptop, desktop and server repairs of
-                  all makes and models, including Windows, Mac and Linux
-                  computers. We do virus removal <br /> without reformatting so
-                  you don't lose your important files or photos. We repair both
-                  hardware and software. We have no queue so come any time and
-                  we'll start fixing your computer right away.
-                </p>
-              </div>
+              <h4 class='text-dark fw-bold pt-2'>Desktop and Laptop PCs</h4>
+              <p class='text-dark' style={{ textAlign: 'justify' }}>
+                We offer all kinds of laptop, desktop and server repairs of all
+                makes and models, including Windows, Mac and Linux computers. We
+                do virus removal <br /> without reformatting so you don't lose
+                your important files or photos. We repair both hardware and
+                software. We have no queue so come any time and we'll start
+                fixing your computer right away.
+              </p>
             </div>
             <div class='col-md-6'>
               <div className='text-center'>
@@ -140,7 +135,7 @@ const Engineer = () => {
         </div>
       </div>
       {/*=======================================================  style={{backgroundColor:"#f3e3f0"}}  ==========================*/}
-      <div className='container mt-5 mb-5'>
+      <div className='container my-5'>
         <div class='row d-flex align-items-center justify-content-center '>
           <div class='col-md-6'>
             <div className='text-center'>
@@ -158,13 +153,15 @@ const Engineer = () => {
             </h4>
             <ul className='list-unstyled '>
               <li className='kos'>
-                <i class='bi bi-check-square  me-2 me-lg-3 fs-6'></i>Pick-up and Return
+                <i class='bi bi-check-square  me-2 me-lg-3 fs-6'></i>Pick-up and
+                Return
               </li>
               <li className='kos'>
                 <i class='bi bi-check-square  me-2 me-lg-3'></i>Onsite Repair
               </li>
               <li className='kos'>
-                <i class='bi bi-check-square  me-2 me-lg-3'></i>Walk-in and Repair
+                <i class='bi bi-check-square  me-2 me-lg-3'></i>Walk-in and
+                Repair
               </li>
               <li className='kos'>
                 <i class='bi bi-check-square  me-2 me-lg-3'></i>Remote Support

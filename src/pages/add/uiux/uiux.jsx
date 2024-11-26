@@ -53,39 +53,39 @@ const Uiux = () => {
 
       {/* ===================================================================================================================== */}
       <div className='container'>
-        <div className='container mb-5'>
-          <div className='row align-items-center'>
-            <div className='col-lg-6'>
-              <div className='text-center'>
-                <img
-                  src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718062/uiuxPage/safebrooks-uiux_me4g7t.png'
-                  alt=''
-                  className='img-fluid lazyload rounded'
-                />
-              </div>
-            </div>
-            <div className='col-lg-6 '>
-              <p className='text-justify fs-6 pt-5'>
-                In today's digital landscape, your online presence is often the
-                first impression you make on your audience. It's not just about
-                aesthetics; it's about creating a seamless, intuitive, and
-                enjoyable experience that keeps users coming back. That's where
-                our UI/UX design services come in. <br /> <br /> At the start of
-                any beautiful web project is your UI/UX design. With it you can
-                have a feel of exactly how the website will look. We'll design a
-                prototype with an excellent User Interface (UI) & User
-                Experience (UX) for your brand.
-                <br /> <br /> After all enquiries, the next step is to build a
-                prototype by designing the User Interface (UI) and make the
-                website have an excellent User Experience (UX), so the clients
-                can have a feel of exactly how the website looks.
-              </p>
+        {/* <div className='container mb-5'> */}
+        <div className='row align-items-center'>
+          <div className='col-lg-6'>
+            <div className='text-center'>
+              <img
+                src='https://i.stack.imgur.com/qq8AE.gif'
+                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718062/uiuxPage/safebrooks-uiux_me4g7t.png'
+                alt=''
+                className='img-fluid lazyload rounded'
+              />
             </div>
           </div>
+          <div className='col-lg-6 '>
+            <p className='text-justify fs-6 pt-5 taj'>
+              In today's digital landscape, your online presence is often the
+              first impression you make on your audience. It's not just about
+              aesthetics; it's about creating a seamless, intuitive, and
+              enjoyable experience that keeps users coming back. That's where
+              our UI/UX design services come in. <br /> <br /> At the start of
+              any beautiful web project is your UI/UX design. With it you can
+              have a feel of exactly how the website will look. We'll design a
+              prototype with an excellent User Interface (UI) & User Experience
+              (UX) for your brand.
+              <br /> <br /> After all enquiries, the next step is to build a
+              prototype by designing the User Interface (UI) and make the
+              website have an excellent User Experience (UX), so the clients can
+              have a feel of exactly how the website looks.
+            </p>
+          </div>
+          {/* </div> */}
         </div>
         {/*======================================================== UI/UX SERVICES =================================================*/}
-        <div className='container  justify-content-around mb-5'>
+        <div className='container justify-content-around mb-5 mt-5'>
           <h3
             className='text-center fs-2 fw-bolder pb-3'
             style={{ color: 'red' }}

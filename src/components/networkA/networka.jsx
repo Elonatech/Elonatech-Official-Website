@@ -1,6 +1,5 @@
 import Getintouch2 from '../GetInTouch/getintouch2'
 import './networka.css'
-
 import networkAdminHeader from './caption/network_admin_kdfsql.jpg'
 import FirstImage from './caption/q-fix_dc93ga.png'
 import SecondImage from './caption/q4_iqeimb.jpg'
@@ -111,7 +110,7 @@ const Networka = () => {
             >
               <div class='text-bg-light shadow py-4 rounded'>
                 <h4 className='text-center'>Administration</h4>
-                <p class='p-2' style={{ textAlign: 'justify' }}>
+                <p class='p-2 text-center text-md-start' style={{textAlign: 'justify'}}>
                   Network administration aims to ensure a reliable, secure
                   network conducive to business operations. Network
                   administration primarily consists of, but isn't limited to,
@@ -138,34 +137,34 @@ const Networka = () => {
           <div className='col-md-6 mt-3'>
             {/* list */}
             <div className=''>
-              <div className='d-flex p-2'>
-                <i class='bi bi-circle-fill me-3'></i>
-                <p>Network Design, Installation, and Evaluation</p>
+              <div className='d-flex'>
+                <i class='bi bi-circle-fill me-1'></i>
+                <span>Network Design, Installation, and Evaluation</span>
               </div>
               {/*  */}
-              <div className='d-flex p-2'>
-                <i class='bi bi-circle-fill me-3'></i>
-                <p>Execution and Administration of Backups</p>
+              <div className='d-flex'>
+                <i class='bi bi-circle-fill me-1'></i>
+                <span>Execution and Administration of Backups</span>
               </div>
               {/*  */}
-              <div className='d-flex p-2'>
-                <i class='bi bi-circle-fill me-3'></i>
-                <p>Network Resource Authentication</p>
+              <div className='d-flex'>
+                <i class='bi bi-circle-fill me-1'></i>
+                <span>Network Resource Authentication</span>
               </div>
               {/*  */}
-              <div className='d-flex p-2'>
-                <i class='bi bi-circle-fill me-3'></i>
-                <p>Network Security, including intrusion detection</p>
+              <div className='d-flex'>
+                <i class='bi bi-circle-fill me-1'></i>
+                <span>Network Security, including intrusion detection</span>
               </div>
               {/*  */}
-              <div className='d-flex p-2'>
-                <i class='bi bi-circle-fill me-3'></i>
-                <p>Network Hardware Configuration, e.g. routers, switches</p>
+              <div className='d-flex'>
+                <i class='bi bi-circle-fill me-1'></i>
+                <span>Network Hardware Configuration, e.g. routers, switches</span>
               </div>
               {/*  */}
-              <div className='d-flex p-2'>
-                <i class='bi bi-circle-fill me-3'></i>
-                <p>Network Upgrade and Maintenance</p>
+              <div className='d-flex'>
+                <i class='bi bi-circle-fill me-1'></i>
+                <span>Network Upgrade and Maintenance</span>
               </div>
               {/*  */}
             </div>

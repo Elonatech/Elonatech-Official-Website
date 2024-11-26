@@ -66,7 +66,7 @@ const Cabling = () => {
         <div className='row'>
           <div className='col-lg-6'>
             <div className='mt-4'>
-              <p className='' style={{textAlign: 'justify'}}>
+              <p className='' style={{ textAlign: 'justify' }}>
                 <span className='fw-bold'>Structured cabling</span> is the
                 design and installation of a cabling system that will support
                 multiple hardware uses and be suitable for today's needs and
@@ -123,7 +123,7 @@ const Cabling = () => {
           </div>
           <div className='col-lg-6'>
             <div className='mt-3'>
-              <p className='' style={{textAlign: 'justify'}}>
+              <p className='' style={{ textAlign: 'justify' }}>
                 These standards define how to lay the cabling in various
                 topologies in order to meet the needs of the customer, typically
                 using a central patch panel (which is 19-inch rack-mounted),
@@ -227,11 +227,11 @@ const Cabling = () => {
       <div className='container '>
         {/* <h4 className='text-center'>Some Of Our Recently Completed Projects</h4> */}
         <div class='text-bg-light shadow py-4 rounded'>
-          <h6 className='text-center p-3' style={{textAlign: 'justify'}}>
+          <h6 className='text-center p-3' style={{ textAlign: 'justify' }}>
             Sub-Contractor To Pine Height Systems On Networking/Structure
             Cabling Of An 8 Floor Luxury Flat BUILDING (96 Points) LAN Setup For
-            Samsung Electronics Nigeria Ltd. at Admiralty Way, Lekki
-            Phase 1. Project Phase 1
+            Samsung Electronics Nigeria Ltd. at Admiralty Way, Lekki Phase 1.
+            Project Phase 1
           </h6>
           <div class='slider'>
             <div class='slide-track'>
@@ -309,8 +309,8 @@ const Cabling = () => {
           <h6 className='text-center p-3'>
             Sub-Contractor To Pine Height Systems On Networking/Structure
             Cabling Of An 8 Floor Luxury Flat BUILDING (96 Points) LAN Setup For
-            Samsung Electronics Nigeria Ltd. at Admiralty Way, Lekki
-            Phase 1. Project Phase 2
+            Samsung Electronics Nigeria Ltd. at Admiralty Way, Lekki Phase 1.
+            Project Phase 2
           </h6>
           <div class='slider'>
             <div class='slide-track'>
@@ -339,16 +339,16 @@ const Cabling = () => {
                 />
               </div>
               <div class='slide'>
-                <div class='slide'>
-                  <img
-                    src='https://res.cloudinary.com/elonatech/image/upload/v1709570978/structuredCablingPage/phase2/DSC06935_pfmijp.png'
-                    className='img-fluid p-2'
-                    style={{ height: '25rem' }}
-                    alt=''
-                  />
-                </div>
                 <img
                   src='https://res.cloudinary.com/elonatech/image/upload/v1709570979/structuredCablingPage/phase2/DSC06940_m2jdcm.png'
+                  className='img-fluid p-2'
+                  style={{ height: '25rem' }}
+                  alt=''
+                />
+              </div>
+              <div class='slide'>
+                <img
+                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570978/structuredCablingPage/phase2/DSC06935_pfmijp.png'
                   className='img-fluid p-2'
                   style={{ height: '25rem' }}
                   alt=''

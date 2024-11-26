@@ -63,11 +63,10 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
       </div>
 
       {/*============================================================================= Phone repair issues ==================================================*/}
-      <div className='container  mb-5 '>
+      <div className='container mb-3'>
         <div class='icon-boxes position-relative mt-5'>
           <div class='container position-relative'>
-            <div class='row gy-4 mt-5'>
-              <div class='col-md-12 col-md-12'>
+            <div class='row mt-3'>
                 <div class='text-bg-light shadow py-4 rounded'>
                   <h3 className='text-center'>
                     Why Choose Elonatech for Phone Repair
@@ -84,7 +83,6 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                     quality parts and timely customer care support.
                   </p>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -100,7 +98,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-phone me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Broken Phone Screen</h5>
+                    <p className='mt-3'>Broken Phone Screen</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -109,7 +107,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-lightning-charge me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Charging Port Issue</h5>
+                    <p className='mt-3'>Charging Port Issue</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -118,7 +116,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-phone me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Water Damage</h5>
+                    <p className='mt-3'>Water Damage</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -127,7 +125,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-battery me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Battery Draining Fast</h5>
+                    <p className='mt-3'>Battery Draining Fast</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -136,7 +134,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-speaker  me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Speaker Not Working</h5>
+                    <p className='mt-3'>Speaker Not Working</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -145,7 +143,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-phone me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Frequent Hanging</h5>
+                    <p className='mt-3'>Frequent Hanging</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -154,13 +152,13 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-phone me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Phone Overheating</h5>
+                    <p className='mt-3'>Phone Overheating</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
                   <div className='d-flex'>
                     <i class='bi bi-wifi me-3' style={{ fontSize: '40px' }}></i>
-                    <h5 className='mt-3'>Internet Connection Issues</h5>
+                    <p className='mt-3'>Internet Connection Issues</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -169,13 +167,13 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-menu-button me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Buttons Not Working</h5>
+                    <p className='mt-3'>Buttons Not Working</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
                   <div className='d-flex'>
                     <i class='bi bi-app  me-3' style={{ fontSize: '40px' }}></i>
-                    <h5 className='mt-3'>App Crashes</h5>
+                    <p className='mt-3'>App Crashes</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -184,7 +182,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-camera me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Camera Not Working</h5>
+                    <p className='mt-3'>Camera Not Working</p>
                   </div>
                 </div>
                 <div className='col-md-4'>
@@ -193,7 +191,7 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
                       class='bi bi-lightbulb me-3'
                       style={{ fontSize: '40px' }}
                     ></i>
-                    <h5 className='mt-3'>Flashlight Not Working</h5>
+                    <p className='mt-3'>Flashlight Not Working</p>
                   </div>
                 </div>
               </div>
