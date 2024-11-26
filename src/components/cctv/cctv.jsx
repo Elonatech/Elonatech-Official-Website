@@ -61,7 +61,7 @@ const Cctv = () => {
       </div>
 
       {/*============================================================ slider ====================================================*/}
-      <div className='container mb-5'>
+      <div className=' mb-5'>
         <Swiper
           spaceBetween={23}
           slidesPerView={1}
