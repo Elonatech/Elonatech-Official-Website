@@ -129,9 +129,9 @@ It is created by projecting sequenced images quickly, one after another, to crea
             <div class='card rounded-0 border-0' style={{ padding: '3rem' }}>
               <div class='card-body'>
                 <h5 class='card-title fs-1'>
-                  We Have All You Need For <br /> Your Animation.....
+                  We Have All You Need For Your Animation.....
                 </h5>
-                <p class='card-text'>
+                <p class='card-text taj'>
                   When you’re ready to take your animations to the next level,
                   discover all that you can do with Character animations.
                   Animation is the art of bringing life to an otherwise
@@ -229,11 +229,11 @@ It is created by projecting sequenced images quickly, one after another, to crea
         </div>
         <div className='col-lg-6'>
           <div className=' text-black align-items-center faq'>
-            <h2 class='font-weight-bold heading p-2 pt-3 ps-5  fw-bold pl-2'>
+            <h2 class='font-weight-bold heading pt-3 ps-5 fw-bold'>
               FAQs
             </h2>
             <p class='text-black fs-6 ' style={{ textAlign: 'justify' }}>
-              <ul className='list-unstyled pe-5 ps-5'>
+              <ul className='list-unstyled px-5'>
                 <li className='pb-2'>
                   {' '}
                   <span className='fw-bold fs-5' style={{ color: 'black' }}>
