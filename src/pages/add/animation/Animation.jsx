@@ -229,9 +229,7 @@ It is created by projecting sequenced images quickly, one after another, to crea
         </div>
         <div className='col-lg-6'>
           <div className=' text-black align-items-center faq'>
-            <h2 class='font-weight-bold heading pt-3 ps-5 fw-bold'>
-              FAQs
-            </h2>
+            <h2 class='font-weight-bold heading pt-3 ps-5 fw-bold'>FAQs</h2>
             <p class='text-black fs-6 ' style={{ textAlign: 'justify' }}>
               <ul className='list-unstyled px-5'>
                 <li className='pb-2'>
