@@ -93,7 +93,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <img src='' className='img-fluid' alt='' />
               <h5 className='mt-2 fw-bold'>Assessment of symptoms</h5>
-              <p>
+              <p className='taj'>
                 A client knows they’ve got a business problem (such as declining
                 revenue or a new competitor in their market). They turn to a
                 consultant for help getting to the root of the problem, as a
@@ -105,7 +105,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <img src='' className='img-fluid' alt='' />
               <h5 className='mt-2 fw-bold'>Diagnosis</h5>
-              <p>
+              <p className='taj'>
                 The consultant assesses the client’s business performance,
                 taking into account similar problems they’ve seen at clients in
                 the past, like a doctor would check their patient’s symptoms
@@ -117,7 +117,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <img src='' className='img-fluid' alt='' />
               <h5 className='mt-2 fw-bold'>Follow-up care</h5>
-              <p>
+              <p className='taj'>
                 The consultant provides the client with a step-by-step process
                 to improve their business results, much like a doctor provides a
                 patient with the steps necessary to regain their health.
@@ -128,7 +128,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <img src='' className='img-fluid' alt='' />
               <h5 className='mt-2 fw-bold'>Prescription</h5>
-              <p>
+              <p className='taj'>
                 The consultant recommends a course of action to improve revenues
                 or meet a competitive threat, much like a doctor would tell
                 their patient what’s wrong with them and prescribe medicine or
@@ -140,7 +140,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <img src='' className='img-fluid' alt='' />
               <h5 className='mt-2 fw-bold'>Bedside manner</h5>
-              <p>
+              <p className='taj'>
                 The consultant has the experience to steer a client to the right
                 course of action as a doctor would advise a nervous patient.
               </p>
@@ -162,7 +162,7 @@ const Consulting = () => {
           </div>
           <div className='col-lg-6'>
             <div className='mt-2'>
-              <p className=' mt-4'>
+              <p className=' mt-4 taj'>
                 We work in partnership with clients, advising them how to use
                 information technology in order to meet their business
                 objectives or overcome problems.
@@ -180,7 +180,7 @@ const Consulting = () => {
                 responsible for user training and feedback.
               </p>
 
-              <p className=''>
+              <p className='taj'>
                 We engage in the business of giving expert advice to people
                 working in a professional or technical field. We serve as
                 external consultants employed externally to clients (for a
@@ -243,7 +243,7 @@ const Consulting = () => {
                 />
               </div>
               <h4 className='fw-bold text-center'>Data to Information</h4>
-              <p className='text-center'>
+              <p className='taj'>
                 We Provide solutions that turn your data into meaningful
                 information for decision making.
               </p>
@@ -265,7 +265,7 @@ const Consulting = () => {
           </div>
           <div className='col-lg-6'>
             <div className=' border-0'>
-              <p className='p-3 pt-'>
+              <p className='taj py-3'>
                 By hiring a consultant, clients have access to deeper levels of
                 expertise than would be financially feasible for them to retain
                 in-house on a long-term basis. Moreover, clients can control
@@ -284,29 +284,29 @@ const Consulting = () => {
         </div>
       </div>
       {/* ===================================================================== */}
-      <div className='container mb-5 mt-5 last-section'>
+      <div className='container mb-5 last-section'>
         <div className='row g-0'>
-          <div className='col-lg-3 col-md-6 col-sm-6'>
-            <div className='border-top-0 border-bottom-0 border-start-0 rounded-0 border-dark'>
+          <div className='col-lg-3 col-6'>
+            <div className=''>
               <h4 className='text-center'>#1 Provider</h4>
               <p className='text-center'>
                 of core Information Technology systems
               </p>
             </div>
           </div>
-          <div className='col-lg-3 col-md-6 col-sm-6'>
+          <div className='col-lg-3 col-6'>
             <div className='border-top-0 border-bottom-0 rounded-0 border-dark'>
               <h4 className='text-center'>13+ Years</h4>
               <p className='text-center'>of innovation in the IT industry</p>
             </div>
           </div>
-          <div className='col-lg-3 col-md-6 col-sm-6'>
+          <div className='col-lg-3 col-6'>
             <div className='border-top-0 border-bottom-0 rounded-0 border-dark'>
               <h4 className='text-center'>4.8</h4>
               <p className='text-center'>Average rating from 300 reviews</p>
             </div>
           </div>
-          <div className='col-lg-3 col-md-6 col-sm-6'>
+          <div className='col-lg-3 col-6'>
             <div className='border-top-0 border-bottom-0 border-end-0 rounded-0 border-dark'>
               <h4 className='text-center'>80%</h4>
               <p className='text-center'>Clients with us for 8 years or more</p>

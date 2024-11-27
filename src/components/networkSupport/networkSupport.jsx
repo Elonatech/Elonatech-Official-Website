@@ -35,7 +35,7 @@ const NetworkSupport = () => {
       <div className='container mt-5 mb-5'>
         <div className='row align-items-center'>
           <div className='col-lg-6'>
-            <p>
+            <p className='taj'>
               Network Support has to do with everything that keeps
               organizations' computer network running, productive, and
               up-to-date. It assures all devices are healthy, and all hardware,
@@ -87,21 +87,21 @@ const NetworkSupport = () => {
                 margin: ''
               }}
             ></div>
-            <p>
+            <p className='taj'>
               Network support services are the need of every business in the
               modern technology era. They can help you save money, time and
               energy. When networks are utilized correctly, they can be one of
               the biggest productivity enhancers.
             </p>
 
-            <p>
+            <p className='taj'>
               However, if a network is not set up properly, then it can cause
               hassles, frustration, and lost productivity. That’s why, when
               setting up networks, our expert technicians at Elonatech provide
               the reliable network services you need and ensure that it works
               smoothly and flawlessly.
             </p>
-            <p>
+            <p className='taj'>
               When your company hires us for network support, you are paying for
               the services of setting up the network, monitoring the network,
               making sure the network is operating as it should, and expanding
@@ -135,7 +135,7 @@ const NetworkSupport = () => {
                 margin: ''
               }}
             ></div>
-            <p>
+            <p className='taj'>
               Business owners can rest easier, knowing that their business
               network is being undertaken and managed by an experienced network
               support provider.
@@ -143,7 +143,7 @@ const NetworkSupport = () => {
             <div className='row'>
               <h6 className='fw-bold'>Benefits include:</h6>
               <div className='col-md-6'>
-                <div className=''>
+                <div className='taj'>
                   <div className='d-flex pt-2'>
                     <i class='bi bi-circle-fill me-3'></i>
                     <p className=''>
@@ -186,7 +186,7 @@ const NetworkSupport = () => {
               <div className='col-md-6'>
                 <div className='d-flex pt-2'>
                   <i class='bi bi-circle-fill me-3'></i>
-                  <p className=''>
+                  <p className='taj'>
                     Better Performance: Network support services can help
                     optimize network performance by ensuring that all devices
                     are properly configured and that network traffic is
@@ -195,7 +195,7 @@ const NetworkSupport = () => {
                 </div>
                 <div className='d-flex pt-2'>
                   <i class='bi bi-circle-fill me-3'></i>
-                  <p className=''>
+                  <p className='taj'>
                     Increased Reliability: Network support services can monitor
                     and maintain network infrastructure to ensure maximum uptime
                     and minimize downtime, improving reliability and reducing
@@ -204,7 +204,7 @@ const NetworkSupport = () => {
                 </div>
                 <div className='d-flex pt-2'>
                   <i class='bi bi-circle-fill me-3'></i>
-                  <p className=''>
+                  <p className='taj'>
                     Cost Savings: Networks and network support services can help
                     reduce costs by enabling the sharing of resources and
                     facilitating remote work, which can reduce the need for
@@ -232,7 +232,7 @@ const NetworkSupport = () => {
             />
           </div>
           <div className='col-md-6 mt-3'>
-            <p>
+            <p className='taj'>
               We will ensure that your communications and networks are in top
               shape. We can help protect you from security risks and maximize
               work time for your business. With our Managed Services (MSP), we
