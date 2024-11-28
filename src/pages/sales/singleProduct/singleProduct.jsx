@@ -856,5 +856,4 @@ const SingleProduct = () => {
     </>
   )
 }
-0
 export default SingleProduct
