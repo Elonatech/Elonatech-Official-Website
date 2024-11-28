@@ -52,6 +52,7 @@
 .app-design-section {
   /* position: relative; */
   height: 500px;
+background-color: #11253D; 
   display: flex;
   justify-content: center;
   align-items: center;
