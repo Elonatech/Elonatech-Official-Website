@@ -35,26 +35,26 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
       </div>
 
       {/*============================================================================= Phone repair issues ==================================================*/}
-      <div className='container mb-3'>
+      <div className='mb-3'>
         <div class='icon-boxes position-relative mt-5'>
           <div class='container position-relative'>
             <div class='row mt-3'>
-                <div class='text-bg-light shadow py-4 rounded'>
-                  <h3 className='text-center'>
-                    Why Choose Elonatech for Phone Repair
-                  </h3>
-                  <p class='lead my-3 text-center p-3'>
-                    <img
-                      data-src={Shadow}
-                      alt=''
-                      style={{ height: '3rem', width: '4rem' }}
-                      className='lazyload'
-                    />
-                    Elonatech provides customers with excellent phone repair
-                    services with well-trained team of repair technicians, top
-                    quality parts and timely customer care support.
-                  </p>
-                </div>
+              <div class='text-bg-light shadow py-3 rounded'>
+                <h3 className='text-center'>
+                  Why Choose Elonatech for Phone Repair
+                </h3>
+                <p class='lead my-2 text-center '>
+                  <img
+                    data-src={Shadow}
+                    alt=''
+                    style={{ height: '2rem', width: '3rem' }}
+                    className='lazyload'
+                  />
+                  Elonatech provides customers with excellent phone repair
+                  services with well-trained team of repair technicians, top
+                  quality parts and timely customer care support.
+                </p>
+              </div>
             </div>
           </div>
         </div>

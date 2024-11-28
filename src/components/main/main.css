@@ -26,6 +26,9 @@
 background-color: #11253D; 
   }
 
+  .row-sm-gutter {
+    gap: 1rem;
+  }
 
   .row.mt-5.justify-content-center {
     display: flex;
@@ -130,14 +133,6 @@ background-color: #11253D;
   order: 1;
 }
 
-
-
-/* @media (max-width: 767px) {
-  .fst {
-    order: 1;
-  }
-
-  .snd {
-    order: 2;
-  }
-} */
+.showOnMobile{
+  margin-top: -75px;
+}
