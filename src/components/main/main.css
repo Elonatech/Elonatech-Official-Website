@@ -25,6 +25,9 @@
     height: 500px;
   }
 
+  .row-sm-gutter {
+    gap: 1rem;
+  }
 
   .row.mt-5.justify-content-center {
     display: flex;
@@ -129,14 +132,6 @@
   order: 1;
 }
 
-
-
-/* @media (max-width: 767px) {
-  .fst {
-    order: 1;
-  }
-
-  .snd {
-    order: 2;
-  }
-} */
+.showOnMobile{
+  margin-top: -75px;
+}
