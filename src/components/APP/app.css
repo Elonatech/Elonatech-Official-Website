@@ -67,7 +67,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url('https://res.cloudinary.com/elonatech/image/upload/v1731490847/Edu_learn_app_dnhjwj.png');
+    url('https://res.cloudinary.com/elonatech/image/upload/v1732722944/mobile_app_c6oqxa.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -113,19 +113,19 @@
 /* // ==================================================== // */
 
 /* Text styling for desktop */
-.web-design-section h2 {
+.app-design-section h2 {
   font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 10px;
 }
 
-.web-design-section h5 {
+.app-design-section h5 {
   font-size: 1.3rem;
   line-height: 1.2;
   margin-bottom: 8px;
 }
 
-.web-design-section p {
+.app-design-section p {
   font-size: 1.1rem;
   line-height: 1.2;
   margin-bottom: 5px;
@@ -335,14 +335,14 @@
 
 /* Mobile view */
 @media (max-width: 576px) {
-  .web-design-section {
+  .app-design-section {
     height: 200px;
     background-image: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
       ),
-      url('https://res.cloudinary.com/elonatech/image/upload/v1729523989/web_dev_mobile_view_ynztpi.jpg');
+      url('https://res.cloudinary.com/elonatech/image/upload/v1732722944/mobile_app_c6oqxa.jpg');
     background-size: cover;
     flex-direction: column;
     align-items: center;
@@ -350,13 +350,13 @@
   }
 
   /* Adjusting text for mobile view */
-  .web-design-section h2 {
+  .app-design-section h2 {
     font-size: 1.5rem;
     margin-bottom: 5px;
     line-height: 1.1;
   }
 
-  .web-design-section h5 {
+  .app-design-section h5 {
     font-size: 1rem;
     margin-bottom: 3px;
     line-height: 1.1;
@@ -364,16 +364,16 @@
     /* display: none; */
   }
 
-  .web-design-section p {
+  .app-design-section p {
     font-size: 0.9rem;
     line-height: 1.1;
     margin-bottom: 0;
     display: none;
   }
 
-  .web-design-section h2,
-  .web-design-section h5,
-  .web-design-section p {
+  .app-design-section h2,
+  .app-design-section h5,
+  .app-design-section p {
     margin: 0;
     padding: 0;
   }

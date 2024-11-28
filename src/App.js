@@ -8,13 +8,11 @@ import './index.css';
 import { useAuth } from './components/admin/AuthContext';
 import ReactGA from 'react-ga4';
 
-import NewsPages from "./components/news/NewsPages";
-import TrendsPages from "./components/trends/TrendsPages";
-import NewsDetails from "./components/news/newsDetails/newsDetails";
-import NewsRelated from "./components/news/newsDetails/newsRelated";
-import TrendDetails from "./components/trends/TrendDetails/trendDetails";
-import TrendRelated from "./components/trends/TrendDetails/trendRelated";
-import Trial from './components/blogDetails/Trial';
+const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
+const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
+const TrendDetails = lazy(() => import("./components/trends/TrendDetails/trendDetails"));
+const TrendRelated = lazy(() => import("./components/trends/TrendDetails/trendRelated"));
+const Trial = lazy(() => import("./components/blogDetails/Trial"));
 
 
 
@@ -147,27 +145,27 @@ const BlogPages = lazy(() => import("./components/blog/blogPages"));
 
 const Layout = () =>{
   return(
-  // <>
-  //   <Suspense fallback={<><LoadingPages /></>}>
-  //   <CartProvider>
-  //   <Navbar />
-  //   <ScrollTop/>
-  //   <Outlet/>
-  //   <Footer />
-  //   </CartProvider>
-  //   </Suspense>
-  // </>
-
   <>
+    <Suspense fallback={<><LoadingPages /></>}>
     <CartProvider>
-      <Navbar />
-      <ScrollTop />
-      <Suspense fallback={<LoadingPages />}>
-      <Outlet />
-      </Suspense>
-      <Footer />
+    <Navbar />
+    <ScrollTop/>
+    <Outlet/>
+    <Footer />
     </CartProvider>
+    </Suspense>
   </>
+
+  // <>
+  //   <CartProvider>
+  //     <Navbar />
+  //     <ScrollTop />
+  //     <Suspense fallback={<LoadingPages />}>
+  //     <Outlet />
+  //     </Suspense>
+  //     <Footer />
+  //   </CartProvider>
+  // </>
   )
 }
 

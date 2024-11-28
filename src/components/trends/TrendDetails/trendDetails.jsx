@@ -155,7 +155,7 @@ const TrendDetails = () => {
                                 />
                                 <link
                                   rel="canonical"
-                                  href={`https://elonatech.com.ng/product/${id}`}
+                                  href={`https://elonatech.com.ng/product/${slug}`}
                                 />
                               </Helmet>
 

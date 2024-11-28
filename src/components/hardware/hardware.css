@@ -326,11 +326,7 @@
 
 .hardware-supply-section {
   min-height: 500px;
-  background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image: 
     url('https://res.cloudinary.com/elonatech/image/upload/v1709808147/hardwarePage/hardware_gnjtgm.jpg');
   background-repeat: no-repeat;
   background-position: center;
