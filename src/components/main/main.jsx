@@ -46,24 +46,13 @@ const Main = () => {
   useEffect(() => {
     const fetchLatestProducts = async () => {
       setLoadingLatest(true)
-      setLoadingLatest(true)
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`)
         const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`)
         if (response.data.success) {
           const allProducts = response.data.data
           console.log('All products:', allProducts)
 
-          const allProducts = response.data.data
-          console.log('All products:', allProducts)
-
           const productsByCategory = allProducts.reduce((acc, product) => {
-            acc[product.category] = acc[product.category] || []
-            acc[product.category].push(product)
-            return acc
-          }, {})
-
-          const latest = Object.values(productsByCategory).map(products => {
             acc[product.category] = acc[product.category] || []
             acc[product.category].push(product)
             return acc
@@ -78,28 +67,15 @@ const Main = () => {
           setLatestProducts(latest)
 
           const computerProducts = productsByCategory['Computer']
-            )[0]
-          })
-
-          setLatestProducts(latest)
-
-          const computerProducts = productsByCategory['Computer']
           if (computerProducts && computerProducts.length >= 2) {
-            setFeaturedProduct(computerProducts[1])
             setFeaturedProduct(computerProducts[1])
           }
         }
       } catch (error) {
         console.error('Error fetching latest products:', error)
-        console.error('Error fetching latest products:', error)
       } finally {
         setLoadingLatest(false)
-        setLoadingLatest(false)
       }
-    }
-
-    fetchLatestProducts()
-  }, [])
     }
 
     fetchLatestProducts()
@@ -331,7 +307,6 @@ const Main = () => {
       <div className='container marketing'>
         <div class='row  mt-5 '>
           <div class='col-lg-7'>
-          <div class='col-lg-7'>
             <h3 class='fw-bold'>
               {' '}
               The IT Solutions and Corporate Consultant Company
@@ -355,7 +330,6 @@ const Main = () => {
               solution
             </p>
           </div>
-          <div class='col-lg-5'>
           <div class='col-lg-5'>
             <img
               src=''
@@ -384,7 +358,6 @@ const Main = () => {
         ></div>
         <div
           id='carouselExampleControls'
-          class='carousel slide mt-5 mySSSS'
           class='carousel slide mt-5 mySSSS'
           data-bs-ride='carousel'
         >
@@ -761,13 +734,11 @@ const Main = () => {
             <div className='col-md-4'>
               <div
                 class='rounded bg-lazy h-100'
-                class='rounded bg-lazy h-100'
                 style={{
                   backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1707488914/homePage/main/User_experience_t6dbvw.png)`
                 }}
               >
                 <div class='text-center'>
-                  <p class='p-5 text-white'>
                   <p class='p-5 text-white'>
                     We offer bespoke user experience, web design, app design and
                     software development services.
@@ -778,13 +749,11 @@ const Main = () => {
             <div className='col-md-4'>
               <div
                 class='rounded bg-lazy h-100'
-                class='rounded bg-lazy h-100'
                 style={{
                   backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1707488913/homePage/main/Solution_client_expectation_doxygk.png)`
                 }}
               >
                 <div class='text-center'>
-                  <p class='p-5 text-white'>
                   <p class='p-5 text-white'>
                     We endeavor to exceed our clients’ expectations with the
                     solutions we provide, at competitive prices.
@@ -795,13 +764,11 @@ const Main = () => {
             <div className='col-md-4'>
               <div
                 class='rounded bg-lazy h-100'
-                class='rounded bg-lazy h-100'
                 style={{
                   backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1707488915/homePage/main/budget_and_time_xv2dk6.png)`
                 }}
               >
                 <div class='text-center text-white'>
-                  <p class='p-5'>
                   <p class='p-5'>
                     We deliver projects within budget and deadline while
                     continuously maintain quality & standard.{' '}

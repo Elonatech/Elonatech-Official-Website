@@ -6,22 +6,11 @@ import Header from './caption/computer_eng_iu3lq1.jpg'
 import Engineering from './caption/computer_repair_kk8fcb.jpg'
 import Repair from './caption/computer-repair_eamoij.jpg'
 import Repair2 from './caption/computer-engineering-height_qloe24.jpg'
-import Header from './caption/computer_eng_iu3lq1.jpg'
-import Engineering from './caption/computer_repair_kk8fcb.jpg'
-import Repair from './caption/computer-repair_eamoij.jpg'
-import Repair2 from './caption/computer-engineering-height_qloe24.jpg'
 
 import { Helmet } from 'react-helmet-async'
 import './engineer.css'
 
 const Engineer = () => {
-  return (
-    <>
-      <Helmet>
-        <title>Hardware Engineering - Tech Solution, Digital Solution</title>
-        <meta
-          name='description'
-          content='We offer 4 Convenient Computer Repair Options - Pick-up and Return, Onsite Repair, Walk-in and Repair, Remote Support 
   return (
     <>
       <Helmet>
@@ -38,25 +27,7 @@ const Engineer = () => {
           href='https://elonatech.com.ng/hardware-engineering'
         />
       </Helmet>
-       '
-        />
-        <link
-          rel='canonical'
-          href='https://elonatech.com.ng/hardware-engineering'
-        />
-      </Helmet>
 
-      {/*================================================================  header ================================================*/}
-      <div class='container-fluid hardware-engineering-section'>
-        <div class='text-content'>
-          <h2>Hardware Engineering</h2>
-          <h5>Because your business works when your hardware works</h5>
-          <p class='lead'>
-            While computer hardware configurations vary widely, we work on a
-            broad range of hardware systems
-          </p>
-        </div>
-      </div>
       {/*================================================================  header ================================================*/}
       <div class='container-fluid hardware-engineering-section'>
         <div class='text-content'>
@@ -182,5 +153,4 @@ const Engineer = () => {
   )
 }
 
-export default Engineer
 export default Engineer

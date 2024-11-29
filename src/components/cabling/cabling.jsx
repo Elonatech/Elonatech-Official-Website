@@ -1,13 +1,7 @@
 import Getintouch2 from '../GetInTouch/getintouch2'
-import Getintouch2 from '../GetInTouch/getintouch2'
 import './cabling.css'
 import { Link } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 
-import CablingHeader from './captions/structured_cabling_niejuu.jpg'
-import FirstCabling from './captions/Untitled-8_txf0ku.png'
-import SecondCabling from './captions/Untitled-7_k1jxj1.png'
-import { Helmet } from 'react-helmet-async'
 import CablingHeader from './captions/structured_cabling_niejuu.jpg'
 import FirstCabling from './captions/Untitled-8_txf0ku.png'
 import SecondCabling from './captions/Untitled-7_k1jxj1.png'
@@ -15,13 +9,7 @@ import { Helmet } from 'react-helmet-async'
 
 const Cabling = () => {
   return (
-  return (
     <>
-      <Helmet>
-        <title>{`Structured Cabling  - Tech Solution, Digital Solution`}</title>
-        <meta
-          name='description'
-          content='The standardized infrastructure of communications cabling that supports network components
       <Helmet>
         <title>{`Structured Cabling  - Tech Solution, Digital Solution`}</title>
         <meta
@@ -33,13 +21,6 @@ const Cabling = () => {
         5e (Cat 5e), category 6 (Cat 6), and fiber optic cabling and modular connectors.
         network 
         use or into an IP or PBX (private branch exchange) telephone system patch panel
-       '
-        />
-        <link
-          rel='canonical'
-          href='https://elonatech.com.ng/structure-cabling'
-        />
-      </Helmet>
        '
         />
         <link
@@ -86,17 +67,6 @@ const Cabling = () => {
                 connectors.
               </p>
             </div>
-          </div>
-          <div className='col-lg-6'>
-            <div className='text-center'>
-              <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                data-src={FirstCabling}
-                className='img-fluid rounded lazyload'
-                alt=''
-              />
-            </div>
-          </div>
           </div>
           <div className='col-lg-6'>
             <div className='text-center'>
@@ -394,13 +364,8 @@ const Cabling = () => {
       {/* =================================================== hhdff ================================================================= */}
       <Getintouch2 />
       {/* =================================================== hhdff ================================================================= */}
-      {/* =================================================== hhdff ================================================================= */}
-      <Getintouch2 />
-      {/* =================================================== hhdff ================================================================= */}
     </>
-  )
   )
 }
 
-export default Cabling
 export default Cabling

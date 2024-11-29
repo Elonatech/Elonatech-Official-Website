@@ -1,16 +1,8 @@
 import './survalliance.css'
 import Getintouch2 from '../GetInTouch/getintouch2'
 import { Helmet } from 'react-helmet-async'
-import { Helmet } from 'react-helmet-async'
 
 const Suvalliance = () => {
-  return (
-    <>
-      <Helmet>
-        <title>Surveillance - Tech Solution, Digital Solution</title>
-        <meta
-          name='description'
-          content='
   return (
     <>
       <Helmet>
@@ -26,25 +18,7 @@ These systems can be applied to both interior and exterior areas of a building o
         />
         <link rel='canonical' href='https://elonatech.com.ng/surveillance' />
       </Helmet>
- '
-        />
-        <link rel='canonical' href='https://elonatech.com.ng/surveillance' />
-      </Helmet>
 
-      {/*======================================================================== header ======================================================================*/}
-      <div class='container-fluid surveillance-section'>
-        <div class='text-content'>
-          <h2>Surveillance</h2>
-          <h5>
-            A good way for you to protect yourself is to consider a video
-            surveillance.
-          </h5>
-          <p class='lead'>
-            While network security should always be a prime concern for your
-            business, you shouldn’t neglect your physical security either.
-          </p>
-        </div>
-      </div>
       {/*======================================================================== header ======================================================================*/}
       <div class='container-fluid surveillance-section'>
         <div class='text-content'>
@@ -136,7 +110,6 @@ These systems can be applied to both interior and exterior areas of a building o
             <p>Lasts up to 3-6 months before it needs a recharge.*</p>
           </div>
         </div>
-      </div>
       </div>
 
       {/*  */}
@@ -264,34 +237,9 @@ These systems can be applied to both interior and exterior areas of a building o
               />
             </div>
           </div>
-          <div className='col-md-6 order-1 order-md-2'>
-            <div className='text-center'>
-              <img
-                src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709635654/surveillance/Shield-expanded_csd60b.webp'
-                className='img-fluid lazyload'
-                alt=''
-              />
-            </div>
-          </div>
         </div>
       </div>
-      </div>
 
-      {/* frequent question */}
-      <section id='' class='survalliance mb-5 mt-5'>
-        <div class='container bg-white'>
-          <div class='row gy-4'>
-            <div class='col-lg-4'>
-              <div className=' text-center'>
-                <h2 className='FAQ' style={{ fontWeight: '800' }}>
-                  FREQUENTLY ASKED QUESTIONS
-                </h2>
-                <div
-                  className='line'
-                  style={{ margin: 'auto', color: 'red' }}
-                ></div>
-              </div>
       {/* frequent question */}
       <section id='' class='survalliance mb-5 mt-5'>
         <div class='container bg-white'>
@@ -339,37 +287,6 @@ These systems can be applied to both interior and exterior areas of a building o
                     </div>
                   </div>
                 </div>
-            <div class='col-lg-8'>
-              <div class='accordion accordion-flush' id='faqlist'>
-                <div class='accordion-item'>
-                  <h3 class='accordion-header'>
-                    <button
-                      class='accordion-button collapsed'
-                      type='button'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#faq-content-1'
-                    >
-                      <span class='num'>1.</span>
-                      Where should I place my Outdoor Camera?
-                    </button>
-                  </h3>
-                  <div
-                    id='faq-content-1'
-                    class='accordion-collapse collapse'
-                    data-bs-parent='#faqlist'
-                  >
-                    <div class='accordion-body'>
-                      The recommended mounting height is 6-8 ft from the ground
-                      and angled 30 degrees down. Face the camera towards
-                      entry/exit points on your property such as your driveway,
-                      front walkway or back garden. You can also use outdoor
-                      cameras to monitor entry/exit points into your home such
-                      as facing your front door and garage doors. Be sure to use
-                      a stable ladder and ask for assistance from a helper if
-                      needed.
-                    </div>
-                  </div>
-                </div>
 
                 <div class='accordion-item'>
                   <h3 class='accordion-header'>
@@ -393,59 +310,7 @@ These systems can be applied to both interior and exterior areas of a building o
                     </div>
                   </div>
                 </div>
-                <div class='accordion-item'>
-                  <h3 class='accordion-header'>
-                    <button
-                      class='accordion-button collapsed'
-                      type='button'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#faq-content-2'
-                    >
-                      <span class='num'>2.</span>
-                      How far away can the Outdoor Camera detect motion?
-                    </button>
-                  </h3>
-                  <div
-                    id='faq-content-2'
-                    class='accordion-collapse collapse'
-                    data-bs-parent='#faqlist'
-                  >
-                    <div class='accordion-body'>
-                      Up to 30 feet - depending on mounting height.
-                    </div>
-                  </div>
-                </div>
 
-                <div class='accordion-item'>
-                  <h3 class='accordion-header'>
-                    <button
-                      class='accordion-button collapsed'
-                      type='button'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#faq-content-3'
-                    >
-                      <span class='num'>3.</span>
-                      How does Night Vision work?
-                    </button>
-                  </h3>
-                  <div
-                    id='faq-content-3'
-                    class='accordion-collapse collapse'
-                    data-bs-parent='#faqlist'
-                  >
-                    <div class='accordion-body'>
-                      The Outdoor Security Camera has 2 night vision modes which
-                      can be selected in the Camera Settings menu: Standard -
-                      With infrared (default) night vision, your camera can
-                      always see in black and white up to 30 feet away at night.
-                      Spotlight - With spotlight mode, your camera spotlight
-                      will turn on in live view and when motion is detected at
-                      night. Color night vision allows you to see objects up to
-                      10 feet away. Note that the spotlight feature will shorten
-                      the battery life.
-                    </div>
-                  </div>
-                </div>
                 <div class='accordion-item'>
                   <h3 class='accordion-header'>
                     <button
@@ -502,31 +367,6 @@ These systems can be applied to both interior and exterior areas of a building o
                     </div>
                   </div>
                 </div>
-                <div class='accordion-item'>
-                  <h3 class='accordion-header'>
-                    <button
-                      class='accordion-button collapsed'
-                      type='button'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#faq-content-4'
-                    >
-                      <span class='num'>4.</span>
-                      How do I set up Activity Zones for my Cameras?
-                    </button>
-                  </h3>
-                  <div
-                    id='faq-content-4'
-                    class='accordion-collapse collapse'
-                    data-bs-parent='#faqlist'
-                  >
-                    <div class='accordion-body'>
-                      Custom Activity Zones can be added within the Camera
-                      Settings menu in the SimpliSafe app to focus on your
-                      property. Tap the zones that you don’t want to receive
-                      alerts from such as high-traffic roads or paths.
-                    </div>
-                  </div>
-                </div>
 
                 <div class='accordion-item'>
                   <h3 class='accordion-header'>
@@ -553,60 +393,7 @@ These systems can be applied to both interior and exterior areas of a building o
                     </div>
                   </div>
                 </div>
-                <div class='accordion-item'>
-                  <h3 class='accordion-header'>
-                    <button
-                      class='accordion-button collapsed'
-                      type='button'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#faq-content-5'
-                    >
-                      <span class='num'>5.</span>
-                      How long can the camera record for?
-                    </button>
-                  </h3>
-                  <div
-                    id='faq-content-5'
-                    class='accordion-collapse collapse'
-                    data-bs-parent='#faqlist'
-                  >
-                    <div class='accordion-body'>
-                      Upon motion, the Outdoor Camera will record for 10 seconds
-                      by default, and it will continue recording if there is
-                      sustained motion in front of it. Recordings are available
-                      with select monitoring plans.
-                    </div>
-                  </div>
-                </div>
 
-                <div class='accordion-item'>
-                  <h3 class='accordion-header'>
-                    <button
-                      class='accordion-button collapsed'
-                      type='button'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#faq-content-6'
-                    >
-                      <span class='num'>6.</span>
-                      Can I adjust my camera’s settings so I don’t have to
-                      charge the battery as often??
-                    </button>
-                  </h3>
-                  <div
-                    id='faq-content-6'
-                    class='accordion-collapse collapse'
-                    data-bs-parent='#faqlist'
-                  >
-                    <div class='accordion-body'>
-                      Yes. While the battery life varies based on camera
-                      placement, usage and settings, there are several ways to
-                      help extend your battery life between charges. Visit the
-                      Camera Settings in your SimpliSafe app and adjust the
-                      following settings: Motion Type - set to People Only.
-                      Night Vision Mode - set to Standard. This is the default
-                      setting. Setup Activity Zones - Remove high traffic areas
-                      such as roads, paths and sidewalks etc.
-                    </div>
                 <div class='accordion-item'>
                   <h3 class='accordion-header'>
                     <button
@@ -642,18 +429,11 @@ These systems can be applied to both interior and exterior areas of a building o
           </div>
         </div>
       </section>
-        </div>
-      </section>
 
-      {/*  */}
-      <Getintouch2 />
-    </>
-  )
       {/*  */}
       <Getintouch2 />
     </>
   )
 }
 
-export default Suvalliance
 export default Suvalliance

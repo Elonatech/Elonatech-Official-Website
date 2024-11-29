@@ -92,90 +92,6 @@ const Web = () => {
     }
   ]
 
-  const features = [
-    {
-      icon: 'bolt_zbtbl9',
-      title: 'Super Fast Loading In Less Than 3 Seconds',
-      description:
-        "Your website will be hosted on the world's fastest LiteSpeed Web Server to ensure a smooth user experience."
-    },
-    {
-      icon: 'responsive-design_l9aqtn',
-      title: 'Mobile, Tablet & Desktop Responsive Sites',
-      description:
-        'Your Customers/Clients will be able to easily access your website from desktop, tablet and mobile devices.'
-    },
-    {
-      icon: 'uiux_zuvfez',
-      title: 'UI/UX. Preview Your Project',
-      description:
-        "You can have a feel of exactly how the website will look. We'll design a prototype with an excellent User Interface (UI) & User Experience (UX)."
-    },
-    {
-      icon: 'web-design_s8nmai',
-      title: 'Premium Designs And Exclusive Branding',
-      description:
-        'Expect nothing less than a Premium Website that will allow you stand out from your competitors.'
-    },
-    {
-      icon: 'good-conversion-rate_nljzbs',
-      title: 'Built For Conversions, Leads And Sales',
-      description:
-        'We tailor all our design elements and functionalities to help you achieve all your business objectives.'
-    },
-    {
-      icon: 'custom-email_gurd7u',
-      title: 'Unlimited Custom Email For You & Your Staff',
-      description:
-        'Create your vibe with an ultra-secure custom email address - one that uses your own domain name.'
-    },
-    {
-      icon: 'web-technologies_nz19qg',
-      title: 'Built With The Most Advanced Technologies',
-      description:
-        'We are experts in all major web technologies like React, Express, MongoDB, Laravel, CodeIgniter, WordPress, & several others.'
-    },
-    {
-      icon: 'ssl_auwnuw',
-      title: 'Guaranteed Security With SSL Encryption',
-      description:
-        "Your website will be secured with the world's best SSL encryption to guarantee constant security."
-    },
-    {
-      icon: 'engineering_q9zyu2',
-      title: 'Continuous Maintenance, Updates & Back-Ups',
-      description:
-        'Even after project completion, we will still continue to carry out regular updates, bug fixes & monthly back-ups.'
-    }
-  ]
-
-  const steps = [
-    {
-      id: 1,
-      step: 'Step 1',
-      title: 'Project Enquiry',
-      description: `The first point of contact is all about inquiries and technical specifications. At this stage, we get to know what your project is all about and how we can help you achieve your objectives.`
-    },
-    {
-      id: 2,
-      step: 'Step 2',
-      title: 'Prototyping (Designing the UI and UX)',
-      description: `After all enquiries, the next step is to build a prototype by designing the User Interface (UI) and making the website have an excellent User Experience (UX), so the client can have a feel of exactly how the website will look.`
-    },
-    {
-      id: 3,
-      step: 'Step 3',
-      title: 'Project Execution (The Development Phase)',
-      description: `Execution will commence immediately. In this stage, we will determine what programming language will best suit the website, then commence the coding to bring about the aesthetics of the website.`
-    },
-    {
-      id: 4,
-      step: 'Step 4',
-      title: 'The Functionality Stage (Backend)',
-      description: `The server-side development commences, focusing on databases, scripting, and website architecture. It consists of behind-the-scenes activities that occur when performing any action on the website (account login, online store, etc.).`
-    }
-  ]
-
   const projects = [
     {
       id: uuidv4(),
@@ -261,7 +177,6 @@ const Web = () => {
       <div className='container mb-5 mt-5'>
         <div className='row align-items-center'>
           <div className='col-lg-6'>
-          <div className='col-lg-6'>
             <div className=''>
               <h4 className='fw-bold'>Need A Website For Your Brand?</h4>
               <div
@@ -289,7 +204,6 @@ const Web = () => {
               </p>
             </div>
           </div>
-          <div className='col-lg-6'>
           <div className='col-lg-6'>
             <div className='text-center'>
               <img
@@ -347,25 +261,11 @@ const Web = () => {
                   <div
                     className='d-flex align-items-center justify-content-center rounded-circle bg-white'
                     style={{ width: '3rem', height: '3rem' }}
-
-        <div className='container'>
-          <div className='row g-4 py-5'>
-            {features.map((feature, index) => (
-              <div key={index} className='col-12 col-md-6 col-lg-4 d-flex'>
-                <div
-                  className='w-100 p-4 rounded h-100 d-flex flex-column'
-                  style={{ background: '#818ec3' }}
-                >
-                  <div
-                    className='d-flex align-items-center justify-content-center rounded-circle bg-white'
-                    style={{ width: '3rem', height: '3rem' }}
                   >
                     <img
                       src='https://i.stack.imgur.com/qq8AE.gif'
                       data-src={`https://res.cloudinary.com/elonatech/image/upload/v1709638790/webDesignPage/icons/${feature.icon}.png`}
-                      data-src={`https://res.cloudinary.com/elonatech/image/upload/v1709638790/webDesignPage/icons/${feature.icon}.png`}
                       className='img-fluid lazyload'
-                      style={{ width: '25px' }}
                       style={{ width: '25px' }}
                       alt=''
                     />
@@ -375,13 +275,7 @@ const Web = () => {
                   <p className='text-white flex-grow-1'>
                     {feature.description}
                   </p>
-                  <h5 className='text-white pt-2 fw-bold'>{feature.title}</h5>
-                  <p className='text-white flex-grow-1'>
-                    {feature.description}
-                  </p>
 
-                  <div
-                    className='rounded'
                   <div
                     className='rounded'
                     style={{
@@ -392,8 +286,6 @@ const Web = () => {
                   ></div>
                 </div>
               </div>
-            ))}
-          </div>
             ))}
           </div>
         </div>
@@ -414,7 +306,6 @@ const Web = () => {
           }}
         ></div>
         <div className='row g-5 align-items-center'>
-          <div className='col-lg-6'>
           <div className='col-lg-6'>
             <div className='text-center'>
               <img
@@ -479,7 +370,6 @@ const Web = () => {
         </div>
       </div>
       {/*=================================================== splide web development =====================================*/}
-      <div style={{ background: '#021048', padding: '1rem 0rem' }}>
       <div style={{ background: '#021048', padding: '1rem 0rem' }}>
         <h2 className='text-center text-white'>Some Of Our Projects</h2>
         <h4 className='text-center text-white'>Web Development/Web Design</h4>
@@ -555,7 +445,6 @@ const Web = () => {
               />
               <div
                 className=' rounded p-4'
-                className=' rounded p-4'
                 style={{
                   boxShadow: '0 0 10px 1px rgba(0, 0, 0, .25)',
                   background: '#ececec'
@@ -566,12 +455,10 @@ const Web = () => {
                   class='carousel slide'
                   data-bs-ride='carousel'
                   style={{ height: 'auto' }}
-                  style={{ height: 'auto' }}
                 >
                   <div class='carousel-inner'>
                     <div class='carousel-item active'>
                       <div class=''>
-                        <div className='text-center'>
                         <div className='text-center'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
@@ -599,7 +486,6 @@ const Web = () => {
                     </div>
                     <div class='carousel-item'>
                       <div class=''>
-                      <div class=''>
                         <div className='text-center pb-2'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
@@ -625,7 +511,6 @@ const Web = () => {
                       </div>
                     </div>
                     <div class='carousel-item'>
-                      <div class=''>
                       <div class=''>
                         <div className='text-center pb-2'>
                           <img
@@ -654,7 +539,6 @@ const Web = () => {
                     </div>
                     <div class='carousel-item'>
                       <div class=''>
-                      <div class=''>
                         <div className='text-center pb-2'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
@@ -681,7 +565,6 @@ const Web = () => {
                       </div>
                     </div>
                     <div class='carousel-item'>
-                      <div class=''>
                       <div class=''>
                         <div className='text-center pb-2'>
                           <img
@@ -738,8 +621,6 @@ const Web = () => {
 
             <div className='col-lg-6 col-md-12 mb-5'>
               <h3 className='text-center' style={{ color: '#34548c' }}>
-            <div className='col-lg-6 col-md-12 mb-5'>
-              <h3 className='text-center' style={{ color: '#34548c' }}>
                 FAQ
               </h3>
               <hr
@@ -762,20 +643,6 @@ const Web = () => {
                         <h6 class='num me-3'>1.</h6>
                         <h6> What Domain Name Should I Choose?</h6>
                       </button>
-                <div class='containe'>
-                  {/* <div class='row'> */}
-                  {/* <div class='col-lg-12'> */}
-                  <div class='accordion accordion-flush  ' id='faqlist'>
-                    <div class='accordion-item '>
-                      <button
-                        class='accordion-button  pb-2 pt-3  collapsed'
-                        type='button'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#faq-content-1'
-                      >
-                        <h6 class='num me-3'>1.</h6>
-                        <h6> What Domain Name Should I Choose?</h6>
-                      </button>
 
                       <div
                         id='faq-content-1'
@@ -792,44 +659,7 @@ const Web = () => {
                         </div>
                       </div>
                     </div>
-                      <div
-                        id='faq-content-1'
-                        class='accordion-collapse collapse'
-                        data-bs-parent='#faqlist'
-                      >
-                        <div class='accordion-body'>
-                          The choice of domain name depends on how you plan to
-                          use it. In most cases, it makes sense to choose one
-                          that is easy to pronounce and spell if you will be
-                          telling people about it over the phone. Above all, you
-                          should choose a name that is memorable and not
-                          confusing.
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class='accordion-item'>
-                      <button
-                        class='accordion-button  pb-2 pt-3 collapsed'
-                        type='button'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#faq-content-2'
-                      >
-                        <h6 class='num me-3'>2.</h6>
-                        <h6>How Much Will A Website Cost Me?</h6>
-                      </button>
-                      <div
-                        id='faq-content-2'
-                        class='accordion-collapse collapse'
-                        data-bs-parent='#faqlist'
-                      >
-                        <div class='accordion-body'>
-                          The cost of a website varies depending on the
-                          complexity. We are happy to discuss your requirements
-                          and provide a quote at any time.
-                        </div>
-                      </div>
-                    </div>
                     <div class='accordion-item'>
                       <button
                         class='accordion-button  pb-2 pt-3 collapsed'
@@ -878,62 +708,7 @@ const Web = () => {
                         </div>
                       </div>
                     </div>
-                    <div class='accordion-item'>
-                      <button
-                        class='accordion-button  pb-2 pt-3  collapsed'
-                        type='button'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#faq-content-3'
-                      >
-                        <h6 class='num me-3'>3.</h6>
-                        <h6>
-                          How Long Will It Take For My Website To Be Developed?
-                        </h6>
-                      </button>
-                      <div
-                        id='faq-content-3'
-                        class='accordion-collapse collapse'
-                        data-bs-parent='#faqlist'
-                      >
-                        <div class='accordion-body'>
-                          The time it takes to build a site depends on the
-                          complexity of the site. If you have a deadline, we
-                          will work hard to meet it. The most common cause of
-                          delay is the content (text/images) from the client.
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class='accordion-item '>
-                      <button
-                        class='accordion-button pb-2 pt-3 collapsed'
-                        type='button'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#faq-content-4'
-                      >
-                        <h6 class='num me-3'>4.</h6>
-                        <h6> What Kind Of Business Do You Work With?</h6>
-                      </button>
-                      <div
-                        id='faq-content-4'
-                        class='accordion-collapse collapse'
-                        data-bs-parent='#faqlist'
-                      >
-                        <div class='accordion-body'>
-                          We work with a broad range of company types [small
-                          start-ups, large corporations, nonprofits, B2B, B2C
-                          and more] across many business industries [technology,
-                          food, apparel, health + beauty, camps, travel,
-                          finance, arts, fair trade, and more.] Over the years,
-                          we’ve helped businesses improve customer service,
-                          market their products, and attract customers.
-                          Functionality requests range from basic to advanced.
-                          Our team acquaint themselves with your industry,
-                          organization, and competitors to ensure your site
-                          supports all of your goals.
-                        </div>
-                      </div>
-                    </div>
                     <div class='accordion-item '>
                       <button
                         class='accordion-button pb-2 pt-3 collapsed'
@@ -995,36 +770,6 @@ const Web = () => {
                         </div>
                       </div>
                     </div>
-                    <div class='accordion-item'>
-                      <button
-                        class='accordion-button  pb-2 pt-3  collapsed'
-                        type='button'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#faq-content-5'
-                      >
-                        <h6 class='num me-3'>5.</h6>
-                        <h6>
-                          {' '}
-                          Will We Need To Have A Meeting To Discuss About The
-                          Website?
-                        </h6>
-                      </button>
-                      <div
-                        id='faq-content-5'
-                        class='accordion-collapse collapse'
-                        data-bs-parent='#faqlist'
-                      >
-                        <div class='accordion-body'>
-                          Most of the time, a meeting isn’t necessary and the
-                          work is completed with only discussions over phone and
-                          email. We upload our work to private websites that
-                          only clients can access. We then work with you to
-                          discuss the site and review changes. The site isn’t
-                          made available to the public until it looks and works
-                          exactly as you wish.
-                        </div>
-                      </div>
-                    </div>
 
                     <div class='accordion-item'>
                       <button
@@ -1050,60 +795,7 @@ const Web = () => {
                         </div>
                       </div>
                     </div>
-                    <div class='accordion-item'>
-                      <button
-                        class='accordion-button  pb-2 pt-3  collapsed'
-                        type='button'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#faq-content-6'
-                      >
-                        <h6 class='num me-3'>6.</h6>
-                        <h6>Who Writes The Contents For The Website?</h6>
-                      </button>
-                      <div
-                        id='faq-content-6'
-                        class='accordion-collapse collapse'
-                        data-bs-parent='#faqlist'
-                      >
-                        <div class='accordion-body'>
-                          Usually that is you. You are the expert on your
-                          business, so it’s usually best if it comes from you.
-                          If you need help, we have a copywriter on our team who
-                          can help clean up or write original content for you at
-                          an additional cost.
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class='accordion-item'>
-                      <button
-                        class='accordion-button  pb-2 pt-3  collapsed'
-                        type='button'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#faq-content-7'
-                      >
-                        <h6 class='num me-3'>7.</h6>
-                        <h6>
-                          Once My Website Is Completed, What After-Sales Service
-                          Do You Offer?
-                        </h6>
-                      </button>
-                      <div
-                        id='faq-content-7'
-                        class='accordion-collapse collapse'
-                        data-bs-parent='#faqlist'
-                      >
-                        <div class='accordion-body'>
-                          We fully support any website we develop and are always
-                          available should you encounter any problems or require
-                          new enhancements. Elonatech also offers website
-                          hosting and maintenance.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* </div> */}
-                  {/* </div> */}
                     <div class='accordion-item'>
                       <button
                         class='accordion-button  pb-2 pt-3  collapsed'

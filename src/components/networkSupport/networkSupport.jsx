@@ -1,9 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import './networkSupport.css'
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
-import './networkSupport.css'
 
 const NetworkSupport = () => {
   return (
@@ -216,9 +213,6 @@ const NetworkSupport = () => {
           </div>
         </div>
       </div>
-          </div>
-        </div>
-      </div>
 
       {/* ================================================================================================================= */}
       <div className='container mt-5 mb-5'>
@@ -245,12 +239,6 @@ const NetworkSupport = () => {
       </div>
     </>
   )
-          </div>
-        </div>
-      </div>
-    </>
-  )
 }
 
-export default NetworkSupport
 export default NetworkSupport

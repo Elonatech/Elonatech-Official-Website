@@ -295,23 +295,23 @@ const router = createBrowserRouter([
       element: <Blog />
     },
     {
-      path:'/blog/:slug/:id',
+      path:'/blog/:slug',
       element:<BlogDetails/>
     },
     {
-      path:'/blog/related/:slug/:id',
+      path:'/blog/related/:slug',
       element:< BlogRelated/>
     },
     { path: '/news', element: <News /> },
     { path: '/news/page/:pagenumber', element: <News /> },
-    { path: '/news/:slug/:id', element: <NewsDetails /> },
-    { path: '/news/page/:pagenumber/:slug/:id', element: <NewsDetails /> },
-    { path: '/news/related/:slug/:id', element: <NewsRelated /> },
+    { path: '/news/:slug', element: <NewsDetails /> },
+    { path: '/news/page/:pagenumber/:slug', element: <NewsDetails /> },
+    { path: '/news/related/:slug', element: <NewsRelated /> },
     { path: '/trends', element: <Trends /> },
     { path: '/trends/page/:pagenumber', element: <Trends /> },
-    { path: '/trends/:slug/:id', element: <TrendDetails /> },
-    { path: '/trends/page/:pagenumber/:slug/:id', element: <TrendDetails /> },
-    { path: '/trends/related/:slug/:id', element: <TrendRelated /> },
+    { path: '/trends/:slug', element: <TrendDetails /> },
+    { path: '/trends/page/:pagenumber/:slug', element: <TrendDetails /> },
+    { path: '/trends/related/:slug', element: <TrendRelated /> },
     {
       path:'/surveillance',
       element:<Suvalliance/>

@@ -8,26 +8,12 @@ import {
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Getintouch from '../GetInTouch/getintouch'
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay
-} from 'swiper/modules'
-import { Link } from 'react-router-dom'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import Getintouch from '../GetInTouch/getintouch'
 
 // Swiper styles
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
 // Import Swiper styles
-import 'swiper/css'
 import 'swiper/css'
 
 import rema from './captions/rema_360.jpg'
@@ -42,28 +28,9 @@ import star from './captions/Star-Rating-Icon.webp'
 import employee from './captions/Employees-Icon.webp'
 import shake from './captions/90.webp'
 import inc from './captions/medal.1.png'
-import star from './captions/Star-Rating-Icon.webp'
-import employee from './captions/Employees-Icon.webp'
-import shake from './captions/90.webp'
-import inc from './captions/medal.1.png'
 
 // ads
-// ads
 
-import seo from './captions/Ads/SEO-Icon-2.webp'
-import google from './captions/Ads/Google-Ads-Icon-2.webp'
-import social from './captions/Ads/Social-Media-Ads-Icon-2.webp'
-import youtube from './captions/Ads/YouTube-Ads-Icon-2.webp'
-import amazon from './captions/Ads/Amazon-Icon-2.webp'
-import facebook from './captions/Ads/Facebook-Ads-Icon-2.webp'
-import ticktok from './captions/Ads/TikTok-Ads-Icon-1.webp'
-import linkedin from './captions/Ads/Linkedin-Ads-Icon-1.webp'
-import snap from './captions/Ads/Snapchat-Ads-Icon-1.webp'
-import bing from './captions/Ads/Bing-Ads-Icon-1.webp'
-import twitter from './captions/Ads/twitter-x-logo-577BCAE525-seeklogo.com.png'
-import shopping from './captions/Ads/Google-Shopping-Icon-1.webp'
-import motion from './captions/Ads/Motion-Ads-Icon-1.webp'
-import landing from './captions/Ads/Landing-Pages-Icon-1.webp'
 import seo from './captions/Ads/SEO-Icon-2.webp'
 import google from './captions/Ads/Google-Ads-Icon-2.webp'
 import social from './captions/Ads/Social-Media-Ads-Icon-2.webp'
@@ -86,7 +53,6 @@ import site from './captions/Ads/Website-Optimization-Icon-1 (1).webp'
 // Css
 import './digital.css'
 
-import { Helmet } from 'react-helmet-async'
 import { Helmet } from 'react-helmet-async'
 
 const Digital = () => {
@@ -275,65 +241,7 @@ const Digital = () => {
           </p>
         </div>
       </div>
-         '
-        />
-        <link
-          rel='canonical'
-          href='https://elonatech.com.ng/digital-marketing'
-        />
-      </Helmet>
-      {/*================================================================ header ========================================================*/}
-      <div class='container-fluid digital-marketing-section'>
-        <div class='text-content'>
-          <h2>Digital Marketing</h2>
-          <h5>
-            Our mission is clear: Help you outsell, outperform, and outlast your
-            competitors.
-          </h5>
-          <p class='lead'>
-            Developing effective digital marketing in any market is tough,
-            demanding, and technical. Hence the need to work with an agency with
-            the experience, network, tools, and know-how.
-          </p>
-        </div>
-      </div>
 
-      {/* ============================================================================================================================== */}
-      <div className='container'>
-        <div class='row justify-content-center mt-5'>
-          <div class='col-lg-5'>
-            <div className='card border-0'>
-              <img
-                src='https://img.freepik.com/free-photo/group-afro-americans-working-together_1303-8983.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=sph'
-                alt=''
-              />
-            </div>
-          </div>
-          <div class='col-lg-7'>
-            <div className=' ml-md-4 my-md-0 my-3'>
-              <h2 className='fw-bold  '>
-                Our digital marketing services help your business grow online
-                leads, calls, and revenue.
-              </h2>
-
-              <p className='' style={{ textAlign: 'justify' }}>
-                With Digital marketing, we have successfully changed the way
-                brands and businesses use technology for marketing. Digital
-                platforms are increasingly incorporated into marketing plans and
-                everyday life, and with the high rise in the use of digital
-                devices instead of visiting physical shops, digital marketing
-                campaigns are becoming more prevalent and efficient.
-                <br />
-                <br />
-                We achieve this aim by working closely with you to craft and
-                deliver successful and bottom-lined oriented online marketing
-                strategies which integrate customer needs, business objectives,
-                and technology.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
       {/* ============================================================================================================================== */}
       <div className='container'>
         <div class='row justify-content-center mt-5'>
@@ -414,86 +322,7 @@ const Digital = () => {
           </div>
         </div>
       </div>
-      {/*======================================================= disruptive ==============================================================*/}
-      <div className='container'>
-        <div class='row justify-content-center mt-md-5  flex-column-reverse flex-lg-row align-items-center'>
-          <div class='col-lg-7'>
-            <div className='card border-0'>
-              <div className=' text-end'>
-                <p className='' style={{ textAlign: 'justify' }}>
-                  Developing effective digital marketing in any market is a
-                  tough, demanding, and technical undertaking. Hence the need to
-                  work with a Nigerian internet marketing agency with the
-                  experience, network, tools and know-how needed to achieve
-                  market success.
-                  <br />
-                  <br />
-                  Our encyclopedic knowledge of the Nigerian business
-                  environment, in-house pool of stellar associates, and
-                  strategic working alliance with outstanding outside business
-                  experts provide us with the capability and expertise needed to
-                  help you achieve your desired business objectives.
-                  <br />
-                  <br />
-                  Whatever your goals, to improve existing marketing campaigns
-                  or design your comprehensive online media strategy from
-                  scratch, we can be of help.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class='col-lg-5'>
-            <div className='card border-0'>
-              <div className='text-center'>
-                <img
-                  src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709919164/digitalPage/digital_market_2_ig15b2.jpg'
-                  className='lazyload img-fluid'
-                  alt='Digital Marketing'
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/*============================================================ carousel ============================================================*/}
-      <div className='container-fluid' style={{ background: '#f8f8f8' }}>
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          spaceBetween={50}
-          slidesPerView={1}
-          pagination={true}
-          autoplay={{ delay: 3000 }}
-        >
-          {testimonies.map((testimony, index) => (
-            <SwiperSlide key={index}>
-              <div className='container mb-5'>
-                <div className='row'>
-                  <div className='col-md-4'>
-                    <div className='mt-5'>
-                      <div className='text-center'>
-                        <img
-                          src={testimony.imageUrl}
-                          alt={testimony.name}
-                          style={{ height: '15rem', borderRadius: '50%' }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className='col-md-8'>
-                    <div className='d-flex pt-5'>
-                      <img
-                        src={quoteLeft}
-                        className='img-fluid me-5'
-                        style={{ height: '3rem' }}
-                        alt=''
-                      />
-
-                      <h1 className='fw-bold pt-2'>{testimony.quote}</h1>
-                    </div>
       {/*============================================================ carousel ============================================================*/}
       <div className='container-fluid' style={{ background: '#f8f8f8' }}>
         <Swiper
@@ -534,9 +363,6 @@ const Digital = () => {
                     <p className='pt-3 pb-3' style={{ textAlign: 'justify' }}>
                       {testimony.testimonial}
                     </p>
-                    <p className='pt-3 pb-3' style={{ textAlign: 'justify' }}>
-                      {testimony.testimonial}
-                    </p>
 
                     <div className='d-flex justify-content-between pb-5'>
                       <div>
@@ -562,306 +388,7 @@ const Digital = () => {
           ))}
         </Swiper>
       </div>
-                    <div className='d-flex justify-content-between pb-5'>
-                      <div>
-                        <h6 className='text-uppercase fw-bold'>
-                          {testimony.name}
-                        </h6>
-                        <span className='elementor-testimonial__title fs-6'>
-                          {testimony.position}
-                        </span>
-                      </div>
 
-                      <img
-                        src={quoteRight}
-                        className='img-fluid'
-                        style={{ height: '3rem' }}
-                        alt=''
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/*======================================================================== our process =============================================*/}
-      <div
-        className='container-fluid bg-dark'
-        style={{ marginBottom: '-18px' }}
-      >
-        <div className='container  bg-dark'>
-          <h2 className='fw-bold text-center text-white pt-4'>
-            Our Proven Process
-          </h2>
-          <ul className='d-flex row pt-5 g-3 justify-content-between list-unstyled'>
-            <li className='col-6 col-md-4 col-lg-2 pt-md-5'>
-              <Link to={'/seo'} className='text-decoration-none text-dark'>
-                <div className='pt- pb-5'>
-                  <div className='text-center'>
-                    <img
-                      src='https://img.freepik.com/free-vector/seo-background-design_1378-119.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=ais'
-                      className='img-fluid rounded-circle'
-                      style={{ height: '180px', cursor: 'pointer' }}
-                      alt=''
-                    />
-                    <h3
-                      className='pt-4 text-white'
-                      style={{ cursor: 'pointer' }}
-                    >
-                      Search Engine Optimization
-                    </h3>
-                    <p className='text-white'>
-                      We use advanced methods to rank...
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li className='col-6 col-md-4  col-lg-2 '>
-              <Link to={'/social'} className='text-decoration-none text-dark'>
-                <div className=''>
-                  <div className='text-center'>
-                    <img
-                      src='https://img.freepik.com/free-photo/pile-3d-popular-social-media-logos_1379-881.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=ais'
-                      className='img-fluid rounded-circle'
-                      style={{ height: '180px', cursor: 'pointer' }}
-                      alt=''
-                    />
-                    <h3
-                      className='pt-4 text-white'
-                      style={{ cursor: 'pointer' }}
-                    >
-                      Social Media Marketing
-                    </h3>
-                    <p className='text-white'>
-                      Most large and small business owners...
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li className='col-6 col-md-4 col-lg-2 pt-md-5'>
-              <Link to={'/ppc'} className='text-decoration-none text-dark'>
-                <div className=''>
-                  <div className='text-center'>
-                    <img
-                      src='https://img.freepik.com/free-vector/ppc-pay-per-click-flat-isometric_126523-1899.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=sph'
-                      className='img-fluid rounded-circle'
-                      style={{ height: '180px', cursor: 'pointer' }}
-                      alt=''
-                    />
-                    <h3
-                      className='pt-4 text-white'
-                      style={{ cursor: 'pointer' }}
-                    >
-                      PPC (pay-per-click)
-                    </h3>
-                    <p className='text-white'>
-                      We use advanced methods to direct traffic...
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li className='col-6 col-md-4 col-lg-2 pt-2'>
-              <Link to={'/content'} className='text-decoration-none text-dark'>
-                <div className=''>
-                  <div className='text-center'>
-                    <img
-                      src='https://img.freepik.com/premium-photo/content-marketing-modish-online-business-ecommerce-marketing-strategy_31965-204823.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=ais'
-                      className='img-fluid rounded-circle'
-                      style={{ height: '180px', cursor: 'pointer' }}
-                      alt=''
-                    />
-                    <h3
-                      className='pt-4 text-white'
-                      style={{ cursor: 'pointer' }}
-                    >
-                      Content Marketing
-                    </h3>
-                    <p className='text-white'>
-                      We create unique and useful content...
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li className='col-6 col-md-4 col-lg-2 pt-md-5'>
-              <Link to={'/mail'} className='text-decoration-none text-dark'>
-                <div className=''>
-                  <div className='text-center'>
-                    <img
-                      src='https://img.freepik.com/free-photo/message-online-chat-social-text-concept_53876-122734.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=ais'
-                      className='img-fluid rounded-circle ty'
-                      style={{ height: '180px', cursor: 'pointer' }}
-                      alt=''
-                    />
-                    <h3
-                      className='pt-4 text-white'
-                      style={{ cursor: 'pointer' }}
-                    >
-                      Email Marketing
-                    </h3>
-                    <p className='text-white'>
-                      We help you connect to your prospects...
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li className='col-6 col-md-4 col-lg-2'>
-              <Link to={'/'} className='text-decoration-none text-dark'>
-                <div className=''>
-                  <div className='text-center'>
-                    <img
-                      src='https://img.freepik.com/premium-vector/affiliate-marketing-concept-illustration-idea-internet-ppc-business_613284-2009.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=ais'
-                      className='img-fluid rounded-circle ty'
-                      style={{ height: '180px', cursor: 'pointer' }}
-                      alt=''
-                    />
-                    <h3
-                      className='pt-4 text-white'
-                      style={{ cursor: 'pointer' }}
-                    >
-                      Affiliate marketing
-                    </h3>
-                    <p className='text-white'>
-                      We have the tools to enable your website...
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/*====================================================================== company rating ============================================*/}
-      <div
-        className='container-fluid mb-0 mt-0'
-        style={{ background: '#34548c' }}
-      >
-        <div className='container pt-5 pb-4'>
-          <ul className='d-flex row justify-content-between list-unstyled'>
-            {statistics.map((stat, index) => (
-              <li key={index} className='col-6 col-md-4 col-lg-2 pt-4'>
-                <div className='text-center'>
-                  <img
-                    src={stat.image}
-                    className='img-fluid'
-                    style={stat.style}
-                    alt=''
-                  />
-                  <h1 className='fs-1 fw-bold text-white pt-4'>{stat.value}</h1>
-                  <h6 className='text-white'>{stat.description}</h6>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      {/*=================================================================== Irresistable ==================================================*/}
-      <div className='container mt-5 mb-5'>
-        <div className='row'>
-          {adItems.map((item, index) => (
-            <div className='col-6 col-md-2 p-3 mt-4' key={index}>
-              <div className='text-center'>
-                <img
-                  src={item.src}
-                  className='img-fluid'
-                  style={item.style}
-                  alt={item.alt}
-                />
-                <h6 className='pt-4 fs-4'>{item.label}</h6>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/*===================================================== e-commerce marketing =======================================================*/}
-      <div className='container '>
-        <div className='row mb-5'>
-          <div className='col-lg-6'>
-            <div className='card border-0'>
-              <img
-                src='https://img.freepik.com/premium-photo/words-with-arrows-pointing-funnel_1205-344.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=ais'
-                className='img-fluid'
-                alt=''
-              />
-            </div>
-          </div>
-          <div className='col-lg-6'>
-            <div className=''>
-              <h2 className='pb-3 fw-bold pt-2'>Lead Generation Marketing</h2>
-              <p className='fs-5 '>
-                Lead generation has changed a lot over the years. Getting people
-                interested in your business isn't as simple as it once was. Our
-                marketing experts create modern, leading-edge marketing
-                strategies producing the results your business needs now and in
-                the long term.
-              </p>
-              <br />
-              <p className='fs-5 '>
-                Here are key elements and strategies involved in lead generation
-                marketing:
-              </p>
-              <ul>
-                <li>Content Marketing</li>
-                <li>Search Engine Optimization (SEO)</li>
-                <li>Social Media Marketing</li>
-                <li>Email Marketing</li>
-                <li>Landing Pages</li>
-              </ul>
-              <div className=''></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='container mb-5'>
-        <div className='row flex-column-reverse flex-lg-row'>
-          <div className='col-lg-6'>
-            <div className='pt-3'>
-              <div className=''>
-                <h2 className='pb-3 fw-bold'>E-Commerce Marketing</h2>
-                <p className='fs-5 '>
-                  eCommerce has changed the way people shop and consume products
-                  and services. There's a lot of competition in the eCommerce
-                  space, so it's crucial to have a partner who keeps your
-                  business goals top of mind and has the expertise to create a
-                  competitive marketing strategy.
-                </p>
-                <p className='fs-5 '>
-                  Here are key elements and strategies commonly used in
-                  e-commerce marketing
-                </p>
-                <ul>
-                  <li>Pay-Per-Click (PPC) Advertising</li>
-                  <li>Influencer Marketing</li>
-                  <li>Affiliate Marketing</li>
-                  <li>Flash Sales and Promotions</li>
-                  <li>Product Reviews and Ratings</li>
-                </ul>
-                <div className=''></div>
-              </div>
-            </div>
-          </div>
-          <div className='col-lg-6'>
-            <div className='card pt-3 border-0'>
-              <img
-                src='https://img.freepik.com/premium-photo/people-internet-bank-online-shopping-technology-e-money-concept-happy-african-american-young-woman-lying-floor-with-laptop-computer-credit-card-home-internet-icons_380164-100647.jpg?size=626&ext=jpg&ga=GA1.1.1903931542.1694762473&semt=ais'
-                className='img-fluid'
-                alt=''
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*=============================================================== Get in touch ================================================ */}
-      <Getintouch />
-    </>
-  )
       {/*======================================================================== our process =============================================*/}
       <div
         className='container-fluid bg-dark'
@@ -1139,5 +666,4 @@ const Digital = () => {
   )
 }
 
-export default Digital
 export default Digital

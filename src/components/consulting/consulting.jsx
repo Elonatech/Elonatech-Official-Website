@@ -1,19 +1,10 @@
 import ConsultBanner from '../GetInTouch/ConsultBanner'
 import { Helmet } from 'react-helmet-async'
-import ConsultBanner from '../GetInTouch/ConsultBanner'
-import { Helmet } from 'react-helmet-async'
 import './consulting.css'
-
 
 const Consulting = () => {
   return (
-  return (
     <>
-      <Helmet>
-        <title>Consulting - Tech Solution, Digital Solution</title>
-        <meta
-          name='description'
-          content='Consulting is a term for providing business advice on various topics including, corporate strategy, 
       <Helmet>
         <title>Consulting - Tech Solution, Digital Solution</title>
         <meta
@@ -190,7 +181,6 @@ const Consulting = () => {
                 <br />
               </p>
             </div>
-            </div>
           </div>
           Our Consulting arm ranges in sizes of clientele’s businesses, from a
           small business which usually consists of a single consultant to mid-
@@ -321,5 +311,4 @@ const Consulting = () => {
   )
 }
 
-export default Consulting
 export default Consulting

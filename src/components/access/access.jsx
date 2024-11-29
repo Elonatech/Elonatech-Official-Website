@@ -1,12 +1,8 @@
 import Getintouch2 from '../GetInTouch/getintouch2'
 import { Helmet } from 'react-helmet-async'
 import './access.css'
-import Getintouch2 from '../GetInTouch/getintouch2'
-import { Helmet } from 'react-helmet-async'
-import './access.css'
 
 const Access = () => {
-  return (
   return (
     <>
       <Helmet>
@@ -14,17 +10,8 @@ const Access = () => {
         <meta
           name='description'
           content='
-      <Helmet>
-        <title>{`Access Control  - Tech Solution, Digital Solution`}</title>
-        <meta
-          name='description'
-          content='
 Access control is an essential element of security that determines who is allowed to access certain data, apps, and resources—and in what circumstances. In the same way that keys and preapproved guest lists protect physical spaces, access control policies protect digital spaces. In other words, they let the right people in and keep the wrong people out.
 What are the benefits of Access Control Systems?
-'
-        />
-        <link rel='canonical' href='https://elonatech.com.ng/access-control' />
-      </Helmet>
 '
         />
         <link rel='canonical' href='https://elonatech.com.ng/access-control' />
@@ -152,18 +139,12 @@ What are the benefits of Access Control Systems?
                 <li className='d-flex'>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>Easier access for employees.</p>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>Easier access for employees.</p>
                 </li>
                 <li className='d-flex'>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>No need for traditional keys.</p>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>No need for traditional keys.</p>
                 </li>
                 <li className='d-flex'>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>Saves money.</p>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>Saves money.</p>
                 </li>
@@ -172,38 +153,24 @@ What are the benefits of Access Control Systems?
                   <p className=''>
                     Keep track of who enters/exits the building.
                   </p>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>
-                    Keep track of who enters/exits the building.
-                  </p>
                 </li>
                 <li className='d-flex'>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>Protection against unwanted visitors.</p>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>Protection against unwanted visitors.</p>
                 </li>
                 <li className='d-flex'>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>Employee freedom.</p>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>Employee freedom.</p>
                 </li>
                 <li className='d-flex'>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>Protection against data breaches.</p>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>Protection against data breaches.</p>
                 </li>
                 <li className='d-flex'>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>Safe environment.</p>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>Safe environment.</p>
                 </li>
                 <li className='d-flex'>
-                  <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
-                  <p className=''>Reduced risk of theft</p>
                   <i class='bi bi-check-lg text-danger fs-4 me-3'></i>
                   <p className=''>Reduced risk of theft</p>
                 </li>
@@ -212,20 +179,12 @@ What are the benefits of Access Control Systems?
           </div>
         </div>
       </div>
-          </div>
-        </div>
-      </div>
 
-      {/*====================================================== End Services  =================================*/}
-      <Getintouch2 />
-      {/* ===================================================================================================== */}
       {/*====================================================== End Services  =================================*/}
       <Getintouch2 />
       {/* ===================================================================================================== */}
     </>
   )
-  )
 }
 
-export default Access
 export default Access

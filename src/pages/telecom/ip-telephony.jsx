@@ -1,21 +1,10 @@
 import Getintouch2 from '../../components/GetInTouch/getintouch2'
 import { Helmet } from 'react-helmet-async'
 import './ip-telephone.css'
-import Getintouch2 from '../../components/GetInTouch/getintouch2'
-import { Helmet } from 'react-helmet-async'
-import './ip-telephone.css'
 
 const IpTelephony = () => {
   return (
-  return (
     <>
-      <Helmet>
-        <title>
-          IP Telephony & PBX Systems - Tech Solution, Digital Solution
-        </title>
-        <meta
-          name='description'
-          content='IP Telephony & PBX Systems
       <Helmet>
         <title>
           IP Telephony & PBX Systems - Tech Solution, Digital Solution
@@ -29,23 +18,7 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
         />
         <link rel='canonical' href='https://elonatech.com.ng/ip-telephony' />
       </Helmet>
-The traditional telephone system is dubbed the Public Switched Telephone Network (PSTN). The way that it moves calls from originator to destination resembles how VoIP moves information, but the underlying equipment differs from the devices moving traffic on the internet, which creates a number of ripple effects. '
-        />
-        <link rel='canonical' href='https://elonatech.com.ng/ip-telephony' />
-      </Helmet>
 
-      {/*======================================== header ========================================*/}
-      <div class='container-fluid ip-telephony-section'>
-        <div class='text-content'>
-          <h2>IP Telephony & PBX Systems</h2>
-          <h5>Lower Bills and Higher Call Quality with IP Telephony.</h5>
-          <p class='lead'>
-            VoIP feature that greets callers, directs them to the appropriate
-            extensions or departments, and assists in managing incoming calls
-            with efficiency and professionalism.
-          </p>
-        </div>
-      </div>
       {/*======================================== header ========================================*/}
       <div class='container-fluid ip-telephony-section'>
         <div class='text-content'>
@@ -154,9 +127,6 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
           </div>
         </div>
       </div>
-          </div>
-        </div>
-      </div>
 
       {/*========================================================== Call ===================================================*/}
       <div className='container mb-5'>
@@ -209,5 +179,4 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
   )
 }
 
-export default IpTelephony
 export default IpTelephony
