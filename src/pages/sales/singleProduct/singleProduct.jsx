@@ -58,6 +58,11 @@ const useScrollResetNavigation = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const isNavigatingRef = useRef(false)
+  const [previousUrl, setPreviousUrl] = useState(null)
+
+  useEffect(() => {
+    setPreviousUrl(window.location.href)
+  }, [location])
 
   const scrollToTop = useCallback(() => {
     window.scrollTo({
@@ -96,14 +101,14 @@ const useScrollResetNavigation = () => {
   const handleNavigateNext = nextProductId => {
     if (!isNavigatingRef.current && nextProductId) {
       isNavigatingRef.current = true
-      navigate(`/product/${nextProductId}`)
+      navigate(`/product/${nextProductSlug}/${nextProductId}`)
       setTimeout(() => {
         isNavigatingRef.current = false
       }, 500)
     }
   }
 
-  return { handleGoBack, scrollToTop, handleNavigateNext, handleGoToShop }
+  return { previousUrl, handleGoBack, scrollToTop, handleNavigateNext, handleGoToShop }
 }
 
 
@@ -120,12 +125,11 @@ const SingleProduct = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [image, setImage] = useState([])
   const [recentlyViewed, setRecentlyViewed] = useState([])
-  const { slug } = useParams()
+  const { slug, id } = useParams()
   const [relatedProducts, setRelatedProducts] = useState([])
   const [nextProductId, setNextProductId] = useState(null)
   const [product, setProduct] = useState(null)
   const [allProductsInCategory, setAllProductsInCategory] = useState([])
-  const [id, setId] = useState(null);
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -135,7 +139,6 @@ const SingleProduct = () => {
 
 
   let currentProductCat;
-  let productId;
 
   switch (category) {
     case 'Computer':
@@ -157,17 +160,28 @@ const SingleProduct = () => {
       currentProductCat = category.toLowerCase();
   }
 
+
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem('token'))
     setCurrentAdmin(auth)
   }, [])
 
+  const [nextProductSlug, setNextProductSlug] = useState(null);
+
   const { handleGoBack, handleNavigateNext} = useScrollResetNavigation()
+
+  const [previousUrl, setPreviousUrl] = useState(null)
+
+  useEffect(() => {
+    setPreviousUrl(document.referrer || localStorage.getItem('previousUrl') || '/shop')
+    localStorage.setItem('previousUrl', 'yegduyewgduwdiuwduw', window.location.href)
+  }, [])
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/product/${slug}`)
+        const res = await axios.get(`${BASEURL}/api/v1/product/${id}`)
         setData(res.data.product)
         setImage(res.data.product.images)
         setCategory(res.data.product.category)
@@ -175,17 +189,26 @@ const SingleProduct = () => {
         setProduct(res.data.product)
         setIsLoading(true)
 
-        setId(res.data.product._id);
-        updateRecentlyViewedInLocalStorage(res.data.product._id);
+        updateRecentlyViewedInLocalStorage()
+
 
         // Fetch next product
-        const nextRes = await axios.get(`${BASEURL}/api/v1/product/${res.data.product._id}/next`)
-        setNextProductId(nextRes.data.nextProduct.slug)
+        // const nextRes = await axios.get(`${BASEURL}/api/v1/product/${res.data.product._id}/next`)
+        // setNextProductId(nextRes.data.nextProduct._id)
+
+        const nextRes = await axios.get(`${BASEURL}/api/v1/product/${res.data.product._id}/next`);
+          if (nextRes.data.nextProduct) {
+            setNextProductId(nextRes.data.nextProduct._id);
+            setNextProductSlug(nextRes.data.nextProduct.slug); 
+          } else {
+            setNextProductId(null); 
+            setNextProductSlug(null);
+          }
 
         await fetchAllProductsInCategory()
         console.log('allProductsInCategory:', allProductsInCategory);
         // Fetch related products
-        await fetchRelatedProducts(res.data.product._id)
+        await fetchRelatedProducts()
 
         await fetchRecentlyViewedProducts()
 
@@ -195,7 +218,7 @@ const SingleProduct = () => {
       }
     }
     fetchData()
-  }, [slug])
+  }, [id])
 
   const fetchAllProductsInCategory = () => {
     fetch(`${BASEURL}/api/v1/product/filter?category=${category}`)
@@ -222,16 +245,16 @@ const SingleProduct = () => {
     navigate(`/${currentProductCat}?page=${pageNumber}`)
   }
 
-  const updateRecentlyViewedInLocalStorage = (product_Id) => {
-    if (!product_Id) {
+  const updateRecentlyViewedInLocalStorage = () => {
+    if (!id) {
       console.warn("Invalid product ID, cannot update recently viewed.");
       return;
     }
   
     const storedRecentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
   
-    if (!storedRecentlyViewed.includes(product_Id)) {
-      const updatedRecentlyViewed = [product_Id, ...storedRecentlyViewed.slice(0, 4)];
+    if (!storedRecentlyViewed.includes(id)) {
+      const updatedRecentlyViewed = [id, ...storedRecentlyViewed.slice(0, 4)];
       localStorage.setItem('recentlyViewed', JSON.stringify(updatedRecentlyViewed));
       setRecentlyViewed(updatedRecentlyViewed);
     } else {
@@ -255,9 +278,9 @@ const SingleProduct = () => {
   }
 
 
-  const fetchRelatedProducts = async (ids) => {
+  const fetchRelatedProducts = async () => {
     try {
-      const res = await axios.get(`${BASEURL}/api/v1/product/${ids}/related`)
+      const res = await axios.get(`${BASEURL}/api/v1/product/${id}/related`)
       setRelatedProducts(res.data.relatedProducts)
     } catch (error) {
       console.error('Error fetching related products:', error)
@@ -842,5 +865,4 @@ const SingleProduct = () => {
     </>
   )
 }
-
 export default SingleProduct

@@ -1,6 +1,12 @@
 import React from 'react';
-import { FacebookShareButton, LinkedinShareButton, FacebookIcon, LinkedinIcon } from 'react-share';
-import { FaXTwitter } from "react-icons/fa6";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+} from 'react-share';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const BlogSocialShareButtons = ({ url, title, image }) => {
   return (
@@ -14,18 +20,54 @@ const BlogSocialShareButtons = ({ url, title, image }) => {
 
         {/* X (formerly Twitter) Share */}
         <a
-          href={`https://x.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}&via=elonatech&hashtags=elonatech,blog&image=${encodeURIComponent(image)}`}
-          target="_blank" 
+          href={`https://x.com/intent/tweet?url=${encodeURIComponent(
+            url
+          )}&text=${encodeURIComponent(
+            title
+          )}&via=elonatech&hashtags=elonatech,blog&image=${encodeURIComponent(
+            image
+          )}`}
+          target="_blank"
           rel="noopener noreferrer"
-          style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', backgroundColor: '#1DA1F2', color: 'white' }}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 32,
+            height: 32,
+            borderRadius: '50%',
+            backgroundColor: '#1DA1F2',
+            color: 'white',
+          }}
         >
           <FaXTwitter size={16} />
         </a>
 
-        {/* Optional: LinkedIn Share */}
+        {/* LinkedIn Share */}
         <LinkedinShareButton url={url} title={title}>
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
+
+        {/* WhatsApp Share */}
+        <a
+          href={`https://wa.me/?text=${encodeURIComponent(
+            `${title} - ${url}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 32,
+            height: 32,
+            borderRadius: '50%',
+            backgroundColor: '#25D366',
+            color: 'white',
+          }}
+        >
+          <FaWhatsapp size={16} />
+        </a>
       </div>
     </div>
   );

@@ -280,7 +280,8 @@
 
 .website-hosting-section {
 	min-height: 500px;
-	/* Fixed height for desktop */
+background-color: #11253D;  
+	background-color: #11253D; 
 	background-image: linear-gradient(0deg,
 			rgba(0, 0, 0, 0.5),
 			rgba(0, 0, 0, 0.5)),
@@ -294,7 +295,6 @@
 	text-align: center;
 	color: white;
 	padding: 20px;
-	/* margin-bottom: 100px; */
 }
 
 /* Text styling for desktop */

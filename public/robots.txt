@@ -6,3 +6,7 @@ Disallow: /thank-you
 Sitemap: https://elonatech.com.ng/sitemap.xml
   
 Allow: /picture
+User-agent: facebookexternalhit
+Allow: /
+User-agent: *
+Allow: /product/

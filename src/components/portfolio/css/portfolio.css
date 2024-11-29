@@ -99,6 +99,7 @@
 .motionGraphicVideo{
   width: 280px;
   height: 500px;
+background-color: #11253D; 
 }
 
 
@@ -205,6 +206,7 @@
 
 .our-portfolio-section {
   min-height: 500px;
+background-color: #11253D; 
   background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5),

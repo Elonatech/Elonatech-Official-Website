@@ -422,7 +422,7 @@ const Computer = () => {
                           <div className='mx-1 shadow-lg p-3 bg-body rounded showbutton'>
                             <Link
                               className='text-decoration-none text-dark'
-                              to={`/product/${product.slug}?fromPage=${currentPage}`}
+                              to={`/product/${product.slug}/${product._id}?fromPage=${currentPage}`}
                             >
                               <div className='text-center take'>
                                 <LazyLoadImage

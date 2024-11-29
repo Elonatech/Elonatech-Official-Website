@@ -1,4 +1,4 @@
-import './footer.css'
+ import './footer.css'
 import eloa2 from './caption/Elonatech icon.png'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
@@ -6,14 +6,28 @@ import axios from 'axios'
 import { BASEURL } from '../../BaseURL/BaseURL'
 
 const Footer = () => {
-  const [currentAdmin, setCurrentAdmin] = useState('')
-  const [email, setEmail] = useState('')
-  const [mailchimp, setMailChimp] = useState('')
 
-  useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem('token'))
+ const [currentAdmin, setCurrentAdmin] = useState('');
+ const [email, setEmail] = useState('');
+ const [mailchimp, setMailChimp] = useState('');
+ const [facebookSrc, setFacebookSrc] = useState('');
+
+ useEffect(() =>{
+  const auth = JSON.parse(localStorage.getItem('token'));
     setCurrentAdmin(auth)
   }, [])
+
+  useEffect(() => {
+    const isMobile = /android|iphone|ipad|iPod|windows phone/i.test(
+      navigator.userAgent.toLowerCase()
+    );
+
+    const mobileUrl = `https://m.facebook.com/v3.2/plugins/page.php?app_id=&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3bb415372bda7c%26domain%3Delonatech.com.ng%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Felonatech.com.ng%252Ff26e985fb3315e4%26relation%3Dparent.parent&container_width=286&hide_cover=true&href=https%3A%2F%2Fm.facebook.com%2Felonatech&locale=en_US&sdk=joey&show_facepile=true&small_header=false&tabs=&width=500`;
+
+    const desktopUrl = `https://web.facebook.com/v3.2/plugins/page.php?app_id=&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3bb415372bda7c%26domain%3Delonatech.com.ng%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Felonatech.com.ng%252Ff26e985fb3315e4%26relation%3Dparent.parent&container_width=286&hide_cover=true&href=https%3A%2F%2Fwww.facebook.com%2Felonatech&locale=en_US&sdk=joey&show_facepile=true&small_header=false&tabs=&width=500`;
+
+    setFacebookSrc(isMobile ? mobileUrl : desktopUrl);
+  }, []);
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -256,17 +270,18 @@ const Footer = () => {
             >
               <div className='center-uip'>
                 <div id='fb-root'></div>
-                <div
-                  className='fb-page'
-                  data-href='https://www.facebook.com/elonatech'
-                  data-tabs=''
-                  data-width=''
-                  data-height=''
-                  data-small-header='false'
-                  data-adapt-container-width='true'
-                  data-hide-cover='true'
-                  data-show-facepile='true'
-                ></div>
+                <iframe
+                  name="f143a283b9937e8"
+                  className="lazyload"
+                  data-testid="fb:page Facebook Social Plugin"
+                  title="fb:page Facebook Social Plugin"
+                  frameBorder="0"
+                  allowTransparency="true"
+                  allowFullScreen="true"
+                  scrolling="no"
+                  allow="encrypted-media"
+                  src={facebookSrc}
+                ></iframe>
                 {/* </div> */}
               </div>
               {mailchimp === 'visible' ? (
