@@ -136,7 +136,7 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
               <div className='card-body'>
                 <i class='bi bi-telephone-minus-fill text-danger  fs-2'></i>
                 <p className='fw-bold'>Inbound & Outbound</p>
-                <p className='lead fs-6' style={{textAlign: 'justify'}}>
+                <p className='fs-6' style={{textAlign: 'justify'}}>
                   Delight customers and empower employees with AI-powered
                   workflows for every interaction. Put your business on the map
                   with local numbers and global connectivity from one easy app.
@@ -149,7 +149,7 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
               <div className='card-body'>
                 <i class='bi bi-mic-fill text-danger fs-2'></i>
                 <p className='fw-bold'>Voice Services</p>
-                <p className='lead fs-6' style={{textAlign: 'justify'}}>
+                <p className='fs-6' style={{textAlign: 'justify'}}>
                   PBX feature that provides comprehensive insights and analytics
                   on call activity, enabling businesses to track performance,
                   identify trends, and make data-driven decisions.
@@ -162,7 +162,7 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
               <div className='card-body'>
                 <i class='bi bi-terminal-fill text-danger  fs-2'></i>
                 <p className='fw-bold'>Automatic Call Distribution (ACD)</p>
-                <p className='lead fs-6' style={{textAlign: 'justify'}}>
+                <p className='fs-6' style={{textAlign: 'justify'}}>
                   VoIP feature that automatically responds to incoming text
                   messages, ensuring prompt engagement and providing
                   personalized messages to enhance customer satisfaction.

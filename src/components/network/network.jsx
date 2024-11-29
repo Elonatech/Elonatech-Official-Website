@@ -73,7 +73,7 @@ const Network = () => {
           <div className='underline'></div>
           <div className='row'>
             <div class='col-md-6'>
-              <p class='lead my-3'>
+              <p class='my-3'>
                 <strong>W</strong>e understand there are times when you need
                 your network equipment up and running as soon as possible and
                 can't afford to wait. Our engineers are very knowledgeable when
@@ -84,7 +84,7 @@ const Network = () => {
               </p>
             </div>
             <div class='col-md-6'>
-              <p class='lead my-3'>
+              <p class='my-3'>
                 <strong>O</strong>ur team provides round-the-clock maintenance
                 and repair for a wide range of high-end network equipment. We
                 check both software and hardware to ensure everything works
@@ -125,16 +125,13 @@ const Network = () => {
       </div>
       {/*========================================================================== Reliable =======================================================*/}
       <main class='container mt-5 '>
-        <div
-          class='mb-4 rounded'
-          style={{ backgroundColor: '#002e62' }}
-        >
+        <div class='mb-4 rounded' style={{ backgroundColor: '#002e62' }}>
           <div className='row'>
             <div class='col-md-6'>
               <h4 className='text-white text-center mt-4'>
                 Reliable Network Support
               </h4>
-              <p class='lead text-white taj p-2'>
+              <p class='text-white taj p-2'>
                 <strong>H</strong>ere at Elonatech, we are committed to
                 supplying you with the most reliable advice, support and
                 services at all times, wherever you are in Nigeria.
@@ -158,7 +155,7 @@ const Network = () => {
       <main class='container'>
         <div class='rounded'>
           <div className='row'>
-            <div class='col-md-6 common'>
+            <div class='col-md-6'>
               <h3
                 className='text-center  mt-5 mb-3'
                 style={{ color: '#34548c' }}
@@ -224,14 +221,15 @@ const Network = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-      </main>
+          {/* </div> */}
+        {/* </div> */}
+      {/* </main> */}
       {/*=================================================================================== router ====================================================*/}
-      <main class='container mb-5'>
-        <div class='rounded'>
-          <div className='row '>
-            <div class='col-md-6 p-4 text-white'
+      {/* <main class='container mb-5'> */}
+        {/* <div class='rounded'> */}
+          {/* <div className='row '> */}
+            <div
+              class='col-md-6 p-4 text-white'
               style={{ backgroundColor: '#002e62' }}
             >
               <p className='text-white taj'>
@@ -247,7 +245,7 @@ const Network = () => {
                 to serve your repair needs.
               </p>
             </div>
-            <div class='col-md-6 common-router'>
+            <div class='col-md-6'>
               <h3
                 className='text-center  mt-5 mb-3'
                 style={{ color: '#34548c' }}

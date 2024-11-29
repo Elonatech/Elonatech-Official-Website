@@ -35,7 +35,7 @@ const Internet = () => {
               <div className='card-body text-center bg-light'>
                 <i className='bi bi-wifi-2 fs-1 fw-3'></i>
                 <h6 className='text-danger'>Wifi Seamless</h6>
-                <p className='lead fs-6'>
+                <p className='fs-6'>
                   Where Connectivity Knows No Bounds - Weaving Your Digital
                   World into One Seamless Experience.
                 </p>
@@ -47,7 +47,7 @@ const Internet = () => {
               <div className='card-body text-center bg-light'>
                 <i className='bi bi-reception-4 fs-1 fw-3'></i>
                 <h6 className='text-danger'>Speed On Demand</h6>
-                <p className='lead fs-6'>
+                <p className='fs-6'>
                   Empowering You with the Magic Wand of Connectivity Click, Zoom
                   at the Pace of Your Desires.
                 </p>
@@ -59,7 +59,7 @@ const Internet = () => {
               <div className='card-body text-center bg-light'>
                 <i className='bi bi-broadcast-pin fs-1 fw-3'></i>
                 <h6 className='text-danger'>Upgrade Speed</h6>
-                <p className='lead fs-6'>
+                <p className='fs-6'>
                   Elevate Your Digital Realm with the Velocity of Progress Where
                   Faster Becomes the New Norm.
                 </p>
@@ -71,7 +71,7 @@ const Internet = () => {
               <div className='card-body text-center bg-light'>
                 <i className='bi bi-download fs-1 fw-3'></i>
                 <h6 className='text-danger'>Download 1Gbps</h6>
-                <p className='lead fs-6'>
+                <p className='fs-6'>
                   Ignite Your Downloads with the Power of a Thousand Megabits
                   Torrent of Possibilities at the Speed of Light.
                 </p>

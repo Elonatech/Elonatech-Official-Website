@@ -122,13 +122,13 @@ Our cloud web hosting is designed to deliver a faster site. A faster website mea
                       <i class='fa fa-desktop'></i>
                       <span>CREATE YOUR OWN WEBSITE WITH OUR</span>
                       <h3>WordPress Builder</h3>
-                      <p className='lead fs-6' style={{textAlign: 'justify'}}>
+                      <p className=' fs-6' style={{textAlign: 'justify'}}>
                         WordPress is widely regarded as one of the best content
                         management systems (CMS). Many popular and large-scale
                         websites use this platform.
                         <br />
                         {/* <br /> */}
-                        it is a great choice for a personal website or to use to
+                        It is a great choice for a personal website or to use to
                         grow a small business with a relatively limited budget.
                       </p>
                     </div>
@@ -138,7 +138,7 @@ Our cloud web hosting is designed to deliver a faster site. A faster website mea
                       <i class='fa fa-shopping-bag'></i>
                       <span>EASY CREATE, MANAGE & SELL</span>
                       <h3>Code-Based Websites</h3>
-                      <p className='lead fs-6' style={{textAlign: 'justify'}}>
+                      <p className=' fs-6' style={{textAlign: 'justify'}}>
                         For many small and medium businesses (especially those
                         with an online store) the choice is clear, website
                         created with codes offers more flexibility and
