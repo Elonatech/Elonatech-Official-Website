@@ -829,7 +829,11 @@ const Main = () => {
                   increase sales for your business? Elonatech offers tailored
                   advice on how to reach and engage your audience better,
                   increase conversion and maximize profit through a bespoke
-                  monthly/yearly digital marketing <span className='d-sm-none'><br /></span> plan for your business.
+                  monthly/yearly digital marketing{' '}
+                  <span className='d-sm-none'>
+                    <br />
+                  </span>{' '}
+                  plan for your business.
                 </p>
               </div>
               {/* ========================================================== ConsultForm  ===============================================================*/}
@@ -1132,7 +1136,7 @@ const Main = () => {
                     >
                       {product.name}
                     </h5>
-                    <p className='lead fs-6'>
+                    <p className='fs-6'>
                       {product.category === 'Office'
                         ? 'Office Equipment'
                         : product.category === 'Pos'
