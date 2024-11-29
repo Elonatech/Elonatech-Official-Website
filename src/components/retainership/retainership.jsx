@@ -181,7 +181,7 @@ const Retainership = () => {
         </div>
       </div>
       <div className='container mb-5'>
-        <div className='row align-items-center'>
+        <div className='row align-items-center gy-3'>
           <div className='col-md-4'>
             <div className='text-center'>
               <img
@@ -375,7 +375,8 @@ const Retainership = () => {
                       aria-expanded='false'
                       aria-controls='collapseOne'
                     >
-                      What is Retainership fee?
+                      <span class='num fw-bold me-3'>4.</span>
+                      <span>What is Retainership fee?</span>
                     </button>
                   </h2>
                   <div
@@ -403,7 +404,8 @@ const Retainership = () => {
                       aria-expanded='false'
                       aria-controls='collapseTwo'
                     >
-                      Is TDS applicable on Retainership fee?
+                      <span class='num fw-bold me-3'>5.</span>
+                      <span> Is TDS applicable on Retainership fee?</span>
                     </button>
                   </h2>
                   <div
@@ -430,7 +432,8 @@ const Retainership = () => {
                       aria-expanded='false'
                       aria-controls='collapseThree'
                     >
-                      Is a retainer fee the same as a deposit?
+                      <span class='num fw-bold me-3'>6.</span>
+                      <span> Is a retainer fee the same as a deposit?</span>
                     </button>
                   </h2>
                   <div

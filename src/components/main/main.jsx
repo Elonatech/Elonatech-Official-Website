@@ -825,15 +825,27 @@ const Main = () => {
                 <p className='fs-6 mt-4'>
                   Want to know how to increase your brand visibility, boost
                   audience engagement, drive traffic, increase social media
-                  followers, promote your products and service online and
+                  followers, promote your products and services online, and
                   increase sales for your business? Elonatech offers tailored
                   advice on how to reach and engage your audience better,
-                  increase conversion and maximize profit through a bespoke
-                  monthly/yearly digital marketing{' '}
-                  <span className='d-sm-none'>
+                  increase conversions, and maximize profit through a bespoke
+                  monthly/{' '}
+                  <span className='d-sm-none ttu'>
                     <br />
                   </span>{' '}
-                  plan for your business.
+                  yearly digital{' '}
+                  <span className='d-sm-none ttt'>
+                    <br />
+                  </span>
+                  marketing plan for
+                  <span className='d-sm-none ttu'>
+                    <br />
+                  </span>{' '}
+                  your{' '}
+                  <span className='d-sm-none ttt'>
+                    <br />
+                  </span>
+                  business.
                 </p>
               </div>
               {/* ========================================================== ConsultForm  ===============================================================*/}
@@ -1011,7 +1023,7 @@ const Main = () => {
             <div className=' d-sm-none showOnMobile'>
               <div className='row'>
                 <div
-                  className='btn btn-danger form-controli btn-md mt-4 mb-2 col-6 h-25 align-self-center'
+                  className='btn btn-danger form-controli btn-sm mt-4 mb-2 col-6 h-25 align-self-center'
                   data-bs-toggle='modal'
                   data-bs-target='#exampleModal2'
                 >
@@ -1021,7 +1033,7 @@ const Main = () => {
                 <div className='col-6'>
                   <img
                     data-src={MDImage}
-                    class='lazyload img-fluid mt-2 w-100 justify-self-end'
+                    class='lazyload img-fluid'
                     alt=''
                     style={{ objectFit: 'cover', height: '200px' }}
                   />

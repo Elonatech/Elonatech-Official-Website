@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import { BASEURL } from '../../BaseURL/BaseURL'
 import { useNavigate } from 'react-router-dom'
-import './retainer.css'
+// import './retainer.css'
 
 const options = ['2 times a week', '3 times a week', '5 times a week', 'Other']
 
@@ -91,12 +91,12 @@ const Retainerform = () => {
         data-bs-toggle='modal'
         data-bs-target='#exampleModal'
       >
-        <h5 className='pt-2'>Need a Retainer?</h5>
+        <h6 className='p-1'>Need a Retainer?</h6>
       </button>
 
       {/*   Modal  */}
       <div
-        class='modal fade my-modal'
+        class='modal fade'
         id='exampleModal'
         tabindex='-1'
         aria-labelledby='exampleModalLabel'
