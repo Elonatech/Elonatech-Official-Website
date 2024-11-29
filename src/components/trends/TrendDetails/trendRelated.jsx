@@ -12,10 +12,9 @@ const [data , setData] = useState({})
 const [relatedPosts, setRelatedPosts] = useState([]);
 const [currentAdmin, setCurrentAdmin] = useState('');
 const [isLoading, setIsLoading] = useState(false);
-const { slug } = useParams()
+const { slug, id } = useParams()
 const navigate = useNavigate();
 const [activeItem, setActiveItem] = useState("Item 3");
-const [id, setId] = useState(null);
 
 const handleClick = (item) => {
   setActiveItem(item);
@@ -51,10 +50,9 @@ useEffect(() =>{
 useEffect(() =>{
 const fetchBlog = async ()=>{
     try {
-    const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`);
+    const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`);
     setData(res.data)  
     setIsLoading(true);
-    setId(res.data._id);
     } catch (error) {
     console.log(error);
     setIsLoading(true);
@@ -71,7 +69,7 @@ useEffect(() => {
         const response = await axios.get(`${BASEURL}/api/v1/blog/`);
         setRelatedPosts(
           response.data.getAllBlogs
-            .filter(post => post.slug !== slug)
+            .filter(post => post.slug !== id)
             .sort(() => Math.random() - Math.random())
             .slice(0, 4)
         );

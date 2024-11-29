@@ -114,7 +114,7 @@ const Trends = () => {
                     <div className="col-md-12" key={item.id}>
                       <Link
                         className="text-decoration-none text-dark"
-                        to={`${item.slug}`}
+                        to={`${item.slug}/${item._id}`}
                       >
                         <div className="mt-4">
                           <div className="row g-0 shim ">

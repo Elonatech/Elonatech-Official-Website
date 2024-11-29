@@ -17,12 +17,11 @@ const NewsDetails = () => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [currentAdmin, setCurrentAdmin] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { slug } = useParams();
+  const { slug, id } = useParams();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [activeItem, setActiveItem] = useState("Item 2");
   const [blogUrl, setBlogUrl] = useState('')
-  const [id, setId] = useState(null);
 
 
   const handleSubmit = async (e) => {
@@ -61,10 +60,9 @@ const NewsDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`);
+        const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`);
         setData(res.data);
         setIsLoading(true);
-        setId(res.data._id);
       } catch (error) {
         console.log(error);
         setIsLoading(true);
@@ -79,7 +77,7 @@ const NewsDetails = () => {
         const response = await axios.get(`${BASEURL}/api/v1/blog/news`);
         setRelatedPosts(
           response.data.getAllNews
-            .filter(post => post.slug !== slug)
+            .filter(post => post.slug !== id)
             .sort(() => Math.random() - Math.random())
             .slice(0, 4)
         );
@@ -106,6 +104,7 @@ const NewsDetails = () => {
           <h2 class='text-white text-center blogHead'>News Details</h2>
           <h5 class=' mt-4 text-white text-center'></h5>
           <p class='lead text-white text-center'></p>
+
         </div>
       </div>
 
@@ -242,7 +241,7 @@ const NewsDetails = () => {
                     <div className="">
                       <Link
                         className="text-decoration-none text-dark"
-                        to={`/blog/related/${post.slug}`}
+                        to={`/blog/related/${post.slug}/${post._id}`}
                       >
                         <h6 className="related-post-title">
                           {post.title.slice(0, 300)}

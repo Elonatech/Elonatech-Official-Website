@@ -81,7 +81,7 @@ const Blog = () => {
   }
 
   const generateBlogLink = (item, currentPage) => {
-    return `/blog/${item.slug}?page=${currentPage}`
+    return `/blog/${item.slug}/${item._id}?page=${currentPage}`
   }
 
   return (
