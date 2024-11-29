@@ -411,7 +411,7 @@ const router = createBrowserRouter([
  
       //===================================== single product
       {
-        path:"/product/:slug",
+        path:"/product/:slug/:id",
         element:<SingleProduct/> 
       },
       {
