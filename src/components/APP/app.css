@@ -132,6 +132,48 @@ background-color: #11253D;
   margin-bottom: 5px;
 }
 
+@media (max-width: 576px) {
+  .app-design-section {
+    height: 200px; 
+    background-color: #11253D;
+    background-image:
+	  url('https://res.cloudinary.com/elonatech/image/upload/v1733148059/mobile_app_for_mobile_view_fu9ynd.jpg');
+    background-size: contain;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .app-design-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .app-design-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .app-design-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .app-design-section h2,
+  .app-design-section h5,
+  .app-design-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .myCard {
   background: #818ec3;
   color: white;

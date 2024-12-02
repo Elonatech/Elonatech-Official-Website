@@ -74,6 +74,7 @@ const SingleProduct = () => {
   const [nextProductSlug, setNextProductSlug] = useState(null);
   const [product, setProduct] = useState(null)
   const [allProductsInCategory, setAllProductsInCategory] = useState([])
+  const [productUrl, setProductUrl] = useState('')
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -93,6 +94,10 @@ const SingleProduct = () => {
     useEffect(() => {
       setPreviousUrl(window.location.href)
     }, [location])
+
+    useEffect(() => {
+      setProductUrl(window.location.href)
+    }, [])
   
     const scrollToTop = useCallback(() => {
       window.scrollTo({
@@ -654,7 +659,7 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <SocialShareButtons
-                    url={`https://elonatech.com.ng/product/${product.slug}`}
+                    url={`https://elonatech.com.ng/product/${product.slug}/${product._id}`}
                     title={product.name}
                     image={product.images[0].url}
                   />
