@@ -33,6 +33,33 @@ const scrollToHeader = () => {
 }
 
 const Portfolio = () => {
+  const services = [
+    {
+      title: 'Computer Hardware Projects',
+      description:
+        'Your business works when your hardware works. While computer hardware configurations vary widely, we have worked on major categories of hardware for clients in the Medical Science, Financial, Telecoms, Aviation, ICT, Government & NGOs, etc.',
+      image: computerHardware
+    },
+    {
+      title: 'Network Engineering',
+      description:
+        'We implement and design both complex and simple data/voice LANs for all types of organizations. Implementing a well-designed, secured enterprise network and utilizing the right combination of IT solutions so as to drive that business to the desired level.',
+      image: networkEngineering
+    },
+    {
+      title: 'Structured Cabling',
+      description:
+        "We provide the infrastructure that supports the performance of organizations' network. It is the most critical part of your voice and data network. Choosing a qualified provider is a critical decision. We use only high-end quality products in our structured wiring solutions.",
+      image: structuredCabling
+    },
+    {
+      title: 'Digital Marketing Strategy',
+      description:
+        'Developing effective digital marketing in any market is tough, demanding, & technical. We achieve this by working closely with clients to craft & deliver successful & oriented online marketing strategies which integrate customer needs, business objectives & technology.',
+      image: digitalMarketing
+    }
+  ]
+
   return (
     <>
       <Helmet>
@@ -80,7 +107,10 @@ const Portfolio = () => {
         <div class='row g-5'>
           <div class='col-lg-4'>
             <div class='row g-5'>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.2s'>
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.2s'
+              >
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -97,7 +127,10 @@ const Portfolio = () => {
                   igniting the world with smarter and brighter solutions
                 </p>
               </div>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.6s'>
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.6s'
+              >
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -133,7 +166,10 @@ const Portfolio = () => {
           </div>
           <div class='col-lg-4'>
             <div class='row g-5'>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.4s'>
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.4s'
+              >
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -150,7 +186,10 @@ const Portfolio = () => {
                   services or expert professional solutions to organizations
                 </p>
               </div>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.8s'>
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.8s'
+              >
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -178,7 +217,7 @@ const Portfolio = () => {
         </h2>
         <div class='container mb-5'>
           <ul class='nav nav-tabs row bg-secondary  d-flex'>
-            <li class='nav-item col-6  col-md-4 col-lg-2 '>
+            <li class='nav-item col-6 col-md-2 '>
               <a
                 class='nav-link computer-bg active show'
                 data-bs-toggle='tab'
@@ -187,7 +226,7 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Remaben</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+            <li class='nav-item  col-6 col-md-2 '>
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -196,7 +235,7 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Elonatech</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+            <li class='nav-item  col-6 col-md-2 '>
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -205,7 +244,7 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Safebrooks</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+            <li class='nav-item  col-6 col-md-2 '>
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -214,7 +253,7 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Ozone</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+            <li class='nav-item  col-6 col-md-2 '>
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -223,7 +262,7 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Western</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+            <li class='nav-item  col-6 col-md-2 '>
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -300,6 +339,7 @@ const Portfolio = () => {
                                           className='img-fluid lazyload'
                                         />
                                       </div>
+                                      ``
                                     </div>
                                     <div className='col-md-7 mt-5'>
                                       <div className=''>
@@ -1415,12 +1455,7 @@ const Portfolio = () => {
                                 <div
                                   class='tab_item tab_item_4'
                                   style={{ display: 'none' }}
-                                >
-                                  {/* <h3>4. Save to Google Pay</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae ipsa, enim aspernatur ducimus vero! Repellendus exercitationem dolore, voluptatibus consectetur facere eveniet in, corporis, nostrum animi unde recusandae repudiandae. Excepturi.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae ipsa, enim aspernatur ducimus vero! Repellendus exercitationem dolore, voluptatibus consectetur facere eveniet in, corporis, nostrum animi unde recusandae repudiandae. Excepturi.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae ipsa, enim aspernatur ducimus vero! Repellendus exercitationem dolore, voluptatibus consectetur facere eveniet in, corporis, nostrum animi unde recusandae repudiandae. Excepturi.</p> */}
-                                </div>
+                                ></div>
                               </div>
                             </div>
                           </div>
@@ -1897,82 +1932,22 @@ const Portfolio = () => {
       <div className='container mt-5 mb-5'>
         <h4 class='text-primary fw-bold'>Our Projects</h4>
         <h2 class='fw-bold mb-5'>We've Done Lot's of Awesome Projects</h2>
-        <div className='row'>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={computerHardware}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Computer Hardware Projects</h5>
-                <p className='pb-5'>
-                  Your business works when your hardware works. While computer
-                  hardware configurations vary widely, we have worked on major
-                  categories of hardware for clients in the Medical Science,
-                  Financial, Telecoms, Aviation, ICT, Government & NGOs, etc.
-                </p>
+        <div className='row g-3'>
+          {services.map((service, index) => (
+            <div className='col-lg-3 col-md-6 d-flex' key={index}>
+              <div className='shadow d-flex flex-column'>
+                <img
+                  className='img-fluid lazyload'
+                  data-src={service.image}
+                  alt={service.title}
+                />
+                <div className='ps-2 pt-2 flex-grow-1'>
+                  <h5 className='pt-3'>{service.title}</h5>
+                  <p className='pb-4 pe-2'>{service.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={networkEngineering}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Network Engineering</h5>
-                <p className='pb-4 pe-2'>
-                  We implement and design both complex and simple data/voice
-                  LANs for all types of organizations. Implementing a
-                  well-designed, secured enterprise network and utilizing the
-                  right combination of IT solutions so as to drive that business
-                  to the desired level.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={structuredCabling}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Structured Cabling</h5>
-                <p className='pb-4 pe-2 '>
-                  We provide the infrastructure that supports the performance of
-                  organizations network it is the most critical part of your
-                  voice and data network, choosing a qualified provider is a
-                  critical decision. We use only high-end quality products in
-                  our structured wiring solutions
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={digitalMarketing}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Digital Marketing Strategy</h5>
-                <p className=' pb-4 pe-2 '>
-                  Developing effective digital marketing in any market is tough,
-                  demanding, & technical. We achieve this by working closely
-                  with clients to craft & deliver successful & oriented online
-                  marketing strategies which integrate customer needs, business
-                  objectives & technology.
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       {/*==============================================================================================================================*/}
