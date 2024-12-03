@@ -132,7 +132,7 @@ const BlogDetails = () => {
           </li>
         </ol>
         <div className='row'>
-          <div className='col-lg-9 col-md-7 leftt'>
+          <div className='col-lg-9 leftt'>
             <div className='mt-2'>
               {isLoading ? (
                 <div>
@@ -288,7 +288,7 @@ const BlogDetails = () => {
             </div>
           </div>
           {/*================================== Categories ========================================*/}
-          <div className='col-lg-3 col-md-5 rightt'>
+          <div className='col-lg-3 rightt'>
             <div className='mt-4'>
               <h5 style={{ color: '#34548c' }}>Categories</h5>
               <ul className='list-unstyled mt-2'>
@@ -385,7 +385,7 @@ const BlogDetails = () => {
                 </h3>
                 <div className='rel'>
                   {relatedPosts.map(post => (
-                    <div className='relIn' key={post.id}>
+                    <div className='relIn ' key={post.id}>
                       {/* <div className='col col-md-3 col-sm-11' key={post.id}> */}
                       <div className=''>
                         <Link

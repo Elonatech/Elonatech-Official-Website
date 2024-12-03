@@ -129,7 +129,7 @@ const NewsDetails = () => {
           </li>
         </ol>
         <div className='row'>
-          <div className='col-lg-9 col-md-7'>
+          <div className='col-lg-9'>
             <div className='mt-2'>
               {isLoading ? (
                 <div>
@@ -253,7 +253,7 @@ const NewsDetails = () => {
             </div>
           </div>
           {/*================================== Categories ========================================*/}
-          <div className='col-lg-3 col-md-5'>
+          <div className='col-lg-3'>
             <div className='mt-4'>
               <h5 style={{ color: '#34548c' }}>Categories</h5>
               <ul className='list-unstyled mt-2'>
