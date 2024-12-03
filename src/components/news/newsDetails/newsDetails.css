@@ -17,6 +17,15 @@
   color: red;
 }
 
+.related-post2 {
+  display: none;
+}
+
+.comments-container-mobile {
+  display: none;
+}
+
+
 @media (max-width: 767px) {
   .comments-container-mobile {
     display: block;
