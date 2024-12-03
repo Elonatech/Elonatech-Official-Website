@@ -141,7 +141,7 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null)
 
 // SAMPLE
-const isSmallScreen = window.innerWidth < 768;
+const isSmallScreen = window.innerWidth < 1236;
 const [isDropdownOpen, setDropdownOpen] = useState(false);
 const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
 

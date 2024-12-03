@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-// import ShopPagination from './shopPagination/shopPagination'
 import Pagination from './../../../components/Pagination/Pagination'
 import './shop.css'
 import { BASEURL } from '../../../BaseURL/BaseURL'
@@ -16,8 +15,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import { Helmet } from 'react-helmet-async'
 import 'rc-slider/assets/index.css'
 import ShopFilter from './shopFilter'
-// import Slider from '@mui/material/Slider'
-// import { GoDash } from 'react-icons/go'
 import { startTransition } from 'react'
 import Slider from '@mui/material/Slider'
 
@@ -51,9 +48,8 @@ const Shop = () => {
         const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`)
         const products = response.data.data.reverse()
         console.log(products)
-        // Initially set all fetched products to both `data` and `records`
         setData(products)
-        setRecords(products) // Show all products initially
+        setRecords(products)
         setIsLoading(false)
       } catch (error) {
         console.error('Error fetching data:', error)
@@ -70,14 +66,13 @@ const Shop = () => {
 
   useEffect(() => {
     if (filteredProducts.length > 0) {
-      setRecords(filteredProducts) // Show filtered products
-      setNoResultsMessage(false) // Don't show "No Results" message
+      setRecords(filteredProducts) 
+      setNoResultsMessage(false) 
       console.log(filteredProducts)
     } else if (filteredProducts.length === 0 && isFiltering) {
-      setRecords([]) // Empty records if no products match the filter
-      setNoResultsMessage(true) // Show the "No Results" message
+      setRecords([]) 
+      setNoResultsMessage(true) 
     } else {
-      // If not filtering or no search term, show all products
       setRecords(data)
       setNoResultsMessage(false)
     }
@@ -87,19 +82,16 @@ const Shop = () => {
     const searchTerm = event.target.value.toLowerCase()
 
     if (searchTerm === '') {
-      // If the search input is cleared, show all products again
       setFilteredProducts([])
-      setIsFiltering(false) // No filter applied
+      setIsFiltering(false)
       setNoResultsMessage(false)
     } else {
       const filtered = data.filter(product =>
         product.name.toLowerCase().includes(searchTerm)
       )
 
-      setFilteredProducts(filtered) // Set filtered products based on search term
-      setIsFiltering(true) // Filtering is now applied
-
-      // Trigger "No Results" message only if no matches are found
+      setFilteredProducts(filtered) 
+      setIsFiltering(true) 
       if (filtered.length === 0) {
         setNoResultsMessage(true)
       } else {
@@ -141,13 +133,11 @@ const Shop = () => {
   const displayedProducts =
     currentPosts.length > 0 ? currentPosts : records.slice(0, itemsPerPage)
 
-  // Add to cart
   const { addItem } = useCart()
 
-  // Pop up message
   const [displayPopUp, setDisplayPopUp] = useState(true)
 
-  const closePopUp = () => {
+  const closePopUp = () => {https://myactivity.google.com/product/youtube_live_chat?hl=en&utm_medium=web&utm_source=youtube
     localStorage.setItem('ToastPop', true)
     setDisplayPopUp(false)
   }
@@ -219,37 +209,20 @@ const Shop = () => {
       : [...filters.brand, brand]
 
     setFilters(prevFilters => ({ ...prevFilters, brand: updatedBrands }))
-
-    // Use startTransition to make the applyFilters call less urgent
     startTransition(() => {
       applyFilters(updatedBrands, filters.price)
     })
   }
 
-  // const handleBrandChange = async brand => {
-  //   const updatedBrands = filters.brand.includes(brand)
-  //     ? filters.brand.filter(b => b !== brand)
-  //     : [...filters.brand, brand]
-
-  //   setFilters(prevFilters => ({ ...prevFilters, brand: updatedBrands }))
-  //   await applyFilters(updatedBrands, filters.price)
-  // }
-
   const handleInputChange = (e, index) => {
-    const rawValue = e.target.value.replace(/,/g, '') // Remove commas
-
-    // If the input is empty, set the value to an empty string
+    const rawValue = e.target.value.replace(/,/g, '')
     if (rawValue === '') {
       const updatedPriceRange = [...priceRange]
-      updatedPriceRange[index] = '' // Or use null if you prefer
+      updatedPriceRange[index] = ''
       setPriceRange(updatedPriceRange)
       return
     }
-
-    // Convert to number and handle invalid cases
     const newValue = Number(rawValue)
-
-    // Only update if it's a valid number
     if (!isNaN(newValue)) {
       const updatedPriceRange = [...priceRange]
       updatedPriceRange[index] = newValue
@@ -333,9 +306,9 @@ const Shop = () => {
 
       <main className='container-fluid custom-container'>
         <div className='row g-0'>
-          <div className='col-lg-9 col-md-8'>
+          <div className='col-lg-9 col-md-7'>
             <section className='ftco-section' id='skills-section'>
-              <div className='container custom-container'>
+              <div className='custom-container'>
                 <div className='row justify-content-center pt-3 pb-4'>
                   <div className='col-md-8 pt-4'>
                     <h6>
@@ -366,7 +339,7 @@ const Shop = () => {
                   ) : displayedProducts.length > 0 ? (
                     displayedProducts.map(product => {
                       return (
-                        <div className='col-lg-3 mb-4' key={product.id}>
+                        <div className='col-lg-3 col-md-6 mb-4' key={product.id}>
                           <div className='mx-1 shadow-lg p-3 bg-body rounded showbutton'>
                             <Link
                               className='text-decoration-none text-dark'
@@ -466,7 +439,7 @@ const Shop = () => {
             </section>
           </div>
 
-          <div class='col-lg-3 col-md-4 pad'>
+          <div class='col-lg-3 col-md-5 pad'>
             {/* <
               class="position-sticky "
               style={{ top: "2rem", marginTop: "20px" }}
@@ -634,7 +607,7 @@ const Shop = () => {
             </div>
             <div
               style={{
-                width: '60%',
+                // width: '60%',
                 display: isLoading ? 'none' : 'block'
               }}
               className='filter-section pt-2 rounded shadow-sm'
