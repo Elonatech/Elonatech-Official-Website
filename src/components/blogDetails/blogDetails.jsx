@@ -153,7 +153,7 @@ const BlogDetails = () => {
                                 />
                                 <link
                                   rel='canonical'
-                                  href={`https://elonatech.com.ng/product/${id}`}
+                                  href={`https://elonatech.com.ng/product/${slug}/${id}`}
                                 />
 
                                 {/* Open Graph Meta Tags */}
