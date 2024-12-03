@@ -54,63 +54,6 @@ const useWindowSize = () => {
   return windowSize
 }
 
-const useScrollResetNavigation = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const isNavigatingRef = useRef(false)
-  const [previousUrl, setPreviousUrl] = useState(null)
-
-  useEffect(() => {
-    setPreviousUrl(window.location.href)
-  }, [location])
-
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }, [])
-
-  useEffect(() => {
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual'
-    }
-
-    return () => {
-      if ('scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'auto'
-      }
-    }
-  }, [])
-
-  const handleGoBack = () => {
-    if (window.history.state && window.history.state.idx > 0) {
-      navigate(-1)
-      scrollToTop()
-    } else {
-      navigate('/shop')
-      scrollToTop()
-    }
-  }
-
-  const handleGoToShop = () => {
-    navigate('/shop')
-    scrollToTop()
-  }
-
-  const handleNavigateNext = nextProductId => {
-    if (!isNavigatingRef.current && nextProductId) {
-      isNavigatingRef.current = true
-      navigate(`/product/${nextProductSlug}/${nextProductId}`)
-      setTimeout(() => {
-        isNavigatingRef.current = false
-      }, 500)
-    }
-  }
-
-  return { previousUrl, handleGoBack, scrollToTop, handleNavigateNext, handleGoToShop }
-}
-
 
 // git remote add origin https://github.com/Elonatech/Elonatech-Official-Website.git
 
@@ -128,8 +71,10 @@ const SingleProduct = () => {
   const { slug, id } = useParams()
   const [relatedProducts, setRelatedProducts] = useState([])
   const [nextProductId, setNextProductId] = useState(null)
+  const [nextProductSlug, setNextProductSlug] = useState(null);
   const [product, setProduct] = useState(null)
   const [allProductsInCategory, setAllProductsInCategory] = useState([])
+  const [productUrl, setProductUrl] = useState('')
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -139,6 +84,68 @@ const SingleProduct = () => {
 
 
   let currentProductCat;
+  
+  const useScrollResetNavigation = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
+    const isNavigatingRef = useRef(false)
+    const [previousUrl, setPreviousUrl] = useState(null)
+  
+    useEffect(() => {
+      setPreviousUrl(window.location.href)
+    }, [location])
+
+    useEffect(() => {
+      setProductUrl(window.location.href)
+    }, [])
+  
+    const scrollToTop = useCallback(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }, [])
+  
+    useEffect(() => {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual'
+      }
+  
+      return () => {
+        if ('scrollRestoration' in window.history) {
+          window.history.scrollRestoration = 'auto'
+        }
+      }
+    }, [])
+  
+    const handleGoBack = () => {
+      if (window.history.state && window.history.state.idx > 0) {
+        navigate(-1)
+        scrollToTop()
+      } else {
+        navigate('/shop')
+        scrollToTop()
+      }
+    }
+  
+    const handleGoToShop = () => {
+      navigate('/shop')
+      scrollToTop()
+    }
+  
+    const handleNavigateNext = useCallback(() => {
+      if (!isNavigatingRef.current && nextProductId && nextProductSlug) {
+        isNavigatingRef.current = true;
+        navigate(`/product/${nextProductSlug}/${nextProductId}`);
+        setTimeout(() => {
+          isNavigatingRef.current = false;
+        }, 500);
+      }
+    }, [nextProductId, nextProductSlug, navigate, isNavigatingRef]);
+  
+    return { previousUrl, handleGoBack, scrollToTop, handleNavigateNext, handleGoToShop }
+  }
+  
 
   switch (category) {
     case 'Computer':
@@ -165,8 +172,6 @@ const SingleProduct = () => {
     const auth = JSON.parse(localStorage.getItem('token'))
     setCurrentAdmin(auth)
   }, [])
-
-  const [nextProductSlug, setNextProductSlug] = useState(null);
 
   const { handleGoBack, handleNavigateNext} = useScrollResetNavigation()
 
@@ -197,13 +202,13 @@ const SingleProduct = () => {
         // setNextProductId(nextRes.data.nextProduct._id)
 
         const nextRes = await axios.get(`${BASEURL}/api/v1/product/${res.data.product._id}/next`);
-          if (nextRes.data.nextProduct) {
-            setNextProductId(nextRes.data.nextProduct._id);
-            setNextProductSlug(nextRes.data.nextProduct.slug); 
-          } else {
-            setNextProductId(null); 
-            setNextProductSlug(null);
-          }
+        if (nextRes.data.nextProduct) {
+          setNextProductId(nextRes.data.nextProduct._id);
+          setNextProductSlug(nextRes.data.nextProduct.slug);
+        } else {
+          setNextProductId(null);
+          setNextProductSlug(null);
+        }
 
         await fetchAllProductsInCategory()
         console.log('allProductsInCategory:', allProductsInCategory);
@@ -323,13 +328,7 @@ const SingleProduct = () => {
               ₦ {Number(price).toLocaleString()}.00
             </p>
             <div className='mt-auto'>
-              <Link
-                to={`/product/${slug}`}
-                className='btn btn-dark btn-sm w-100'
-                style={{ backgroundColor: 'black', borderColor: 'black' }}
-              >
-                View Product
-              </Link>
+            <Link to={`/product/${product._id}/${product.slug}`}  className='btn btn-dark btn-sm w-100' style={{ backgroundColor: 'black', borderColor: 'black' }}>View Product</Link>
             </div>
           </div>
         </div>
@@ -660,7 +659,7 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <SocialShareButtons
-                    url={`https://elonatech.com.ng/product/${product.slug}`}
+                    url={`https://elonatech.com.ng/product/${product.slug}/${product._id}`}
                     title={product.name}
                     image={product.images[0].url}
                   />
@@ -835,9 +834,9 @@ const SingleProduct = () => {
               <IoArrowBackOutline className='me-2' />
               Previous
             </button>
-            {nextProductId && (
+            {nextProductId && nextProductSlug && (
               <button
-                onClick={() => handleNavigateNext(nextProductId)}
+                onClick={handleNavigateNext}
                 className='btn btn-outline-dark nav-button'
               >
                 Next

@@ -17,12 +17,11 @@ const BlogDetails = () => {
   const [relatedPosts, setRelatedPosts] = useState([])
   const [currentAdmin, setCurrentAdmin] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const { slug } = useParams()
+  const { slug, id } = useParams()
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [activeItem, setActiveItem] = useState('Item 1')
   const [blogUrl, setBlogUrl] = useState('')
-  const [id, setId] = useState(null);
 
   const leftColumnRef = useRef(null)
 
@@ -61,9 +60,8 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`)
+        const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`)
         setData(res.data)
-        setId(res.data._id);
         console.log(id, res.data, 'thuebeiuuuer   ewuue e')
         setIsLoading(true)
       } catch (error) {
@@ -80,7 +78,7 @@ const BlogDetails = () => {
         const response = await axios.get(`${BASEURL}/api/v1/blog/`)
         setRelatedPosts(
           response.data.getAllBlogs
-            .filter(post => post.slug !== slug)
+            .filter(post => post.slug !== id)
             .sort(() => Math.random() - Math.random())
             .slice(0, 4)
         );
@@ -288,7 +286,7 @@ const BlogDetails = () => {
                     <div className=''>
                       <Link
                         className='text-decoration-none text-dark'
-                        to={`/blog/related/${post.slug}`}
+                        to={`/blog/related/${post.slug}/${post._id}`}
                       >
                         <h6 className='related-post-title'>
                           {post.title.slice(0, 300)}
@@ -408,7 +406,7 @@ const BlogDetails = () => {
                       <div className=''>
                         <Link
                           className='text-decoration-none text-dark'
-                          to={`/blog/related/${post.slug}`}
+                          to={`/blog/related/${post.slug}/${post._id}`}
                         >
                           <h6 className='related-post-title'>
                             {post.title.slice(0, 300)}

@@ -17,12 +17,11 @@ const TrendDetails = () => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [currentAdmin, setCurrentAdmin] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { slug } = useParams();
+  const { slug, id } = useParams();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [activeItem, setActiveItem] = useState("Item 3");
   const [blogUrl, setBlogUrl] = useState('')
-  const [id, setId] = useState(null);
 
 
   const handleSubmit = async (e) => {
@@ -61,10 +60,9 @@ const TrendDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`);
+        const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`);
         setData(res.data);
         setIsLoading(true);
-        setId(res.data._id);
       } catch (error) {
         console.log(error);
         setIsLoading(true);
@@ -79,7 +77,7 @@ const TrendDetails = () => {
         const response = await axios.get(`${BASEURL}/api/v1/blog/`);
         setRelatedPosts(
           response.data.getAllBlogs
-            .filter(post => post.slug !== slug)
+            .filter(post => post.slug !== id)
             .sort(() => Math.random() - Math.random())
             .slice(0, 4)
         );
@@ -243,7 +241,7 @@ const TrendDetails = () => {
                     <div className="">
                       <Link
                         className="text-decoration-none text-dark"
-                        to={`/blog/related/${post.slug}`}
+                        to={`/blog/related/${post.slug}/${post._id}`}
                       >
                         <h6 className="related-post-title">
                           {post.title.slice(0, 300)}
