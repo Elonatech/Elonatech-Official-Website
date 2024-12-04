@@ -1,37 +1,29 @@
-import ApplyNow from '../../../components/ApplyNow/ApplyNow'
-import { Helmet } from 'react-helmet-async'
-import './../graphicCareer/graphicCareer.css'
+import ApplyNow from "../../../components/ApplyNow/ApplyNow";
+import { Helmet } from "react-helmet-async";
+import "./../graphicCareer/graphicCareer.css";
+import { useEffect } from 'react';
 
 const MarketingCareer = () => {
-  return (
-    <>
-      <Helmet>
-        <title>
-          Marketer/Sales Representative - Tech Solution, Digital Solution
-        </title>
-        <meta
-          name='description'
-          content='This is a full-time Hybrid role for a Marketer/Sales Representatives. 
-        The Marketer/Sales Rep will be responsible for marketing our brand to a variety of industries and prospective clients.'
-        />
-        <link
-          rel='canonical'
-          href='https://elonatech.com.ng/marketing-career'
-        />
-      </Helmet>
-      {/*============================================= header ============================*/}
-      <div class='container-fluid careers-section'>
-        <div class='text-content'>
-          <h2>Career</h2>
-          <h5>Let's grow together</h5>
-          <p class='lead'>
-            We’re building a culture at Elonatech where amazing people (like
-            you) can do their best work.
-            <br /> If you’re ready to grow your career and help millions of
-            organizations and SME grow better, you’ve come to the right place.
-          </p>
-        </div>
-      </div>
+
+  useEffect(() => {
+    sessionStorage.setItem('previousUrl', window.location.href);
+  }, []);
+    return (
+        <>
+       <Helmet>
+        <title>Marketer/Sales Representative - Tech Solution, Digital Solution</title>
+        <meta name="description" content="This is a full-time Hybrid role for a Marketer/Sales Representatives. 
+        The Marketer/Sales Rep will be responsible for marketing our brand to a variety of industries and prospective clients." />
+        <link rel="canonical" href="https://elonatech.com.ng/marketing-career" />
+       </Helmet>
+        {/*============================================= header ============================*/}
+        <div class="container-fluid careers-section">
+  <div class="text-content">
+    <h2>Career</h2>
+    <h5>Let's grow together</h5>
+    <p class="lead">We’re building a culture at Elonatech where amazing people (like you) can do their best work.<br /> If you’re ready to grow your career and help millions of organizations and SME grow better, you’ve come to the right place.</p>
+  </div>
+</div>
 
       {/*  */}
       <div className='container mt-5'>

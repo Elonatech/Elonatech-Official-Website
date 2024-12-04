@@ -1,8 +1,11 @@
 import ApplyNow from '../../../components/ApplyNow/ApplyNow'
 import { Helmet } from 'react-helmet-async'
 import './../graphicCareer/graphicCareer.css'
-
+import { useEffect } from 'react'
 const SystemCareer = () => {
+  useEffect(() => {
+    sessionStorage.setItem('previousUrl', window.location.href)
+  }, [])
   return (
     <>
       <Helmet>
@@ -11,13 +14,12 @@ const SystemCareer = () => {
         </title>
         <meta
           name='description'
-          content='This is a full-time on-site role for a Systems/Network Engineer. The Systems/Network Engineer will be 
-         responsible for designing, maintaining and 
+          content='This is a full-time on-site role for a Systems/Network Engineer. The Systems/Network Engineer will be
+         responsible for designing, maintaining and
          building computer hardware and software systems as well as Installing, configuring and supporting network equipment.'
         />
         <link rel='canonical' href='https://elonatech.com.ng/system-career' />
       </Helmet>
-
       {/*=========================== header ===================================*/}
       <div class='container-fluid careers-section'>
         <div class='text-content'>
@@ -31,18 +33,16 @@ const SystemCareer = () => {
           </p>
         </div>
       </div>
-
       <div className='container mt-5'>
         <h1
           className='my-4'
-          style={{ fontSize: '', fontWeight: '800', color: '#34548c' }}
+          style={{ fontSize: '', fontWeight: '800', color: '#34548C' }}
         >
           Systems/Network Engineer
         </h1>
-
         <div class='row justify-content-center mt-4'>
           <div class='col-md-6'>
-            <h5 style={{ fontSize: '', fontWeight: '700', color: '#34548c' }}>
+            <h5 style={{ fontSize: '', fontWeight: '700', color: '#34548C' }}>
               Job Description:
             </h5>
             <p className='text-justify'>
@@ -56,19 +56,19 @@ const SystemCareer = () => {
             </p>
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 Location:
               </span>{' '}
               Egbeda, Lagos (Mainland){' '}
             </p>
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 Employment Type:{' '}
               </span>{' '}
               Full-time (On-site){' '}
             </p>
-            <p style={{ color: '#34548c', fontWeight: '700' }}>
+            <p style={{ color: '#34548C', fontWeight: '700' }}>
               Responsibilities:
             </p>
             <ul>
@@ -171,10 +171,9 @@ const SystemCareer = () => {
               </li>
               <li>Responding to and minimizing network downtimes</li>
             </ul>
-
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 {' '}
                 Qualifications:{' '}
               </span>{' '}
@@ -183,7 +182,7 @@ const SystemCareer = () => {
               Telecommunications Engineering, Information Systems, or other
               related disciplines.
             </p>
-            <p style={{ color: '#34548c', fontWeight: '700' }}> Experience: </p>
+            <p style={{ color: '#34548C', fontWeight: '700' }}> Experience: </p>
             <p className='text-justify'>
               A minimum of 2 years' experience in maintenance of computer
               hardware and software systems, computer networks, and other
@@ -204,7 +203,7 @@ const SystemCareer = () => {
             </p>
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 Method of Application:{' '}
               </span>{' '}
               Interested and qualified candidates should click the link below to
@@ -212,7 +211,7 @@ const SystemCareer = () => {
             </p>
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 {' '}
                 Note:{' '}
               </span>{' '}
@@ -226,5 +225,4 @@ const SystemCareer = () => {
     </>
   )
 }
-
 export default SystemCareer

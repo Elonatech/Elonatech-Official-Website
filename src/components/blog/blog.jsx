@@ -151,7 +151,7 @@ const Blog = () => {
                                   {' '}
                                   <Link
                                     className='text-decoration-none blogTitle-'
-                                    to={`${item._id}`}
+                                    to={`${item.slug}/${item._id}`}
                                   >
                                     {item.title}
                                   </Link>

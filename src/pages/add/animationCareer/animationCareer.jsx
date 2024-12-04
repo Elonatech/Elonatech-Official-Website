@@ -1,8 +1,13 @@
 import ApplyNow from '../../../components/ApplyNow/ApplyNow'
 import './animationCareer.css'
 import { Helmet } from 'react-helmet-async'
+import { useEffect } from 'react'
 
 const AnimationCareer = () => {
+  useEffect(() => {
+    sessionStorage.setItem('previousUrl', window.location.href)
+  }, [])
+
   return (
     <>
       <Helmet>

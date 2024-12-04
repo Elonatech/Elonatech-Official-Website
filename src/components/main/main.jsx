@@ -583,7 +583,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234678/homePage/clientLogo/veoc_y61crf.png'
                         className='img-fluid lazyload'
-                        alt=''
+                        alt='client'
                       />
                     </div>
                   </div>
@@ -593,7 +593,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234699/homePage/clientLogo/pineheight_sljytj.png'
                         className='img-fluid lazyload'
-                        alt=''
+                        alt='pinheight image'
                       />
                     </div>
                   </div>
@@ -603,7 +603,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1707753249/homePage/clientLogo/diva_cakes_betw0b.png'
                         className='img-fluid lazyload'
-                        alt=''
+                        alt='diva cake logo'
                       />
                     </div>
                   </div>
@@ -613,7 +613,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png'
                         className='img-fluid lazyload'
-                        alt=''
+                        alt='vivon logo'
                         style={{
                           width: '150px',
                           height: '150px',
@@ -628,7 +628,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1707753250/homePage/clientLogo/cathenet_lgod6k.png'
                         className='img-fluid lazyload'
-                        alt=''
+                        alt='client cathenet image'
                         style={{ marginTop: '10px', marginLeft: '10px' }}
                       />
                     </div>
@@ -646,7 +646,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png'
                         className='img-fluid lazyload tannet'
-                        alt=''
+                        alt='taanet image'
                       />
                     </div>
                   </div>
@@ -656,7 +656,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310816/SHEKINAH_SACRED_PLACE_MINISTRIES_Logo_fu5map.png'
                         className='img-fluid lazyload third'
-                        alt=''
+                        alt='sacred place'
                       />
                     </div>
                   </div>
@@ -666,7 +666,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310818/Logo_rqijd4.png'
                         className='img-fluid lazyload second'
-                        alt=''
+                        alt='vivion image'
                       />
                     </div>
                   </div>
@@ -676,7 +676,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1730393956/Piers_Spectra_Consulting_logo_abcobj.jpg'
                         className='img-fluid lazyload fourth'
-                        alt=''
+                        alt='piers spectra'
                       />
                     </div>
                   </div>
@@ -686,7 +686,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310619/Kappachem_Labs_Web_logo_op3szo.png'
                         className='img-fluid lazyload '
-                        alt=''
+                        alt='kappachem image'
                       />
                     </div>
                   </div>
@@ -696,7 +696,7 @@ const Main = () => {
                         src=''
                         data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310618/Ozone_Cinemas_Logo-removebg-preview_e0aiav.png'
                         className='img-fluid lazyload '
-                        alt=''
+                        alt='ozone cinemas'
                       />
                     </div>
                   </div>
@@ -982,7 +982,7 @@ const Main = () => {
                 <img
                   data-src={MDImage}
                   class='lazyload img-fluid mt-2'
-                  alt=''
+                  alt='Md image'
                 />
               </div>
             </div>

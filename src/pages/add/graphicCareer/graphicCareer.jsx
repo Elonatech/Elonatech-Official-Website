@@ -1,21 +1,24 @@
-import ApplyNow from '../../../components/ApplyNow/ApplyNow'
-import { Helmet } from 'react-helmet-async'
-import './graphicCareer.css'
+
+import ApplyNow from "../../../components/ApplyNow/ApplyNow";
+import { Helmet } from "react-helmet-async";
+import './graphicCareer.css';
+import { useEffect } from 'react';
+
 
 const GraphicCareer = () => {
-  return (
-    <>
-      <Helmet>
-        <title>
-          Graphic Designer/Digital Marketer - Tech Solution, Digital Solution
-        </title>
-        <meta
-          name='description'
-          content='This is a full-time on-site role for a Graphic Designer & Digital Marketer. 
-         The Graphic Designer/Digital Marketer will be responsible for creating designs and developing graphical content for a variety of online media '
-        />
-        <link rel='canonical' href='https://elonatech.com.ng/graphic-career' />
-      </Helmet>
+
+  useEffect(() => {
+    sessionStorage.setItem('previousUrl', window.location.href);
+  }, []);
+  
+    return (
+        <>
+        <Helmet>
+         <title>Graphic Designer/Digital Marketer - Tech Solution, Digital Solution</title>
+         <meta name="description" content="This is a full-time on-site role for a Graphic Designer & Digital Marketer. 
+         The Graphic Designer/Digital Marketer will be responsible for creating designs and developing graphical content for a variety of online media " />
+         <link rel="canonical" href="https://elonatech.com.ng/graphic-career" />
+         </Helmet>
 
       {/* header */}
       <div class='container-fluid careers-section'>

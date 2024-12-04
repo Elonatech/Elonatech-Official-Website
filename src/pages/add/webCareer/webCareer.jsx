@@ -1,7 +1,11 @@
 import ApplyNow from '../../../components/ApplyNow/ApplyNow'
 import { Helmet } from 'react-helmet-async'
 import './../graphicCareer/graphicCareer.css'
+import { useEffect } from 'react'
 const WebCareer = () => {
+  useEffect(() => {
+    sessionStorage.setItem('previousUrl', window.location.href)
+  }, [])
   return (
     <>
       <Helmet>
@@ -10,13 +14,12 @@ const WebCareer = () => {
         </title>
         <meta
           name='description'
-          content='This is a full-time on-site role for a Full Stack Web Developer. The Full Stack Web Developer will be responsible for 
-       creating designs and developing 
+          content='This is a full-time on-site role for a Full Stack Web Developer. The Full Stack Web Developer will be responsible for
+       creating designs and developing
        websites from conception all the way up to completion, fashioning everything from the home page to site layout, optimization and function.'
         />
         <link rel='canonical' href='https://elonatech.com.ng/web-career' />
       </Helmet>
-
       <div class='container-fluid careers-section'>
         <div class='text-content'>
           <h2>Career</h2>
@@ -29,18 +32,17 @@ const WebCareer = () => {
           </p>
         </div>
       </div>
-
       {/*  */}
       <div className='container mt-5'>
         <h1
           className='my-4'
-          style={{ fontSize: '', fontWeight: '800', color: '#34548c' }}
+          style={{ fontSize: '', fontWeight: '800', color: '#34548C' }}
         >
           Full Stack Web Developer
         </h1>
         <div class='row justify-content-center mt-3'>
           <div class='col-md-6 '>
-            <h5 style={{ fontSize: '', fontWeight: '700', color: '#34548c' }}>
+            <h5 style={{ fontSize: '', fontWeight: '700', color: '#34548C' }}>
               Role Description:
             </h5>
             <p className='text-justify'>
@@ -55,22 +57,21 @@ const WebCareer = () => {
             </p>
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 Location:
               </span>{' '}
               Egbeda, Lagos (Mainland){' '}
             </p>
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 Employment Type:{' '}
               </span>{' '}
               Full-time (On-site){' '}
             </p>
-
             <p className='text-justify'>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 {' '}
                 Responsibilities:
               </span>{' '}
@@ -85,7 +86,7 @@ const WebCareer = () => {
               ability to design with accessibility in mind. Must have strong
               skills in equivalent application(s).
             </p>
-            <p style={{ color: '#34548c', fontWeight: '700' }}>Experience:</p>
+            <p style={{ color: '#34548C', fontWeight: '700' }}>Experience:</p>
             <ul>
               <li>
                 Must have at least 2 years' work experience with proof of Web
@@ -156,7 +157,7 @@ const WebCareer = () => {
                 advertising and mobile.
               </li>
             </ul>
-            <p style={{ color: '#34548c', fontWeight: '700' }}>
+            <p style={{ color: '#34548C', fontWeight: '700' }}>
               Skills and Abilities:
             </p>
             <ul>
@@ -165,10 +166,9 @@ const WebCareer = () => {
               <li> Excellent verbal and written communication skills</li>
               <li> Professional approach to time, costs and deadlines</li>
             </ul>
-
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 Method of Application:{' '}
               </span>{' '}
               Interested and qualified candidates should click the link below to
@@ -176,7 +176,7 @@ const WebCareer = () => {
             </p>
             <p>
               {' '}
-              <span style={{ color: '#34548c', fontWeight: '700' }}>
+              <span style={{ color: '#34548C', fontWeight: '700' }}>
                 {' '}
                 Note:{' '}
               </span>{' '}
@@ -190,5 +190,4 @@ const WebCareer = () => {
     </>
   )
 }
-
 export default WebCareer
