@@ -120,8 +120,8 @@ In our bid to promote operational excellence and lead in the delivery of IT solu
           </h4>
           <p className='container'>
             We develop an individual integrated solution for your business and
-            select a unique set of services for it, combining them with a
-            single strategy and goal
+            select a unique set of services for it, combining them with a single
+            strategy and goal
           </p>
         </div>
         <div className='container'>
