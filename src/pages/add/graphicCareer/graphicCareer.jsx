@@ -1,11 +1,18 @@
 
 import ApplyNow from "../../../components/ApplyNow/ApplyNow";
 import { Helmet } from "react-helmet-async";
-import './graphicCareer.css'
+import './graphicCareer.css';
+import { useEffect } from 'react';
+
 
 
 
 const GraphicCareer = () => {
+
+  useEffect(() => {
+    sessionStorage.setItem('previousUrl', window.location.href);
+  }, []);
+  
     return (
         <>
         <Helmet>

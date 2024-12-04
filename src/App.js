@@ -13,6 +13,7 @@ const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated
 const TrendDetails = lazy(() => import("./components/trends/TrendDetails/trendDetails"));
 const TrendRelated = lazy(() => import("./components/trends/TrendDetails/trendRelated"));
 const Trial = lazy(() => import("./components/blogDetails/Trial"));
+const JobApplicationSuccess = lazy(() => import("./components/JobApplicationSuccess/JobApplicationSuccess"));
 
 
 
@@ -183,6 +184,10 @@ const router = createBrowserRouter([
     {
       path:'/trial',
       element:<Trial/>
+    },
+    {
+      path:'/application-success',
+      element:<JobApplicationSuccess/>
     },
     {
       path:'/network',
@@ -577,6 +582,7 @@ const router = createBrowserRouter([
 const App = () => {
   const { isAuthenticated } = useAuth();
   const MEASUREMENT_ID = 'G-T9V3LN3YLR';
+  
   useEffect(() => {
     // Initialize GA
     ReactGA.initialize(MEASUREMENT_ID);

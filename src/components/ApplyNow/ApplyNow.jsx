@@ -69,7 +69,7 @@ const ApplyNow = () => {
       modalInstance.hide();
 
       // Immediate navigation to the career page
-      navigate('/career');
+      navigate('/application-success');
 
     } catch (error) {
       toast.error(error.response?.data || 'An error occurred while submitting the application');
