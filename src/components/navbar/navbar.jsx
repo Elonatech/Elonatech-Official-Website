@@ -143,7 +143,7 @@ const Navbar = () => {
 // SAMPLE
 const isSmallScreen = window.innerWidth < 1236;
 const [isDropdownOpen, setDropdownOpen] = useState(false);
-const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
+const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1236);
 
 // 
 
@@ -170,7 +170,7 @@ const handleHardwareMouseClick = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth < 768) // Adjust the breakpoint as needed
+      setIsMobileView(window.innerWidth < 1236) // Adjust the breakpoint as needed
     }
 
     window.addEventListener('resize', handleResize)
