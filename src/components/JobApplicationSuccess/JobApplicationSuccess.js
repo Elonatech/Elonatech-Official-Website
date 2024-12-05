@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./JobApplicationSuccess.css";
-import { FaFacebook, FaTwitter, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-
+import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 const JobApplicationSuccess = () => {
   const navigate = useNavigate();
-
   const previousUrl = sessionStorage.getItem('previousUrl');
-
   const shareJobLink = (platform) => {
     let shareUrl = "";
-
     switch (platform) {
       case "facebook":
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${previousUrl}`;
         break;
-      case "twitter":
-        shareUrl = `https://twitter.com/intent/tweet?url=${previousUrl}&text=Check out this amazing job opportunity!`;
+      case "x":
+        shareUrl = `https://x.com/intent/tweet?url=${previousUrl}&text=Check out this amazing job opportunity!`;
         break;
       case "linkedin":
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${previousUrl}`;
@@ -27,10 +24,8 @@ const JobApplicationSuccess = () => {
       default:
         break;
     }
-
     window.open(shareUrl, "_blank");
   };
-
   return (
     <div className="success-page">
       <div className="success-content">
@@ -42,9 +37,8 @@ const JobApplicationSuccess = () => {
         <h1 className="success-title">Application Submitted Successfully!</h1>
         <p className="success-message">
           Thank you for applying! We’ll review your application and get back to you soon.
-          <span>You were previously at: {previousUrl}</span>
+          {/* <span>You were previously at: {previousUrl}</span> */}
         </p>
-
         <div className="success-buttons">
           <button
             className="btn primary-btn"
@@ -59,7 +53,6 @@ const JobApplicationSuccess = () => {
             Explore More of Our Services
           </button>
         </div>
-
         <div className="social-share">
           <h3>Share this opportunity:</h3>
           <div className="social-icons">
@@ -73,7 +66,7 @@ const JobApplicationSuccess = () => {
               className="icon-btn"
               onClick={() => shareJobLink("twitter")}
             >
-              <FaTwitter className="social-icon" />
+              <FaSquareXTwitter className="social-icon" />
             </button>
             <button
               className="icon-btn"
@@ -93,5 +86,4 @@ const JobApplicationSuccess = () => {
     </div>
   );
 };
-
 export default JobApplicationSuccess;
