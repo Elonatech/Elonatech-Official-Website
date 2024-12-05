@@ -53,6 +53,18 @@
   position: relative;
 }
 
+
+.price-mobile1 h4{
+/* font-size: 16px; */
+}
+
+@media only screen and (max-width: 767px) {
+
+
+ 
+}
+
+
 /*   Media Pop Up Message  */
 
 @media only screen and (max-width: 1673px) {
@@ -117,7 +129,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .progress-circle {
     display: flex;
     flex-wrap: wrap;

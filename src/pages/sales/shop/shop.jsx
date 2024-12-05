@@ -66,12 +66,12 @@ const Shop = () => {
 
   useEffect(() => {
     if (filteredProducts.length > 0) {
-      setRecords(filteredProducts) 
-      setNoResultsMessage(false) 
+      setRecords(filteredProducts)
+      setNoResultsMessage(false)
       console.log(filteredProducts)
     } else if (filteredProducts.length === 0 && isFiltering) {
-      setRecords([]) 
-      setNoResultsMessage(true) 
+      setRecords([])
+      setNoResultsMessage(true)
     } else {
       setRecords(data)
       setNoResultsMessage(false)
@@ -90,8 +90,8 @@ const Shop = () => {
         product.name.toLowerCase().includes(searchTerm)
       )
 
-      setFilteredProducts(filtered) 
-      setIsFiltering(true) 
+      setFilteredProducts(filtered)
+      setIsFiltering(true)
       if (filtered.length === 0) {
         setNoResultsMessage(true)
       } else {
@@ -137,8 +137,9 @@ const Shop = () => {
 
   const [displayPopUp, setDisplayPopUp] = useState(true)
 
-  const closePopUp = () => {https://myactivity.google.com/product/youtube_live_chat?hl=en&utm_medium=web&utm_source=youtube
-    localStorage.setItem('ToastPop', true)
+  const closePopUp = () => {
+    //myactivity.google.com/product/youtube_live_chat?hl=en&utm_medium=web&utm_source=youtube
+    https: localStorage.setItem('ToastPop', true)
     setDisplayPopUp(false)
   }
 
@@ -339,7 +340,10 @@ const Shop = () => {
                   ) : displayedProducts.length > 0 ? (
                     displayedProducts.map(product => {
                       return (
-                        <div className='col-lg-3 col-md-6 mb-4' key={product.id}>
+                        <div
+                          className='col-lg-3 col-md-6 mb-4'
+                          key={product.id}
+                        >
                           <div className='mx-1 shadow-lg p-3 bg-body rounded showbutton'>
                             <Link
                               className='text-decoration-none text-dark'
@@ -440,12 +444,6 @@ const Shop = () => {
           </div>
 
           <div class='col-lg-3 col-md-5 pad'>
-            {/* <
-              class="position-sticky "
-              style={{ top: "2rem", marginTop: "20px" }}
-            > */}
-
-
             <div className='thix'>
               <div className='browse'>
                 <form class='d-flex'></form>
@@ -541,10 +539,9 @@ const Shop = () => {
                 </ul>
               </div>
               <div
-                className='price-filter price-mobile1'
-                style={{ marginTop: '0' }}
+                className='price-mobile1'
               >
-                <h4 style={{ fontSize: '16px' }} className='fw-bold'>
+                <h4 className='fw-bold'>
                   Filter by Price(₦)
                 </h4>
                 <Slider
@@ -615,7 +612,9 @@ const Shop = () => {
               <h4 style={{ marginTop: '-8px' }} class='fw-bold shopyy'>
                 Sort Products by
               </h4>
+              <div className="fillt">
               <ShopFilter setFilteredProducts={setFilteredProducts} />
+              </div>
             </div>
           </div>
         </div>
