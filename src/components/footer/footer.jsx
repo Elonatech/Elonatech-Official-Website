@@ -90,8 +90,8 @@ const Footer = () => {
     <>
       <footer id='footer' class='footer' style={{ backgroundColor: '#11253D' }}>
         <div class='container text-white'>
-          <div class='row gy-4 '>
-            <div class='col-lg-3 col-md-5 col-6 footer-info'>
+          <div class='row gy-4 d-none d-md-flex'>
+            <div class='col-lg-3 col-md-5 footer-info'>
               <div className=''>
                 <img
                   data-src={eloa2}
@@ -168,7 +168,7 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div class='col-lg-2 col-md-3 col-6 footer-links'>
+            <div class='col-lg-2 col-md-3 footer-links'>
               <h4>Who We Are</h4>
               <div>
                 <ul>
@@ -202,7 +202,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div class='col-lg-2 col-md-3 col-6 footer-links'>
+            <div class='col-lg-2 col-md-3 footer-links'>
               <h4>Our Services</h4>
               <div>
                 <ul>
@@ -244,7 +244,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div class='col-lg-2 col-md-3  col-6 footer-links'>
+            <div class='col-lg-2 col-md-3 footer-links'>
               <h4>Our Services</h4>
               <ul className=''>
                 <li className=''>
@@ -369,6 +369,237 @@ const Footer = () => {
                     ></i>
                   </Link>
                 )}
+              </div>
+            </div>
+          </div>
+
+          <div className='row d-sm-flex d-md-none'>
+            <div class='col-6 footer-info'>
+              <div className=''>
+                <img
+                  data-src={eloa2}
+                  className='lazyload mx-4'
+                  style={{ height: '5rem', width: '5rem' }}
+                  alt='Description of the image content'
+                />
+              </div>
+              <div className=''>
+                <span>
+                  <h4 className='mt-4 text-white'>ELONATECH NIGERIA LIMITED</h4>
+                </span>
+              </div>
+              <p className=''>
+                4 , Oluwakemi Street, Shasha Road, Egbeda, Lagos.
+              </p>
+              <div className=''>
+                <p className='mb-0 mb-md-2 text-white'>info@elonatech.com.ng</p>
+                <p className='text-white'>+234 901 454 4520</p>
+              </div>
+              <div class='social-links d-flex justify-content-start mb-2'>
+                <Link class='twitter' to={'https://twitter.com/Elonatech'}>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    class='bi bi-twitter-x  social-links-icon'
+                    viewBox='0 0 16 16'
+                  >
+                    <path d='M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z' />
+                  </svg>
+                </Link>
+                <Link
+                  class='facebook'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  to={'https://www.facebook.com/elonatech'}
+                >
+                  <i class='bi bi-facebook social-links-icon'></i>
+                </Link>
+                <Link
+                  class='instagram'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  to={'https://www.instagram.com/elonatech'}
+                >
+                  <i class='bi bi-instagram social-links-icon'></i>
+                </Link>
+                <Link
+                  class='linkedin'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  to={'https://www.linkedin.com/company'}
+                >
+                  <i class='bi bi-linkedin social-links-icon'></i>
+                </Link>
+                <Link
+                  class='linkedin'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  to={'https://www.youtube.com/@elonatech'}
+                >
+                  <i class='bi bi-youtube social-links-icon'></i>
+                </Link>
+                <Link
+                  class='linkedin'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  to={'https://wa.me/message/NW4HSVIHRNRLA1'}
+                >
+                  <i class='bi bi-whatsapp social-links-icon'></i>
+                </Link>
+              </div>
+
+              <div class='center-uip-mobile'>
+                <form className=''>
+                  <div class='mb-2'>
+                    <input
+                      type='email'
+                      class='form-control rounded-0 '
+                      // style={{ width: '18rem' }}
+                      id='exampleInputEmail1'
+                      onChange={e => setEmail(e.target.value)}
+                      placeholder='Your email*'
+                      aria-describedby='emailHelp'
+                      required
+                    />
+                  </div>
+                  <div class='d-grid gap-2'>
+                    <button
+                      onClick={handleSubmit}
+                      class='btn btn-danger mb-3 '
+                      // style={{ width: '18rem' }}
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+
+                  <div class='form-check'>
+                    <label class='form-check-label' htmlFor='exampleCheck1'>
+                      <input
+                        type='checkbox'
+                        class='form-check-input'
+                        required='required'
+                      />
+                      I accept the
+                      <Link className='ps-1 text-white' to={'/policy'}>
+                        Privacy Policy
+                      </Link>
+                      <span className='text-danger'>*</span>
+                    </label>
+                  </div>
+                </form>
+              </div>
+
+              <div class='footer-links mt-4'>
+                <h4 className='text-decoration-underline'>Who We Are</h4>
+                <div>
+                  <ul>
+                    <li>
+                      <Link to={'/who-we-are'}>Company</Link>
+                    </li>
+                    <li>
+                      <Link to={'/our-team'}>Team</Link>
+                    </li>
+                    <li>
+                      <Link to={'/portfolio'}>Portfolio</Link>
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class='col-6 footer-links'>
+              <h4 className='text-decoration-underline'>Our Services</h4>
+              <div>
+                <ul>
+                  <li>
+                    <Link to={'/hardware-engineering'}>
+                      Computer Engineering
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={'/network-administration-implementation'}>
+                      Network Administration
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={'/cctv'}>CCTV Installation</Link>
+                  </li>
+                  <li>
+                    <Link to={'/access-control'}>Access Control</Link>
+                  </li>
+                  <li>
+                    <Link to={'/ip-telephony'}>IP Telephony</Link>
+                  </li>
+                  <li>
+                    <Link to={'/application-software'}>
+                      Application Software
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={'/web-design'}>Web Design/Dev</Link>
+                  </li>
+                  <li>
+                    <Link to={'/digital-marketing'}>Digital Marketing</Link>
+                  </li>
+                  <li>
+                    <Link to={'/social-media-marketing'}>
+                      Social Media Marketing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={'/brand-identity'}>Brand Development</Link>
+                  </li>
+                  <li>
+                    <Link to={'/uiux'}>UI/UX & Prototyping</Link>
+                  </li>
+                  <li>
+                    <Link to={'/motion-graphics'}>Motion Graphics</Link>
+                  </li>
+                  {/* <li>
+                    <Link to={'/livestreaming'}>Livestreaming</Link>
+                  </li>
+                  <li>
+                    <Link to={'/network-support'}>Network Support</Link>
+                  </li>
+                  <li>
+                    <Link to={'/remote-support'}>Remote Support</Link>
+                  </li>
+                  <li>
+                    <Link to={'/retainer-partnership'}>Retainership</Link>
+                  </li>
+                  <li>
+                    <Link to={'/training'}>Training</Link>
+                  </li>
+                  <li>
+                    <Link to={'/consumables'}>Consumables</Link>
+                  </li> */}
+                </ul>
+
+
+
+
+
+                <h4 className='mt-2 text-decoration-underline'>Products</h4>
+                <ul>
+                  <li>
+                    <Link to={'/computers'}>Computers</Link>
+                  </li>
+                  <li>
+                    <Link to={'/printers'}>Printers</Link>
+                  </li>
+                  <li>
+                    <Link to={'/office-equipment'}>Office Equipment</Link>
+                  </li>
+                  <li>
+                    <Link to={'/pos-system'}>POS Systems</Link>
+                  </li>
+                  <li>
+                    <Link to={'/network-devices'}>Network Devices</Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
