@@ -140,37 +140,37 @@ const Navbar = () => {
   const [productClick, setProductClick] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
 
-// SAMPLE
-const isSmallScreen = window.innerWidth < 1236;
-const [isDropdownOpen, setDropdownOpen] = useState(false);
-const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
+  // SAMPLE
+  const isSmallScreen = window.innerWidth < 1236
+  const [isDropdownOpen, setDropdownOpen] = useState(false)
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1236)
 
-// 
+  //
 
-const [initialLoad, setInitialLoad] = useState(true);
+  const [initialLoad, setInitialLoad] = useState(true)
 
-useEffect(() => {
-  if (initialLoad) {
-    handleTechMouseEnter();
-    setInitialLoad(false);
+  useEffect(() => {
+    if (initialLoad) {
+      handleTechMouseEnter()
+      setInitialLoad(false)
+    }
+  }, [])
+
+  const handleHardwareMouseOver = () => {
+    if (!isSmallScreen) {
+      setActiveDropdown('hardware')
+    }
   }
-}, []);
 
-const handleHardwareMouseOver = () => {
-  if (!isSmallScreen) {
-    setActiveDropdown('hardware'); 
+  const handleHardwareMouseClick = () => {
+    if (isSmallScreen) {
+      setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware')
+    }
   }
-};
-
-const handleHardwareMouseClick = () => {
-  if (isSmallScreen) {
-    setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware'); 
-  }
-};
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth < 768) // Adjust the breakpoint as needed
+      setIsMobileView(window.innerWidth < 1236) // Adjust the breakpoint as needed
     }
 
     window.addEventListener('resize', handleResize)

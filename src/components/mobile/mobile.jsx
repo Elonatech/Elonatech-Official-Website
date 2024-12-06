@@ -36,14 +36,14 @@ We repair all types of gadgets ranging from phones to tabs, smart watches, camer
 
       {/*============================================================================= Phone repair issues ==================================================*/}
       <div className='mb-3'>
-        <div class='icon-boxes position-relative mt-5'>
+        <div class='icon-boxes position-relative '>
           <div class='container position-relative'>
-            <div class='row mt-3'>
+            <div class='row mt-1'>
               <div class='text-bg-light shadow py-3 rounded'>
                 <h3 className='text-center'>
                   Why Choose Elonatech for Phone Repair
                 </h3>
-                <p class='lead my-2 text-center '>
+                <p class='my-2 text-center '>
                   <img
                     data-src={Shadow}
                     alt=''

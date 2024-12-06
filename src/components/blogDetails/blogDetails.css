@@ -1,6 +1,6 @@
 .blog-detail-heaad {
   height: 500px;
-background-color: #11253D; 
+  background-color: #11253D;
 
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg);
   background-repeat: no-repeat;
@@ -13,11 +13,9 @@ background-color: #11253D;
 }
 
 
-
 @media (max-width: 767px) {
   .blog-detail-heaad {
     height: 200px;
-  
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -30,16 +28,16 @@ background-color: #11253D;
   }
 }
 
-@media ( min-width: 767px) and (max-width: 835px) {
+@media (min-width: 767px) and (max-width: 835px) {
   .blog-detail-heaad {
     height: 300px;
-  
+
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
-  
+
   .blogHead {
     margin-top: 48px;
   }
@@ -77,11 +75,6 @@ background-color: #11253D;
   display: none;
 }
 
-.rel {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .related-post-title {
   height: 60px;
   display: -webkit-box;
@@ -91,8 +84,10 @@ background-color: #11253D;
   text-overflow: ellipsis;
 }
 
+/* @media (max-width: 767px) {} */
 
-@media (max-width: 767px) {
+
+@media (max-width: 890px) {
   .comments-container-mobile {
     display: block;
   }
@@ -110,8 +105,9 @@ background-color: #11253D;
   }
 
   .rel {
-    grid-template-columns: repeat(1, 1fr);
-    /* gap: 4px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
   }
 
   .relIn {
