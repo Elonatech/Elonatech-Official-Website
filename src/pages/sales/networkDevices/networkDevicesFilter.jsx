@@ -155,7 +155,7 @@ const NetworkFilter = ({ setFilteredProducts }) => {
 
         {/* Price Filter */}
         <div className='price-filter price-mobile'>
-          <label className='form-label'>Filter by Price(₦)</label>
+          <h4 className='form-label'>Filter by Price(₦)</h4>
           <Slider
             className='custom-slider'
             value={filters.price}

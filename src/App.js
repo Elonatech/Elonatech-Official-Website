@@ -247,7 +247,7 @@ const router = createBrowserRouter([
       element:< TeamSystem />
     },
     {
-      path:"/michael-jogoh",
+      path:"/joseph-okoronkwo",
       element:< TeamWeb />
     },
     // ===================================

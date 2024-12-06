@@ -128,7 +128,7 @@ const Company = () => {
     <div className="row align-items-center">
         <div className="col-md-6"> 
         <div className=" text-center mt-2 mb-4" >
-           <img src='https://i.stack.imgur.com/qq8AE.gif'     data-src="https://res.cloudinary.com/elonatech/image/upload/v1723798509/group_pics_dg1sql.jpg" className="img-fluid rounded lazyload"  />
+           <img src='https://i.stack.imgur.com/qq8AE.gif'     data-src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/group_pics_2_b8ttnj.jpg" className="img-fluid rounded lazyload"  />
         </div>
         </div>
         <div className="col-md-6">
