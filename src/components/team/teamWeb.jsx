@@ -8,11 +8,11 @@ const TeamWeb = () => {
     return (
     <>
 <Helmet>
-       <title>Michael Jogoh  - Tech Solution, Digital Solution</title>
-       <meta name="description" content="Michael Jogoh is the Lead Web Developer of Elonatech Nigeria Limited.
+       <title>Joseph Okoronkwo  - Tech Solution, Digital Solution</title>
+       <meta name="description" content="Joseph Okoronkwo is the Lead Web Developer of Elonatech Nigeria Limited.
 A seasoned full stack developer with 4+ years of extensive web applications and passion for developing innovative websites that 
 expedite the efficiency and effectiveness of organizational success" />
-       <link rel="canonical" href="https://elonatech.com.ng/michael-jogoh" />
+       <link rel="canonical" href="https://elonatech.com.ng/joseph-okoronkwo" />
 </Helmet>
 
 
@@ -28,40 +28,38 @@ expedite the efficiency and effectiveness of organizational success" />
 <div className="row">
 <div className="col-md-4">
 <div className="card border-0">
-    <img src="https://res.cloudinary.com/elonatech/image/upload/v1709808281/teamPage/Mike_jogoh_hq9hsl.png" className="img-fluid" alt="" />
+    <img src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/joseph_picture_rurbzo.jpg" className="img-fluid" alt="" />
 </div>
 </div>
 <div className="col-md-8">
 <div className="card border-0">
-<h1 className="fw-bold" style={{color:"#34548c"}}>Michael Jogoh</h1>
+<h1 className="fw-bold" style={{color:"#34548c"}}>Joseph Okoronkwo</h1>
 <h6 className="text-danger mt-0">Lead Web Developer</h6>
 <p>
-Michael Jogoh is the Lead Web Developer of Elonatech Nigeria Limited.
-A seasoned full stack developer with 4+ years of extensive web applications and passion for developing innovative websites that 
-expedite the efficiency and effectiveness of organizational success.      
+Joseph Okoronkwo is the Lead Full Stack Developer at Elonatech Nigeria Limited, 
+      with over five years of experience in software development. Known for his passion 
+      and innovation, Joseph specializes in creating scalable, user-centric digital solutions. 
+      His expertise spans modern frameworks like Angular, React, Node.js, and NestJS, alongside 
+      backend tools such as MongoDB, Prisma, and Express.     
 </p>
 <p>
-In the course of his career, having passed through several levels of education, Michael has also been certified as a 
-MERN Stack developer and has bagged several certificates in line with this from various reputable institutions just to mention a few. 
-He is a certified Software Developer on Legacy JavaScript Algorithms and Data Structures by freeCodeCamp, 
-certified JavaScript by HackerRank, and also certified by TestDome as Web Developer and Node.Js Developer, respectively.
+A certified Full Stack Developer, Joseph has earned credentials from renowned programs, 
+      including Python and Full Stack Web Development certifications from Angela Yu’s Udemy courses. 
+      His foundational knowledge in Computer Engineering, gained at Yaba College of Technology, Lagos, 
+      Nigeria, has been instrumental in shaping his career.
        
 </p>
  <p>
- As an experienced full stack web developer, he is well-versed in technology and writing code to create systems that are reliable and user-friendly. 
- A Skilled leader who has the proven ability to motivate,
-  educate and manage a team of professionals to build software programs and effectively track changes.
+ Joseph's journey began in 2018 and includes mentoring aspiring developers at Algorithm Tech, 
+      as well as internships with Bincom Code Academy and Power Learn Project Africa. At Elonatech, 
+      he leads the development of advanced applications, designs scalable architectures, and delivers 
+      enterprise-grade solutions, aligning technical efforts with business objectives.
 </p>
 <p>
-Over the years, Michael has led and managed several areas in major business processes and has worked within the back-end and front-end functions in IT.
- He was Software Developer, Bonshare, Turkey; Node.Js Software Developer, Robots Limited, Lagos; Entry Level Software Developer, 
-Uleval SL, Lagos; Backend Developer Intern, The Code Center, Lagos; and a host of others.
+A strategic thinker and collaborative leader, Joseph has successfully delivered projects such as 
+      secure e-commerce platforms and bespoke enterprise tools. His commitment to advancing technology 
+      and inspiring growth underscores his impactful contributions to the tech industry.
              
-</p>
-<p>
-As a confident communicator, strategic thinker, and innovative creator, he has developed software that is customized to meet company’s organizational needs, 
-highlight its core competencies, and further its successes.
-
 </p>
 </div>
 </div>

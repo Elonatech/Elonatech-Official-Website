@@ -63,6 +63,7 @@
     font-size: 0.8rem;
     padding: 0.2rem 0.5rem;
   }
+
 }
 
 .custom-container {
@@ -140,6 +141,7 @@
   margin-top: -75px;
 }
 
+
 .showOnMobile img {
   margin-top: 0.5rem;
   width: 100%;
@@ -160,3 +162,4 @@
   }
 
 }
+

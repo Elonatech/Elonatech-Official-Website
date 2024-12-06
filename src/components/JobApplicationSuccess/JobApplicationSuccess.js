@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./JobApplicationSuccess.css";
 import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+
 const JobApplicationSuccess = () => {
   const navigate = useNavigate();
   const previousUrl = sessionStorage.getItem('previousUrl');
@@ -13,8 +14,10 @@ const JobApplicationSuccess = () => {
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${previousUrl}`;
         break;
       case "x":
-        shareUrl = `https://x.com/intent/tweet?url=${previousUrl}&text=Check out this amazing job opportunity!`;
-        break;
+
+          shareUrl = `https://x.com/intent/tweet?url=${previousUrl}&text=Check out this amazing job opportunity!`;
+          break;
+
       case "linkedin":
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${previousUrl}`;
         break;

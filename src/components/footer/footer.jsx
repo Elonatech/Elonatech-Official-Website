@@ -146,7 +146,7 @@ const Footer = () => {
                   class='linkedin'
                   target='_blank'
                   rel='noopener noreferrer'
-                  to={'https://www.linkedin.com/company'}
+                  to={'https://www.linkedin.com/company/elonatech/posts/?feedView=all'}
                 >
                   <i class='bi bi-linkedin social-links-icon'></i>
                 </Link>

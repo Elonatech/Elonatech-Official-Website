@@ -431,6 +431,46 @@ Graphic Design, Branding and Digital Marketing.'
         <Link to={'/our-team'} className='btn btn-danger'>
           Back to our team
         </Link>
+
+        <ul class="team-social">
+        <li><Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'http://linkedin.com/in/jamiu-noah-5267b0242'}><i class="fab fa-linkedin-in"></i></Link></li>
+        <li><Link class="btn btn-square"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+         <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+        </svg></Link></li>
+        <li><div class="btn btn-square"><i class="fab fa-facebook-f"></i></div></li>
+        <li><div class="btn btn-square"><i class="fab fa-instagram"></i></div></li>
+        </ul>
+    </div>
+    </div>
+  </div>
+
+   <div class="col-lg-2 mx-1 p-3 mb-5 rounded">
+    <div class="kontribusi">
+        <div class="team-item rounded overflow-hidden pb-4">
+       <Link className='text-decoration-none' to={'/joseph-okoronkwo'}>
+        <img class="img-fluid mb-4" src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/joseph_picture_rurbzo.jpg" alt=""/>
+        <h5 className="fw-bold" style={{color:"#34548c"}}>Joseph Okoronkwo</h5>
+        <h6 class="text-danger">Lead Web Developer</h6>
+       </Link>
+        <ul class="team-social">
+        <li><Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://www.linkedin.com/in/joe40/'}><i class="fab fa-linkedin-in"></i></Link></li>
+        <li><Link class="btn btn-square"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+        </svg></Link></li>
+        <li><div class="btn btn-square" ><i class="fab fa-facebook-f"></i></div></li>
+        <li><div class="btn btn-square" ><i class="fab fa-instagram"></i></div></li>
+        </ul>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+{/*=============================================================================================================================  */}
+<div className="text-center mb-5">
+<Link to={'/our-team'} className="btn btn-danger">Back to our team</Link>
+</div>
+{/* ========================================================================== */}
+
       </div>
       {/* ========================================================================== */}
     </>

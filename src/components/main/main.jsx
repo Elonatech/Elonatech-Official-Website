@@ -1002,7 +1002,7 @@ const Main = () => {
                     data-src={MDImage}
                     class='lazyload img-fluid'
                     alt=''
-                    style={{ objectFit: 'cover', height: '200px' }}
+                    style={{ objectFit: 'cover', height: '200px', marginLeft: "20px" }}
                   />
                 </div>
               </div>

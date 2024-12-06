@@ -159,7 +159,7 @@ const ShopFilter = ({ setFilteredProducts }) => {
 
       {/* Filter by Price */}
       <div className='price-filter price-mobile'>
-        <h4 className='fw-bold'>Filter by Price(₦)</h4>
+        <h4 className='form-label'>Filter by Price(₦)</h4>
         <Slider
           className='slider'
           value={priceRange}
