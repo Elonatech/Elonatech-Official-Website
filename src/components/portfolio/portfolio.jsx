@@ -12,6 +12,7 @@ const scrollToHeader = () => {
   let tab_lists = document.querySelectorAll('.tabs_list ul li')
   let tab_items = document.querySelectorAll('.tab_item')
 
+
   tab_lists.forEach(function (list) {
     list.addEventListener('mouseover', function () {
       var tab_data = list.getAttribute('data-tc')
@@ -33,6 +34,34 @@ const scrollToHeader = () => {
 }
 
 const Portfolio = () => {
+  const services = [
+    {
+      title: 'Computer Hardware Projects',
+      description:
+        'Your business works when your hardware works. While computer hardware configurations vary widely, we have worked on major categories of hardware for clients in the Medical Science, Financial, Telecoms, Aviation, ICT, Government & NGOs, etc.',
+      image: computerHardware
+    },
+    {
+      title: 'Network Engineering',
+      description:
+        'We implement and design both complex and simple data/voice LANs for all types of organizations. Implementing a well-designed, secured enterprise network and utilizing the right combination of IT solutions so as to drive that business to the desired level.',
+      image: networkEngineering
+    },
+    {
+      title: 'Structured Cabling',
+      description:
+        "We provide the infrastructure that supports the performance of organizations' network. It is the most critical part of your voice and data network. Choosing a qualified provider is a critical decision. We use only high-end quality products in our structured wiring solutions.",
+      image: structuredCabling
+    },
+    {
+      title: 'Digital Marketing Strategy',
+      description:
+        'Developing effective digital marketing in any market is tough, demanding, & technical. We achieve this by working closely with clients to craft & deliver successful & oriented online marketing strategies which integrate customer needs, business objectives & technology.',
+      image: digitalMarketing
+    }
+  ]
+
+
   return (
     <>
       <Helmet>
@@ -80,7 +109,10 @@ const Portfolio = () => {
         <div class='row g-5'>
           <div class='col-lg-4'>
             <div class='row g-5'>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.2s'>
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.2s'
+              >
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -90,6 +122,7 @@ const Portfolio = () => {
                   }}
                 >
                   <i class='fa fa-cubes text-white'></i>
+
                 </div>
                 <h4>Best In Industry</h4>
                 <p class='mb-0'>
@@ -97,7 +130,10 @@ const Portfolio = () => {
                   igniting the world with smarter and brighter solutions
                 </p>
               </div>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.6s'>
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.6s'
+              >
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -133,7 +169,11 @@ const Portfolio = () => {
           </div>
           <div class='col-lg-4'>
             <div class='row g-5'>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.4s'>
+
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.4s'
+              >
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -150,7 +190,12 @@ const Portfolio = () => {
                   services or expert professional solutions to organizations
                 </p>
               </div>
-              <div class='col-12 col-md-6 col-lg-12 wow zoomIn' data-wow-delay='0.8s'>
+
+              <div
+                class='col-12 col-md-6 col-lg-12 wow zoomIn'
+                data-wow-delay='0.8s'
+              >
+
                 <div
                   class='rounded d-flex align-items-center justify-content-center mb-3'
                   style={{
@@ -178,7 +223,9 @@ const Portfolio = () => {
         </h2>
         <div class='container mb-5'>
           <ul class='nav nav-tabs row bg-secondary  d-flex'>
-            <li class='nav-item col-6  col-md-4 col-lg-2 '>
+
+            <li class='nav-item col-6 col-md-2 '>
+
               <a
                 class='nav-link computer-bg active show'
                 data-bs-toggle='tab'
@@ -187,7 +234,9 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Remaben</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+
+            <li class='nav-item  col-6 col-md-2 '>
+
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -196,7 +245,9 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Elonatech</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+
+            <li class='nav-item  col-6 col-md-2 '>
+
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -205,7 +256,9 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Safebrooks</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+
+            <li class='nav-item  col-6 col-md-2 '>
+
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -214,7 +267,9 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Ozone</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+
+            <li class='nav-item  col-6 col-md-2 '>
+
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -223,7 +278,9 @@ const Portfolio = () => {
                 <h5 className='fw-bold'>Western</h5>
               </a>
             </li>
-            <li class='nav-item  col-6 col-md-4 col-lg-2 '>
+
+            <li class='nav-item  col-6 col-md-2 '>
+
               <a
                 class='nav-link computer-bg'
                 data-bs-toggle='tab'
@@ -300,6 +357,7 @@ const Portfolio = () => {
                                           className='img-fluid lazyload'
                                         />
                                       </div>
+
                                     </div>
                                     <div className='col-md-7 mt-5'>
                                       <div className=''>
@@ -620,16 +678,19 @@ const Portfolio = () => {
                                   </div>
                                 </div>
 
+
                                 {/*========================================================== motion graphics ==================================================*/}
                                 <div
                                   class='tab_item tab_item_2'
                                   style={{ display: 'none' }}
                                 >
                                   <div className='text-center'>
+
                                     <iframe
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/7p6FQeZEPNQ?si=PKt7zweMxDnT8Wpj'
                                       title='YouTube video player'
                                       frameborder='0'
@@ -653,17 +714,296 @@ const Portfolio = () => {
                                       height='450'
                                       className='motionGraphicVideo lazyload'
                                       data-src='https://www.youtube.com/embed/EmkNTtbWmic?si=_tz-YlXUrNiL2xsp'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                                       allowfullscreen
                                     ></iframe>
 
-                                    <iframe
+                                  </div>
+                                </div>
+                                {/*================================================================== Digital marketing ===============================================*/}
+                                <div
+                                  class='tab_item tab_item_3'
+                                  style={{ display: 'none' }}
+                                >
+                                  <div className='container'>
+                                    <div className='row'>
+                                      <div className='col-md-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895785/portfolioPage/projects/elonatech/digital/jpeg-optimizer_digital-marketing-elonatech-555_gaobcl.jpg'
+                                            className='img-fluid  lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895785/portfolioPage/projects/elonatech/digital/jpeg-optimizer_digital-marketing-elonatech-555_gaobcl.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895783/portfolioPage/projects/elonatech/digital/jpeg-optimizer_elonatech-bulk-sales_duyquu.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895782/portfolioPage/projects/elonatech/digital/jpeg-optimizer_elonatech-website-design_qbtvo8.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895781/portfolioPage/projects/elonatech/digital/jpeg-optimizer_Network_Administration_Implementation_k1ek5g.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895780/portfolioPage/projects/elonatech/digital/jpeg-optimizer_Specialized_Computer_Repair_Service_fepuxl.png'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895780/portfolioPage/projects/elonatech/digital/jpeg-optimizer_We_are_the_p1s6xz.png'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895780/portfolioPage/projects/elonatech/digital/jpeg-optimizer_Wwebsite-2-elonatech-new_vy0cm9.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*=========================================================================== branding =============================================================*/}
+                                <div
+                                  class='tab_item tab_item_4'
+                                  style={{ display: 'none' }}
+                                >
+                                  <div className='container'>
+                                    <div className='row'>
+                                      <div className='col-md-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895186/portfolioPage/projects/elonatech/branding/jpeg-optimizer_bangetelo2_dx0kcc.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895185/portfolioPage/projects/elonatech/branding/jpeg-optimizer_elona_jersey_pwi8pu.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4'>
+                                        <div className=''>
+                                          <img
+                                            src='https://res.cloudinary.com/elonatech/image/upload/v1709895184/portfolioPage/projects/elonatech/branding/jpeg-optimizer_elona_kit_bjtbeb.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895183/portfolioPage/projects/elonatech/branding/jpeg-optimizer_elona_paper_bag_jhrcpy.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895174/portfolioPage/projects/elonatech/branding/jpeg-optimizer_elona_sationaries_brand_sr9ook.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895173/portfolioPage/projects/elonatech/branding/jpeg-optimizer_elonatech_Business_cards_preview_gbfgas.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709895174/portfolioPage/projects/elonatech/branding/jpeg-optimizer_cup_jokvgp.png'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/*================================================================ Safebrook ==================================================*/}
+            <div class='tab-pane' id='tab-3'>
+              <div class='row gy-4'>
+                <div class='col-lg-12 order-2 order-lg-1'>
+                  <div className='container mb-5'>
+                    <div className='row g-0'>
+                      <div className='col-md-2'>
+                        <div className='card rounded-0'>
+                          <div class='ts_body pt-4 mb-5'>
+                            <div class='tabs_list'>
+                              <ul class=' text-center mb-5 p-2'>
+                                <li
+                                  data-tc='tab_item_1'
+                                  class='dropdown-item mt-2 active p-3 '
+                                >
+                                  {' '}
+                                  <h6>Web Design</h6>
+                                </li>
+                                <li
+                                  data-tc='tab_item_2'
+                                  onMouseEnter={scrollToHeader}
+                                  class='dropdown-item mt-2 p-3 pe-5'
+                                >
+                                  <h6>Motion Graphic</h6>
+                                </li>
+                                <li
+                                  data-tc='tab_item_3'
+                                  class='dropdown-item mt-2 p-4 ps-1'
+                                >
+                                  <h6>Digital Marketing</h6>
+                                </li>
+                                <li
+                                  data-tc='tab_item_4'
+                                  class='dropdown-item mt-2 p-3'
+                                  style={{ marginBottom: '29px' }}
+                                >
+                                  <h6>Branding</h6>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='col-md-10'>
+                        <div className='card rounded-0'>
+                          <div class='ts_body'>
+                            <div class='tabs_content'>
+                              <div
+                                class='tab_body'
+                                style={{ overflow: 'auto', height: '30rem' }}
+                              >
+                                <div
+                                  class='tab_item tab_item_1'
+                                  style={{ minHeight: '100px' }}
+                                >
+                                  {/*=======================================  web =====================================*/}
+                                  <div className='row'>
+                                    <div className='col-md-12'>
+                                      <div className='shadow'>
+                                        <img
+                                          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709888028/portfolioPage/projects/safebrooks/web/web_template_2_safebrooks_gnptyq.jpg'
+                                          alt=''
+                                          className='img-fluid lazyload'
+                                        />
+                                      </div>
+                                    </div>
+                                    <div className='col-md-12 mt-5'>
+                                      <div className='shadow'>
+                                        <img
+                                          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709888029/portfolioPage/projects/safebrooks/web/3_m2z2tw.jpg'
+                                          alt=''
+                                          className='img-fluid lazyload'
+                                        />
+                                      </div>
+                                    </div>
+                                    <div className='col-md-6 mt-5'>
+                                      <div className=''>
+                                        <img
+                                          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709888028/portfolioPage/projects/safebrooks/web/1_xuicmd.jpg'
+                                          className='img-fluid rounded lazyload shadow'
+                                          alt=''
+                                        />
+                                      </div>
+                                    </div>
+                                    <div className='col-md-6 mt-5'>
+                                      <div className=''>
+                                        <img
+                                          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709888029/portfolioPage/projects/safebrooks/web/4_yxqfqb.jpg'
+                                          className='img-fluid rounded lazyload shadow'
+                                          alt=''
+                                        />
+                                      </div>
+                                    </div>
+                                    <div className='col-md-12 mt-2 mb-5'>
+                                      <div className=''>
+                                        <img
+                                          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709888029/portfolioPage/projects/safebrooks/web/2_isks2h.jpg'
+                                          alt=''
+                                          className='img-fluid lazyload'
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div
+                                  class='tab_item tab_item_2'
+                                  style={{ display: 'none' }}
+                                >
+                                  <div className='text-center'>                                    <iframe
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/jE_-CUX0QOI?si=jkP_prwmyLKuu136'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -674,12 +1014,15 @@ const Portfolio = () => {
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/ACa2bWgmYr4?si=pEEHl3LudvJIFkzh'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                                       allowfullscreen
                                     ></iframe>
+
                                   </div>
                                 </div>
                                 {/*================================================================== Digital marketing ===============================================*/}
@@ -957,11 +1300,14 @@ const Portfolio = () => {
                                   style={{ display: 'none' }}
                                 >
                                   <div className='text-center'>
+
                                     <iframe
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/fMAjMMCg_ls?si=kRloBeVzQjtO8EsO'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -972,6 +1318,7 @@ const Portfolio = () => {
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/XdWrJVY2wQY?si=d7DylbDfRQV9OhrS'
                                       title='YouTube video player'
                                       frameborder='0'
@@ -984,11 +1331,13 @@ const Portfolio = () => {
                                       height='450'
                                       className='motionGraphicVideo lazyload'
                                       data-src='https://www.youtube.com/embed/5TsDCpWZUEs?si=AWNI3fJgM581UXV5'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                                       allowfullscreen
                                     ></iframe>
+
 
                                     <iframe
                                       width='905'
@@ -1218,6 +1567,225 @@ const Portfolio = () => {
                                       <div className=''>
                                         <img
                                           data-src='https://res.cloudinary.com/elonatech/image/upload/v1709897229/portfolioPage/projects/ozone/web/2024_template_for_web_ozone_cinema_kkcxzo.jpg'
+=======
+                                  </div>
+                                </div>
+                                {/*=============================================================== digital============================================= */}
+                                <div
+                                  class='tab_item tab_item_3'
+                                  style={{ display: 'none' }}
+                                >
+                                  <div className='container'>
+                                    <div className='row'>
+                                      <div className='col-md-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709889626/portfolioPage/projects/safebrooks/digital/d6b6b8b73_wxttf0.jpg'
+                                            className='img-fluid rounded lazyload'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709889624/portfolioPage/projects/safebrooks/digital/00ace_uzvg6k.jpg'
+                                            className='img-fluid rounded lazyload'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709889625/portfolioPage/projects/safebrooks/digital/0aa70382f79a_uxvqyf.jpg'
+                                            className='img-fluid rounded lazyload'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709889625/portfolioPage/projects/safebrooks/digital/765d1bb1e5_xnhuqx.png'
+                                            className='img-fluid rounded lazyload'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709888267/portfolioPage/projects/safebrooks/digital/Untitled-1_s30pe4.png'
+                                            className='img-fluid rounded lazyload'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className='shadow'>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709889625/portfolioPage/projects/safebrooks/digital/765d1bb1e5_xnhuqx.png'
+                                            className='img-fluid rounded lazyload'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*========================================================================= Brand ================================================== */}
+                                <div
+                                  class='tab_item tab_item_4'
+                                  style={{ display: 'none' }}
+                                >
+                                  <div className='container'>
+                                    <div className='row jsutify-centent-md-centent'>
+                                      <div className='col-md-6'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891194/portfolioPage/projects/safebrooks/brand/Safebrooks_complimentary_card_back_v2ywau.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-6'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891215/portfolioPage/projects/safebrooks/brand/ut-1_farjuc.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891192/portfolioPage/projects/safebrooks/brand/safebrook_book_desi_nxj2ch.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                          <div className='text-center mt-5'>
+                                            <img
+                                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891188/portfolioPage/projects/safebrooks/brand/Safebrooks_jbhrtz.png'
+                                              className='img-fluid lazyload rounded'
+                                              alt=''
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891193/portfolioPage/projects/safebrooks/brand/SAFEBROOK-2_g3khqt.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891195/portfolioPage/projects/safebrooks/brand/Safebrooks_ID_Back_s9swir.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891190/portfolioPage/projects/safebrooks/brand/Nnenna_Nkkwo_ID._jqyqpm.jpg'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className='col-md-4 mt-4'>
+                                        <div className=''>
+                                          <img
+                                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709891188/portfolioPage/projects/safebrooks/brand/2_1_o5cxsj.png'
+                                            className='img-fluid lazyload rounded'
+                                            alt=''
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/*================================================================ Ozone ======================================================*/}
+            <div class='tab-pane' id='tab-4'>
+              <div class='row gy-4'>
+                <div class='col-lg-12 order-2 order-lg-1'>
+                  <div className='container mb-5'>
+                    <div className='row g-0'>
+                      <div className='col-md-2'>
+                        <div className='card rounded-0'>
+                          <div class='ts_body mb-5'>
+                            <div class='tabs_list'>
+                              <ul class=' text-center mb-5 pt-4 p-2'>
+                                <li
+                                  data-tc='tab_item_1'
+                                  class='dropdown-item mt-2 p-3 active'
+                                >
+                                  {' '}
+                                  <h6>Web Design</h6>
+                                </li>
+                                <li
+                                  data-tc='tab_item_2'
+                                  onMouseEnter={scrollToHeader}
+                                  class='dropdown-item mt-2 p-3 pe-5'
+                                >
+                                  <h6>Motion Graphic</h6>
+                                </li>
+                                <li
+                                  data-tc='tab_item_3'
+                                  class='dropdown-item mt-2 p-4 ps-1'
+                                >
+                                  <h6>Digital Marketing</h6>
+                                </li>
+                                <li
+                                  data-tc='tab_item_4'
+                                  class='dropdown-item mt-2 p-3'
+                                  style={{ marginBottom: '21px' }}
+                                >
+                                  <h6>Branding</h6>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='col-md-10'>
+                        <div className='card rounded-0'>
+                          <div class='ts_body'>
+                            <div class='tabs_content'>
+                              {/*============================================================ ozone ==========================================*/}
+                              <div
+                                class='tab_body'
+                                style={{ overflow: 'auto', height: '29rem' }}
+                              >
+                                {/*===================================================== web ==================================================*/}
+                                <div
+                                  class='tab_item tab_item_1'
+                                  style={{ minHeight: '100px' }}
+                                >
+                                  <div className='row'>
+                                    <div className='col-md-12'>
+                                      <div className=''>
+                                        <img
+                                          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709897229/portfolioPage/projects/ozone/web/2024_template_for_web_ozone_cinema_kkcxzo.jpg'
                                           className='img-fluid lazyload rounded shadow'
                                           alt=''
                                         />
@@ -1228,11 +1796,24 @@ const Portfolio = () => {
                                       <div className=''>
                                         <img
                                           data-src='https://res.cloudinary.com/elonatech/image/upload/v1709897229/portfolioPage/projects/ozone/web/4_ykd3jc.jpg'
+
                                           className='img-fluid lazyload rounded shadow'
                                           alt=''
                                         />
                                       </div>
                                     </div>
+
+
+                                    <div className='col-md-12 mt-5'>
+                                      <div className=''>
+                                        <img
+                                          data-src='https://res.cloudinary.com/elonatech/image/upload/v1709897229/portfolioPage/projects/ozone/web/4_ykd3jc.jpg'
+                              className='img-fluid lazyload rounded shadow'
+                                          alt=''
+                                        />
+                                      </div>
+                                    </div>
+
 
                                     <div className='col-md-6 mt-5'>
                                       <div className=''>
@@ -1270,11 +1851,14 @@ const Portfolio = () => {
                                   style={{ display: 'none' }}
                                 >
                                   <div className='text-center'>
+
                                     <iframe
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/VOLpQA0j744?si=GYFzTisTIKC3hwvf'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -1285,7 +1869,9 @@ const Portfolio = () => {
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/nDCK0wk0kQY?si=xezoDj4BHYDULwd5'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -1296,12 +1882,15 @@ const Portfolio = () => {
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/Sd0HBnKO7Sg?si=bWnDLTCRsh3lQDKc'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                                       allowfullscreen
                                     ></iframe>
+
 
                                     <iframe
                                       width='905'
@@ -1356,16 +1945,19 @@ const Portfolio = () => {
                                           <img
                                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709898083/portfolioPage/projects/ozone/digital/jpeg-optimizer_ozone-treasure-hunt_z4l3ei.jpg'
                                             className='img-fluid lazyload rounded'
+
                                             alt=''
                                           />
                                         </div>
                                       </div>
+
 
                                       {/*===================================================================================================================  */}
                                       <div className='col-md-4 mt-4'>
                                         <div className=''>
                                           <img
                                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709898094/portfolioPage/projects/ozone/digital/jpeg-optimizer_ozone-cinema-day_clsa4e.jpg'
+
                                             className='img-fluid rounded lazyload'
                                             alt=''
                                           />
@@ -1375,12 +1967,15 @@ const Portfolio = () => {
                                       <div className='col-md-4 mt-4'>
                                         <div className=''>
                                           <img
+
                                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709898091/portfolioPage/projects/ozone/digital/jpeg-optimizer_mission-impossible-promo_d7wciw.png'
+
                                             className='img-fluid rounded lazyload'
                                             alt=''
                                           />
                                         </div>
                                       </div>
+
                                       <div className='col-md-4 mt-4'>
                                         <div className=''>
                                           <img
@@ -1415,12 +2010,7 @@ const Portfolio = () => {
                                 <div
                                   class='tab_item tab_item_4'
                                   style={{ display: 'none' }}
-                                >
-                                  {/* <h3>4. Save to Google Pay</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae ipsa, enim aspernatur ducimus vero! Repellendus exercitationem dolore, voluptatibus consectetur facere eveniet in, corporis, nostrum animi unde recusandae repudiandae. Excepturi.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae ipsa, enim aspernatur ducimus vero! Repellendus exercitationem dolore, voluptatibus consectetur facere eveniet in, corporis, nostrum animi unde recusandae repudiandae. Excepturi.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae ipsa, enim aspernatur ducimus vero! Repellendus exercitationem dolore, voluptatibus consectetur facere eveniet in, corporis, nostrum animi unde recusandae repudiandae. Excepturi.</p> */}
-                                </div>
+                                ></div>
                               </div>
                             </div>
                           </div>
@@ -1543,11 +2133,14 @@ const Portfolio = () => {
                                   style={{ display: 'none' }}
                                 >
                                   <div className='text-center'>
+
                                     <iframe
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/w40Fr0gKFJ0?si=l-E789I_cwvdWc1J'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -1558,12 +2151,15 @@ const Portfolio = () => {
                                       width='905'
                                       height='450'
                                       className='motionGraphicVideo lazyload'
+
                                       data-src='https://www.youtube.com/embed/O8odtwVeyeE?si=FM2VhkkfzEv6LvJU'
+
                                       title='YouTube video player'
                                       frameborder='0'
                                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                                       allowfullscreen
                                     ></iframe>
+
 
                                     <iframe
                                       width='905'
@@ -1821,6 +2417,7 @@ const Portfolio = () => {
                                   </div>
                                 </div>
 
+
                                 {/*====================================================================== digital ==============================================*/}
                                 <div
                                   class='tab_item tab_item_3'
@@ -1897,82 +2494,22 @@ const Portfolio = () => {
       <div className='container mt-5 mb-5'>
         <h4 class='text-primary fw-bold'>Our Projects</h4>
         <h2 class='fw-bold mb-5'>We've Done Lot's of Awesome Projects</h2>
-        <div className='row'>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={computerHardware}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Computer Hardware Projects</h5>
-                <p className='pb-5'>
-                  Your business works when your hardware works. While computer
-                  hardware configurations vary widely, we have worked on major
-                  categories of hardware for clients in the Medical Science,
-                  Financial, Telecoms, Aviation, ICT, Government & NGOs, etc.
-                </p>
+        <div className='row g-3'>
+          {services.map((service, index) => (
+            <div className='col-lg-3 col-md-6 d-flex' key={index}>
+              <div className='shadow d-flex flex-column'>
+                <img
+                  className='img-fluid lazyload'
+                  data-src={service.image}
+                  alt={service.title}
+                />
+                <div className='ps-2 pt-2 flex-grow-1'>
+                  <h5 className='pt-3'>{service.title}</h5>
+                  <p className='pb-4 pe-2'>{service.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={networkEngineering}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Network Engineering</h5>
-                <p className='pb-4 pe-2'>
-                  We implement and design both complex and simple data/voice
-                  LANs for all types of organizations. Implementing a
-                  well-designed, secured enterprise network and utilizing the
-                  right combination of IT solutions so as to drive that business
-                  to the desired level.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={structuredCabling}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Structured Cabling</h5>
-                <p className='pb-4 pe-2 '>
-                  We provide the infrastructure that supports the performance of
-                  organizations network it is the most critical part of your
-                  voice and data network, choosing a qualified provider is a
-                  critical decision. We use only high-end quality products in
-                  our structured wiring solutions
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-3'>
-            <div className='shadow'>
-              <img
-                class='img-fluid lazyload'
-                data-src={digitalMarketing}
-                alt=''
-              />
-              <div className='ps-2 pt-2'>
-                <h5 className='pt-3'>Digital Marketing Strategy</h5>
-                <p className=' pb-4 pe-2 '>
-                  Developing effective digital marketing in any market is tough,
-                  demanding, & technical. We achieve this by working closely
-                  with clients to craft & deliver successful & oriented online
-                  marketing strategies which integrate customer needs, business
-                  objectives & technology.
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       {/*==============================================================================================================================*/}

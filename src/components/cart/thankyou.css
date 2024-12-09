@@ -1,101 +1,112 @@
 .cart-btn {
-    font-weight: 600;
-    padding: 12px 30px;
-    border-radius: 30px;
-    color: #ffffff;
-    background: #2f2f2f;
-    border-color: #2f2f2f; 
-    cursor: pointer;
-    text-decoration: none;
- }
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #ffffff;
+  background: #2f2f2f;
+  border-color: #2f2f2f;
+  cursor: pointer;
+  text-decoration: none;
+}
 
- .cart-btn:hover{
-    font-weight: 600;
-    padding: 12px 30px;
-    border-radius: 30px;
-    color: #ffffff;
-    background: #2f2f2f;
-    border-color: #2f2f2f; 
-    cursor: pointer;
- }
+.cart-btn:hover {
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #ffffff;
+  background: #2f2f2f;
+  border-color: #2f2f2f;
+  cursor: pointer;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #11253D;
+  transition: color 0.3s ease;
+}
+
+.social-share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 
 
- .order-confirmation-section {
-   height: 500px;
-background-color: #11253D;  /* Fixed height for desktop */
-   background-image: linear-gradient(
-       0deg,
-       rgba(0, 0, 0, 0.5),
-       rgba(0, 0, 0, 0.5)
-     ),
-     url('https://res.cloudinary.com/elonatech/image/upload/v1712150344/checkoutPage/thank_you_for_shoppin_gkwbcg.jpg');
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-   color: white;
-   padding: 20px;
-   /* margin-bottom: 100px; */
- }
- 
- /* Text styling for desktop */
- .order-confirmation-section h2 {
-   font-size: 2rem;
-   line-height: 1.2;
-   margin-bottom: 10px;
- }
- 
- .order-confirmation-section h5 {
-   font-size: 1.3rem;
-   line-height: 1.2;
-   margin-bottom: 8px;
- }
- 
- .order-confirmation-section p {
-   font-size: 1.1rem;
-   line-height: 1.2;
-   margin-bottom: 5px;
- }
- 
- /* Mobile view */
- @media (max-width: 576px) {
-   .order-confirmation-section {
-    height: 200px; 
-    background-image: linear-gradient(
-      0deg,
+.order-confirmation-section {
+  height: 500px;
+  background-color: #11253D;
+  /* Fixed height for desktop */
+  background-image: linear-gradient(0deg,
       rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('https://res.cloudinary.com/elonatech/image/upload/v1729523985/thank_you_for_shopping_with_us_akdpaa.jpg');
+      rgba(0, 0, 0, 0.5)),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1712150344/checkoutPage/thank_you_for_shoppin_gkwbcg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* margin-bottom: 100px; */
+}
+
+/* Text styling for desktop */
+.order-confirmation-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.order-confirmation-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.order-confirmation-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .order-confirmation-section {
+    height: 200px;
+    background-image: linear-gradient(0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523985/thank_you_for_shopping_with_us_akdpaa.jpg');
     background-size: cover;
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
-   }
- 
-   /* Adjusting text for mobile view */
-   .order-confirmation-section h2 {
-     font-size: 1.5rem;
-     margin-bottom: 5px;
-     line-height: 1.1;
-   }
- 
-   .order-confirmation-section h5,
-   .order-confirmation-section p {
-     font-size: 0.9rem;
-     line-height: 1.1;
-     margin-bottom: 0;
-     /* display: none;  */
-   }
- 
-   .order-confirmation-section h2,
-   .order-confirmation-section h5,
-   .order-confirmation-section p {
-     margin: 0;
-     padding: 0;
-   }
- }
- 
+  }
+
+  /* Adjusting text for mobile view */
+  .order-confirmation-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .order-confirmation-section h5,
+  .order-confirmation-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    /* display: none;  */
+  }
+
+  .order-confirmation-section h2,
+  .order-confirmation-section h5,
+  .order-confirmation-section p {
+    margin: 0;
+    padding: 0;
+  }
+}

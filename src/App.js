@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { lazy, useState, Suspense, useEffect } from 'react';
 import { CartProvider } from 'react-use-cart';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import './index.css';
@@ -13,6 +13,7 @@ const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated
 const TrendDetails = lazy(() => import("./components/trends/TrendDetails/trendDetails"));
 const TrendRelated = lazy(() => import("./components/trends/TrendDetails/trendRelated"));
 const Trial = lazy(() => import("./components/blogDetails/Trial"));
+const JobApplicationSuccess = lazy(() => import("./components/JobApplicationSuccess/JobApplicationSuccess"));
 
 
 
@@ -28,7 +29,7 @@ const Company = lazy(() => import("./components/company/company"));
 const Network = lazy(() => import("./components/network/network"));
 const Policy = lazy(() => import("./components/policy/policy"));
 const Digital = lazy(() => import("./components/digital/digital"));
-const Home = lazy(() =>  import("./components/home/home"));
+const Home = lazy(() => import("./components/home/home"));
 const Engineer = lazy(() => import("./components/engineer/engineer"));
 const Mobile = lazy(() => import("./components/mobile/mobile"));
 const Printer = lazy(() => import("./components/printer/printer"));
@@ -143,29 +144,29 @@ const BlogPages = lazy(() => import("./components/blog/blogPages"));
 
 
 
-const Layout = () =>{
-  return(
-  <>
-    <Suspense fallback={<><LoadingPages /></>}>
-    <CartProvider>
-    <Navbar />
-    <ScrollTop/>
-    <Outlet/>
-    <Footer />
-    </CartProvider>
-    </Suspense>
-  </>
+const Layout = () => {
+  return (
+    <>
+      <Suspense fallback={<><LoadingPages /></>}>
+        <CartProvider>
+          <Navbar />
+          <ScrollTop />
+          <Outlet />
+          <Footer />
+        </CartProvider>
+      </Suspense>
+    </>
 
-  // <>
-  //   <CartProvider>
-  //     <Navbar />
-  //     <ScrollTop />
-  //     <Suspense fallback={<LoadingPages />}>
-  //     <Outlet />
-  //     </Suspense>
-  //     <Footer />
-  //   </CartProvider>
-  // </>
+    // <>
+    //   <CartProvider>
+    //     <Navbar />
+    //     <ScrollTop />
+    //     <Suspense fallback={<LoadingPages />}>
+    //     <Outlet />
+    //     </Suspense>
+    //     <Footer />
+    //   </CartProvider>
+    // </>
   )
 }
 
@@ -183,6 +184,10 @@ const router = createBrowserRouter([
     {
       path:'/trial',
       element:<Trial/>
+    },
+    {
+      path:'/application-success',
+      element:<JobApplicationSuccess/>
     },
     {
       path:'/network',
@@ -242,7 +247,7 @@ const router = createBrowserRouter([
       element:< TeamSystem />
     },
     {
-      path:"/michael-jogoh",
+      path:"/joseph-okoronkwo",
       element:< TeamWeb />
     },
     // ===================================
@@ -354,229 +359,437 @@ const router = createBrowserRouter([
        },
    
       {
-        path:'/seo',
-        element:<Seo/>
-       },
-      {
-        path:'/social-media-marketing',
-        element:<Social/>
+        path: '/',
+        element: <Home />
       },
       {
-        path:'/email-marketing',
-        element:<Mail/>
+        path: '/trial',
+        element: <Trial />
+      },
+      {
+        path: '/network',
+        element: <Network />
+      },
+      {
+        path: '/portfolio',
+        element: <Portfolio />
+      },
+      {
+        path: '/digital-marketing',
+        element: <Digital />
+      },
+      {
+        path: '/policy',
+        element: <Policy />
+      },
+      {
+        path: '/who-we-are',
+        element: <Company />
+      },
+      {
+        path: '/web-design',
+        element: <Web />
+      },
+      {
+        path: '/app-development',
+        element: <AppDevelopment />
+      },
+      {
+        path: '/shop',
+        element: <Shop />
+      },
+      // team ==============================
+      {
+        path: "/our-team",
+        element: < Team />
+      },
+      {
+        path: "/israel-uhwonuwoma-o",
+        element: <Teamchairman />
+      },
+      {
+        path: "/oreva-p-oku",
+        element: <TeamMd />
+      },
+      {
+        path: "/violet-oku",
+        element: < TeamAdmin />
+      },
+      {
+        path: "/samuel-folarin",
+        element: < TeamLead />
+      },
+      {
+        path: "/jamiu-noah",
+        element: < TeamSystem />
+      },
+      {
+        path: "/michael-jogoh",
+        element: < TeamWeb />
+      },
+      // ===================================
+      {
+        path: '/hardware-engineering',
+        element: <Engineer />
+      },
+      {
+        path: '/mobile-repair',
+        element: <Mobile />
+      },
+      {
+        path: '/printer-repair',
+        element: <Printer />
+      },
+      {
+        path: '/system-integration',
+        element: <Integration />
+      },
+      {
+        path: '/structure-cabling',
+        element: <Cabling />
+      },
+      {
+        path: '/cctv',
+        element: <Cctv />
+      },
+      {
+        path: '/internet',
+        element: < Internet />
+      },
+      {
+        path: '/network-security',
+        element: <Security />
+      },
+      {
+        path: '/access-control',
+        element: <Access />
+      },
+      {
+        path: '/time-management',
+        element: <Time />
+      },
+      {
+        path: '/blog',
+        element: <Blog />
+      },
+      {
+        path: "/blog/page/:pagenumber",
+        element: <Blog />
+      },
+      {
+        path: '/blog/:slug/:id',
+        element: <BlogDetails />
+      },
+      {
+        path: '/blog/related/:slug/:id',
+        element: < BlogRelated />
+      },
+      {
+        path: '/news',
+        element: <News />
+      },
+      {
+        path: '/news/page/:pagenumber',
+        element: <News />
+      },
+      {
+        path: '/news/:slug/:id',
+        element: <NewsDetails />
+      },
+      {
+        path: '/news/page/:pagenumber/:slug/:id',
+        element: <NewsDetails />
+      },
+      {
+        path: '/news/related/:slug/:id',
+        element: <NewsRelated />
+      },
+      {
+        path: '/trends',
+        element: <Trends />
+      },
+      {
+        path: '/trends/page/:pagenumber',
+        element: <Trends />
+      },
+      {
+        path: '/trends/:slug/:id',
+        element: <TrendDetails />
+      },
+      {
+        path: '/trends/page/:pagenumber/:slug/:id',
+        element: <TrendDetails />
+      },
+      {
+        path: '/trends/related/:slug/:id',
+        element: <TrendRelated />
+      },
+      {
+        path: '/surveillance',
+        element: <Suvalliance />
+      },
+      {
+        path: '/network-administration-implementation',
+        element: <Networka />
+      },
+      {
+        path: '/server-administration',
+        element: <Server />
+      },
+      //=================== telecom pages
+      {
+        path: '/ip-telephony',
+        element: < IpTelephony />
+      },
+      {
+        path: '/voip',
+        element: <Voip />
+      },
+      //================================== web pages
+      {
+        path: '/domain',
+        element: <Domain />
+      },
+
+      {
+        path: '/hosting',
+        element: <Hosting />
+      },
+      //============================== marketing
+      {
+        path: '/content-marketing',
+        element: <Content />
+      },
+      {
+        path: '/ppc',
+        element: <Ppc />
+      },
+
+      {
+        path: '/seo',
+        element: <Seo />
+      },
+      {
+        path: '/social-media-marketing',
+        element: <Social />
+      },
+      {
+        path: '/email-marketing',
+        element: <Mail />
       },
 
       //================================================= software
 
       {
-        path:"/application-software",
-        element:<Application/>
+        path: "/application-software",
+        element: <Application />
       },
       {
-        path:"/business-software",
-        element:<Business/>
+        path: "/business-software",
+        element: <Business />
       },
       {
-        path:"/system-software",
-        element:<SystemSoftware/>
+        path: "/system-software",
+        element: <SystemSoftware />
       },
-    
+
       //============================================================ sales
-      
+
       {
-        path:"/computers",
-        element:< Computer/>
+        path: "/computers",
+        element: < Computer />
       },
       {
-        path:"/shop",
-        element:<Shop/>
+        path: "/shop",
+        element: <Shop />
       },
-  
+
       {
-        path:"/printers",
-        element:<PrinterSales/>
-      },
-      {
-        path:"/office-equipment",
-        element:<Office/>
+        path: "/printers",
+        element: <PrinterSales />
       },
       {
-        path:"/pos-system",
-        element:<Pos/>
+        path: "/office-equipment",
+        element: <Office />
       },
       {
-        path:"/printer",
-        element:<Printer/>
+        path: "/pos-system",
+        element: <Pos />
       },
- 
+      {
+        path: "/printer",
+        element: <Printer />
+      },
+
       //===================================== single product
       {
-        path:"/product/:slug/:id",
-        element:<SingleProduct/> 
+        path: "/product/:slug/:id",
+        element: <SingleProduct />
       },
       {
-        path:"/graphics-design",
-        element:< Graphic />
+        path: "/graphics-design",
+        element: < Graphic />
       },
       {
-        path:"/brand-identity",
-        element:< Branding />
+        path: "/brand-identity",
+        element: < Branding />
       },
       {
-        path:'/animation',
-        element:<Animation/>
+        path: '/animation',
+        element: <Animation />
       },
       {
-        path:"/video-editing",
-        element:< Video />
+        path: "/video-editing",
+        element: < Video />
       },
       {
-        path:"/motion-graphics",
-        element:< Motion />
+        path: "/motion-graphics",
+        element: < Motion />
       },
-   
+
       {
-        path:"/uiux",
-        element:< Uiux />
-      },
-      {
-        path:"/career",
-        element:< Career />
+        path: "/uiux",
+        element: < Uiux />
       },
       {
-        path:"/technical-support",
-        element:< Technical />
+        path: "/career",
+        element: < Career />
       },
       {
-        path:"/remote-support",
-        element:< Remote />
+        path: "/technical-support",
+        element: < Technical />
       },
       {
-        path:"/livestreaming",
-        element:< Livestreaming />
+        path: "/remote-support",
+        element: < Remote />
       },
       {
-        path:"/videoconferencing",
-        element:< Videoconferencing />
+        path: "/livestreaming",
+        element: < Livestreaming />
+      },
+      {
+        path: "/videoconferencing",
+        element: < Videoconferencing />
       },
       // career page
       {
-        path:"/animation-career",
-        element:< AnimationCareer />
+        path: "/animation-career",
+        element: < AnimationCareer />
       },
       {
-        path:"/digital-career",
-        element:< DigitalCareer  />
+        path: "/digital-career",
+        element: < DigitalCareer />
       },
       {
-        path:"/graphic-career",
-        element:< GraphicCareer  />
+        path: "/graphic-career",
+        element: < GraphicCareer />
       },
       {
-        path:"/marketing-career",
-        element:<  MarketingCareer />
+        path: "/marketing-career",
+        element: <  MarketingCareer />
       },
       {
-        path:"/system-career",
-        element:< SystemCareer />
+        path: "/system-career",
+        element: < SystemCareer />
       },
       {
-        path:"/web-career",
-        element:< WebCareer />
+        path: "/web-career",
+        element: < WebCareer />
       },
       {
-        path:"/write",
-        element: <PrivateRoute>< BlogWrite /></PrivateRoute>   
+        path: "/write",
+        element: <PrivateRoute>< BlogWrite /></PrivateRoute>
       },
       {
-        path:"/update/:id",
-        element: <PrivateRoute>< BlogUpdate/></PrivateRoute>   
+        path: "/update/:id",
+        element: <PrivateRoute>< BlogUpdate /></PrivateRoute>
       },
       {
-        path:"/shop-write",
-        element: <PrivateRoute>< Shopwrite /></PrivateRoute>   
+        path: "/shop-write",
+        element: <PrivateRoute>< Shopwrite /></PrivateRoute>
       },
       {
-       path:"/product/:id/update",
-       element:<PrivateRoute><ShopUpdate/></PrivateRoute>   
+        path: "/product/:id/update",
+        element: <PrivateRoute><ShopUpdate /></PrivateRoute>
       },
       {
-        path:"/computer-write",
-        element:<PrivateRoute>< ComputerWrite /></PrivateRoute>   
-      },   
-      {
-        path:"/login",
-        element:<AdminLogin />
+        path: "/computer-write",
+        element: <PrivateRoute>< ComputerWrite /></PrivateRoute>
       },
       {
-        path:"/dashboard",   
+        path: "/login",
+        element: <AdminLogin />
+      },
+      {
+        path: "/dashboard",
         element: <PrivateRoute>< Dashboard /></PrivateRoute>
       },
 
       // Supplies
       {
-        path:"/software-supply",
-        element:<SoftwareSupply/>
+        path: "/software-supply",
+        element: <SoftwareSupply />
       },
       {
-        path:"/hardware-supply",
-        element:< Hardware />
+        path: "/hardware-supply",
+        element: < Hardware />
       },
       {
-        path:"/consumables",
-        element:< Consumable />
+        path: "/consumables",
+        element: < Consumable />
       },
       {
-        path:"/get-in-touch",
-        element:< GetInTouchPage />
+        path: "/get-in-touch",
+        element: < GetInTouchPage />
       },
       {
-        path:"/consulting",
-        element:<Consulting />
+        path: "/consulting",
+        element: <Consulting />
       },
-      
+
       {
-        path:"/retainer-partnership",
-        element:<Retainership />
+        path: "/retainer-partnership",
+        element: <Retainership />
       },
-      
+
       {
-        path:"/training",
-        element:<Training/>
+        path: "/training",
+        element: <Training />
       },
-      
+
       {
-        path:"/network-devices",
-        element:<NetworkDevices />
-      },
-      {
-        path:"/network-support",
-        element:<NetworkSupport />
+        path: "/network-devices",
+        element: <NetworkDevices />
       },
       {
-        path:"/cart",
-        element:<Cart />
+        path: "/network-support",
+        element: <NetworkSupport />
       },
-      
       {
-        path:"/checkout",
-        element:<Checkout />
+        path: "/cart",
+        element: <Cart />
       },
-      
+
       {
-        path:"/thank-you",
-        element:<Thankyou />
+        path: "/checkout",
+        element: <Checkout />
       },
-      
-  
-  ],
-},
+
+      {
+        path: "/thank-you",
+        element: <Thankyou />
+      },
+
+
+    ],
+  },
 
 ]);
 
 const App = () => {
   const { isAuthenticated } = useAuth();
   const MEASUREMENT_ID = 'G-T9V3LN3YLR';
+  
   useEffect(() => {
     // Initialize GA
     ReactGA.initialize(MEASUREMENT_ID);
@@ -603,15 +816,15 @@ const App = () => {
     return () => window.removeEventListener('popstate', logPageView);
   }, []);
 
-return (
-<>
-<div className={isAuthenticated ? 'user-select-text' : 'user-select-none'}>
-  <ToastContainer  />
-  <RouterProvider router={router}  /> 
-</div>
+  return (
+    <>
+      <div className={isAuthenticated ? 'user-select-text' : 'user-select-none'}>
+        <ToastContainer />
+        <RouterProvider router={router} />
+      </div>
 
-</> 
-);
+    </>
+  );
 }
 
 
