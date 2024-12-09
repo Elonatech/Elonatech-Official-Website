@@ -1,15 +1,15 @@
-import about from './image/about.jpg'
-import test from './image/razzer.jpg'
-import test2 from './image/wallpaper-design-featured-image-1.jpg'
-import innovation from './image/Innovation.svg'
-import mindset from './image/Growth_Mindset.svg'
-import integrity from './image/Integrity_icon.svg'
-import commitment from './image/Commitment-to_Excellence.svg'
-import teamwork from './image/Team-work.svg'
-import './company.css'
-import CompanyForm from '../forms/companyForm'
-import companyProfilePdf from './Our-Company-Profile_Elonatech.pdf'
-import { Helmet } from 'react-helmet-async'
+import about from './image/about.jpg';
+import test from './image/razzer.jpg';
+import test2 from './image/wallpaper-design-featured-image-1.jpg';
+import innovation from './image/Innovation.svg';
+import mindset from './image/Growth_Mindset.svg';
+import integrity from './image/Integrity_icon.svg';
+import commitment from './image/Commitment-to_Excellence.svg';
+import teamwork from './image/Team-work.svg';
+import './company.css';
+import CompanyForm from '../forms/companyForm';
+import companyProfilePdf from './Our-Company-Profile_Elonatech.pdf';
+import { Helmet } from 'react-helmet-async';
 
 const Company = () => {
   return (
@@ -17,52 +17,37 @@ const Company = () => {
       <Helmet>
         <title>WHO WE ARE - Tech Solutions, Digital Solution</title>
         <meta
-          name='description'
-          content='
-       A diversified company in pursuit of excellence in ‘IT’
-       The Best Innovative IT Solutions Provider with Over 13 Years of Experience
-       Excellence
-       Team Work
-       Integrity
-       Professionalism
-       Our Core Expertise focuses on Sales and Supply, Web Design and Development, Network Admin/Implementation, Access Control, PBX & Surveillance (CCTV), Hardware Engineering, Software Engineering, Digital Marketing, Graphics & Brand Identity, Livestreaming and Videoconferencing, Video Editing & Motion Graphics, Training, Consulting & Retainer Partnership, etc. that will enable you and your 
-       clients maximize technology in bringing about the desired results, and access to a wide array of office equipment.
-       '
+          name="description"
+          content="A diversified company in pursuit of excellence in ‘IT’. The Best Innovative IT Solutions Provider with Over 13 Years of Experience. Excellence, Team Work, Integrity, Professionalism. Our Core Expertise focuses on Sales and Supply, Web Design and Development, Network Admin/Implementation, Access Control, PBX & Surveillance (CCTV), Hardware Engineering, Software Engineering, Digital Marketing, Graphics & Brand Identity, Livestreaming and Videoconferencing, Video Editing & Motion Graphics, Training, Consulting & Retainer Partnership, etc. that will enable you and your clients maximize technology in bringing about the desired results, and access to a wide array of office equipment."
         />
-        <link rel='canonical' href='https://elonatech.com.ng/who-we-are' />
+        <link rel="canonical" href="https://elonatech.com.ng/who-we-are" />
       </Helmet>
 
       {/*================================================================== header ===================================================*/}
-      <div class='container-fluid our-company-section'>
-        <div class='text-content'>
+      <div className="container-fluid our-company-section">
+        <div className="text-content">
           <h2>Our Company</h2>
           <h5>A diversified company in pursuit of excellence in ‘IT’</h5>
-          <p class='lead'>
+          <p className="lead">
             We apply strategic and result-driven approaches, focused on helping
-            forward thinking businesses succeed
+            forward-thinking businesses succeed
           </p>
         </div>
       </div>
       {/*========================================================================== the company ======================================================================*/}
-      <div
-        class='container-fluid py-5 wow fadeInUp custom-container'
-        data-wow-delay='0.1s'
-      >
-        <div class='container custom-container'>
-          <h3 class='fw-bold text-uppercase'>ABOUT US</h3>
-          <div
-            className='mb-2'
-            style={{ height: '2px', width: '4rem', backgroundColor: 'red' }}
-          ></div>
-          <div class='row g-5'>
-            <div class='col-lg-6'>
-              <div class='section-title position-relative pb-3 mb-'>
-                <h2 class='mt-3'>
+      <div className="container-fluid py-5 wow fadeInUp custom-container" data-wow-delay="0.1s">
+        <div className="container custom-container">
+          <h3 className="fw-bold text-uppercase">ABOUT US</h3>
+          <div className="mb-2" style={{ height: '2px', width: '4rem', backgroundColor: 'red' }}></div>
+          <div className="row g-5">
+            <div className="col-lg-6">
+              <div className="section-title position-relative pb-3 mb-">
+                <h2 className="mt-3">
                   The Best Innovative IT Solutions Provider with Over 13 Years
                   of Experience
                 </h2>
               </div>
-              <p class='mb-4'>
+              <p className="mb-4">
                 We, at Elonatech are aware of your current need for quality IT
                 Services. Beyond reasonable doubt, the management of information
                 technology for business is not inherently a do-it-yourself
@@ -134,19 +119,21 @@ const Company = () => {
                 <div className='col-md-6'></div>
               </div>
             </div>
-            <div class='col-lg-6 image-container'>
-              <div class='position-relative h-100'>
+            <div className="col-lg-6 image-container"> 
+              <div className="position-relative h-100">
                 <img
-                  class='image position-absolute w-100 h-100 rounded wow zoomIn lazyload'
-                  data-wow-delay='0.9s'
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709823981/groupPicture/group_discussion_k7mwxx.png'
+                  className="image position-absolute w-100 h-100 rounded wow zoomIn lazyload"
+                  data-wow-delay="0.9s"
+                  src="https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif"
+                  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709823981/groupPicture/group_discussion_k7mwxx.png"
+                  alt="Company Image"
                 />
               </div>
             </div>
-
-</div>
-{/*========================================================================= story continue 1 ==================================================================*/}
+          </div>
+        </div>
+      </div>
+      {/*========================================================================= story continue 1 ==================================================================*/}
 <div className="container mt-4">
     <div className="row align-items-center">
         <div className="col-md-6"> 
@@ -804,7 +791,7 @@ const Company = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Company
+export default Company;
