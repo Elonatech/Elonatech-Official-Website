@@ -1,3 +1,4 @@
+
 import about from './image/about.jpg';
 import test from './image/razzer.jpg';
 import test2 from './image/wallpaper-design-featured-image-1.jpg';
@@ -17,6 +18,7 @@ const Company = () => {
       <Helmet>
         <title>WHO WE ARE - Tech Solutions, Digital Solution</title>
         <meta
+
           name="description"
           content="A diversified company in pursuit of excellence in ‘IT’. The Best Innovative IT Solutions Provider with Over 13 Years of Experience. Excellence, Team Work, Integrity, Professionalism. Our Core Expertise focuses on Sales and Supply, Web Design and Development, Network Admin/Implementation, Access Control, PBX & Surveillance (CCTV), Hardware Engineering, Software Engineering, Digital Marketing, Graphics & Brand Identity, Livestreaming and Videoconferencing, Video Editing & Motion Graphics, Training, Consulting & Retainer Partnership, etc. that will enable you and your clients maximize technology in bringing about the desired results, and access to a wide array of office equipment."
         />
@@ -142,7 +144,6 @@ const Company = () => {
         </div>
 
           </div>
-
         </div>
       </div>
       {/*=========================================================================== our story =======================================================================*/}
@@ -794,4 +795,4 @@ const Company = () => {
   );
 };
 
-export default Company;
+export default Company

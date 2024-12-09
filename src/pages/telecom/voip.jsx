@@ -1,4 +1,4 @@
-import Getintouch2 from '../../components/GetInTouch/getintouch2'
+import Getintouch2 from '../../components/GetInTouch/getintouch2';
 import { Helmet } from 'react-helmet-async'
 
 import './ip-telephone.css'
