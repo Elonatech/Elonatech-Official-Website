@@ -1,12 +1,17 @@
 User-agent: *
-Disallow: /login
-Disallow: /checkout
-Disallow: /thank-you
+Disallow:
+Allow: /$
+
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 Sitemap: https://elonatech.com.ng/sitemap.xml
   
 Allow: /picture
 User-agent: facebookexternalhit
 Allow: /
-User-agent: *
 Allow: /product/

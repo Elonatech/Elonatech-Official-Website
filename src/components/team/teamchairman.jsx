@@ -157,7 +157,7 @@ const Teamchairman = () => {
         <div class="team-item rounded overflow-hidden pb-4">
         <img class="img-fluid mb-4" src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/joseph_picture_rurbzo.jpg" alt=""/>
         <h5 className="fw-bold" style={{color:"#34548c"}}>Joseph Okoronkwo</h5>
-        <h6 class="text-danger">Lead Web Developer</h6>
+        <h6 class="text-danger">Lead Full Stack Developer</h6>
         <ul class="team-social">
         <li><Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://www.linkedin.com/in/joe40/'}><i class="fab fa-linkedin-in"></i></Link></li>
         <li><div class="btn btn-square" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">

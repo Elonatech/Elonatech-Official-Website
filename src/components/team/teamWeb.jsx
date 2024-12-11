@@ -34,7 +34,7 @@ expedite the efficiency and effectiveness of organizational success" />
 <div className="col-md-8">
 <div className="card border-0">
 <h1 className="fw-bold" style={{color:"#34548c"}}>Joseph Okoronkwo</h1>
-<h6 className="text-danger mt-0">Lead Web Developer</h6>
+<h6 className="text-danger mt-0">Lead Full Stack Developer</h6>
 <p>
 Joseph Okoronkwo is the Lead Full Stack Developer at Elonatech Nigeria Limited, 
       with over five years of experience in software development. Known for his passion 

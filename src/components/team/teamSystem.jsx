@@ -157,7 +157,7 @@ const TeamSystem = () => {
         <Link className='text-decoration-none' to={'/joseph-okoronkwo'}>
         <img class="img-fluid mb-4" src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/joseph_picture_rurbzo.jpg" alt=""/>
         <h5 className='fw-bold' style={{color:"#34548c"}}>Joseph Okoronkwo</h5>
-        <h6 class="text-danger">Lead Web Developer</h6>
+        <h6 class="text-danger">Lead Full Stack Developer</h6>
         </Link>
         <ul class="team-social">
         <li><Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://www.linkedin.com/in/joe40/'}><i class="fab fa-linkedin-in"></i></Link></li>
