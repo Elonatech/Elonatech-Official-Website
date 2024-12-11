@@ -3,7 +3,7 @@ const path = require('path');
 const { parseStringPromise } = require('xml2js');
 
 async function generateReactSnapConfig() {
-  const sitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
+  const sitemapPath = path.join(__dirname, 'public', 'mysitemap.xml');
   const packageJsonPath = path.join(__dirname, 'package.json');
 
   try {
