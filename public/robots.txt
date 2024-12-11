@@ -9,7 +9,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://elonatech.com.ng/sitemap.xml
+Sitemap: https://elonatech.com.ng/mysitemap.xml
   
 Allow: /picture
 User-agent: facebookexternalhit
