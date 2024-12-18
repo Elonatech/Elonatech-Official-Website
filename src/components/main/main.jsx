@@ -155,13 +155,13 @@ const Main = () => {
                     Website and App Solutions
                   </h5>
                   <p class='card-text  text-white pt-2'>
-                    At Elonatech, we build websites that are not only visually
+                    At Elonatech, we build Apps that are not only visually
                     beautiful but also functionally effective. Our team of web
                     strategists, designers, developers, and project managers
                     work together to help clients meet their business objective
                   </p>
                   <div class='d-flex justify-content-between align-items-center pt-3'>
-                    <Link className='btn btn-danger' to={'/web-design'}>
+                    <Link className='btn btn-danger' to={'/app-development'}>
                       Read More
                     </Link>
                   </div>
@@ -207,9 +207,9 @@ const Main = () => {
                   <div className='d-flex'>
                     <i class='bi bi-headset' style={{ fontSize: '30px' }}></i>
                     <div className=''>
-                      <h5 className='ps-5' style={{ color: '#34548C' }}>
+                      <Link className='ps-5' style={{ color: '#34548C' }} to={'/remote-support'}>
                         Onsite Support And Installations{' '}
-                      </h5>
+                      </Link>
                       <h6 className='ps-5 mt-2 mb-3'>
                         Expertise. Convenience. Customer Experience.
                         <div className='support-line mt-2'></div>
@@ -223,9 +223,9 @@ const Main = () => {
                   <div className='d-flex'>
                     <i class='bi bi-gear' style={{ fontSize: '30px' }}></i>
                     <div className=''>
-                      <h5 className='ps-5' style={{ color: '#34548C' }}>
+                      <Link className='ps-5' style={{ color: '#34548C' }} to={'/get-in-touch'}>
                         Contact Support
-                      </h5>
+                      </Link>
                       <h6 className='ps-5 '>
                         Let us assist you with any product or service questions.
                         <div className='support-line mt-2'></div>
@@ -238,9 +238,9 @@ const Main = () => {
                   <div className='d-flex'>
                     <i class='bi bi-laptop' style={{ fontSize: '30px' }}></i>
                     <div className=''>
-                      <h5 className='ps-5' style={{ color: '#34548C' }}>
+                      <Link className='ps-5' style={{ color: '#34548C' }} to={'/shop'}>
                         Laptops. Network Servers. Workstations
-                      </h5>
+                      </Link>
                       <h6 className='ps-5 '>
                         Get what you need to run your business
                         <div className='support-line mt-2'></div>
@@ -262,9 +262,9 @@ const Main = () => {
                       </svg>
                     </div>
                     <div className=''>
-                      <h5 className='ps-5' style={{ color: '#34548C' }}>
+                      <Link className='ps-5' style={{ color: '#34548C' }} to={'/business-software'}>
                         Premium Software Retail & Installation
-                      </h5>
+                      </Link>
                       <h6 className='ps-5 '>
                         {' '}
                         Ensures users perform tasks more effectively
@@ -278,9 +278,9 @@ const Main = () => {
                   <div className='d-flex'>
                     <i class='bi bi-printer' style={{ fontSize: '30px' }}></i>
                     <div className=''>
-                      <h5 className='ps-5' style={{ color: '#34548C' }}>
+                      <Link className='ps-5' style={{ color: '#34548C' }} to={'/printer-repair'}>
                         Printer and Print Solutions
-                      </h5>
+                      </Link>
                       <h6 className='ps-5 '>
                         Efficient running of business operations
                         <div className='support-line mt-2'></div>

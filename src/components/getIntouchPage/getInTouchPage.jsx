@@ -44,13 +44,29 @@ const GetInTouchPage = () => {
       <div className='container mt-5 mb-5'>
         <div className='row align-items-center'>
           <div className='col-md-6'>
-            <div className='card border-0'>
+            {/* <div className='card border-0'>
               <h2 className='fw-bold'>Get in touch with us today.</h2>
               <h6 className='mt-2'>We’d love to hear from you.</h6>
               <p className=''>
                 Send us a message and we’ll respond as soon as possible.
               </p>
-            </div>
+            </div> */}
+
+            <div className='card border-0'>
+                <h2 className='fw-bold'>Get in touch with us today.</h2>
+                <h6 className='mt-2'>We’d love to hear from you.</h6>
+                <p className=''>Send us a message and we’ll respond as soon as possible.</p>
+
+                <div class="grid-container">
+                  <div><img src="https://res.cloudinary.com/elonatech/image/upload/v1734539524/X_Twitter_bmsqus.png" alt="Twitter QR Code" width="100px" />Twitter</div>
+                  <div><img src="https://res.cloudinary.com/elonatech/image/upload/v1734539519/Facebook_ugpimx.png" alt="Facebook Messenger QR Code" width="100px" />Facebook</div>
+                  <div><img src="https://res.cloudinary.com/elonatech/image/upload/v1734532454/IMG_20241218_121244_013_lw58ij.png" alt="Instagram QR Code" width="100px" />Instagram</div>
+                  <div><img src="https://res.cloudinary.com/elonatech/image/upload/v1734539519/Linkedin_zqf2na.png" alt="LinkedIn QR Code" width="100px" />Linkedin</div>
+                  <div><img src="https://res.cloudinary.com/elonatech/image/upload/v1734539519/Youtube_gjsxlo.png" alt="Youtube QR Code" width="100px" />Youtube</div>
+                  <div><img src="https://res.cloudinary.com/elonatech/image/upload/v1734532454/WhatsApp-QR-code01_cofo4y.png" alt="WhatsApp QR Code" width="100px" />Whatsapp</div>
+                </div>
+            </div> 
+
           </div>
           <div className='col-md-6'>
             <div className='card border-0'>

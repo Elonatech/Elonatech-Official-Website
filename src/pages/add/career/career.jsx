@@ -96,6 +96,7 @@ In our bid to promote operational excellence and lead in the delivery of IT solu
                   transform their potentials into solutions; and People who work
                   with diverse minds to solve global issues.
                 </p>
+                <a href="https://www.glassdoor.com/Overview/Working-at-Elonatech-Nigeria-EI_IE10325429.11,28.htm"><img alt="Check us out on Glassdoor." src="https://www.glassdoor.com/pc-app/static/img/partnerCenter/badges/eng_CHECK_US_273x90.png" /></a>
               </div>
             </div>
           </div>

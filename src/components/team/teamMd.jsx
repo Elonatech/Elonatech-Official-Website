@@ -56,8 +56,8 @@ Graphic Design, Branding and Digital Marketing.'
               </p>
               <p>
                 He is a seasoned Brand Developer and an accomplished facilitator
-                in Information Technology, recently recognized as the Technology
-                CEO of Year 2024 by Innovation in Business. His professional
+                in Information Technology, <Link to='https://www.innovationinbusiness.com/winners/elonatech-nigeria-limited/' target='_blank'>recently recognized as the Technology
+                CEO of Year 2024 by Innovation in Business.</Link> His professional
                 expertise spans Network Administration, Implementation, and
                 Security; Technical Support for PC hardware and software; Web
                 Design and Administration; Graphic Design; Branding; and Digital

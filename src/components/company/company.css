@@ -59,7 +59,7 @@
 
 .our-company-section {
     min-height: 500px;
-background-color: #11253D; 
+    background-color: #11253D; 
     background-image: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.5),
@@ -208,7 +208,6 @@ background-color: #11253D;
 
 .image-container {
   min-height: 500px;
-background-color: #11253D; 
 }
 
 .position-relative {

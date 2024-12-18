@@ -136,7 +136,7 @@ const Company = () => {
         </div>
       </div>
       {/*========================================================================= story continue 1 ==================================================================*/}
-<div className="container mt-4">
+{/* <div className="container mt-4">
     <div className="row align-items-center">
         <div className="col-md-6"> 
         <div className=" text-center mt-2 mb-4" >
@@ -145,7 +145,7 @@ const Company = () => {
 
           </div>
         </div>
-      </div>
+      </div> */}
       {/*=========================================================================== our story =======================================================================*/}
       <div className='container text-center mt-'>
         <div className='row justify-content-md-center'>
