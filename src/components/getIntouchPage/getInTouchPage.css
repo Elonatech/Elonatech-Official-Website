@@ -111,5 +111,18 @@ background-color: #11253D;
     text-align: center;
   }
   
-  
+  @media (max-width: 768px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);  
+      gap: 5px; 
+    }
+    .grid-container div {
+      text-align: center;
+    }
+    .grid-container img {
+      width: 100px;
+    }
+  }
 /* #11253d */

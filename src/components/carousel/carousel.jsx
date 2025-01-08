@@ -22,21 +22,20 @@ import 'swiper/css/scrollbar';
 import "./carousel.css";
 
 const swiperParams = {
-  noSwiping: true, // Disable swiping for all slides
+  noSwiping: true, 
   noSwipingClass: 'swiper-no-swiping',
 };
 
 const Carousel = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if the screen size is mobile or desktop
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768); // Define mobile screen width
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    checkScreenSize(); // Initial check
-    window.addEventListener('resize', checkScreenSize); // Update on resize
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize);
 
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);

@@ -6,6 +6,12 @@
   display: none;
 } */
 
+.navbar {
+  display: block !important; 
+  visibility: visible !important; 
+  opacity: 1 !important;
+  z-index: 1000;
+}
 
 .dropdown-item:hover {
   background-color: #dc3545;

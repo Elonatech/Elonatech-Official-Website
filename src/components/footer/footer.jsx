@@ -86,6 +86,8 @@ const Footer = () => {
     }
   }
 
+  const currentYear = new Date().getFullYear(); 
+
   return (
     <>
       <footer id='footer' class='footer' style={{ backgroundColor: '#11253D' }}>
@@ -606,7 +608,7 @@ const Footer = () => {
         </div>
         <div class='container mt-4 text-white'>
           <div class='copyright'>
-            Copyright &copy; 2024 All rights reserved | Designed & Developed by{' '}
+            Copyright &copy; {currentYear} All rights reserved | Designed & Developed by{' '}
             <span className='text-danger'>Elonatech Nigeria Limited</span>
           </div>
         </div>

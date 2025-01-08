@@ -79,7 +79,7 @@ const Hardware = () => {
                 technology. It became a reseller to fulfill the market needs for{' '}
                 <span className='fw-bold text-dark'>personal computers</span>{' '}
                 and is emphasizing service and support to differentiate itself
-                from more price-oriented national chains.
+                from more price-oriented national chains. 
               </p>
             </div>
           </div>
@@ -1613,7 +1613,7 @@ const Hardware = () => {
         </Link>
       </div>
       {/* ======================================================== Network =================================================================== */}
-      <h1 className='text-center fw-bold mb-5 mt-5'>Network</h1>
+      <h1 className='text-center fw-bold mb-5 mt-5'>Network Devices</h1>
       {/* =====================================================================================================================================*/}
       <div className='container'>
         <div className='row align-items-center'>
