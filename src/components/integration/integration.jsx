@@ -15,7 +15,7 @@ const Integration = () => {
   return (
     <>
       <Helmet>
-        <title>Infrastructure & System Integration - Tech Solution</title>
+        <title>Infrastructure & System Integration Services - Boost Efficiency & Profit</title>
         <meta
           name='description'
           content="Building intelligence system to better your business' efficiency and profit  Physical Layer Network Layer Storage Layer"

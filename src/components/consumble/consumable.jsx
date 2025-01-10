@@ -7,7 +7,7 @@ const Consumable = () => {
   return (
     <>
       <Helmet>
-        <title>Consumables Supply - Tech Solution, Digital Solution</title>
+        <title>Office Consumables Supply - Quality Essentials for Productivity</title>
         <meta
           name='description'
           content=' 

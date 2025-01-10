@@ -6,7 +6,7 @@ const SystemSoftware = () => {
   return (
     <>
       <Helmet>
-        <title>System Software - Tech Solution, Digital Solution</title>
+        <title>System Software – Essential Solutions for Smooth Computer Operations</title>
         <meta
           name='description'
           content='How System Software works?

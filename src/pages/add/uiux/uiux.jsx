@@ -7,7 +7,7 @@ const Uiux = () => {
   return (
     <>
       <Helmet>
-        <title>User Interface and User Experience - Tech Solution</title>
+        <title>UI/UX Design Services - Enhance User Experience & Interface</title>
         <meta
           name='description'
           content="Crafted to elevate your digital presence, captivate your audience, and drive exceptional user engagement 

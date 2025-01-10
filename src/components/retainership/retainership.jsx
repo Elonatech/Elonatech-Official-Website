@@ -6,7 +6,7 @@ const Retainership = () => {
   return (
     <>
       <Helmet>
-        <title>Retainer Partnership - Tech Solution, Digital Solution</title>
+        <title>Retainer Partnership Services - Long-Term IT & Digital Solutions Support</title>
         <meta
           name='description'
           content='A retainer is an agreement between a client and an agency to work together for a longer period of time on more than just one project. It reserves a set amount of the agency’s time for a set rate. 

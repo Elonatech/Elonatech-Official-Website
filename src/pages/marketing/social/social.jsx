@@ -6,7 +6,7 @@ const Social = () => {
   return (
     <>
       <Helmet>
-        <title>Social Media Marketing - Tech Solution, Digital Solution</title>
+        <title>Social Media Marketing</title>
         <meta
           name='description'
           content='Compared to traditional marketing, social media posts by businesses can be seen by followers across geography within seconds. This offers a somewhat level playing field as you can then have a global approach to your business. 

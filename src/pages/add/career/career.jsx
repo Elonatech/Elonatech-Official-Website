@@ -50,7 +50,7 @@ const Career = () => {
   return (
     <>
       <Helmet>
-        <title>Career - Tech Solution, Digital Solution</title>
+        <title>Join Our Team - Career Opportunities at Tech Solutions | Elonatech</title>
         <meta
           name='description'
           content='Build a Career With Us

@@ -63,7 +63,7 @@ const Portfolio = () => {
   return (
     <>
       <Helmet>
-        <title>Our Portfolio - Tech Solution, Digital Solution</title>
+        <title>Our Portfolio - Web Development, Network Engineering & Digital Marketing Solutions | Tech Solutions</title>
         <meta
           name='description'
           content='From website development, 

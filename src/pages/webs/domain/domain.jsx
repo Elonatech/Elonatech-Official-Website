@@ -32,7 +32,7 @@ const Domain = () => {
   return (
     <>
       <Helmet>
-        <title>Domain Registration - Tech Solution, Digital Solution</title>
+        <title>Domain Registration – Secure, Affordable & Reliable Domains</title>
         <meta
           name='description'
           content='At Elonatech we take pride in providing secure, reliable & affordable Domain Registration to all our clients. That is why we offer the best industry prices not only for new domains registered with us but also for Domain Renewals & hassle free Domain Transfers to us.

@@ -11,7 +11,7 @@ const MarketingCareer = () => {
     return (
         <>
        <Helmet>
-        <title>Marketer/Sales Representative - Tech Solution, Digital Solution</title>
+        <title>Marketer/Sales Representative Career - Join Our Tech Solutions Team</title>
         <meta name="description" content="This is a full-time Hybrid role for a Marketer/Sales Representatives. 
         The Marketer/Sales Rep will be responsible for marketing our brand to a variety of industries and prospective clients." />
         <link rel="canonical" href="https://elonatech.com.ng/marketing-career" />

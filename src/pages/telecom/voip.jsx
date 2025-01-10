@@ -7,7 +7,7 @@ const Voip = () => {
   return (
     <>
       <Helmet>
-        <title>Voice Over Internet Protocol (VoIP) - Tech Solution</title>
+        <title>Voice Over Internet Protocol (VoIP) </title>
         <meta
           name='description'
           content='Flexible VoIP Phone Systems

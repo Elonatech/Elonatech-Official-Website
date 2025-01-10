@@ -6,7 +6,7 @@ const NetworkSupport = () => {
   return (
     <>
       <Helmet>
-        <title>Network Support - Tech Solution, Digital Solution</title>
+        <title>Network Support Services - Keep Your Systems Running Smoothly & Secure</title>
         <meta
           name='description'
           content="Network Support has to do with everything that keeps organizations' computer network running, productive, and up-to-date. It assures all devices are healthy, and all hardware, software, and personal devices are compatible and working. It also means supporting the people who use the equipment. "

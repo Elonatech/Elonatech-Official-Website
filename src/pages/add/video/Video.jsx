@@ -6,7 +6,7 @@ const Video = () => {
   return (
     <>
       <Helmet>
-        <title>Video Editing - Tech Solution, Digital Solution</title>
+        <title>Video Editing Services - Professional Video Production for Events</title>
         <meta
           name='description'
           content='We provide comprehensive video and photography solutions for events of every size, anywhere in Nigeria. 

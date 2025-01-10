@@ -6,7 +6,7 @@ const Mail = () => {
   return (
     <>
       <Helmet>
-        <title>Email Marketing - Tech Solution, Digital Solution</title>
+        <title>Email Marketing </title>
         <meta
           name='description'
           content="Email journeys for perfectly timed sends

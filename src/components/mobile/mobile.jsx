@@ -13,7 +13,7 @@ const Mobile = () => {
   return (
     <>
       <Helmet>
-        <title>Mobile Device Repair - Tech Solution, Digital Solution</title>
+        <title>Mobile Device Repair Services - Phones, Tablets, Smart Watches & More</title>
         <meta
           name='description'
           content="As technology advances, devices utilizing these technologies become smaller and smaller. Today's cell phones have more computing power than past computers that took up an entire room of space. Modern mobile devices allow users to hold the world, or at least all of its information, maps, and games in their hands.

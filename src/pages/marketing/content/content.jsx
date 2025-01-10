@@ -7,7 +7,7 @@ const Content = () => {
   return (
     <>
       <Helmet>
-        <title>Content Marketing - Tech Solution, Digital Solution</title>
+        <title>Content Marketing </title>
         <meta
           name='description'
           content='What is Content Marketing?

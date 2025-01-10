@@ -360,7 +360,7 @@ const Computer = () => {
   return (
     <>
       <Helmet>
-        <title>Computers - Tech Solutions, Digital</title>
+        <title>Computers and Laptops at Elonatech – Wide Selection of Tech Products</title>
         <meta name='robots' content='index,follow' />
         <meta
           name='description'

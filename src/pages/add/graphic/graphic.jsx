@@ -6,7 +6,7 @@ const Graphic = () => {
   return (
     <section>
       <Helmet>
-        <title>Graphic Design - Tech Solution, Digital Solution</title>
+        <title>Graphic Design Services - Creative Solutions to Captivate & Engage</title>
         <meta
           name='description'
           content="Our Offering

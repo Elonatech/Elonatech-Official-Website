@@ -6,7 +6,7 @@ const Ppc = () => {
   return (
     <>
       <Helmet>
-        <title>Pay Per Click - Tech Solution, Digital Solution</title>
+        <title>Pay Per Click </title>
         <meta
           name='description'
           content='Make the Right Decisions for Your Brand With PPC Advertising

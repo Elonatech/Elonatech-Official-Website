@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkweb=self.webpackChunkweb||[]).push([[6116],{56116:(e,t,a)=>{a.r(t),a.d(t,{default:()=>l});a(65043);var s=a(73216),n=a(70579);const l=e=>{let{children:t}=e;const{pathname:a}=(0,s.zy)();return JSON.parse(localStorage.getItem("token"))?t:(0,n.jsx)(s.C5,{to:"/login",state:{path:a}})}}}]);
+//# sourceMappingURL=6116.2a03efd2.chunk.js.map

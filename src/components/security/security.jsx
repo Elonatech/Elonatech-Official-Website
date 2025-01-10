@@ -10,7 +10,7 @@ const Security = () => {
   return (
     <>
       <Helmet>
-        <title>Network Security - Tech Solution, Digital Solution</title>
+        <title>Network Security Solutions - Protect Your Systems with Cybersecurity & Intrusion Detection</title>
         <meta
           name='description'
           content='Network Security Reasons Why Network Security Is Important. Cybersecurity Assessment Email Software-defined Perimeter security Mobile Device Security Intrusion Detection '

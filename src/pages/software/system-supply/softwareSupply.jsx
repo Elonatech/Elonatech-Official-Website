@@ -6,7 +6,7 @@ const SoftwareSupply = () => {
   return (
     <>
       <Helmet>
-        <title>Software Supply - Tech Solution, Digital Solution</title>
+        <title>Software Supply – Affordable & Genuine Software Solutions | Elonatech</title>
         <meta
           name='description'
           content='We take pride in providing the very best in the software industry. We believe that our customers deserve only the best when it comes to computer needs. Our Software Supply is focused on providing quality over quantity and provides excellent service. Elonatech offers an amazing software solution with top notch after care support.

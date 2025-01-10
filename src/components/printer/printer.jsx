@@ -13,7 +13,7 @@ const Printer = () => {
     <>
       <Helmet>
         <title>
-          Printer Repair & Maintenance - Tech Solution, Digital Solution
+        Printer Repair & Maintenance Services - Expert Support for HP, Canon, Epson & More
         </title>
         <meta
           name='description'

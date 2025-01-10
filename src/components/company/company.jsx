@@ -16,7 +16,7 @@ const Company = () => {
   return (
     <>
       <Helmet>
-        <title>WHO WE ARE - Tech Solutions, Digital Solution</title>
+        <title>WHO WE ARE - Leading IT Solutions Provider with 13+ Years of Expertise</title>
         <meta
 
           name="description"

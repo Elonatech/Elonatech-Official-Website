@@ -14,7 +14,7 @@ const Engineer = () => {
   return (
     <>
       <Helmet>
-        <title>Hardware Engineering - Tech Solution, Digital Solution</title>
+        <title>Hardware Engineering Services - Computer Repair & Technical Support</title>
         <meta
           name='description'
           content='We offer 4 Convenient Computer Repair Options - Pick-up and Return, Onsite Repair, Walk-in and Repair, Remote Support 

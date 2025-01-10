@@ -10,7 +10,7 @@ const GetInTouchPage = () => {
   return (
     <>
       <Helmet>
-        <title>Get in Touch - Tech Solution, Digital Solution</title>
+        <title>Contact Us - Exceptional Customer Service & Support</title>
         <meta
           name='description'
           content=" 

@@ -147,7 +147,7 @@ const Web = () => {
   return (
     <>
       <Helmet>
-        <title>Web Design & Development</title>
+        <title>Web Design & Development Services - Custom Websites, Apps & SEO-Friendly Solutions</title>
         <meta
           name='description'
           content='

@@ -35,7 +35,7 @@ const Branding = () => {
   return (
     <>
       <Helmet>
-        <title>Brand Development - Tech Solution</title>
+        <title>Brand Development & Identity Design - Create a Strong Brand Presence</title>
         <meta
           name='description'
           content='Brand identity is not limited to a specific mark or name. Branding can incorporate multiple touch points. These touch points include; logo, customer service, treatment and training of employees, packaging, advertising, stationery, and quality of products and services. Any means by which the general public comes into contact with a specific brand constitutes a touch point that can affect perceptions of the corporate brand. '

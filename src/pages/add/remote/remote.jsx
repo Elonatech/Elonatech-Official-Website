@@ -5,7 +5,7 @@ const Remote = () => {
   return (
     <>
       <Helmet>
-        <title>Remote Support - Tech Solution, Digital Solution</title>
+        <title>Remote IT Support Services - Secure & Reliable Assistance - Elonatech</title>
         <meta
           name='description'
           content='Remote Support is the ability to remotely access and control a computer or mobile device anytime, anywhere using a reliable and secure remote support software. 

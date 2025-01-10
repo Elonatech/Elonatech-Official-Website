@@ -10,7 +10,7 @@ const Networka = () => {
   return (
     <>
       <Helmet>
-        <title>Network Administration / Implementation - Tech Solution</title>
+        <title>Network Administration & Implementation - Secure & Reliable Network Solutions</title>
         <meta
           name='description'
           content="Network administration aims to ensure a reliable, secure network conducive to business operations. Network administration primarily consists of, but isn't limited to, network monitoring, network management, and maintaining network quality and security.

@@ -6,7 +6,7 @@ const Internet = () => {
   return (
     <>
       <Helmet>
-        <title>Internet Solution - Tech Solution, Digital Solution</title>
+        <title>High-Speed Internet Solutions - Seamless Connectivity & Unmatched Speed</title>
         <meta
           name='description'
           content='Where Connectivity Knows No Bounds - Weaving Your Digital World into One Seamless Experience. Elevate Your Digital Realm with the Velocity of Progress Where Faster Becomes the New Norm. Ignite Your Downloads with the Power of a Thousand Megabits Torrent of Possibilities at the Speed of Light '

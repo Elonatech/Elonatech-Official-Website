@@ -12,7 +12,7 @@ const Cctv = () => {
   return (
     <>
       <Helmet>
-        <title>Closed-Circuit Television (CCTV) - Tech Solution</title>
+        <title>CCTV Surveillance Systems - Enhance Security with Video Monitoring</title>
         <meta
           name='description'
           content='Surveillance is the monitoring of behavior, many activities, or information for the purpose of information gathering, influencing, managing or directing. This can include observation from a distance by means of electronic equipment, such as closed-circuit television (CCTV), or interception of electronically transmitted information like Internet traffic. It can also include simple technical methods, such as human intelligence gathering and postal interception.

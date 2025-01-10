@@ -13,7 +13,7 @@ const DigitalCareer = () => {
   return (
     <>
       <Helmet>
-        <title>Digital Marketer - Tech Solution, Digital Solution</title>
+        <title>Digital Marketer Career - Join Our Team for Innovative Campaigns & Digital Strategies</title>
         <meta
           name='description'
           content='This is a full-time on-site role for a Digital Marketer. The Digital Marketer will be responsible for creating designs and campaigns as well as managing all the digital channels available, including the social media platforms, email marketing funnels, SEO, etc. for a variety of online media. '

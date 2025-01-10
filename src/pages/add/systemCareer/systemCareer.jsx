@@ -10,7 +10,7 @@ const SystemCareer = () => {
     <>
       <Helmet>
         <title>
-          Systems/Network Engineer - Tech Solution, Digital Solution
+        Systems & Network Engineer Career - Full-Time Role at Elonatech
         </title>
         <meta
           name='description'

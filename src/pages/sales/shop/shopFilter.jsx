@@ -165,10 +165,10 @@ const ShopFilter = ({ setFilteredProducts }) => {
           value={priceRange}
           min={defaultPriceRange[0]}
           max={defaultPriceRange[1]}
-          step={50}
+          step={5}
           onChange={handlePriceRangeChange}
           pearling
-          minDistance={10}
+          minDistance={5}
         />
 
         <div className='price-range-values'>

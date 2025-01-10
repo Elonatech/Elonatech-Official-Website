@@ -6,7 +6,7 @@ const Application = () => {
   return (
     <>
       <Helmet>
-        <title>Application Software - Tech Solution, Digital Solution</title>
+        <title>Application Software Solutions – Enhance Productivity with Elonatech</title>
         <meta
           name='description'
           content='How Application Software works?

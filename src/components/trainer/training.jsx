@@ -26,7 +26,7 @@ const Training = () => {
   return (
     <>
       <Helmet>
-        <title>Training & Equipping - Tech Solution, Digital Solution</title>
+        <title>IT Training & Skill Development - Empower Your Team with Expert IT Courses</title>
         <meta
           name='description'
           content='Come Train With Us

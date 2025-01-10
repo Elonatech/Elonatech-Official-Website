@@ -11,7 +11,7 @@ const Cabling = () => {
   return (
     <>
       <Helmet>
-        <title>{`Structured Cabling  - Tech Solution, Digital Solution`}</title>
+        <title>Structured Cabling Solutions - Network & Data Infrastructure</title>
         <meta
           name='description'
           content='The standardized infrastructure of communications cabling that supports network components

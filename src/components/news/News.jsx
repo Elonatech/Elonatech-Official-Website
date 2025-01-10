@@ -83,7 +83,7 @@ const News = () => {
   return (
     <>
       <Helmet>
-        <title>Blog - Tech Solution, Digital Solution</title>
+        <title>Tech Solutions Blog - Latest News, Trends & Insights in IT & Digital Solutions</title>
         <meta
           name="description"
           content="We'd love to share our knowledge, experiences and the latest news, trends and info with you"

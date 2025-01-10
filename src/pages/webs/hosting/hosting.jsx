@@ -75,7 +75,7 @@ const Hosting = () => {
   return (
     <>
       <Helmet>
-        <title>Website Hosting - Tech Solution</title>
+        <title>Reliable Cloud Hosting Solutions – Fast, Affordable Website Hosting</title>
         <meta
           name='description'
           content='

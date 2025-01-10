@@ -12,8 +12,7 @@ const AnimationCareer = () => {
     <>
       <Helmet>
         <title>
-          Animations/Motion Graphics & UI/UX Graphic Designer - Tech Solution,
-          Digital Solution
+        Animations & Motion Graphics Designer - UI/UX Graphic Design for Web & Media
         </title>
         <meta
           name='description'

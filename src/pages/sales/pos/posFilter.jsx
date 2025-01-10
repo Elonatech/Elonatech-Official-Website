@@ -119,6 +119,7 @@ const PosFilter = ({ setFilteredProducts }) => {
         >
           {/* Dynamically create the list of brands */}
           <label className='form-label'>Brand:</label>
+          <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
           {availableBrands.map(brand => (
             <div className='form-check' key={brand}>
               <input
@@ -132,6 +133,7 @@ const PosFilter = ({ setFilteredProducts }) => {
               <label className='form-check-label'>{brand}</label>
             </div>
           ))}
+          </div>
         </div>
 
         {/* Price Filter */}

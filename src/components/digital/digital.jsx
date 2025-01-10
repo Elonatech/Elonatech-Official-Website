@@ -210,7 +210,7 @@ const Digital = () => {
   return (
     <>
       <Helmet>
-        <title>Digital Marketing</title>
+        <title>Digital Marketing Services - E-Commerce, Social Media & Affiliate Marketing</title>
         <meta
           name='description'
           content='

@@ -247,7 +247,7 @@ const NetworkDevices = () => {
   return (
     <>
       <Helmet>
-        <title>Network Devices - Tech Solution, Digital Solution</title>
+        <title>Network Devices - Reliable Solutions for Seamless Connectivity & Performance</title>
         <meta name='description' content='Network Devices' />
         <link rel='canonical' href='https://elonatech.com.ng/network-devices' />
       </Helmet>

@@ -12,7 +12,7 @@ const Business = () => {
   return (
     <>
       <Helmet>
-        <title>Business Application Software - Tech Solution</title>
+        <title>Business Application Software – Boost Productivity with Elonatech Solutions</title>
         <meta
           name='description'
           content='Set of computer programs used by business users to perform various business functions.

@@ -6,7 +6,7 @@ const Videoconferencing = () => {
   return (
     <>
       <Helmet>
-        <title>Videoconferencing - Tech Solution, Digital Solution</title>
+        <title>Videoconferencing Solutions - Seamless Online Meetings for Business</title>
         <meta
           name='description'
           content='

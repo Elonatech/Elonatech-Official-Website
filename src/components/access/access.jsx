@@ -6,7 +6,7 @@ const Access = () => {
   return (
     <>
       <Helmet>
-        <title>{`Access Control  - Tech Solution, Digital Solution`}</title>
+        <title>Access Control Systems - Secure Your Digital & Physical Spaces | Tech Solutions</title>
         <meta
           name='description'
           content='

@@ -6,7 +6,7 @@ const Consulting = () => {
   return (
     <>
       <Helmet>
-        <title>Consulting - Tech Solution, Digital Solution</title>
+        <title>IT & Business Consulting Services - Expert Strategy & Solutions</title>
         <meta
           name='description'
           content='Consulting is a term for providing business advice on various topics including, corporate strategy, 

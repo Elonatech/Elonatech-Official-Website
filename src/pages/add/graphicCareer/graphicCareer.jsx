@@ -14,7 +14,7 @@ const GraphicCareer = () => {
     return (
         <>
         <Helmet>
-         <title>Graphic Designer/Digital Marketer - Tech Solution, Digital Solution</title>
+         <title>Graphic Designer & Digital Marketer Career - Join Our Creative Team</title>
          <meta name="description" content="This is a full-time on-site role for a Graphic Designer & Digital Marketer. 
          The Graphic Designer/Digital Marketer will be responsible for creating designs and developing graphical content for a variety of online media " />
          <link rel="canonical" href="https://elonatech.com.ng/graphic-career" />

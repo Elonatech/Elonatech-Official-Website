@@ -280,7 +280,7 @@ const Shop = () => {
   return (
     <>
       <Helmet>
-        <title>Shop - Tech Solutions, Digital</title>
+        <title>Shop for Laptops, Printers, POS Systems & Office Equipment at Elonatech</title>
         <meta name='robots' content='index,follow' />
         <meta
           name='description'
@@ -604,7 +604,7 @@ const Shop = () => {
             </div>
             <div
               style={{
-                // width: '60%',
+                width: '60%',
                 display: isLoading ? 'none' : 'block'
               }}
               className='filter-section pt-2 rounded shadow-sm'

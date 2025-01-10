@@ -14,7 +14,7 @@ const Hardware = () => {
   return (
     <>
       <Helmet>
-        <title>Hardware Supply - Tech Solution, Digital Solution</title>
+        <title>Hardware Supply Solutions - Trusted IT Vendors for Quality Hardware & Support</title>
         <meta
           name='description'
           content='Elonatech Nigeria Limited is built on the assumption that the management of information technology for business is not inherently a do-it-yourself prospect. Smart business people who aren’t tech-savvy need to find quality vendors of reliable hardware, software, service, and support. 

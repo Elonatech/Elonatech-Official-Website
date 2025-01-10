@@ -6,7 +6,7 @@ const Seo = () => {
   return (
     <>
       <Helmet>
-        <title>Search Engine Optimization - Tech Solution</title>
+        <title>Search Engine Optimization </title>
         <meta
           name='description'
           content='The goal is simple: Optimizing pages and putting in best practices to rank websites on search engines.

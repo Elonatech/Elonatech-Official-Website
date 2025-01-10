@@ -7,7 +7,7 @@ const Time = () => {
   return (
     <>
       <Helmet>
-        <title>Time Management Solutions - Tech Solution</title>
+        <title>Time Management Solutions - Streamline Attendance & Scheduling with Smart Features</title>
         <meta
           name='description'
           content='A modern, online time and attendance solution Smart features for hassle-free clocking Schedule staff on an interactive calendar '

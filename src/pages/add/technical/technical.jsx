@@ -5,7 +5,7 @@ const Technical = () => {
   return (
     <>
       <Helmet>
-        <title>Tech Support - Tech Solution, Digital Solution</title>
+        <title>Tech Support Services - Troubleshooting & Assistance</title>
         <meta
           name='description'
           content='Our Technical Support Team

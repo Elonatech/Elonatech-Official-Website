@@ -8,7 +8,7 @@ const Motion = () =>{
   return(
     <>
 <Helmet>
-       <title>Motion Graphics - Tech Solution, Digital Solution</title>
+       <title>Professional Motion Graphics Design Services - Elonatech Digital Solutions</title>
        <meta name="description" content="Motion graphics have the power to turn your content into a visual masterpiece that resonates with your audience. 
        Whether you're looking to educate, entertain, or inspire, motion graphics can help you achieve your goals.
        Motion graphics have the power to turn your content into a visual masterpiece that resonates with your audience. Whether you're looking to educate, entertain, or inspire, motion graphics can help you achieve your goals. Contact us today to start your journey toward visual excellence.
