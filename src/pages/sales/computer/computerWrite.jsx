@@ -73,17 +73,24 @@ const ComputerWrite = () => {
 
   const navigate = useNavigate();
   //submit the form
-  const handleSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      const newData = {
-        name,
-        description,
-        price,
-        brand,
-        odd,
-        quantity,
-        category,
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const formData = new FormData();
+
+    // Add regular fields
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("brand", brand);
+    formData.append("odd", odd);
+    formData.append("quantity", quantity);
+    formData.append("category", category);
+
+    // 🔹 Send computerProperty as a JSON stringified ARRAY
+    const computerProperty = [
+      {
         series,
         model,
         weight,
@@ -103,17 +110,40 @@ const ComputerWrite = () => {
         voltage,
         battery,
         wireless,
-        images,
-      };
+      },
+    ];
+    formData.append("computerProperty", JSON.stringify(computerProperty));
 
-      await axios.post(`${BASEURL}/api/v1/product/create`, newData);
-      setImages([]);
-      toast.success("Product Added Successfully");
-      navigate("/shop");
-    } catch (error) {
-      toast.error(error.response.data);
-    }
-  };
+    // 🔹 Append images
+    images.forEach((image, index) => {
+      const blob = dataURLtoFile(image, `image_${index}.jpg`);
+      formData.append("images", blob);
+    });
+
+    // 🔹 Send to backend
+    await axios.post(`${BASEURL}/api/v1/product/create`, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+
+    setImages([]);
+    toast.success("✅ Product Added Successfully");
+    navigate("/shop");
+  } catch (error) {
+    console.error(error);
+    toast.error(error.response?.data?.message || "❌ Upload failed");
+  }
+};
+
+// Helper to convert base64 -> File
+const dataURLtoFile = (dataurl, filename) => {
+  const arr = dataurl.split(",");
+  const mime = arr[0].match(/:(.*?);/)[1];
+  const bstr = atob(arr[1]);
+  let n = bstr.length;
+  const u8arr = new Uint8Array(n);
+  while (n--) u8arr[n] = bstr.charCodeAt(n);
+  return new File([u8arr], filename, { type: mime });
+};
 
   return (
     <>
