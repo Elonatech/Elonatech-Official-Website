@@ -47,7 +47,7 @@ const Main = () => {
     const fetchLatestProducts = async () => {
       setLoadingLatest(true)
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/product/filter/all`)
+        const response = await axios.get(`$https://elonatech-live-api.onrender.com/api/v1/product/filter/all`)
         if (response.data.success) {
           const allProducts = response.data.data
           console.log('All products:', allProducts)
@@ -68,7 +68,7 @@ const Main = () => {
 
           const computerProducts = productsByCategory['Computer']
           if (computerProducts && computerProducts.length >= 2) {
-            setFeaturedProduct(computerProducts[1])
+            setFeaturedProduct( )
           }
         }
       } catch (error) {
