@@ -7,6 +7,7 @@ import axios from 'axios';
 import './index.css';
 import { useAuth } from './components/admin/AuthContext';
 import ReactGA from 'react-ga4';
+import { BASEURL } from './BaseURL/BaseURL';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -218,7 +219,7 @@ const router = createBrowserRouter([
       element:<AppDevelopment/>
     },
     {
-      path:'/shop',
+      path:'/products',
       element:<Shop/>
     },
     // team ==============================
@@ -395,7 +396,7 @@ const router = createBrowserRouter([
         element: <AppDevelopment />
       },
       {
-        path: '/shop',
+        path: '/products',
         element: <Shop />
       },
       // team ==============================
@@ -600,7 +601,7 @@ const router = createBrowserRouter([
         element: < Computer />
       },
       {
-        path: "/shop",
+        path: "/products",
         element: <Shop />
       },
 
@@ -803,7 +804,7 @@ const App = () => {
     // Log visit to your backend
     const logVisit = async () => {
       try {
-        await axios.post('/api/v1/visitors/log');
+        await axios.post(`${BASEURL}/api/v1/visitors/log`);
       } catch (error) {
         console.error('Error logging visitor:', error);
       }

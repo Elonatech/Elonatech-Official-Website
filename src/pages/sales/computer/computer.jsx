@@ -268,7 +268,7 @@ const Computer = () => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/product/`)
+        const response = await axios.get(`https://backend-api-mbln.onrender.com/api/v1/product/`)
         const filtered = response.data.getAllProducts.filter(
           user => user.category === 'Computer'
         )
@@ -518,7 +518,7 @@ const Computer = () => {
                 <ul className='list-unstyled'>
                   <li>
                     <Link
-                      to={'/shop'}
+                      to={'/products'}
                       className='text-dark'
                       style={{ textDecoration: 'none' }}
                       onMouseEnter={e =>

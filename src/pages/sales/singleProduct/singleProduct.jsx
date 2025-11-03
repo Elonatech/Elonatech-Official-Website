@@ -11,7 +11,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import sanitizeHtml from 'sanitize-html'
 import SocialShareButtons from './socialShareButton'
-import { BASEURL } from '../../../BaseURL/BaseURL'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -82,7 +81,6 @@ const SingleProduct = () => {
   
   const useScrollResetNavigation = () => {
     const navigate = useNavigate()
-    // const location = useLocation()
     const isNavigatingRef = useRef(false)
 
     const scrollToTop = useCallback(() => {
@@ -146,7 +144,7 @@ const SingleProduct = () => {
       break;
       
     default:
-      currentProductCat = category.toLowerCase();
+      currentProductCat = category?.toLowerCase() || '';
   }
 
   useEffect(() => {
@@ -156,20 +154,9 @@ const SingleProduct = () => {
 
   const { handleGoBack, handleNavigateNext } = useScrollResetNavigation()
 
-  // Simple back navigation to recent page
   const handleGoToShop = () => {
-    // Priority 1: Use the from state passed via React Router
     if (location.state?.from) {
       navigate(location.state.from);
-    } 
-    // Priority 2: Use localStorage fallback
-    else if (localStorage.getItem('lastFrom')) {
-      navigate(localStorage.getItem('lastFrom'));
-    }
-    // Priority 3: Fallback to category-based navigation
-    else {
-      const pageNumber = calculatePageNumber();
-      navigate(`/${currentProductCat}?page=${pageNumber}`);
     }
     
     // Scroll to top
@@ -179,18 +166,18 @@ const SingleProduct = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/product/${id}`)
+        setIsLoading(true)
+        const res = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/${id}`)
         console.log('single-id-product', res.data.product);
         setData(res.data.product)
         setImage(res.data.product.images)
         setCategory(res.data.product.category)
         setComputer(res.data.product.computerProperty)
         setProduct(res.data.product)
-        setIsLoading(true)
 
         updateRecentlyViewedInLocalStorage()
 
-        const nextRes = await axios.get(`${BASEURL}/api/v1/product/${res.data.product._id}/next`);
+        const nextRes = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/${res.data.product._id}/next`);
         console.log('next-res', nextRes);
         
         if (nextRes.data.nextProduct) {
@@ -202,24 +189,24 @@ const SingleProduct = () => {
         }
 
         await fetchAllProductsInCategory()
-        // console.log('allProductsInCategory:', allProductsInCategory);
         await fetchRelatedProducts()
         await fetchRecentlyViewedProducts()
 
       } catch (error) {
         setIsLoading(true)
         navigate('/shop')
+      } finally {
+        setIsLoading(false)
       }
     }
     fetchData()
   }, [id])
 
   const fetchAllProductsInCategory = () => {
-    fetch(`${BASEURL}/api/v1/product/filter?category=${category}`)
+    fetch(`https://elonatech-live-api.onrender.com/api/v1/product/filter?category=${category}`)
       .then(response => response.json())
       .then(data => {
         setAllProductsInCategory(data.data.reverse());
-        // console.log('allProductsInCategory:', allProductsInCategory);
       })
       .catch(error => {
         console.error('Error fetching products in the same category:', error);
@@ -255,7 +242,7 @@ const SingleProduct = () => {
   const fetchRecentlyViewedProducts = async () => {
     try {
       const res = await axios.get(
-        `${BASEURL}/api/v1/product/products/recently-viewed`
+        `https://elonatech-live-api.onrender.com/api/v1/product/products/recently-viewed`
       )
       const recentlyViewedProducts = res.data.recentlyViewedProducts.slice(0, 6)
       setRecentlyViewed(
@@ -268,7 +255,7 @@ const SingleProduct = () => {
 
   const fetchRelatedProducts = async () => {
     try {
-      const res = await axios.get(`${BASEURL}/api/v1/product/${id}/related`)
+      const res = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/${id}/related`)
       setRelatedProducts(res.data.relatedProducts)
     } catch (error) {
       console.error('Error fetching related products:', error)
@@ -310,7 +297,7 @@ const SingleProduct = () => {
             <div className='mt-auto'>
             <Link 
               to={`/product/${product.slug}/${product._id}`}
-              state={{ from: window.location.pathname + window.location.search }} // Include query params
+              state={{ from: window.location.pathname + window.location.search }}
               className='btn btn-dark btn-sm w-100' 
               style={{ backgroundColor: 'black', borderColor: 'black' }}
             >
@@ -345,7 +332,7 @@ const SingleProduct = () => {
   };
 
   const handleDelete = async () => {
-    const res = await axios.delete(`${BASEURL}/api/v1/product/${id}`)
+    const res = await axios.delete(`http://localhost:4000/api/v1/product/${id}`)
     navigate('/shop')
   }
 
@@ -355,8 +342,8 @@ const SingleProduct = () => {
     if (!product) return null;
 
     const fallbackImage = "https://res.cloudinary.com/elonatech/image/upload/v1729523978/product_computer_qq8vkk.jpg";
-    const productImage = product.images?.[0]?.url || fallbackImage;
-    const productUrl = `https://elonatech.com.ng/product/${slug}`;
+    const productImage = product?.images?.[0]?.url || fallbackImage;
+    const productUrl = `https://elonatech.com.ng/product/${product?.slug || ''}`;
     
     const structuredData = {
       "@context": "https://schema.org",
@@ -379,8 +366,8 @@ const SingleProduct = () => {
     };
 
     return {
-      title: `${product.name} - Elonatech Nigeria`,
-      description: product.description || "Product description unavailable",
+      title: `${product?.name || 'Product'} - Elonatech Nigeria`,
+      description: product?.description || "Product description unavailable",
       image: productImage,
       url: productUrl,
       structuredData
@@ -424,7 +411,19 @@ const SingleProduct = () => {
         <div className='py-5 mt-5'></div>
       </div>
       <section className='mt-0' id='product' style={{ backgroundColor: '#f1f1f2' }}>
-        {isLoading ? (
+        {isLoading || !product ? (
+          <div className='container'>
+            <div className='row'>
+              <div className='col-md-12'>
+                <div className='d-flex justify-content-center'>
+                  <div className='my-5 py-5'>
+                    <Loading />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
           <>
             <div className='container mt-4'>
               <button
@@ -436,7 +435,6 @@ const SingleProduct = () => {
               </button>
             </div>
 
-            {/* Rest of your existing JSX remains exactly the same */}
             <div className='container py-5 mb-'>
               <div className='row border-0 '>
                 <div className='col-lg-8 '>
@@ -544,13 +542,17 @@ const SingleProduct = () => {
                   <div className=''>
                     <div className='container' style={{ display: 'none' }}>
                       <h1>{data.name}</h1>
-                      <img src={product.images[0].url} alt={data.name} />
+                      {product?.images?.[0]?.url && (
+                        <img src={product.images[0].url} alt={data.name} />
+                      )}
                       <p>Price: ₦{Number(data.price).toLocaleString()}.00</p>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: product.description
-                        }}
-                      ></div>
+                      {product?.description && (
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: product.description
+                          }}
+                        ></div>
+                      )}
                     </div>
                     <h4 className='fw-bold'>{data.name}</h4>
                     <hr />
@@ -640,14 +642,13 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <SocialShareButtons
-                    url={`https://elonatech.com.ng/product/${product.slug}/${product._id}`}
-                    title={product.name}
-                    image={product.images[0].url}
+                    url={`https://elonatech.com.ng/product/${product?.slug}/${product?._id}`}
+                    title={product?.name || ''}
+                    image={product?.images?.[0]?.url || ''}
                   />
                 </div>
               </div>
 
-              {/* Rest of your existing product details JSX remains exactly the same */}
               {data.category !== 'Computer' ? (
                 <div className='container mt-5  mb-5'>
                   <div className='row '>
@@ -791,55 +792,43 @@ const SingleProduct = () => {
                 </div>
               )}
             </div>
-          </>
-        ) : (
-          <div className='container'>
-            <div className='row'>
-              <div className='col-md-12'>
-                <div className='d-flex justify-content-center'>
-                  <div className='my-5 py-5'>
-                    <Loading />
-                  </div>
-                </div>
+
+            <div className='container mt-4 mb-4'>
+              <div className='d-flex justify-content-center align-items-center'>
+                <button
+                  onClick={handleGoBack}
+                  className='btn btn-outline-dark nav-button'
+                >
+                  <IoArrowBackOutline className='me-2' />
+                  Previous
+                </button>
+                {nextProductId && nextProductSlug && (
+                  <button
+                    onClick={handleNavigateNext}
+                    className='btn btn-outline-dark nav-button'
+                  >
+                    Next
+                    <IoArrowForwardOutline className='ms-2' />
+                  </button>
+                )}
               </div>
             </div>
-          </div>
-        )}
 
-        <div className='container mt-4 mb-4'>
-          <div className='d-flex justify-content-center align-items-center'>
-            <button
-              onClick={handleGoBack}
-              className='btn btn-outline-dark nav-button'
-            >
-              <IoArrowBackOutline className='me-2' />
-              Previous
-            </button>
-            {nextProductId && nextProductSlug && (
-              <button
-                onClick={handleNavigateNext}
-                className='btn btn-outline-dark nav-button'
-              >
-                Next
-                <IoArrowForwardOutline className='ms-2' />
-              </button>
+            {relatedProducts.length > 0 && (
+              <ProductSection
+                title={<h4 className='fw-bold mb-3 mt-3'>Related Products</h4>}
+                products={relatedProducts}
+              />
             )}
-          </div>
-        </div>
-
-        {relatedProducts.length > 0 && (
-          <ProductSection
-            title={<h4 className='fw-bold mb-3 mt-3'>Related Products</h4>}
-            products={relatedProducts}
-          />
-        )}
-        {recentlyViewed.length > 0 && (
-          <ProductSection
-            title={
-              <h4 className='fw-bold mb-3 mt-3'>Recently Viewed Products</h4>
-            }
-            products={recentlyViewed}
-          />
+            {recentlyViewed.length > 0 && (
+              <ProductSection
+                title={
+                  <h4 className='fw-bold mb-3 mt-3'>Recently Viewed Products</h4>
+                }
+                products={recentlyViewed}
+              />
+            )}
+          </>
         )}
       </section>
     </>
