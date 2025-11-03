@@ -1080,7 +1080,7 @@ const Main = () => {
           ) : (
             !loadingLatest && (
               <div className="col-12 text-center">
-                <p>No featured product available</p>
+                {/* <p>No featured product available</p> */}
               </div>
             )
           )}

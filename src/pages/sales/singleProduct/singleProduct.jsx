@@ -69,7 +69,6 @@ const SingleProduct = () => {
   const [nextProductSlug, setNextProductSlug] = useState(null);
   const [product, setProduct] = useState(null)
   const [allProductsInCategory, setAllProductsInCategory] = useState([])
-  const [productUrl, setProductUrl] = useState('')
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -77,8 +76,6 @@ const SingleProduct = () => {
   const windowSize = useWindowSize() 
   const isMobile = windowSize.width < 768
 
-  let currentProductCat;
-  
   const useScrollResetNavigation = () => {
     const navigate = useNavigate()
     const isNavigatingRef = useRef(false)
@@ -115,36 +112,21 @@ const SingleProduct = () => {
     const handleNavigateNext = useCallback(() => {
       if (!isNavigatingRef.current && nextProductId && nextProductSlug) {
         isNavigatingRef.current = true;
+        
+        // Preserve the current category when navigating to next product
+        const currentCategory = localStorage.getItem('lastProductCategory') || category;
+        if (currentCategory) {
+          localStorage.setItem('lastProductCategory', currentCategory);
+        }
+        
         navigate(`/product/${nextProductSlug}/${nextProductId}`);
         setTimeout(() => {
           isNavigatingRef.current = false;
         }, 500);
       }
-    }, [nextProductId, nextProductSlug, navigate, isNavigatingRef]);
+    }, [nextProductId, nextProductSlug, navigate, isNavigatingRef, category]);
   
     return { handleGoBack, scrollToTop, handleNavigateNext }
-  }
-  
-
-  switch (category) {
-    case 'Computer':
-      currentProductCat = 'computers';
-      break;
-    case 'Office':
-      currentProductCat = 'office-equipment';
-      break;
-    case 'Network':
-      currentProductCat = 'network-devices';
-      break;
-    case 'Printer':
-      currentProductCat = 'printers';
-      break;
-    case 'Pos':
-      currentProductCat = 'pos-system';
-      break;
-      
-    default:
-      currentProductCat = category?.toLowerCase() || '';
   }
 
   useEffect(() => {
@@ -154,12 +136,19 @@ const SingleProduct = () => {
 
   const { handleGoBack, handleNavigateNext } = useScrollResetNavigation()
 
+  // Simple back navigation that always goes to category page
   const handleGoToShop = () => {
-    if (location.state?.from) {
-      navigate(location.state.from);
-    }
+    const storedCategory = localStorage.getItem('lastProductCategory') || category || 'Computer';
+    const categoryRoutes = {
+      'Computer': '/computers',
+      'Office': '/office-equipment', 
+      'Network': '/network-devices',
+      'Printer': '/printers',
+      'Pos': '/pos-system',
+      'Products': '/products'
+    };
     
-    // Scroll to top
+    navigate(categoryRoutes[storedCategory] || '/shop');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -175,6 +164,9 @@ const SingleProduct = () => {
         setComputer(res.data.product.computerProperty)
         setProduct(res.data.product)
 
+        // Store category in localStorage for back navigation
+        localStorage.setItem('lastProductCategory', res.data.product.category);
+        
         updateRecentlyViewedInLocalStorage()
 
         const nextRes = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/${res.data.product._id}/next`);
@@ -212,14 +204,6 @@ const SingleProduct = () => {
         console.error('Error fetching products in the same category:', error);
       });
   };
-
-  const calculatePageNumber = () => {
-    if (allProductsInCategory.length > 0 && category) {
-      const productIndex = allProductsInCategory.findIndex(product => product._id === id)
-      return Math.floor((productIndex + 1) / 12) + 1
-    }
-    return 1
-  }
 
   const updateRecentlyViewedInLocalStorage = () => {
     if (!id) {
@@ -297,7 +281,10 @@ const SingleProduct = () => {
             <div className='mt-auto'>
             <Link 
               to={`/product/${product.slug}/${product._id}`}
-              state={{ from: window.location.pathname + window.location.search }}
+              onClick={() => {
+                // Store category when clicking on related products
+                localStorage.setItem('lastProductCategory', product.category);
+              }}
               className='btn btn-dark btn-sm w-100' 
               style={{ backgroundColor: 'black', borderColor: 'black' }}
             >
@@ -431,7 +418,7 @@ const SingleProduct = () => {
                 className='btn btn-outline-dark back-btn'
               >
                 <IoArrowBackOutline className='me-2' />
-                Back
+                Back 
               </button>
             </div>
 
