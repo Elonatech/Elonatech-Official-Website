@@ -1,0 +1,249 @@
+
+/*---------------------
+  Register Domain
+-----------------------*/
+
+.register__text .register__form {
+	margin-bottom: 34px;
+}
+
+.register__text .register__form form {
+	position: relative;
+}
+
+.register__text .register__form form input {
+	width: 100%;
+	height: 54px;
+	border: 2px solid #4c57d6;
+	border-radius: 50px;
+	font-size: 14px;
+	color: #111111;
+	padding-left: 20px;
+}
+
+.register__text .register__form form input::-webkit-input-placeholder {
+	color: #111111;
+}
+
+.register__text .register__form form input::-moz-placeholder {
+	color: #111111;
+}
+
+.register__text .register__form form input:-ms-input-placeholder {
+	color: #111111;
+}
+
+.register__text .register__form form input::-ms-input-placeholder {
+	color: #111111;
+}
+
+.register__text .register__form form input::placeholder {
+	color: #111111;
+}
+
+.register__text .register__form form .change__extension {
+	font-size: 14px;
+	color: #111111;
+	position: absolute;
+	top: 17px;
+	right: 170px;
+	cursor: pointer;
+}
+
+.register__text .register__form form .change__extension:hover ul {
+	opacity: 1;
+	top: 18px;
+	visibility: visible;
+}
+
+.register__text .register__form form .change__extension ul {
+	width: 60px;
+	background: #ffffff;
+	position: absolute;
+	left: 0;
+	top: 38px;
+	-webkit-box-shadow: 0px 0px 10px rgba(18, 8, 81, 0.15);
+	box-shadow: 0px 0px 10px rgba(18, 8, 81, 0.15);
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	z-index: 9;
+}
+
+.register__text .register__form form .change__extension ul li {
+	list-style: none;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.register__text .register__form form .change__extension:before {
+	position: absolute;
+	left: -30px;
+	top: 3px;
+	height: 18px;
+	width: 1px;
+	background: #d7d7d7;
+
+}
+
+.register__text .register__form form .change__extension:after {
+	position: absolute;
+	right: -20px;
+	top: 0;
+	font-family: "ElegantIcons";
+}
+
+.register__text .register__form form .site-btn {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+}
+
+.register__text .register__result {
+	margin-bottom: 24px;
+}
+
+.register__text .register__result ul li {
+	display: inline-block;
+	list-style: none;
+	color: #4c57d6;
+	font-weight: 700;
+	margin-right: 62px;
+	font-size: 20px;
+}
+
+.register__text .register__result ul li:last-child {
+	margin-right: 0;
+}
+
+.register__text .register__result ul li span {
+	color: #111111;
+}
+
+.register__text p {
+	margin-bottom: 0;
+}
+
+.site-btn {
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 13px 30px 12px;
+	background: #4c57d6;
+	border: none;
+	border-radius: 50px;
+}
+
+.spad {
+	padding-top: 30px;
+}
+
+
+
+.domain-registration-section {
+	height: 500px;
+background-color: #11253D;  /* Fixed height for desktop */
+	background-image: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)
+	  ),
+	  url('https://res.cloudinary.com/elonatech/image/upload/v1709817744/domainPage/domain_frwxpc.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+	padding: 20px;
+	/* margin-bottom: 100px; */
+  }
+  
+  /* Text styling for desktop */
+  .domain-registration-section h2 {
+	font-size: 2rem;
+	line-height: 1.2;
+	margin-bottom: 10px;
+  }
+  
+  .domain-registration-section h5 {
+	font-size: 1.3rem;
+	line-height: 1.2;
+	margin-bottom: 8px;
+  }
+  
+  .domain-registration-section p {
+	font-size: 1.1rem;
+	line-height: 1.2;
+	margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 576px) {
+	.domain-registration-section {
+	  height: 200px; /* Fixed height for mobile */
+	  background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523972/domain_mobile_y4qcut.jpg');
+	  background-size: cover;
+	  flex-direction: column;
+	  align-items: center;
+	  padding-top: 50px;
+	}
+  
+	/* Adjusting text for mobile view */
+	.domain-registration-section h2 {
+	  font-size: 1.5rem;
+	  margin-bottom: 5px;
+	  line-height: 1.1;
+	}
+  
+	.domain-registration-section h5 {
+	  font-size: 1rem;
+	  margin-bottom: 3px;
+	  line-height: 1.1;
+	  font-weight: 200;
+	  /* display: none; */
+	}
+  
+	.domain-registration-section p {
+	  font-size: 0.9rem;
+	  line-height: 1.1;
+	  margin-bottom: 0;
+	  display: none;
+	}
+  
+	.domain-registration-section h2,
+	.domain-registration-section h5,
+	.domain-registration-section p {
+	  margin: 0;
+	  padding: 0;
+	}
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

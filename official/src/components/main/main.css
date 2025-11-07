@@ -1,0 +1,164 @@
+.form-controli:focus {
+  border-color: #ced4da;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+.rmFocus:focus {
+  border-color: #ced4da;
+  /* default B5 color or set your own color*/
+  border: none !important;
+  /* if you want to remove borders at all*/
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.mySSSS {
+  height: 150px;
+}
+
+
+
+@media (max-width: 767px) {
+  .mySSSS {
+    height: 500px;
+  }
+
+  .row-sm-gutter {
+    gap: 1rem;
+  }
+
+  .row.mt-5.justify-content-center {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row.mt-5.justify-content-center>.col-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 5px;
+  }
+
+  .product-card {
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .product-card .text-center {
+    height: 120px;
+  }
+
+  .product-card h5 {
+    font-size: 0.9rem;
+  }
+
+  .product-card .small,
+  .product-card .stars,
+  .product-card .text-danger {
+    font-size: 0.8rem;
+  }
+
+  .product-card .btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+}
+
+.custom-container {
+  --bs-gutter-x: 0;
+  width: 100%;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+
+.tannet {
+  width: 130px;
+  height: auto;
+  margin-left: 60px;
+}
+
+.second {
+  height: 150px;
+  background: white;
+}
+
+.move-up {
+  margin-top: -20px;
+}
+
+.third {
+  height: 150px;
+  width: 150px;
+  margin-left: 30px;
+}
+
+.fourth {
+  height: 150px;
+}
+
+.pfn {
+  margin-top: 20px;
+}
+
+.fifth {
+  display: flex;
+  align-items: center;
+}
+
+.sixth {
+  display: flex;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 756px) {
+  .tannet {
+    width: 130px;
+    height: auto;
+    margin-left: 0px;
+
+  }
+
+  .third {
+    height: 150px;
+    width: 150px;
+    margin-left: -10px;
+  }
+}
+
+.fst {
+  order: 1;
+}
+
+.ttt {
+  display: none;
+}
+
+.showOnMobile {
+  margin-top: -75px;
+}
+
+.showOnMobile img {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 375px) {
+  .ttt {
+    display: inline;
+  }
+
+  .ttu {
+    display: none;
+  }
+
+  .showOnMobile img {
+    margin-top: 10px;
+  }
+
+}

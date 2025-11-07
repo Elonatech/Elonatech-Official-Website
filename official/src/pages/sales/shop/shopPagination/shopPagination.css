@@ -1,0 +1,29 @@
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #d9d9d9 !important;
+    background-color:  #34548c!important;
+    border: 1px solid rgb(41, 39, 39) !important;
+    cursor: pointer;
+}
+.page-link:hover {
+        z-index: 2;
+        color: #fff !important;
+        text-decoration: none;
+        outline: none;
+        border-color: #dee2e6;
+}
+.page-link:focus{
+    outline: none !important;
+    box-shadow: none;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #dc3545 !important;
+    border-color: #353535;
+}

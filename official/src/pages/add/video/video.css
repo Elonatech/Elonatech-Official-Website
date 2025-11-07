@@ -1,0 +1,150 @@
+
+.video-img{
+  width: 550px;
+  height: 40vh;
+}
+.video-img-1{
+  height: 40vh;
+  width: 500px;
+}
+
+.image-icon{
+  width: 80px;
+  border-radius: 50%;
+  margin-left:20px ;
+  margin-top:20px ;
+}
+
+
+@media(max-width:768px){
+  .video-img{
+    width: 320px;
+    height: 25vh;
+  }
+  .video-img-1{
+    height: 30vh;
+    width: 400px;
+  }
+}
+
+
+.text {
+  max-width: 600px;
+  max-height: 80px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+.text-btn {
+  appearance: none;
+  background-color:#014e78;
+  color:white;
+  padding: 40px;
+  cursor: pointer;
+  /* width: fit-content; */
+  border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+ 
+}
+.text-btn::before {
+  content: "Read More";
+  text-transform: capitalize;
+  padding: 20px;
+}
+.text-btn:checked::before {
+  content: "Read Less";
+}
+.text:has(+ .text-btn:checked) {
+  max-height: none;
+}
+
+
+.video-editing-section {
+  height: 500px;
+background-color: #11253D;  /* Fixed height for desktop */
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1709817650/VideoEditingPage/Video_Editing_zc7juf.jpg'); /* Image URL */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 30px; /* Adjusted margin for spacing */
+}
+
+/* Text styling for desktop */
+.video-editing-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.video-editing-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.video-editing-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .video-editing-section {
+    height: 200px;
+    background-image: linear-gradient(
+		  0deg,
+		  rgba(0, 0, 0, 0.5),
+		  rgba(0, 0, 0, 0.5)
+		),
+		url('https://res.cloudinary.com/elonatech/image/upload/v1729523992/Video-editing-_mobile-view_uz0fms.png');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .video-editing-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .video-editing-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .video-editing-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .video-editing-section h2,
+  .video-editing-section h5,
+  .video-editing-section p {
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,18 @@
+
+ .quote-icon-left-op {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+  
+  }
+  
+.quote-icon-right-po {
+    display: inline-block;
+    right: -15px;
+    position: relative;
+    top: 6px;
+    transform: scale(-1, -1);
+
+  }
+
+  
