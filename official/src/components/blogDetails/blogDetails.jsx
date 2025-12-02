@@ -64,7 +64,7 @@ const BlogDetails = () => {
         const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`)
         setData(res.data)
         setId(res.data._id);
-        console.log(id, res.data, 'thuebeiuuuer   ewuue e')
+        // console.log(id, res.data, 'thuebeiuuuer   ewuue e')
         setIsLoading(true)
       } catch (error) {
         console.log(error)

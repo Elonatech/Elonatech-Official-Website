@@ -1,23 +1,23 @@
-import { useEffect, useState, useCallback, useRef } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import axios, { isAxiosError } from 'axios'
-import { useParams } from 'react-router-dom'
-import { useNavigate, Link, useLocation } from 'react-router-dom'
-import Loading from '../../../components/Loading/Loading'
-import DOMPurify from 'dompurify'
-import { useCart } from 'react-use-cart'
-import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
-import sanitizeHtml from 'sanitize-html'
-import SocialShareButtons from './socialShareButton'
+import { useEffect, useState, useCallback, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import axios, { isAxiosError } from "axios";
+import { useParams } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import Loading from "../../../components/Loading/Loading";
+import DOMPurify from "dompurify";
+import { useCart } from "react-use-cart";
+import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import sanitizeHtml from "sanitize-html";
+import SocialShareButtons from "./socialShareButton";
 
 // Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/free-mode'
-import 'swiper/css/navigation'
-import 'swiper/css/thumbs'
-import './singleProduct.css'
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import "./singleProduct.css";
 
 // import required modules
 import {
@@ -25,186 +25,212 @@ import {
   Navigation,
   EffectFade,
   Thumbs,
-  Pagination
-} from 'swiper/modules'
+  Pagination,
+} from "swiper/modules";
 
-import { Helmet } from 'react-helmet-async'
-import { toast } from 'react-toastify'
+import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
+import Navbar from "../../../components/navbar/navbar";
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
-    height: window.innerHeight
-  })
+    height: window.innerHeight,
+  });
 
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight
-      })
-    }
+        height: window.innerHeight,
+      });
+    };
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
 
     // Cleanup the event listener on component unmount
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  return windowSize
-}
+  return windowSize;
+};
 
 const SingleProduct = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState()
-  const [data, setData] = useState({})
-  const [currentAdmin, setCurrentAdmin] = useState('')
-  const [category, setCategory] = useState('')
-  const [computer, setComputer] = useState([])
-  const [error, setError] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const [image, setImage] = useState([])
-  const [recentlyViewed, setRecentlyViewed] = useState([])
-  const { slug, id } = useParams()
-  const [relatedProducts, setRelatedProducts] = useState([])
-  const [nextProductId, setNextProductId] = useState(null)
+  const [thumbsSwiper, setThumbsSwiper] = useState();
+  const [data, setData] = useState({});
+  const [currentAdmin, setCurrentAdmin] = useState("");
+  const [category, setCategory] = useState("");
+  const [computer, setComputer] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [image, setImage] = useState([]);
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+  const { slug, id } = useParams();
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [nextProductId, setNextProductId] = useState(null);
   const [nextProductSlug, setNextProductSlug] = useState(null);
-  const [product, setProduct] = useState(null)
-  const [allProductsInCategory, setAllProductsInCategory] = useState([])
+  const [product, setProduct] = useState(null);
+  const [allProductsInCategory, setAllProductsInCategory] = useState([]);
 
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
+  const fromPage = location.state?.fromPage || 1;
+  const fromCategory = location.state?.fromCategory || "Products"; // fallback
+  const fromPath = location.state?.fromPath || "/products";
 
-  const windowSize = useWindowSize() 
-  const isMobile = windowSize.width < 768
+  const windowSize = useWindowSize();
+  const isMobile = windowSize.width < 768;
 
   const useScrollResetNavigation = () => {
-    const navigate = useNavigate()
-    const isNavigatingRef = useRef(false)
+    const navigate = useNavigate();
+    const isNavigatingRef = useRef(false);
 
     const scrollToTop = useCallback(() => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
-      })
-    }, [])
-  
+        behavior: "smooth",
+      });
+    }, []);
+
     useEffect(() => {
-      if ('scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'manual'
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
       }
-  
+
       return () => {
-        if ('scrollRestoration' in window.history) {
-          window.history.scrollRestoration = 'auto'
+        if ("scrollRestoration" in window.history) {
+          window.history.scrollRestoration = "auto";
         }
-      }
-    }, [])
-  
+      };
+    }, []);
+
     const handleGoBack = () => {
       if (window.history.state && window.history.state.idx > 0) {
-        navigate(-1)
-        scrollToTop()
+        navigate(-1);
+        scrollToTop();
       } else {
-        navigate('/')
-        scrollToTop()
+        navigate("/");
+        scrollToTop();
       }
-    }
-  
+    };
+
     const handleNavigateNext = useCallback(() => {
       if (!isNavigatingRef.current && nextProductId && nextProductSlug) {
         isNavigatingRef.current = true;
-        
+
         // Preserve the current category when navigating to next product
-        const currentCategory = localStorage.getItem('lastProductCategory') || category;
+        const currentCategory =
+          localStorage.getItem("lastProductCategory") || category;
         if (currentCategory) {
-          localStorage.setItem('lastProductCategory', currentCategory);
+          localStorage.setItem("lastProductCategory", currentCategory);
         }
-        
+
         navigate(`/product/${nextProductSlug}/${nextProductId}`);
         setTimeout(() => {
           isNavigatingRef.current = false;
         }, 500);
       }
     }, [nextProductId, nextProductSlug, navigate, isNavigatingRef, category]);
-  
-    return { handleGoBack, scrollToTop, handleNavigateNext }
-  }
+
+    return { handleGoBack, scrollToTop, handleNavigateNext };
+  };
 
   useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem('token'))
-    setCurrentAdmin(auth)
-  }, [])
+    const auth = JSON.parse(localStorage.getItem("token"));
+    setCurrentAdmin(auth);
+  }, []);
 
-  const { handleGoBack, handleNavigateNext } = useScrollResetNavigation()
+  const { handleGoBack, handleNavigateNext } = useScrollResetNavigation();
 
   // Simple back navigation that always goes to category page
-  const handleGoToShop = () => {
-    const storedCategory = localStorage.getItem('lastProductCategory') || category || 'Computer';
+  // const handleGoToShop = () => {
+  //   const storedCategory = localStorage.getItem('lastProductCategory') || category || 'Computer';
+  //   const categoryRoutes = {
+  //     'Computer': '/computers',
+  //     'Office': '/office-equipment',
+  //     'Network': '/network-devices',
+  //     'Printer': '/printers',
+  //     'Pos': '/pos-system',
+  //     'Products': '/products'
+  //   };
+
+  //   navigate(categoryRoutes[storedCategory] || '/products');
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // };
+
+  const handleGoBackToProducts = () => {
+    // const storedCategory = localStorage.getItem('lastProductCategory') || category || 'Computer';
     const categoryRoutes = {
-      'Computer': '/computers',
-      'Office': '/office-equipment', 
-      'Network': '/network-devices',
-      'Printer': '/printers',
-      'Pos': '/pos-system',
-      'Products': '/products'
+      Computer: "/computers",
+      Office: "/office-equipment",
+      Network: "/network-devices",
+      Printer: "/printers",
+      Pos: "/pos-system",
+      Products: "/products",
     };
-    
-    navigate(categoryRoutes[storedCategory] || '/products');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const targetPath = categoryRoutes[fromCategory] || fromPath;
+    navigate(`${targetPath}?page=${fromPage}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading(true)
-        const res = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/${id}`)
-        console.log('single-id-product', res.data.product);
-        setData(res.data.product)
-        setImage(res.data.product.images)
-        setCategory(res.data.product.category)
-        setComputer(res.data.product.computerProperty)
-        setProduct(res.data.product)
+        setIsLoading(true);
+        const res = await axios.get(
+          `https://elonatech-live-api.onrender.com/api/v1/product/${id}`
+        );
+        console.log("single-id-product", res.data.product);
+        setData(res.data?.product);
+        setImage(res.data?.product.images);
+        setCategory(res.data?.product.category);
+        setComputer(res.data?.product.computerProperty);
+        setProduct(res.data?.product);
 
         // Store category in localStorage for back navigation
-        localStorage.setItem('lastProductCategory', res.data.product.category);
+        localStorage.setItem("lastProductCategory", res.data.product.category);
 
-        localStorage.setItem('_id', res.data.product._id);
-        
-        updateRecentlyViewedInLocalStorage()
+        localStorage.setItem("_id", res.data.product._id);
 
-        const nextRes = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/${res.data.product._id}/next`);
-        console.log('next-res', nextRes);
-        
-        if (nextRes.data.nextProduct) {
-          setNextProductId(nextRes.data.nextProduct._id);
-          setNextProductSlug(nextRes.data.nextProduct.slug);
+        updateRecentlyViewedInLocalStorage();
+
+        const nextRes = await axios.get(
+          `https://elonatech-live-api.onrender.com/api/v1/product/${res.data.product._id}/next`
+        );
+        console.log("next-res", nextRes);
+
+        if (nextRes.data?.nextProduct) {
+          setNextProductId(nextRes.data?.nextProduct._id);
+          setNextProductSlug(nextRes.data?.nextProduct.slug);
         } else {
           setNextProductId(null);
           setNextProductSlug(null);
         }
 
-        await fetchAllProductsInCategory()
-        await fetchRelatedProducts()
-        await fetchRecentlyViewedProducts()
-
+        await fetchAllProductsInCategory();
+        await fetchRelatedProducts();
+        await fetchRecentlyViewedProducts();
       } catch (error) {
-        setIsLoading(true)
-        navigate('/products')
+        setIsLoading(true);
+        navigate("/products");
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
-    }
-    fetchData()
-  }, [id])
+    };
+    fetchData();
+  }, [id]);
 
   const fetchAllProductsInCategory = () => {
-    fetch(`https://elonatech-live-api.onrender.com/api/v1/product/filter?category=${category}`)
-      .then(response => response.json())
-      .then(data => {
+    fetch(
+      `https://elonatech-live-api.onrender.com/api/v1/product/filter?category=${category}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
         setAllProductsInCategory(data.data.reverse());
       })
-      .catch(error => {
-        console.error('Error fetching products in the same category:', error);
+      .catch((error) => {
+        console.error("Error fetching products in the same category:", error);
       });
   };
 
@@ -213,86 +239,90 @@ const SingleProduct = () => {
       console.warn("Invalid product ID, cannot update recently viewed.");
       return;
     }
-  
-    const storedRecentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
-  
+
+    const storedRecentlyViewed = JSON.parse(
+      localStorage.getItem("recentlyViewed") || "[]"
+    );
+
     if (!storedRecentlyViewed.includes(id)) {
       const updatedRecentlyViewed = [id, ...storedRecentlyViewed.slice(0, 4)];
-      localStorage.setItem('recentlyViewed', JSON.stringify(updatedRecentlyViewed));
+      localStorage.setItem(
+        "recentlyViewed",
+        JSON.stringify(updatedRecentlyViewed)
+      );
       setRecentlyViewed(updatedRecentlyViewed);
     } else {
       setRecentlyViewed(storedRecentlyViewed);
     }
   };
-  
 
   const fetchRecentlyViewedProducts = async () => {
     try {
       const res = await axios.get(
         `https://elonatech-live-api.onrender.com/api/v1/product/products/recently-viewed`
-      )
-      const recentlyViewedProducts = res.data.recentlyViewedProducts.slice(0, 6)
+      );
+      const recentlyViewedProducts = res.data.recentlyViewedProducts.slice(
+        0,
+        6
+      );
       setRecentlyViewed(
-        recentlyViewedProducts.filter(product => product._id !== id).slice(0, 5)
-      )
+        recentlyViewedProducts
+          .filter((product) => product._id !== id)
+          .slice(0, 5)
+      );
     } catch (error) {
-      console.error('Error fetching recently viewed products:', error)
+      console.error("Error fetching recently viewed products:", error);
     }
-  }
+  };
 
   const fetchRelatedProducts = async () => {
     try {
-      const res = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/${id}/related`)
-      setRelatedProducts(res.data.relatedProducts)
+      const res = await axios.get(
+        `https://elonatech-live-api.onrender.com/api/v1/product/${id}/related`
+      );
+      setRelatedProducts(res.data.relatedProducts);
     } catch (error) {
-      console.error('Error fetching related products:', error)
+      console.error("Error fetching related products:", error);
     }
-  }
+  };
 
   const ProductCard = ({ product }) => {
     if (!product) {
       return null;
     }
-  
-    const { 
-      name = '',
-      price = 0,
-      images = [],
-      slug = ''
-    } = product;
-  
+
+    const { name = "", price = 0, images = [], slug = "" } = product;
+
     return (
-      <div className='col-custom-5 mb-4'>
-        <div className='card h-100 d-flex flex-column'>
+      <div className="col-custom-5 mb-4">
+        <div className="card h-100 d-flex flex-column">
           <LazyLoadImage
             alt={name}
             src={
               images && images.length > 0
                 ? images[0].url
-                : 'placeholder-image-url.jpg'
+                : "placeholder-image-url.jpg"
             }
-            effect='blur'
-            className='card-img-top'
-            style={{ height: '160px', objectFit: 'cover' }}
-            placeholderSrc='https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif'
+            effect="blur"
+            className="card-img-top"
+            style={{ height: "160px", objectFit: "cover" }}
+            placeholderSrc="https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif"
           />
-          <div className='card-body d-flex flex-column'>
-          <h6 className='card-title'>{name}</h6>
-            <p className='card-text'>
-              ₦ {Number(price).toLocaleString()}.00
-            </p>
-            <div className='mt-auto'>
-            <Link 
-              to={`/product/${product.slug}/${product._id}`}
-              onClick={() => {
-                // Store category when clicking on related products
-                localStorage.setItem('lastProductCategory', product.category);
-              }}
-              className='btn btn-dark btn-sm w-100' 
-              style={{ backgroundColor: 'black', borderColor: 'black' }}
-            >
-              View Product
-            </Link>
+          <div className="card-body d-flex flex-column">
+            <h6 className="card-title">{name}</h6>
+            <p className="card-text">₦ {Number(price).toLocaleString()}.00</p>
+            <div className="mt-auto">
+              <Link
+                to={`/product/${product.slug}/${product._id}`}
+                onClick={() => {
+                  // Store category when clicking on related products
+                  localStorage.setItem("lastProductCategory", product.category);
+                }}
+                className="btn btn-dark btn-sm w-100"
+                style={{ backgroundColor: "black", borderColor: "black" }}
+              >
+                View Product
+              </Link>
             </div>
           </div>
         </div>
@@ -304,16 +334,16 @@ const SingleProduct = () => {
     if (!products || !Array.isArray(products)) {
       return null;
     }
-  
+
     return (
-      <div className='container mt-5'>
-        <h2 className='mb-4'>{title}</h2>
-        <div className='row product-grid'>
-          {products.slice(0, 5).map((product, index) => (
-            <ProductCard 
-              key={product?._id || index} 
-              product={product} 
-              index={index} 
+      <div className="container mt-5">
+        <h2 className="mb-4">{title}</h2>
+        <div className="row product-grid">
+          {products?.slice(0, 5).map((product, index) => (
+            <ProductCard
+              key={product?._id || index}
+              product={product}
+              index={index}
             />
           ))}
         </div>
@@ -322,81 +352,83 @@ const SingleProduct = () => {
   };
 
   const handleDelete = async () => {
-    const id = localStorage.getItem('_id');
-    const token = localStorage.getItem('token');
+    const id = localStorage.getItem("_id");
+    const token = localStorage.getItem("token");
 
     try {
-    if (!id) {
-      alert('Cannot find the ID of the product.');
-      return;
-    }
+      if (!id) {
+        alert("Cannot find the ID of the product.");
+        return;
+      }
 
-    if (!token) {
-      alert('Authentication token not found. Please log in again.');
-      return;
-    }
+      if (!token) {
+        alert("Authentication token not found. Please log in again.");
+        return;
+      }
 
-    const res = await axios.delete(
-      `https://elonatech-live-api.onrender.com/api/v1/product/${id}`,
-      // {
-      //   headers: {
-      //     Authorization: `Bearer ${token}`,
-      //   },
-      // }
-    );
+      const res = await axios.delete(
+        `https://elonatech-live-api.onrender.com/api/v1/product/${id}`
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //   },
+        // }
+      );
 
-    console.log('product-delete', res.data);
+      console.log("product-delete", res.data);
 
-    alert('Product deleted successfully!');
-    navigate('/products');
+      alert("Product deleted successfully!");
+      navigate("/products");
+    } catch (error) {
+      let errMsg = "An error has occurred while deleting the product.";
 
-  } catch (error) {
-    let errMsg = 'An error has occurred while deleting the product.';
+      if (isAxiosError(error)) {
+        errMsg = error.response?.data?.message || errMsg;
+      }
 
-    if (isAxiosError(error)) {
-      errMsg = error.response?.data?.message || errMsg;
-    }
-
-     console.error('Delete error:', error);
+      console.error("Delete error:", error);
       alert(errMsg);
     }
   };
 
-  const { addItem } = useCart()
+  const { addItem } = useCart();
 
   const prepareSEOData = () => {
     if (!product) return null;
 
-    const fallbackImage = "https://res.cloudinary.com/elonatech/image/upload/v1729523978/product_computer_qq8vkk.jpg";
+    const fallbackImage =
+      "https://res.cloudinary.com/elonatech/image/upload/v1729523978/product_computer_qq8vkk.jpg";
     const productImage = product?.images?.[0]?.url || fallbackImage;
-    const productUrl = `https://elonatech.com.ng/product/${product?.slug || ''}`;
-    
+    const productUrl = `https://elonatech.com.ng/product/${
+      product?.slug || ""
+    }`;
+
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": product?.name || "",
-      "description": product?.description || "",
-      "image": productImage,
-      "url": productUrl,
-      "brand": {
+      name: product?.name || "",
+      description: product?.description || "",
+      image: productImage,
+      url: productUrl,
+      brand: {
         "@type": "Brand",
-        "name": product?.brand || ""
+        name: product?.brand || "",
       },
-      "offers": {
+      offers: {
         "@type": "Offer",
-        "price": product?.price || "",
-        "priceCurrency": "NGN",
-        "availability": product?.quantity > 0 ? "InStock" : "OutOfStock",
-        "url": productUrl
-      }
+        price: product?.price || "",
+        priceCurrency: "NGN",
+        availability: product?.quantity > 0 ? "InStock" : "OutOfStock",
+        url: productUrl,
+      },
     };
 
     return {
-      title: `${product?.name || 'Product'} - Elonatech Nigeria`,
+      title: `${product?.name || "Product"} - Elonatech Nigeria`,
       description: product?.description || "Product description unavailable",
       image: productImage,
       url: productUrl,
-      structuredData
+      structuredData,
     };
   };
 
@@ -404,11 +436,12 @@ const SingleProduct = () => {
 
   return (
     <>
+      {/* <Navbar /> */}
       {seoData && (
         <Helmet>
           <title>{seoData.title}</title>
           <meta name="description" content={seoData.description} />
-          
+
           {/* Open Graph Tags */}
           <meta property="og:title" content={seoData.title} />
           <meta property="og:description" content={seoData.description} />
@@ -433,16 +466,20 @@ const SingleProduct = () => {
         </Helmet>
       )}
 
-      <div className='container-fluid shop-section'>
-        <div className='py-5 mt-5'></div>
+      <div className="container-fluid shop-section">
+        <div className="py-5 mt-5"></div>
       </div>
-      <section className='mt-0' id='product' style={{ backgroundColor: '#f1f1f2' }}>
+      <section
+        className="mt-0"
+        id="product"
+        style={{ backgroundColor: "#f1f1f2" }}
+      >
         {isLoading || !product ? (
-          <div className='container'>
-            <div className='row'>
-              <div className='col-md-12'>
-                <div className='d-flex justify-content-center'>
-                  <div className='my-5 py-5'>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="d-flex justify-content-center">
+                  <div className="my-5 py-5">
                     <Loading />
                   </div>
                 </div>
@@ -451,61 +488,61 @@ const SingleProduct = () => {
           </div>
         ) : (
           <>
-            <div className='container mt-4'>
+            <div className="container mt-4">
               <button
-                onClick={handleGoToShop}
-                className='btn btn-outline-dark back-btn'
+                onClick={handleGoBackToProducts}
+                className="btn btn-outline-dark back-btn"
               >
-                <IoArrowBackOutline className='me-2' />
-                Back 
+                <IoArrowBackOutline className="me-2" />
+                Back
               </button>
             </div>
 
-            <div className='container py-5 mb-'>
-              <div className='row border-0 '>
-                <div className='col-lg-8 '>
-                  <div className='row g-0  '>
-                    <div className='col-2' style={{ backgroundColor: 'white' }}>
-                      <div className='card border-0'>
+            <div className="container py-5 mb-">
+              <div className="row border-0 ">
+                <div className="col-lg-8 ">
+                  <div className="row g-0  ">
+                    <div className="col-2" style={{ backgroundColor: "white" }}>
+                      <div className="card border-0">
                         <Swiper
-                          direction='vertical'
+                          direction="vertical"
                           onSwiper={setThumbsSwiper}
                           spaceBetween={10}
                           slidesPerView={10}
                           freeMode={true}
                           watchSlidesProgress={true}
                           modules={[FreeMode, Navigation, Thumbs, Pagination]}
-                          className='swiper-container gallery-thumbs pb-5'
+                          className="swiper-container gallery-thumbs pb-5"
                         >
                           <ul
-                            className='list-unstyled text-start'
-                            style={{ paddingLeft: '0' }}
+                            className="list-unstyled text-start"
+                            style={{ paddingLeft: "0" }}
                           >
-                            {image.map(item => (
+                            {image?.map((item) => (
                               <li
                                 key={item.id}
-                                className='pb-3'
+                                className="pb-3"
                                 style={{
-                                  display: 'flex',
-                                  justifyContent: 'flex-start'
+                                  display: "flex",
+                                  justifyContent: "flex-start",
                                 }}
                               >
                                 <SwiperSlide
-                                  className='pb- mt-2'
+                                  className="pb- mt-2"
                                   style={{
-                                    paddingBottom: '60px',
-                                    display: 'flex',
-                                    justifyContent: 'flex-start'
+                                    paddingBottom: "60px",
+                                    display: "flex",
+                                    justifyContent: "flex-start",
                                   }}
                                 >
                                   <img
                                     src={item.url}
-                                    className='img-fluid hto rounded border border-dark'
+                                    className="img-fluid hto rounded border border-dark"
                                     style={{
-                                      height: '60px',
-                                      width: '60px',
-                                      objectFit: 'cover',
-                                      cursor: 'pointer'
+                                      height: "60px",
+                                      width: "60px",
+                                      objectFit: "cover",
+                                      cursor: "pointer",
                                     }}
                                   />
                                 </SwiperSlide>
@@ -515,42 +552,42 @@ const SingleProduct = () => {
                         </Swiper>
                       </div>
                     </div>
-                    <div className='col-md-10'>
-                      <div className='card border-0'>
-                        <div className='gall'>
+                    <div className="col-md-10">
+                      <div className="card border-0">
+                        <div className="gall">
                           <Swiper
                             style={{
-                              '--swiper-navigation-color': '#080808',
-                              '--swiper-pagination-color': '#080808'
+                              "--swiper-navigation-color": "#080808",
+                              "--swiper-pagination-color": "#080808",
                             }}
                             spaceBetween={0}
                             navigation={true}
                             loop={true}
                             pagination={{
-                              clickable: true
+                              clickable: true,
                             }}
                             thumbs={{
                               swiper:
                                 thumbsSwiper && !thumbsSwiper.destroyed
                                   ? thumbsSwiper
-                                  : null
+                                  : null,
                             }}
                             modules={[
                               FreeMode,
                               Navigation,
                               EffectFade,
                               Thumbs,
-                              Pagination
+                              Pagination,
                             ]}
-                            className='swiper-container gallery-top border-0'
+                            className="swiper-container gallery-top border-0"
                           >
-                            {image.map(item => (
+                            {image?.map((item) => (
                               <div key={item.id}>
-                                <SwiperSlide className='border-0'>
-                                  <div className='text-center'>
+                                <SwiperSlide className="border-0">
+                                  <div className="text-center">
                                     <img
-                                      alt=''
-                                      className='img-fluid'
+                                      alt=""
+                                      className="img-fluid"
                                       src={item.url}
                                     ></img>
                                   </div>
@@ -564,65 +601,80 @@ const SingleProduct = () => {
                   </div>
                 </div>
 
-                <div className='col-lg-4 mb-5'>
-                  <div className=''>
-                    <div className='container' style={{ display: 'none' }}>
+                <div className="col-lg-4 mb-5">
+                  <div className="">
+                    <div className="container" style={{ display: "none" }}>
                       <h1>{data.name}</h1>
                       {product?.images?.[0]?.url && (
-                        <img src={product.images[0].url} alt={data.name} />
+                        <img src={product?.images[0].url} alt={data.name} />
                       )}
                       <p>Price: ₦{Number(data.price).toLocaleString()}.00</p>
                       {product?.description && (
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: product.description
+                            __html: product?.description,
                           }}
                         ></div>
                       )}
                     </div>
-                    <h4 className='fw-bold'>{data.name}</h4>
+                    <h4 className="fw-bold">{data.name}</h4>
                     <hr />
-                    <div className=' mt-0'>
-                      <p className=''>
-                        <span className='text-dark fw-bold pe-2'>Brand:</span>
+                    <div className=" mt-0">
+                      <p className="">
+                        <span className="text-dark fw-bold pe-2">Brand:</span>
                         {data.brand}
                       </p>
                     </div>
-                    <div className='d-flex'>
-                    <p className='ms-5 mt-1'>
-                        {' '}
-                        <del className=''>₦ {data.odd}.00</del>
+                    <div className="d-flex">
+                      <p className="ms-5 mt-1">
+                        {" "}
+                        <del className="">₦ {data.odd}.00</del>
                       </p>
-                      <h4 className='mt-'>
+                      <h4 className="mt-">
                         Total: ₦ {Number(data.price).toLocaleString()}.00
                       </h4>
                     </div>
-                    <p className='text-danger'>
-                      {data.quantity <= '0' ? 'Out of Stock' : 'In Stock'}
+                    <p className="text-danger">
+                      {data.quantity <= "0" ? "Out of Stock" : "In Stock"}
                     </p>
                     <p>shipping from ₦ 2,500 and Above </p>
-                    <ul className='list-unstyled d-flex mt-3'>
+                    <ul className="list-unstyled d-flex mt-3">
                       <li>
-                        <i className='fa fa-star' style={{ color: '#f4be1d' }}></i>
+                        <i
+                          className="fa fa-star"
+                          style={{ color: "#f4be1d" }}
+                        ></i>
                       </li>
                       <li>
-                        <i className='fa fa-star' style={{ color: '#f4be1d' }}></i>
+                        <i
+                          className="fa fa-star"
+                          style={{ color: "#f4be1d" }}
+                        ></i>
                       </li>
                       <li>
-                        <i className='fa fa-star' style={{ color: '#f4be1d' }}></i>
+                        <i
+                          className="fa fa-star"
+                          style={{ color: "#f4be1d" }}
+                        ></i>
                       </li>
                       <li>
-                        <i className='fa fa-star' style={{ color: '#f4be1d' }}></i>
+                        <i
+                          className="fa fa-star"
+                          style={{ color: "#f4be1d" }}
+                        ></i>
                       </li>
                       <li>
-                        <i className='fa fa-star' style={{ color: '#f4be1d' }}></i>
+                        <i
+                          className="fa fa-star"
+                          style={{ color: "#f4be1d" }}
+                        ></i>
                       </li>
                     </ul>
-                    <div className='row justify-content-md-end mt-3'>
-                      <div className='col-6'>
-                        <div className='' key={data.id}>
+                    <div className="row justify-content-md-end mt-3">
+                      <div className="col-6">
+                        <div className="" key={data.id}>
                           <button
-                            className='btn btn-dark mt-3'
+                            className="btn btn-dark mt-3"
                             onClick={() => addItem(data)}
                           >
                             <b>Add To Cart</b>
@@ -630,19 +682,19 @@ const SingleProduct = () => {
                         </div>
                       </div>
 
-                      <div className='col-6'>
+                      <div className="col-6">
                         {currentAdmin ? (
-                          <div className='text-end'>
-                            <div className='d-flex justify-content-md-end mt-3 '>
+                          <div className="text-end">
+                            <div className="d-flex justify-content-md-end mt-3 ">
                               <Link to={`/product/${id}/update`}>
                                 <i
-                                  className='bi bi-pencil-square text-warning fs-3 me-4'
-                                  style={{ cursor: 'pointer' }}
+                                  className="bi bi-pencil-square text-warning fs-3 me-4"
+                                  style={{ cursor: "pointer" }}
                                 ></i>
                               </Link>
                               <i
-                                className='bi bi-trash3 text-danger fs-3'
-                                style={{ cursor: 'pointer' }}
+                                className="bi bi-trash3 text-danger fs-3"
+                                style={{ cursor: "pointer" }}
                                 onClick={handleDelete}
                               ></i>
                             </div>
@@ -651,17 +703,17 @@ const SingleProduct = () => {
                           <div></div>
                         )}
                       </div>
-                      <h6 className='mt-3 fw-bold'>PROMOTIONS</h6>
-                      <div className='d-flex mt-2'>
-                        <i className='bi bi-telephone-fill fs-3'></i>
-                        <p className='text-dark mt-2 ms-4'>
-                          Call{' '}
+                      <h6 className="mt-3 fw-bold">PROMOTIONS</h6>
+                      <div className="d-flex mt-2">
+                        <i className="bi bi-telephone-fill fs-3"></i>
+                        <p className="text-dark mt-2 ms-4">
+                          Call{" "}
                           <a
-                            className='text-decoration-none text-red '
-                            href='tel:234 901 454 452'
+                            className="text-decoration-none text-red "
+                            href="tel:234 901 454 452"
                           >
                             +234 901 454 4520
-                          </a>{' '}
+                          </a>{" "}
                           To Order
                         </p>
                       </div>
@@ -669,23 +721,23 @@ const SingleProduct = () => {
                   </div>
                   <SocialShareButtons
                     url={`https://elonatech.com.ng/product/${product?.slug}/${product?._id}`}
-                    title={product?.name || ''}
-                    image={product?.images?.[0]?.url || ''}
+                    title={product?.name || ""}
+                    image={product?.images?.[0]?.url || ""}
                   />
                 </div>
               </div>
 
-              {data.category !== 'Computer' ? (
-                <div className='container mt-5  mb-5'>
-                  <div className='row '>
-                    <div className='col-lg-12'>
-                      <h4 className='fw-bold mb-3 mt-3'>Product Detail</h4>
-                      <hr className='text-danger' />
-                      <div className='border-0'>
+              {data.category !== "Computer" ? (
+                <div className="container mt-5  mb-5">
+                  <div className="row ">
+                    <div className="col-lg-12">
+                      <h4 className="fw-bold mb-3 mt-3">Product Detail</h4>
+                      <hr className="text-danger" />
+                      <div className="border-0">
                         <div
-                          className='description mt-2 mb-5 p-'
+                          className="description mt-2 mb-5 p-"
                           dangerouslySetInnerHTML={{
-                            __html: DOMPurify.sanitize(data.description)
+                            __html: DOMPurify.sanitize(data.description),
                           }}
                         ></div>
                       </div>
@@ -695,21 +747,21 @@ const SingleProduct = () => {
               ) : (
                 <div>
                   <div
-                    className='container mt-5'
-                    style={{ backgroundColor: '#f1f1f2' }}
+                    className="container mt-5"
+                    style={{ backgroundColor: "#f1f1f2" }}
                   >
-                    <div className='row '>
-                      <div className='col-lg-12'>
-                        <h4 className='fw-bold mb-3 mt-3'>Overview</h4>
-                        <hr className='text-danger' />
+                    <div className="row ">
+                      <div className="col-lg-12">
+                        <h4 className="fw-bold mb-3 mt-3">Overview</h4>
+                        <hr className="text-danger" />
                         <div
-                          className='card border-0'
-                          style={{ backgroundColor: '#f1f1f2' }}
+                          className="card border-0"
+                          style={{ backgroundColor: "#f1f1f2" }}
                         >
                           <div
-                            className='description mt-2 mb-5'
+                            className="description mt-2 mb-5"
                             dangerouslySetInnerHTML={{
-                              __html: DOMPurify.sanitize(data.description)
+                              __html: DOMPurify.sanitize(data.description),
                             }}
                           ></div>
                         </div>
@@ -717,97 +769,97 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <div>
-                    {computer.map(com => (
+                    {computer.map((com) => (
                       <div key={com.id}>
-                        <h4 className='fw-bold mb-3'>Description</h4>
+                        <h4 className="fw-bold mb-3">Description</h4>
                         <table
-                          className='table table-bordered'
-                          style={{ width: '100%' }}
+                          className="table table-bordered"
+                          style={{ width: "100%" }}
                         >
                           <thead>
                             <tr></tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <th scope='row' style={{ width: '30%' }}>
+                              <th scope="row" style={{ width: "30%" }}>
                                 Brand
                               </th>
-                              <td style={{ width: '60%' }}>{data.brand} </td>
+                              <td style={{ width: "60%" }}>{data.brand} </td>
                             </tr>
                             <tr>
-                              <th scope='row'>Series</th>
-                              <td colspan='2'>{com.series}</td>
+                              <th scope="row">Series</th>
+                              <td colspan="2">{com.series}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Item model number</th>
-                              <td colspan='2'>{com.model}</td>
+                              <th scope="row">Item model number</th>
+                              <td colspan="2">{com.model}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Item Weight</th>
+                              <th scope="row">Item Weight</th>
                               <td>{com.weight}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Product Dimensions</th>
+                              <th scope="row">Product Dimensions</th>
                               <td>{com.dimension}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Item Dimensions LxWxH</th>
+                              <th scope="row">Item Dimensions LxWxH</th>
                               <td>{com.item}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Color</th>
+                              <th scope="row">Color</th>
                               <td>{com.color}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Hardware Platform</th>
+                              <th scope="row">Hardware Platform</th>
                               <td>{com.hardware}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Operating System</th>
+                              <th scope="row">Operating System</th>
                               <td>{com.os}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Processor Brand</th>
+                              <th scope="row">Processor Brand</th>
                               <td>{com.processor}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Number of Processors</th>
+                              <th scope="row">Number of Processors</th>
                               <td>{com.number}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Computer Memory Type</th>
+                              <th scope="row">Computer Memory Type</th>
                               <td>{com.memory}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>RAM</th>
+                              <th scope="row">RAM</th>
                               <td>{com.ram}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Hard Drive</th>
+                              <th scope="row">Hard Drive</th>
                               <td>{com.drive}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Screen display size</th>
+                              <th scope="row">Screen display size</th>
                               <td>{com.display}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Screen Resolution</th>
+                              <th scope="row">Screen Resolution</th>
                               <td>{com.resolution}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Graphics Coprocessor</th>
+                              <th scope="row">Graphics Coprocessor</th>
                               <td>{com.graphics}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Voltage</th>
+                              <th scope="row">Voltage</th>
                               <td>{com.voltage}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Batteries</th>
+                              <th scope="row">Batteries</th>
                               <td>{com.battery}</td>
                             </tr>
                             <tr>
-                              <th scope='row'>Wireless Type</th>
+                              <th scope="row">Wireless Type</th>
                               <td>{com.wireless}</td>
                             </tr>
                           </tbody>
@@ -819,22 +871,22 @@ const SingleProduct = () => {
               )}
             </div>
 
-            <div className='container mt-4 mb-4'>
-              <div className='d-flex justify-content-center align-items-center'>
+            <div className="container mt-4 mb-4">
+              <div className="d-flex justify-content-center align-items-center">
                 <button
                   onClick={handleGoBack}
-                  className='btn btn-outline-dark nav-button'
+                  className="btn btn-outline-dark nav-button"
                 >
-                  <IoArrowBackOutline className='me-2' />
+                  <IoArrowBackOutline className="me-2" />
                   Previous
                 </button>
                 {nextProductId && nextProductSlug && (
                   <button
                     onClick={handleNavigateNext}
-                    className='btn btn-outline-dark nav-button'
+                    className="btn btn-outline-dark nav-button"
                   >
                     Next
-                    <IoArrowForwardOutline className='ms-2' />
+                    <IoArrowForwardOutline className="ms-2" />
                   </button>
                 )}
               </div>
@@ -842,14 +894,16 @@ const SingleProduct = () => {
 
             {relatedProducts.length > 0 && (
               <ProductSection
-                title={<h4 className='fw-bold mb-3 mt-3'>Related Products</h4>}
+                title={<h4 className="fw-bold mb-3 mt-3">Related Products</h4>}
                 products={relatedProducts}
               />
             )}
             {recentlyViewed.length > 0 && (
               <ProductSection
                 title={
-                  <h4 className='fw-bold mb-3 mt-3'>Recently Viewed Products</h4>
+                  <h4 className="fw-bold mb-3 mt-3">
+                    Recently Viewed Products
+                  </h4>
                 }
                 products={recentlyViewed}
               />
@@ -858,7 +912,7 @@ const SingleProduct = () => {
         )}
       </section>
     </>
-  )
-}
+  );
+};
 
-export default SingleProduct
+export default SingleProduct;

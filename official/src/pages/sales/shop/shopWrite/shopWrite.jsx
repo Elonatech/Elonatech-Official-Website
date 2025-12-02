@@ -14,7 +14,7 @@ const shopWrite = () => {
     const value = "Pos";
     return value;
   };
-
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -22,6 +22,7 @@ const shopWrite = () => {
   const [odd, setOdd] = useState("");
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState(getInitialState);
+  // const [category, setCategory] = useState("");
   const [images, setImages] = useState([]);
 
   // Handle Price
@@ -51,6 +52,7 @@ const shopWrite = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      setLoading(true);
       const formData = new FormData();
       formData.append("name", name);
       formData.append("description", description);
@@ -59,6 +61,7 @@ const shopWrite = () => {
       formData.append("brand", brand);
       formData.append("quantity", quantity);
       formData.append("category", category);
+
 
       images.forEach((file) => formData.append("images", file));
   
@@ -79,6 +82,8 @@ const shopWrite = () => {
     } catch (error) {
       console.error("Error during API call:", error);
       toast.warning("Please Fill All Required Fields");
+    }finally {
+      setLoading(false);
     }
   };
   
@@ -176,12 +181,27 @@ const shopWrite = () => {
                 onChange={(e) => setCategory(e.target.value)}
                 id="inputGroupSelect01"
               >
+                {/* <option value="Products">Products</option> */}
                 <option value="Pos System">POS System</option>
                 <option value="Office">Office</option>
                 <option value="Printer">Printer</option>
                 <option value="Network">Network Devices</option>
-                <option value="Computer">Computer</option>
               </select>
+                 {/* <select
+                  className="form-select"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  id="inputGroupSelect01"
+                >
+                  
+                  <option value="Products">Products</option>
+                  <option value="Pos System">POS System</option>
+                  <option value="Office">Office</option>
+                  <option value="Printer">Printer</option>
+                  <option value="Network">Network Devices</option>
+                  <option value="Computer">Computer</option>
+              </select> */}
+
             </div>
           </div>
           <div className="row">
@@ -232,7 +252,7 @@ const shopWrite = () => {
               class="btn btn-primary"
               onClick={handleSubmit}
             >
-              Upload
+              {loading ? 'loading' : 'Upload'}
             </button>
           </div>
         </div>

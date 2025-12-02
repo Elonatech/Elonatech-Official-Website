@@ -27,9 +27,6 @@ const BlogPages = () => {
     setActiveItem(item);
   };
   
-
-
-
   useEffect(() => {
     const fetchData = async () => {
       try {

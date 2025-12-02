@@ -260,7 +260,7 @@ Graphic Design, Branding and Digital Marketing.'
           <div class="col-lg-2  mx-1 p-3 mb-5 rounded">
             <div class="kontribusi">
               <div class="team-item rounded overflow-hidden pb-4">
-                <Link className='text-decoration-none' to={'/samuel-folarin'}>
+                <Link className='text-decoration-none' to={'/toju-okenejoe'}>
                   <img class="img-fluid mb-4 toju-img" src="https://res.cloudinary.com/davecz6pb/image/upload/v1762267339/products/nhdp0rlogtsalqaymsph.jpg" alt=""/>
                   <h4 className='fw-bold' style={{color:"#34548c"}}>Toju Okene-Joe</h4>
                   <h6 class="text-danger">Creative Designer | Team Lead</h6>

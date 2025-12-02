@@ -7,8 +7,8 @@
 } */
 
 .navbar {
-  display: block !important; 
-  visibility: visible !important; 
+  /* display: block !important; */
+  visibility: visible !important;
   opacity: 1 !important;
   z-index: 1000;
 }
@@ -67,9 +67,9 @@
 }
 
 .NAVba {
-  background: transparent;
-
-
+  /* background: #11353D; */
+  /* display: none; */
+  background-color: transparent;
 }
 
 .NAVbar {
@@ -80,10 +80,6 @@
 
 
 }
-
-
-
-
 
 .navbar-toggler {
   border: none;
@@ -101,14 +97,11 @@
 }
 
 
-
 .dismiss-nav-man:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
-
 
 .e-fonte {
   font-size: 17px;
@@ -121,15 +114,6 @@
   font-weight: bold;
   color: #dc3545 !important;
 }
-
-
-/* 
-.cart-badge{
-  background-color:#34548c;
-}
-.cart-badge:hover{
-  background-color: #dc3545;
-} */
 
 .i-fonte {
   font-size: 17px;
@@ -1123,17 +1107,40 @@
     width: 1100px;
   }
 
+
+  /* @media (min-width: 1236px) {
+
+    .offcanvas.offcanvas-end {
+      position: static !important;
+      visibility: visible !important;
+      transform: none !important;
+      width: auto !important;
+      height: auto !important;
+      background: transparent !important;
+      border: none !important;
+    }
+
+    .offcanvas-backdrop {
+      display: none !important;
+    }
+
+    .offcanvas-body {
+      display: flex !important;
+      padding: 0 !important;
+    }
+
+    .btn-close {
+      display: none !important;
+    }
+  } */
+
 }
-
-
 
 
 @media only screen and (max-width: 500px) {
 
   .navbar-bg-change {
     background: #11253df7;
-
-
   }
 
   .dropdown-item {
@@ -1142,21 +1149,20 @@
     position: relative;
     left: 17%;
   }
-
-
-
 }
 
 .salesSupply {
   display: none;
 }
 
-
 @media (max-width: 1236px) {
   #offcanvasNavbar2 {
     background: #11253df7;
-    width: 350px; height: 608px;
+    width: 350px;
+    height: 608px;
   }
+
+ 
 }
 
 

@@ -1,293 +1,293 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
-import Pagination from '../../../components/Pagination/Pagination'
-import { BASEURL } from '../../../BaseURL/BaseURL'
-import Loading from '../../../components/Loading/Loading'
-import axios from 'axios'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { useCart } from 'react-use-cart'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import PrinterFilter from './printerFilter'
-import './printers.css'
-import Slider from '@mui/material/Slider'
+import React, { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import Pagination from "../../../components/Pagination/Pagination";
+import { BASEURL } from "../../../BaseURL/BaseURL";
+import Loading from "../../../components/Loading/Loading";
+import axios from "axios";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useCart } from "react-use-cart";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import PrinterFilter from "./printerFilter";
+import "./printers.css";
+import Slider from "@mui/material/Slider";
 
 const Printers = () => {
   const [filters, setFilters] = useState({
-    type: '',
-    brand: '',
-    price: [0, 1000000]
-  })
+    type: "",
+    brand: "",
+    price: [0, 1000000],
+  });
 
-  const [filteredProducts, setFilteredProducts] = useState([])
-  const [priceRange, setPriceRange] = useState([0, 1000000])
-  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000])
-  const [brands, setBrands] = useState([])
-  const [data, setData] = useState([])
-  const [records, setRecords] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(12)
-  const [pageNumberLimit] = useState(4)
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(4)
-  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
-  const [activeItem, setActiveItem] = useState('Item 5')
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [priceRange, setPriceRange] = useState([0, 1000000]);
+  const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
+  const [brands, setBrands] = useState([]);
+  const [data, setData] = useState([]);
+  const [records, setRecords] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(12);
+  const [pageNumberLimit] = useState(4);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(4);
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
+  const [activeItem, setActiveItem] = useState("Item 5");
 
-  const handleClick = item => {
-    setActiveItem(item)
-  }
+  const handleClick = (item) => {
+    setActiveItem(item);
+  };
 
   useEffect(() => {
     fetch(`${BASEURL}/api/v1/product/filter?category=Printer`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.minPrice !== undefined && data.maxPrice !== undefined) {
-          setDefaultPriceRange([data.minPrice, data.maxPrice])
-          setPriceRange([data.minPrice, data.maxPrice])
-          setFilters(prevFilters => ({
+          setDefaultPriceRange([data.minPrice, data.maxPrice]);
+          setPriceRange([data.minPrice, data.maxPrice]);
+          setFilters((prevFilters) => ({
             ...prevFilters,
-            price: [data.minPrice, data.maxPrice]
-          }))
+            price: [data.minPrice, data.maxPrice],
+          }));
         }
 
-        const reversedProducts = [...data.data].reverse(); 
+        const reversedProducts = [...data.data].reverse();
         setFilteredProducts(reversedProducts);
-        
-        const uniqueBrands = Array.from(
-          new Set(data.data.map(product => product.brand.toUpperCase()))
-        )
-        setBrands(uniqueBrands)
 
-        setFilteredProducts(data.data)
+        const uniqueBrands = Array.from(
+          new Set(data.data.map((product) => product.brand.toUpperCase()))
+        );
+        setBrands(uniqueBrands);
+
+        setFilteredProducts(data.data);
       })
-      .catch(error => console.error('Error fetching initial data:', error))
-  }, [])
+      .catch((error) => console.error("Error fetching initial data:", error));
+  }, []);
 
   const resetPriceRange = () => {
-    setPriceRange(defaultPriceRange)
-    setFilters(prevFilters => ({
+    setPriceRange(defaultPriceRange);
+    setFilters((prevFilters) => ({
       ...prevFilters,
-      price: defaultPriceRange
-    }))
-    applyFilters(filters)
-  }
+      price: defaultPriceRange,
+    }));
+    applyFilters(filters);
+  };
 
-  const handleCheckboxChange = event => {
-    const { name, value, checked } = event.target
-    setFilters(prevFilters => ({
+  const handleCheckboxChange = (event) => {
+    const { name, value, checked } = event.target;
+    setFilters((prevFilters) => ({
       ...prevFilters,
-      [name]: checked ? value : ''
-    }))
-    applyFilters(filters)
-  }
+      [name]: checked ? value : "",
+    }));
+    applyFilters(filters);
+  };
 
   const handlePriceChange = (event, newValue) => {
-    setFilters(prevFilters => ({
+    setFilters((prevFilters) => ({
       ...prevFilters,
-      price: newValue
-    }))
-  }
+      price: newValue,
+    }));
+  };
 
   const handleApplyClick = () => {
-    applyFilters(filters)
-  }
+    applyFilters(filters);
+  };
 
-  const applyFilters = updatedFilters => {
-    let queryParams = []
+  const applyFilters = (updatedFilters) => {
+    let queryParams = [];
     if (updatedFilters.type) {
-      queryParams.push(`type=${updatedFilters.type.toLowerCase()}`)
+      queryParams.push(`type=${updatedFilters.type.toLowerCase()}`);
     }
     if (updatedFilters.brand) {
       queryParams.push(
-        `brand=${updatedFilters.brand.replace(/\s+/g, '').toLowerCase()}`
-      )
+        `brand=${updatedFilters.brand.replace(/\s+/g, "").toLowerCase()}`
+      );
     }
     if (
       updatedFilters.price[0] !== defaultPriceRange[0] ||
       updatedFilters.price[1] !== defaultPriceRange[1]
     ) {
-      queryParams.push(`minPrice=${updatedFilters.price[0]}`)
-      queryParams.push(`maxPrice=${updatedFilters.price[1]}`)
+      queryParams.push(`minPrice=${updatedFilters.price[0]}`);
+      queryParams.push(`maxPrice=${updatedFilters.price[1]}`);
     }
-    const queryString = queryParams.length > 0 ? queryParams.join('&') : ''
+    const queryString = queryParams.length > 0 ? queryParams.join("&") : "";
     fetch(`${BASEURL}/api/v1/product/filter?category=Printer&${queryString}`)
-      .then(response => response.json())
-      .then(data => {
-        setFilteredProducts(data.data)
+      .then((response) => response.json())
+      .then((data) => {
+        setFilteredProducts(data.data);
       })
-      .catch(error => console.error('Error:', error))
-  }
+      .catch((error) => console.error("Error:", error));
+  };
 
-  const formatPrice = price => {
-    return price.toLocaleString()
-  }
+  const formatPrice = (price) => {
+    return price.toLocaleString();
+  };
 
   const handleInputPriceChange = (event, index) => {
-    const value = event.target.value.replace(/[^0-9]/g, '')
-    const newPrice = [...filters.price]
-    newPrice[index] = parseFloat(value) || 0
-    setFilters(prevFilters => ({
+    const value = event.target.value.replace(/[^0-9]/g, "");
+    const newPrice = [...filters.price];
+    newPrice[index] = parseFloat(value) || 0;
+    setFilters((prevFilters) => ({
       ...prevFilters,
-      price: newPrice
-    }))
-  }
+      price: newPrice,
+    }));
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/product/`)
+        const response = await axios.get(`${BASEURL}/api/v1/product/`);
         const filtered = response.data.getAllProducts.filter(
-          user => user.category === 'Printer'
-        )
-        setData(filtered.reverse())
-        setRecords(filtered)
-        setIsLoading(false)
+          (user) => user.category === "Printer"
+        );
+        setData(filtered.reverse());
+        setRecords(filtered);
+        setIsLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error)
-        setIsLoading(false)
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
       }
-    }
-    fetchData()
-  }, [])
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
-    const page = parseInt(searchParams.get('page') || '1', 10)
-    setCurrentPage(page)
-  }, [searchParams])
+    const page = parseInt(searchParams.get("page") || "1", 10);
+    setCurrentPage(page);
+  }, [searchParams]);
 
   useEffect(() => {
     if (filteredProducts.length > 0) {
-      setRecords(filteredProducts)
+      setRecords(filteredProducts);
     } else if (filteredProducts.length === 0 && !isLoading) {
-      setRecords(data)
+      setRecords(data);
     }
-  }, [filteredProducts, isLoading, data])
+  }, [filteredProducts, isLoading, data]);
 
-  const Filter = event => {
-    const searchTerm = event.target.value.toLowerCase()
-    setCurrentPage(1)
-    setSearchParams({ page: '1' })
+  const Filter = (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+    setCurrentPage(1);
+    setSearchParams({ page: "1" });
 
-    if (searchTerm === '') {
-      setFilteredProducts([])
+    if (searchTerm === "") {
+      setFilteredProducts([]);
     } else {
-      const filtered = data.filter(product =>
+      const filtered = data.filter((product) =>
         product.name.toLowerCase().includes(searchTerm)
-      )
-      setFilteredProducts(filtered)
+      );
+      setFilteredProducts(filtered);
     }
-  }
+  };
 
-  const paginate = pageNumber => {
-    setCurrentPage(pageNumber)
-    setSearchParams({ page: pageNumber.toString() })
-  }
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    setSearchParams({ page: pageNumber.toString() });
+  };
 
-  const indexOfLastItem = currentPage * itemsPerPage
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage
-  const currentPosts = records.slice(indexOfFirstItem, indexOfLastItem)
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentPosts = records.slice(indexOfFirstItem, indexOfLastItem);
 
   const displayedProducts =
-    currentPosts.length > 0 ? currentPosts : records.slice(0, itemsPerPage)
+    currentPosts.length > 0 ? currentPosts : records.slice(0, itemsPerPage);
 
   const handleNextbtn = () => {
-    const nextPage = currentPage + 1
-    setCurrentPage(nextPage)
-    setSearchParams({ page: nextPage.toString() })
+    const nextPage = currentPage + 1;
+    setCurrentPage(nextPage);
+    setSearchParams({ page: nextPage.toString() });
 
     if (nextPage > maxPageNumberLimit) {
-      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
-      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit)
+      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
     }
-  }
+  };
 
   const handlePrevbtn = () => {
-    const prevPage = currentPage - 1
-    setCurrentPage(prevPage)
-    setSearchParams({ page: prevPage.toString() })
+    const prevPage = currentPage - 1;
+    setCurrentPage(prevPage);
+    setSearchParams({ page: prevPage.toString() });
 
     if ((prevPage - 1) % pageNumberLimit === 0) {
-      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
-      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit)
+      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
     }
-  }
+  };
 
-  const { addItem } = useCart()
+  const { addItem } = useCart();
 
-  const [displayPopUp, setDisplayPopUp] = useState(true)
+  const [displayPopUp, setDisplayPopUp] = useState(true);
 
   const closePopUp = () => {
-    localStorage.setItem('PrinterPopUp', true)
-    setDisplayPopUp(false)
-  }
+    localStorage.setItem("PrinterPopUp", true);
+    setDisplayPopUp(false);
+  };
 
   useEffect(() => {
-    let returningUser = localStorage.getItem('PrinterPopUp')
+    let returningUser = localStorage.getItem("PrinterPopUp");
     if (!returningUser) {
       toast.warn(
-        'Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase',
+        "Please Note That Prices Are Subject to Change Without Prior Notice Due to The Fluctuation in Exchange Rate, Kindly Confirm Every Price at Readiness for Purchase",
         {
-          position: 'top-center',
+          position: "top-center",
           autoClose: 20000,
-          className: 'pop-up-message'
+          className: "pop-up-message",
         },
         closePopUp()
-      )
+      );
     }
-  }, [])
+  }, []);
 
   return (
     <>
-      <div className='container-fluid printers-section'>
-        <div className='text-content'>
+      <div className="container-fluid printers-section">
+        <div className="text-content">
           <h2>Printers, Copiers and Scanners</h2>
           <h5>
             Printing has become a multi-faceted commercial offset and digital
             print facility
           </h5>
-          <p className='lead'>
+          <p className="lead">
             From home use to small businesses, and to large businesses, we've
             got all the best All-in-One printers you need.
           </p>
         </div>
       </div>
 
-      <main className='container-fluid custom-container'>
-        <div className='row g-0'>
-          <div className='col-md-9'>
-            <section className='ftco-section' id='skills-section'>
-              <div className='container custom-container'>
-                <div className='row justify-content-center pt-3 pb-4'>
-                  <div className='col-md-8 pt-4'>
+      <main className="container-fluid custom-container">
+        <div className="row g-0">
+          <div className="col-md-9">
+            <section className="ftco-section" id="skills-section">
+              <div className="container custom-container">
+                <div className="row justify-content-center pt-3 pb-4">
+                  <div className="col-md-8 pt-4">
                     <h6>
-                      SHOWING <span className='text-danger'>{currentPage}</span>{' '}
-                      –{' '}
-                      <span className='text-danger'>
+                      SHOWING <span className="text-danger">{currentPage}</span>{" "}
+                      –{" "}
+                      <span className="text-danger">
                         {currentPage * itemsPerPage}
-                      </span>{' '}
-                      OF <span className='text-danger'>{records.length}</span>{' '}
+                      </span>{" "}
+                      OF <span className="text-danger">{records.length}</span>{" "}
                       RESULTS
                     </h6>
                   </div>
-                  <div className='col-md-4 pt-3'>
+                  <div className="col-md-4 pt-3">
                     <input
-                      className='form-control'
-                      type='search'
+                      className="form-control"
+                      type="search"
                       onChange={Filter}
-                      placeholder='Search'
-                      aria-label='Search'
+                      placeholder="Search"
+                      aria-label="Search"
                     />
                   </div>
                 </div>
 
-                <div className='row g-1 progress-circle'>
+                <div className="row g-1 progress-circle">
                   {isLoading ? (
-                    <div className='container'>
-                      <div className='row'>
-                        <div className='col-md-12'>
-                          <div className='d-flex justify-content-center'>
-                            <div className='my-5 py-5'>
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="d-flex justify-content-center">
+                            <div className="my-5 py-5">
                               <Loading />
                             </div>
                           </div>
@@ -295,64 +295,85 @@ const Printers = () => {
                       </div>
                     </div>
                   ) : (
-                    displayedProducts.map(product => (
-                      <div className='col-lg-3 mb-4' key={product.id}>
-                        <div className='mx-1 shadow-lg p-3 bg-body rounded showbutton'>
+                    displayedProducts.map((product) => (
+                      <div className="col-lg-3 mb-4" key={product.id}>
+                        <div className="mx-1 shadow-lg p-3 bg-body rounded showbutton">
                           <Link
-                            className='text-decoration-none text-dark'
-                            to={`/product/${product.slug}/${product._id}?fromPage=${currentPage}`}
-                            state={{ from: window.location.pathname }}
+                            className="text-decoration-none text-dark"
+                            // to={`/product/${product.slug}/${product._id}?fromPage=${currentPage}`}
+                            // state={{ from: window.location.pathname }}
+                            to={`/product/${product.slug}/${product._id}`}
+                            state={{
+                              fromPage: currentPage,
+                              fromCategory: product.category,
+                              fromPath: window.location.pathname,
+                            }}
                           >
-                            <div className='text-center take'>
+                            <div className="text-center take">
                               <LazyLoadImage
                                 src={product.images[0]?.url}
-                                placeholderSrc='https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif'
-                                className='lazyload'
-                                width='130'
-                                height='130'
-                                alt=''
+                                placeholderSrc="https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif"
+                                className="lazyload"
+                                width="130"
+                                height="130"
+                                alt=""
                               />
                             </div>
-                            <h5 className='fw-normal pt-3 product-name'>
+                            <h5 className="fw-normal pt-3 product-name">
                               {product.name.slice(0, 23)}...
                             </h5>
-                            <p className='lead fs-6'>{product.category}</p>
+                            <p className="lead fs-6">{product.category}</p>
 
                             <div
-                              className='stars'
-                              style={{ color: 'black', marginBottom: '10px' }}
+                              className="stars"
+                              style={{ color: "black", marginBottom: "10px" }}
                             >
                               {[...Array(5)].map((star, index) => (
                                 <i
                                   key={index}
                                   className={
                                     index < Math.floor(5)
-                                      ? 'bi bi-star-fill'
-                                      : 'bi bi-star'
+                                      ? "bi bi-star-fill"
+                                      : "bi bi-star"
                                   }
-                                  style={{ color: '#f4be1d' }}
+                                  style={{ color: "#f4be1d" }}
                                 />
                               ))}
                             </div>
 
-                            <div className='d-flex justify-content-between'>
-                              <p className='mt-2 px-1 text-danger'>
+                            <div className="d-flex justify-content-between">
+                              <p className="mt-2 px-1 text-danger">
                                 <strong>
                                   ₦ {Number(product.price).toLocaleString()}.00
                                 </strong>
                               </p>
                               <i
-                                className='bi bi-cart p-1'
-                                style={{ fontSize: '20px', cursor: 'pointer' }}
+                                className="bi bi-cart p-1"
+                                style={{ fontSize: "20px", cursor: "pointer" }}
                               />
                             </div>
                           </Link>
-                          <div className='d-grid gap-2'>
+                          <div className="d-grid gap-2">
                             <div
-                              className='btn btn-outline add-to-cart'
-                              onClick={() => addItem(product)}
+                              className="btn btn-outline add-to-cart"
+                              onClick={() => {
+                                addItem(product);
+                                toast.success(
+                                  `${product.name} added to cart!`,
+                                  {
+                                    position: "bottom-right",
+                                    // toastStyle: { width: "3200px" },
+                                    autoClose: 4000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                  }
+                                );
+                              }}
                             >
-                              <h6 className='text-danger'>ADD TO CART</h6>
+                              <h6 className="text-danger">ADD TO CART</h6>
                             </div>
                           </div>
                         </div>
@@ -361,7 +382,7 @@ const Printers = () => {
                   )}
                 </div>
 
-                <div className='mt-5'>
+                <div className="mt-5">
                   <Pagination
                     totalPosts={records.length}
                     itemsPerPage={itemsPerPage}
@@ -376,22 +397,22 @@ const Printers = () => {
               </div>
             </section>
           </div>
-          <div className='col-md-3 pad '>
-            <div className='thix'>
-              <div className='browse'>
-              <form class='d-flex'></form>
-                <h4 className='fw-bold tyu'>Browse Categories</h4>
-                <ul className='list-unstyled'>
+          <div className="col-md-3 pad ">
+            <div className="thix">
+              <div className="browse">
+                <form class="d-flex"></form>
+                <h4 className="fw-bold tyu">Browse Categories</h4>
+                <ul className="list-unstyled">
                   <li>
                     <Link
-                      to={'/products'}
-                      className='text-dark'
-                      style={{ textDecoration: 'none' }}
-                      onMouseEnter={e =>
-                        (e.currentTarget.style.textDecoration = 'underline')
+                      to={"/products"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
                       }
-                      onMouseLeave={e =>
-                        (e.currentTarget.style.textDecoration = 'none')
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
                       }
                     >
                       All Products
@@ -399,14 +420,14 @@ const Printers = () => {
                   </li>
                   <li>
                     <Link
-                      to={'/computers'}
-                      className='text-dark'
-                      style={{ textDecoration: 'none' }}
-                      onMouseEnter={e =>
-                        (e.currentTarget.style.textDecoration = 'underline')
+                      to={"/computers"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
                       }
-                      onMouseLeave={e =>
-                        (e.currentTarget.style.textDecoration = 'none')
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
                       }
                     >
                       Computers
@@ -415,14 +436,14 @@ const Printers = () => {
 
                   <li>
                     <Link
-                      to={'/office-equipment'}
-                      className='text-dark'
-                      style={{ textDecoration: 'none' }}
-                      onMouseEnter={e =>
-                        (e.currentTarget.style.textDecoration = 'underline')
+                      to={"/office-equipment"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
                       }
-                      onMouseLeave={e =>
-                        (e.currentTarget.style.textDecoration = 'none')
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
                       }
                     >
                       Office Equipment
@@ -430,14 +451,14 @@ const Printers = () => {
                   </li>
                   <li>
                     <Link
-                      to={'/pos-system'}
-                      className='text-dark'
-                      style={{ textDecoration: 'none' }}
-                      onMouseEnter={e =>
-                        (e.currentTarget.style.textDecoration = 'underline')
+                      to={"/pos-system"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
                       }
-                      onMouseLeave={e =>
-                        (e.currentTarget.style.textDecoration = 'none')
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
                       }
                     >
                       POS System
@@ -445,25 +466,25 @@ const Printers = () => {
                   </li>
                   <li>
                     <Link
-                      to={'/printers'}
+                      to={"/printers"}
                       className={`item ${
-                        activeItem === 'Item 5' ? 'active-category' : ''
+                        activeItem === "Item 5" ? "active-category" : ""
                       }`}
-                      onClick={() => handleClick('Item 5')}
+                      onClick={() => handleClick("Item 5")}
                     >
                       Printers
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={'/network-devices'}
-                      className='text-dark'
-                      style={{ textDecoration: 'none' }}
-                      onMouseEnter={e =>
-                        (e.currentTarget.style.textDecoration = 'underline')
+                      to={"/network-devices"}
+                      className="text-dark"
+                      style={{ textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.textDecoration = "underline")
                       }
-                      onMouseLeave={e =>
-                        (e.currentTarget.style.textDecoration = 'none')
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.textDecoration = "none")
                       }
                     >
                       Network Devices
@@ -473,56 +494,56 @@ const Printers = () => {
               </div>
 
               <div
-                className='price-filter price-mobile1'
-                style={{ marginTop: '0' }}
+                className="price-filter price-mobile1"
+                style={{ marginTop: "0" }}
               >
-                <h4 style={{ fontSize: '16px' }} className='fw-bold'>
+                <h4 style={{ fontSize: "16px" }} className="fw-bold">
                   Filter by Price(₦)
                 </h4>
                 <Slider
-                  className='custom-slider slider'
+                  className="custom-slider slider"
                   value={filters.price}
                   onChange={handlePriceChange}
                   min={priceRange[0]}
                   max={priceRange[1]}
                   step={5}
-                  valueLabelDisplay='auto'
+                  valueLabelDisplay="auto"
                 />
-                <div className='price-range-values'>
-                  <div style={{ width: '100%' }}>
+                <div className="price-range-values">
+                  <div style={{ width: "100%" }}>
                     <input
-                      style={{ width: '100%', borderRadius: '5px' }}
-                      type='text'
+                      style={{ width: "100%", borderRadius: "5px" }}
+                      type="text"
                       value={formatPrice(filters.price[0])}
-                      onChange={e => handleInputPriceChange(e, 0)}
-                      className='price-input'
+                      onChange={(e) => handleInputPriceChange(e, 0)}
+                      className="price-input"
                     />
                   </div>
-                  <span className='separator'>-</span>
+                  <span className="separator">-</span>
                   <div>
                     <input
-                      style={{ width: '100%', borderRadius: '5px' }}
-                      type='text'
+                      style={{ width: "100%", borderRadius: "5px" }}
+                      type="text"
                       value={formatPrice(filters.price[1])}
-                      onChange={e => handleInputPriceChange(e, 1)}
-                      className='price-input'
+                      onChange={(e) => handleInputPriceChange(e, 1)}
+                      className="price-input"
                     />
                   </div>
                 </div>
-                <div className='expand btnd'>
+                <div className="expand btnd">
                   <button
-                    type='button'
+                    type="button"
                     onClick={handleApplyClick}
-                    className='apply-btn'
-                    style={{ width: '100%' }}
+                    className="apply-btn"
+                    style={{ width: "100%" }}
                   >
                     Apply Price Range
                   </button>
                   <button
-                    type='button'
+                    type="button"
                     onClick={resetPriceRange}
-                    className='reset-btn'
-                    style={{ width: '100%' }}
+                    className="reset-btn"
+                    style={{ width: "100%" }}
                   >
                     Reset Price Range
                   </button>
@@ -532,12 +553,12 @@ const Printers = () => {
 
             <div
               style={{
-                width: '60%',
-                display: isLoading === true ? 'none' : 'block'
+                width: "60%",
+                display: isLoading === true ? "none" : "block",
               }}
-              className='filter-section pt-2 rounded shadow-sm'
+              className="filter-section pt-2 rounded shadow-sm"
             >
-              <h4 style={{ marginTop: '-8px' }} className='fw-bold shopyy'>
+              <h4 style={{ marginTop: "-8px" }} className="fw-bold shopyy">
                 Sort Products by
               </h4>
               <PrinterFilter setFilteredProducts={setFilteredProducts} />
@@ -546,7 +567,7 @@ const Printers = () => {
         </div>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Printers
+export default Printers;

@@ -13,6 +13,8 @@ const ShopUpdate = () => {
     return value;
   };
 
+  const [Loading, setLoading] = useState(false);
+
   const { id } = useParams();
 
   const [name, setName] = useState("");
@@ -154,7 +156,8 @@ const ShopUpdate = () => {
       await axios.put(`${BASEURL}/api/v1/product/${id}/update`, newData);
       toast.success("Product Updated Successfully");
       setImages([]);
-      navigate(`/product/${id}`)
+      navigate(`/product/:slug/${id}`)
+      // /product/:slug/:id
     } catch (error) {
       toast.warning("Please Fill All Required Fields");
     }
@@ -181,6 +184,8 @@ const ShopUpdate = () => {
       navigate(`/product/${id}`);
     } catch (error) {
       toast.warning("Added New Product Images");
+    }finally {
+      setLoading(false);
     }
   };
 
@@ -573,7 +578,7 @@ const ShopUpdate = () => {
               class="btn btn-success"
               onClick={handleSubmitImage}
             >
-              Update Image
+              {Loading ? 'Loading' : 'Update Image'}
             </button>
           </div>
         </div>

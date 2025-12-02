@@ -336,7 +336,18 @@ const Shop = () => {
                 {/* Product Display or No Results */}
                 <div className='row g-1 progress-circle'>
                   {isLoading ? ( // Show the loader when isLoading is true
-                    <Loading />
+                    // <Loading />
+                     <div className='container'>
+                         <div className='row'>
+                            <div className='col-md-12'>
+                                <div className='d-flex justify-content-center'>
+                                 <div className='my-5 py-5'>
+                                    <Loading />
+                                  </div>
+                                </div>
+                              </div>
+                         </div>
+                    </div>
                   ) : displayedProducts.length > 0 ? (
                     displayedProducts.map(product => {
                       return (
@@ -347,8 +358,14 @@ const Shop = () => {
                           <div className='mx-1 shadow-lg p-3 bg-body rounded showbutton'>
                             <Link
                               className='text-decoration-none text-dark'
-                              to={`/product/${product.slug}/${product._id}?fromPage=${currentPage}`}
-                              state={{ from: window.location.pathname }}
+                              // to={`/product/${product.slug}/${product._id}?fromPage=${currentPage}`}
+                              // state={{ from: window.location.pathname }}
+                              to={`/product/${product.slug}/${product._id}`}
+                              state={{
+                              fromPage: currentPage,       
+                              fromCategory: product.category,
+                              fromPath: window.location.pathname
+                            }}
                             >
                               <div className='text-center take'>
                                 <LazyLoadImage
@@ -413,7 +430,18 @@ const Shop = () => {
                             <div className='d-grid gap-2' key={product.id}>
                               <div
                                 className='btn btn-outline add-to-cart'
-                                onClick={() => addItem(product)}
+                                onClick={() => {
+                                  addItem(product); 
+                                  toast.success(`${product.name} added to cart!`, {
+                                    position: "bottom-right",
+                                    autoClose: 4000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                  });
+                                }}
                               >
                                 <h6 className='text-danger'>ADD TO CART</h6>
                               </div>

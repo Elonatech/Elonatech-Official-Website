@@ -14,6 +14,7 @@ const ComputerWrite = () => {
     return value;
   };
 
+  const [Loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -21,6 +22,7 @@ const ComputerWrite = () => {
   const [odd, setOdd] = useState("");
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState(getInitialState);
+  // const [category, setCategory] = useState("Computer");
   const [series, setSeries] = useState("");
   const [model, setModel] = useState("");
   const [weight, setWeight] = useState("");
@@ -71,6 +73,7 @@ const ComputerWrite = () => {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
+    setLoading(true);
     const formData = new FormData();
     formData.append("name", name);
     formData.append("description", description);
@@ -121,6 +124,8 @@ const ComputerWrite = () => {
   } catch (error) {
     console.error(error);
     toast.error(error.response?.data?.message || "❌ Upload failed");
+  }finally {
+    setLoading(false);
   }
 };
 
@@ -216,6 +221,9 @@ const ComputerWrite = () => {
               <option className="mt-4" value="Computer">
                 Computer
               </option>
+              {/* <option className="mt-4" value="Products">
+                Products
+              </option> */}
             </select>
           </div>
         </div>
@@ -467,7 +475,7 @@ const ComputerWrite = () => {
         </div>
         <div className="col-md-5 mt-3">
           <button type="submit" class="btn btn-primary" onClick={handleSubmit}>
-            Upload
+            {Loading ? 'loading' : 'Upload'}
           </button>
         </div>
       </div>

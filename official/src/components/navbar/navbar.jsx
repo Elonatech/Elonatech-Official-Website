@@ -1,770 +1,770 @@
-import { Link } from 'react-router-dom'
-import logo from './captions/elonatech.png'
-import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
-import { useState, useEffect, useCallback } from 'react'
-import { FiPlus } from 'react-icons/fi'
-import { HiOutlineXMark } from 'react-icons/hi2'
-import { useCart } from 'react-use-cart'
-import './navbar.css'
-import { useAuth } from '../admin/AuthContext'
+import { Link } from "react-router-dom";
+import logo from "./captions/elonatech.png";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { FiPlus } from "react-icons/fi";
+import { HiOutlineXMark } from "react-icons/hi2";
+import { useCart } from "react-use-cart";
+import "./navbar.css";
+import { useAuth } from "../admin/AuthContext";
 
 // Tech
-import hardwareComputer from './icons/Tech/Hardware/computer.png'
-import hardwareMaintenance from './icons/Tech/Hardware/maintaince.png'
-import hardwarePhone from './icons/Tech/Hardware/phone.png'
-import hardwareOffice from './icons/Tech/Hardware/office.png'
+import hardwareComputer from "./icons/Tech/Hardware/computer.png";
+import hardwareMaintenance from "./icons/Tech/Hardware/maintaince.png";
+import hardwarePhone from "./icons/Tech/Hardware/phone.png";
+import hardwareOffice from "./icons/Tech/Hardware/office.png";
 
 // Network Admin
-import networkAdmin from './icons/Tech/Network Admin/networking-manager.png'
-import networkServer from './icons/Tech/Network Admin/server admin.png'
-import networkInfastructure from './icons/Tech/Network Admin/infastructure.png'
-import networkCabling from './icons/Tech/Network Admin/cabling.png'
-import networkCctv from './icons/Tech/Network Admin/cctv.png'
-import networkInternet from './icons/Tech/Network Admin/internet.png'
-import networkSecurity from './icons/Tech/Network Admin/network-security.png'
+import networkAdmin from "./icons/Tech/Network Admin/networking-manager.png";
+import networkServer from "./icons/Tech/Network Admin/server admin.png";
+import networkInfastructure from "./icons/Tech/Network Admin/infastructure.png";
+import networkCabling from "./icons/Tech/Network Admin/cabling.png";
+import networkCctv from "./icons/Tech/Network Admin/cctv.png";
+import networkInternet from "./icons/Tech/Network Admin/internet.png";
+import networkSecurity from "./icons/Tech/Network Admin/network-security.png";
 
 // System Security
-import systemAccess from './icons/Tech/System Security/behavior-blocker.png'
-import systemSurveillnance from './icons/Tech/System Security/surveillance.png'
-import systemTime from './icons/Tech/System Security/time.png'
+import systemAccess from "./icons/Tech/System Security/behavior-blocker.png";
+import systemSurveillnance from "./icons/Tech/System Security/surveillance.png";
+import systemTime from "./icons/Tech/System Security/time.png";
 
 // Telecoms
-import telecomsIp from './icons/Tech/Telecoms/ip.jpg'
-import telecomsVoip from './icons/Tech/Telecoms/voip.jpg'
+import telecomsIp from "./icons/Tech/Telecoms/ip.jpg";
+import telecomsVoip from "./icons/Tech/Telecoms/voip.jpg";
 
 // Software Solution
-import softwareSystem from './icons/Tech/Software Solution/System2-compressed.jpg'
-import softwareApplication from './icons/Tech/Software Solution/Application.png'
-import softwareBusiness from './icons/Tech/Software Solution/business.png'
+import softwareSystem from "./icons/Tech/Software Solution/System2-compressed.jpg";
+import softwareApplication from "./icons/Tech/Software Solution/Application.png";
+import softwareBusiness from "./icons/Tech/Software Solution/business.png";
 
 // Web solution
 
-import webDev from './icons/Digitial//web-programming-12709.png'
-import appDev from './icons/Digitial/Web Solution/developer-mode.png'
-import webDomain from './icons/Digitial/Web Solution/domain-compressed.jpg'
-import WebHost from './icons/Digitial/Web Solution/hosting-compressed.jpg'
+import webDev from "./icons/Digitial//web-programming-12709.png";
+import appDev from "./icons/Digitial/Web Solution/developer-mode.png";
+import webDomain from "./icons/Digitial/Web Solution/domain-compressed.jpg";
+import WebHost from "./icons/Digitial/Web Solution/hosting-compressed.jpg";
 
 // Graphics
 
-import graphicsGraphics from './icons/Digitial/Graphics/graphics.png'
-import graphicsBrand from './icons/Digitial/Graphics/brand.png'
-import graphicsUiux from './icons/Digitial/Graphics/uiux.png'
+import graphicsGraphics from "./icons/Digitial/Graphics/graphics.png";
+import graphicsBrand from "./icons/Digitial/Graphics/brand.png";
+import graphicsUiux from "./icons/Digitial/Graphics/uiux.png";
 
 // Video
 
-import video3d from './icons/Digitial/Video/3d-select.png'
-import videoMotion from './icons/Digitial/Video/motion.png'
-import videoEdit from './icons/Digitial/Video/video-editing.png'
+import video3d from "./icons/Digitial/Video/3d-select.png";
+import videoMotion from "./icons/Digitial/Video/motion.png";
+import videoEdit from "./icons/Digitial/Video/video-editing.png";
 
 // Tele
 
-import teleLivestream from './icons/Digitial/Tele/livestreaming.png'
-import teleVideo from './icons/Digitial/Tele/videoconferencing.png'
+import teleLivestream from "./icons/Digitial/Tele/livestreaming.png";
+import teleVideo from "./icons/Digitial/Tele/videoconferencing.png";
 
-import digitalDigital from './icons/Digitial/Digital/digital.png'
-import digitalSocial from './icons/Digitial/Digital/social.png'
-import digitalEmail from './icons/Digitial/Digital/email.png'
-import digitalSeo from './icons/Digitial/Digital/seo.png'
-import digitalContent from './icons/Digitial/Digital/content.png'
-import digitalPpc from './icons/Digitial/Digital/external-ppc.png'
+import digitalDigital from "./icons/Digitial/Digital/digital.png";
+import digitalSocial from "./icons/Digitial/Digital/social.png";
+import digitalEmail from "./icons/Digitial/Digital/email.png";
+import digitalSeo from "./icons/Digitial/Digital/seo.png";
+import digitalContent from "./icons/Digitial/Digital/content.png";
+import digitalPpc from "./icons/Digitial/Digital/external-ppc.png";
 
 // Sales Supply
-import Salehardware from './icons/Sales/workstation.png'
-import SaleSoftware from './icons/Sales/software.png'
-import SaleConsumbles from './icons/Sales/home-office.png'
+import Salehardware from "./icons/Sales/workstation.png";
+import SaleSoftware from "./icons/Sales/software.png";
+import SaleConsumbles from "./icons/Sales/home-office.png";
 
 const Navbar = () => {
-  const [currentAdmin, setCurrentAdmin] = useState('')
-  const { logout } = useAuth()
+  const [currentAdmin, setCurrentAdmin] = useState("");
+  const { logout } = useAuth();
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem('token'))
-    setCurrentAdmin(auth)
-  }, [])
+    const auth = JSON.parse(localStorage.getItem("token"));
+    setCurrentAdmin(auth);
+  }, []);
 
-  const { totalUniqueItems } = useCart()
-
-  // const logout = () =>{
-  //     const auth = localStorage.removeItem('token');
-  //     toast.success('Admin Successfully Logout');
-  //     setTimeout(() =>{
-  //       navigate(0)
-  //     }, 8000)
-  //     navigate('/')
-  // };
+  const { totalUniqueItems } = useCart();
 
   ////////////////////////////////////////////////////////////////////////////////////////
-  const [techMouseEnter, setTechMouseEnter] = useState(true)
-  const [digitalMouseEnter, setDigitalMouseEnter] = useState(false)
-  const [salesMouseEnter, setSalesMouseEnter] = useState(false)
+  const [techMouseEnter, setTechMouseEnter] = useState(true);
+  const [digitalMouseEnter, setDigitalMouseEnter] = useState(false);
+  const [salesMouseEnter, setSalesMouseEnter] = useState(false);
 
-  const [hardwareMouseOver, setHardwareMouseOver] = useState(true)
-  const [hardwareMouseClick, setHardwareMouseClick] = useState(false)
+  const [hardwareMouseOver, setHardwareMouseOver] = useState(true);
+  const [hardwareMouseClick, setHardwareMouseClick] = useState(false);
 
-  const [networkMouseOver, setNetworkMouseOver] = useState(false)
-  const [networkMouseClick, setNetworkMouseClick] = useState(false)
+  const [networkMouseOver, setNetworkMouseOver] = useState(false);
+  const [networkMouseClick, setNetworkMouseClick] = useState(false);
 
-  const [systemMouseOver, setSystemMouseOver] = useState(false)
-  const [systemMouseClick, setSystemMouseClick] = useState(false)
+  const [systemMouseOver, setSystemMouseOver] = useState(false);
+  const [systemMouseClick, setSystemMouseClick] = useState(false);
 
-  const [telecomMouseOver, setTelecomMouseOver] = useState(false)
-  const [telecomMouseClick, setTelecomMouseClick] = useState(false)
+  const [telecomMouseOver, setTelecomMouseOver] = useState(false);
+  const [telecomMouseClick, setTelecomMouseClick] = useState(false);
 
-  const [softwareMouseOver, setSoftwareMouseOver] = useState(false)
-  const [softwareMouseClick, setSoftwareMouseClick] = useState(false)
+  const [softwareMouseOver, setSoftwareMouseOver] = useState(false);
+  const [softwareMouseClick, setSoftwareMouseClick] = useState(false);
 
-  const [webMouseOver, setWebMouseOver] = useState(false)
-  const [webMouseClick, setWebMouseClick] = useState(false)
+  const [webMouseOver, setWebMouseOver] = useState(false);
+  const [webMouseClick, setWebMouseClick] = useState(false);
 
-  const [digitalMarketMouseOver, setDigitalMarketMouseOver] = useState(false)
-  const [digitalMarketMouseClick, setDigitalMarketMouseClick] = useState(false)
+  const [digitalMarketMouseOver, setDigitalMarketMouseOver] = useState(false);
+  const [digitalMarketMouseClick, setDigitalMarketMouseClick] = useState(false);
 
-  const [graphicsMouseOver, setGraphicsMouseOver] = useState(false)
-  const [graphicsMouseClick, setGraphicsMouseClick] = useState(false)
+  const [graphicsMouseOver, setGraphicsMouseOver] = useState(false);
+  const [graphicsMouseClick, setGraphicsMouseClick] = useState(false);
 
-  const [videoMouseOver, setVideoMouseOver] = useState(false)
-  const [videoMouseClick, setVideoMouseClick] = useState(false)
+  const [videoMouseOver, setVideoMouseOver] = useState(false);
+  const [videoMouseClick, setVideoMouseClick] = useState(false);
 
-  const [teleMouseOver, setTeleMouseOver] = useState(false)
-  const [teleMouseClick, setTeleMouseClick] = useState(false)
+  const [teleMouseOver, setTeleMouseOver] = useState(false);
+  const [teleMouseClick, setTeleMouseClick] = useState(false);
 
-  const [productsSlideNav1, setProductsSlideNav1] = useState(false)
-  const [productsSlideNav2, setProductsSlideNav2] = useState(false)
-  const [productsSlideNav3, setProductsSlideNav3] = useState(false)
-  const [productsSlideNav4, setProductsSlideNav4] = useState(false)
+  const [productsSlideNav1, setProductsSlideNav1] = useState(false);
+  const [productsSlideNav2, setProductsSlideNav2] = useState(false);
+  const [productsSlideNav3, setProductsSlideNav3] = useState(false);
+  const [productsSlideNav4, setProductsSlideNav4] = useState(false);
 
-  const [productHover, setProductHover] = useState(false)
-  const [productClick, setProductClick] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState(null)
+  const [productHover, setProductHover] = useState(false);
+  const [productClick, setProductClick] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   // SAMPLE
-  const isSmallScreen = window.innerWidth < 1236
-  const [isDropdownOpen, setDropdownOpen] = useState(false)
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1236)
+  const isSmallScreen = window.innerWidth < 1236;
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1236);
 
   //
 
-  const [initialLoad, setInitialLoad] = useState(true)
+  const [initialLoad, setInitialLoad] = useState(true);
 
   useEffect(() => {
     if (initialLoad) {
-      handleTechMouseEnter()
-      setInitialLoad(false)
+      handleTechMouseEnter();
+      setInitialLoad(false);
     }
-  }, [])
+  }, []);
 
   const handleHardwareMouseOver = () => {
     if (!isSmallScreen) {
-      setActiveDropdown('hardware')
+      setActiveDropdown("hardware");
     }
-  }
+  };
 
   const handleHardwareMouseClick = () => {
     if (isSmallScreen) {
-      setActiveDropdown(activeDropdown === 'hardware' ? null : 'hardware')
+      setActiveDropdown(activeDropdown === "hardware" ? null : "hardware");
     }
-  }
+  };
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth < 1236) // Adjust the breakpoint as needed
-    }
+      setIsMobileView(window.innerWidth < 1236); // Adjust the breakpoint as needed
+    };
 
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // NETWORK
   const handleNetworkMouseOver = () => {
     if (!isSmallScreen) {
-      setActiveDropdown('network')
+      setActiveDropdown("network");
     }
-  }
+  };
 
   const handleNetworkMouseClick = () => {
     if (isSmallScreen) {
-      setActiveDropdown(activeDropdown === 'network' ? null : 'network')
+      setActiveDropdown(activeDropdown === "network" ? null : "network");
     }
-  }
+  };
 
   // SYSTEM
   const handleSystemMouseOver = () => {
     if (!isSmallScreen) {
-      setActiveDropdown('system')
+      setActiveDropdown("system");
     }
-  }
+  };
 
   const handleSystemMouseClick = () => {
     if (isSmallScreen) {
-      setActiveDropdown(activeDropdown === 'system' ? null : 'system')
+      setActiveDropdown(activeDropdown === "system" ? null : "system");
     }
-  }
+  };
 
   // TELECOM
   const handleTelecomMouseOver = () => {
     if (!isSmallScreen) {
-      setActiveDropdown('telecom')
+      setActiveDropdown("telecom");
     }
-  }
+  };
 
   const handleTelecomMouseClick = () => {
     if (isSmallScreen) {
-      setActiveDropdown(activeDropdown === 'telecom' ? null : 'telecom')
+      setActiveDropdown(activeDropdown === "telecom" ? null : "telecom");
     }
-  }
+  };
 
   // SOFTWARE
   const handleSoftwareMouseOver = () => {
     if (!isSmallScreen) {
-      setActiveDropdown('software')
+      setActiveDropdown("software");
     }
-  }
+  };
 
   const handleSoftwareMouseClick = () => {
     if (isSmallScreen) {
-      setActiveDropdown(activeDropdown === 'software' ? null : 'software')
+      setActiveDropdown(activeDropdown === "software" ? null : "software");
     }
-  }
+  };
 
   const resetAllStates = () => {
-    setWebMouseOver(false)
-    setWebMouseClick(false)
-    setDigitalMarketMouseOver(false)
-    setDigitalMarketMouseClick(false)
-    setGraphicsMouseOver(false)
-    setGraphicsMouseClick(false)
-    setVideoMouseOver(false)
-    setVideoMouseClick(false)
-    setTeleMouseOver(false)
-    setTeleMouseClick(false)
-  }
+    setWebMouseOver(false);
+    setWebMouseClick(false);
+    setDigitalMarketMouseOver(false);
+    setDigitalMarketMouseClick(false);
+    setGraphicsMouseOver(false);
+    setGraphicsMouseClick(false);
+    setVideoMouseOver(false);
+    setVideoMouseClick(false);
+    setTeleMouseOver(false);
+    setTeleMouseClick(false);
+  };
 
   const handleWebMouseOver = () => {
     if (!isSmallScreen) {
-      resetAllStates()
-      setWebMouseOver(true)
+      resetAllStates();
+      setWebMouseOver(true);
     }
-  }
+  };
 
   const handleWebMouseClick = () => {
     if (isSmallScreen) {
-      resetAllStates()
-      setWebMouseClick(!webMouseClick)
+      resetAllStates();
+      setWebMouseClick(!webMouseClick);
     }
-  }
+  };
 
   const handleDigitalMarketMouseOver = () => {
     if (!isSmallScreen) {
-      resetAllStates()
-      setDigitalMarketMouseOver(true)
+      resetAllStates();
+      setDigitalMarketMouseOver(true);
     }
-  }
+  };
 
   const handleDigitalMarketMouseClick = () => {
     if (isSmallScreen) {
-      resetAllStates()
-      setDigitalMarketMouseClick(!digitalMarketMouseClick)
+      resetAllStates();
+      setDigitalMarketMouseClick(!digitalMarketMouseClick);
     }
-  }
+  };
 
   const handleGraphicsMouseClick = () => {
     if (isSmallScreen) {
-      resetAllStates()
-      setGraphicsMouseClick(!graphicsMouseClick)
+      resetAllStates();
+      setGraphicsMouseClick(!graphicsMouseClick);
     }
-  }
+  };
 
   const handleGraphicsMouseOver = () => {
     if (!isSmallScreen) {
-      resetAllStates()
-      setGraphicsMouseOver(true)
+      resetAllStates();
+      setGraphicsMouseOver(true);
     }
-  }
+  };
 
   const handleVideoMouseClick = () => {
     if (isSmallScreen) {
-      resetAllStates()
-      setVideoMouseClick(!videoMouseClick)
+      resetAllStates();
+      setVideoMouseClick(!videoMouseClick);
     }
-  }
+  };
 
   const handleVideoMouseOver = () => {
     if (!isSmallScreen) {
-      resetAllStates()
-      setVideoMouseOver(true)
+      resetAllStates();
+      setVideoMouseOver(true);
     }
-  }
+  };
 
   const handleTeleMouseClick = () => {
     if (isSmallScreen) {
-      resetAllStates()
-      setTeleMouseClick(!teleMouseClick)
+      resetAllStates();
+      setTeleMouseClick(!teleMouseClick);
     }
-  }
+  };
 
   const handleTeleMouseOver = () => {
     if (!isSmallScreen) {
-      resetAllStates()
-      setTeleMouseOver(true)
+      resetAllStates();
+      setTeleMouseOver(true);
     }
-  }
+  };
 
   const handleSupportClick = () => {
     if (isSmallScreen) {
-      let x = document.getElementById('myDIV')
-      if (x.style.display === 'block') {
-        x.style.display = 'none'
+      let x = document.getElementById("myDIV");
+      if (x.style.display === "block") {
+        x.style.display = "none";
       }
     }
-  }
+  };
 
   const handleProductHover = () => {
     if (!isSmallScreen) {
-      setProductHover(true)
+      setProductHover(true);
     }
-  }
+  };
 
   const handleProductLeave = () => {
     if (!isSmallScreen) {
-      setProductHover(false)
+      setProductHover(false);
     }
-  }
+  };
 
   const handleProductClick = () => {
     if (isSmallScreen) {
-      let x = document.getElementById('myDIV')
-      if (x.style.display === 'none' || x.style.display === '') {
-        x.style.display = 'block'
+      let x = document.getElementById("myDIV");
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
       } else {
-        x.style.display = 'none'
+        x.style.display = "none";
       }
     } else {
-      setDropdownOpen(!isDropdownOpen)
-      setProductHover(!productHover)
+      setDropdownOpen(!isDropdownOpen);
+      setProductHover(!productHover);
     }
-  }
+  };
 
   const handleTechMouseEnter = () => {
-    setTechMouseEnter(true)
-    setDigitalMouseEnter(false)
-    setSalesMouseEnter(false)
+    setTechMouseEnter(true);
+    setDigitalMouseEnter(false);
+    setSalesMouseEnter(false);
     if (!isMobileView) {
-      setActiveDropdown('hardware')
+      setActiveDropdown("hardware");
     }
-  }
+  };
 
   const handleDigitalMouseEnter = () => {
-    setDigitalMouseEnter(true)
-    setSalesMouseEnter(false)
-    setTechMouseEnter(false)
+    setDigitalMouseEnter(true);
+    setSalesMouseEnter(false);
+    setTechMouseEnter(false);
     if (!isMobileView) {
-      setActiveDropdown('web')
+      setActiveDropdown("web");
     }
-  }
+  };
   const handleSalesMouseEnter = () => {
-    setSalesMouseEnter(true)
-    setTechMouseEnter(false)
-    setDigitalMouseEnter(false)
-  }
+    setSalesMouseEnter(true);
+    setTechMouseEnter(false);
+    setDigitalMouseEnter(false);
+  };
 
   //============================================================================= //
-  const [scroll, setScroll] = useState(false)
+  const [scroll, setScroll] = useState(false);
 
   const handleScroll = useCallback(() => {
-    const scrollY = window.scrollY
+    const scrollY = window.scrollY;
 
-    setScroll(scrollY >= 420)
+    setScroll(scrollY >= 420);
 
     if (scrollY >= 50 && scrollY < 12000) {
-      setScroll(true)
+      setScroll(true);
     } else {
-      setScroll(false)
+      setScroll(false);
     }
-  }, [])
-
-  // useEffect(() => {
-  //   if (!isMobileView && initialLoad) {
-  //     handleTechMouseEnter();
-  //     setInitialLoad(false);
-  //   }
-  // }, [isMobileView]);
-
-  // ============================================================= //
-  // useEffect(() => {
-  //   const dropdown = document.getElementById("myDIV");
-  //   if (isSmallScreen && productHover) {
-  //     dropdown.style.display = "block";
-  //   } else if (!isSmallScreen && productHover) {
-  //     dropdown.style.display = "block";
-  //   } else {
-  //     dropdown.style.display = "none";
-  //   }
-  // }, [isSmallScreen, productHover]);
+  }, []);
 
   // // ================================================================== //
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   // ==================== ===================================
   useEffect(() => {
-    $('.solutions-items li').on('mouseenter', function () {
-      $('.solutions-items li').removeClass('solutions-items-active')
-      $(this).addClass('solutions-items-active')
-    })
-  })
+    $(".solutions-items li").on("mouseenter", function () {
+      $(".solutions-items li").removeClass("solutions-items-active");
+      $(this).addClass("solutions-items-active");
+    });
+  });
   // =======================================================
   useEffect(() => {
-    $('.strategic-items li').on('mouseenter', function () {
-      $('.strategic-items li').removeClass('strategic-items-active')
-      $(this).addClass('strategic-items-active')
-    })
-  })
+    $(".strategic-items li").on("mouseenter", function () {
+      $(".strategic-items li").removeClass("strategic-items-active");
+      $(this).addClass("strategic-items-active");
+    });
+  });
   // =======================================================
   useEffect(() => {
-    $('.productss-items li').on('mouseenter', function () {
-      $('.productss-items li').removeClass('productss-items-active')
-      $(this).addClass('productss-items-active')
-    })
-  })
+    $(".productss-items li").on("mouseenter", function () {
+      $(".productss-items li").removeClass("productss-items-active");
+      $(this).addClass("productss-items-active");
+    });
+  });
   // =======================================================
   useEffect(() => {
-    $('.whoo-items li').on('mouseenter', function () {
-      $('.whoo-items li').removeClass('whoo-items-active')
-      $(this).addClass('whoo-items-active')
-    })
-  })
+    $(".whoo-items li").on("mouseenter", function () {
+      $(".whoo-items li").removeClass("whoo-items-active");
+      $(this).addClass("whoo-items-active");
+    });
+  });
 
   // ========================================================================= //
 
   useEffect(() => {
-    let classList = document.getElementById('here').classList
-    let minWidth769 = window.matchMedia('(min-width: 769px)')
+    let classList = document.getElementById("here").classList;
+    let minWidth769 = window.matchMedia("(min-width: 769px)");
 
-    const match = e => {
+    const match = (e) => {
       minWidth769.matches
-        ? classList.add('drop-show')
-        : classList.remove('drop-show')
-    }
-    match()
-  })
+        ? classList.add("drop-show")
+        : classList.remove("drop-show");
+    };
+    match();
+  });
 
   // =================== third drop down   ====================================
 
   useEffect(() => {
-    let classList = document.getElementById('here3').classList
-    let minWidth769 = window.matchMedia('(min-width: 769px)')
+    let classList = document.getElementById("here3").classList;
+    let minWidth769 = window.matchMedia("(min-width: 769px)");
 
-    const match = e => {
+    const match = (e) => {
       minWidth769.matches
-        ? classList.add('drop-show')
-        : classList.remove('drop-show')
-    }
-    match()
-  })
+        ? classList.add("drop-show")
+        : classList.remove("drop-show");
+    };
+    match();
+  });
 
   // =================== fourth drop down   ====================================
 
   useEffect(() => {
-    let classList = document.getElementById('here4').classList
-    let minWidth769 = window.matchMedia('(min-width: 769px)')
+    let classList = document.getElementById("here4").classList;
+    let minWidth769 = window.matchMedia("(min-width: 769px)");
 
-    const match = e => {
+    const match = (e) => {
       minWidth769.matches
-        ? classList.add('drop-show')
-        : classList.remove('drop-show')
-    }
-    match()
-  })
+        ? classList.add("drop-show")
+        : classList.remove("drop-show");
+    };
+    match();
+  });
   // =================== fifth drop down   ====================================
 
   useEffect(() => {
-    let classList = document.getElementById('here5').classList
-    var minWidth769 = window.matchMedia('(min-width: 769px)')
+    let classList = document.getElementById("here5").classList;
+    var minWidth769 = window.matchMedia("(min-width: 769px)");
 
-    const match = e => {
+    const match = (e) => {
       minWidth769.matches
-        ? classList.add('drop-show')
-        : classList.remove('drop-show')
-    }
-    match()
-  })
+        ? classList.add("drop-show")
+        : classList.remove("drop-show");
+    };
+    match();
+  });
 
   // const [scroll, setScroll] = useState(false)
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScroll(window.scrollY > 50) // Adjust the scroll threshold as needed
-    }
+      setScroll(window.scrollY > 50); // Adjust the scroll threshold as needed
+    };
 
     const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
+      setWindowWidth(window.innerWidth);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       // Clean up event listeners
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleResize)
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("=== Checking Navbar Visibility ===");
+    const offcanvas = document.getElementById("offcanvasNavbar2");
+    const offcanvasBody = document.querySelector(".offcanvas-body");
+
+    if (offcanvas) {
+      console.log(
+        "Offcanvas visibility:",
+        window.getComputedStyle(offcanvas).visibility
+      );
+      console.log(
+        "Offcanvas display:",
+        window.getComputedStyle(offcanvas).display
+      );
+      console.log(
+        "Offcanvas opacity:",
+        window.getComputedStyle(offcanvas).opacity
+      );
     }
-  }, [])
+
+    if (offcanvasBody) {
+      console.log("Offcanvas-body children:", offcanvasBody.children.length);
+    }
+  }, []);
 
   return (
     <>
       <nav
-        id='navbarShow'
-        className={`navbar navbar-dark fixed-top ${
-          scroll ? 'NAVbar' : 'NAVba'
-        } ${windowWidth > 1236 ? 'navbar-expand-lg' : ''}`}
+        id="navbarShow"
+        // className={`navbar navbar-dark fixed-top ${
+        //   scroll ? "NAVbar" : "NAVba"
+        // } ${windowWidth > 1236 ? "navbar-expand-lg" : ""}`}
+        className={`navbar navbar-dark fixed-top navbar-expand-lg ${
+          scroll ? "NAVbar" : "NAVba"
+        }`}
       >
-        <div className='container-fluid'>
-          <Link to={'/'} className='navbar-brand border-0'>
+        <div className="container-fluid">
+          <Link to={"/"} className="navbar-brand border-0">
             <img
               src={logo}
-              id='elonatech-logo-home'
-              className='lazyload border-0'
-              alt='Elonatech Logo'
+              id="elonatech-logo-home"
+              className="lazyload border-0"
+              alt="Elonatech Logo"
             />
           </Link>
           <button
-            className='navbar-toggler custom-toggler'
-            type='button'
-            data-bs-toggle='offcanvas'
-            data-bs-target='#offcanvasNavbar2'
-            aria-controls='offcanvasNavbar2'
-            aria-label='Toggle navigation'
+            className="navbar-toggler custom-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar2"
+            aria-controls="offcanvasNavbar2"
+            aria-label="Toggle navigation"
           >
-            <span className='navbar-toggler-icon'></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            className='offcanvas offcanvas-end navbar-bg-change'
-            style={{ width: '350px', height: '608px' }}
-            tabIndex='-1'
-            id='offcanvasNavbar2'
-            aria-labelledby='offcanvasNavbar2Label'
+            className="offcanvas offcanvas-end navbar-bg-change"
+            style={{ width: "350px", height: "608px" }}
+            tabIndex="-1"
+            id="offcanvasNavbar2"
+            aria-labelledby="offcanvasNavbar2Label"
           >
-            <div className='offcanvas-header'>
+            <div className="offcanvas-header">
               <h5
-                className='offcanvas-title text-dark'
-                id='offcanvasNavbar2Label'
+                className="offcanvas-title text-dark"
+                id="offcanvasNavbar2Label"
               ></h5>
               <div
-                className='btn-close btn-close-white active dismiss-nav-man'
-                data-bs-dismiss='offcanvas'
-                aria-label='Close'
+                className="btn-close btn-close-white active dismiss-nav-man"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
               ></div>
             </div>
-            <div className='offcanvas-body'>
-              <ul className='navbar-nav mx-auto'>
+            <div className="offcanvas-body">
+              <ul className="navbar-nav mx-auto">
                 {/*============================================  first drop down ===============================================*/}
-                <li class='nav-item pe-4'>
+                <li class="nav-item pe-4">
                   <Link
-                    to={'/'}
-                    class='nav-link fw-bold active dismiss-nav-man'
-                    data-bs-dismiss='offcanvas'
+                    to={"/"}
+                    class="nav-link fw-bold active dismiss-nav-man"
+                    data-bs-dismiss="offcanvas"
                   >
-                    <i class='bi bi-house-fill'></i>
+                    <i class="bi bi-house-fill"></i>
                   </Link>
                 </li>
                 <li
-                  class='nav-item mx-0   pe-2 my-md-0 active elonatechlistItem'
+                  class="nav-item mx-0   pe-2 my-md-0 active elonatechlistItem"
                   onMouseEnter={handleProductHover}
                 >
                   <a
                     onClick={handleProductClick}
-                    style={{ fontWeight: 'bold' }}
-                    className='nav-link e-fonte text-white dropdown-toggle'
+                    style={{ fontWeight: "bold" }}
+                    className="nav-link e-fonte text-white dropdown-toggle"
                   >
                     Solutions
                   </a>
                   <ul
-                    id='myDIV'
+                    id="myDIV"
                     className={
                       productHover
-                        ? 'elonatechinnerListContainer '
-                        : 'elonatechmainDropdownDone'
+                        ? "elonatechinnerListContainer "
+                        : "elonatechmainDropdownDone"
                     }
                   >
-                    <li className='elonatechinnerListItemLeft'>
-                      <ul className='elonatechinnerListContentLeft'>
+                    <li className="elonatechinnerListItemLeft">
+                      <ul className="elonatechinnerListContentLeft">
                         <li
                           className={
                             techMouseEnter
-                              ? 'elonatechinnerListItemContentLeftActive'
-                              : 'elonatechinnerListItemContentLeft'
+                              ? "elonatechinnerListItemContentLeftActive"
+                              : "elonatechinnerListItemContentLeft"
                           }
                           onMouseEnter={handleTechMouseEnter}
                         >
-                          {' '}
-                          <h6 className='techCenter'>Tech Solutions</h6>
+                          {" "}
+                          <h6 className="techCenter">Tech Solutions</h6>
                         </li>
                         <li
                           className={
                             digitalMouseEnter
-                              ? 'elonatechinnerListItemContentLeftActive'
-                              : 'elonatechinnerListItemContentLeft'
+                              ? "elonatechinnerListItemContentLeftActive"
+                              : "elonatechinnerListItemContentLeft"
                           }
                           onMouseEnter={handleDigitalMouseEnter}
                         >
-                          <h6 className='techCenter'>Digital Solutions</h6>
+                          <h6 className="techCenter">Digital Solutions</h6>
                         </li>
                         <li
                           className={
                             salesMouseEnter
-                              ? 'elonatechinnerListItemContentLeftActive'
-                              : 'elonatechinnerListItemContentLeft'
+                              ? "elonatechinnerListItemContentLeftActive"
+                              : "elonatechinnerListItemContentLeft"
                           }
                           onMouseEnter={handleSalesMouseEnter}
                         >
-                          <h6 className='techCenter'>Sales/ Supply</h6>
+                          <h6 className="techCenter">Sales/ Supply</h6>
                         </li>
                       </ul>
                     </li>
                     {/* <hr className='elonatechline' /> */}
-                    <div className='elonatechline'></div>
-                    <li className='elonatechinnerListItemRight'>
-                      <ul className='elonatechinnerListContentRight'>
+                    <div className="elonatechline"></div>
+                    <li className="elonatechinnerListItemRight">
+                      <ul className="elonatechinnerListContentRight">
                         {/*=========================================== TECH SOLUTIONS ( RIGHTSIDE) ===========================================*/}
-                        <li className='elonatechinnerListContentRight'>
+                        <li className="elonatechinnerListContentRight">
                           <ul
                             className={
                               techMouseEnter
-                                ? 'elonatechinnerListItemContentRightTechListActive'
-                                : 'elonatechinnerListItemContentRightTechList'
+                                ? "elonatechinnerListItemContentRightTechListActive"
+                                : "elonatechinnerListItemContentRightTechList"
                             }
                           >
                             {/*===================================== HARDWARE SOLUTIONS =============================================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightTechListItem'
+                                "elonatechinnerListItemContentRightTechListItem"
                               }
-                              onMouseEnter={() => setActiveDropdown('hardware')}
+                              onMouseEnter={() => setActiveDropdown("hardware")}
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'hardware'
+                                      activeDropdown === "hardware"
                                         ? null
-                                        : 'hardware'
+                                        : "hardware"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'hardware'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "hardware"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Hardware Solutions
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'hardware'
-                                    ? 'elonatechhardwareSolutionsListActive'
-                                    : 'elonatechhardwareSolutionsList'
+                                  activeDropdown === "hardware"
+                                    ? "elonatechhardwareSolutionsListActive"
+                                    : "elonatechhardwareSolutionsList"
                                 }
                               >
                                 <Link
-                                  to={'/hardware-engineering'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/hardware-engineering"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechhardwareSolutionsListItem'
+                                      "elonatechhardwareSolutionsListItem"
                                     }
                                   >
                                     <img
                                       data-src={hardwareComputer}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Computer Engineering
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/printer-repair'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/printer-repair"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechhardwareSolutionsListItem'
+                                      "elonatechhardwareSolutionsListItem"
                                     }
                                   >
                                     <img
                                       data-src={hardwareOffice}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Printers
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/mobile-repair'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/mobile-repair"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechhardwareSolutionsListItem'
+                                      "elonatechhardwareSolutionsListItem"
                                     }
                                   >
                                     <img
                                       data-src={hardwarePhone}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Mobile Devices
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/network'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/network"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechhardwareSolutionsListItem'
+                                      "elonatechhardwareSolutionsListItem"
                                     }
                                   >
                                     <img
                                       data-src={hardwareMaintenance}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Networking Equipment
@@ -776,192 +776,192 @@ const Navbar = () => {
                             {/*=============================================== NETWORK SOLUTIONS ====================================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightTechListItem'
+                                "elonatechinnerListItemContentRightTechListItem"
                               }
-                              onMouseEnter={() => setActiveDropdown('network')}
+                              onMouseEnter={() => setActiveDropdown("network")}
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'network'
+                                      activeDropdown === "network"
                                         ? null
-                                        : 'network'
+                                        : "network"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'network'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "network"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Network Solutions
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'network'
-                                    ? 'elonatechnetworkAdministrationListActive'
-                                    : 'elonatechnetworkAdministrationList'
+                                  activeDropdown === "network"
+                                    ? "elonatechnetworkAdministrationListActive"
+                                    : "elonatechnetworkAdministrationList"
                                 }
                               >
                                 <Link
-                                  to={'/network-administration-implementation'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/network-administration-implementation"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechnetworkAdministrationListItem'
+                                      "elonatechnetworkAdministrationListItem"
                                     }
                                   >
                                     <img
                                       data-src={networkAdmin}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Network Admin/Implementation
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/network-security'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/network-security"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechnetworkAdministrationListItem'
+                                      "elonatechnetworkAdministrationListItem"
                                     }
                                   >
                                     <img
                                       data-src={networkSecurity}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Network Security
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/server-administration'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/server-administration"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechnetworkAdministrationListItem'
+                                      "elonatechnetworkAdministrationListItem"
                                     }
                                   >
                                     <img
                                       data-src={networkServer}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Server Administration
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/system-integration'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/system-integration"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechnetworkAdministrationListItem'
+                                      "elonatechnetworkAdministrationListItem"
                                     }
                                   >
                                     <img
                                       data-src={networkInfastructure}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Infrastructure / System Integration
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/structure-cabling'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/structure-cabling"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechnetworkAdministrationListItem'
+                                      "elonatechnetworkAdministrationListItem"
                                     }
                                   >
                                     <img
                                       data-src={networkCabling}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Structured Cabling
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/cctv'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/cctv"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechnetworkAdministrationListItem'
+                                      "elonatechnetworkAdministrationListItem"
                                     }
                                   >
                                     <img
                                       data-src={networkCctv}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     CCTV Installation
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/internet'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/internet"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechnetworkAdministrationListItem'
+                                      "elonatechnetworkAdministrationListItem"
                                     }
                                   >
                                     <img
                                       data-src={networkInternet}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Internet Solutions
@@ -973,102 +973,102 @@ const Navbar = () => {
                             {/*================================================ SOFTWARE SOLUTIONS =================================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightTechListItem'
+                                "elonatechinnerListItemContentRightTechListItem"
                               }
-                              onMouseEnter={() => setActiveDropdown('software')}
+                              onMouseEnter={() => setActiveDropdown("software")}
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'software'
+                                      activeDropdown === "software"
                                         ? null
-                                        : 'software'
+                                        : "software"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'software'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "software"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Software Solutions
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'software'
-                                    ? 'elonatechsoftwareSolutionsListActive'
-                                    : 'elonatechsoftwareSolutionsList'
+                                  activeDropdown === "software"
+                                    ? "elonatechsoftwareSolutionsListActive"
+                                    : "elonatechsoftwareSolutionsList"
                                 }
                               >
                                 <Link
-                                  to={'/system-software'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/system-software"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechsoftwareSolutionsListListItem'
+                                      "elonatechsoftwareSolutionsListListItem"
                                     }
                                   >
                                     <img
                                       data-src={softwareSystem}
-                                      className='lazyload'
+                                      className="lazyload"
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     System Software
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/application-software'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/application-software"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechsoftwareSolutionsListListItem'
+                                      "elonatechsoftwareSolutionsListListItem"
                                     }
                                   >
                                     <img
                                       data-src={softwareApplication}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Application Software
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/business-software'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/business-software"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechsoftwareSolutionsListListItem'
+                                      "elonatechsoftwareSolutionsListListItem"
                                     }
                                   >
                                     <img
                                       data-src={softwareBusiness}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Business Application Software
@@ -1080,75 +1080,75 @@ const Navbar = () => {
                             {/*=================================================== COMMUNICATION ================================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightTechListItem'
+                                "elonatechinnerListItemContentRightTechListItem"
                               }
-                              onMouseEnter={() => setActiveDropdown('telecom')}
+                              onMouseEnter={() => setActiveDropdown("telecom")}
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'telecom'
+                                      activeDropdown === "telecom"
                                         ? null
-                                        : 'telecom'
+                                        : "telecom"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'telecom'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "telecom"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Communication
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'telecom'
-                                    ? 'elonatechtelecomsListActive'
-                                    : 'elonatechtelecomsList'
+                                  activeDropdown === "telecom"
+                                    ? "elonatechtelecomsListActive"
+                                    : "elonatechtelecomsList"
                                 }
                               >
                                 <Link
-                                  to={'/ip-telephony'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/ip-telephony"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
-                                    className={'elonatechtelecomsListListItem'}
+                                    className={"elonatechtelecomsListListItem"}
                                   >
                                     <img
                                       data-src={telecomsIp}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     IP Telephony & PBX Systems
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/voip'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/voip"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
-                                    className={'elonatechtelecomsListListItem'}
+                                    className={"elonatechtelecomsListListItem"}
                                   >
                                     <img
                                       data-src={telecomsVoip}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     VoIP
@@ -1160,103 +1160,103 @@ const Navbar = () => {
                             {/*======================================================== ACCESS & SECURITY ==========================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightTechListItem'
+                                "elonatechinnerListItemContentRightTechListItem"
                               }
-                              onMouseEnter={() => setActiveDropdown('system')}
+                              onMouseEnter={() => setActiveDropdown("system")}
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'system'
+                                      activeDropdown === "system"
                                         ? null
-                                        : 'system'
+                                        : "system"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'system'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "system"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Access & Security
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'system'
-                                    ? 'elonatechsystemSecurityListActive'
-                                    : 'elonatechsystemSecurityList'
+                                  activeDropdown === "system"
+                                    ? "elonatechsystemSecurityListActive"
+                                    : "elonatechsystemSecurityList"
                                 }
                               >
                                 <Link
-                                  to={'/access-control'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/access-control"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechsystemSecurityListListItem'
+                                      "elonatechsystemSecurityListListItem"
                                     }
                                   >
                                     <img
                                       data-src={systemAccess}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Access Control
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/time-management'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/time-management"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechsystemSecurityListListItem'
+                                      "elonatechsystemSecurityListListItem"
                                     }
                                   >
                                     <img
                                       data-src={systemTime}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Time Management Solutions
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/surveillance'}
-                                  className='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/surveillance"}
+                                  className="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechsystemSecurityListListItem'
+                                      "elonatechsystemSecurityListListItem"
                                     }
                                   >
                                     <img
                                       data-src={systemSurveillnance}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Surveillance
@@ -1268,129 +1268,129 @@ const Navbar = () => {
                         </li>
 
                         {/*================================================= DIGITAL SOLUTION CONTENT ( RIGHTSIDE) ===============================*/}
-                        <li className='elonatechinnerListContentRight'>
+                        <li className="elonatechinnerListContentRight">
                           <ul
                             className={
                               digitalMouseEnter
-                                ? 'elonatechinnerListItemContentRightDigitalListActive'
-                                : 'elonatechinnerListItemContentRightDigitalList'
+                                ? "elonatechinnerListItemContentRightDigitalListActive"
+                                : "elonatechinnerListItemContentRightDigitalList"
                             }
                           >
                             {/*============================================================ web solution ==============================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightDigitalListItem'
+                                "elonatechinnerListItemContentRightDigitalListItem"
                               }
-                              onMouseEnter={() => setActiveDropdown('web')}
+                              onMouseEnter={() => setActiveDropdown("web")}
                             >
-                              {' '}
-                              <div className='elonatechtest'>
-                                {' '}
+                              {" "}
+                              <div className="elonatechtest">
+                                {" "}
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'web' ? null : 'web'
+                                      activeDropdown === "web" ? null : "web"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'web'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "web"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
-                                  Web & App Solutions{' '}
-                                </h6>{' '}
-                                <i className='bi bi-plus text-dark fs-3'></i>{' '}
+                                  Web & App Solutions{" "}
+                                </h6>{" "}
+                                <i className="bi bi-plus text-dark fs-3"></i>{" "}
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'web'
-                                    ? 'elonatechwebSolutionsListActive'
-                                    : 'elonatechwebSolutionsList'
+                                  activeDropdown === "web"
+                                    ? "elonatechwebSolutionsListActive"
+                                    : "elonatechwebSolutionsList"
                                 }
                               >
                                 <Link
-                                  to={'/web-design'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/web-design"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechwebSolutionsListItem'>
-                                    {' '}
+                                  <li className="elonatechwebSolutionsListItem">
+                                    {" "}
                                     <img
                                       data-src={webDev}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     Web Design/Dev.
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/app-development'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/app-development"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechwebSolutionsListItem'>
-                                    {' '}
+                                  <li className="elonatechwebSolutionsListItem">
+                                    {" "}
                                     <img
                                       data-src={appDev}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
                                     />
                                     App Design/Dev.
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/domain'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/domain"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechwebSolutionsListItem'>
-                                    {' '}
+                                  <li className="elonatechwebSolutionsListItem">
+                                    {" "}
                                     <img
                                       data-src={webDomain}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
-                                    Domain Reg./DNS Mgt{' '}
+                                    />{" "}
+                                    Domain Reg./DNS Mgt{" "}
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/hosting'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/hosting"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechwebSolutionsListItem '>
-                                    {' '}
+                                  <li className="elonatechwebSolutionsListItem ">
+                                    {" "}
                                     <img
                                       data-src={WebHost}
-                                      className='lazyload'
-                                      alt=''
+                                      className="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'start'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "start",
                                       }}
-                                    />{' '}
-                                    <span className='text-'>Web Hosting</span>{' '}
+                                    />{" "}
+                                    <span className="text-">Web Hosting</span>{" "}
                                   </li>
                                 </Link>
                               </ul>
@@ -1398,185 +1398,185 @@ const Navbar = () => {
                             {/*============================================================  digital marketing =====================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightDigitalListItem'
+                                "elonatechinnerListItemContentRightDigitalListItem"
                               }
                               onMouseEnter={() =>
-                                setActiveDropdown('digitalMarketing')
+                                setActiveDropdown("digitalMarketing")
                               }
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'digitalMarketing'
+                                      activeDropdown === "digitalMarketing"
                                         ? null
-                                        : 'digitalMarketing'
+                                        : "digitalMarketing"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'digitalMarketing'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "digitalMarketing"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Digital Marketing
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'digitalMarketing'
-                                    ? 'elonatechdigitalMarketingListActive'
-                                    : 'elonatechdigitalMarketingList'
+                                  activeDropdown === "digitalMarketing"
+                                    ? "elonatechdigitalMarketingListActive"
+                                    : "elonatechdigitalMarketingList"
                                 }
                               >
                                 <Link
-                                  to={'/digital-marketing'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/digital-marketing"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechdigitalMarketingListItem'
+                                      "elonatechdigitalMarketingListItem"
                                     }
                                   >
-                                    {' '}
+                                    {" "}
                                     <img
                                       data-src={digitalDigital}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Digital Marketing
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/social-media-marketing'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/social-media-marketing"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechdigitalMarketingListItem'
+                                      "elonatechdigitalMarketingListItem"
                                     }
                                   >
-                                    {' '}
+                                    {" "}
                                     <img
                                       data-src={digitalSocial}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Social Media Marketing
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/email-marketing'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/email-marketing"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechdigitalMarketingListItem'
+                                      "elonatechdigitalMarketingListItem"
                                     }
                                   >
-                                    {' '}
+                                    {" "}
                                     <img
                                       data-src={digitalEmail}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Email Marketing
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/seo'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/seo"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechdigitalMarketingListItem'
+                                      "elonatechdigitalMarketingListItem"
                                     }
                                   >
-                                    {' '}
+                                    {" "}
                                     <img
                                       data-src={digitalSeo}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     SEO
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/content-marketing'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/content-marketing"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechdigitalMarketingListItem'
+                                      "elonatechdigitalMarketingListItem"
                                     }
                                   >
-                                    {' '}
+                                    {" "}
                                     <img
                                       data-src={digitalContent}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Content Marketing
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/ppc'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/ppc"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
                                   <li
                                     className={
-                                      'elonatechdigitalMarketingListItem'
+                                      "elonatechdigitalMarketingListItem"
                                     }
                                   >
-                                    {' '}
+                                    {" "}
                                     <img
                                       data-src={digitalPpc}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     PPC/CPI
                                   </li>
                                 </Link>
@@ -1585,98 +1585,98 @@ const Navbar = () => {
                             {/*======================================================== graphic =======================================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightDigitalListItem'
+                                "elonatechinnerListItemContentRightDigitalListItem"
                               }
-                              onMouseEnter={() => setActiveDropdown('graphics')}
+                              onMouseEnter={() => setActiveDropdown("graphics")}
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'graphics'
+                                      activeDropdown === "graphics"
                                         ? null
-                                        : 'graphics'
+                                        : "graphics"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'graphics'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "graphics"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Graphics
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'graphics'
-                                    ? 'elonatechgraphicsListActive'
-                                    : 'elonatechgraphicsList'
+                                  activeDropdown === "graphics"
+                                    ? "elonatechgraphicsListActive"
+                                    : "elonatechgraphicsList"
                                 }
                               >
                                 <Link
-                                  to={'/graphics-design'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/graphics-design"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  {' '}
-                                  <li className='elonatechgraphicsListListItem'>
-                                    {' '}
+                                  {" "}
+                                  <li className="elonatechgraphicsListListItem">
+                                    {" "}
                                     <img
                                       data-src={graphicsGraphics}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Graphic
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/brand-identity'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/brand-identity"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  {' '}
-                                  <li className='elonatechgraphicsListListItem'>
-                                    {' '}
+                                  {" "}
+                                  <li className="elonatechgraphicsListListItem">
+                                    {" "}
                                     <img
                                       data-src={graphicsBrand}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Brand Development
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/uiux'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/uiux"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechgraphicsListListItem'>
-                                    {' '}
+                                  <li className="elonatechgraphicsListListItem">
+                                    {" "}
                                     <img
                                       data-src={graphicsUiux}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     UI/UX & Prototyping
                                   </li>
                                 </Link>
@@ -1685,98 +1685,98 @@ const Navbar = () => {
                             {/*================================================================== video animation ========================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightDigitalListItem'
+                                "elonatechinnerListItemContentRightDigitalListItem"
                               }
                               onMouseEnter={() =>
-                                setActiveDropdown('videoAnimations')
+                                setActiveDropdown("videoAnimations")
                               }
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'videoAnimations'
+                                      activeDropdown === "videoAnimations"
                                         ? null
-                                        : 'videoAnimations'
+                                        : "videoAnimations"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'videoAnimations'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "videoAnimations"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Video Animations
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'videoAnimations'
-                                    ? 'elonatechvideoAnimationsListActive'
-                                    : 'elonatechvideoAnimationsList'
+                                  activeDropdown === "videoAnimations"
+                                    ? "elonatechvideoAnimationsListActive"
+                                    : "elonatechvideoAnimationsList"
                                 }
                               >
                                 <Link
-                                  to={'/animation'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/animation"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechvideoAnimationsListListItem'>
-                                    {' '}
+                                  <li className="elonatechvideoAnimationsListListItem">
+                                    {" "}
                                     <img
                                       data-src={video3d}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     2D/3D Animations
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/motion-graphics'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/motion-graphics"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechvideoAnimationsListListItem'>
-                                    {' '}
+                                  <li className="elonatechvideoAnimationsListListItem">
+                                    {" "}
                                     <img
                                       data-src={videoMotion}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Motion Graphics
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/video-editing'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/video-editing"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechvideoAnimationsListListItem'>
-                                    {' '}
+                                  <li className="elonatechvideoAnimationsListListItem">
+                                    {" "}
                                     <img
                                       data-src={videoEdit}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Video Editing
                                   </li>
                                 </Link>
@@ -1785,79 +1785,79 @@ const Navbar = () => {
                             {/*============================================== teleconferencing ============================================================*/}
                             <li
                               className={
-                                'elonatechinnerListItemContentRightDigitalListItem'
+                                "elonatechinnerListItemContentRightDigitalListItem"
                               }
                               onMouseEnter={() =>
-                                setActiveDropdown('teleconferencing')
+                                setActiveDropdown("teleconferencing")
                               }
                             >
-                              <div className='elonatechtest'>
+                              <div className="elonatechtest">
                                 <h6
                                   onClick={() =>
                                     setActiveDropdown(
-                                      activeDropdown === 'teleconferencing'
+                                      activeDropdown === "teleconferencing"
                                         ? null
-                                        : 'teleconferencing'
+                                        : "teleconferencing"
                                     )
                                   }
                                   className={
-                                    activeDropdown === 'teleconferencing'
-                                      ? 'elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle'
-                                      : 'elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle'
+                                    activeDropdown === "teleconferencing"
+                                      ? "elonatechinnerListItemContentRightTechListTitleActive elonatechSolutionsTitle"
+                                      : "elonatechinnerListItemContentRightTechListTitle elonatechSolutionsTitle"
                                   }
                                 >
                                   Teleconferencing
                                 </h6>
-                                <i className='bi bi-plus text-dark fs-3'></i>
+                                <i className="bi bi-plus text-dark fs-3"></i>
                               </div>
                               <ul
                                 className={
-                                  activeDropdown === 'teleconferencing'
-                                    ? 'elonatechteleconferencingListActive'
-                                    : 'elonatechteleconferencingList'
+                                  activeDropdown === "teleconferencing"
+                                    ? "elonatechteleconferencingListActive"
+                                    : "elonatechteleconferencingList"
                                 }
                               >
                                 <Link
-                                  to={'/livestreaming'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/livestreaming"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechteleconferencingListListItem'>
-                                    {' '}
+                                  <li className="elonatechteleconferencingListListItem">
+                                    {" "}
                                     <img
                                       data-src={teleLivestream}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center',
-                                        marginBottom: '1rem'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
+                                        marginBottom: "1rem",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Livestreaming
                                   </li>
                                 </Link>
                                 <Link
-                                  to={'/videoconferencing'}
-                                  class='text-decoration-none text-dark dismiss-nav-man'
-                                  data-bs-dismiss='offcanvas'
+                                  to={"/videoconferencing"}
+                                  class="text-decoration-none text-dark dismiss-nav-man"
+                                  data-bs-dismiss="offcanvas"
                                 >
-                                  <li className='elonatechteleconferencingListListItem'>
-                                    {' '}
+                                  <li className="elonatechteleconferencingListListItem">
+                                    {" "}
                                     <img
                                       data-src={teleVideo}
-                                      class='lazyload'
-                                      alt=''
+                                      class="lazyload"
+                                      alt=""
                                       style={{
-                                        width: '50px',
-                                        height: '50px',
-                                        objectFit: 'contain',
-                                        alignSelf: 'center',
-                                        marginBottom: '1rem'
+                                        width: "50px",
+                                        height: "50px",
+                                        objectFit: "contain",
+                                        alignSelf: "center",
+                                        marginBottom: "1rem",
                                       }}
-                                    />{' '}
+                                    />{" "}
                                     Videoconferencing
                                   </li>
                                 </Link>
@@ -1866,75 +1866,75 @@ const Navbar = () => {
                           </ul>
                         </li>
                         {/*========================================== SALE CONTENT ( RIGHTSIDE) =========================================*/}
-                        <li className='elonatechinnerListContentRight'>
+                        <li className="elonatechinnerListContentRight">
                           <ul
                             className={
                               salesMouseEnter
-                                ? 'elonatechinnerListItemContentRightSalesListActive'
-                                : 'elonatechinnerListItemContentRightSalesList'
+                                ? "elonatechinnerListItemContentRightSalesListActive"
+                                : "elonatechinnerListItemContentRightSalesList"
                             }
                           >
                             <Link
-                              to={'/hardware-supply'}
-                              class='text-decoration-none text-dark salePad dismiss-nav-man'
-                              data-bs-dismiss='offcanvas'
+                              to={"/hardware-supply"}
+                              class="text-decoration-none text-dark salePad dismiss-nav-man"
+                              data-bs-dismiss="offcanvas"
                             >
-                              <li className='elonatechinnerListItemContentRightSalesListItem'>
-                                {' '}
+                              <li className="elonatechinnerListItemContentRightSalesListItem">
+                                {" "}
                                 <img
                                   data-src={Salehardware}
-                                  class='lazyload'
-                                  alt=''
+                                  class="lazyload"
+                                  alt=""
                                   style={{
-                                    width: '50px',
-                                    height: '50px',
-                                    objectFit: 'contain',
-                                    alignSelf: 'center',
-                                    marginBottom: '1rem'
+                                    width: "50px",
+                                    height: "50px",
+                                    objectFit: "contain",
+                                    alignSelf: "center",
+                                    marginBottom: "1rem",
                                   }}
                                 />
-                                Hardware{' '}
+                                Hardware{" "}
                               </li>
                             </Link>
                             <Link
-                              to={'/software-supply'}
-                              class='text-decoration-none text-dark salePad dismiss-nav-man'
-                              data-bs-dismiss='offcanvas'
+                              to={"/software-supply"}
+                              class="text-decoration-none text-dark salePad dismiss-nav-man"
+                              data-bs-dismiss="offcanvas"
                             >
-                              <li className='elonatechinnerListItemContentRightSalesListItem'>
-                                {' '}
+                              <li className="elonatechinnerListItemContentRightSalesListItem">
+                                {" "}
                                 <img
                                   data-src={SaleSoftware}
-                                  class='lazyload'
-                                  alt=''
+                                  class="lazyload"
+                                  alt=""
                                   style={{
-                                    width: '50px',
-                                    height: '50px',
-                                    objectFit: 'contain',
-                                    alignSelf: 'center',
-                                    marginBottom: '1rem'
+                                    width: "50px",
+                                    height: "50px",
+                                    objectFit: "contain",
+                                    alignSelf: "center",
+                                    marginBottom: "1rem",
                                   }}
                                 />
                                 Software
                               </li>
                             </Link>
                             <Link
-                              to={'/consumables'}
-                              class='text-decoration-none text-dark salePad dismiss-nav-man'
-                              data-bs-dismiss='offcanvas'
+                              to={"/consumables"}
+                              class="text-decoration-none text-dark salePad dismiss-nav-man"
+                              data-bs-dismiss="offcanvas"
                             >
-                              <li className='elonatechinnerListItemContentRightSalesListItem'>
-                                {' '}
+                              <li className="elonatechinnerListItemContentRightSalesListItem">
+                                {" "}
                                 <img
                                   data-src={SaleConsumbles}
-                                  class='lazyload'
-                                  alt=''
+                                  class="lazyload"
+                                  alt=""
                                   style={{
-                                    width: '50px',
-                                    height: '50px',
-                                    objectFit: 'contain',
-                                    alignSelf: 'center',
-                                    marginBottom: '1rem'
+                                    width: "50px",
+                                    height: "50px",
+                                    objectFit: "contain",
+                                    alignSelf: "center",
+                                    marginBottom: "1rem",
                                   }}
                                 />
                                 Consumables
@@ -1947,50 +1947,50 @@ const Navbar = () => {
                   </ul>
                 </li>
                 {/*==================================================================================================  second drop down ===============================================*/}
-                <li id='here' class='nav-item   drop-show dropdown  pe-1'>
+                <li id="here" class="nav-item   drop-show dropdown  pe-1">
                   <a
-                    class='nav-link active e-fonte active  dropdown-toggle'
-                    role='button'
+                    class="nav-link active e-fonte active  dropdown-toggle"
+                    role="button"
                     onClick={handleSupportClick}
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
                     Support
                   </a>
-                  <ul class='dropdown-menu drop-menu border-0 text-center p-4'>
-                    <ul class='solutions-items list-unstyled'>
+                  <ul class="dropdown-menu drop-menu border-0 text-center p-4">
+                    <ul class="solutions-items list-unstyled">
                       <Link
-                        to={'/technical-support'}
-                        class='text-decoration-none text-dark'
+                        to={"/technical-support"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='solutions-items-active dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
-                          aria-label='Close'
+                          class="solutions-items-active dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
+                          aria-label="Close"
                         >
-                          Technical Support{' '}
+                          Technical Support{" "}
                         </li>
                       </Link>
                       <Link
-                        to={'/network-support'}
-                        class='text-decoration-none text-dark'
+                        to={"/network-support"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2  dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
-                          aria-label='Close'
+                          class="dropdown-item  mt-1 p-2  dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
+                          aria-label="Close"
                         >
                           Network Support
                         </li>
                       </Link>
                       <Link
-                        to={'/remote-support'}
-                        class='text-decoration-none text-dark'
+                        to={"/remote-support"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
-                          aria-label='Close'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
+                          aria-label="Close"
                         >
                           Remote Support
                         </li>
@@ -1999,47 +1999,47 @@ const Navbar = () => {
                   </ul>
                 </li>
                 {/*=====================================================================================================  third drop down =============================================*/}
-                <li id='here3' class='nav-item dropdown drop-show  pe-1'>
+                <li id="here3" class="nav-item dropdown drop-show  pe-1">
                   <a
-                    class='nav-link active e-fonte   dropdown-toggle'
-                    role='button'
+                    class="nav-link active e-fonte   dropdown-toggle"
+                    role="button"
                     onClick={handleSupportClick}
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
                     Strategic Services
                   </a>
-                  <ul class='dropdown-menu border-0 drop-menu  text-center p-4'>
-                    <ul class='strategic-items  list-unstyled'>
+                  <ul class="dropdown-menu border-0 drop-menu  text-center p-4">
+                    <ul class="strategic-items  list-unstyled">
                       <Link
-                        to={'/consulting'}
-                        class='text-decoration-none text-dark'
+                        to={"/consulting"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='strategic-items-active dropdown-item mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="strategic-items-active dropdown-item mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Consulting
                         </li>
                       </Link>
                       <Link
-                        to={'/retainer-partnership'}
-                        class='text-decoration-none text-dark'
+                        to={"/retainer-partnership"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Retainership
                         </li>
                       </Link>
                       <Link
-                        to={'/training'}
-                        class='text-decoration-none text-dark'
+                        to={"/training"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Training
                         </li>
@@ -2048,77 +2048,80 @@ const Navbar = () => {
                   </ul>
                 </li>
                 {/*=========================================================================================================  fourth drop down ==================================================*/}
-                <li id='here4' class='nav-item  dropdown drop-show pe-1'>
+                <li id="here4" class="nav-item  dropdown drop-show pe-1">
                   <a
-                    class='nav-link active  e-fonte  dropdown-toggle'
+                    class="nav-link active  e-fonte  dropdown-toggle"
                     onClick={handleSupportClick}
-                    role='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
                     Products
                   </a>
-                  <ul class='dropdown-menu border-0 drop-menu text-center p-4'>
-                    <ul class='productss-items list-unstyled'>
-                      <Link to={'/products'} class='text-decoration-none text-dark'>
+                  <ul class="dropdown-menu border-0 drop-menu text-center p-4">
+                    <ul class="productss-items list-unstyled">
+                      <Link
+                        to={"/products"}
+                        class="text-decoration-none text-dark"
+                      >
                         <li
-                          class='productss-items-active dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="productss-items-active dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Products
                         </li>
                       </Link>
                       <Link
-                        to={'/computers'}
-                        class='text-decoration-none text-dark'
+                        to={"/computers"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Computers
                         </li>
                       </Link>
                       <Link
-                        to={'/printers'}
-                        class='text-decoration-none text-dark'
+                        to={"/printers"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Printers
                         </li>
                       </Link>
                       <Link
-                        to={'/office-equipment'}
-                        class='text-decoration-none text-dark'
+                        to={"/office-equipment"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Office Equipment
                         </li>
                       </Link>
                       <Link
-                        to={'/pos-system'}
-                        class='text-decoration-none text-dark'
+                        to={"/pos-system"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           POS Systems
                         </li>
                       </Link>
                       <Link
-                        to={'/network-devices'}
-                        class='text-decoration-none text-dark'
+                        to={"/network-devices"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Network Devices
                         </li>
@@ -2127,69 +2130,69 @@ const Navbar = () => {
                   </ul>
                 </li>
                 {/*======================================================================================================================  fifth drop down  ===============================================*/}
-                <li id='here5' class='nav-item  dropdown drop-show pe-1'>
+                <li id="here5" class="nav-item  dropdown drop-show pe-1">
                   <a
-                    class='nav-link active e-fonte  dropdown-toggle'
-                    role='button'
+                    class="nav-link active e-fonte  dropdown-toggle"
+                    role="button"
                     onClick={handleSupportClick}
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
                     Who we are
                   </a>
                   <ul
-                    class='dropdown-menu border-0 drop-menu drop-menu text-center p-2'
-                    style={{ transition: '0.3s' }}
+                    class="dropdown-menu border-0 drop-menu drop-menu text-center p-2"
+                    style={{ transition: "0.3s" }}
                   >
-                    <ul class='whoo-items list-unstyled'>
+                    <ul class="whoo-items list-unstyled">
                       <Link
-                        to={'/who-we-are'}
-                        class='text-decoration-none text-dark'
+                        to={"/who-we-are"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='whoo-items-active dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="whoo-items-active dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Company
                         </li>
                       </Link>
                       <Link
-                        to={'/our-team'}
-                        class='text-decoration-none text-dark'
+                        to={"/our-team"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Team
                         </li>
                       </Link>
                       <Link
-                        to={'/portfolio'}
-                        class='text-decoration-none text-dark'
+                        to={"/portfolio"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Portfolio
                         </li>
                       </Link>
-                      <Link to={'/blog'} class='text-decoration-none text-dark'>
+                      <Link to={"/blog"} class="text-decoration-none text-dark">
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Blog
                         </li>
                       </Link>
                       <Link
-                        to={'/career'}
-                        class='text-decoration-none text-dark'
+                        to={"/career"}
+                        class="text-decoration-none text-dark"
                       >
                         <li
-                          class='dropdown-item  mt-1 p-2 dismiss-nav-man'
-                          data-bs-dismiss='offcanvas'
+                          class="dropdown-item  mt-1 p-2 dismiss-nav-man"
+                          data-bs-dismiss="offcanvas"
                         >
                           Career
                         </li>
@@ -2198,11 +2201,11 @@ const Navbar = () => {
                   </ul>
                 </li>
                 {/*==================================================================================*/}
-                <li class='nav-item pe-1'>
+                <li class="nav-item pe-1">
                   <Link
-                    to={'/get-in-touch'}
-                    class='nav-link e-fonte hopper-color text-decoration-none active pe- dismiss-nav-man'
-                    data-bs-dismiss='offcanvas'
+                    to={"/get-in-touch"}
+                    class="nav-link e-fonte hopper-color text-decoration-none active pe- dismiss-nav-man"
+                    data-bs-dismiss="offcanvas"
                   >
                     Get in touch
                   </Link>
@@ -2210,85 +2213,85 @@ const Navbar = () => {
                 {currentAdmin === null ? (
                   <div></div>
                 ) : (
-                  <li class='nav-item pe-4'>
+                  <li class="nav-item pe-4">
                     <a
-                      class='nav-link fw-bold active'
-                      aria-current='page'
-                      style={{ cursor: 'pointer' }}
-                      href=''
+                      class="nav-link fw-bold active"
+                      aria-current="page"
+                      style={{ cursor: "pointer" }}
+                      href=""
                       onClick={logout}
                     >
                       <i
-                        class='bi bi-box-arrow-right dismiss-nav-man'
-                        data-bs-dismiss='offcanvas'
+                        class="bi bi-box-arrow-right dismiss-nav-man"
+                        data-bs-dismiss="offcanvas"
                       ></i>
                     </a>
                   </li>
                 )}
               </ul>
-              <div class='d-flex ps-0'>
-                <div class='social-links d-flex justify-content-center mx-auto pe-3'>
+              <div class="d-flex ps-0">
+                <div class="social-links d-flex justify-content-center mx-auto pe-3">
                   <Link
-                    to={'/cart'}
-                    class='linkedin text-white nav-link fw-bold pe-3 ps-0'
+                    to={"/cart"}
+                    class="linkedin text-white nav-link fw-bold pe-3 ps-0"
                   >
-                    <i class='fas fa-shopping-cart  position-relative'>
+                    <i class="fas fa-shopping-cart  position-relative">
                       <span
-                        class='position-absolute top-0 start-120 translate-middle badge cart-badge rounded-pill bg-danger dismiss-nav-man'
-                        data-bs-dismiss='offcanvas'
+                        class="position-absolute top-0 start-120 translate-middle badge cart-badge rounded-pill bg-danger dismiss-nav-man"
+                        data-bs-dismiss="offcanvas"
                       >
                         {totalUniqueItems}
                       </span>
                     </i>
                   </Link>
                   <Link
-                    class='linkedin text-white nav-link fw-bold pe-0 ps-0'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    to={'https://www.linkedin.com/company/elonatech/'}
+                    class="linkedin text-white nav-link fw-bold pe-0 ps-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    to={"https://www.linkedin.com/company/elonatech/"}
                   >
-                    <i class='bi bi-linkedin i-fonte'></i>
+                    <i class="bi bi-linkedin i-fonte"></i>
                   </Link>
                   <Link
-                    class='facebook text-white nav-link fw-bold pe-0'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    to={'https://www.facebook.com/elonatech'}
+                    class="facebook text-white nav-link fw-bold pe-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    to={"https://www.facebook.com/elonatech"}
                   >
-                    <i class='bi bi-facebook i-fonte'></i>
+                    <i class="bi bi-facebook i-fonte"></i>
                   </Link>
                   <Link
-                    class='instagram text-white nav-link fw-bold pe-0 '
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    to={'https://www.instagram.com/elonatech'}
+                    class="instagram text-white nav-link fw-bold pe-0 "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    to={"https://www.instagram.com/elonatech"}
                   >
-                    <i class='bi bi-instagram i-fonte'></i>
+                    <i class="bi bi-instagram i-fonte"></i>
                   </Link>
                   <Link
-                    class='twitter text-white nav-link fw-bold pe-0'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    to={'https://twitter.com/Elonatech'}
+                    class="twitter text-white nav-link fw-bold pe-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    to={"https://twitter.com/Elonatech"}
                   >
                     <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='17'
-                      height='17'
-                      fill='currentColor'
-                      class='bi bi-twitter-x  t-fonte'
-                      viewBox='0 0 16 16'
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="17"
+                      height="17"
+                      fill="currentColor"
+                      class="bi bi-twitter-x  t-fonte"
+                      viewBox="0 0 16 16"
                     >
-                      <path d='M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z' />
+                      <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                     </svg>
                   </Link>
                   <Link
-                    class='linkedin text-white nav-link fw-bold pe-0'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    to={'https://www.youtube.com/@elonatech'}
+                    class="linkedin text-white nav-link fw-bold pe-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    to={"https://www.youtube.com/@elonatech"}
                   >
-                    <i class='bi bi-youtube i-fonte'></i>
+                    <i class="bi bi-youtube i-fonte"></i>
                   </Link>
                 </div>
               </div>
@@ -2297,7 +2300,7 @@ const Navbar = () => {
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
