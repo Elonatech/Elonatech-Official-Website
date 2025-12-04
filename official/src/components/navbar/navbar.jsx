@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "./captions/elonatech.png";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -489,41 +489,70 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log("=== Checking Navbar Visibility ===");
-    const offcanvas = document.getElementById("offcanvasNavbar2");
-    const offcanvasBody = document.querySelector(".offcanvas-body");
+  const location = useLocation();
 
-    if (offcanvas) {
-      console.log(
-        "Offcanvas visibility:",
-        window.getComputedStyle(offcanvas).visibility
-      );
-      console.log(
-        "Offcanvas display:",
-        window.getComputedStyle(offcanvas).display
-      );
-      console.log(
-        "Offcanvas opacity:",
-        window.getComputedStyle(offcanvas).opacity
-      );
-    }
+  // useEffect(() => {
+  //   // Special fix for SingleProduct page
+  //   const isSingleProductPage = location.pathname.includes('/product/');
+    
+  //   if (isSingleProductPage) {
+  //     // Delay to ensure DOM is ready
+  //     const timer = setTimeout(() => {
+  //       // Manually initialize Bootstrap components
+  //       if (typeof window.bootstrap !== 'undefined') {
+  //         // Initialize offcanvas
+  //         const offcanvasElement = document.getElementById('offcanvasNavbar2');
+  //         if (offcanvasElement) {
+  //           const offcanvas = new window.bootstrap.Offcanvas(offcanvasElement);
+  //           // Show it (for debugging)
+  //           offcanvas.show();
+  //         }
+          
+  //         // Initialize dropdowns
+  //         const dropdowns = document.querySelectorAll('.dropdown-toggle');
+  //         dropdowns.forEach(dropdown => {
+  //           new window.bootstrap.Dropdown(dropdown);
+  //         });
+  //       }
+        
+  //       // Force navbar visibility
+  //       const navbar = document.getElementById('navbarShow');
+  //       if (navbar) {
+  //         navbar.style.display = 'flex';
+  //         navbar.style.visibility = 'visible';
+  //         navbar.style.opacity = '1';
+          
+  //         // For desktop view, ensure content is visible
+  //         if (window.innerWidth >= 992) {
+  //           const navbarNav = navbar.querySelector('.navbar-nav.mx-auto');
+  //           if (navbarNav) {
+  //             navbarNav.style.display = 'flex';
+  //             navbarNav.style.visibility = 'visible';
+  //           }
+  //         }
+  //       }
+  //     }, 300);
+      
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [location.pathname]);
 
-    if (offcanvasBody) {
-      console.log("Offcanvas-body children:", offcanvasBody.children.length);
-    }
-  }, []);
 
   return (
     <>
       <nav
         id="navbarShow"
-        // className={`navbar navbar-dark fixed-top ${
-        //   scroll ? "NAVbar" : "NAVba"
-        // } ${windowWidth > 1236 ? "navbar-expand-lg" : ""}`}
-        className={`navbar navbar-dark fixed-top navbar-expand-lg ${
+        className={`navbar navbar-dark fixed-top ${
           scroll ? "NAVbar" : "NAVba"
-        }`}
+        } ${windowWidth > 1236 ? "navbar-expand-lg" : ""}`}
+        // className={`navbar navbar-dark fixed-top navbar-expand-lg ${
+        //   scroll ? "NAVbar" : "NAVba"
+        // }`}
+        style={{
+          display: "flex",
+          opacity: "1",
+          visibility: "visible",
+        }}
       >
         <div className="container-fluid">
           <Link to={"/"} className="navbar-brand border-0">
