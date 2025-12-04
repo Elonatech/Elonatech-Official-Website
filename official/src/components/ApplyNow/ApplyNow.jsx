@@ -39,39 +39,6 @@ const ApplyNow = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic frontend validation
-    if (
-      !firstname.trim() ||
-      !lastname.trim() ||
-      !email.trim() ||
-      !number.trim() ||
-      !gender ||
-      !address.trim() ||
-      !dob ||
-      !category ||
-      category === "Job Role Applying For?" ||
-      !status ||
-      !letter ||
-      !file
-    ) {
-      toast.error("Please fill all required fields");
-      return;
-    }
-
-    // Email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-
-    // Nigerian phone number
-    const phoneRegex = /^0[7-9][0-1]\d{8}$/;
-    if (!phoneRegex.test(number)) {
-      toast.error("Enter a valid 11-digit Nigerian phone number");
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
@@ -81,20 +48,48 @@ const ApplyNow = () => {
         .map((s) => s.trim())
         .filter((s) => s.length > 0);
 
-      if (skillsArray.length === 0) {
-        toast.error("Please enter at least one skill");
+      // Clean letter for validation
+      let cleanLetter = letter.trim();
+      const letterEmpty =
+        cleanLetter === "" ||
+        cleanLetter === "<p><br></p>" ||
+        cleanLetter === "<p></p>";
+
+      // Basic frontend validation
+      if (
+        !firstname.trim() ||
+        !lastname.trim() ||
+        !email.trim() ||
+        !number.trim() ||
+        !gender ||
+        !address.trim() ||
+        !dob ||
+        !category ||
+        category === "Job Role Applying For?" ||
+        !status ||
+        letterEmpty ||
+        !file ||
+        skillsArray.length === 0
+      ) {
+        toast.error("Please fill all required fields correctly");
         setIsSubmitting(false);
         return;
       }
 
-      // Clean letter for backend
-      let cleanLetter = letter.trim();
-      if (
-        cleanLetter === "<p><br></p>" ||
-        cleanLetter === "<p></p>" ||
-        cleanLetter === ""
-      ) {
-        cleanLetter = " "; // send a space if empty
+      // Email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        toast.error("Please enter a valid email address");
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Nigerian phone number
+      const phoneRegex = /^0[7-9][0-1]\d{8}$/;
+      if (!phoneRegex.test(number)) {
+        toast.error("Enter a valid 11-digit Nigerian phone number");
+        setIsSubmitting(false);
+        return;
       }
 
       // Build FormData
@@ -105,12 +100,12 @@ const ApplyNow = () => {
       formData.append("number", number.trim());
       formData.append("gender", gender);
       formData.append("address", address.trim());
-      formData.append("dob", dob); // YYYY-MM-DD
+      formData.append("dob", dob);
       formData.append("skills", JSON.stringify(skillsArray));
       formData.append("category", category);
       formData.append("status", status);
-      formData.append("letter", cleanLetter);
-      formData.append("file", file); // key must be "file" for multer.single
+      formData.append("letter", cleanLetter || " "); // send a space if empty
+      formData.append("file", file); // must match multer.single("file")
 
       // Debug logs
       console.log("=== FormData Entries ===");
@@ -122,7 +117,7 @@ const ApplyNow = () => {
         }
       }
 
-      // POST request (no manual Content-Type!)
+      // POST request
       const response = await axios.post(
         `${BASEURL}/api/v1/email/job`,
         formData,
@@ -133,7 +128,6 @@ const ApplyNow = () => {
 
       console.log("Response:", response.data);
       toast.success("Job Application Sent Successfully!");
-
       resetForm();
       navigate("/application-success");
     } catch (error) {
