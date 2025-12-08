@@ -2,9 +2,6 @@
   display: block;
 }
 
-/* .dropdown:active .dropdown-menu{
-  display: none;
-} */
 
 .navbar {
   /* display: block !important; */
@@ -1106,33 +1103,6 @@
     top: -817%;
     width: 1100px;
   }
-
-
-  /* @media (min-width: 1236px) {
-
-    .offcanvas.offcanvas-end {
-      position: static !important;
-      visibility: visible !important;
-      transform: none !important;
-      width: auto !important;
-      height: auto !important;
-      background: transparent !important;
-      border: none !important;
-    }
-
-    .offcanvas-backdrop {
-      display: none !important;
-    }
-
-    .offcanvas-body {
-      display: flex !important;
-      padding: 0 !important;
-    }
-
-    .btn-close {
-      display: none !important;
-    }
-  } */
 
 }
 

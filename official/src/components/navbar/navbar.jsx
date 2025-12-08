@@ -1,10 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import logo from "./captions/elonatech.png";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+
 import { useState, useEffect, useCallback } from "react";
-import { FiPlus } from "react-icons/fi";
-import { HiOutlineXMark } from "react-icons/hi2";
+
 import { useCart } from "react-use-cart";
 import "./navbar.css";
 import { useAuth } from "../admin/AuthContext";
@@ -78,7 +76,6 @@ const Navbar = () => {
   const [currentAdmin, setCurrentAdmin] = useState("");
   const { logout } = useAuth();
 
-  let navigate = useNavigate();
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem("token"));
@@ -490,53 +487,6 @@ const Navbar = () => {
   }, []);
 
   const location = useLocation();
-
-  // useEffect(() => {
-  //   // Special fix for SingleProduct page
-  //   const isSingleProductPage = location.pathname.includes('/product/');
-    
-  //   if (isSingleProductPage) {
-  //     // Delay to ensure DOM is ready
-  //     const timer = setTimeout(() => {
-  //       // Manually initialize Bootstrap components
-  //       if (typeof window.bootstrap !== 'undefined') {
-  //         // Initialize offcanvas
-  //         const offcanvasElement = document.getElementById('offcanvasNavbar2');
-  //         if (offcanvasElement) {
-  //           const offcanvas = new window.bootstrap.Offcanvas(offcanvasElement);
-  //           // Show it (for debugging)
-  //           offcanvas.show();
-  //         }
-          
-  //         // Initialize dropdowns
-  //         const dropdowns = document.querySelectorAll('.dropdown-toggle');
-  //         dropdowns.forEach(dropdown => {
-  //           new window.bootstrap.Dropdown(dropdown);
-  //         });
-  //       }
-        
-  //       // Force navbar visibility
-  //       const navbar = document.getElementById('navbarShow');
-  //       if (navbar) {
-  //         navbar.style.display = 'flex';
-  //         navbar.style.visibility = 'visible';
-  //         navbar.style.opacity = '1';
-          
-  //         // For desktop view, ensure content is visible
-  //         if (window.innerWidth >= 992) {
-  //           const navbarNav = navbar.querySelector('.navbar-nav.mx-auto');
-  //           if (navbarNav) {
-  //             navbarNav.style.display = 'flex';
-  //             navbarNav.style.visibility = 'visible';
-  //           }
-  //         }
-  //       }
-  //     }, 300);
-      
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [location.pathname]);
-
 
   return (
     <>

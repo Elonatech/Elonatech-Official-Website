@@ -8,6 +8,7 @@ import './index.css';
 import { useAuth } from './components/admin/AuthContext';
 import ReactGA from 'react-ga4';
 import { BASEURL } from './BaseURL/BaseURL';
+import DesktopNav from './components/navbar/header/desktop/HeaderDesktop';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -145,33 +146,34 @@ const BlogPages = lazy(() => import("./components/blog/blogPages"));
 
 
 
-// const Layout = () => {
-//   return (
-//     <>
-//       <Suspense fallback={<><LoadingPages /></>}>
-//         <CartProvider>
-//           <Navbar />
-//           <ScrollTop />
-//           <Outlet />
-//           <Footer />
-//         </CartProvider>
-//       </Suspense>
-//     </>
-//   )
-// }
+const Layout = () => {
+  return (
+    <>
+      <Suspense fallback={<><LoadingPages /></>}>
+        <CartProvider>
+          <Navbar />
+          <ScrollTop />
+          <Outlet />
+          <Footer />
+        </CartProvider>
+      </Suspense>
+    </>
+  )
+}
 
-const Layout = () => (
-  <CartProvider>
-    <Navbar />
-    <ScrollTop />
+// const Layout = () => (
+//   <CartProvider>
+//     <Navbar />
+//     {/* <DesktopNav /> */}
+//     <ScrollTop />
 
-    <Suspense fallback={<LoadingPages />}>
-      <Outlet />
-    </Suspense>
+//     <Suspense fallback={<LoadingPages />}>
+//       <Outlet />
+//     </Suspense>
 
-    <Footer />
-  </CartProvider>
-);
+//     <Footer />
+//   </CartProvider>
+// );
 
 
 const router = createBrowserRouter([
