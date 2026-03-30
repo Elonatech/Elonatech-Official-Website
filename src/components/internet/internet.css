@@ -1,0 +1,94 @@
+
+
+.card-vl:hover{
+    box-shadow: 15px 20px 20px -20px rgba(0,0,0,0.45);
+}
+
+
+.internet-solution-section {
+    min-height: 500px;
+background-color: #11253D; 
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709805512/internetPage/internet_solution_tvkqct.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Text styling for desktop */
+  .internet-solution-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .internet-solution-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .internet-solution-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 576px) {
+    .internet-solution-section {
+      min-height: 200px;
+      background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1730211774/internet_uqpyec.jpg');
+      background-size: cover;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .internet-solution-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .internet-solution-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      /* display: none;  */
+    }
+  
+    .internet-solution-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none; /* Hide p on mobile */
+    }
+  
+    .internet-solution-section h2,
+    .internet-solution-section h5,
+    .internet-solution-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+

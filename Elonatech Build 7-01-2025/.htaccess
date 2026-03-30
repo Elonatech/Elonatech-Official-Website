@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+
+  RewriteBase /
+
+  RewriteRule ^index\.html$ - [L]
+
+
+  # Conditions to check if the requested file, directory, or symbolic link does not exist
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+
+  # If no file, directory, or symbolic link matches, serve index.html (React SPA fallback)
+  RewriteRule . /index.html [L]
+
+</IfModule>

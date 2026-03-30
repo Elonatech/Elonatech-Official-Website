@@ -1,0 +1,121 @@
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.servic .service-item {
+    padding: 40px;
+    background: #fff;
+    height: 100%;
+  }
+  
+  .servic .service-item .icon {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+
+
+  .servic .service-item p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+
+  .servic .service-item:hover .icon:before {
+    background: red;
+  }
+ 
+
+  .mrth {
+    -webkit-filter: brightness(60%);
+     filter:brightness(60%);
+ }
+
+
+ .server-administration-section {
+  min-height: 500px;
+background-color: #11253D; 
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('./captions/server_admin_wze37u.jpg'); /* Replace with actual URL */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* Text styling for desktop */
+.server-administration-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.server-administration-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.server-administration-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .server-administration-section {
+    min-height: 200px; /* Adjusted height for mobile */
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1729523982/Server_admin_mobile_mjtpjm.jpg');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .server-administration-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .server-administration-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .server-administration-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .server-administration-section h2,
+  .server-administration-section h5,
+  .server-administration-section p {
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,123 @@
+/* @import url('https://fonts.googleapis.com/css?family=Nunito'); */
+
+
+
+/* #ghert{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    background-color: #0a10138c;
+    font-family: 'Nunito', sans-serif;
+
+} */
+
+/* .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .content {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.wrapper .content header h1 {
+  font-size: 230%;
+  margin-top: 0;
+}
+.wrapper .content section {
+  color: #929DA6;
+  font-size: 15px;
+}
+.wrapper .content footer {
+  padding: 15px;
+}
+.wrapper .content footer input {
+  border: unset;
+  background-color: #e4eff8;
+  padding: 15px;
+  font-size: 13px;
+  border-radius: 50px;
+  width: 250px;
+}
+.wrapper .content footer button {
+  background-color: #dc3545;
+  color: #fff;
+  border: unset;
+  width: 120px;
+  border-radius: 50px;
+  padding: 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.wrapper .content footer input:focus, .wrapper .content footer button:focus {
+  outline: none;
+}
+
+.mailChimpClose{
+  position: relative;
+  left: 14px;
+  bottom: 8px;
+  cursor: pointer;
+}
+
+.mailChimpCloseSuccess{
+  position: relative;
+  left: 38px;
+  bottom: 8px;
+  cursor: pointer;
+}
+
+.mailChimpImage{
+  height: 30px;
+  position: fixed;
+}
+
+
+
+
+@media screen and (max-width: 720px) {
+  .wrapper .content {
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+    padding: 15px;
+  }
+  .wrapper .content footer input {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .mailChimpClose{
+    position: relative;
+    left: 14px;
+    bottom: 23px;
+    cursor: pointer;
+  }
+
+  .mailChimpCloseSuccess{
+    position: relative;
+    left: 25px;
+    bottom: 8px;
+    cursor: pointer;
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+
+  .mailChimpClose{
+    position: relative;
+    left: 24px;
+    bottom: 23px;
+    cursor: pointer;
+  }
+} */

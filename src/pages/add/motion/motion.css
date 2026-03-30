@@ -1,0 +1,124 @@
+.motion-video{
+    width: 560px;
+    height: 415px;
+    
+  }
+
+  .motion-img{
+    width: 450px;
+    height: 35vh;
+   
+  }
+
+  .sample-img{
+    margin-left: 50px;
+  }
+
+/* class="col-md-6 float-md-end mb-3 ms-md-3" */
+
+@media(max-width:768px){
+    .motion-video{
+      width: 380px;
+      height: 35vh;
+      margin-left: 40px;
+    }
+
+    
+  .sample-img{
+    margin-left: 60px;
+  }
+
+    .motion-img{
+      width: 350px;
+      height: 25vh;
+      margin-left: 40px;
+    }
+  }
+
+
+  .motion-graphics-section {
+    height: 500px;
+background-color: #11253D;  /* Fixed height for desktop */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709805286/motionPage/Motion_Graphics_tsr9dv.jpg'); /* Image URL */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+     /* Adjust as needed */
+  }
+  
+  /* Text styling for desktop */
+  .motion-graphics-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .motion-graphics-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .motion-graphics-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 576px) {
+    .motion-graphics-section {
+      height: 200px; /* Adjusted height for mobile */
+      background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1729523984/Motion_Graphics_New_e19lwt.png');
+      background-size: cover;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .motion-graphics-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .motion-graphics-section h5 {
+      font-size: 1.1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      /* display: none; */
+    }
+  
+    .motion-graphics-section p {
+      font-size: 1.1rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .motion-graphics-section h2,
+    .motion-graphics-section h5,
+    .motion-graphics-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  

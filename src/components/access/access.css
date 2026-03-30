@@ -1,0 +1,150 @@
+/* --------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services .img {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .services .img img {
+    transition: 0.6s;
+  }
+  
+  .services .details {
+    margin: -100px 30px 0 30px;
+    transition: all ease-in-out 0.3s;
+    position: relative;
+    text-align: center;
+  }
+  
+  .services .details .icon {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 28px;
+    transition: ease-in-out 0.3s;
+    position: absolute;
+    left: calc(50% - 36px);
+  }
+  
+  .services .details h3 {
+    font-weight: 700;
+    margin: 10px 0 15px 0;
+    font-size: 22px;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .services .details p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+.service-item{
+    height: 40px;
+}
+
+  .services .service-item:hover .details .icon i {
+    color: var(blue);
+  }
+  
+  .services .service-item:hover .img img {
+    transform: scale(1.2);
+  }
+  
+.underline-w {
+  width: 50px;
+  height: 3px;
+  background: blue;
+  margin: auto;
+}
+
+
+.access-control-section {
+  min-height: 500px;
+background-color: #11253D; 
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1709812122/accessControlPage/access_control_xwqaua.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* Text styling for desktop */
+.access-control-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.access-control-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.access-control-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .access-control-section {
+    min-height: 200px; 
+    background-color: #11253D;
+    background-image:
+	  url('https://res.cloudinary.com/elonatech/image/upload/v1729523963/Access_control_mobile_opumwx.jpg');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .access-control-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .access-control-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .access-control-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .access-control-section h2,
+  .access-control-section h5,
+  .access-control-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+

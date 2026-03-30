@@ -1,0 +1,88 @@
+.card.text-bg-danger:hover {
+    background-color: transparent !important;
+    color: #dc3545 !important; /* Red color matching danger */
+    border: 2px solid #dc3545 !important;
+}
+
+.card.text-bg-success:hover {
+    background-color: transparent !important;
+    color: #28a745 !important; /* Green color matching success */
+    border: 2px solid #28a745 !important;
+}
+
+.card.text-bg-primary:hover {
+    background-color: transparent !important;
+    color: #007bff !important; /* Blue color matching primary */
+    border: 2px solid #007bff !important;
+}
+
+/* Ensure the text also adopts the same color on hover */
+.card h4:hover {
+    color: inherit !important; /* Inherits the color defined for the card */
+}
+
+blockquote:hover {
+    color: inherit !important;
+}
+
+.dashboard {
+    display: flex;
+    max-width: 200px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 50px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .dash:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .dash .icon {
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .dash:hover .icon {
+    transform: rotate(360deg);
+  }
+  
+  .dash::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 100%;
+    left: -150%;
+    background: linear-gradient(45deg, transparent, #00ff87, #007bff, transparent);
+    transition: 0.5s ease-in-out;
+    z-index: 0;
+  }
+  
+  .dash:hover::before {
+    top: -150%;
+  }
+  
+  .dash:hover {
+    border-color: transparent;
+  }
+  

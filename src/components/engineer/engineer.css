@@ -1,0 +1,87 @@
+.hardware-engineering-section {
+  min-height: 500px;
+background-color: #11253D; 
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('./caption/computer_eng_iu3lq1.jpg'); /* Replace with the actual URL if dynamic */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+/* Text styling for desktop */
+.hardware-engineering-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hardware-engineering-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.hardware-engineering-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .hardware-engineering-section {
+    min-height: 200px;
+    background-image: linear-gradient(
+		  0deg,
+		  rgba(0, 0, 0, 0.5),
+		  rgba(0, 0, 0, 0.5)
+		),
+		url('https://res.cloudinary.com/elonatech/image/upload/v1729523968/computer_eng_mobile_yogfuh.jpg');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .hardware-engineering-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .hardware-engineering-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .hardware-engineering-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .hardware-engineering-section h2,
+  .hardware-engineering-section h5,
+  .hardware-engineering-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+  

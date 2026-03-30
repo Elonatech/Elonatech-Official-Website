@@ -1,0 +1,158 @@
+.survalliance .content h3 {
+    font-weight: 400;
+    font-size: 34px;
+  }
+  
+  .survalliance .content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+  
+  .survalliance .content p {
+    font-size: 15px;
+    color: #6c757d;
+  }
+  
+  .survalliance .accordion-item {
+    border: 0;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+  
+  .survalliance .accordion-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .survalliance .accordion-collapse {
+    border: 0;
+  }
+  
+  .survalliance .accordion-button {
+    padding: 20px 50px 20px 20px;
+    font-weight: 600;
+    border: 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-default);
+    text-align: left;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+  
+  .survalliance .accordion-button .num {
+    padding-right: 10px;
+    font-size: 20px;
+    line-height: 0;
+    color: var(--color-primary);
+  }
+  
+  .survalliance .accordion-button:not(.collapsed) {
+    color: var(--color-primary);
+    border-bottom: 0;
+    box-shadow: none;
+  }
+  
+  .survalliance .accordion-button:after {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  .survalliance .accordion-body {
+    padding: 0 40px 30px 45px;
+    border: 0;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+  } 
+
+
+  .email-marketing-section {
+    height: 500px;
+background-color: #11253D;  /* Fixed height for desktop */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1709803685/emailPage/E_mail_Marketing_2_xz5dio.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+        /* margin-bottom: 50px; */ /* Adjust margin as needed */
+  }
+  
+  /* Text styling for desktop */
+  .email-marketing-section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .email-marketing-section h5 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .email-marketing-section p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 576px) {
+    .email-marketing-section {
+      height: 200px; /* Adjusted height for mobile */
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1729523977/E_mail_Marketing_New_jomxqn.png');
+      background-size: cover;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    /* Adjusting text for mobile view */
+    .email-marketing-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
+  
+    .email-marketing-section h5 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-weight: 200;
+      /* display: none; */
+    }
+  
+    .email-marketing-section p {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 0;
+      display: none;
+    }
+  
+    .email-marketing-section h2,
+    .email-marketing-section h5,
+    .email-marketing-section p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  

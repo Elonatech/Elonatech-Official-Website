@@ -1,0 +1,132 @@
+
+ .elonateech-text {
+  max-width: 600px;
+  max-height: 85px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+
+
+.elonateech-text-btn {
+  appearance: none;
+  background-color:#014e78;
+  color:white;
+  padding: 0.5em;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;  
+  -o-border-radius: 0.25em;
+}
+
+.elonateech-text-btn::before {
+  content: "Read More";
+  text-transform: capitalize;
+}
+
+.elonateech-text-btn:checked::before {
+  content: "Read Less";
+}
+
+
+.elonateech-text:has(+ .elonateech-text-btn:checked) {
+  max-height: none;
+}
+
+
+
+.social-media-marketing-section {
+  height: 500px;
+background-color: #11253D;  /* Fixed height for desktop */
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1709811409/socialPage/Social_media_marketing_yqccy4.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+      /* margin-bottom: 50px; */ /* Adjust margin as needed */
+}
+
+/* Text styling for desktop */
+.social-media-marketing-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.social-media-marketing-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.social-media-marketing-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .social-media-marketing-section {
+    height: 200px; 
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1729523984/Social_Media_drd4sp.png');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .social-media-marketing-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .social-media-marketing-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .social-media-marketing-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .social-media-marketing-section h2,
+  .social-media-marketing-section h5,
+  .social-media-marketing-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+ 
+
+
+

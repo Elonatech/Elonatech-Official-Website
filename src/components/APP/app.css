@@ -1,0 +1,449 @@
+.img-rou {
+  border-radius: 50%;
+  width: 5vmin;
+  height: 5vmin;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.2s ease;
+}
+
+.ko:hover {
+  cursor: pointer;
+  position: relative;
+  bottom: 20px;
+  transition: all 0.25s ease 0s;
+}
+.WebDesignAndDevelopment {
+  background-position: top !important;
+  background-size: cover !important;
+  width: 90%;
+  height: 350px;
+  position: relative;
+  cursor: pointer;
+}
+
+.webOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 4;
+  background: linear-gradient(
+    0deg,
+    rgba(52, 84, 140, 0.9),
+    rgba(52, 84, 140, 0.9)
+  );
+  overflow: hidden;
+  width: 90%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.webContainer:hover .webOverlay {
+  height: 23%;
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+
+/* // =========================================================================== // */
+
+.app-design-section {
+  /* position: relative; */
+  height: 500px;
+background-color: #11253D; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+  
+  /* background-color: black; */
+
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://res.cloudinary.com/elonatech/image/upload/v1732722944/mobile_app_c6oqxa.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* margin-bottom: 100px; */
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 30;
+}
+
+.text-content {
+  z-index: 30;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.925);
+}
+
+.app-design-section h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.app-design-section p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.app-design-section button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* // ==================================================== // */
+
+/* Text styling for desktop */
+.app-design-section h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.app-design-section h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.app-design-section p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 576px) {
+  .app-design-section {
+    height: 200px; 
+    background-color: #11253D;
+    background-image:
+	  url('https://res.cloudinary.com/elonatech/image/upload/v1733148059/mobile_app_for_mobile_view_fu9ynd.jpg');
+    background-size: contain;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .app-design-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .app-design-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .app-design-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .app-design-section h2,
+  .app-design-section h5,
+  .app-design-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.myCard {
+  background: #818ec3;
+  color: white;
+}
+
+.icon-container {
+  background-color: #e5e7eb;
+  border-radius: 50px; /* Makes it circular */
+  padding: 1rem; /* Adjust padding as needed */
+  display: flex; /* To center the icon */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 50px; /* Make width match height*/
+  height: 50px;
+}
+.icon-container svg {
+  /* Adjust size of svg*/
+  width: 50px;
+  height: 50px;
+}
+
+.ya {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 1rem;
+}
+
+.yb {
+  height: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.yb:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.yc {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.A {
+  padding-block: 80px;
+  background-color: white;
+}
+
+.B {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Da {
+  display: flex;
+}
+
+.D {
+  font-size: 3.75rem;
+  font-weight: 700;
+  color: rgb(2, 16, 72);
+}
+
+.E {
+  position: relative;
+  z-index: 10;
+  padding-left: 1rem;
+}
+
+.F {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.G {
+  color: #4b5563;
+}
+
+.oneLane {
+  padding-block: 80px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.twoLane {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.threeLane,
+.C {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.fourLane {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.fiveLane {
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+}
+
+.fourLane:hover .fiveLane {
+  transform: scale(1.05);
+}
+
+.sixLane {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.sevenLane {
+  font-size: 14px;
+  color: #d1d5db;
+  margin-bottom: 8px;
+}
+
+.eightLane {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.nineLane {
+  color: #d1d5db;
+}
+
+.technology-lnOne {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: white;
+}
+
+.lnTwo {
+  margin-inline: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.lnThree {
+  font-size: 30px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 700;
+}
+.lnFour {
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lnFive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  text-align: center;
+}
+
+.lnSix {
+  width: 80px;
+  height: 80px;
+}
+
+.lnSev {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.lnEig {
+  font-size: 18px;
+  font-weight: 600;
+  color: (rgb(2, 16, 72));
+}
+
+.blueColo {
+  color: rgb(2, 16, 72);
+  width: 300px;
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .app-design-section {
+    height: 200px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://res.cloudinary.com/elonatech/image/upload/v1732722944/mobile_app_c6oqxa.jpg');
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  /* Adjusting text for mobile view */
+  .app-design-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .app-design-section h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    line-height: 1.1;
+    font-weight: 200;
+    /* display: none; */
+  }
+
+  .app-design-section p {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .app-design-section h2,
+  .app-design-section h5,
+  .app-design-section p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-design-section {
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  .app-design-section h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .app-design-section p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+}
