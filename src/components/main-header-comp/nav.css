@@ -1,0 +1,53 @@
+/* main-header.css - Global styles for header switching */
+
+/* .main-header-container {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mobile-header-wrapper.visible {
+  display: block;
+}
+
+.mobile-header-wrapper.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.desktop-header-wrapper.visible {
+  display: block;
+}
+
+.desktop-header-wrapper.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.mobile-header-wrapper,
+.desktop-header-wrapper {
+  transition: opacity 0.3s ease;
+} */
+
+
+
+@media (max-width: 1023px) {
+  .desktop-nav-wrapper,
+  .elonatechContainer,
+  .elonatechactiveContainer {
+    display: none !important;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .mobile-navbar,
+  .navbar[data-bs-toggle="offcanvas"],
+  #offcanvasNavbar2 {
+    display: none !important;
+  }
+}

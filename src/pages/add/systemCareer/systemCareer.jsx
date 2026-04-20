@@ -10,11 +10,11 @@ const SystemCareer = () => {
     <>
       <Helmet>
         <title>
-        Systems & Network Engineer Career - Full-Time Role at Elonatech
+        Tech Support Personnel Career - Full-Time Role at Elonatech
         </title>
         <meta
           name='description'
-          content='This is a full-time on-site role for a Systems/Network Engineer. The Systems/Network Engineer will be
+          content='This is a full-time on-site role for a Tech Support Personnel. The Tech Support Personnel will be
          responsible for designing, maintaining and
          building computer hardware and software systems as well as Installing, configuring and supporting network equipment.'
         />
@@ -38,7 +38,7 @@ const SystemCareer = () => {
           className='my-4'
           style={{ fontSize: '', fontWeight: '800', color: '#34548C' }}
         >
-          Systems/Network Engineer
+          Tech Support Personnel
         </h1>
         <div class='row justify-content-center mt-4'>
           <div class='col-md-6'>
@@ -46,11 +46,11 @@ const SystemCareer = () => {
               Job Description:
             </h5>
             <p className='text-justify'>
-              This is a full-time on-site role for a Systems/Network Engineer.
-              The Systems/Network Engineer will be responsible for designing,
+              This is a full-time on-site role for a Tech Support Personnel.
+              The Tech Support Personnel will be responsible for designing,
               maintaining and building computer hardware and software systems as
               well as Installing, configuring and supporting network equipment.
-              The Systems/Network Engineer will work closely with the
+              The Tech Support Personnel will work closely with the
               Systems/Network team lead as well as with clients and their IT
               managers to ensure their network meet requirements.
             </p>

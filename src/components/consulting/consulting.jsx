@@ -3,6 +3,22 @@ import { Helmet } from 'react-helmet-async'
 import './consulting.css'
 
 const Consulting = () => {
+    const ExperienceYears = () => {
+    const startYear = 2010; // The year you started
+    const startMonth = 3;   // April (0 = January)
+    const startDate = new Date(startYear, startMonth);
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    const monthDiff = now.getMonth() - startDate.getMonth();
+
+    // If the current month is before April, reduce the count by 1
+    if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < startDate.getDate())) {
+      years--;
+    }
+
+    return years; // ✅ You must return this value
+  };
   return (
     <>
       <Helmet>
@@ -286,7 +302,7 @@ const Consulting = () => {
           </div>
           <div className='col-lg-3 col-6'>
             <div className='border-top-0 border-bottom-0 rounded-0 border-dark'>
-              <h4 className='text-center'>13+ Years</h4>
+              <h4 className='text-center'>{ExperienceYears()}+ Years</h4>
               <p className='text-center'>of innovation in the IT industry</p>
             </div>
           </div>
@@ -296,10 +312,10 @@ const Consulting = () => {
               <p className='text-center'>Average rating from 300 reviews</p>
             </div>
           </div>
-          <div className='col-lg-3 col-6'>
-            <div className='border-top-0 border-bottom-0 border-end-0 rounded-0 border-dark'>
+          <div className='col-lg-3 col-6 overflow-hidden'>
+            <div className='border-top-0 border-bottom-0 border-end-0 rounded-0 border-dark overflow-hidden'>
               <h4 className='text-center'>80%</h4>
-              <p className='text-center'>Clients with us for 8 years or more</p>
+              <p className='text-center whitespace-nowrap'>Clients with us for more than a decade</p>
             </div>
           </div>
         </div>

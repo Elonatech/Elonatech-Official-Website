@@ -14,6 +14,7 @@ const ComputerWrite = () => {
     return value;
   };
 
+  const [Loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -21,6 +22,7 @@ const ComputerWrite = () => {
   const [odd, setOdd] = useState("");
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState(getInitialState);
+  // const [category, setCategory] = useState("Computer");
   const [series, setSeries] = useState("");
   const [model, setModel] = useState("");
   const [weight, setWeight] = useState("");
@@ -62,24 +64,17 @@ const ComputerWrite = () => {
   //handle images
   const handleImage = (e) => {
     const files = Array.from(e.target.files);
-    files.forEach((file) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setImages((oldArray) => [...oldArray, reader.result]);
-      };
-    });
+    setImages((oldArray) => [...oldArray, ...files]);
   };
 
   const navigate = useNavigate();
   //submit the form
- const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e) => {
   e.preventDefault();
-
   try {
+    setLoading(true);
     const formData = new FormData();
-
-    // Add regular fields
     formData.append("name", name);
     formData.append("description", description);
     formData.append("price", price);
@@ -88,7 +83,7 @@ const ComputerWrite = () => {
     formData.append("quantity", quantity);
     formData.append("category", category);
 
-    // 🔹 Send computerProperty as a JSON stringified ARRAY
+    // append computerProperty
     const computerProperty = [
       {
         series,
@@ -114,44 +109,28 @@ const ComputerWrite = () => {
     ];
     formData.append("computerProperty", JSON.stringify(computerProperty));
 
-    // 🔹 Append images
-    images.forEach((image, index) => {
-      const blob = dataURLtoFile(image, `image_${index}.jpg`);
-      formData.append("images", blob);
-    });
+    // append images directly
+    images.forEach((file) => formData.append("images", file));
 
-    // 🔹 Send to backend
     await axios.post(`${BASEURL}/api/v1/product/create`, formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
 
-    setImages([]);
+    // console.log('form-data', formData);
+    
     toast.success("✅ Product Added Successfully");
-    navigate("/shop");
+    setImages([]);
+    navigate("/products");
   } catch (error) {
     console.error(error);
     toast.error(error.response?.data?.message || "❌ Upload failed");
+  }finally {
+    setLoading(false);
   }
-};
-
-// Helper to convert base64 -> File
-const dataURLtoFile = (dataurl, filename) => {
-  const arr = dataurl.split(",");
-  const mime = arr[0].match(/:(.*?);/)[1];
-  const bstr = atob(arr[1]);
-  let n = bstr.length;
-  const u8arr = new Uint8Array(n);
-  while (n--) u8arr[n] = bstr.charCodeAt(n);
-  return new File([u8arr], filename, { type: mime });
 };
 
   return (
     <>
-    {/* <div class="container-fluid bg-dark py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url()`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
-<div class="py-5 mt-5 ">
-</div>
-</div>  */}
-
 <div class="container-fluid bg-secondary py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1726245491/admin_computer_page_fwqmqh.jpg)`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
  <div class="py-5 mt-5 ">
    <h2 class=" mt-5 text-white text-center">Computer Editor</h2>
@@ -224,7 +203,7 @@ const dataURLtoFile = (dataurl, filename) => {
               onChange={handleImage}
               type="file"
               id="formupload"
-              name="image"
+              name="images"
               className="form-control"
               multiple
             />
@@ -242,6 +221,9 @@ const dataURLtoFile = (dataurl, filename) => {
               <option className="mt-4" value="Computer">
                 Computer
               </option>
+              {/* <option className="mt-4" value="Products">
+                Products
+              </option> */}
             </select>
           </div>
         </div>
@@ -493,7 +475,7 @@ const dataURLtoFile = (dataurl, filename) => {
         </div>
         <div className="col-md-5 mt-3">
           <button type="submit" class="btn btn-primary" onClick={handleSubmit}>
-            Upload
+            {Loading ? 'loading' : 'Upload'}
           </button>
         </div>
       </div>

@@ -127,20 +127,36 @@ A strategic thinker and collaborative leader, Joseph has successfully delivered 
 </div>
   </div>
   <div class="col-lg-2  mx-1 p-3 mb-5 rounded">
-  <div class="kontribusi">
-        <div class="team-item rounded overflow-hidden pb-4">
-        <Link className='text-decoration-none' to={'/samuel-folarin'}>
-        <img class="img-fluid mb-4" src="https://res.cloudinary.com/elonatech/image/upload/v1709808295/teamPage/Sam_Folarin_k3nvhr.png" alt=""/>
-        <h4 className='fw-bold' style={{color:"#34548c"}}>Samuel Folarin</h4>
-        <h6 class="text-danger">Team Lead | Graphics designer</h6>
+    <div class="kontribusi">
+      <div class="team-item rounded overflow-hidden pb-4">
+        <Link className='text-decoration-none' to={'/toju-okenejoe'}>
+          <img class="img-fluid mb-4 toju-img" src="https://res.cloudinary.com/davecz6pb/image/upload/v1762267339/products/nhdp0rlogtsalqaymsph.jpg" alt=""/>
+          <h4 className='fw-bold' style={{color:"#34548c"}}>Toju Okene-Joe</h4>
+          <h6 class="text-danger">Creative Designer | Team Lead</h6>
         </Link>
         <ul class="team-social">
-        <li><Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://www.linkedin.com/in/samuel-folarin-5637891b2/'}><i class="fab fa-linkedin-in"></i></Link></li>
-        <li><Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://twitter.com/sammycrest'}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-         </svg></Link></li>
-        <li><div class="btn btn-square" target="_blank" rel="noopener noreferrer" to={''}><i class="fab fa-facebook-f"></i></div></li>
-        <li><div class="btn btn-square" target="_blank" rel="noopener noreferrer" to={''}><i class="fab fa-instagram"></i></div></li>
+          <li>
+            <Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'http://www.linkedin.com/in/okene-joe-toju'}>
+              <i class="fab fa-linkedin-in"></i>
+              </Link>
+          </li>
+          <li>
+            <Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://x.com/OkeneJoeToju'}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+              </svg>
+            </Link>
+          </li>
+          <li>
+            <Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://web.facebook.com/tojujoe'}>
+            <i class="fab fa-facebook-f"></i>
+            </Link>
+          </li>
+          <li>
+            <Link class="btn btn-square" target="_blank" rel="noopener noreferrer" to={'https://www.instagram.com/teajay_creations?igsh=OHF1NXg5bTB2NmZx'}>
+              <i class="fab fa-instagram"></i>
+            </Link>
+          </li>
         </ul>
         </div>
       </div>

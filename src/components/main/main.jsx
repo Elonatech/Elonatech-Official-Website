@@ -10,14 +10,10 @@ import Clients from '../clients/clients'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 // Images
-
 import ElonatechSupport from './captions/Elonatech_suupport-min_hrc21l.png'
 import ElonatechOneStop from './captions/One_stop_IT_solution-min_lqmw0y.png'
-
 // others
-
 import MDImage from './captions/Ceo1.png'
-
 import './main.css'
 
 const Main = () => {
@@ -35,7 +31,7 @@ const Main = () => {
 
   const [latestProducts, setLatestProducts] = useState([])
   const [loadingLatest, setLoadingLatest] = useState(true)
-  const [featuredProduct, setFeaturedProduct] = useState(null)
+  const [filteredProductCategory, setFilteredProductCategory] = useState(null)
 
   useEffect(() => {
     const fetchLatestProducts = async () => {
@@ -44,30 +40,42 @@ const Main = () => {
         const response = await axios.get(`https://elonatech-live-api.onrender.com/api/v1/product/filter/all`)
         if (response.data.success) {
           const allProducts = response.data.data
-          console.log('All products:', allProducts)
+          // console.log('All products:', allProducts)
+
+          const productsCategory = allProducts.filter((el) => el.category === 'Products');
+          // console.log('Products category products:', productsCategory);
+
+          let latestProductInProductsCategory = null;
+          if (productsCategory.length > 0) {
+            latestProductInProductsCategory = productsCategory.sort(
+              (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+            )[0]
+            setFilteredProductCategory(latestProductInProductsCategory);
+            // console.log('latest-product-in-Products-category', latestProductInProductsCategory);
+          }
 
           const productsByCategory = allProducts.reduce((acc, product) => {
+            // Skip products with category 'Products'
+            if (product.category === 'Products') {
+              return acc
+            }
+            
             acc[product.category] = acc[product.category] || []
             acc[product.category].push(product)
             return acc
           }, {})
 
+          console.log('Products by category (excluding Products):', productsByCategory)
+
+          // Get latest product from each remaining category
           const latest = Object.values(productsByCategory).map(products => {
             return products.sort(
               (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
             )[0]
           })
-          console.log('latest', latest);
+          // console.log('latest products from all categories except Products:', latest);
           
-
           setLatestProducts(latest)
-
-          const computerProducts = productsByCategory[' ']
-          console.log('computer', computerProducts);
-          
-          if (computerProducts && computerProducts.length >= 2) {
-            setFeaturedProduct(computerProducts[1])
-          }
         }
       } catch (error) {
         console.error('Error fetching latest products:', error)
@@ -81,13 +89,13 @@ const Main = () => {
 
   const handleProductClick = (product) => {
     if (product && product.slug && product._id) {
+      localStorage.setItem('product _id', product._id);
       navigate(`/product/${product.slug}/${product._id}`)
     } else {
-      console.error('Product data is incomplete:', product)
+      // console.error('Product data is incomplete:', product)
       toast.error('Product information is incomplete')
     }
   }
-
 
   const handleChangeCost = e => {
     const value = e.target.value.replace(/\D/g, '')
@@ -323,18 +331,18 @@ const Main = () => {
               We, at Elonatech are aware of your need for quality IT Services.
               Beyond reasonable doubt, the management of information technology
               for business is not inherently a do-it-yourself project. Business
-              owners who aren’t tech-savvy need to find quality IT solution
+              owners who aren't tech-savvy need to find quality IT solution
               providers. We are experts in IT related matters, poised to shape
               the industry, by helping clients solve complex IT challenges.{' '}
               <br /> <br />
-              Our Company’s logistical services are designed for the
+              Our Company's logistical services are designed for the
               top-of-the-market corporate clientele; we serve as an interface
-              keeping you above the turmoil of working in today’s Nigeria with
+              keeping you above the turmoil of working in today's Nigeria with
               minimum hassle. We strive to be the leading provider of innovative
               information technologies that improve the quality of lives. <br />{' '}
               <br /> We delight in satisfying our clients through the provision
               of innovative, quality, timely, relevant, accurate and affordable
-              solutions to their needs. “Our concept is to provide One-Stop ‘IT’
+              solutions to their needs. "Our concept is to provide One-Stop 'IT'
               solution
             </p>
           </div>
@@ -763,7 +771,7 @@ const Main = () => {
               >
                 <div class='text-center'>
                   <p class='p-5 text-white'>
-                    We endeavor to exceed our clients’ expectations with the
+                    We endeavor to exceed our clients' expectations with the
                     solutions we provide, at competitive prices.
                   </p>
                 </div>
@@ -1028,9 +1036,10 @@ const Main = () => {
           margin: 'auto'
         }}
       ></div>
-          <div className='container-fluid mt-5'>
-            <div className='row mt-5 justify-content-center'>
-               {featuredProduct && featuredProduct.images?.length > 0 ? (
+      <div className='container-fluid mt-5'>
+        <div className='row mt-5 justify-content-center'>
+          {/* Display latest product from "Products" category */}
+          {filteredProductCategory?.images?.length > 0 ? (
             <div className="col-2 px-1">
               <div 
                 className="border shadow-sm p-2 mb-3 bg-body product-card rounded"
@@ -1040,22 +1049,22 @@ const Main = () => {
                   flexDirection: 'column',
                   cursor: 'pointer'
                 }}
-                onClick={() => handleProductClick(featuredProduct)}
+                onClick={() => handleProductClick(filteredProductCategory)}
               >
                 <div className="text-decoration-none text-dark d-flex flex-column h-100">
                   <div className="text-center" style={{ height: '150px', overflow: 'hidden' }}>
                     <LazyLoadImage
-                      src={featuredProduct.images[0]?.url || '/fallback.jpg'}
+                      src={filteredProductCategory.images[0]?.url || '/fallback.jpg'}
                       placeholderSrc="https://res.cloudinary.com/elonatech/image/upload/v1710503902/loaderImage/blurred_Loader_ufozvn.png"
                       className="lazyload img-fluid"
-                      alt={featuredProduct.name || 'Product image'}
+                      alt={filteredProductCategory.name || 'Product image'}
                       width="150"
                       height="150"
                       style={{ objectFit: 'contain', maxHeight: '150px' }}
                     />
                   </div>
-                  <h5 className="fw-normal mt-2 text-truncate" title={featuredProduct.name}>
-                    {featuredProduct.name}
+                  <h5 className="fw-normal mt-2 text-truncate" title={filteredProductCategory.name}>
+                    {filteredProductCategory.name}
                   </h5>
                   <p className="small mb-1">Products</p>
                   <div className="stars mb-1" style={{ color: '#f6b01e' }}>
@@ -1065,7 +1074,7 @@ const Main = () => {
                   </div>
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <p className="m-0 text-danger small">
-                      ₦{featuredProduct.price?.toLocaleString() || '0'}
+                      ₦{filteredProductCategory.price?.toLocaleString() || '0'}
                     </p>
                     <i className="bi bi-cart" style={{ fontSize: '18px' }}></i>
                   </div>
@@ -1084,10 +1093,12 @@ const Main = () => {
               </div>
             )
           )}
-           {loadingLatest ? (
+          
+          {/* Display latest products from all other categories */}
+          {loadingLatest ? (
             <Loading />
           ) : (
-            latestProducts.slice().map(product => (
+            latestProducts.map(product => (
               product && product._id && product.slug ? (
                 <div key={product._id} className='col-2 px-1'>
                   <div

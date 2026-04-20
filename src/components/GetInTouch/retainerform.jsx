@@ -65,13 +65,14 @@ const Retainerform = () => {
         days
       }
 
+      console.log(newData);
+      
       const response = await axios.post(
         `${BASEURL}/api/v1/email/retainership`,
         newData,
-        { headers: { 'Content-Type': 'application/json' } }
       )
-      if (response) {
-        toast.success(response.data)
+      if (response.data) {
+        toast.success(response.data.message)
         setTimeout(() => {
           navigate(0)
         }, 2000)

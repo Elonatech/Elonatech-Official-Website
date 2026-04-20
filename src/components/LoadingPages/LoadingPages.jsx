@@ -1,14 +1,13 @@
-import './LoadingPages.css'
+import "./LoadingPages.css";
 
 const LoadingPages = () => {
-    return (
+  return (
     <div>
-    <div id="spinner" class="elonatech-container">
-    <div class="elonatech-loading">
+      <div id="spinner" class="elonatech-container">
+        <div class="elonatech-loading"></div>
+      </div>
     </div>
-    </div> 
-    </div>
-    );
-}
+  );
+};
 
 export default LoadingPages;

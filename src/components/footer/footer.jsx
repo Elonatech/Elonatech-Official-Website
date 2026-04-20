@@ -1,5 +1,6 @@
 import './footer.css'
 import eloa2 from './caption/Elonatech icon.png'
+import ChristmasLogo from './caption/elonatech-christmas.png'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -379,7 +380,7 @@ const Footer = () => {
             <div class='col-6 footer-info'>
               <div className=''>
                 <img
-                  data-src={eloa2}
+                  data-src={ChristmasLogo}
                   className='lazyload mx-4'
                   style={{ height: '5rem', width: '5rem' }}
                   alt='Description of the image content'

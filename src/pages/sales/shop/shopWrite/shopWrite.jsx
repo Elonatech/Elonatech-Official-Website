@@ -7,13 +7,14 @@ import axios from "axios";
 import { BASEURL } from "../../../../BaseURL/BaseURL";
 import { toast } from "react-toastify";
 import { AiOutlineDashboard } from 'react-icons/ai';
+import { headers } from "next/headers";
 
 const shopWrite = () => {
   const getInitialState = () => {
     const value = "Pos";
     return value;
   };
-
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -21,6 +22,7 @@ const shopWrite = () => {
   const [odd, setOdd] = useState("");
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState(getInitialState);
+  // const [category, setCategory] = useState("");
   const [images, setImages] = useState([]);
 
   // Handle Price
@@ -43,45 +45,45 @@ const shopWrite = () => {
   //===================== handle images
   const handleImage = (e) => {
     const files = Array.from(e.target.files);
-    files.forEach((file) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setImages((oldArray) => [...oldArray, reader.result]);
-      };
-    });
+    setImages((oldArray) => [...oldArray, ...files]);
   };
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const newData = {
-        name,
-        description,
-        price,
-        odd,
-        brand,
-        quantity,
-        category,
-        images,
-      };
+      setLoading(true);
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("description", description);
+      formData.append("price", price);
+      formData.append("odd", odd);
+      formData.append("brand", brand);
+      formData.append("quantity", quantity);
+      formData.append("category", category);
+
+
+      images.forEach((file) => formData.append("images", file));
   
       const response = await axios.post(
         `${BASEURL}/api/v1/product/create`,
-        newData
+        // formData
+        formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
       );
   
-      console.log("API Response:", response);
+      // console.log("API Response:", response);
   
       // Success handling
       toast.success("Product Added Successfully");
       setImages([]);
-      navigate("/shop");
+      navigate("/products");
     } catch (error) {
       console.error("Error during API call:", error);
       toast.warning("Please Fill All Required Fields");
+    }finally {
+      setLoading(false);
     }
   };
   
@@ -179,11 +181,27 @@ const shopWrite = () => {
                 onChange={(e) => setCategory(e.target.value)}
                 id="inputGroupSelect01"
               >
+                {/* <option value="Products">Products</option> */}
                 <option value="Pos System">POS System</option>
                 <option value="Office">Office</option>
                 <option value="Printer">Printer</option>
                 <option value="Network">Network Devices</option>
               </select>
+                 {/* <select
+                  className="form-select"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  id="inputGroupSelect01"
+                >
+                  
+                  <option value="Products">Products</option>
+                  <option value="Pos System">POS System</option>
+                  <option value="Office">Office</option>
+                  <option value="Printer">Printer</option>
+                  <option value="Network">Network Devices</option>
+                  <option value="Computer">Computer</option>
+              </select> */}
+
             </div>
           </div>
           <div className="row">
@@ -234,7 +252,7 @@ const shopWrite = () => {
               class="btn btn-primary"
               onClick={handleSubmit}
             >
-              Upload
+              {loading ? 'loading' : 'Upload'}
             </button>
           </div>
         </div>

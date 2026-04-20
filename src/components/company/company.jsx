@@ -13,14 +13,32 @@ import companyProfilePdf from './Our-Company-Profile_Elonatech.pdf';
 import { Helmet } from 'react-helmet-async';
 
 const Company = () => {
+  const ExperienceYears = () => {
+    const startYear = 2010; // The year you started
+    const startMonth = 3;   // April (0 = January)
+    const startDate = new Date(startYear, startMonth);
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    const monthDiff = now.getMonth() - startDate.getMonth();
+
+    // If the current month is before April, reduce the count by 1
+    if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < startDate.getDate())) {
+      years--;
+    }
+
+    return years; // ✅ You must return this value
+  };
+
+
   return (
     <>
       <Helmet>
-        <title>WHO WE ARE - Leading IT Solutions Provider with 13+ Years of Expertise</title>
+        <title>Who We Are | Elonatech - {`${ExperienceYears()}`}+ Years of Expertise</title>
         <meta
 
           name="description"
-          content="A diversified company in pursuit of excellence in ‘IT’. The Best Innovative IT Solutions Provider with Over 13 Years of Experience. Excellence, Team Work, Integrity, Professionalism. Our Core Expertise focuses on Sales and Supply, Web Design and Development, Network Admin/Implementation, Access Control, PBX & Surveillance (CCTV), Hardware Engineering, Software Engineering, Digital Marketing, Graphics & Brand Identity, Livestreaming and Videoconferencing, Video Editing & Motion Graphics, Training, Consulting & Retainer Partnership, etc. that will enable you and your clients maximize technology in bringing about the desired results, and access to a wide array of office equipment."
+          content="A diversified company in pursuit of excellence in ‘IT’. The Best Innovative IT Solutions Provider with Over {ExperienceYears()} Years of Experience. Excellence, Team Work, Integrity, Professionalism. Our Core Expertise focuses on Sales and Supply, Web Design and Development, Network Admin/Implementation, Access Control, PBX & Surveillance (CCTV), Hardware Engineering, Software Engineering, Digital Marketing, Graphics & Brand Identity, Livestreaming and Videoconferencing, Video Editing & Motion Graphics, Training, Consulting & Retainer Partnership, etc. that will enable you and your clients maximize technology in bringing about the desired results, and access to a wide array of office equipment."
         />
         <link rel="canonical" href="https://elonatech.com.ng/who-we-are" />
       </Helmet>
@@ -45,17 +63,11 @@ const Company = () => {
             <div className="col-lg-6">
               <div className="section-title position-relative pb-3 mb-">
                 <h2 className="mt-3">
-                  The Best Innovative IT Solutions Provider with Over 13 Years
-                  of Experience
+                  The Best Innovative IT Solutions Provider with Over {ExperienceYears()} Years of Experience
                 </h2>
               </div>
               <p className="mb-4">
-                We, at Elonatech are aware of your current need for quality IT
-                Services. Beyond reasonable doubt, the management of information
-                technology for business is not inherently a do-it-yourself
-                project. Business owners who aren’t tech-savvy need to find
-                quality IT solution providers. We are experts in IT related
-                matters.
+                At Elonatech, we understand the growing demand for reliable, high-quality <strong>IT products and services</strong> in today’s fast-evolving business world. Managing technology effectively is no longer a do-it-yourself task; it requires the right expertise, dependable tools, and innovative solutions. At Elonatech, we don’t just provide technology; <strong>we transform it into your competitive advantage</strong>
               </p>
               <div class='row g-0 mb-3'>
                 <div class='col-sm-6 wow zoomIn' data-wow-delay='0.2s'>
@@ -161,18 +173,7 @@ const Company = () => {
               }}
             ></div>
             <p class='taj'>
-              Elonatech Nigeria Limited is a diversified company in pursuit of
-              excellence in ‘IT’. Our company's logistical services are designed
-              for the top-of-the-market corporate clientele; we serve to keep
-              you above the turmoil of working in today's Nigeria. Our company
-              is managed and structured to achieve effective results, even to
-              the most challenging client requirement. This, we believe, forms
-              the foundation for mutually beneficial, long-term partnerships and
-              we ensure that we reach our goal of adding value to our client’s
-              processes. We Endeavour to exceed our clients’ expectations with
-              the solutions we provide, and aim at pricing our solutions and
-              services competitively and deliver projects within budget while
-              continuously striving to maintain premium quality.
+              Elonatech Nigeria Limited is a leading IT solutions provider driven by innovation, creativity, and technical excellence. We are passionate about empowering businesses to thrive in a fast-paced digital world through cutting-edge technology, reliable infrastructure, and transformative digital experiences. Originally established as a computer and allied products supplier, Elonatech evolved in April 2010 into a one-stop IT solutions outfit and was officially incorporated on May 3rd, 2017 (RC 1410636). Since then, we have grown into a trusted technology partner for organizations across Nigeria, bridging the gap between people, process, and performance.
             </p>
           </div>
         </div>
@@ -196,22 +197,7 @@ const Company = () => {
                 style={{ textAlign: 'justify' }}
                 data-wow-delay='0.2s'
               >
-                We are pleased to introduce our company, ELONATECH NIGERIA
-                LIMITED, a diversified company in pursuit of excellence in ‘IT’.
-                Elonatech Nigeria Limited with RC 1410636 has been in operation
-                for several years as a Computer and Allied products
-                dealer/supplier until much recently in April 2010, where it
-                commenced operations as a One-stop IT Solution Outfit, and was
-                incorporated on May 3rd, 2017. Our Company’s logistical services
-                are designed for the top-of-the-market corporate clientele; we
-                serve as an interface keeping you above the turmoil of working
-                in today’s Nigeria with minimum hassle.
-                <br />
-                We strive to be the leading provider of innovative information
-                technologies that improve the quality of lives. We delight in
-                satisfying our clients through the provision of innovative,
-                quality, timely, relevant, accurate and affordable solutions to
-                their needs.
+                At Elonatech, we design our services for top-tier corporate clients and forward-thinking enterprises that demand efficiency, precision, and long-term value. Our structure, strategy, and service delivery are built to exceed expectations, delivering solutions that are affordable, scalable, and performance-driven. <br /> We believe technology should not just support your business; it should elevate it. That is why we continuously redefine IT excellence, ensuring every solution we craft adds measurable value to your operations and a competitive edge in your industry. <br /> In today’s complex digital ecosystem, a versatile and visionary IT partner is essential. Elonatech stands ready, not just to solve problems but to redefine possibilities.
               </p>
             </div>
           </div>
@@ -227,23 +213,18 @@ const Company = () => {
                 style={{ textAlign: 'justify' }}
                 data-wow-delay='0.2s'
               >
-                Our Core Expertise focuses on Sales and Supply, Web Design and
-                Development, Network Admin/Implementation, Access Control, PBX &
-                Surveillance (CCTV), Hardware Engineering, Software Engineering,
-                Digital Marketing, Graphics & Brand Identity, Livestreaming and
-                Videoconferencing, Video Editing & Motion Graphics, Training,
-                Consulting & Retainer Partnership, etc. that will enable you and
-                your clients maximize technology in bringing about the desired
-                results, and access to a wide array of office equipment.
+                Our core expertise spans across several key areas including <strong>sales and supply of computers,</strong> accessories, and enterprise equipment that power business productivity. We specialize in <strong>web-based and mobile apps design and development,</strong> creating dynamic, user-focused websites and scalable platforms built with robust, modern technologies. Our <strong>networking and infrastructure services</strong> cover the design, deployment, and administration of secure and efficient IT systems that ensure seamless connectivity. <br />
+                We also provide <strong>access control, PBX, and surveillance (CCTV)</strong> installations, alongside <strong>hardware and software engineering services</strong> designed to guarantee reliability and superior functionality. <br />
+                In addition, Elonatech delivers <strong>digital marketing, branding, graphics design, video editing, motion graphics, and live streaming</strong> services that help businesses communicate effectively and stand out in a digital world. Through our <strong>training, consulting, and retainer partnership programs</strong>, we empower organizations to maximize technology, build capacity, and drive sustainable growth
               </p>
-              <p
+              {/* <p
                 className='wow fadeInUp'
                 style={{ textAlign: 'justify' }}
                 data-wow-delay='0.2s'
               >
                 In today’s complex and diverse data centre environments, a
                 functional and diversified IT solutions provider is inevitable.
-              </p>
+              </p> */}
             </div>
           </div>
           <div className='col-md-6'>

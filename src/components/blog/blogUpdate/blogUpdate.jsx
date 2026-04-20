@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import ReactQuill from "react-quill";
+import { toast } from "react-toastify";
 
 const BlogUpdate = () => {
   const { id } = useParams();
@@ -31,23 +32,36 @@ const BlogUpdate = () => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const newData = {
-      title,
-      description,
-      author,
-      category,
-      cloudinary_id: cloudinary_id
-    };
-    try {
-      const res = await axios.put(
-        `${BASEURL}/api/v1/blog/update/${id}`,
-        newData,
-        { headers: { "Content-Type": "multipart/form-data" } }
-      );
-      console.log(res);
-      navigate(`/blog/${id}`);
-    } catch (error) {
-      console.log(error);
+
+    // Create FormData instead of a plain object
+   const formData = new FormData();
+   formData.append("title", title);
+   formData.append("description", description);
+   formData.append("author", author);
+   formData.append("category", category);
+  
+   // Attach the new file if it exists
+   if (cloudinary_id instanceof File) {
+    formData.append("cloudinary_image", cloudinary_id); // key must match Multer
+  }
+
+   try {
+    const res = await axios.put(
+      `${BASEURL}/api/v1/blog/update/${id}`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    if (res) {
+      toast.success('Blog updated with success')
+    }
+    console.log(res.data);
+    navigate(`/blog/${id}`);
+  } catch (error) {
+    console.log(error.response?.data || error);
     }
   };
 

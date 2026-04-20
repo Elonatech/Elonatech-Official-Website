@@ -60,10 +60,7 @@
     "reactjs-popup": "^2.0.6",
     "recharts": "^2.12.7",
     "redux": "^5.0.1",
-<<<<<<< HEAD
-=======
     "rn-emoji-keyboard": "^1.7.0",
->>>>>>> 8a76d0efa9fc1707b33f3be9b83eca0886ef79fb
     "sanitize-html": "^2.13.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^10.2.0",
@@ -100,11 +97,5 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@shadcn/ui": "^0.0.4",
     "sass": "^1.69.5"
-<<<<<<< HEAD
-  },
-  "overrides": {
-    "node-forge": "^1.4.0"
-=======
->>>>>>> 8a76d0efa9fc1707b33f3be9b83eca0886ef79fb
   }
 }

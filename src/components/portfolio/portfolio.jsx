@@ -41,19 +41,19 @@ const Portfolio = () => {
       image: computerHardware
     },
     {
-      title: 'Network Engineering',
+      title: 'Network Engineering Projects',
       description:
         'We implement and design both complex and simple data/voice LANs for all types of organizations. Implementing a well-designed, secured enterprise network and utilizing the right combination of IT solutions so as to drive that business to the desired level.',
       image: networkEngineering
     },
     {
-      title: 'Structured Cabling',
+      title: 'Infrastructure & Integration',
       description:
         "We provide the infrastructure that supports the performance of organizations' network. It is the most critical part of your voice and data network. Choosing a qualified provider is a critical decision. We use only high-end quality products in our structured wiring solutions.",
       image: structuredCabling
     },
     {
-      title: 'Digital Marketing Strategy',
+      title: 'Digital Marketing Campaigns',
       description:
         'Developing effective digital marketing in any market is tough, demanding, & technical. We achieve this by working closely with clients to craft & deliver successful & oriented online marketing strategies which integrate customer needs, business objectives & technology.',
       image: digitalMarketing
@@ -66,9 +66,8 @@ const Portfolio = () => {
         <title>Our Portfolio - Web Development, Network Engineering & Digital Marketing Solutions | Tech Solutions</title>
         <meta
           name='description'
-          content='From website development, 
-       Computer Hardware Projects Network Engineering Structured Cabling Digital Marketing Strategy
-       digital marketing campaigns, network management to graphics etc... We pride ourselves to getting it done 24/7 Support '
+          content='From website development, Computer Hardware Projects Network Engineering Infrastructure & System Integration Digital Marketing Campaigns
+          digital marketing campaigns, network management to graphics etc... We pride ourselves to getting it done 24/7 Support '
         />
         <link rel='canonical' href='https://elonatech.com.ng/portfolio' />
       </Helmet>

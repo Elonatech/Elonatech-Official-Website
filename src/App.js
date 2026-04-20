@@ -8,6 +8,9 @@ import './index.css';
 import { useAuth } from './components/admin/AuthContext';
 import ReactGA from 'react-ga4';
 import { BASEURL } from './BaseURL/BaseURL';
+import MainHeader from './components/main-header-comp/MainHeader';
+import MobileHeader from './components/Header/MobileHeader';
+import XmasHeader from './decoration-header/XmasHeader';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -20,6 +23,7 @@ const JobApplicationSuccess = lazy(() => import("./components/JobApplicationSucc
 
 const LoadingPages = lazy(() => import("./components/LoadingPages/LoadingPages"));
 const Navbar = lazy(() => import("./components/navbar/navbar"));
+const Snowflakes = lazy(() => import("./components/snowflakes/snowflakes"));
 const Footer = lazy(() => import("./components/footer/footer"));
 const Error = lazy(() => import("./components/error/error"));
 const Web = lazy(() => import("./components/web/web"));
@@ -150,215 +154,219 @@ const Layout = () => {
     <>
       <Suspense fallback={<><LoadingPages /></>}>
         <CartProvider>
-          <Navbar />
+          {/* <XmasHeader /> */}
+          <MainHeader />
+          {/* <MobileHeader/> */}
           <ScrollTop />
           <Outlet />
           <Footer />
         </CartProvider>
       </Suspense>
     </>
-
-    // <>
-    //   <CartProvider>
-    //     <Navbar />
-    //     <ScrollTop />
-    //     <Suspense fallback={<LoadingPages />}>
-    //     <Outlet />
-    //     </Suspense>
-    //     <Footer />
-    //   </CartProvider>
-    // </>
   )
 }
 
+// const Layout = () => (
+//   <CartProvider>
+//     <MainHeader />
+//     <ScrollTop />
+
+//     <Suspense fallback={<LoadingPages />}>
+//       <Outlet />
+//     </Suspense>
+
+//     <Footer />
+//   </CartProvider>
+// );
+
 
 const router = createBrowserRouter([
-{
-  path:"/",
-  element: <Layout/>,
-  errorElement:<Error  />,
-  children:[
-    {
-      path:'/',
-      element:<Home/>
-    },
-    {
-      path:'/trial',
-      element:<Trial/>
-    },
-    {
-      path:'/application-success',
-      element:<JobApplicationSuccess/>
-    },
-    {
-      path:'/network',
-      element:<Network/>
-    },
-    {
-      path:'/portfolio',
-      element:<Portfolio/>
-    },
-    {
-      path:'/digital-marketing',
-      element:<Digital/>
-    },
-    {
-      path:'/policy',
-      element:<Policy/>
-    },
-    {
-      path:'/who-we-are',
-      element:<Company/>
-    },
-    {
-      path:'/web-design',
-      element:<Web/>
-    },
-    {
-      path:'/app-development',
-      element:<AppDevelopment/>
-    },
-    {
-      path:'/products',
-      element:<Shop/>
-    },
-    // team ==============================
-    {
-      path:"/our-team",
-      element:< Team/>
-    },
-    {
-      path:"/israel-uhwonuwoma-o",
-      element:<Teamchairman/>
-    },
-    {
-      path:"/oreva-p-oku",
-      element:<TeamMd/>
-    },
-    {
-      path:"/violet-oku",
-      element:< TeamAdmin />
-    },
-    {
-      path:"/samuel-folarin",
-      element:< TeamLead />
-    },
-    {
-      path:"/jamiu-noah",
-      element:< TeamSystem />
-    },
-    {
-      path:"/joseph-okoronkwo",
-      element:< TeamWeb />
-    },
-    // ===================================
-    {
-      path:'/hardware-engineering',
-      element:<Engineer/>
-    },
-    {
-      path:'/mobile-repair',
-      element:<Mobile/>
-    },
-    {
-      path:'/printer-repair',
-      element:<Printer/>
-    },
-    {
-      path:'/system-integration',
-      element:<Integration/>
-    },
-    {
-      path:'/structure-cabling',
-      element:<Cabling/>
-    },
-    {
-      path:'/cctv',
-      element:<Cctv />
-    },
-    {
-      path:'/internet',
-      element:< Internet/>
-    },
-    {
-      path:'/network-security',
-      element:<Security/>
-    },
-    {
-      path:'/access-control',
-      element:<Access/>
-    },
-    {
-      path:'/time-management',
-      element:<Time/>
-    },
-    {
-      path:'/blog',
-      element:<Blog/>
-    },
-    {
-      path: "/blog/page/:pagenumber",
-      element: <Blog />
-    },
-    {
-      path:'/blog/:slug',
-      element:<BlogDetails/>
-    },
-    {
-      path:'/blog/related/:slug',
-      element:< BlogRelated/>
-    },
-    { path: '/news', element: <News /> },
-    { path: '/news/page/:pagenumber', element: <News /> },
-    { path: '/news/:slug', element: <NewsDetails /> },
-    { path: '/news/page/:pagenumber/:slug', element: <NewsDetails /> },
-    { path: '/news/related/:slug', element: <NewsRelated /> },
-    { path: '/trends', element: <Trends /> },
-    { path: '/trends/page/:pagenumber', element: <Trends /> },
-    { path: '/trends/:slug', element: <TrendDetails /> },
-    { path: '/trends/page/:pagenumber/:slug', element: <TrendDetails /> },
-    { path: '/trends/related/:slug', element: <TrendRelated /> },
-    {
-      path:'/surveillance',
-      element:<Suvalliance/>
-    },
-    {
-      path:'/network-administration-implementation',
-      element:<Networka/>
-    },
-    {
-      path:'/server-administration',
-      element:<Server/>
-    },
-    //=================== telecom pages
-    {
-      path:'/ip-telephony',
-      element:< IpTelephony />
-    },
-    {
-      path:'/voip',
-      element:<Voip/>
-    },
-    //================================== web pages
-    {
-      path:'/domain',
-      element:<Domain/>
-    },
- 
-    {
-      path:'/hosting',
-      element:<Hosting/>
-    },
-  //============================== marketing
-    {
-        path:'/content-marketing',
-        element:<Content/>
-    },
-    {
-        path:'/ppc',
-        element:<Ppc/>
-       },
-   
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/trial',
+        element: <Trial />
+      },
+      {
+        path: '/application-success',
+        element: <JobApplicationSuccess />
+      },
+      {
+        path: '/network',
+        element: <Network />
+      },
+      {
+        path: '/portfolio',
+        element: <Portfolio />
+      },
+      {
+        path: '/digital-marketing',
+        element: <Digital />
+      },
+      {
+        path: '/policy',
+        element: <Policy />
+      },
+      {
+        path: '/who-we-are',
+        element: <Company />
+      },
+      {
+        path: '/web-design',
+        element: <Web />
+      },
+      {
+        path: '/app-development',
+        element: <AppDevelopment />
+      },
+      {
+        path: '/products',
+        element: <Shop />
+      },
+      // team ==============================
+      {
+        path: "/our-team",
+        element: < Team />
+      },
+      {
+        path: "/israel-uhwonuwoma-o",
+        element: <Teamchairman />
+      },
+      {
+        path: "/oreva-p-oku",
+        element: <TeamMd />
+      },
+      {
+        path: "/violet-oku",
+        element: < TeamAdmin />
+      },
+      {
+        path: "/toju-okene-joe",
+        element: < TeamLead />
+      },
+      {
+        path: "/jamiu-noah",
+        element: < TeamSystem />
+      },
+      {
+        path: "/joseph-okoronkwo",
+        element: < TeamWeb />
+      },
+      // ===================================
+      {
+        path: '/hardware-engineering',
+        element: <Engineer />
+      },
+      {
+        path: '/mobile-repair',
+        element: <Mobile />
+      },
+      {
+        path: '/printer-repair',
+        element: <Printer />
+      },
+      {
+        path: '/system-integration',
+        element: <Integration />
+      },
+      {
+        path: '/structure-cabling',
+        element: <Cabling />
+      },
+      {
+        path: '/cctv',
+        element: <Cctv />
+      },
+      {
+        path: '/internet',
+        element: < Internet />
+      },
+      {
+        path: '/network-security',
+        element: <Security />
+      },
+      {
+        path: '/access-control',
+        element: <Access />
+      },
+      {
+        path: '/time-management',
+        element: <Time />
+      },
+      {
+        path: '/blog',
+        element: <Blog />
+      },
+      {
+        path: "/blog/page/:pagenumber",
+        element: <Blog />
+      },
+      {
+        path: '/blog/:slug',
+        element: <BlogDetails />
+      },
+      {
+        path: '/blog/related/:slug',
+        element: < BlogRelated />
+      },
+      { path: '/news', element: <News /> },
+      { path: '/news/page/:pagenumber', element: <News /> },
+      { path: '/news/:slug', element: <NewsDetails /> },
+      { path: '/news/page/:pagenumber/:slug', element: <NewsDetails /> },
+      { path: '/news/related/:slug', element: <NewsRelated /> },
+      { path: '/trends', element: <Trends /> },
+      { path: '/trends/page/:pagenumber', element: <Trends /> },
+      { path: '/trends/:slug', element: <TrendDetails /> },
+      { path: '/trends/page/:pagenumber/:slug', element: <TrendDetails /> },
+      { path: '/trends/related/:slug', element: <TrendRelated /> },
+      {
+        path: '/surveillance',
+        element: <Suvalliance />
+      },
+      {
+        path: '/network-administration-implementation',
+        element: <Networka />
+      },
+      {
+        path: '/server-administration',
+        element: <Server />
+      },
+      //=================== telecom pages
+      {
+        path: '/ip-telephony',
+        element: < IpTelephony />
+      },
+      {
+        path: '/voip',
+        element: <Voip />
+      },
+      //================================== web pages
+      {
+        path: '/domain',
+        element: <Domain />
+      },
+
+      {
+        path: '/hosting',
+        element: <Hosting />
+      },
+      //============================== marketing
+      {
+        path: '/content-marketing',
+        element: <Content />
+      },
+      {
+        path: '/ppc',
+        element: <Ppc />
+      },
+
       {
         path: '/',
         element: <Home />
@@ -417,7 +425,7 @@ const router = createBrowserRouter([
         element: < TeamAdmin />
       },
       {
-        path: "/samuel-folarin",
+        path: "/toju-okenejoe",
         element: < TeamLead />
       },
       {
@@ -780,7 +788,10 @@ const router = createBrowserRouter([
         path: "/thank-you",
         element: <Thankyou />
       },
-
+      {
+        path: "/snowflakes",
+        element: <Snowflakes />
+      }
 
     ],
   },
@@ -790,7 +801,7 @@ const router = createBrowserRouter([
 const App = () => {
   const { isAuthenticated } = useAuth();
   const MEASUREMENT_ID = 'G-T9V3LN3YLR';
-  
+
   useEffect(() => {
     // Initialize GA
     ReactGA.initialize(MEASUREMENT_ID);

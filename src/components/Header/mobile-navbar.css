@@ -1,0 +1,603 @@
+/* mobile-navbar.css - Mobile Only Version (Shows below 1024px) */
+
+/* ===================================================== */
+/* MOBILE VISIBILITY CONTROL */
+/* ===================================================== */
+
+/* Hide mobile navbar on desktop (1024px and above) */
+@media (min-width: 1024px) {
+  .mobile-navbar {
+    display: none !important;
+  }
+
+  #mobileNavbarShow,
+  #mobileOffcanvasNavbar {
+    display: none !important;
+    visibility: hidden !important;
+    border: none !important
+  }
+}
+
+/* Show mobile navbar on mobile (below 1024px) */
+@media (max-width: 1023px) {
+  .mobile-navbar {
+    display: block !important;
+  }
+}
+
+.mobile-elonatechinnerListItemContentLeftActive {
+  background-color: #dc3545 !important;
+  /* Red */
+  color: white !important;
+  border-radius: 8px;
+}
+
+.mobile-elonatechinnerListItemContentLeftActive h6 {
+  color: white !important;
+}
+
+/* REMOVE ALL LIST BULLETS IN MOBILE NAVBAR */
+#mobileOffcanvasNavbar ul,
+#mobileOffcanvasNavbar li,
+.mobile-elonatechmainDropdownDone ul,
+.mobile-elonatechmainDropdownDone li,
+.mobile-elonatechinnerListContentLeft,
+.mobile-elonatechinnerListContentLeft li,
+.mobile-elonatechinnerListItemContentRightTechListActive,
+.mobile-elonatechinnerListItemContentRightTechListActive li,
+.mobile-elonatechinnerListItemContentRightDigitalListActive,
+.mobile-elonatechinnerListItemContentRightDigitalListActive li,
+.mobile-elonatechinnerListItemContentRightSalesListActive,
+.mobile-elonatechinnerListItemContentRightSalesListActive li,
+.mobile-elonatechhardwareSolutionsListActive,
+.mobile-elonatechhardwareSolutionsListActive li,
+.mobile-elonatechnetworkAdministrationListActive,
+.mobile-elonatechnetworkAdministrationListActive li,
+.mobile-elonatechsystemSecurityListActive,
+.mobile-elonatechsystemSecurityListActive li,
+.mobile-elonatechtelecomsListActive,
+.mobile-elonatechtelecomsListActive li,
+.mobile-elonatechsoftwareSolutionsListActive,
+.mobile-elonatechsoftwareSolutionsListActive li,
+.mobile-elonatechwebSolutionsListActive,
+.mobile-elonatechwebSolutionsListActive li,
+.mobile-elonatechdigitalMarketingListActive,
+.mobile-elonatechdigitalMarketingListActive li,
+.mobile-elonatechgraphicsListActive,
+.mobile-elonatechgraphicsListActive li,
+.mobile-elonatechvideoAnimationsListActive,
+.mobile-elonatechvideoAnimationsListActive li,
+.mobile-elonatechteleconferencingListActive,
+.mobile-elonatechteleconferencingListActive li {
+  list-style-type: none !important;
+  list-style: none !important;
+}
+
+
+
+/* ============ MOBILE NAVBAR STYLES ============ */
+
+.mobile-dropdown-item:hover {
+  background-color: #dc3545;
+  border-radius: 100px;
+  color: white;
+}
+
+/* ====================== */
+.mobile-solutions-items-active {
+  background-color: #dc3545;
+  border-radius: 100px;
+  color: white;
+}
+
+/* ================== */
+.mobile-strategic-items-active {
+  background-color: #dc3545;
+  border-radius: 100px;
+  color: white;
+}
+
+/* ================== */
+.mobile-productss-items-active {
+  background-color: #dc3545;
+  border-radius: 100px;
+  color: white;
+}
+
+/* ===================== */
+.mobile-whoo-items-active {
+  background-color: #dc3545;
+  border-radius: 100px;
+  color: white;
+}
+
+/* ===================== */
+
+.mobile-NAVba {
+  background: transparent;
+}
+
+.mobile-NAVbar {
+  background-color: #11253D;
+  -webkit-transition: background-color 1ms linear;
+  -ms-transition: background-color 1ms linear;
+  transition: background-color 1ms linear;
+}
+
+/* .mobile-navbar-toggler {
+  border: none;
+} */
+
+/* .mobile-navbar-toggler:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: tomato;
+} */
+
+/* .mobile-custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255 255 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+} */
+
+.mobile-dismiss-nav-man:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.mobile-e-fonte {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.mobile-e-fonte:hover {
+  font-size: 17px;
+  font-weight: bold;
+  color: #dc3545 !important;
+}
+
+.mobile-i-fonte {
+  font-size: 17px;
+}
+
+.mobile-i-fonte:hover {
+  color: #dc3545;
+}
+
+.mobile-t-fonte:hover {
+  color: #dc3545;
+}
+
+/* Mobile-only navbar styles */
+.mobile-elonatechtest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-elonatechlistItem:hover .mobile-elonatechinnerListContainer {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  list-style: none;
+  visibility: visible;
+  margin-top: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.mobile-elonatechSolutionsTitle {
+  position: relative;
+  left: -7%;
+}
+
+.mobile-elonatechline {
+  width: 113%;
+  height: 2px !important;
+  background-color: black !important;
+  position: relative;
+  right: 12%;
+  margin-top: 0;
+}
+
+/* In mobile view, show plus icons */
+@media (max-width: 1023px) {
+  .bi-plus {
+    display: block;
+  }
+
+  /* Plus icon rotation when active */
+  .mobile-elonatechtest .bi-plus.rotated {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+}
+
+.mobile-elonatechinnerListContainer {
+  top: 0;
+  left: 0;
+  background: #000;
+}
+
+.mobile-elonatechicon {
+  display: block;
+  margin-left: 8rem;
+}
+
+.mobile-elonatechicon:hover {
+  color: #dc3545;
+}
+
+.mobile-elonatechinnerListItemLeft,
+.mobile-elonatechinnerListItemRight {
+  background-color: white;
+  margin-left: -7% !important;
+}
+
+.mobile-elonatechinnerListContentLeft {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  position: relative;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  list-style-type: none;
+}
+
+/* ===================================================== */
+/* UPDATED STYLES FOR CONDITIONAL RENDERING STRUCTURE */
+/* ===================================================== */
+
+/* Main category lists */
+.mobile-elonatechinnerListItemContentRightTechListActive,
+.mobile-elonatechinnerListItemContentRightDigitalListActive,
+.mobile-elonatechinnerListItemContentRightSalesListActive {
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Hidden lists for conditional rendering */
+.mobile-elonatechinnerListItemContentRightTechList,
+.mobile-elonatechinnerListItemContentRightDigitalList,
+.mobile-elonatechinnerListItemContentRightSalesList {
+  display: none;
+}
+
+/* Tech Solutions dropdown lists */
+.mobile-elonatechhardwareSolutionsListActive,
+.mobile-elonatechsystemSecurityListActive,
+.mobile-elonatechtelecomsListActive,
+.mobile-elonatechsoftwareSolutionsListActive {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  position: relative;
+  left: -2%;
+  top: 20%;
+  margin: 2rem 0;
+  font-size: 9px;
+  text-align: center;
+  list-style: none !important;
+}
+
+/* Network solutions specific positioning */
+.mobile-elonatechnetworkAdministrationListActive {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  position: relative;
+  left: -10%;
+  top: 20%;
+  margin: 2rem 0;
+  font-size: 9px;
+  text-align: center;
+}
+
+/* Digital Solutions dropdown lists */
+.mobile-elonatechwebSolutionsListActive,
+.mobile-elonatechdigitalMarketingListActive,
+.mobile-elonatechgraphicsListActive,
+.mobile-elonatechvideoAnimationsListActive,
+.mobile-elonatechteleconferencingListActive {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4rem;
+  position: relative;
+  left: -7%;
+  top: 20%;
+  margin: 2rem 0;
+  font-size: 9px;
+  text-align: center;
+}
+
+/* Sales Solutions content */
+.mobile-elonatechinnerListItemContentRightSalesListActive {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4rem;
+  position: relative;
+  left: -10%;
+  font-size: 9px;
+  text-align: center;
+}
+
+/* ===================================================== */
+/* HIDDEN DROPDOWN LISTS (For conditional rendering) */
+/* ===================================================== */
+
+.mobile-elonatechhardwareSolutionsList,
+.mobile-elonatechnetworkAdministrationList,
+.mobile-elonatechsystemSecurityList,
+.mobile-elonatechtelecomsList,
+.mobile-elonatechsoftwareSolutionsList,
+.mobile-elonatechwebSolutionsList,
+.mobile-elonatechdigitalMarketingList,
+.mobile-elonatechgraphicsList,
+.mobile-elonatechvideoAnimationsList,
+.mobile-elonatechteleconferencingList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  gap: 10px;
+  position: absolute;
+  margin-top: 3rem;
+}
+
+/* ===================================================== */
+/* LIST ITEM STYLES */
+/* ===================================================== */
+
+.mobile-elonatechhardwareSolutionsListItem,
+.mobile-elonatechnetworkAdministrationListItem,
+.mobile-elonatechsystemSecurityListListItem,
+.mobile-elonatechtelecomsListListItem,
+.mobile-elonatechsoftwareSolutionsListListItem,
+.mobile-elonatechwebSolutionsListItem,
+.mobile-elonatechdigitalMarketingListItem,
+.mobile-elonatechgraphicsListListItem,
+.mobile-elonatechvideoAnimationsListListItem,
+.mobile-elonatechteleconferencingListListItem {
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-elonatechhardwareSolutionsListItem:hover,
+.mobile-elonatechnetworkAdministrationListItem:hover,
+.mobile-elonatechsystemSecurityListListItem:hover,
+.mobile-elonatechtelecomsListListItem:hover,
+.mobile-elonatechsoftwareSolutionsListListItem:hover,
+.mobile-elonatechwebSolutionsListItem:hover,
+.mobile-elonatechdigitalMarketingListItem:hover,
+.mobile-elonatechgraphicsListListItem:hover,
+.mobile-elonatechvideoAnimationsListListItem:hover,
+.mobile-elonatechteleconferencingListListItem:hover {
+  transform: scale(1.1);
+  color: #dc3545;
+}
+
+/* Sales list items */
+.mobile-elonatechinnerListItemContentRightSalesListItem {
+  display: flex;
+  flex-direction: column;
+  font-size: 9px;
+  transition: transform .25s ease;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-elonatechinnerListItemContentRightSalesListItem:hover {
+  transform: scale(1.2);
+  color: #dc3545;
+}
+
+/* Title styles */
+.mobile-elonatechinnerListItemContentRightTechListTitleActive {
+  color: #dc3545;
+}
+
+.mobile-elonatechinnerListItemContentRightTechListTitle {
+  color: #222;
+}
+
+/* ===================================================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ===================================================== */
+
+/* Very small screens (phones) */
+@media screen and (max-width: 480px) {
+
+  .mobile-elonatechhardwareSolutionsListActive,
+  .mobile-elonatechsystemSecurityListActive,
+  .mobile-elonatechtelecomsListActive,
+  .mobile-elonatechsoftwareSolutionsListActive,
+  .mobile-elonatechnetworkAdministrationListActive,
+  .mobile-elonatechwebSolutionsListActive,
+  .mobile-elonatechdigitalMarketingListActive,
+  .mobile-elonatechgraphicsListActive,
+  .mobile-elonatechvideoAnimationsListActive,
+  .mobile-elonatechteleconferencingListActive {
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns on very small screens */
+    gap: 2rem;
+    left: -5%;
+  }
+
+  .mobile-elonatechinnerListItemContentRightSalesListActive {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    left: -5%;
+  }
+
+  .mobile-elonatechinnerListContentLeft {
+    flex-direction: row;
+    /* left: 0; */
+    align-items: center;
+  }
+
+  .mobile-elonatechinnerListItemContentLeft,
+  .mobile-elonatechinnerListItemContentLeftActive {
+    width: 120px;
+    padding: 0.5rem;
+    list-style-type: none;
+    list-style: none;
+    /* background-color: turquoise; */
+  }
+}
+
+/* Small tablets */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+
+  .mobile-elonatechhardwareSolutionsListActive,
+  .mobile-elonatechsystemSecurityListActive,
+  .mobile-elonatechtelecomsListActive,
+  .mobile-elonatechsoftwareSolutionsListActive,
+  .mobile-elonatechnetworkAdministrationListActive,
+  .mobile-elonatechwebSolutionsListActive,
+  .mobile-elonatechdigitalMarketingListActive,
+  .mobile-elonatechgraphicsListActive,
+  .mobile-elonatechvideoAnimationsListActive,
+  .mobile-elonatechteleconferencingListActive {
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 3 columns on tablet */
+    gap: 3rem;
+  }
+
+  .mobile-elonatechinnerListContentLeft {
+    gap: 11px;
+  }
+
+  .mobile-elonatechinnerListItemContentLeft {
+    padding: 2px;
+  }
+}
+
+/* ===================================================== */
+/* EXISTING STYLES (Keep these) */
+/* ===================================================== */
+
+.mobile-sol {
+  background-color: white;
+}
+
+#mobile-elonatech-logo-home {
+  height: 4rem;
+  width: 10rem;
+  border: 0;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 500px) {
+  #mobile-elonatech-logo-home {
+    height: 2.5rem;
+    width: 6rem;
+    border: 0;
+  }
+
+  .mobile-salePad {
+    padding-right: 3px;
+  }
+}
+
+/* Mobile offcanvas styling */
+@media only screen and (max-width: 500px) {
+  .mobile-navbar-bg-change {
+    background: #11253df7;
+  }
+
+  .mobile-dropdown-item {
+    width: 10rem;
+    text-align: center;
+    position: relative;
+    left: 17%;
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  .mobile-navbar-bg-change {
+    background: #11253df7;
+  }
+
+  .mobile-techCenter {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1023px) {
+  #mobileOffcanvasNavbar {
+    background: #11253df7;
+    height: 70vh !important;
+    overflow-y: auto;
+    width: 85vw;
+  }
+}
+
+/* Cart Badge */
+.mobile-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Social Links */
+.mobile-social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.mobile-social-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.mobile-social-links a:hover {
+  color: #dc3545;
+}
+
+/* Plus icon transition */
+.mobile-elonatechtest .bi-plus {
+  transition: transform 0.3s ease;
+}
