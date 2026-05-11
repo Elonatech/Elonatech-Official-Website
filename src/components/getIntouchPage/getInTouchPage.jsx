@@ -45,7 +45,7 @@ const GetInTouchPage = () => {
         <div className="row align-items-center">
           <div className="col-md-6">
             <div className="card border-0">
-              <h2 className="fw-bold">Get in touch with us today.</h2>
+              <h2 className="fw-bold">Get in touch with Elonatech Nigeria Limited today.</h2>
               <h6 className="mt-2">We’d love to hear from you.</h6>
               <p className="">Scan to connect with us on Social Media</p>
 
@@ -200,6 +200,7 @@ const GetInTouchPage = () => {
                 <div className="col-9">
                   <div className="card border-0">
                     <h5 className="refd">ADDRESS:</h5>
+                    <h6 className="fw-bold">Elonatech Nigeria Limited</h6>
                     <h6>
                       <a
                         href="https://www.google.com/maps/search/?api=1&query=4+Oluwakemi+Street,+Shasha+Road,+Egbeda,+Lagos+100001"

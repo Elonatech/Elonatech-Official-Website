@@ -1,6 +1,6 @@
 import './thankyou.css'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -10,7 +10,8 @@ import {
 import { FaFacebook, FaTwitter, FaWhatsapp, FaLinkedin } from 'react-icons/fa'
 
 const Thankyou = () => {
-  const currentUrl = window.location.href
+  const { state } = useLocation();
+  const currentUrl = state?.firstItemUrl || 'https://elonatech.com.ng/products'
 
   return (
     <>

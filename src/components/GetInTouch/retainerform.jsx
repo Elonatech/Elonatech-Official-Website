@@ -57,10 +57,10 @@ const Retainerform = () => {
         company,
         email,
         number,
-        address,
-        state,
         service,
         contract,
+        address,
+        state,
         frequency,
         days
       }
@@ -71,16 +71,16 @@ const Retainerform = () => {
         `${BASEURL}/api/v1/email/retainership`,
         newData,
       )
-      if (response.data) {
-        toast.success(response.data.message)
+      if (response.data.status === "success") {
+        toast.success("Your request has been submitted successfully!");
         setTimeout(() => {
-          navigate(0)
-        }, 2000)
+          navigate(0);
+        }, 1000);
       }
     } catch (error) {
-      toast.error(error.response.data)
+      toast.error(error.response.data);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 

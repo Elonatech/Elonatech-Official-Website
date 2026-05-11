@@ -90,13 +90,13 @@ const Session = () => {
         formValues
       );
 
-      console.log(response);
+      // console.log(response);
 
-      if (response) {
-        toast.success(response.data);
+      if (response.data.status === "success") {
+        toast.success("Your session request has been submitted successfully!");
         setTimeout(() => {
           navigate(0);
-        }, 7000);
+        }, 1000);
       }
     } catch (error) {
       toast.error(error.response?.data || "Something went wrong");

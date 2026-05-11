@@ -257,7 +257,7 @@ const Team = () => {
                     <Link className="text-decoration-none" to={"/oreva-p-oku"}>
                       <img
                         class="img-fluid mb-4"
-                        src="https://res.cloudinary.com/elonatech/image/upload/v1709808299/teamPage/MD_mr_oreva_affjug.png"
+                        src="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png"
                         alt=""
                       />
                       <h4 className="fw-bold" style={{ color: "#34548c" }}>
@@ -327,7 +327,7 @@ const Team = () => {
                     <Link className="text-decoration-none" to={"/violet-oku"}>
                       <img
                         class="img-fluid mb-4"
-                        src="https://res.cloudinary.com/elonatech/image/upload/v1723814537/admin_dctuiq.jpg"
+                        src="https://res.cloudinary.com/djogptxxc/image/upload/v1778082344/Image-Resize-2_1_vlwrnr.png"
                         alt=""
                       />
                       <h4 className="fw-bold" style={{ color: "#34548c" }}>
@@ -404,7 +404,7 @@ const Team = () => {
                     >
                       <img
                         class="img-fluid mb-4 team-img"
-                        src="https://res.cloudinary.com/davecz6pb/image/upload/v1762267339/products/nhdp0rlogtsalqaymsph.jpg"
+                        src="https://res.cloudinary.com/djogptxxc/image/upload/v1778154940/Image-Resize-3_1_pyikij.png"
                         alt="Toju-Okene-Joe"
                       />
                       <h4 className="fw-bold" style={{ color: "#34548c" }}>

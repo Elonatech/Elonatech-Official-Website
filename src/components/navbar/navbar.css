@@ -595,7 +595,11 @@
   display: flex;
   justify-items: center;
   align-items: center;
-  gap: 6px;
+  /* gap: 0.5px; */
+}
+
+.cart-symbol {
+ margin-right: 13px;
 }
 
 .social-links a {

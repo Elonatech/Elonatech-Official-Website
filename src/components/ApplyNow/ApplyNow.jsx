@@ -1,3 +1,6 @@
+// Apply Now Modal Component
+// This component renders a button that opens a modal form for job applications. The form collects user information, skills, job category, employment status, and allows uploading a CV in PDF format. Upon submission, the data is sent to the server via an API call. The component also handles form validation and displays success or error messages using react-toastify.
+// src\components\ApplyNow\ApplyNow.jsx
 import { useState } from "react";
 import ReactQuill from "react-quill/lib";
 import "react-quill/dist/quill.snow.css";

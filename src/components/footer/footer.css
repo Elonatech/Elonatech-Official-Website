@@ -58,8 +58,8 @@
 }
 
 .footer .social-links a {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -67,6 +67,13 @@
   color: #fff;
   margin-right: -10px;
   transition: 0.3s;
+}
+
+.media-icons {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .form-check-input:focus {

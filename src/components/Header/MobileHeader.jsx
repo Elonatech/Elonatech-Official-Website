@@ -264,7 +264,7 @@ const MobileHeader = () => {
                 >
                   Solutions
                 </a>
-               
+
                 <ul
                   id="mobileDIV"
                   className="mobile-elonatechmainDropdownDone mobile-sol"
@@ -1518,7 +1518,7 @@ const MobileHeader = () => {
                         className="mobile-whoo-items-active dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
                         data-bs-dismiss="offcanvas"
                       >
-                        Company
+                        Who We Are
                       </li>
                     </Link>
                     <Link
@@ -1529,7 +1529,7 @@ const MobileHeader = () => {
                         className="dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
                         data-bs-dismiss="offcanvas"
                       >
-                        Team
+                        Our Team
                       </li>
                     </Link>
                     <Link
@@ -1604,7 +1604,7 @@ const MobileHeader = () => {
               <div className="mobile-social-links d-flex justify-content-center mx-auto pe-3">
                 <Link
                   to={"/cart"}
-                  className="linkedin text-white nav-link fw-bold pe-3 ps-0"
+                  className="linkedin text-white nav-link fw-bold pe-3 ps-0 cart-symbol"
                 >
                   <i className="fas fa-shopping-cart position-relative">
                     <span
@@ -1616,53 +1616,88 @@ const MobileHeader = () => {
                   </i>
                 </Link>
                 <Link
+                  to="https://www.linkedin.com/company/elonatech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="linkedin text-white nav-link fw-bold pe-0 ps-0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  to={"https://www.linkedin.com/company/elonatech/"}
                 >
-                  <i className="bi bi-linkedin mobile-i-fonte"></i>
+                  <i className="bi bi-linkedin i-fonte"></i>
                 </Link>
                 <Link
+                  to="https://www.facebook.com/elonatech"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="facebook text-white nav-link fw-bold pe-0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  to={"https://www.facebook.com/elonatech"}
                 >
-                  <i className="bi bi-facebook mobile-i-fonte"></i>
+                  <i className="bi bi-facebook i-fonte"></i>
                 </Link>
                 <Link
+                  to="https://www.instagram.com/elonatech"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="instagram text-white nav-link fw-bold pe-0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  to={"https://www.instagram.com/elonatech"}
                 >
-                  <i className="bi bi-instagram mobile-i-fonte"></i>
+                  <i className="bi bi-instagram i-fonte"></i>
                 </Link>
                 <Link
-                  className="twitter text-white nav-link fw-bold pe-0"
+                  to="https://www.pinterest.com/Elonatechnig/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  to={"https://twitter.com/Elonatech"}
+                  className="pinterest text-white nav-link fw-bold pe-0"
+                >
+                  <i className="bi bi-pinterest i-fonte"></i>
+                </Link>
+                <Link
+                  to="https://www.tiktok.com/@.elonatech?lang=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tiktok text-white nav-link fw-bold pe-0"
+                >
+                  <i className="bi bi-tiktok i-fonte"></i>
+                </Link>
+                <Link
+                  to="https://www.youtube.com/@elonatech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tiktok text-white nav-link fw-bold pe-0"
+                >
+                  <i className="bi bi-youtube i-fonte"></i>
+                </Link>
+                <Link
+                  to="https://www.threads.com/@elonatech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tiktok text-white nav-link fw-bold pe-0"
+                >
+                  {/* <i class="bi bi-threads"></i> */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-threads"
+                    viewBox="0 0 16 16"
+                    className="i-fonte"
+                  >
+                    <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161" />
+                  </svg>
+                </Link>
+                <Link
+                  to="https://twitter.com/Elonatech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="twitter text-white nav-link fw-bold pe-0"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="17"
                     height="17"
                     fill="currentColor"
-                    className="bi bi-twitter-x mobile-t-fonte"
+                    className="bi bi-twitter-x t-fonte"
                     viewBox="0 0 16 16"
                   >
                     <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                   </svg>
-                </Link>
-                <Link
-                  className="linkedin text-white nav-link fw-bold pe-0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  to={"https://www.youtube.com/@elonatech"}
-                >
-                  <i className="bi bi-youtube mobile-i-fonte"></i>
                 </Link>
               </div>
             </div>

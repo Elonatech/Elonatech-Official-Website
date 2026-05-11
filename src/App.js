@@ -1,3 +1,5 @@
+// App.js
+// src\App.js
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { lazy, useState, Suspense, useEffect } from 'react';
 import { CartProvider } from 'react-use-cart';
@@ -11,6 +13,7 @@ import { BASEURL } from './BaseURL/BaseURL';
 import MainHeader from './components/main-header-comp/MainHeader';
 import MobileHeader from './components/Header/MobileHeader';
 import XmasHeader from './decoration-header/XmasHeader';
+import WhatsappFloatingButton from './components/whatsapp/WhatsappFloatingButton';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -33,6 +36,7 @@ const Team = lazy(() => import("./components/team/team"));
 const Company = lazy(() => import("./components/company/company"));
 const Network = lazy(() => import("./components/network/network"));
 const Policy = lazy(() => import("./components/policy/policy"));
+const Terms  = lazy(() => import("./components/terms/terms"));
 const Digital = lazy(() => import("./components/digital/digital"));
 const Home = lazy(() => import("./components/home/home"));
 const Engineer = lazy(() => import("./components/engineer/engineer"));
@@ -160,6 +164,12 @@ const Layout = () => {
           <ScrollTop />
           <Outlet />
           <Footer />
+
+
+          <WhatsappFloatingButton
+            phoneNumber="2348012345678"  // replace with actual number (no + or spaces)
+            message="Hello! I'd like to make an enquiry."
+          />
         </CartProvider>
       </Suspense>
     </>
@@ -213,6 +223,10 @@ const router = createBrowserRouter([
       {
         path: '/policy',
         element: <Policy />
+      },
+      {
+        path: '/terms',
+        element: <Terms />
       },
       {
         path: '/who-we-are',
@@ -390,6 +404,10 @@ const router = createBrowserRouter([
       {
         path: '/policy',
         element: <Policy />
+      },
+      {
+        path: '/terms',
+        element: <Terms />
       },
       {
         path: '/who-we-are',

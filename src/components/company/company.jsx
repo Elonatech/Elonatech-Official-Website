@@ -46,7 +46,7 @@ const Company = () => {
       {/*================================================================== header ===================================================*/}
       <div className="container-fluid our-company-section">
         <div className="text-content">
-          <h2>Our Company</h2>
+          <h2>About Us</h2>
           <h5>A diversified company in pursuit of excellence in ‘IT’</h5>
           <p className="lead">
             We apply strategic and result-driven approaches, focused on helping
@@ -57,7 +57,7 @@ const Company = () => {
       {/*========================================================================== the company ======================================================================*/}
       <div className="container-fluid py-5 wow fadeInUp custom-container" data-wow-delay="0.1s">
         <div className="container custom-container">
-          <h3 className="fw-bold text-uppercase">ABOUT US</h3>
+          <h3 className="fw-bold text-uppercase">OUR COMPANY</h3>
           <div className="mb-2" style={{ height: '2px', width: '4rem', backgroundColor: 'red' }}></div>
           <div className="row g-5">
             <div className="col-lg-6">
@@ -67,7 +67,7 @@ const Company = () => {
                 </h2>
               </div>
               <p className="mb-4">
-                At Elonatech, we understand the growing demand for reliable, high-quality <strong>IT products and services</strong> in today’s fast-evolving business world. Managing technology effectively is no longer a do-it-yourself task; it requires the right expertise, dependable tools, and innovative solutions. At Elonatech, we don’t just provide technology; <strong>we transform it into your competitive advantage</strong>
+                At Elonatech Nigeria Limited, we understand the growing demand for reliable, high-quality <strong>IT products and services</strong> in today’s fast-evolving business world. Managing technology effectively is no longer a do-it-yourself task; it requires the right expertise, dependable tools, and innovative solutions. At Elonatech, we don’t just provide technology; <strong>we transform it into your competitive advantage</strong>
               </p>
               <div class='row g-0 mb-3'>
                 <div class='col-sm-6 wow zoomIn' data-wow-delay='0.2s'>

@@ -583,7 +583,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  /* gap: 6px; */
+}
+.cart-symbol {
+  margin-right: 13px;
 }
 
 .mobile-social-links a {

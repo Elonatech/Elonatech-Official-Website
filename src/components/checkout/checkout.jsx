@@ -110,7 +110,10 @@ const Checkout = () => {
       );
 
       toast.success("Order Successfully Sent!!!", { toastId: response.data });
-      navigate("/thank-you");
+      const firstItemUrl = items[0]?.slug
+        ? `https://elonatech.com.ng/product/${items[0].slug}/${items[0].id}`
+        : "https://elonatech.com.ng/products";
+      navigate("/thank-you", { state: { firstItemUrl } });
       emptyCart();
     } catch (error) {
       toast.error(error.response.data, { toastId: error.response.data });

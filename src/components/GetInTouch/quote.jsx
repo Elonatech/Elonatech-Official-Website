@@ -41,10 +41,10 @@ const Quote = () => {
         `${BASEURL}/api/v1/email/quote`,
         newData
       );
-      console.log(response.data);
+      // console.log(response.data);  
 
-      if (response) {
-        toast.success("Quote Sent!!!");
+      if (response.data.status === "success") {
+        toast.success("Your quote request has been submitted successfully!");
         setTimeout(() => {
           navigate(0);
         }, 1000);
@@ -198,7 +198,7 @@ const Quote = () => {
                   <ReactQuill
                     theme="snow"
                     className=""
-                    placeholder="cover letter"
+                    placeholder="Project description"
                     style={{ height: "100px" }}
                     onChange={(value) => setLetter(value)}
                   />

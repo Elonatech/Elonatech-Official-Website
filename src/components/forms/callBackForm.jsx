@@ -50,8 +50,8 @@ const CallBackForm = () => {
         newData,
         { headers: { "Content-Type": "application/json" } }
       );
-      if (response) {
-        toast.success("Contact Form Sent!!!");
+      if (response.data.status === "success") {
+        toast.success("Your form request has been submitted successfully!");
         setTimeout(() => {
           navigate(0);
         }, 1000);

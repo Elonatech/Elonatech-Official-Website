@@ -33,6 +33,13 @@
     text-align: justify;
 }
 
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 341px) {
     .browse {
         margin-left: 20px !important;
