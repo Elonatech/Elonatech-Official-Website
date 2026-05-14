@@ -58,7 +58,7 @@ const Thankyou = () => {
               </span>
               <h2 className='display-3 text-dark fw-bold'>Thank you!</h2>
               <h5 className='mb-5'>Your order was successfully completed.</h5>
-              <Link to={'/shop'} className='cart-btn'>
+              <Link to={'/products'} className='cart-btn'>
                 Back to shop
               </Link>
             </div>

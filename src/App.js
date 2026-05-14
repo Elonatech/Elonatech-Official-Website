@@ -14,6 +14,7 @@ import MainHeader from './components/main-header-comp/MainHeader';
 import MobileHeader from './components/Header/MobileHeader';
 import XmasHeader from './decoration-header/XmasHeader';
 import WhatsappFloatingButton from './components/whatsapp/WhatsappFloatingButton';
+import WhatsappEslint from './components/whatsapp/WhatsappEslint';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -165,11 +166,13 @@ const Layout = () => {
           <Outlet />
           <Footer />
 
+          <WhatsappEslint />
 
-          <WhatsappFloatingButton
-            phoneNumber="2348012345678"  // replace with actual number (no + or spaces)
+          {/* <WhatsappFloatingButton
+            phoneNumber="234901454520"  // replace with actual number (no + or spaces)
             message="Hello! I'd like to make an enquiry."
-          />
+          /> */}
+
         </CartProvider>
       </Suspense>
     </>
