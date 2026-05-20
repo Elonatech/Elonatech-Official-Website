@@ -27,7 +27,7 @@ const Career = () => {
       link: '/digital-career'
     },
     {
-      title: 'Animations/Motion Graphics & UI/UX Graphic Designer',
+      title: 'Motion Graphics Designer / Animator',
       description: 'Must be able to use Figma, Adobe XD, Photoshop, etc.',
       img: 'https://res.cloudinary.com/elonatech/image/upload/v1709662762/careerPage/montage_brxkxi.png',
       link: '/animation-career'

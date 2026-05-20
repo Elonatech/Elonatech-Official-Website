@@ -321,8 +321,8 @@ const ApplyNow = () => {
                         Full Stack Web developer
                       </option>
                       <option value="Digital Marketer">Digital Marketer</option>
-                      <option value="Animations/Motion Graphics & UI/UX Graphic Designer">
-                        Animations/Motion Graphics & UI/UX Graphic Designer
+                      <option value="Motion Graphics Designer/Animator">
+                        Motion Graphics Designer/Animator
                       </option>
                       <option value="Systems/Network Engineer">
                         Systems/Network Engineer
