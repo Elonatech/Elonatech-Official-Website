@@ -165,7 +165,7 @@ const Footer = () => {
                     class="whatsapp"
                     target="_blank"
                     rel="noopener noreferrer"
-                    to={"https://wa.me/message/NW4HSVIHRNRLA1"}
+                    to={"https://wa.me/elonatech"}
                   >
                     <i class="bi bi-whatsapp social-links-icon"></i>
                   </Link>

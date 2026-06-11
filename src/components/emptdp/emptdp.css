@@ -1,0 +1,935 @@
+/* =============================================================================
+   ETMPDP Page — emptdp.css
+   Colors: #11253d (navy), #dc3545 (red), #ffffff (white)
+   ============================================================================= */
+
+/* ── Shared helpers ──────────────────────────────────────────────────────── */
+
+.emptdp-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.emptdp-section-title {
+  color: #11253d;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 8px;
+}
+
+.emptdp-section-title--white {
+  color: #fff;
+}
+
+.emptdp-section-subtitle {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Shared CTA buttons */
+.emptdp-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.emptdp-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.emptdp-btn--primary {
+  background-color: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
+}
+
+.emptdp-btn--outline {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.emptdp-btn--outline-dark {
+  background-color: transparent;
+  color: #dc3545;
+  border-color: #dc3545;
+  text-decoration: none;
+}
+
+
+/* ── 1. Hero ─────────────────────────────────────────────────────────────── */
+
+.emptdp-section {
+  min-height: 560px;
+  background-color: #11253d;
+  /* background-color: red; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("https://res.cloudinary.com/djogptxxc/image/upload/v1781187732/pexels-mikhail-nilov-9301297_tc41of.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.emptdp-hero-text h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+  margin-top: 15px;
+}
+
+.emptdp-hero-text h5 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.emptdp-hero-text .lead {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.emptdp-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+
+/* ── 2. Why This Program ─────────────────────────────────────────────────── */
+
+.emptdp-why-section {
+  padding: 70px 0;
+  background-color: #fff;
+}
+
+.emptdp-why-content {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.emptdp-why-text {
+  flex: 1 1 55%;
+}
+
+.emptdp-why-text p {
+  color: #495057;
+  font-size: 0.97rem;
+  line-height: 1.85;
+  text-align: justify;
+  margin: 0;
+}
+
+.emptdp-why-image {
+  flex: 1 1 40%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.emptdp-why-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .emptdp-why-content {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .emptdp-why-image img {
+    height: 240px;
+  }
+}
+
+
+/* ── 3. What Participants Will Learn ─────────────────────────────────────── */
+
+.emptdp-learn-section {
+  padding: 70px 0;
+  background-color: #f8f9fa;
+}
+
+.emptdp-learn-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.emptdp-tab-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 2px solid #dee2e6;
+  background: #fff;
+  color: #495057;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.emptdp-tab-btn:hover {
+  border-color: #dc3545;
+}
+
+.emptdp-tab-btn--active {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.emptdp-learn-content {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.emptdp-learn-image-wrap {
+  flex: 1 1 45%;
+  height: 380px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.emptdp-learn-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.emptdp-learn-skills {
+  flex: 1 1 45%;
+}
+
+.emptdp-learn-skills-title {
+  color: #11253d;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.emptdp-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.emptdp-skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.emptdp-skill-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  margin-top: 6px;
+}
+
+.emptdp-skill-text {
+  color: #6c757d;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .emptdp-learn-content {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .emptdp-learn-image-wrap {
+    width: 100%;
+    height: 240px;
+  }
+
+  .emptdp-learn-skills {
+    width: 100%;
+  }
+
+  .emptdp-tab-btn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+}
+
+
+/* ── 4. Who Should Apply ─────────────────────────────────────────────────── */
+
+.emptdp-who-section {
+  padding: 70px 0;
+  background-color: #fff;
+}
+
+.emptdp-scroll-wrapper {
+  position: relative;
+}
+
+.emptdp-cards-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 8px 4px 16px;
+}
+
+.emptdp-cards-track::-webkit-scrollbar {
+  display: none;
+}
+
+.emptdp-card {
+  flex-shrink: 0;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  padding: 24px;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.emptdp-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.emptdp-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(220, 53, 69, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.emptdp-card-icon i {
+  color: #dc3545;
+  font-size: 1.4rem;
+}
+
+.emptdp-card-title {
+  color: #11253d;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.emptdp-card-desc {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.emptdp-scroll-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.emptdp-scroll-btn:hover {
+  background-color: #b02a37;
+}
+
+.emptdp-scroll-btn--left  { left: -22px; }
+.emptdp-scroll-btn--right { right: -22px; }
+
+@media (min-width: 768px) {
+  .emptdp-scroll-btn { display: flex; }
+}
+
+
+/* ── 5. Why ETMPDP Is Different ──────────────────────────────────────────── */
+
+.emptdp-diff-section {
+  padding: 70px 0;
+  background-color: #11253d;
+}
+
+.emptdp-diff-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.emptdp-diff-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 22px;
+  text-align: center;
+  flex: 1 1 160px;
+  max-width: 200px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.emptdp-diff-card:hover {
+  transform: translateY(-4px);
+}
+
+.emptdp-diff-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(220, 53, 69, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.emptdp-diff-icon i {
+  color: #dc3545;
+  font-size: 1.5rem;
+}
+
+.emptdp-diff-title {
+  color: #11253d;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.emptdp-diff-desc {
+  color: #6c757d;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .emptdp-diff-card {
+    max-width: 100%;
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+
+/* ── 6. Programme Structure ──────────────────────────────────────────────── */
+
+.emptdp-structure-section {
+  padding: 70px 0;
+  background-color: #f8f9fa;
+}
+
+/* Desktop — horizontal row */
+.emptdp-timeline-desktop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.emptdp-timeline-mobile {
+  display: none;
+}
+
+.emptdp-timeline-step {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  padding: 0 8px;
+}
+
+.emptdp-timeline-connector {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  right: -50%;
+  height: 2px;
+  background-color: #dc3545;
+  z-index: 0;
+}
+
+.emptdp-step-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.emptdp-step-title {
+  color: #11253d;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.emptdp-step-desc {
+  color: #6c757d;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Mobile — vertical stack */
+@media (max-width: 767px) {
+  .emptdp-timeline-desktop { display: none; }
+  .emptdp-timeline-mobile  { display: flex; flex-direction: column; gap: 24px; }
+
+  .emptdp-timeline-step-mobile {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .emptdp-timeline-step-mobile .emptdp-step-circle {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .emptdp-timeline-step-mobile .emptdp-step-title {
+    font-size: 0.9rem;
+  }
+
+  .emptdp-timeline-step-mobile .emptdp-step-desc {
+    font-size: 0.82rem;
+  }
+}
+
+
+/* ── 7. Investment + What You Receive ────────────────────────────────────── */
+
+.emptdp-invest-section {
+  padding: 70px 0;
+  background-color: #fff;
+}
+
+.emptdp-invest-grid {
+  display: flex;
+  gap: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.emptdp-invest-left,
+.emptdp-invest-right {
+  flex: 1 1 50%;
+  padding: 48px 40px;
+}
+
+.emptdp-invest-left  { background-color: #fff; }
+.emptdp-invest-right { background-color: #f8f9fa; }
+
+.emptdp-invest-divider {
+  width: 1px;
+  background-color: #e9ecef;
+  flex-shrink: 0;
+}
+
+.emptdp-invest-heading {
+  color: #11253d;
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-bottom: 28px;
+}
+
+/* Price cards row */
+.emptdp-price-cards {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+.emptdp-price-card {
+  flex: 1;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.emptdp-price-card--light { background-color: #fff; }
+.emptdp-price-card--dark  { background-color: #dc3545; }
+
+.emptdp-price-divider {
+  width: 1px;
+  background-color: #e9ecef;
+  flex-shrink: 0;
+}
+
+.emptdp-price-phase {
+  color: #11253d;
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-bottom: 8px;
+}
+
+.emptdp-price-phase--white { color: rgba(255, 255, 255, 0.9); }
+
+.emptdp-price-amount {
+  color: #dc3545;
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.emptdp-price-amount--white { color: #fff; }
+
+.emptdp-price-note {
+  color: #6c757d;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.emptdp-price-note--white { color: rgba(255, 255, 255, 0.8); }
+
+.emptdp-total-label {
+  color: #11253d;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.emptdp-refund-note {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+/* Receive checklist */
+.emptdp-receive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.emptdp-receive-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.emptdp-receive-icon {
+  color: #dc3545;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.emptdp-receive-item span {
+  color: #495057;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Tablet — stack the two panels */
+@media (max-width: 1024px) {
+  .emptdp-invest-grid {
+    flex-direction: column;
+  }
+
+  .emptdp-invest-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .emptdp-invest-left,
+  .emptdp-invest-right {
+    padding: 40px 32px;
+  }
+}
+
+/* Mobile — tighten padding + stack price cards */
+@media (max-width: 575px) {
+  .emptdp-invest-left,
+  .emptdp-invest-right {
+    padding: 28px 20px;
+  }
+
+  .emptdp-price-cards {
+    flex-direction: column;
+  }
+
+  .emptdp-price-divider {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+
+/* ── 8. Programme Mentor ─────────────────────────────────────────────────── */
+
+.emptdp-mentor-section {
+  padding: 70px 0;
+  background-color: #11253d;
+}
+
+.emptdp-mentor-grid {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.emptdp-mentor-photo-col {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.emptdp-mentor-photo {
+  width: 280px;
+  height: 340px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.emptdp-mentor-badge {
+  display: inline-block;
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.emptdp-mentor-bio {
+  flex: 1;
+}
+
+.emptdp-mentor-label {
+  text-transform: uppercase;
+  color: #dc3545;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-size: 0.78rem;
+  margin-bottom: 10px;
+}
+
+.emptdp-mentor-name {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 6px;
+}
+
+.emptdp-mentor-role {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.emptdp-mentor-title {
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.emptdp-mentor-bio-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .emptdp-mentor-grid {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .emptdp-mentor-photo {
+    width: 220px;
+    height: 270px;
+  }
+}
+
+
+/* ── 9. FAQ ──────────────────────────────────────────────────────────────── */
+
+.emptdp-faq-section {
+  padding: 70px 0;
+  background-color: #fff;
+}
+
+.emptdp-faq-container {
+  max-width: 1100px;
+}
+
+/* Two-column grid */
+.emptdp-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
+
+.emptdp-faq-col {
+  border-top: 1px solid #e9ecef;
+}
+
+.emptdp-faq-item {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.emptdp-faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 18px 12px;
+  cursor: pointer;
+  text-align: left;
+  gap: 10px;
+}
+
+.emptdp-faq-num {
+  color: #11253d;
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  min-width: 22px;
+}
+
+.emptdp-faq-q {
+  color: #11253d;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.emptdp-faq-icon {
+  color: #dd3d4c;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.emptdp-faq-answer {
+  padding: 0 12px 18px 34px;
+}
+
+.emptdp-faq-answer p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Mobile — single column */
+@media (max-width: 767px) {
+  .emptdp-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .emptdp-faq-col:last-child {
+    border-top: none;
+  }
+}
+
+
+/* ── 10. Final CTA ───────────────────────────────────────────────────────── */
+
+.emptdp-cta-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.emptdp-cta-inner {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.emptdp-cta-heading {
+  color: #dc3545;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.emptdp-cta-heading--dark {
+  color: #11253d;
+}
+
+.emptdp-cta-sub {
+  color: #495057;
+  font-size: 1rem;
+  margin-bottom: 32px;
+}
+
+.emptdp-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}

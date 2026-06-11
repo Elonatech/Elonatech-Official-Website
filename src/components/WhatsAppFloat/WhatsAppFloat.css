@@ -1,0 +1,67 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   WhatsApp Floating Button
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.whatsapp-float {
+  /* 📌 POSITION — change bottom / left values to move the button */
+  position: fixed;
+  bottom: 20px;   /* distance from the bottom of the screen */
+  left: 90px;     /* distance from the left edge of the screen */
+
+  /* 📌 SIZE — change width & height together to resize the button */
+  width: 58px;
+  height: 58px;
+
+  /* Stack it above everything else on the page */
+  z-index: 9999;
+
+  /* Make it a circle */
+  border-radius: 50%;
+
+  /* Centre the SVG inside the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Drop shadow so it floats visually */
+  /* 📌 SHADOW — remove this line if you don't want a shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  /* Smooth hover animation */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Remove underline that <a> tags add */
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  /* 📌 HOVER EFFECT — change scale(1.12) to a higher number for a bigger pop */
+  transform: scale(1.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+  /* 📌 ICON SIZE — should match (or be slightly smaller than) the button size */
+  width: 58px;
+  height: 58px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Optional pulse / ring animation — delete the block below if you don't want it
+   ─────────────────────────────────────────────────────────────────────────── */
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #25D366;
+  opacity: 0.4;
+  animation: whatsapp-pulse 2s infinite;
+}
+
+@keyframes whatsapp-pulse {
+  0%   { transform: scale(1);   opacity: 0.4; }
+  70%  { transform: scale(1.5); opacity: 0;   }
+  100% { transform: scale(1.5); opacity: 0;   }
+}

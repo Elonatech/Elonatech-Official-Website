@@ -190,7 +190,7 @@ const TeamLead = () => {
                     Oreva P. Oku
                   </h4>
                   <h6 class="text-danger">
-                    MD, Lead Consultant & Creative Director
+                    MD and Innovation & IT Solutions Consultant
                   </h6>
                 </Link>
                 <ul class="team-social">

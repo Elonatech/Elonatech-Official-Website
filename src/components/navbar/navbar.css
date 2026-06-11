@@ -51,13 +51,15 @@
 /* NAVBAR IS ALWAYS FIXED AT TOP - NO MATTER WHAT */
 .desktop-nav-wrapper {
   position: fixed;
-  top: 0; /* Default position at very top */
+  top: 0;
+  /* Default position at very top */
   left: 0;
   width: 100%;
-  z-index: 1040; 
+  z-index: 1040;
   padding-top: 5px;
   padding-bottom: 5px;
-  transition: top 0.3s ease-out; /* Smooth movement */
+  transition: top 0.3s ease-out;
+  /* Smooth movement */
 }
 
 /* When XmasHeader is shown, navbar moves DOWN */
@@ -68,7 +70,8 @@
 
 /* When XmasHeader is hidden, navbar is at VERY TOP */
 .NAVba {
-  top: 0; /* NAVBAR AT VERY TOP */
+  top: 0;
+  /* NAVBAR AT VERY TOP */
   background-color: transparent;
 }
 
@@ -77,6 +80,7 @@
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
@@ -286,7 +290,7 @@
 }
 
 .elonatechlistItem {
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   color: #fff;
   position: relative;
@@ -347,6 +351,45 @@
 @media (max-width: 1100px) {
   .elonatechinnerListContainer {
     width: 800px !important;
+  }
+}
+
+/* Tablet nav: smaller text + tighter padding so items don't wrap */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .desktop-nav-container {
+    padding: 0 1.5rem;
+  }
+
+  .e-fonte {
+    font-size: 13px !important;
+  }
+
+  .e-fonte:hover {
+    font-size: 13px !important;
+  }
+
+  .elonatechlist {
+    gap: 0;
+  }
+
+  .elonatechlistItem {
+    padding: 0 2px;
+  }
+}
+
+/* Hide social icons on tablet — only cart shows */
+@media (max-width: 1279px) {
+  .social-icons {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Show social icons on large screens (1280px+) */
+@media (min-width: 1280px) {
+  .social-icons {
+    display: flex !important;
   }
 }
 
@@ -459,6 +502,7 @@
 .elonatechinnerListItemContentRightTechListTitleActive {
   color: black;
 }
+
 .elonatechinnerListItemContentRightTechListTitleActive:hover {
   color: #dc3545;
 }
@@ -599,7 +643,7 @@
 }
 
 .cart-symbol {
- margin-right: 13px;
+  margin-right: 13px;
 }
 
 .social-links a {

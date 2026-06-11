@@ -66,11 +66,13 @@ import digitalPpc from "./icons/Digitial/Digital/external-ppc.png";
 import Salehardware from "./icons/Sales/workstation.png";
 import SaleSoftware from "./icons/Sales/software.png";
 import SaleConsumbles from "./icons/Sales/home-office.png";
-import { set } from "date-fns";
+import { useLocation } from "react-router-dom";
 
 const MobileHeader = () => {
   const [currentAdmin, setCurrentAdmin] = useState("");
   const { logout } = useAuth();
+  const location = useLocation();
+  const isActive = (path) => location.pathname === path;
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem("token"));
@@ -1412,6 +1414,44 @@ const MobileHeader = () => {
                     </Link>
                   </ul>
                 </ul>
+              </li>
+
+              {/* Programs */}
+              <li className="elonatechlistItem drop-show">
+                <span
+                  className="nav-link e-fonte text-white dropdown-toggle"
+                  style={{ cursor: "pointer" }}
+                >
+                  Programs
+                </span>
+                <div className="drop-menu">
+                  <ul className="strategic-items list-unstyled">
+                    <li>
+                      <Link
+                        to="/etmpdp"
+                        className={`dropdown-item ${
+                          isActive("/programs/etmpdp")
+                            ? "strategic-items-active"
+                            : ""
+                        }`}
+                      >
+                        ETMPDP
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/future-programs"
+                        className={`dropdown-item ${
+                          isActive("/retainer-partnership")
+                            ? "strategic-items-active"
+                            : ""
+                        }`}
+                      >
+                        Future Programs
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
 
               {/* Products Dropdown */}

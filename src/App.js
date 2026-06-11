@@ -15,6 +15,7 @@ import MobileHeader from './components/Header/MobileHeader';
 import XmasHeader from './decoration-header/XmasHeader';
 import WhatsappFloatingButton from './components/whatsapp/WhatsappFloatingButton';
 import WhatsappEslint from './components/whatsapp/WhatsappEslint';
+import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -37,7 +38,7 @@ const Team = lazy(() => import("./components/team/team"));
 const Company = lazy(() => import("./components/company/company"));
 const Network = lazy(() => import("./components/network/network"));
 const Policy = lazy(() => import("./components/policy/policy"));
-const Terms  = lazy(() => import("./components/terms/terms"));
+const Terms = lazy(() => import("./components/terms/terms"));
 const Digital = lazy(() => import("./components/digital/digital"));
 const Home = lazy(() => import("./components/home/home"));
 const Engineer = lazy(() => import("./components/engineer/engineer"));
@@ -148,6 +149,7 @@ const TeamLead = lazy(() => import("./components/team/teamLead"))
 const TeamSystem = lazy(() => import("./components/team/teamSystem"))
 const TeamWeb = lazy(() => import("./components/team/teamWeb"))
 const BlogPages = lazy(() => import("./components/blog/blogPages"));
+const Emptdp = lazy(() => import("./components/emptdp/emptdp"));
 
 // import Mailchimp from './components/mailchimp/mailchimp';
 
@@ -166,7 +168,16 @@ const Layout = () => {
           <Outlet />
           <Footer />
 
-          <WhatsappEslint />
+          {/* ── WhatsApp Floating Button ──────────────────────────────────────
+               To change the phone number / link, open:
+               src/components/WhatsAppFloat/WhatsAppFloat.jsx
+               and update the `whatsappLink` variable at the top of the file.
+               To move/resize the button, open:
+               src/components/WhatsAppFloat/WhatsAppFloat.css
+          ─────────────────────────────────────────────────────────────── */}
+          <WhatsAppFloat />
+
+          {/* <WhatsappEslint /> */}
 
           {/* <WhatsappFloatingButton
             phoneNumber="234901454520"  // replace with actual number (no + or spaces)
@@ -243,10 +254,18 @@ const router = createBrowserRouter([
         path: '/app-development',
         element: <AppDevelopment />
       },
+
+      {
+        path: '/etmpdp',
+        element: <Emptdp />
+      },
+
+
       {
         path: '/products',
         element: <Shop />
       },
+
       // team ==============================
       {
         path: "/our-team",
@@ -423,6 +442,10 @@ const router = createBrowserRouter([
       {
         path: '/app-development',
         element: <AppDevelopment />
+      },
+      {
+        path: '/etmpdp',
+        element: <Emptdp />
       },
       {
         path: '/products',

@@ -6,16 +6,21 @@ const TeamMd = () => {
   return (
     <>
       <Helmet>
-        <title>Oreva P. Oku - Tech Solution, Digital Solution</title>
+        <title>Oreva P. Oku — Managing Director | Elonatech Nigeria Limited</title>
         <meta
           name="description"
-          content="Oreva Oku is the MD, Lead Consultant and Creative Director of Elonatech Nigeria Limited.
-He is a Brand Developer and a facilitator in Information Technology and has recently been awarded Corporate IT CEO of Year 2024 
-(by Innovation in Business). He professionalizes in Network Administration/Implementation and Security; Technical Support on PCs 
-(hardware and software); Web Design and Administration; 
-Graphic Design, Branding and Digital Marketing."
+          content="Oreva P. Oku is the Managing Director, Lead Consultant and Creative Director of Elonatech Nigeria Limited. Technology Consultant, Brand Developer, and Corporate IT CEO of the Year 2024 (Innovation in Business). Expert in Network Administration, Web Design, Graphic Design, Branding and Digital Marketing."
         />
-        <link rel="canonical" href="https://elonatech.com.ng/oreva-p-oku" />
+        <link rel="canonical" href="https://elonatech.com.ng/oreva-p-oku/" />
+        <meta property="og:title" content="Oreva P. Oku — Managing Director | Elonatech Nigeria Limited" />
+        <meta property="og:description" content="Oreva P. Oku is the Managing Director and Creative Director of Elonatech Nigeria Limited. Technology Consultant, Brand Developer, and Corporate IT CEO of the Year 2024." />
+        <meta property="og:url" content="https://elonatech.com.ng/oreva-p-oku/" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:image" content="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Oreva P. Oku — Managing Director | Elonatech Nigeria Limited" />
+        <meta name="twitter:description" content="Oreva P. Oku is the Managing Director and Creative Director of Elonatech Nigeria Limited. Corporate IT CEO of the Year 2024." />
+        <meta name="twitter:image" content="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png" />
       </Helmet>
 
       <div class="container-fluid team-section">
@@ -48,7 +53,7 @@ Graphic Design, Branding and Digital Marketing."
                 Oreva P. Oku
               </h1>
               <h6 className="text-danger mt-0">
-                MD, Lead Consultant & Creative Director
+                MD and Innovation & IT Solutions Consultant
               </h6>
               <p>
                 Oreva P. Oku is the Managing Director and Innovation & IT

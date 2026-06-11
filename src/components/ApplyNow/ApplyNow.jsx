@@ -85,7 +85,7 @@ const ApplyNow = () => {
       formData.append("file", file);
 
       // Debug log
-      console.log("Submitting form data:");
+      // console.log("Submitting form data:");
       for (let [key, value] of formData.entries()) {
         if (value instanceof File) {
           console.log(`${key}: [File] ${value.name}`);
