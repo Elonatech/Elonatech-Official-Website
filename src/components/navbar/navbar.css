@@ -1,5 +1,17 @@
 /* desktop-navbar.css - Desktop Only Version (Shows from 1024px) */
 
+/* =====================================================
+   COLOUR REFERENCE — edit here to retheme the navbar
+   =====================================================
+   Navy  (scrolled background, active highlight) : #11253D
+   Red   (hover, active pills, badges, icons)    : #dc3545
+   White (nav link text, icon text)              : #ffffff
+   Transparent (navbar bg before scroll)         : transparent
+   Black (dropdown overlay text, divider line)   : #000000
+   Dropdown bg                                   : #ffffff (white)
+   Dropdown shadow                               : rgba(0,0,0,0.2)
+   ===================================================== */
+
 /* ===================================================== */
 /* DESKTOP VISIBILITY CONTROL */
 /* ===================================================== */
@@ -65,14 +77,14 @@
 /* When XmasHeader is shown, navbar moves DOWN */
 .NAVbar {
   /* top: 64px; */
-  background-color: #11253D;
+  background-color: #11253D; /* ← scrolled navbar bg: Navy */
 }
 
 /* When XmasHeader is hidden, navbar is at VERY TOP */
 .NAVba {
   top: 0;
   /* NAVBAR AT VERY TOP */
-  background-color: transparent;
+  background-color: transparent; /* ← transparent until user scrolls */
 }
 
 /* Animation for XmasHeader */
@@ -113,7 +125,7 @@
 
 /* When hovering on dropdown parent, first item gets red background */
 .drop-show:hover .drop-menu ul li:first-child .dropdown-item {
-  background-color: #dc3545 !important;
+  background-color: #dc3545 !important; /* ← first item highlight: Red */
   color: white !important;
   text-align: center;
   border-radius: 100px !important;
@@ -210,38 +222,42 @@
   height: 40px !important;
 }
 
-/* Navbar Backgrounds */
+/* Navbar Backgrounds (duplicated for specificity — keep in sync with above) */
 .NAVba {
-  background-color: transparent;
+  background-color: transparent; /* ← top of page: no background */
 }
 
 .NAVbar {
-  background-color: #11253D;
+  background-color: #11253D; /* ← scrolled: Navy background */
   transition: background-color 1ms linear;
 }
 
-/* Font Styles */
+/* ── Nav link text ───────────────────────────────────────────── */
+/* To change the size of ALL nav items, edit font-size here.
+   Also update the matching values in the media queries below
+   (search "MATCH BASE FONT" to find them quickly).            */
 .e-fonte {
-  font-size: 17px;
+  font-size: 19px;          /* ← main nav text size */
   font-weight: bold;
 }
 
 .e-fonte:hover {
-  font-size: 17px;
+  font-size: 19px;          /* ← keep same as base so text doesn't jump */
   font-weight: bold;
-  color: #dc3545 !important;
+  color: #dc3545 !important; /* ← hover colour: Red */
 }
 
+/* Social / cart icon size */
 .i-fonte {
   font-size: 17px;
 }
 
 .i-fonte:hover {
-  color: #dc3545;
+  color: #dc3545; /* ← hover colour: Red */
 }
 
 .t-fonte:hover {
-  color: #dc3545;
+  color: #dc3545; /* ← hover colour: Red */
 }
 
 /* ============================================================ */
@@ -390,14 +406,15 @@
     justify-content: center;
   }
 
-  /* Smaller nav text so items don't wrap to a second line */
-  /* Adjust font-size here if items still feel cramped     */
+  /* Slightly smaller nav text on tablet so items don't wrap.
+     MATCH BASE FONT — if you change .e-fonte above, update here too.
+     Raise this value if it still looks too small on your screen.   */
   .e-fonte {
-    font-size: 13px !important;
+    font-size: 15px !important; /* ← tablet font size (1024–1599px) */
   }
 
   .e-fonte:hover {
-    font-size: 13px !important;
+    font-size: 15px !important; /* ← keep same as above */
   }
 
   /* Reduce per-item padding so everything fits */
@@ -422,11 +439,11 @@
 
   /* Restore full font size on wide screens */
   .e-fonte {
-    font-size: 17px !important;
+    font-size: 18px !important;
   }
 
   .e-fonte:hover {
-    font-size: 17px !important;
+    font-size: 18px !important;
   }
 }
 
@@ -450,6 +467,7 @@
 }
 
 @media (min-width: 1600px) {
+
   /* Reveal extended icons on large screens */
   .social-icons-extended {
     display: flex;
@@ -684,27 +702,27 @@
   background-color: transparent;
 }
 
-/* Social Links */
+/* Social Links wrapper */
 .social-links {
   display: flex;
   justify-items: center;
   align-items: center;
-  /* gap: 0.5px; */
+  /* gap: 0.5px; ← uncomment and adjust to add spacing between icons */
 }
 
 .cart-symbol {
-  margin-right: 13px;
+  margin-right: 13px; /* ← gap between cart icon and first social icon */
 }
 
 .social-links a {
-  color: white;
+  color: white;           /* ← icon colour: White */
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #dc3545;
+  color: #dc3545; /* ← icon hover colour: Red */
 }
 
 /* Cart Badge */
@@ -712,8 +730,8 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background: #dc3545;
-  color: white;
+  background: #dc3545; /* ← badge bg: Red */
+  color: white;        /* ← badge number: White */
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -731,7 +749,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5rem; /* default (large screen); overridden at 1024-1599px */
+  padding: 0 5rem;
+  /* default (large screen); overridden at 1024-1599px */
 }
 
 .nav-center-container {
