@@ -17,9 +17,11 @@
   inset: 0;
   z-index: 1000;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 20px 16px;
+  padding: 12vh 4vh;
+  overflow-y: auto;
+  /* background-color: red; */
 }
 
 /* The white box */
@@ -29,14 +31,25 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   width: 100%;
   max-width: 680px;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-height: none;
+  overflow-y: visible;
+  margin-bottom: 20px;
 }
 
 /* Scrollbar styling inside modal */
-.applymodal-box::-webkit-scrollbar { width: 6px; }
-.applymodal-box::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
-.applymodal-box::-webkit-scrollbar-thumb { background: #dc3545; border-radius: 3px; }
+.applymodal-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.applymodal-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.applymodal-box::-webkit-scrollbar-thumb {
+  background: #dc3545;
+  border-radius: 3px;
+}
 
 /* ── Header ──────────────────────────────────────────────────────────────── */
 .applymodal-header {
@@ -69,7 +82,8 @@
 }
 
 .applymodal-badge {
-  display: none; /* hidden on mobile — shown on sm+ */
+  display: none;
+  /* hidden on mobile — shown on sm+ */
   background-color: #dc3545;
   color: #fff;
   border-radius: 999px;
@@ -102,7 +116,9 @@
 }
 
 @media (min-width: 480px) {
-  .applymodal-badge { display: inline-block; }
+  .applymodal-badge {
+    display: inline-block;
+  }
 }
 
 /* ── Form ────────────────────────────────────────────────────────────────── */

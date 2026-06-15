@@ -38,6 +38,7 @@ const CompanyForm = () => {
       );
       if (response.data.status === "success") {
         toast.success("Your quote request has been submitted successfully!");
+        
         setTimeout(() => {
           navigate(0);
         }, 1000);

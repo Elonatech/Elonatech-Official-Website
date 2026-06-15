@@ -72,7 +72,7 @@
   background-color: #11253d;
   /* background-color: red; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("https://res.cloudinary.com/djogptxxc/image/upload/v1781187732/pexels-mikhail-nilov-9301297_tc41of.jpg");
+    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1781519966/Gemini_Generated_Image_gq7in9gq7in9gq7i-cc_kee65n.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -85,11 +85,32 @@
   padding: 60px 20px;
 }
 
+@media (max-width: 576px) {
+  .emptdp-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+      url("https://res.cloudinary.com/dahnwukbz/image/upload/v1781520365/Picture_mobile_xkewv5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+
 .emptdp-hero-text h2 {
   font-size: clamp(1.6rem, 3.5vw, 2.6rem);
   font-weight: 800;
   margin-bottom: 12px;
   margin-top: 15px;
+}
+
+@media (max-width: 576px) {
+  .emptdp-hero-text h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
 }
 
 .emptdp-hero-text h5 {
@@ -99,12 +120,26 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+@media (max-width: 576px) {
+  .emptdp-hero-text h5 {
+    font-size: 0.95rem;
+    margin-top: 25px;
+  }
+}
+
 .emptdp-hero-text .lead {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
   max-width: 680px;
   margin: 0 auto 32px;
   line-height: 1.7;
+
+}
+
+@media (max-width: 576px) {
+  .emptdp-hero-text .lead {
+    display: none;
+  }
 }
 
 .emptdp-cta-buttons {
@@ -136,7 +171,7 @@
   color: #495057;
   font-size: 0.97rem;
   line-height: 1.85;
-  text-align: justify;
+  text-align: left;
   margin: 0;
 }
 
@@ -385,11 +420,18 @@
   background-color: #b02a37;
 }
 
-.emptdp-scroll-btn--left  { left: -22px; }
-.emptdp-scroll-btn--right { right: -22px; }
+.emptdp-scroll-btn--left {
+  left: -22px;
+}
+
+.emptdp-scroll-btn--right {
+  right: -22px;
+}
 
 @media (min-width: 768px) {
-  .emptdp-scroll-btn { display: flex; }
+  .emptdp-scroll-btn {
+    display: flex;
+  }
 }
 
 
@@ -524,10 +566,31 @@
   margin: 0;
 }
 
+.emptdp-step-mobile-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.emptdp-timeline-connector-mobile {
+  width: 2px;
+  min-height: 30px;
+  background-color: #dc3545;
+  margin: px 0;
+}
+
 /* Mobile — vertical stack */
 @media (max-width: 767px) {
-  .emptdp-timeline-desktop { display: none; }
-  .emptdp-timeline-mobile  { display: flex; flex-direction: column; gap: 24px; }
+  .emptdp-timeline-desktop {
+    display: none;
+  }
+
+  .emptdp-timeline-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
 
   .emptdp-timeline-step-mobile {
     display: flex;
@@ -572,8 +635,13 @@
   padding: 48px 40px;
 }
 
-.emptdp-invest-left  { background-color: #fff; }
-.emptdp-invest-right { background-color: #f8f9fa; }
+.emptdp-invest-left {
+  background-color: #fff;
+}
+
+.emptdp-invest-right {
+  background-color: #f8f9fa;
+}
 
 .emptdp-invest-divider {
   width: 1px;
@@ -604,8 +672,13 @@
   text-align: center;
 }
 
-.emptdp-price-card--light { background-color: #fff; }
-.emptdp-price-card--dark  { background-color: #dc3545; }
+.emptdp-price-card--light {
+  background-color: #fff;
+}
+
+.emptdp-price-card--dark {
+  background-color: #dc3545;
+}
 
 .emptdp-price-divider {
   width: 1px;
@@ -620,7 +693,9 @@
   margin-bottom: 8px;
 }
 
-.emptdp-price-phase--white { color: rgba(255, 255, 255, 0.9); }
+.emptdp-price-phase--white {
+  color: rgba(255, 255, 255, 0.9);
+}
 
 .emptdp-price-amount {
   color: #dc3545;
@@ -630,7 +705,9 @@
   line-height: 1;
 }
 
-.emptdp-price-amount--white { color: #fff; }
+.emptdp-price-amount--white {
+  color: #fff;
+}
 
 .emptdp-price-note {
   color: #6c757d;
@@ -639,7 +716,9 @@
   margin: 0;
 }
 
-.emptdp-price-note--white { color: rgba(255, 255, 255, 0.8); }
+.emptdp-price-note--white {
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .emptdp-total-label {
   color: #11253d;
@@ -702,6 +781,7 @@
 
 /* Mobile — tighten padding + stack price cards */
 @media (max-width: 575px) {
+
   .emptdp-invest-left,
   .emptdp-invest-right {
     padding: 28px 20px;

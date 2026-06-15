@@ -1441,9 +1441,18 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Social Links & Cart - Right Side */}
+          {/* ── Right Side: Cart + Social Icons ──────────────────────────────
+               Layout splits into two icon groups controlled by CSS:
+               • social-icons-core   → LinkedIn, Facebook, Instagram
+                 Shown on ALL desktop sizes (1024px+)
+               • social-icons-extended → Pinterest, TikTok, YouTube, Threads, X
+                 Only shown on large screens (≥1600px)
+               To change which icons appear at which breakpoint, edit
+               .social-icons-core and .social-icons-extended in navbar.css
+          ─────────────────────────────────────────────────────────────── */}
           <div className="social-links">
-            {/* Cart Icon */}
+
+            {/* Cart — always visible on desktop */}
             <Link
               to="/cart"
               className="linkedin cart-symbol text-white nav-link fw-bold pe-3 ps-0"
@@ -1456,7 +1465,10 @@ const Navbar = () => {
                 )}
               </i>
             </Link>
-            <div className="social-icons">
+
+            {/* ── CORE icons: shown on medium + large screens (1024px+)
+                 Add/remove icons here to change what appears on tablet/mini-laptop */}
+            <div className="social-icons-core">
               <Link
                 to="https://www.linkedin.com/company/elonatech/"
                 target="_blank"
@@ -1481,6 +1493,12 @@ const Navbar = () => {
               >
                 <i className="bi bi-instagram i-fonte"></i>
               </Link>
+            </div>
+
+            {/* ── EXTENDED icons: only shown on large screens (≥1600px)
+                 To adjust the breakpoint, change 1600px in navbar.css
+                 under the .social-icons-extended media query */}
+            <div className="social-icons-extended">
               <Link
                 to="https://www.pinterest.com/Elonatechnig/"
                 target="_blank"
@@ -1511,13 +1529,11 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="tiktok text-white nav-link fw-bold pe-0"
               >
-                {/* <i class="bi bi-threads"></i> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-threads"
                   viewBox="0 0 16 16"
                   className="i-fonte"
                 >
@@ -1542,6 +1558,7 @@ const Navbar = () => {
                 </svg>
               </Link>
             </div>
+
           </div>
         </div>
       </div>

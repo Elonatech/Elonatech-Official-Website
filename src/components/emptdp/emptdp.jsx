@@ -5,7 +5,7 @@ import "./emptdp.css";
 import { cards } from "./data/emptdp.data.js";
 import ApplicationModal from "./applicationModal";
 import MDImage from "../main/captions/Ceo1.png";
-
+import brocchurePDF from "./data/EMPTDP_brochure.pdf";
 
 /* ── Static data ────────────────────────────────────────────────────────── */
 
@@ -101,7 +101,7 @@ const differentiators = [
     desc: "Real-world insights into technology operations and business environments.",
   },
   {
-    icon: "bi-rocket-takeoff",
+    icon: "bi-people-fill",
     title: "Leadership Development",
     desc: "Develop discipline, professionalism, accountability, and leadership capacity.",
   },
@@ -179,15 +179,34 @@ const Emptdp = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [activeCard, setActiveCard] = useState(0);
 
   const scroll = (dir) => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: dir === "left" ? -340 : 340,
+      const next =
+        dir === "right"
+          ? (activeCard + 1) % cards.length
+          : (activeCard - 1 + cards.length) % cards.length;
+      setActiveCard(next);
+      scrollRef.current.scrollTo({
+        left: next * 340,
         behavior: "smooth",
       });
     }
   };
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveCard((prev) => {
+        const next = (prev + 1) % cards.length;
+        if (scrollRef.current) {
+          scrollRef.current.scrollTo({ left: next * 340, behavior: "smooth" });
+        }
+        return next;
+      });
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
 
   const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
 
@@ -226,9 +245,11 @@ const Emptdp = () => {
           >
             Apply Now
           </button>
-          <button className="emptdp-btn emptdp-btn--outline">
-            Download Brochure
-          </button>
+          <a href={brocchurePDF} target="_blank" rel="noopener noreferrer">
+            <button className="emptdp-btn emptdp-btn--outline">
+              Download Brochure
+            </button>
+          </a>
         </div>
       </div>
 
@@ -258,7 +279,9 @@ const Emptdp = () => {
             <div className="emptdp-why-image">
               {/* Replace src with actual image when ready */}
               <img
-                src={"https://res.cloudinary.com/djogptxxc/image/upload/v1781171098/pexels-jep-gambardella-7689856_hltynt.jpg"}
+                src={
+                  "https://res.cloudinary.com/djogptxxc/image/upload/v1781171098/pexels-jep-gambardella-7689856_hltynt.jpg"
+                }
                 alt="Mentorship session"
               />
             </div>
@@ -353,6 +376,41 @@ const Emptdp = () => {
               <i className="bi bi-chevron-right"></i>
             </button>
           </div>
+
+          {/* Dots */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "8px",
+              marginTop: "1.5rem",
+            }}
+            className="d-flex d-md-none justify-content-center gap-2 mt-4"
+          >
+            {cards.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  setActiveCard(i);
+                  scrollRef.current?.scrollTo({
+                    left: i * 340,
+                    behavior: "smooth",
+                  });
+                }}
+                style={{
+                  width: activeCard === i ? "20px" : "10px",
+                  height: "10px",
+                  borderRadius: "100px",
+                  background: activeCard === i ? "#dc3545" : "#ccc",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+                aria-label={`Go to card ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -403,7 +461,12 @@ const Emptdp = () => {
           <div className="emptdp-timeline-mobile">
             {steps.map((s, i) => (
               <div className="emptdp-timeline-step-mobile" key={i}>
-                <div className="emptdp-step-circle">{s.num}</div>
+                <div className="emptdp-step-mobile-left">
+                  <div className="emptdp-step-circle">{s.num}</div>
+                  {i < steps.length - 1 && (
+                    <div className="emptdp-timeline-connector-mobile"></div>
+                  )}
+                </div>
                 <div>
                   <h6 className="emptdp-step-title">{s.title}</h6>
                   <p className="emptdp-step-desc">{s.desc}</p>
@@ -601,8 +664,10 @@ const Emptdp = () => {
             >
               Apply Now
             </button>
-            <a href="#" className="emptdp-btn emptdp-btn--outline-dark">
-              Download Brochure
+            <a href={brocchurePDF} target="_blank" rel="noopener noreferrer">
+              <button className="emptdp-btn emptdp-btn--outline-dark">
+                Download Brochure
+              </button>
             </a>
           </div>
         </div>

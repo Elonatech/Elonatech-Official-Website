@@ -1416,8 +1416,47 @@ const MobileHeader = () => {
                 </ul>
               </li>
 
-              {/* Programs */}
-              <li className="elonatechlistItem drop-show">
+              {/* Extra Programs */}
+              <li className="nav-item dropdown pe-1">
+                <a
+                  className="nav-link active mobile-e-fonte dropdown-toggle"
+                  role="button"
+                  onClick={handleMobileSupportClick}
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Programs
+                </a>
+                <ul className="dropdown-menu border-0 text-center p-4">
+                  <ul className="mobile-strategic-items list-unstyled">
+                    <Link
+                      to={"/etmpdp"}
+                      className="text-decoration-none text-dark"
+                    >
+                      <li
+                        className="mobile-strategic-items-active dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
+                        data-bs-dismiss="offcanvas"
+                      >
+                        ETMPDP
+                      </li>
+                    </Link>
+                    <Link
+                      to={"/future-programs"}
+                      className="text-decoration-none text-dark"
+                    >
+                      <li
+                        className="dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
+                        data-bs-dismiss="offcanvas"
+                      >
+                         Future Programs
+                      </li>
+                    </Link>
+                   
+                  </ul>
+                </ul>
+              </li>
+
+              {/* <li className="elonatechlistItem drop-show">
                 <span
                   className="nav-link e-fonte text-white dropdown-toggle"
                   style={{ cursor: "pointer" }}
@@ -1452,7 +1491,7 @@ const MobileHeader = () => {
                     </li>
                   </ul>
                 </div>
-              </li>
+              </li> */}
 
               {/* Products Dropdown */}
               <li className="nav-item dropdown pe-1">
