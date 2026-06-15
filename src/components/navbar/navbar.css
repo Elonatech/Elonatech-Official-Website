@@ -410,11 +410,11 @@
      MATCH BASE FONT — if you change .e-fonte above, update here too.
      Raise this value if it still looks too small on your screen.   */
   .e-fonte {
-    font-size: 15px !important; /* ← tablet font size (1024–1599px) */
+    font-size: 15.3px !important; /* ← tablet font size (1024–1599px) */
   }
 
   .e-fonte:hover {
-    font-size: 15px !important; /* ← keep same as above */
+    font-size: 15.3px !important; /* ← keep same as above */
   }
 
   /* Reduce per-item padding so everything fits */
