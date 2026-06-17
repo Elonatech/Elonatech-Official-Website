@@ -31,10 +31,10 @@ const BlogUpdate = () => {
   }, []);
 
   const handleUpdate = async (e) => {
-    e.preventDefault();
+    e.preventDefault();   
 
     // Create FormData instead of a plain object
-    const formData = new FormData();
+    const formData = new FormData(); 
     formData.append("title", title);
     formData.append("description", description);
     formData.append("author", author);

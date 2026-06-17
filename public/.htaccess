@@ -6,6 +6,8 @@
 
   RewriteRule ^index\.html$ - [L]
 
+  # Redirect sitemap.xml to the dynamic backend-generated sitemap
+  RewriteRule ^sitemap\.xml$ https://elonatech-live-api.onrender.com/sitemap.xml [R=301,L]
 
   # Conditions to check if the requested file, directory, or symbolic link does not exist
   RewriteCond %{REQUEST_FILENAME} !-f
