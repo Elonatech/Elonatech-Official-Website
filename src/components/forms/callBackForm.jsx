@@ -1,34 +1,59 @@
-import { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import axios from "axios";
+import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../BaseURL/BaseURL";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../emptdp/applicationModal.css";
 
-const CallBackForm = () => {
-  let navigate = useNavigate();
+let lastSubmitTime = 0;
 
+const 
+CallBackForm = () => {
+  const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const formOpenTime = useRef(Date.now());
 
-  const handleChangeNumber = (e) => {
-    const value = e.target.value.replace(/\D/g, "");
-    setNumber(value);
-  };
+  useEffect(() => {
+    if (showModal) formOpenTime.current = Date.now();
+  }, [showModal]);
 
-  // Basic form validation
+  useEffect(() => {
+    document.body.style.overflow = showModal ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showModal]);
+
+  const handleChangeNumber = (e) => setNumber(e.target.value.replace(/\D/g, ""));
+
   const validateForm = () => {
-    if (!name || !email || !subject || !number || !message) {
-      toast.error("All fields are required.");
+    if (honeypot) return false;
+
+    const timeOnForm = (Date.now() - formOpenTime.current) / 1000;
+    if (timeOnForm < 3) {
+      toast.error("Please take your time filling out the form.");
       return false;
     }
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      toast.error("Please enter a valid email address.");
+
+    const secondsSinceLastSubmit = (Date.now() - lastSubmitTime) / 1000;
+    if (lastSubmitTime && secondsSinceLastSubmit < 60) {
+      toast.error(`Please wait ${Math.ceil(60 - secondsSinceLastSubmit)} seconds before submitting again.`);
+      return false;
+    }
+
+    const errors = [];
+    if (!name.trim()) errors.push("Name is required.");
+    if (!email.trim()) errors.push("Email address is required.");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) errors.push("Please enter a valid email address.");
+    if (!subject.trim()) errors.push("Subject is required.");
+    if (!number.trim()) errors.push("Phone number is required.");
+    if (!message.trim()) errors.push("Message is required.");
+
+    if (errors.length > 0) {
+      errors.forEach((err) => toast.error(err));
       return false;
     }
     return true;
@@ -36,28 +61,24 @@ const CallBackForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
     setIsSubmitting(true);
+    lastSubmitTime = Date.now();
     try {
-      const newData = {
-        name,
-        email,
-        subject,
-        number,
-        message,
-      };
       const response = await axios.post(
         `${BASEURL}/api/v1/email/contact`,
-        newData,
+        { name, email, subject, number, message },
         { headers: { "Content-Type": "application/json" } }
       );
       if (response.data.status === "success") {
         toast.success("Your form request has been submitted successfully!");
-        setTimeout(() => {
-          navigate(0);
-        }, 1000);
+        setName(""); setEmail(""); setSubject(""); setNumber(""); setMessage("");
+        setShowModal(false);
+      } else {
+        toast.error(response.data.message || "Submission failed");
       }
     } catch (error) {
-      toast.error(error.response.data);
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -67,129 +88,67 @@ const CallBackForm = () => {
     <>
       <button
         className="btn btn-primary cvb border border-light text-light mt-3"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal4"
+        onClick={() => setShowModal(true)}
       >
         <h6 className="mt-1">Click Here</h6>
       </button>
-      {/* ================================================ Modal ============================================== */}
-      <div
-        className="modal fade"
-        id="exampleModal4"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1
-                className="modal-title fs-4 fw-bold text-dark"
-                id="exampleModalLabel"
-              >
-                Get in Touch with us
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body text-dark">
-              <form>
-                <div className="mb-2 mt-4">
-                  <label
-                    htmlFor="name"
-                    className="form-label float-start fw-bold"
-                  >
-                    Name<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setName(e.target.value)}
-                    id="name"
-                    value={name}
-                  />
 
-                  <label
-                    htmlFor="exampleInputEmail1"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    Email<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    onChange={(e) => setEmail(e.target.value)}
-                    id="exampleInputEmail1"
-                    value={email}
-                  />
+      {showModal && (
+        <>
+          <div className="applymodal-backdrop" onClick={() => setShowModal(false)}></div>
+          <div className="applymodal-wrapper" role="dialog" aria-modal="true" aria-labelledby="callback-modal-title">
+            <div className="applymodal-box">
+              <div className="applymodal-header">
+                <div>
+                  <h2 id="callback-modal-title" className="applymodal-title">Get in Touch with Us</h2>
+                  <p className="applymodal-subtitle">We will get back to you as soon as possible.</p>
+                </div>
+                <div className="applymodal-header-right">
+                  <span className="applymodal-badge">Contact Us</span>
+                  <button className="applymodal-close" onClick={() => setShowModal(false)} aria-label="Close modal">&times;</button>
+                </div>
+              </div>
 
-                  <label
-                    htmlFor="subject"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    Subject<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setSubject(e.target.value)}
-                    id="subject"
-                    value={subject}
-                  />
+              <form onSubmit={handleSubmit} className="applymodal-form">
+                <div style={{ display: "none" }} aria-hidden="true">
+                  <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+                </div>
 
-                  <label
-                    htmlFor="number"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    Phone Number<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    className="form-control"
-                    id="number"
-                    value={number}
-                    onChange={handleChangeNumber}
-                  />
-
-                  <div className="mt-3">
-                    <h6 className="text-start fw-bold">
-                      Message<span className="text-danger">*</span>
-                    </h6>
+                <div className="applymodal-row">
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Name</label>
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your full name" className="applymodal-input" />
                   </div>
-                  <div className="mt-2">
-                    <ReactQuill
-                      theme="snow"
-                      placeholder="Message"
-                      style={{ height: "100px" }}
-                      onChange={(value) => setMessage(value)}
-                    />
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Email Address</label>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" className="applymodal-input" />
                   </div>
                 </div>
+
+                <div className="applymodal-row">
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Subject</label>
+                    <input type="text" value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="What is this about?" className="applymodal-input" />
+                  </div>
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Phone Number</label>
+                    <input type="tel" value={number} onChange={handleChangeNumber} placeholder="080 xxxx xxxx" className="applymodal-input" />
+                  </div>
+                </div>
+
+                <div className="applymodal-field">
+                  <label className="applymodal-label">Message</label>
+                  <textarea rows={4} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Write your message here..." className="applymodal-input applymodal-textarea" />
+                </div>
+
+                <button type="submit" className="applymodal-submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Submit"}
+                </button>
               </form>
             </div>
-            <div className="modal-footer border-0">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary onliyu"
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-              >
-                <h6>{isSubmitting ? "Submitting..." : "Submit"}</h6>
-              </button>
-            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 };

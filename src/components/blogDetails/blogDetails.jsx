@@ -17,7 +17,7 @@ const BlogDetails = () => {
   const [relatedPosts, setRelatedPosts] = useState([])
   const [currentAdmin, setCurrentAdmin] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const { slug } = useParams()
+  const { slug, id: paramId } = useParams()
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [activeItem, setActiveItem] = useState('Item 1')
@@ -61,7 +61,9 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/blog/${slug}`)
+        // prefer the MongoDB _id param (from /blog/:slug/:id), fall back to slug
+        const identifier = paramId || slug
+        const res = await axios.get(`${BASEURL}/api/v1/blog/${identifier}`)
         setData(res.data)
         setId(res.data._id);
         // console.log(id, res.data, 'thuebeiuuuer   ewuue e')
@@ -97,7 +99,7 @@ const BlogDetails = () => {
     navigate('/blog')
   }
 
-  const html = data.description
+  const html = data.description || ''
 
   return (
     <>

@@ -136,9 +136,7 @@ const Blog = () => {
                                     {categories.join(', ')}
                                   </h6>
                                   <h5 className='pb-3' style={{ color: '#34548c' }}>
-                                    <Link className='text-decoration-none blogTitle-' to={`${item.slug}/${item._id}`}>
-                                      {item.title}
-                                    </Link>
+                                    {item.title}
                                   </h5>
                                   <p
                                     className="fs-6 pb-4"

@@ -1,14 +1,13 @@
-import { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import axios from "axios";
+import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../BaseURL/BaseURL";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../emptdp/applicationModal.css";
+
+let lastSubmitTime = 0;
 
 const ProjectForm = () => {
-  let navigate = useNavigate();
-
+  const [showModal, setShowModal] = useState(false);
   const [fullname, setFullname] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -16,216 +15,152 @@ const ProjectForm = () => {
   const [project, setProject] = useState("");
   const [location, setLocation] = useState("");
   const [letter, setLetter] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false); // New state variable
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const formOpenTime = useRef(Date.now());
 
-  const handleChangeNumber = (e) => {
-    const value = e.target.value.replace(/\D/g, "");
-    setNumber(value);
+  useEffect(() => {
+    if (showModal) formOpenTime.current = Date.now();
+  }, [showModal]);
+
+  useEffect(() => {
+    document.body.style.overflow = showModal ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showModal]);
+
+  const validateForm = () => {
+    if (honeypot) return false;
+
+    const timeOnForm = (Date.now() - formOpenTime.current) / 1000;
+    if (timeOnForm < 3) {
+      toast.error("Please take your time filling out the form.");
+      return false;
+    }
+
+    const secondsSinceLastSubmit = (Date.now() - lastSubmitTime) / 1000;
+    if (lastSubmitTime && secondsSinceLastSubmit < 60) {
+      toast.error(`Please wait ${Math.ceil(60 - secondsSinceLastSubmit)} seconds before submitting again.`);
+      return false;
+    }
+
+    const errors = [];
+    if (!fullname.trim()) errors.push("Full name is required.");
+    if (!email.trim()) errors.push("Email address is required.");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) errors.push("Please enter a valid email address.");
+    if (!company.trim()) errors.push("Company name is required.");
+    if (!number.trim()) errors.push("Phone number is required.");
+    if (!project.trim()) errors.push("Project title is required.");
+    if (!location.trim()) errors.push("Project location is required.");
+    if (!letter.trim()) errors.push("Message is required.");
+
+    if (errors.length > 0) {
+      errors.forEach((err) => toast.error(err));
+      return false;
+    }
+    return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Disable the button
+    if (!validateForm()) return;
+    setIsSubmitting(true);
+    lastSubmitTime = Date.now();
     try {
-      const newData = {
-        fullname,
-        company,
-        email,
-        number,
-        project,
-        location,
-        letter,
-      };
-
       const response = await axios.post(
         `${BASEURL}/api/v1/email/quote`,
-        newData,
+        { fullname, company, email, number, project, location, letter },
         { headers: { "Content-Type": "application/json" } }
       );
       if (response.data.status === "success") {
         toast.success("Your request has been submitted successfully!");
-        setTimeout(() => {
-          navigate(0);
-        }, 1000);
+        setFullname(""); setCompany(""); setEmail(""); setNumber("");
+        setProject(""); setLocation(""); setLetter("");
+        setShowModal(false);
+      } else {
+        toast.error(response.data.message || "Submission failed");
       }
     } catch (error) {
-      toast.error(error.response.data);
+      toast.error("Something went wrong. Please try again.");
     } finally {
-      setIsSubmitting(false); // Re-enable the button
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
-      {/* ========================================== Button trigger modal ==================================================================================*/}
       <button
         className="btn btn-primary cvb border border-light text-light mt-3"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        onClick={() => setShowModal(true)}
       >
         <h6 className="mt-1">Click Here</h6>
       </button>
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1
-                className="modal-title fs-4 text-dark fw-bold"
-                id="exampleModalLabel"
-              >
-                Start A Project With Us
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body text-dark">
-              <div className="row">
-                <div className="col-md-6 mt-2">
-                  <div className="mt-2">
-                    <label
-                      htmlFor="validationCustom01"
-                      className="form-label float-start fw-bold"
-                    >
-                      Full name<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Full name"
-                      onChange={(e) => setFullname(e.target.value)}
-                      aria-label="First name"
-                    />
+
+      {showModal && (
+        <>
+          <div className="applymodal-backdrop" onClick={() => setShowModal(false)}></div>
+          <div className="applymodal-wrapper" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <div className="applymodal-box">
+              <div className="applymodal-header">
+                <div>
+                  <h2 id="project-modal-title" className="applymodal-title">Start A Project With Us</h2>
+                  <p className="applymodal-subtitle">Tell us about your project and let us make it happen.</p>
+                </div>
+                <div className="applymodal-header-right">
+                  <span className="applymodal-badge">New Project</span>
+                  <button className="applymodal-close" onClick={() => setShowModal(false)} aria-label="Close modal">&times;</button>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit} className="applymodal-form">
+                <div style={{ display: "none" }} aria-hidden="true">
+                  <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+                </div>
+
+                <div className="applymodal-row">
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Full Name</label>
+                    <input type="text" value={fullname} onChange={(e) => setFullname(e.target.value)} placeholder="Your full name" className="applymodal-input" />
+                  </div>
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Email Address</label>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" className="applymodal-input" />
                   </div>
                 </div>
 
-                <div className="col-md-6 mt-2">
-                  <label
-                    htmlFor="validationCustom01"
-                    className="form-label float-start fw-bold"
-                  >
-                    Email<span>*</span>
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    aria-label="Last name"
-                  />
+                <div className="applymodal-field">
+                  <label className="applymodal-label">Company Name</label>
+                  <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="Your company name" className="applymodal-input" />
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12 mt-3">
-                  <div className="mt-2">
-                    <label
-                      htmlFor="validationCustom01"
-                      className="form-label float-start fw-bold"
-                    >
-                      Company name<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Company name"
-                      onChange={(e) => setCompany(e.target.value)}
-                      aria-label="Company name"
-                    />
+
+                <div className="applymodal-row">
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Phone Number</label>
+                    <input type="tel" value={number} onChange={(e) => setNumber(e.target.value.replace(/\D/g, ""))} placeholder="080 xxxx xxxx" className="applymodal-input" />
+                  </div>
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Title of Project</label>
+                    <input type="text" value={project} onChange={(e) => setProject(e.target.value)} placeholder="Project title" className="applymodal-input" />
                   </div>
                 </div>
 
-                <div className="col-md-6 mt-3">
-                  <label
-                    htmlFor="validationCustom01"
-                    className="form-label float-start fw-bold"
-                  >
-                    Phone Number<span>*</span>
-                  </label>
-                  <input
-                    className="form-control"
-                    placeholder="080 xxxx xxxx"
-                    value={number}
-                    onChange={handleChangeNumber}
-                    aria-label="Last name"
-                  />
+                <div className="applymodal-field">
+                  <label className="applymodal-label">Project Location</label>
+                  <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="e.g. Lagos, Abuja" className="applymodal-input" />
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6 mt-3">
-                  <label
-                    htmlFor="validationCustom01"
-                    className="form-label float-start fw-bold"
-                  >
-                    Title Of Project<span>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Title Of Project"
-                    onChange={(e) => setProject(e.target.value)}
-                    aria-label="Last name"
-                  />
+
+                <div className="applymodal-field">
+                  <label className="applymodal-label">Message</label>
+                  <textarea rows={5} value={letter} onChange={(e) => setLetter(e.target.value)} placeholder="Tell us more about your project..." className="applymodal-input applymodal-textarea" />
                 </div>
-                <div className="col-md-6 mt-3">
-                  <label
-                    htmlFor="validationCustom01"
-                    className="form-label float-start fw-bold"
-                  >
-                    Project Location<span>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Project Location"
-                    onChange={(e) => setLocation(e.target.value)}
-                    aria-label="Last name"
-                  />
-                </div>
-              </div>
-              <div className="col-12 mt-3" style={{ marginBottom: "4rem" }}>
-                <div className="">
-                  <h6 className="text-start fw-bold">Message</h6>
-                </div>
-                <div className="mt-2">
-                  <ReactQuill
-                    theme="snow"
-                    className=""
-                    placeholder="Message"
-                    style={{ height: "100px" }}
-                    onChange={(value) => setLetter(value)}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="modal-footer border-0">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary onliyu"
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-              >
-                <h6>{isSubmitting ? "Submitting..." : "Submit"}</h6>
-              </button>
+
+                <button type="submit" className="applymodal-submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Submit"}
+                </button>
+              </form>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 };

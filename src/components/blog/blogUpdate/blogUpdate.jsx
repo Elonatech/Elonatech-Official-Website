@@ -20,9 +20,9 @@ const BlogUpdate = () => {
     const fetchBlog = async () => {
       try {
         const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`);
-        setTitle(res.data.getBlogById.title);
-        setDescription(res.data.getBlogById.description);
-        setAuthor(res.data.getBlogById.author);
+        setTitle(res.data.title);
+        setDescription(res.data.description);
+        setAuthor(res.data.author);
       } catch (error) {
         console.log(error);
       }
@@ -34,34 +34,34 @@ const BlogUpdate = () => {
     e.preventDefault();
 
     // Create FormData instead of a plain object
-   const formData = new FormData();
-   formData.append("title", title);
-   formData.append("description", description);
-   formData.append("author", author);
-   formData.append("category", category);
-  
-   // Attach the new file if it exists
-   if (cloudinary_id instanceof File) {
-    formData.append("cloudinary_image", cloudinary_id); // key must match Multer
-  }
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("author", author);
+    formData.append("category", category);
 
-   try {
-    const res = await axios.put(
-      `${BASEURL}/api/v1/blog/update/${id}`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-    if (res) {
-      toast.success('Blog updated with success')
+    // Attach the new file if it exists
+    if (cloudinary_id instanceof File) {
+      formData.append("cloudinary_image", cloudinary_id); // key must match Multer
     }
-    console.log(res.data);
-    navigate(`/blog/${id}`);
-  } catch (error) {
-    console.log(error.response?.data || error);
+
+    try {
+      const res = await axios.put(
+        `${BASEURL}/api/v1/blog/update/${id}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      if (res) {
+        toast.success("Blog updated with success");
+      }
+      console.log(res.data);
+      navigate(`/blog/${id}`);
+    } catch (error) {
+      console.log(error.response?.data || error);
     }
   };
 
@@ -75,7 +75,7 @@ const BlogUpdate = () => {
           backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1726158374/Blog-banner_qxxqnb.png)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "cover"
+          backgroundSize: "cover",
         }}
       >
         <div class="py-5 mt-5 ">

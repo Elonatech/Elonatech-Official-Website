@@ -1,16 +1,13 @@
-// Consult Form Component
-// This component renders a button that opens a modal form for free consulting. The form collects user information, challenges faced, business changes desired, and investment willingness. Upon submission, the data is sent to the server via an API call. The component also handles form validation and displays success or error messages using react-toastify.
-// src\components\forms\consultForm.jsx
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
-import { useState } from "react";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import axios from "axios";
+import "../emptdp/applicationModal.css";
+
+let lastSubmitTime = 0;
 
 const ConsultForm = () => {
-  let navigate = useNavigate();
-
+  const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [occupation, setOccupation] = useState("");
@@ -18,47 +15,76 @@ const ConsultForm = () => {
   const [business, setBusiness] = useState("");
   const [cost, setCost] = useState("");
   const [invest, setInvest] = useState("");
-  const [error, setError] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false); // New state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const formOpenTime = useRef(Date.now());
 
-  const handleChangeCost = (e) => {
-    const value = e.target.value.replace(/\D/g, "");
-    setCost(value);
+  useEffect(() => {
+    if (showModal) formOpenTime.current = Date.now();
+  }, [showModal]);
+
+  useEffect(() => {
+    document.body.style.overflow = showModal ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showModal]);
+
+  const handleChangeCost = (e) => setCost(e.target.value.replace(/\D/g, ""));
+
+  const validateForm = () => {
+    if (honeypot) return false;
+
+    const timeOnForm = (Date.now() - formOpenTime.current) / 1000;
+    if (timeOnForm < 3) {
+      toast.error("Please take your time filling out the form.");
+      return false;
+    }
+
+    const secondsSinceLastSubmit = (Date.now() - lastSubmitTime) / 1000;
+    if (lastSubmitTime && secondsSinceLastSubmit < 60) {
+      toast.error(`Please wait ${Math.ceil(60 - secondsSinceLastSubmit)} seconds before submitting again.`);
+      return false;
+    }
+
+    const errors = [];
+    if (!name.trim()) errors.push("Name is required.");
+    if (!email.trim()) errors.push("Email address is required.");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) errors.push("Please enter a valid email address.");
+    if (!occupation.trim()) errors.push("Please tell us what you do.");
+    if (!challenge.trim()) errors.push("Please describe your challenges.");
+    if (!business.trim()) errors.push("Please tell us what you would change in your business.");
+    if (!cost.trim()) errors.push("Please enter the cost amount.");
+    if (!invest.trim()) errors.push("Please enter your investment amount.");
+
+    if (errors.length > 0) {
+      errors.forEach((err) => toast.error(err));
+      return false;
+    }
+    return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Disable the button
+    if (!validateForm()) return;
+    setIsSubmitting(true);
+    lastSubmitTime = Date.now();
     try {
-      const newData = {
-        name,
-        email,
-        occupation,
-        challenge,
-        business,
-        cost,
-        invest,
-      };
-
       const response = await axios.post(
         `${BASEURL}/api/v1/email/consult`,
-        newData,
+        { name, email, occupation, challenge, business, cost, invest },
         { headers: { "Content-Type": "application/json" } }
       );
       if (response.data.status === "success") {
         toast.success("Your consultation request has been submitted successfully!");
-        setTimeout(() => {
-          navigate(0);
-        }, 2000);
+        setName(""); setEmail(""); setOccupation(""); setChallenge("");
+        setBusiness(""); setCost(""); setInvest("");
+        setShowModal(false);
       } else {
         toast.error(response.data.message || "Submission failed");
       }
     } catch (error) {
-      console.log(error);
-      toast.error(error.response.data);
-      setError(error.response.data);
+      toast.error("Something went wrong. Please try again.");
     } finally {
-      setIsSubmitting(false); // Enable the button again
+      setIsSubmitting(false);
     }
   };
 
@@ -66,151 +92,77 @@ const ConsultForm = () => {
     <>
       <button
         className="btn btn-primary cvb border border-light text-light mt-5"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal2"
+        onClick={() => setShowModal(true)}
       >
         <h6 className="mt-1">Click Here</h6>
       </button>
-      <div
-        className="modal fade"
-        id="exampleModal2"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1
-                className="modal-title fs-4 fw-bold text-dark"
-                id="exampleModalLabel"
-              >
-                Free Consulting
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body text-dark">
-              <form>
-                <div className="mb-2 mt-4">
-                  <label
-                    htmlFor="name"
-                    className="form-label float-start fw-bold"
-                  >
-                    Name<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setName(e.target.value)}
-                    id="name"
-                    aria-describedby="nameHelp"
-                  />
-                  <label
-                    htmlFor="exampleInputEmail1"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    Email address<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    onChange={(e) => setEmail(e.target.value)}
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                  />
-                  <label
-                    htmlFor="what"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    What do you do?<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setOccupation(e.target.value)}
-                    id="what"
-                    aria-describedby="whatHelp"
-                  />
-                  <label
-                    htmlFor="what"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    What challenges do you currently face?
-                    <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setChallenge(e.target.value)}
-                    id="what"
-                    aria-describedby="whatHelp"
-                  />
-                  <label
-                    htmlFor="what"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    What would you change in your business?
-                    <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setBusiness(e.target.value)}
-                    id="what"
-                    aria-describedby="whatHelp"
-                  />
-                  <label
-                    htmlFor="what"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    How much money does it cost you? (In NAIRA)
-                    <span className="text-danger">*</span>
-                  </label>
-                  <input className="form-control" onChange={handleChangeCost} />
-                  <label
-                    htmlFor="what"
-                    className="form-label float-start fw-bold mt-2"
-                  >
-                    How much money are you willing to invest? (In NAIRA)
-                    <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    onChange={(e) => setInvest(e.target.value)}
-                    id="what"
-                    aria-describedby="whatHelp"
-                  />
-                  <div id="emailHelp" className="form-text mt-2">
-                    We'll never share your email with anyone else.
+
+      {showModal && (
+        <>
+          <div className="applymodal-backdrop" onClick={() => setShowModal(false)}></div>
+          <div className="applymodal-wrapper" role="dialog" aria-modal="true" aria-labelledby="consult-modal-title">
+            <div className="applymodal-box">
+              <div className="applymodal-header">
+                <div>
+                  <h2 id="consult-modal-title" className="applymodal-title">Free Consulting</h2>
+                  <p className="applymodal-subtitle">Tell us about your business needs.</p>
+                </div>
+                <div className="applymodal-header-right">
+                  <span className="applymodal-badge">Free Session</span>
+                  <button className="applymodal-close" onClick={() => setShowModal(false)} aria-label="Close modal">&times;</button>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit} className="applymodal-form">
+                <div style={{ display: "none" }} aria-hidden="true">
+                  <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+                </div>
+
+                <div className="applymodal-row">
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Name</label>
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your full name" className="applymodal-input" />
+                  </div>
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">Email Address</label>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" className="applymodal-input" />
                   </div>
                 </div>
+
+                <div className="applymodal-field">
+                  <label className="applymodal-label">What do you do?</label>
+                  <input type="text" value={occupation} onChange={(e) => setOccupation(e.target.value)} placeholder="Your occupation or role" className="applymodal-input" />
+                </div>
+
+                <div className="applymodal-field">
+                  <label className="applymodal-label">What challenges do you currently face?</label>
+                  <textarea rows={3} value={challenge} onChange={(e) => setChallenge(e.target.value)} placeholder="Describe your current challenges..." className="applymodal-input applymodal-textarea" />
+                </div>
+
+                <div className="applymodal-field">
+                  <label className="applymodal-label">What would you change in your business?</label>
+                  <textarea rows={3} value={business} onChange={(e) => setBusiness(e.target.value)} placeholder="What improvements would you make?" className="applymodal-input applymodal-textarea" />
+                </div>
+
+                <div className="applymodal-row">
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">How much does it cost you? (in Naira)</label>
+                    <input type="text" value={cost} onChange={handleChangeCost} placeholder="Amount in Naira" className="applymodal-input" />
+                  </div>
+                  <div className="applymodal-field">
+                    <label className="applymodal-label">How much are you willing to invest? (in Naira)</label>
+                    <input type="text" value={invest} onChange={(e) => setInvest(e.target.value.replace(/\D/g, ""))} placeholder="Amount in Naira" className="applymodal-input" />
+                  </div>
+                </div>
+
+                <button type="submit" className="applymodal-submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Submit"}
+                </button>
               </form>
             </div>
-            <div className="modal-footer border-0">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                onClick={handleSubmit}
-                className="btn btn-danger"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
-            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 };
