@@ -302,7 +302,7 @@ const Footer = () => {
               </div>
             </div>
             <div class="col-lg-2 col-md-3 footer-links">
-              <h4>Our Services</h4>
+              <h4>Mentorship & Professional Dev</h4>
               <ul className="">
                 <li className="">
                   <Link to={"/brand-identity"}>Brand Development</Link>
@@ -330,6 +330,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link to={"/consumables"}>Consumables</Link>
+                </li>
+                <li>
+                  <Link to={"/etmpdp"}>Etmpdp</Link>
                 </li>
               </ul>
             </div>

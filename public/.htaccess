@@ -6,8 +6,12 @@
 
   RewriteRule ^index\.html$ - [L]
 
-  # Redirect sitemap.xml to the dynamic backend-generated sitemap
-  RewriteRule ^sitemap\.xml$ https://elonatech-live-api.onrender.com/sitemap.xml [R=301,L]
+  # Redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.elonatech\.com\.ng [NC]
+  RewriteRule ^(.*)$ https://elonatech.com.ng/$1 [R=301,L]
+
+  # Redirect /services/ to homepage (page no longer exists)
+  RewriteRule ^services/?$ / [R=301,L]
 
   # Conditions to check if the requested file, directory, or symbolic link does not exist
   RewriteCond %{REQUEST_FILENAME} !-f
