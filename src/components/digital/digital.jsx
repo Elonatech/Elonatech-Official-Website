@@ -9,13 +9,6 @@ import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Getintouch from '../GetInTouch/getintouch'
 
-// Swiper styles
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
-// Import Swiper styles
-import 'swiper/css'
-
 import rema from './captions/rema_360.jpg'
 import mary from './captions/mary okhma.jpg'
 import osundu from './captions/osundu.jpg'

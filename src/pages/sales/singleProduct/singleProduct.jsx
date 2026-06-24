@@ -13,11 +13,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import sanitizeHtml from "sanitize-html";
 import SocialShareButtons from "./socialShareButton";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
 import "./singleProduct.css";
 
 // import required modules

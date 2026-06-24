@@ -8,12 +8,6 @@ import {
   Autoplay,
 } from "swiper/modules";
 
-// Swiper styles
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-// Import Swiper styles
-import "swiper/css";
 import "./client.css";
 
 const Clients = () => {

@@ -24,10 +24,6 @@ import ConsultMobile from "./caption/mobile/IT_consultant_mobile_llnuhk.jpg";
 import TechMobile from "./caption/mobile/Enigineers_mobile_lfbegl.jpg";
 import WebMobile from "./caption/mobile/web_developers_mobile_nwxigp.jpg";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import "./carousel.css";
 
 const swiperParams = {
