@@ -265,7 +265,7 @@ const NetworkDevices = () => {
           <h2>Network Devices</h2>
           <h5>
             Rely on Scalable and Reliable IT Infrastructure for Fast and
-            Efficient Running of a Company’s Business
+            Efficient Running of a Companyâ€™s Business
           </h5>
           <p className="lead">
             Organization that uses more than one computer or software platform
@@ -387,7 +387,10 @@ const NetworkDevices = () => {
                             <div
                               className="btn btn-outline add-to-cart"
                               onClick={() => {
-                                addItem(product);
+                                addItem({
+                                  ...product,
+                                  stock: product.quantity,
+                                });
                                 toast.success(
                                   `${product.name} added to cart!`,
                                   {

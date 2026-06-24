@@ -17,6 +17,7 @@ const ShopUpdate = () => {
 
   const { id } = useParams();
 
+  const [slug, setSlug] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -85,6 +86,7 @@ const ShopUpdate = () => {
       try {
         const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
 
+        setSlug(res.data.product.slug);
         setName(res.data.product.name);
         setDescription(res.data.product.description);
         setPrice(res.data.product.price);
@@ -153,10 +155,11 @@ const ShopUpdate = () => {
         wireless,
         images
       };
-      await axios.put(`${BASEURL}/api/v1/product/${id}/update`, newData);
+      const token = JSON.parse(localStorage.getItem('token'));
+      await axios.put(`${BASEURL}/api/v1/product/${id}/update`, newData, { headers: { 'x-access-token': token } });
       toast.success("Product Updated Successfully");
       setImages([]);
-      navigate(`/product/:slug/${id}`)
+      navigate(`/product/${slug}/${id}`)
       // /product/:slug/:id
     } catch (error) {
       toast.warning("Please Fill All Required Fields");
@@ -178,10 +181,11 @@ const ShopUpdate = () => {
         images
       };
 
-      await axios.put(`${BASEURL}/api/v1/product/${id}/update/image`, newData);
+      const token = JSON.parse(localStorage.getItem('token'));
+      await axios.put(`${BASEURL}/api/v1/product/${id}/update/image`, newData, { headers: { 'x-access-token': token } });
       toast.success("Product Images Updated Successfully");
       setImages([]);
-      navigate(`/product/${id}`);
+      navigate(`/product/${slug}/${id}`);
     } catch (error) {
       toast.warning("Added New Product Images");
     }finally {

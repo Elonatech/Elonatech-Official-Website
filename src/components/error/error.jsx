@@ -11,7 +11,7 @@ const Error = () => {
     <>
       <Navbar />
       <Helmet>
-        <title>Page Not Found</title>
+        <title>Page Not Found | Elonatech Nigeria</title>
         <meta
           name="description"
           content="Our Technical Support Team

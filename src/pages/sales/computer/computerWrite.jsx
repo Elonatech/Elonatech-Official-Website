@@ -112,8 +112,9 @@ const ComputerWrite = () => {
     // append images directly
     images.forEach((file) => formData.append("images", file));
 
+    const token = JSON.parse(localStorage.getItem("token"));
     await axios.post(`${BASEURL}/api/v1/product/create`, formData, {
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data", "x-access-token": token },
     });
 
     // console.log('form-data', formData);

@@ -6,7 +6,7 @@ const Teamchairman = () => {
   return (
     <>
       <Helmet>
-        <title>Israel Uwohnuwoma O - Tech Solution</title>
+        <title>Israel Uwohnuwoma O - Chairman | Elonatech Nigeria</title>
         <meta
           name="description"
           content="Associate Member, Corporation of Executives and Administrators (ACEA), Associate Member, Institute of Management Specialist (AMIMS), 

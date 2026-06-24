@@ -96,7 +96,7 @@ const NewsPages = () => {
   return (
     <>
       <Helmet>
-        <title>Blog - Tech Solution, Digital Solution</title>
+        <title>Latest Tech News | Elonatech Nigeria</title>
         <meta
           name="description"
           content="We'd love to share our knowledge, experiences and the latest news, trends and info with you"

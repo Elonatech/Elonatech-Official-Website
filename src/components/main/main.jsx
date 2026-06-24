@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useEffect, useRef, useState } from "react";
@@ -898,7 +898,7 @@ const Main = () => {
                   </div>
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <p className="m-0 text-danger small">
-                      â‚¦{filteredProductCategory.price?.toLocaleString() || "0"}
+                      ₦{filteredProductCategory.price?.toLocaleString() || "0"}
                     </p>
                     <i className="bi bi-cart" style={{ fontSize: "18px" }}></i>
                   </div>
@@ -976,7 +976,7 @@ const Main = () => {
                       </div>
                       <div className="d-flex justify-content-between align-items-center mb-2">
                         <p className="m-0 text-danger small">
-                          â‚¦{product.price?.toLocaleString() || "0"}
+                          ₦ {product.price?.toLocaleString() || "0"}
                         </p>
                         <i className="bi bi-cart" style={{ fontSize: "18px" }}></i>
                       </div>

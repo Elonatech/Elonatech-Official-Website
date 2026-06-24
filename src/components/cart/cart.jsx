@@ -2,6 +2,7 @@ import "./cart.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const {
@@ -104,12 +105,13 @@ const Cart = () => {
                               <div class="input-group-append">
                                 <button
                                   class="btn btn-outline-black increase border-0 rmFocus  fw-bold"
-                                  onClick={() =>
-                                    updateItemQuantity(
-                                      item.id,
-                                      item.quantity + 1
-                                    )
-                                  }
+                                  onClick={() => {
+                                    if (!item.stock || item.quantity < Number(item.stock)) {
+                                      updateItemQuantity(item.id, item.quantity + 1);
+                                    } else {
+                                      toast.warning(`Only ${item.stock} unit(s) available`);
+                                    }
+                                  }}
                                   type="button"
                                 >
                                   +

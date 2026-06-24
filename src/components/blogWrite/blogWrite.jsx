@@ -30,11 +30,12 @@ const BlogWrite = () => {
       formData.append('category', JSON.stringify([category]));
       formData.append('cloudinary_image', cloudinary_id);
 
+      const token = JSON.parse(localStorage.getItem('token'));
       const res = await axios.post(
         `${BASEURL}/api/v1/blog/create`,
         formData,
         {
-          headers: { 'Content-Type': 'multipart/form-data' },
+          headers: { 'Content-Type': 'multipart/form-data', 'x-access-token': token },
         }
       );
 

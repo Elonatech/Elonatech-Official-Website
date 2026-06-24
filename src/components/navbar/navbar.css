@@ -237,12 +237,12 @@
    Also update the matching values in the media queries below
    (search "MATCH BASE FONT" to find them quickly).            */
 .e-fonte {
-  font-size: 19px;          /* ← main nav text size */
+  font-size: 15px;          /* ← main nav text size */
   font-weight: bold;
 }
 
 .e-fonte:hover {
-  font-size: 19px;          /* ← keep same as base so text doesn't jump */
+  font-size: 15px;          /* ← keep same as base so text doesn't jump */
   font-weight: bold;
   color: #dc3545 !important; /* ← hover colour: Red */
 }
@@ -410,11 +410,11 @@
      MATCH BASE FONT — if you change .e-fonte above, update here too.
      Raise this value if it still looks too small on your screen.   */
   .e-fonte {
-    font-size: 15.3px !important; /* ← tablet font size (1024–1599px) */
+    font-size: 14px !important; /* ← tablet font size (1024–1599px) */
   }
 
   .e-fonte:hover {
-    font-size: 15.3px !important; /* ← keep same as above */
+    font-size: 14px !important; /* ← keep same as above */
   }
 
   /* Reduce per-item padding so everything fits */

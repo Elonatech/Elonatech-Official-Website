@@ -91,7 +91,7 @@ const Security = () => {
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 data-src={FirstSecurityImage}
                 className='img-fluid lazyload'
-                alt=''
+                alt='Network security monitoring setup'
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ const Security = () => {
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631131/networkSecurityPage/Icon1_raaxvh.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', weight: '4rem' }}
-                alt=''
+                alt='Network security monitoring setup'
               />
               <p className='text fs-5 ms-2 mb-0'>Cybersecurity Assessment </p>
             </div>
@@ -118,7 +118,7 @@ const Security = () => {
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631132/networkSecurityPage/Icon2_dxz8cg.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', weight: '4rem' }}
-                alt=''
+                alt='Network security monitoring setup'
               />
               <p className='text fs-5 ms-2 mb-0'>Cyber Risk Quantification</p>
             </div>
@@ -129,7 +129,7 @@ const Security = () => {
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631134/networkSecurityPage/Icon3_xygxid.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', weight: '4rem' }}
-                alt=''
+                alt='Network security monitoring setup'
               />
               <p className='text fs-5 ms-2 mb-0'>Cybersecurity Performance</p>
             </div>
@@ -140,7 +140,7 @@ const Security = () => {
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631134/networkSecurityPage/Icon3_xygxid.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', width: '4rem' }}
-                alt=''
+                alt='Network security monitoring setup'
               />
               <p className='text fs-5 ms-2 mb-0'>Cyber Risk Transfer</p>
             </div>
@@ -157,7 +157,7 @@ const Security = () => {
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 data-src={SecondSecurityImage}
                 className='img-fluid lazyload'
-                alt=''
+                alt='Network security monitoring setup'
               />
             </div>
           </div>

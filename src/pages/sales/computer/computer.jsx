@@ -372,7 +372,7 @@ const Computer = () => {
       {/* <Navbar /> */}
       <Helmet>
         <title>
-          Computers and Laptops at Elonatech – Wide Selection of Tech Products
+          Computers and Laptops at Elonatech - Wide Selection of Tech Products
         </title>
         <meta name="robots" content="index,follow" />
         <meta
@@ -406,7 +406,7 @@ const Computer = () => {
                   <div className="col-md-8 pt-4">
                     <h6>
                       SHOWING <span className="text-danger">{currentPage}</span>{" "}
-                      –{" "}
+                      –
                       <span className="text-danger">
                         {currentPage * itemsPerPage}
                       </span>{" "}
@@ -508,7 +508,10 @@ const Computer = () => {
                               <div
                                 className="btn btn-outline add-to-cart"
                                 onClick={() => {
-                                  addItem(product);
+                                  addItem({
+                                    ...product,
+                                    stock: product.quantity,
+                                  });
                                   toast.success(
                                     `${product.name} added to cart!`,
                                     {

@@ -84,7 +84,8 @@ useEffect(() => {
 
 
 const handleDelete = async () => {
-const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`)
+const token = JSON.parse(localStorage.getItem('token'))
+const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`, { headers: { 'x-access-token': token } })
 console.log(res)
 navigate('/news')
 };

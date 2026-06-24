@@ -150,7 +150,8 @@ const BlogComments = ({ blogId }) => {
 
   const handleDeleteComment = async commentId => {
     try {
-      await axios.delete(`${BASEURL}/api/v1/comments/${commentId}`)
+      const token = JSON.parse(localStorage.getItem('token'))
+      await axios.delete(`${BASEURL}/api/v1/comments/${commentId}`, { headers: { 'x-access-token': token } })
       fetchComments()
     } catch (error) {
       console.error('Error deleting comment:', error)
@@ -159,7 +160,8 @@ const BlogComments = ({ blogId }) => {
 
   const handleDeleteReply = async (commentId, replyId) => {
     try {
-      await axios.delete(`${BASEURL}/api/v1/replies/${replyId}`)
+      const token = JSON.parse(localStorage.getItem('token'))
+      await axios.delete(`${BASEURL}/api/v1/replies/${replyId}`, { headers: { 'x-access-token': token } })
       fetchComments()
     } catch (error) {
       console.error('Error deleting reply:', error)

@@ -144,7 +144,7 @@ const Dashboard = () => {
                         <Link to='/computers' className="btn btn-outline-success w-100">View Computer Page</Link>
                     </div>
                     <div className="col-sm-6 col-lg-4 mb-3">
-                        <Link to='/shop' className="btn btn-outline-primary w-100">View Shop Page</Link>
+                        <Link to='/products' className="btn btn-outline-primary w-100">View Shop Page</Link>
                     </div>
                 </div>
 

@@ -357,7 +357,10 @@ const Printers = () => {
                             <div
                               className="btn btn-outline add-to-cart"
                               onClick={() => {
-                                addItem(product);
+                                addItem({
+                                  ...product,
+                                  stock: product.quantity,
+                                });
                                 toast.success(
                                   `${product.name} added to cart!`,
                                   {

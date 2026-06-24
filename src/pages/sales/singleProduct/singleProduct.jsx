@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios, { isAxiosError } from "axios";
+import { BASEURL } from "../../../BaseURL/BaseURL";
 import { useParams } from "react-router-dom";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
@@ -165,7 +166,7 @@ const SingleProduct = () => {
       try {
         setIsLoading(true);
         const res = await axios.get(
-          `https://elonatech-live-api.onrender.com/api/v1/product/${id}`
+          `${BASEURL}/api/v1/product/${id}`
         );
         console.log("single-id-product", res.data.product);
         setData(res.data?.product);
@@ -182,7 +183,7 @@ const SingleProduct = () => {
         updateRecentlyViewedInLocalStorage();
 
         const nextRes = await axios.get(
-          `https://elonatech-live-api.onrender.com/api/v1/product/${res.data.product._id}/next`
+          `${BASEURL}/api/v1/product/${res.data.product._id}/next`
         );
         console.log("next-res", nextRes);
 
@@ -209,7 +210,7 @@ const SingleProduct = () => {
 
   const fetchAllProductsInCategory = () => {
     fetch(
-      `https://elonatech-live-api.onrender.com/api/v1/product/filter?category=${category}`
+      `${BASEURL}/api/v1/product/filter?category=${category}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -245,7 +246,7 @@ const SingleProduct = () => {
   const fetchRecentlyViewedProducts = async () => {
     try {
       const res = await axios.get(
-        `https://elonatech-live-api.onrender.com/api/v1/product/products/recently-viewed`
+        `${BASEURL}/api/v1/product/products/recently-viewed`
       );
       const recentlyViewedProducts = res.data.recentlyViewedProducts.slice(
         0,
@@ -264,7 +265,7 @@ const SingleProduct = () => {
   const fetchRelatedProducts = async () => {
     try {
       const res = await axios.get(
-        `https://elonatech-live-api.onrender.com/api/v1/product/${id}/related`
+        `${BASEURL}/api/v1/product/${id}/related`
       );
       setRelatedProducts(res.data.relatedProducts);
     } catch (error) {
@@ -339,7 +340,7 @@ const SingleProduct = () => {
 
   const handleDelete = async () => {
     const id = localStorage.getItem("_id");
-    const token = localStorage.getItem("token");
+    const token = JSON.parse(localStorage.getItem("token"));
 
     try {
       if (!id) {
@@ -353,7 +354,8 @@ const SingleProduct = () => {
       }
 
       const res = await axios.delete(
-        `https://elonatech-live-api.onrender.com/api/v1/product/${id}`
+        `${BASEURL}/api/v1/product/${id}`,
+        { headers: { "x-access-token": token } }
       );
 
       console.log("product-delete", res.data);
@@ -656,7 +658,7 @@ const SingleProduct = () => {
                         <div className="" key={data.id}>
                           <button
                             className="btn btn-dark mt-3"
-                            onClick={() => addItem(data)}
+                            onClick={() => addItem({ ...data, stock: data.quantity })}
                           >
                             <b>Add To Cart</b>
                           </button>

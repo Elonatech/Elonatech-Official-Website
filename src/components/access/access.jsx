@@ -41,7 +41,7 @@ What are the benefits of Access Control Systems?
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709568120/accessControlPage/depositphotos_354792732-stock-photo-business-technology-internet-network-concept_neflcv.webp'
                 className='img-fluid rounded lazyload'
-                alt=''
+                alt='Access control panel with biometric reader'
               />
             </div>
           </div>
@@ -101,7 +101,7 @@ What are the benefits of Access Control Systems?
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709568121/accessControlPage/Access-Control_rrrv2k.jpg'
                 className='img-fluid lazyload'
-                alt=''
+                alt='Physical access control system'
               />
             </div>
           </div>
@@ -124,7 +124,7 @@ What are the benefits of Access Control Systems?
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709568140/accessControlPage/access-control-system-removebg-preview_lgzgk2.png'
                 className='img-fluid rounded lazyload'
-                alt=''
+                alt='Access control system illustration'
               />
             </div>
           </div>

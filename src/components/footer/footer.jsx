@@ -302,8 +302,11 @@ const Footer = () => {
               </div>
             </div>
             <div class="col-lg-2 col-md-3 footer-links">
-              <h4>Mentorship & Professional Dev</h4>
+              {/* <h4>Mentorship & Professional Dev</h4> */}
               <ul className="">
+                <li className="">
+                  <Link to={"/etmpdp"}>Mentorship Dev</Link>
+                </li>
                 <li className="">
                   <Link to={"/brand-identity"}>Brand Development</Link>
                 </li>
@@ -331,9 +334,7 @@ const Footer = () => {
                 <li>
                   <Link to={"/consumables"}>Consumables</Link>
                 </li>
-                <li>
-                  <Link to={"/etmpdp"}>Etmpdp</Link>
-                </li>
+              
               </ul>
             </div>
 

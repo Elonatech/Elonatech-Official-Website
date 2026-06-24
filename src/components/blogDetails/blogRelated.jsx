@@ -7,6 +7,8 @@ import Loading from '../Loading/Loading'
 import DOMPurify from 'dompurify'
 import BlogComments from './blogComment'
 import './blogDetails.css'
+import hgdelete from './caption/delete.png'
+import edit from './caption/editing.png'
 
 const BlogRelated = () => {
   const [data, setData] = useState({})
@@ -80,7 +82,8 @@ const BlogRelated = () => {
   
 
   const handleDelete = async () => {
-    const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`)
+    const token = JSON.parse(localStorage.getItem('token'))
+    const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`, { headers: { 'x-access-token': token } })
     console.log(res)
     navigate('/blog')
   }
@@ -150,7 +153,34 @@ const BlogRelated = () => {
                               </span>
                             </h6>
                           </div>
-                          <div className='col-6 col-md-6'></div>
+                          <div className='col-6 col-md-6'>
+                            {currentAdmin ? (
+                              <div className='d-flex justify-content-end'>
+                                <Link
+                                  className='text-decoration-none me-3'
+                                  style={{ width: '20px', cursor: 'pointer' }}
+                                  to={`/update/${id}`}
+                                  state={data}
+                                >
+                                  <img
+                                    data-src={edit}
+                                    className='img-fluid me-3 lazyload'
+                                    style={{ width: '20px', cursor: 'pointer' }}
+                                    alt=''
+                                  />
+                                </Link>
+                                <img
+                                  data-src={hgdelete}
+                                  className='img-fluid lazyload'
+                                  style={{ width: '20px', cursor: 'pointer' }}
+                                  onClick={handleDelete}
+                                  alt=''
+                                />
+                              </div>
+                            ) : (
+                              <div></div>
+                            )}
+                          </div>
                         </div>
                       </div>
                       <div

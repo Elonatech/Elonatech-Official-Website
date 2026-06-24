@@ -7,7 +7,6 @@ import axios from "axios";
 import { BASEURL } from "../../../../BaseURL/BaseURL";
 import { toast } from "react-toastify";
 import { AiOutlineDashboard } from 'react-icons/ai';
-import { headers } from "next/headers";
 
 const shopWrite = () => {
   const getInitialState = () => {
@@ -64,12 +63,15 @@ const shopWrite = () => {
 
 
       images.forEach((file) => formData.append("images", file));
-  
+
+      const token = JSON.parse(localStorage.getItem("token"));
       const response = await axios.post(
         `${BASEURL}/api/v1/product/create`,
-        // formData
         formData, {
-          headers: { "Content-Type": "multipart/form-data" },
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "x-access-token": token,
+          },
         }
       );
   

@@ -74,7 +74,7 @@ const Cabling = () => {
                 src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
                 data-src={FirstCabling}
                 className='img-fluid rounded lazyload'
-                alt=''
+                alt='Structured cabling installation'
               />
             </div>
           </div>
@@ -87,7 +87,7 @@ const Cabling = () => {
                 src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
                 data-src={SecondCabling}
                 className='img-fluid rounded lazyload'
-                alt=''
+                alt='Network rack wiring'
               />
             </div>
           </div>
@@ -130,7 +130,7 @@ const Cabling = () => {
                   src='https://res.cloudinary.com/elonatech/image/upload/v1709798593/structuredCablingPage/LSG/img_1_c4yjoe.png'
                   className='img-fluid p-2'
                   style={{ height: '25rem' }}
-                  alt=''
+                  alt='Cat6 cable routing'
                 />
               </div>
               <div class='slide'>

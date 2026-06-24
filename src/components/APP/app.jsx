@@ -140,15 +140,15 @@ const AppDevelopment = () => {
         <div>
           <div className='text-content'>
             <div className='max-w-2xl'>
-              <motion.h1
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className='text-5xl font-bold text-white mb-6'
               >
-                <h2>Mobile App Design & Development</h2>
-                <h5>Transform Your Ideas Into Powerful Mobile Apps</h5>
-              </motion.h1>
+                <h1>Mobile App Design & Development</h1>
+                <p>Transform Your Ideas Into Powerful Mobile Apps</p>
+              </motion.div>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -210,7 +210,7 @@ const Web = () => {
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709638089/webDesignPage/devops_acdkca.jpg'
                 className='img-fluid rounded lazyload '
-                alt=''
+                alt='Web design and development project showcase'
               />
             </div>
           </div>
@@ -267,7 +267,7 @@ const Web = () => {
                       data-src={`https://res.cloudinary.com/elonatech/image/upload/v1709638790/webDesignPage/icons/${feature.icon}.png`}
                       className='img-fluid lazyload'
                       style={{ width: '25px' }}
-                      alt=''
+                      alt='Web design and development project showcase'
                     />
                   </div>
 
@@ -312,7 +312,7 @@ const Web = () => {
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 data-src='https://res.cloudinary.com/elonatech/image/upload/v1709638113/webDesignPage/Programming_n706wf.jpg'
                 className='img-fluid rounded lazyload'
-                alt=''
+                alt='Web design and development project showcase'
               />
             </div>
           </div>
@@ -464,7 +464,7 @@ const Web = () => {
                             src='https://i.stack.imgur.com/qq8AE.gif'
                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
                             class='lazyload'
-                            alt='...'
+                            alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
                           />
                         </div>
@@ -491,7 +491,7 @@ const Web = () => {
                             src='https://i.stack.imgur.com/qq8AE.gif'
                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
                             class='lazyload'
-                            alt='...'
+                            alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
                           />
                         </div>
@@ -517,7 +517,7 @@ const Web = () => {
                             src='https://i.stack.imgur.com/qq8AE.gif'
                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
                             class='lazyload'
-                            alt='...'
+                            alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
                           />
                         </div>
@@ -544,7 +544,7 @@ const Web = () => {
                             src='https://i.stack.imgur.com/qq8AE.gif'
                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
                             class='lazyload'
-                            alt='...'
+                            alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
                           />
                         </div>
@@ -571,7 +571,7 @@ const Web = () => {
                             src='https://i.stack.imgur.com/qq8AE.gif'
                             data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
                             class='lazyload'
-                            alt='...'
+                            alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
                           />
                         </div>

@@ -6,7 +6,7 @@ const Policy = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | Elonatech Nigeria Limited</title>
+        <title>	Privacy Policy | Elonatech Nigeria</title>
         <meta
           name="description"
           content="Elonatech Nigeria Limited is committed to protecting your privacy. Read our professional privacy policy to understand how we collect, use, and safeguard your personal data."

@@ -52,6 +52,7 @@ const BlogUpdate = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            "x-access-token": JSON.parse(localStorage.getItem('token')),
           },
         }
       );

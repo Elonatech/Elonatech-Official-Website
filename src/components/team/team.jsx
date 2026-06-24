@@ -6,7 +6,7 @@ const Team = () => {
   return (
     <>
       <Helmet>
-        <title>Our Team - Tech Solution, Digital </title>
+        <title>Meet Our Team | Elonatech Nigeria </title>
         <meta
           name="description"
           content=" 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+  import { useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Pagination from './../../../components/Pagination/Pagination'
 import './shop.css'
@@ -45,8 +45,8 @@ const Shop = () => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const response = await axios.get(`${BASEURL}/api/v1/product/filter?category=Products`)
-        const products = response.data.data.reverse()
+        const response = await axios.get(`${BASEURL}/api/v1/product`)
+        const products = response.data.getAllProducts.reverse()
         console.log(products)
         setData(products)
         setRecords(products)
@@ -101,8 +101,10 @@ const Shop = () => {
   }
 
   const paginate = pageNumber => {
-    setCurrentPage(pageNumber)
-    setSearchParams({ page: pageNumber.toString() })
+    startTransition(() => {
+      setCurrentPage(pageNumber)
+      setSearchParams({ page: pageNumber.toString() })
+    })
   }
 
   const indexOfLastItem = currentPage * itemsPerPage
@@ -111,8 +113,10 @@ const Shop = () => {
 
   const handleNextbtn = () => {
     const nextPage = currentPage + 1
-    setCurrentPage(nextPage)
-    setSearchParams({ page: nextPage.toString() })
+    startTransition(() => {
+      setCurrentPage(nextPage)
+      setSearchParams({ page: nextPage.toString() })
+    })
 
     if (nextPage > maxPageNumberLimit) {
       setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
@@ -122,8 +126,10 @@ const Shop = () => {
 
   const handlePrevbtn = () => {
     const prevPage = currentPage - 1
-    setCurrentPage(prevPage)
-    setSearchParams({ page: prevPage.toString() })
+    startTransition(() => {
+      setCurrentPage(prevPage)
+      setSearchParams({ page: prevPage.toString() })
+    })
 
     if ((prevPage - 1) % pageNumberLimit == 0) {
       setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
@@ -431,7 +437,7 @@ const Shop = () => {
                               <div
                                 className='btn btn-outline add-to-cart'
                                 onClick={() => {
-                                  addItem(product); 
+                                  addItem({ ...product, stock: product.quantity });
                                   toast.success(`${product.name} added to cart!`, {
                                     position: "bottom-right",
                                     autoClose: 4000,
