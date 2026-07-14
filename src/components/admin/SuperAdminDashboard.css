@@ -1,0 +1,625 @@
+/* Layout */
+.sad-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: "Inter", sans-serif;
+}
+
+/* Sidebar */
+.sad-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sad-sidebar-brand {
+  color: #e63946;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sad-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+/* Sidebar footer — profile + logout */
+.sad-sidebar-footer {
+  margin-top: auto;
+  padding: 12px 16px 140px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sad-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sad-avatar-sm {
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 12px !important;
+  flex-shrink: 0;
+}
+
+.sad-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sad-profile-name {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sad-profile-email {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sad-logout-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.sad-logout-btn:hover {
+  color: #e63946;
+}
+
+.sad-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.sad-nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.sad-nav-item.active {
+  background: rgba(230, 57, 70, 0.12);
+  color: #fff;
+  border-left: 3px solid #e63946;
+}
+
+.sad-nav-item i {
+  font-size: 16px;
+}
+
+/* Main */
+.sad-main {
+  flex: 1;
+  padding: 36px 40px;
+  overflow-y: auto;
+}
+
+/* Header */
+.sad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sad-title {
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+  font-size: 22px;
+}
+
+.sad-subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+.sad-btn-create {
+  background: #1a6ef5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.sad-btn-create:hover {
+  background: #1558d6;
+}
+
+.sad-btn-create:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Stats Row */
+.sad-stats-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.sad-stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 140px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.sad-stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.sad-stat-label {
+  font-size: 12px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Card */
+.sad-table-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.sad-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.sad-table-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #6b7280;
+}
+
+.sad-active-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.sad-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.sad-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sad-table th {
+  padding: 12px 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #9ca3af;
+  text-align: left;
+  background: #fafafa;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.sad-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f9fafb;
+  font-size: 14px;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.sad-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sad-table tr:hover td {
+  background: #fafafa;
+}
+
+/* Admin cell */
+.sad-admin-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sad-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1a6ef5;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sad-admin-name {
+  font-weight: 600;
+  color: #1a1a2e;
+  text-transform: capitalize;
+}
+
+.sad-email {
+  color: #6b7280;
+}
+
+.sad-date {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* Role badges */
+.sad-role-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.sad-role-super {
+  background: #ede9fe;
+  color: #7c3aed;
+  border: 1px solid #c4b5fd;
+}
+
+.sad-role-admin {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+/* Delete button */
+.sad-btn-delete {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.sad-btn-delete:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
+.sad-btn-delete:disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* Loading */
+.sad-loading {
+  padding: 40px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* Overlay */
+.sad-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+/* Modal */
+.sad-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.sad-modal-sm {
+  max-width: 380px;
+}
+
+.sad-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.sad-modal-header h5 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  color: #1a1a2e;
+}
+
+.sad-modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.sad-modal-close:hover {
+  color: #374151;
+}
+
+.sad-modal-body {
+  padding: 24px;
+}
+
+.sad-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* Responsive — tablet */
+@media (max-width: 900px) {
+  .sad-sidebar {
+    width: 64px;
+    min-width: 64px;
+  }
+
+  .sad-sidebar-brand {
+    font-size: 0;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .sad-sidebar-brand::after {
+    content: "AC";
+    font-size: 11px;
+    font-weight: 800;
+    color: #e63946;
+    letter-spacing: 1px;
+  }
+
+  .sad-nav-item span {
+    display: none;
+  }
+
+  .sad-nav-item {
+    justify-content: center;
+    padding: 14px;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .sad-profile-info {
+    display: none;
+  }
+
+  .sad-sidebar-footer {
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sad-nav-item.active {
+    border-left: none;
+    border-bottom: 3px solid #e63946;
+  }
+
+  .sad-nav-item i {
+    font-size: 18px;
+  }
+
+  .sad-main {
+    padding: 24px 20px;
+  }
+}
+
+/* Responsive — mobile */
+@media (max-width: 600px) {
+  .sad-wrapper {
+    flex-direction: column;
+  }
+
+  .sad-sidebar {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .sad-sidebar-brand {
+    padding: 14px 16px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0;
+  }
+
+  .sad-sidebar-brand::after {
+    content: "AC";
+    font-size: 11px;
+    font-weight: 800;
+    color: #e63946;
+  }
+
+  .sad-nav {
+    flex-direction: row;
+    padding: 0;
+    flex: 1;
+  }
+
+  .sad-sidebar-footer {
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sad-profile-row {
+    gap: 0;
+  }
+
+  .sad-nav-item {
+    flex-direction: row;
+    padding: 14px 16px;
+    border-left: none;
+    border-bottom: none;
+    font-size: 13px;
+  }
+
+  .sad-nav-item.active {
+    border-left: none;
+    border-bottom: 3px solid #e63946;
+  }
+
+  .sad-main {
+    padding: 20px 16px;
+  }
+
+  .sad-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sad-btn-create {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sad-stats-row {
+    flex-direction: column;
+  }
+
+  /* Card-style rows on mobile instead of table */
+  .sad-table thead {
+    display: none;
+  }
+
+  .sad-table,
+  .sad-table tbody,
+  .sad-table tr,
+  .sad-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .sad-table tr {
+    border: 1px solid #f1f3f5;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 4px 0;
+    background: #fff;
+  }
+
+  .sad-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid #f9fafb;
+    font-size: 13px;
+  }
+
+  .sad-table td:last-child {
+    border-bottom: none;
+  }
+
+  .sad-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #9ca3af;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+
+  .sad-admin-cell {
+    justify-content: flex-end;
+  }
+}

@@ -239,11 +239,13 @@
 .e-fonte {
   font-size: 15px;          /* ← main nav text size */
   font-weight: bold;
+  white-space: nowrap;      /* ← prevents "Get in touch" from wrapping */
 }
 
 .e-fonte:hover {
   font-size: 15px;          /* ← keep same as base so text doesn't jump */
   font-weight: bold;
+  white-space: nowrap;
   color: #dc3545 !important; /* ← hover colour: Red */
 }
 
@@ -385,39 +387,31 @@
 }
 
 /* ===================================================== */
-/* RESPONSIVE NAV — MEDIUM SCREENS (1024px – 1599px)    */
-/* Surface Pro 6, mini laptops, smaller monitors        */
+/* RESPONSIVE NAV — SMALL LAPTOPS (1024px – 1279px)     */
+/* 12-inch laptops, very compact screens                */
 /* ===================================================== */
-/* To raise/lower where "large screen" kicks in,
-   change both breakpoints below to the same value      */
 
-@media (min-width: 1024px) and (max-width: 1599px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
 
-  /* Tighter side padding so logo + nav + icons all fit */
   .desktop-nav-container {
-    padding: 0 1.25rem;
+    padding: 0 1rem;
     gap: 0.25rem;
   }
 
-  /* Center nav grows to fill space between logo and right icons */
   .nav-center-container {
     flex: 1;
     display: flex;
     justify-content: center;
   }
 
-  /* Slightly smaller nav text on tablet so items don't wrap.
-     MATCH BASE FONT — if you change .e-fonte above, update here too.
-     Raise this value if it still looks too small on your screen.   */
   .e-fonte {
-    font-size: 14px !important; /* ← tablet font size (1024–1599px) */
+    font-size: 13px !important;
   }
 
   .e-fonte:hover {
-    font-size: 14px !important; /* ← keep same as above */
+    font-size: 13px !important;
   }
 
-  /* Reduce per-item padding so everything fits */
   .elonatechlist {
     gap: 0;
   }
@@ -428,16 +422,53 @@
 }
 
 /* ===================================================== */
-/* RESPONSIVE NAV — LARGE SCREENS (1600px+)             */
-/* Full layout: original padding, full font size        */
+/* RESPONSIVE NAV — MEDIUM SCREENS (1280px – 1749px)    */
+/* Surface Pro, 13–15 inch laptops                      */
+/* No social icons — only cart + logout show            */
 /* ===================================================== */
 
-@media (min-width: 1600px) {
+@media (min-width: 1280px) and (max-width: 1749px) {
+
+  .desktop-nav-container {
+    padding: 0 1.5rem;
+    gap: 0.25rem;
+  }
+
+  .nav-center-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Bigger text since no social icons compete for space */
+  .e-fonte {
+    font-size: 16px !important;
+  }
+
+  .e-fonte:hover {
+    font-size: 16px !important;
+  }
+
+  .elonatechlist {
+    gap: 0;
+    justify-content: space-evenly;
+  }
+
+  .elonatechlistItem {
+    padding: 0 4px;
+  }
+}
+
+/* ===================================================== */
+/* RESPONSIVE NAV — LARGE SCREENS (1750px+)             */
+/* Full layout: original padding, all icons, full font  */
+/* ===================================================== */
+
+@media (min-width: 1750px) {
   .desktop-nav-container {
     padding: 0 5rem;
   }
 
-  /* Restore full font size on wide screens */
   .e-fonte {
     font-size: 18px !important;
   }
@@ -459,6 +490,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1749px) {
+  .social-icons-core {
+    display: none;
+  }
+}
+
 /* EXTENDED icons (Pinterest, TikTok, YouTube, Threads, X)
    Hidden by default — only shown on large screens
    To change when they appear, edit the min-width below  */
@@ -466,9 +503,9 @@
   display: none;
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1750px) {
 
-  /* Reveal extended icons on large screens */
+  /* Reveal extended icons on large screens only */
   .social-icons-extended {
     display: flex;
     align-items: center;
@@ -816,6 +853,75 @@
   color: white !important;
   border-radius: 100px !important;
   padding: 8px 20px !important;
+}
+
+/* ================================================ */
+/* ADMIN PROFILE AVATAR                            */
+/* ================================================ */
+
+.admin-avatar-item {
+  padding: 0 4px;
+}
+
+.admin-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.admin-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.admin-avatar:hover .admin-initials {
+  background-color: #b02a37;
+}
+
+.admin-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  min-width: 130px;
+  display: none;
+  z-index: 9999;
+  overflow: hidden;
+  padding-top: 8px;
+}
+
+.admin-avatar:hover .admin-dropdown {
+  display: block;
+}
+
+.admin-logout-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #dc3545;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+  background-color: #fff5f5;
 }
 
 /* Center all dropdown text */

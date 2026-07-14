@@ -30,6 +30,60 @@
   padding-block: 8px;
 }
 
+.comment-form-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.comment-field-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.comment-field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.comment-field {
+  flex: 1 1 180px;
+}
+
+.comment-field input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.comment-field input:focus {
+  outline: none;
+  border-color: #34548c;
+}
+
+.comment-save-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+.comment-submit-btn {
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
 /* .comment-form textarea {
   width: 100%;
   padding: 10px;
@@ -41,7 +95,7 @@
 } */
 
 .comment-form button {
-  align-self: flex-end;
+  align-self: flex-start;
   padding: 8px 16px;
   background-color: #007bff;
   color: white;
@@ -58,6 +112,9 @@
 /* Comments List */
 .comments-list {
   margin-top: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .comment {
@@ -114,20 +171,15 @@
 }
 
 .reply {
-  /* margin-bottom: 10px; */
-  /* padding: 10px; */
   margin-top: 10px;
   background-color: #f8f9fa;
   border-radius: 6px;
   border: 1px solid #e0e0e0;
   font-size: 15px;
   padding: 5px;
-  max-height: 60px;
 }
 
-.boc{
-  max-height: 60px;
-}
+.boc{}
 
 .reply-header {
   display: flex;
@@ -217,20 +269,32 @@
   background-color: #5a6268;
 }
 
-.avatar {
-  width: 40px;
-  border: 1px solid red;
-  border-radius: 100%;
-}
-
 .avatar3 {
   width: 20%;
 }
 
-.avatar2 {
-  width: 20px;
-  border: 1px solid red;
+/* Initials avatar (replaces the old male/female stock photo) */
+.comment-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 100%;
+  background: #34548c;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.comment-avatar-md {
+  width: 40px;
+  height: 40px;
+  font-size: 0.9rem;
+}
+
+.comment-avatar-sm {
+  width: 28px;
+  height: 28px;
+  font-size: 0.7rem;
 }
 
 .commentview2 {

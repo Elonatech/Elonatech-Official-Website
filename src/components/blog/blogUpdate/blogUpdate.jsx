@@ -60,9 +60,14 @@ const BlogUpdate = () => {
         toast.success("Blog updated with success");
       }
       console.log(res.data);
-      navigate(`/blog/${id}`);
+      navigate(`/blog/${res.data.data.slug}/${res.data.data._id}`);
     } catch (error) {
-      console.log(error.response?.data || error);
+      const errors = error.response?.data?.errors;
+      if (errors?.length) {
+        errors.forEach(msg => toast.error(msg));
+      } else {
+        toast.error(error.response?.data?.message || 'Failed to update blog');
+      }
     }
   };
 
@@ -155,9 +160,9 @@ const BlogUpdate = () => {
                       name="cat"
                       value="trends"
                       onChange={(e) => setCategory(e.target.value)}
-                      id="flexCheckDefault"
+                      id="catTrends"
                     />
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <label class="form-check-label" for="catTrends">
                       Trends
                     </label>
                   </div>
@@ -169,9 +174,9 @@ const BlogUpdate = () => {
                       name="cat"
                       value="news"
                       onChange={(e) => setCategory(e.target.value)}
-                      id="flexCheckDefault"
+                      id="catNews"
                     />
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <label class="form-check-label" for="catNews">
                       News
                     </label>
                   </div>

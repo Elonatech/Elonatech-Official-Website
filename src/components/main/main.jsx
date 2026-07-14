@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useEffect, useRef, useState } from "react";
@@ -44,7 +44,7 @@ const Main = () => {
       setLoadingLatest(true);
       try {
         const response = await axios.get(
-          `https://elonatech-live-api.onrender.com/api/v1/product/filter/all`
+          `${BASEURL}/api/v1/product/filter/all`
         );
         if (response.data.success) {
           const allProducts = response.data.data;

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 import { BASEURL } from '../../BaseURL/BaseURL'
 import hgdelete from './caption/delete.png'
 import edit from './caption/editing.png'
@@ -12,9 +13,12 @@ import sanitizeHtml from 'sanitize-html'
 import BlogSocialShareButtons from './blogShareButton'
 import BlogComments from './blogComment'
 
+const RECENTLY_VIEWED_KEY = 'elonatech_recently_viewed_blog'
+
 const BlogDetails = () => {
   const [data, setData] = useState({})
   const [relatedPosts, setRelatedPosts] = useState([])
+  const [recentlyViewed, setRecentlyViewed] = useState([])
   const [currentAdmin, setCurrentAdmin] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const { slug, id: paramId } = useParams()
@@ -74,7 +78,7 @@ const BlogDetails = () => {
       }
     }
     fetchBlog()
-  }, [])
+  }, [slug, paramId])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,8 +86,8 @@ const BlogDetails = () => {
         const response = await axios.get(`${BASEURL}/api/v1/blog/`)
         setRelatedPosts(
           response.data.getAllBlogs
-            .filter(post => post.slug !== slug)
-            .sort(() => Math.random() - Math.random())
+            .filter(post => post._id !== paramId)
+            .sort(() => Math.random() - 0.5)
             .slice(0, 4)
         )
       } catch (error) {
@@ -91,13 +95,45 @@ const BlogDetails = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [paramId])
+
+  // Recently viewed is tracked per-browser in localStorage — no backend involved,
+  // so it reflects what this specific visitor actually looked at (unlike the
+  // product page's version, which is a single site-wide list for everyone).
+  useEffect(() => {
+    if (!id) return
+
+    const stored = JSON.parse(localStorage.getItem(RECENTLY_VIEWED_KEY) || '[]')
+    const updated = [id, ...stored.filter(storedId => storedId !== id)].slice(0, 7)
+    localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(updated))
+
+    const otherIds = updated.filter(storedId => storedId !== id).slice(0, 4)
+    if (otherIds.length === 0) {
+      setRecentlyViewed([])
+      return
+    }
+
+    Promise.all(
+      otherIds.map(postId =>
+        axios
+          .get(`${BASEURL}/api/v1/blog/${postId}`)
+          .then(res => res.data)
+          .catch(() => null) // post may have been deleted since it was viewed
+      )
+    ).then(results => {
+      setRecentlyViewed(results.filter(Boolean))
+    })
+  }, [id])
 
   const handleDelete = async () => {
-    const token = JSON.parse(localStorage.getItem('token'))
-    const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`, { headers: { 'x-access-token': token } })
-    console.log(res)
-    navigate('/blog')
+    try {
+      const token = JSON.parse(localStorage.getItem('token'))
+      await axios.delete(`${BASEURL}/api/v1/blog/${id}`, { headers: { 'x-access-token': token } })
+      toast.success('Blog deleted successfully')
+      setTimeout(() => navigate('/blog'), 1000)
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Failed to delete blog')
+    }
   }
 
   const html = data.description || ''
@@ -264,33 +300,70 @@ const BlogDetails = () => {
             </div>
 
             {/*================================== related posts ===================================*/}
-            <div className='container bg-light related-post'>
-              <h3
-                className='fw-bold mb-3 mt-5 pt-4'
-                style={{ color: '#0b159d' }}
-              >
-                Related Posts
-              </h3>
-              <div className='row'>
+            <div className='related-post mt-5'>
+              <h4 className='related-section-heading'>Related Posts</h4>
+              <div className='related-cards-grid'>
                 {relatedPosts.map(post => (
-                  <div className='col col-md-3' key={post.id}>
-                    <div className=''>
-                      <Link
-                        className='text-decoration-none text-dark'
-                        to={`/blog/related/${post.slug}`}
-                      >
-                        <h6 className='related-post-title'>
-                          {post.title.slice(0, 300)}
-                        </h6>
-                      </Link>
-                      <h6 className='text-danger related-post-date'>
-                        {new Date(post.createdAt).toDateString()}{' '}
-                      </h6>
+                  <Link
+                    key={post._id}
+                    className='related-card'
+                    to={`/blog/${post.slug || post._id}/${post._id}`}
+                  >
+                    <div className='related-card-img-wrap'>
+                      <img
+                        src={post.image || post.cloudinary_id}
+                        alt={post.title}
+                        className='related-card-img'
+                      />
                     </div>
-                  </div>
+                    <div className='related-card-body'>
+                      {post.category?.[0] && (
+                        <span className='related-card-badge'>{post.category[0]}</span>
+                      )}
+                      <h6 className='related-card-title'>{post.title}</h6>
+                      <p className='related-card-date'>
+                        {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </p>
+                      <span className='related-card-link'>Read More →</span>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
+
+            {/*================================== recently viewed ===================================*/}
+            {recentlyViewed.length > 0 && (
+              <div className='related-post mt-5'>
+                <h4 className='related-section-heading'>Recently Viewed Posts</h4>
+                <div className='related-cards-grid'>
+                  {recentlyViewed.map(post => (
+                    <Link
+                      key={post._id}
+                      className='related-card'
+                      to={`/blog/${post.slug || post._id}/${post._id}`}
+                    >
+                      <div className='related-card-img-wrap'>
+                        <img
+                          src={post.image || post.cloudinary_id}
+                          alt={post.title}
+                          className='related-card-img'
+                        />
+                      </div>
+                      <div className='related-card-body'>
+                        {post.category?.[0] && (
+                          <span className='related-card-badge'>{post.category[0]}</span>
+                        )}
+                        <h6 className='related-card-title'>{post.title}</h6>
+                        <p className='related-card-date'>
+                          {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        </p>
+                        <span className='related-card-link'>Read More →</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
           {/*================================== Categories ========================================*/}
           <div className='col-lg-3 rightt'>
@@ -381,34 +454,69 @@ const BlogDetails = () => {
                 <BlogComments blogId={id} />
               </div>
 
-              <div className='container bg-light related-post2'>
-                <h3
-                  className='fw-bold mb-3 mt-5 pt-4'
-                  style={{ color: '#0b159d' }}
-                >
-                  Related Posts
-                </h3>
-                <div className='rel'>
+              <div className='related-post2 mt-4'>
+                <h4 className='related-section-heading'>Related Posts</h4>
+                <div className='related-cards-grid-mobile'>
                   {relatedPosts.map(post => (
-                    <div className='relIn ' key={post.id}>
-                      {/* <div className='col col-md-3 col-sm-11' key={post.id}> */}
-                      <div className=''>
-                        <Link
-                          className='text-decoration-none text-dark'
-                          to={`/blog/related/${post.slug}`}
-                        >
-                          <h6 className='related-post-title'>
-                            {post.title.slice(0, 300)}
-                          </h6>
-                        </Link>
-                        <h6 className='text-danger related-post-date'>
-                          {new Date(post.createdAt).toDateString()}{' '}
-                        </h6>
+                    <Link
+                      key={post._id}
+                      className='related-card'
+                      to={`/blog/${post.slug || post._id}/${post._id}`}
+                    >
+                      <div className='related-card-img-wrap'>
+                        <img
+                          src={post.image || post.cloudinary_id}
+                          alt={post.title}
+                          className='related-card-img'
+                        />
                       </div>
-                    </div>
+                      <div className='related-card-body'>
+                        {post.category?.[0] && (
+                          <span className='related-card-badge'>{post.category[0]}</span>
+                        )}
+                        <h6 className='related-card-title'>{post.title}</h6>
+                        <p className='related-card-date'>
+                          {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        </p>
+                        <span className='related-card-link'>Read More →</span>
+                      </div>
+                    </Link>
                   ))}
                 </div>
               </div>
+
+              {recentlyViewed.length > 0 && (
+                <div className='related-post2 mt-4'>
+                  <h4 className='related-section-heading'>Recently Viewed Posts</h4>
+                  <div className='related-cards-grid-mobile'>
+                    {recentlyViewed.map(post => (
+                      <Link
+                        key={post._id}
+                        className='related-card'
+                        to={`/blog/${post.slug || post._id}/${post._id}`}
+                      >
+                        <div className='related-card-img-wrap'>
+                          <img
+                            src={post.image || post.cloudinary_id}
+                            alt={post.title}
+                            className='related-card-img'
+                          />
+                        </div>
+                        <div className='related-card-body'>
+                          {post.category?.[0] && (
+                            <span className='related-card-badge'>{post.category[0]}</span>
+                          )}
+                          <h6 className='related-card-title'>{post.title}</h6>
+                          <p className='related-card-date'>
+                            {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          </p>
+                          <span className='related-card-link'>Read More →</span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

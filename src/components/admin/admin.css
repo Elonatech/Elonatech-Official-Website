@@ -1,0 +1,197 @@
+/* =============================================================================
+   Admin Login — admin.css
+   Colors: #11253d (navy), #dc3545 (red), #ffffff (white)
+   ============================================================================= */
+
+.alogin-hero {
+  min-height: 380px;
+  background-image: linear-gradient(rgba(17, 37, 61, 0.55), rgba(17, 37, 61, 0.65)),
+    url("https://res.cloudinary.com/elonatech/image/upload/v1726158384/admin_page_usqzlr.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.alogin-hero-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 14px;
+}
+
+.alogin-hero-accent {
+  color: #dc3545;
+}
+
+.alogin-hero-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .alogin-hero {
+    min-height: 260px;
+    padding: 40px 20px;
+  }
+}
+
+.alogin-section {
+  background: #f4f5f7;
+  padding: 60px 20px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alogin-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.alogin-form {
+  text-align: left;
+}
+
+.alogin-title {
+  color: #11253d;
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.alogin-subtitle {
+  color: #6c757d;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.alogin-field {
+  margin-bottom: 18px;
+}
+
+.alogin-label {
+  display: block;
+  color: #11253d;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.alogin-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.alogin-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #adb5bd;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.alogin-input {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.alogin-input:focus {
+  outline: none;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.alogin-input--code {
+  text-align: center;
+  letter-spacing: 0.5em;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-left: 14px;
+}
+
+.alogin-input-wrap .alogin-input {
+  padding-right: 42px;
+}
+
+.alogin-eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.alogin-eye-btn:hover {
+  color: #dc3545;
+}
+
+.alogin-submit {
+  width: 100%;
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.alogin-submit:hover {
+  opacity: 0.9;
+}
+
+.alogin-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.alogin-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f1f5fb;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 20px;
+  font-size: 0.78rem;
+  color: #495057;
+  line-height: 1.5;
+}
+
+.alogin-notice-icon {
+  color: #dc3545;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.alogin-footnote {
+  color: #6c757d;
+  font-size: 0.8rem;
+  margin-top: 24px;
+  text-align: center;
+}

@@ -2,13 +2,23 @@ import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { BASEURL } from '../../BaseURL/BaseURL'
 import { formatDistanceToNowStrict } from 'date-fns'
-import { v4 as uuidv4 } from 'uuid'
-import { BsReply, BsTrash } from 'react-icons/bs'
+import { BsReply } from 'react-icons/bs'
 import './blogComment.css'
 import './new.css'
 import { MdEmojiEmotions } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react'
-import avatar from '../../../src/asset/avatar.png'
+
+const COMMENTER_STORAGE_KEY = 'elonatech_commenter_info'
+
+const getInitials = (name) => {
+  const source = (name || '').trim() || 'Anonymous'
+  const parts = source.split(/\s+/)
+  return parts.slice(0, 2).map(p => p[0]?.toUpperCase() || '').join('') || 'A'
+}
+
+const Avatar = ({ name, size = 'md' }) => (
+  <div className={`comment-avatar comment-avatar-${size}`}>{getInitials(name)}</div>
+)
 
 const BlogComments = ({ blogId }) => {
   const [comments, setComments] = useState([])
@@ -16,20 +26,38 @@ const BlogComments = ({ blogId }) => {
   const [replies, setReplies] = useState({})
   const [newReply, setNewReply] = useState('')
   const [userName, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [saveInfo, setSaveInfo] = useState(false)
   const [activeReplyId, setActiveReplyId] = useState(null)
   const [showReplyForm, setShowReplyForm] = useState(false)
-
-  const [selectedGender, setSelectedGender] = useState('male')
-
-  const handleChange = event => {
-    setSelectedGender(event.target.value)
-  }
 
   const textAreaRef = useRef(null)
   const pickerRef = useRef(null)
   const pickerRef2 = useRef(null)
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
   const [showEmojiPicker2, setShowEmojiPicker2] = useState(false)
+
+  // Prefill from a previous "save my info" comment, WordPress-style
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(COMMENTER_STORAGE_KEY) || 'null')
+      if (saved) {
+        setUsername(saved.userName || '')
+        setEmail(saved.email || '')
+        setSaveInfo(true)
+      }
+    } catch (err) {
+      // ignore corrupt storage
+    }
+  }, [])
+
+  const persistCommenterInfo = () => {
+    if (saveInfo) {
+      localStorage.setItem(COMMENTER_STORAGE_KEY, JSON.stringify({ userName, email }))
+    } else {
+      localStorage.removeItem(COMMENTER_STORAGE_KEY)
+    }
+  }
 
   const onEmojiClick = emojiData => {
     setNewComment(newComment + emojiData.emoji)
@@ -111,12 +139,12 @@ const BlogComments = ({ blogId }) => {
         blogId,
         content: newComment,
         createdAt: new Date().toISOString(),
-        gender: selectedGender,
-        userName
+        userName,
+        email
       }
       await axios.post(`${BASEURL}/api/v1/comments`, newCommentData)
+      persistCommenterInfo()
       setNewComment('')
-      setUsername('')
       await fetchComments()
     } catch (error) {
       console.error('Error submitting comment:', error)
@@ -132,11 +160,11 @@ const BlogComments = ({ blogId }) => {
         content: newReply,
         createdAt: new Date().toISOString(),
         userName,
-        gender: selectedGender
+        email
       }
       await axios.post(`${BASEURL}/api/v1/replies`, newReplyData)
+      persistCommenterInfo()
       setNewReply('')
-      setUsername('')
       setActiveReplyId(null)
       setShowReplyForm(false)
 
@@ -183,44 +211,16 @@ const BlogComments = ({ blogId }) => {
           textDecoration: 'underline'
         }}
       >
-        Respond to Post
+        Leave a Reply
       </h3>
+      <p className='comment-form-note'>Your email address will not be published. Required fields are marked *</p>
       <form onSubmit={handleCommentSubmit} className='comment-form'>
-        <input
-          type='text'
-          name='name'
-          id='name'
-          placeholder='Enter name...'
-          value={userName}
-          onChange={e => setUsername(e.target.value)}
-          required
-        />
-        <div className='gender-container'>
-          <label>
-            <input
-              type='radio'
-              name='gender'
-              value='male'
-              checked={selectedGender === 'male'}
-              onChange={handleChange}
-            />
-            Male
-          </label>
-          <label style={{ marginLeft: '10px' }}>
-            <input
-              type='radio'
-              name='gender'
-              value='female'
-              checked={selectedGender === 'female'}
-              onChange={handleChange}
-            />
-            Female
-          </label>
-        </div>
+        <label className='comment-field-label' htmlFor='comment-content'>Comment *</label>
         <div className='comment-box'>
           <div className='textarea-container'>
             {!showEmojiPicker && (
               <textarea
+                id='comment-content'
                 style={{ resize: 'none' }}
                 ref={textAreaRef}
                 value={newComment}
@@ -243,7 +243,42 @@ const BlogComments = ({ blogId }) => {
             )}
           </div>
         </div>
-        <button type='submit'>Submit</button>
+
+        <div className='comment-field-row'>
+          <div className='comment-field'>
+            <label className='comment-field-label' htmlFor='comment-name'>Name *</label>
+            <input
+              type='text'
+              id='comment-name'
+              placeholder='Your name'
+              value={userName}
+              onChange={e => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className='comment-field'>
+            <label className='comment-field-label' htmlFor='comment-email'>Email *</label>
+            <input
+              type='email'
+              id='comment-email'
+              placeholder='you@example.com'
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+
+        <label className='comment-save-info'>
+          <input
+            type='checkbox'
+            checked={saveInfo}
+            onChange={e => setSaveInfo(e.target.checked)}
+          />
+          Save my name and email in this browser for the next time I comment.
+        </label>
+
+        <button type='submit' className='comment-submit-btn'>Post Comment</button>
       </form>
 
       <h3
@@ -264,11 +299,7 @@ const BlogComments = ({ blogId }) => {
             <div key={comment._id} className='comment'>
               <div className='commentview2'>
                 <div className='avatar3'>
-                  <img
-                    src={comment.userImage || avatar}
-                    alt={`${comment.userName}'s profile pic`}
-                    className='avatar'
-                  />
+                  <Avatar name={comment.userName} />
                 </div>
                 <div>
                   <div className='nameTime'>
@@ -302,38 +333,6 @@ const BlogComments = ({ blogId }) => {
                     activeReplyId === comment._id ? 'active' : ''
                   }`}
                 >
-                  <input
-                    type='text'
-                    name='name'
-                    id='name'
-                    placeholder='Enter name...'
-                    value={userName}
-                    onChange={e => setUsername(e.target.value)}
-                    required
-                  />
-                  <div className='gender-container'>
-                    <label>
-                      <input
-                        type='radio'
-                        name='gender'
-                        value='male'
-                        checked={selectedGender === 'male'}
-                        onChange={handleChange}
-                      />
-                      Male
-                    </label>
-
-                    <label style={{ marginLeft: '10px' }}>
-                      <input
-                        type='radio'
-                        name='gender'
-                        value='female'
-                        checked={selectedGender === 'female'}
-                        onChange={handleChange}
-                      />
-                      Female
-                    </label>
-                  </div>
                   <div className='comment-box'>
                     <div className='textarea-container'>
                       {!showEmojiPicker2 && (
@@ -360,8 +359,32 @@ const BlogComments = ({ blogId }) => {
                       )}
                     </div>
                   </div>
+
+                  <div className='comment-field-row'>
+                    <div className='comment-field'>
+                      <label className='comment-field-label'>Name *</label>
+                      <input
+                        type='text'
+                        placeholder='Your name'
+                        value={userName}
+                        onChange={e => setUsername(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className='comment-field'>
+                      <label className='comment-field-label'>Email *</label>
+                      <input
+                        type='email'
+                        placeholder='you@example.com'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div className='reply-form-actions'>
-                    <button type='submit'>Submit</button>
+                    <button type='submit'>Post Reply</button>
                     <button
                       type='button'
                       onClick={() => handleReplyToggle(comment._id)}
@@ -378,11 +401,7 @@ const BlogComments = ({ blogId }) => {
                     <div key={reply._id} className='reply'>
                       <div className='commentview'>
                         <div className='avatar3'>
-                          <img
-                            src={reply.userImage || avatar}
-                            alt='profile pic'
-                            className='avatar2'
-                          />
+                          <Avatar name={reply.userName} size='sm' />
                         </div>
                         <div>
                           <div className='nameTime'>

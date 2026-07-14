@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import logo from "./captions/elonatech.png";
 import Christmaslogo from "./captions/elonatech-christmas.png";
 import { useState, useEffect, useCallback } from "react";
@@ -62,9 +63,24 @@ import XmasHeader from "../../decoration-header/XmasHeader";
 
 const Navbar = () => {
   const [currentAdmin, setCurrentAdmin] = useState("");
-  const { logout } = useAuth();
+  const [adminInitials, setAdminInitials] = useState("AD");
+  const { logout, isAuthenticated } = useAuth();
+
+  const getInitials = (name) => {
+    if (!name) return "AD";
+    const parts = name.trim().split(" ");
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  };
   const { totalUniqueItems } = useCart();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    toast.success("Logged out successfully");
+    navigate("/");
+  };
 
   // Keep ALL your state variables
   const [techMouseEnter, setTechMouseEnter] = useState(true);
@@ -78,6 +94,13 @@ const Navbar = () => {
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem("token"));
     setCurrentAdmin(auth);
+    if (auth) {
+      try {
+        const base64 = auth.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+        const payload = JSON.parse(atob(base64));
+        setAdminInitials(getInitials(payload.name));
+      } catch {}
+    }
   }, []);
 
   const handleScroll = useCallback(() => {
@@ -1250,7 +1273,9 @@ const Navbar = () => {
                       <Link
                         to="/etmpdp"
                         className={`dropdown-item ${
-                          isActive("/programs/etmpdp") ? "strategic-items-active" : ""
+                          isActive("/programs/etmpdp")
+                            ? "strategic-items-active"
+                            : ""
                         }`}
                       >
                         ETMPDP
@@ -1258,14 +1283,14 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to="/"
+                        to="/siwes"
                         className={`dropdown-item ${
-                          isActive("/retainer-partnership")
+                          isActive("/siwes")
                             ? "strategic-items-active"
                             : ""
                         }`}
                       >
-                        Future Programs
+                        ETMPDP Ignite
                       </Link>
                     </li>
                   </ul>
@@ -1426,16 +1451,17 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              {/* Admin Logout */}
-              {currentAdmin && (
-                <li className="elonatechlistItem">
-                  <span
-                    onClick={logout}
-                    className="nav-link e-fonte text-white"
-                    style={{ cursor: "pointer" }}
-                  >
-                    <i className="bi bi-box-arrow-right"></i>
-                  </span>
+              {/* Admin Profile Avatar */}
+              {isAuthenticated && (
+                <li className="elonatechlistItem admin-avatar-item">
+                  <div className="admin-avatar">
+                    <span className="admin-initials">{adminInitials}</span>
+                    <div className="admin-dropdown">
+                      <span onClick={handleLogout} className="admin-logout-btn">
+                        <i className="bi bi-box-arrow-right me-2"></i>Logout
+                      </span>
+                    </div>
+                  </div>
                 </li>
               )}
             </ul>
@@ -1451,7 +1477,6 @@ const Navbar = () => {
                .social-icons-core and .social-icons-extended in navbar.css
           ─────────────────────────────────────────────────────────────── */}
           <div className="social-links">
-
             {/* Cart — always visible on desktop */}
             <Link
               to="/cart"
@@ -1558,7 +1583,6 @@ const Navbar = () => {
                 </svg>
               </Link>
             </div>
-
           </div>
         </div>
       </div>

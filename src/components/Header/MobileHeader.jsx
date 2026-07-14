@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import logo from "./captions/elonatech.png";
 import Christmaslogo from "./captions/elonatech-christmas.png";
 import { useState, useEffect } from "react";
@@ -70,9 +71,16 @@ import { useLocation } from "react-router-dom";
 
 const MobileHeader = () => {
   const [currentAdmin, setCurrentAdmin] = useState("");
-  const { logout } = useAuth();
+  const { logout, isAuthenticated } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
   const isActive = (path) => location.pathname === path;
+
+  const handleLogout = () => {
+    logout();
+    toast.success("Logged out successfully");
+    navigate("/");
+  };
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem("token"));
@@ -1441,14 +1449,14 @@ const MobileHeader = () => {
                       </li>
                     </Link>
                     <Link
-                      to={"/future-programs"}
+                      to={"/siwes"}
                       className="text-decoration-none text-dark"
                     >
                       <li
                         className="dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
                         data-bs-dismiss="offcanvas"
                       >
-                         Future Programs
+                         ETMPDP Ignite
                       </li>
                     </Link>
                    
@@ -1660,16 +1668,14 @@ const MobileHeader = () => {
               </li>
 
               {/* Logout if admin */}
-              {currentAdmin === null ? (
-                <div></div>
-              ) : (
+              {isAuthenticated && (
                 <li className="nav-item pe-4">
                   <a
                     className="nav-link fw-bold"
                     aria-current="page"
                     style={{ cursor: "pointer" }}
                     href=""
-                    onClick={logout}
+                    onClick={(e) => { e.preventDefault(); handleLogout(); }}
                   >
                     <i
                       className="bi bi-box-arrow-right mobile-dismiss-nav-man"

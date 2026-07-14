@@ -1,0 +1,391 @@
+/* =============================================================================
+   ETMPDP Ignite Page — emptdpIgnite.css
+   Additive to emptdp.css — reuses the shared color system:
+   Colors: #11253d (navy), #dc3545 (red), #ffffff (white)
+   ============================================================================= */
+
+/* Ignite's Journey has 7 steps vs ETMPDP's 6 — too tight for the shared
+   horizontal timeline at tablet width, so stack it earlier (only here,
+   the ETMPDP page's own timeline is untouched) */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .ignite-journey-section .emptdp-timeline-desktop {
+    display: none;
+  }
+
+  .ignite-journey-section .emptdp-timeline-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ignite-journey-section .emptdp-timeline-step-mobile {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .ignite-journey-section .emptdp-timeline-step-mobile .emptdp-step-circle {
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* Ignite-specific hero background — distinct from the ETMPDP page's hero photo */
+.ignite-hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1784039004/pexels-edmond-dantes-8550845_ycwcdr.jpg") !important;
+}
+
+
+
+/* ── More Than Just SIWES — comparison cards ─────────────────────────────── */
+
+.ignite-compare-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.ignite-compare-card {
+  border-left: 4px solid #dc3545;
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.ignite-compare-card--light {
+  background-color: #f8f9fa;
+}
+
+.ignite-compare-card--dark {
+  background-color: #11253d;
+}
+
+.ignite-compare-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.ignite-compare-card--light .ignite-compare-title {
+  color: #dc3545;
+}
+
+.ignite-compare-card--dark .ignite-compare-title {
+  color: #ff8a93;
+}
+
+.ignite-compare-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ignite-compare-card--light .ignite-compare-desc {
+  color: #495057;
+}
+
+.ignite-compare-card--dark .ignite-compare-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ── Choose Your Specialization — alternating image/text rows ────────────── */
+
+.ignite-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.ignite-zigzag-row {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.ignite-zigzag-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.ignite-zigzag-image-wrap {
+  flex: 1 1 45%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.ignite-zigzag-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.ignite-zigzag-content {
+  flex: 1 1 45%;
+}
+
+.ignite-zigzag-title {
+  color: #11253d;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .ignite-zigzag {
+    gap: 32px;
+  }
+
+  .ignite-zigzag-row,
+  .ignite-zigzag-row--reverse {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ignite-zigzag-image {
+    height: 220px;
+  }
+}
+
+.ignite-spec-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(220, 53, 69, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ignite-spec-icon i {
+  color: #dc3545;
+  font-size: 1.3rem;
+}
+
+.ignite-spec-desc {
+  color: #6c757d;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* ── Two-column checklist (Ignite Experience / Why Students & Parents) ───── */
+
+.ignite-check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .ignite-check-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ignite-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.ignite-check-item i {
+  color: #dc3545;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ignite-check-item--dark {
+  color: #495057;
+}
+
+.ignite-check-item--light {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ignite-check-item--light i {
+  color: #ff8a93;
+}
+
+.ignite-check-note {
+  max-width: 780px;
+  margin: 28px auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #6c757d;
+}
+
+
+/* ── Program Options — 3-tier pricing ────────────────────────────────────── */
+
+.ignite-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .ignite-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ignite-pricing-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.ignite-pricing-card:hover {
+  transform: translateY(-4px);
+}
+
+.ignite-pricing-card--featured {
+  background-color: #11253d;
+  border-color: #dc3545;
+  transform: scale(1.03);
+  position: relative;
+}
+
+.ignite-pricing-card--featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.ignite-pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 999px;
+}
+
+.ignite-pricing-name {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: #11253d;
+}
+
+.ignite-pricing-card--featured .ignite-pricing-name {
+  color: #fff;
+}
+
+.ignite-pricing-duration {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 14px;
+}
+
+.ignite-pricing-card--featured .ignite-pricing-duration {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ignite-pricing-desc {
+  font-size: 0.85rem;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.ignite-pricing-card--featured .ignite-pricing-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ignite-pricing-amount {
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: #dc3545;
+  margin-bottom: 4px;
+}
+
+.ignite-pricing-card--featured .ignite-pricing-amount {
+  color: #fff;
+}
+
+.ignite-pricing-plan {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  font-size: 0.8rem;
+  color: #6c757d;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.ignite-pricing-card--featured .ignite-pricing-plan {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ignite-pricing-cta {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* ── SIWES & Institutional Documentation Support banner ──────────────────── */
+
+.ignite-siwes-banner {
+  background-color: #11253d;
+  border-radius: 14px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ignite-siwes-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(220, 53, 69, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ignite-siwes-icon i {
+  color: #dc3545;
+  font-size: 1.3rem;
+}
+
+.ignite-siwes-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ignite-siwes-text strong {
+  color: #fff;
+}
+
+@media (max-width: 575px) {
+  .ignite-siwes-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

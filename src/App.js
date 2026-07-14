@@ -16,6 +16,7 @@ import XmasHeader from './decoration-header/XmasHeader';
 import WhatsappFloatingButton from './components/whatsapp/WhatsappFloatingButton';
 import WhatsappEslint from './components/whatsapp/WhatsappEslint';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
+import EmptdpIgnite from './components/emptdp/emptdpIgnite';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -150,7 +151,8 @@ const TeamSystem = lazy(() => import("./components/team/teamSystem"))
 const TeamWeb = lazy(() => import("./components/team/teamWeb"))
 const BlogPages = lazy(() => import("./components/blog/blogPages"));
 const Emptdp = lazy(() => import("./components/emptdp/emptdp"));
-
+const SuperAdminDashboard = lazy(() => import("./components/admin/SuperAdminDashboard"));
+const AuditLog = lazy(() => import("./components/admin/AuditLog"));
 // import Mailchimp from './components/mailchimp/mailchimp';
 
 
@@ -260,6 +262,11 @@ const router = createBrowserRouter([
         element: <Emptdp />
       },
 
+      {
+        path: '/siwes',
+        element: <EmptdpIgnite />
+      },
+
 
       {
         path: '/products',
@@ -345,191 +352,6 @@ const router = createBrowserRouter([
         element: <Blog />
       },
       {
-        path: '/blog/:slug',
-        element: <BlogDetails />
-      },
-      {
-        path: '/blog/related/:slug',
-        element: < BlogRelated />
-      },
-      { path: '/news', element: <News /> },
-      { path: '/news/page/:pagenumber', element: <News /> },
-      { path: '/news/:slug', element: <NewsDetails /> },
-      { path: '/news/page/:pagenumber/:slug', element: <NewsDetails /> },
-      { path: '/news/related/:slug', element: <NewsRelated /> },
-      { path: '/trends', element: <Trends /> },
-      { path: '/trends/page/:pagenumber', element: <Trends /> },
-      { path: '/trends/:slug', element: <TrendDetails /> },
-      { path: '/trends/page/:pagenumber/:slug', element: <TrendDetails /> },
-      { path: '/trends/related/:slug', element: <TrendRelated /> },
-      {
-        path: '/surveillance',
-        element: <Suvalliance />
-      },
-      {
-        path: '/network-administration-implementation',
-        element: <Networka />
-      },
-      {
-        path: '/server-administration',
-        element: <Server />
-      },
-      //=================== telecom pages
-      {
-        path: '/ip-telephony',
-        element: < IpTelephony />
-      },
-      {
-        path: '/voip',
-        element: <Voip />
-      },
-      //================================== web pages
-      {
-        path: '/domain',
-        element: <Domain />
-      },
-
-      {
-        path: '/hosting',
-        element: <Hosting />
-      },
-      //============================== marketing
-      {
-        path: '/content-marketing',
-        element: <Content />
-      },
-      {
-        path: '/ppc',
-        element: <Ppc />
-      },
-
-      {
-        path: '/',
-        element: <Home />
-      },
-      {
-        path: '/trial',
-        element: <Trial />
-      },
-      {
-        path: '/network',
-        element: <Network />
-      },
-      {
-        path: '/portfolio',
-        element: <Portfolio />
-      },
-      {
-        path: '/digital-marketing',
-        element: <Digital />
-      },
-      {
-        path: '/policy',
-        element: <Policy />
-      },
-      {
-        path: '/terms',
-        element: <Terms />
-      },
-      {
-        path: '/who-we-are',
-        element: <Company />
-      },
-      {
-        path: '/web-design',
-        element: <Web />
-      },
-      {
-        path: '/app-development',
-        element: <AppDevelopment />
-      },
-      {
-        path: '/etmpdp',
-        element: <Emptdp />
-      },
-      {
-        path: '/products',
-        element: <Shop />
-      },
-      // team ==============================
-      {
-        path: "/our-team",
-        element: < Team />
-      },
-      {
-        path: "/israel-uhwonuwoma-o",
-        element: <Teamchairman />
-      },
-      {
-        path: "/oreva-p-oku",
-        element: <TeamMd />
-      },
-      {
-        path: "/violet-oku",
-        element: < TeamAdmin />
-      },
-      {
-        path: "/toju-okenejoe",
-        element: < TeamLead />
-      },
-      {
-        path: "/jamiu-noah",
-        element: < TeamSystem />
-      },
-      {
-        path: "/michael-jogoh",
-        element: < TeamWeb />
-      },
-      // ===================================
-      {
-        path: '/hardware-engineering',
-        element: <Engineer />
-      },
-      {
-        path: '/mobile-repair',
-        element: <Mobile />
-      },
-      {
-        path: '/printer-repair',
-        element: <Printer />
-      },
-      {
-        path: '/system-integration',
-        element: <Integration />
-      },
-      {
-        path: '/structure-cabling',
-        element: <Cabling />
-      },
-      {
-        path: '/cctv',
-        element: <Cctv />
-      },
-      {
-        path: '/internet',
-        element: < Internet />
-      },
-      {
-        path: '/network-security',
-        element: <Security />
-      },
-      {
-        path: '/access-control',
-        element: <Access />
-      },
-      {
-        path: '/time-management',
-        element: <Time />
-      },
-      {
-        path: '/blog',
-        element: <Blog />
-      },
-      {
-        path: "/blog/page/:pagenumber",
-        element: <Blog />
-      },
-      {
         path: '/blog/:slug/:id',
         element: <BlogDetails />
       },
@@ -537,46 +359,16 @@ const router = createBrowserRouter([
         path: '/blog/related/:slug/:id',
         element: < BlogRelated />
       },
-      {
-        path: '/news',
-        element: <News />
-      },
-      {
-        path: '/news/page/:pagenumber',
-        element: <News />
-      },
-      {
-        path: '/news/:slug/:id',
-        element: <NewsDetails />
-      },
-      {
-        path: '/news/page/:pagenumber/:slug/:id',
-        element: <NewsDetails />
-      },
-      {
-        path: '/news/related/:slug/:id',
-        element: <NewsRelated />
-      },
-      {
-        path: '/trends',
-        element: <Trends />
-      },
-      {
-        path: '/trends/page/:pagenumber',
-        element: <Trends />
-      },
-      {
-        path: '/trends/:slug/:id',
-        element: <TrendDetails />
-      },
-      {
-        path: '/trends/page/:pagenumber/:slug/:id',
-        element: <TrendDetails />
-      },
-      {
-        path: '/trends/related/:slug/:id',
-        element: <TrendRelated />
-      },
+      { path: '/news', element: <News /> },
+      { path: '/news/page/:pagenumber', element: <News /> },
+      { path: '/news/:slug/:id', element: <NewsDetails /> },
+      { path: '/news/page/:pagenumber/:slug/:id', element: <NewsDetails /> },
+      { path: '/news/related/:slug/:id', element: <NewsRelated /> },
+      { path: '/trends', element: <Trends /> },
+      { path: '/trends/page/:pagenumber', element: <Trends /> },
+      { path: '/trends/:slug/:id', element: <TrendDetails /> },
+      { path: '/trends/page/:pagenumber/:slug/:id', element: <TrendDetails /> },
+      { path: '/trends/related/:slug/:id', element: <TrendRelated /> },
       {
         path: '/surveillance',
         element: <Suvalliance />
@@ -773,10 +565,6 @@ const router = createBrowserRouter([
         path: "/login",
         element: <AdminLogin />
       },
-      {
-        path: "/dashboard",
-        element: <PrivateRoute>< Dashboard /></PrivateRoute>
-      },
 
       // Supplies
       {
@@ -840,7 +628,25 @@ const router = createBrowserRouter([
     ],
   },
 
+  {
+    path: "/dashboard",
+    element: <Suspense fallback={<></>}><PrivateRoute><Dashboard /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/super-admin",
+    element: <Suspense fallback={<></>}><PrivateRoute><SuperAdminDashboard /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/audit",
+    element: <Suspense fallback={<></>}><PrivateRoute><AuditLog /></PrivateRoute></Suspense>
+  },
+
 ]);
+
+
+
 
 const App = () => {
   const { isAuthenticated } = useAuth();

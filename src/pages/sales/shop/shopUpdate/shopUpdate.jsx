@@ -94,25 +94,26 @@ const ShopUpdate = () => {
         setCategory(res.data.product.category);
         setBrand(res.data.product.brand);
         setQuantity(res.data.product.quantity);
-        setSeries(res.data.product.computerProperty[0].series);
-        setModel(res.data.product.computerProperty[0].model);
-        setWeight(res.data.product.computerProperty[0].weight);
-        setdimension(res.data.product.computerProperty[0].dimension);
-        setItem(res.data.product.computerProperty[0] .item);
-        setColor(res.data.product.computerProperty[0].color);
-        setHardware(res.data.product.computerProperty[0].hardware);
-        setOs(res.data.product.computerProperty[0].os);
-        setProcessor(res.data.product.computerProperty[0].processor);
-        setNumber(res.data.product.computerProperty[0].number);
-        setMemory(res.data.product.computerProperty[0].memory);
-        setRam(res.data.product.computerProperty[0].ram);
-        setDrive(res.data.product.computerProperty[0].drive);
-        setDisplay(res.data.product.computerProperty[0].display);
-        setResolution(res.data.product.computerProperty[0].resolution);
-        setGraphics(res.data.product.computerProperty[0].graphics);
-        setVoltage(res.data.product.computerProperty[0].voltage);
-        setBattery(res.data.product.computerProperty[0].battery);
-        setWireless(res.data.product.computerProperty[0].wireless);
+        const cp = res.data.product.computerProperty?.[0] || {};
+        setSeries(cp.series || "");
+        setModel(cp.model || "");
+        setWeight(cp.weight || "");
+        setdimension(cp.dimension || "");
+        setItem(cp.item || "");
+        setColor(cp.color || "");
+        setHardware(cp.hardware || "");
+        setOs(cp.os || "");
+        setProcessor(cp.processor || "");
+        setNumber(cp.number || "");
+        setMemory(cp.memory || "");
+        setRam(cp.ram || "");
+        setDrive(cp.drive || "");
+        setDisplay(cp.display || "");
+        setResolution(cp.resolution || "");
+        setGraphics(cp.graphics || "");
+        setVoltage(cp.voltage || "");
+        setBattery(cp.battery || "");
+        setWireless(cp.wireless || "");
 
 
       } catch (error) {
@@ -162,7 +163,12 @@ const ShopUpdate = () => {
       navigate(`/product/${slug}/${id}`)
       // /product/:slug/:id
     } catch (error) {
-      toast.warning("Please Fill All Required Fields");
+      const errors = error.response?.data?.errors;
+      if (errors?.length) {
+        errors.forEach(msg => toast.error(msg));
+      } else {
+        toast.error(error.response?.data?.message || "Failed to update product");
+      }
     }
   };
 
@@ -187,7 +193,12 @@ const ShopUpdate = () => {
       setImages([]);
       navigate(`/product/${slug}/${id}`);
     } catch (error) {
-      toast.warning("Added New Product Images");
+      const errors = error.response?.data?.errors;
+      if (errors?.length) {
+        errors.forEach(msg => toast.error(msg));
+      } else {
+        toast.error(error.response?.data?.message || "Failed to update product images");
+      }
     }finally {
       setLoading(false);
     }
@@ -446,7 +457,7 @@ const ShopUpdate = () => {
                     <td>
                       <input
                         type="text"
-                        value={brand}
+                        value={processor}
                         onChange={(e) => setProcessor(e.target.value)}
                         class="form-control form-controli border-0"
                       />

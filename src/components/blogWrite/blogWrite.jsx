@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { BASEURL } from '../../BaseURL/BaseURL';
-import { useNavigate, Link } from 'react-router-dom';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import './blogWrite.css';
-import { toast } from 'react-toastify';
-import { AiOutlineDashboard } from 'react-icons/ai';
+import { useState } from "react";
+import axios from "axios";
+import { BASEURL } from "../../BaseURL/BaseURL";
+import { useNavigate, Link } from "react-router-dom";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import "./blogWrite.css";
+import { toast } from "react-toastify";
+import { AiOutlineDashboard } from "react-icons/ai";
 
 const BlogWrite = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("");
   const [cloudinary_id, setCloudinary_url] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -21,33 +21,44 @@ const BlogWrite = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!title.trim()) return toast.error("Title is required");
+    if (!description.trim() || description === "<p><br></p>")
+      return toast.error("Description is required");
+    if (!author.trim()) return toast.error("Author is required");
+    if (!category) return toast.error("Please select a category");
+    if (!cloudinary_id) return toast.error("Please select an image");
+
     try {
       setIsLoading(true);
       const formData = new FormData();
-      formData.append('title', title);
-      formData.append('description', description);
-      formData.append('author', author);
-      formData.append('category', JSON.stringify([category]));
-      formData.append('cloudinary_image', cloudinary_id);
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("author", author);
+      formData.append("category", JSON.stringify([category]));
+      formData.append("cloudinary_image", cloudinary_id);
 
-      const token = JSON.parse(localStorage.getItem('token'));
-      const res = await axios.post(
-        `${BASEURL}/api/v1/blog/create`,
-        formData,
-        {
-          headers: { 'Content-Type': 'multipart/form-data', 'x-access-token': token },
-        }
-      );
+      const token = JSON.parse(localStorage.getItem("token"));
+      const res = await axios.post(`${BASEURL}/api/v1/blog/create`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "x-access-token": token,
+        },
+      });
 
       if (res) {
-        toast.success('Blog Published Successfully');
+        toast.success("Blog Published Successfully");
         setTimeout(() => {
-          navigate('/blog');
+          navigate("/blog");
         }, 1000);
       }
     } catch (error) {
-      toast.error(error.response?.data?.message || 'Error publishing blog');
-    }finally {
+      const errors = error.response?.data?.errors;
+      if (errors?.length) {
+        errors.forEach((msg) => toast.error(msg));
+      } else {
+        toast.error(error.response?.data?.message || "Error publishing blog");
+      }
+    } finally {
       setIsLoading(false);
     }
   };
@@ -58,29 +69,34 @@ const BlogWrite = () => {
       <div
         className="container-fluid bg-secondary py-5"
         style={{
-          height: '500px',
+          height: "500px",
           backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
             url(https://res.cloudinary.com/elonatech/image/upload/v1726158374/Blog-banner_qxxqnb.png)`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}
       >
         <div className="py-5 mt-5">
           <h2 className="mt-5 text-white text-center">Blog Editor</h2>
           <h5 className="mt-4 text-white text-center">
-            Create and manage your content seamlessly with our intuitive Blog Editor.
+            Create and manage your content seamlessly with our intuitive Blog
+            Editor.
           </h5>
           <p className="lead text-white text-center">
-            With powerful editing tools and a user-friendly interface, our Blog Editor helps you craft
-            engaging posts, maintain consistency, and publish content effortlessly.
+            With powerful editing tools and a user-friendly interface, our Blog
+            Editor helps you craft engaging posts, maintain consistency, and
+            publish content effortlessly.
           </p>
         </div>
       </div>
 
       {/* ====================== DASHBOARD LINK ====================== */}
       <div className="dashboard">
-        <Link to="/dashboard" className="btn btn-outline-primary btn-sm me-3 dash">
+        <Link
+          to="/dashboard"
+          className="btn btn-outline-primary btn-sm me-3 dash"
+        >
           <AiOutlineDashboard className="icon" /> Dashboard
         </Link>
       </div>
@@ -149,13 +165,16 @@ const BlogWrite = () => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      checked={category === 'trends'}
+                      checked={category === "trends"}
                       name="cat"
                       value="trends"
                       onChange={(e) => setCategory(e.target.value)}
                       id="trends"
                     />
-                    <label className="form-check-label fw-bold" htmlFor="trends">
+                    <label
+                      className="form-check-label fw-bold"
+                      htmlFor="trends"
+                    >
                       Trends
                     </label>
                   </div>
@@ -164,7 +183,7 @@ const BlogWrite = () => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      checked={category === 'news'}
+                      checked={category === "news"}
                       name="cat"
                       value="news"
                       onChange={(e) => setCategory(e.target.value)}
@@ -174,12 +193,45 @@ const BlogWrite = () => {
                       News
                     </label>
                   </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      checked={category === "info"}
+                      name="cat"
+                      value="info"
+                      onChange={(e) => setCategory(e.target.value)}
+                      id="info"
+                    />
+                    <label className="form-check-label fw-bold" htmlFor="info">
+                      Info
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      checked={category === "editorial"}
+                      name="cat"
+                      value="editorial"
+                      onChange={(e) => setCategory(e.target.value)}
+                      id="editorial"
+                    />
+                    <label
+                      className="form-check-label fw-bold"
+                      htmlFor="editorial"
+                    >
+                      Editorial
+                    </label>
+                  </div>
                 </div>
 
                 {/* PUBLISH BUTTON */}
                 <div className="col-md-5 mt-3">
                   <button type="submit" className="btn btn-primary">
-                    {isLoading ? 'Loading' : 'Publish'}
+                    {isLoading ? "Loading" : "Publish"}
                   </button>
                 </div>
               </div>

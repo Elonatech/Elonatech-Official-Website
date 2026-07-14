@@ -1,169 +1,338 @@
-
 import { Link } from "react-router-dom";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import axios from 'axios';
-import { useState, useEffect, React } from 'react';
-import { FiArchive } from "react-icons/fi";
-import './dashboard.css'
-import { AiOutlineDashboard } from 'react-icons/ai';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
+import { useAuth } from "./AuthContext";
+import "../admin/SuperAdminDashboard.css";
+import "./dashboard.css";
+
+const getToken = () => JSON.parse(localStorage.getItem("token"));
+
+const getTypeBadgeClass = (type) => {
+  const key = type.toLowerCase();
+  if (key === "blog") return "dash-type-badge--blog";
+  if (key === "computer") return "dash-type-badge--computer";
+  return "dash-type-badge--product";
+};
+
+const getInitials = (name, email) => {
+  const source = name?.trim() ? name.trim() : email?.split("@")[0] || "A";
+  return source
+    .split(/[\s._-]/)
+    .slice(0, 2)
+    .map((p) => p[0]?.toUpperCase() || "")
+    .join("");
+};
+
+const formatDate = (iso) =>
+  new Date(iso).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
 
 const Dashboard = () => {
-    const [visitorData, setVisitorData] = useState([]);
+  const { logout } = useAuth();
+  const [visitorData, setVisitorData] = useState([]);
+  const [recentContent, setRecentContent] = useState([]);
+  const [mostActiveAdmin, setMostActiveAdmin] = useState(null);
 
-    const divStyle = {
-        backgroundColor: 'lightblue',
-        padding: '5px 10px',
-        fontSize: '18px',
-        marginLeft: '-120px',
-        marginBottom: '-300px',
-        borderRadius: '10px',
-      };
+  // Decode the JWT directly for profile info + role — avoids fetching the
+  // full admin list just to render a name/avatar (matches AuditLog.jsx's pattern)
+  const me = (() => {
+    try {
+      const token = getToken();
+      if (!token) return null;
+      return JSON.parse(atob(token.split(".")[1]));
+    } catch {
+      return null;
+    }
+  })();
 
-    // useEffect(() => {
-    //     const fetchVisitorData = async () => {
-    //         try {
-    //             const currentYear = new Date().getFullYear();
+  useEffect(() => {
+    const fetchVisitorData = async () => {
+      try {
+        const currentYear = new Date().getFullYear();
+        const response = await axios.get(
+          `${BASEURL}/api/v1/visitors/monthly?year=${currentYear}`
+        );
+        const months = [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+        ];
+        const transformedData = response.data.visitors.map((v) => ({
+          month: months[v._id.month - 1],
+          visitors: v.count,
+        }));
+        setVisitorData(transformedData);
+      } catch (error) {
+        console.error("Error fetching visitor data:", error);
+      }
+    };
+    fetchVisitorData();
+  }, []);
 
-    //             // Fetch data from the backend API
-    //             const response = await axios.get(`/api/v1/visitors/monthly?year=${currentYear}`);
+  // Recent Content Updates — merges the latest blog posts + products, no
+  // fabricated "status" field since neither model tracks a publish state
+  useEffect(() => {
+    const fetchRecentContent = async () => {
+      try {
+        const [blogRes, productRes] = await Promise.all([
+          axios.get(`${BASEURL}/api/v1/blog/`),
+          axios.get(`${BASEURL}/api/v1/product`),
+        ]);
 
-    //             // Map month numbers (1-12) to their names
-    //             const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const blogs = (blogRes.data.getAllBlogs || []).map((b) => ({
+          _id: b._id,
+          title: b.title,
+          type: "Blog",
+          createdAt: b.createdAt,
+          link: `/blog/${b.slug || b._id}/${b._id}`,
+        }));
 
-    //             // Transform the data from the API to fit the chart format
-    //             const transformedData = response.data.visitors.map(v => ({
-    //                 month: months[v._id.month - 1],  // Convert month number to name (0-indexed array)
-    //                 visitors: v.count  // Use the count of visitors for each month
-    //             }));
+        const products = (productRes.data.getAllProducts || []).map((p) => ({
+          _id: p._id,
+          title: p.name,
+          type: p.category || "Product",
+          createdAt: p.createdAt,
+          link: `/product/${p.slug || p._id}/${p._id}`,
+        }));
 
-    //             // Set the transformed data to state
-    //             setVisitorData(transformedData);
-    //         } catch (error) {
-    //             console.error("Error fetching visitor data:", error);
-    //         }
-    //     };
+        const merged = [...blogs, ...products]
+          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .slice(0, 5);
 
-    //     fetchVisitorData(); 
-    // }, []);
+        setRecentContent(merged);
+      } catch (error) {
+        console.error("Error fetching recent content:", error);
+      }
+    };
+    fetchRecentContent();
+  }, []);
 
+  // Most Active Admin — derived from real audit log entries. Only fetched for
+  // super admins since /api/v1/auth/audit is already restricted to that role.
+  useEffect(() => {
+    if (me?.role !== "superAdmin") return;
 
-    useEffect(() => {
-        const fetchVisitorData = async () => {
-            try {
-                const currentYear = new Date().getFullYear();
-    
-                const response = await axios.get(`${BASEURL}/api/v1/visitors/monthly?year=${currentYear}`);
+    const fetchInsights = async () => {
+      try {
+        const res = await axios.get(`${BASEURL}/api/v1/auth/audit`, {
+          headers: { "x-access-token": getToken() },
+          params: { limit: 200 },
+        });
 
-                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    
-                const transformedData = response.data.visitors.map(v => ({
-                    month: months[v._id.month - 1], 
-                    visitors: v.count 
-                }));
-    
-                setVisitorData(transformedData);
-            } catch (error) {
-                console.error("Error fetching visitor data:", error);
-            }
-        };
-    
-        fetchVisitorData(); 
-    }, []);
+        const tally = {};
+        (res.data.logs || []).forEach((log) => {
+          const key = log.performedBy?.name || log.performedBy?.email || "Unknown";
+          tally[key] = (tally[key] || 0) + 1;
+        });
 
-    return (
-        <>
-            <div class="container-fluid bg-secondary py-5 " style={{height:"500px" , backgroundImage:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1726158384/admin_page_usqzlr.jpg)`, backgroundRepeat:"no-repeat" , backgroundPosition:"center", backgroundSize:"cover"}}>
-                <div class="py-5 mt-5 ">
-                <h2 class=" mt-5 text-white text-center">Admin Dashboard</h2>
-                <h5 class=" mt-4 text-white text-center">Empower your management with real-time insights and control over every aspect of your business.</h5>
-                <p class="lead text-white text-center">The Admin Dashboard provides a centralized hub for monitoring performance, optimizing workflows, and making informed decisions to drive your business forward.</p>
-                </div>
+        const sorted = Object.entries(tally).sort((a, b) => b[1] - a[1]);
+        if (sorted.length) {
+          setMostActiveAdmin({ name: sorted[0][0], count: sorted[0][1] });
+        }
+      } catch (error) {
+        console.error("Error fetching admin insights:", error);
+      }
+    };
+    fetchInsights();
+  }, [me?.role]);
+
+  return (
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+        <title>Dashboard — Elonatech</title>
+      </Helmet>
+
+      <div className="sad-wrapper">
+        {/* Sidebar — same shell as Super Admin Management / Audit Log */}
+        <aside className="sad-sidebar">
+          <div className="sad-sidebar-brand">ADMIN CONSOLE</div>
+          <nav className="sad-nav">
+            <div className="sad-nav-item active">
+              <i className="bi bi-grid-1x2"></i>
+              <span>Dashboard</span>
             </div>
-
-            <div className="d-flex justify-content-between align-items-center py-2 px-4" style={{ borderBottom: "2px solid #e3e3e3" }}>
-                <Link to="/" className="d-flex align-items-center text-decoration-none">
-                    <h5 className="fw-bold ms-2" style={{ color: "#00512c" }}>Elonatech Nigeria Admin</h5>
-                </Link>
-                <div className="d-flex align-items-center">
-                    <span style={{ marginRight: "10px", color: "#6c757d" }}>Welcome</span>
-                    <img src="https://elonatech.com.ng/static/media/Elonatech%20icon.176a8c1916da20a23e4f.png" alt="Logo" style={{ height: "30px", width: "30px" }} />
-                </div>
-            </div>
-
-            <div className='dashboard'>
-                <Link to="/dashboard" className="btn btn-outline-primary btn-sm me-3 dash">
-                    <AiOutlineDashboard className="icon" /> Dashboard
-                </Link>
-            </div>
-            <main className="container py-5 my-5 mb-5">
-
-            <div className="row" data-masonry='{"percentPosition": true }'>
-                <div className="col-sm-6 col-lg-4 mb-4" style={{cursor:"pointer"}}>
-                    <Link to='/write' className="text-decoration-none">
-                        <div className="card text-bg-danger text-center p-3">
-                            <figure className="mb-0 text-decoration-none">
-                                <blockquote className="blockquote">
-                                    <h4> Create Blog</h4>
-                                </blockquote>
-                            </figure>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="col-sm-6 col-lg-4 mb-4" style={{cursor:"pointer"}}>
-                    <Link to='/computer-write' className="text-decoration-none">
-                        <div className="card text-bg-success text-center  p-3">
-                            <figure className="p-3 mb-0">
-                                <blockquote className="blockquote">
-                                    <h4>Upload Computer</h4>
-                                </blockquote>
-                            </figure>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="col-sm-6 col-lg-4 mb-5" style={{cursor:"pointer"}}>
-                    <Link to='/shop-write' className="text-decoration-none">
-                        <div className="card text-bg-primary text-center p-3">
-                            <figure className="mb-0">
-                                <blockquote className="blockquote">
-                                    <h4 className="text-white">Upload All Products</h4>
-                                </blockquote>
-                            </figure>
-                        </div>
-                    </Link>
-                </div>
-            </div>
-
-                <div className="row mt-4">
-                    <div className="col-sm-6 col-lg-4 mb-3">
-                        <Link to='/blog' className="btn btn-outline-danger w-100">View Blog Page</Link>
+            <Link to="/super-admin" className="sad-nav-item">
+              <i className="bi bi-people"></i>
+              <span>User Management</span>
+            </Link>
+            {me?.role === "superAdmin" && (
+              <Link to="/dashboard/audit" className="sad-nav-item">
+                <i className="bi bi-journal-text"></i>
+                <span>Audit Log</span>
+              </Link>
+            )}
+          </nav>
+          <div className="sad-sidebar-footer">
+            <div className="sad-profile-row">
+              {me?.email && (
+                <>
+                  <div className="sad-avatar sad-avatar-sm">
+                    {getInitials(me.name, me.email)}
+                  </div>
+                  <div className="sad-profile-info">
+                    <div className="sad-profile-name">
+                      {me.name || me.email.split("@")[0]}
                     </div>
-                    <div className="col-sm-6 col-lg-4 mb-3">
-                        <Link to='/computers' className="btn btn-outline-success w-100">View Computer Page</Link>
-                    </div>
-                    <div className="col-sm-6 col-lg-4 mb-3">
-                        <Link to='/products' className="btn btn-outline-primary w-100">View Shop Page</Link>
-                    </div>
-                </div>
+                    <div className="sad-profile-email">{me.email}</div>
+                  </div>
+                </>
+              )}
+              <button
+                className="sad-logout-btn"
+                title="Logout"
+                onClick={logout}
+                style={{ marginLeft: "auto" }}
+              >
+                <i className="bi bi-box-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </aside>
 
-                <div className="mt-5">
-                    <h2 className="mb-4">Visitor Analytics</h2>
-                    <ResponsiveContainer width="100%" height={400}>
-                        <LineChart data={visitorData}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="month" />
-                            <YAxis />
-                            <Tooltip />
-                            <Legend />
-                            <Line type="monotone" dataKey="visitors" stroke="#8884d8" activeDot={{ r: 8 }} />
-                        </LineChart>
-                    </ResponsiveContainer>
+        {/* Main content */}
+        <main className="sad-main">
+          <div className="sad-header">
+            <div>
+              <h4 className="sad-title">Dashboard</h4>
+              <p className="sad-subtitle">
+                Welcome back — here's what's happening today.
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="dash-quick-actions">
+            <Link to="/write" className="dash-action-card">
+              <div className="dash-action-icon dash-action-icon--red">
+                <i className="bi bi-pencil-square"></i>
+              </div>
+              <div>
+                <h6>Create Blog</h6>
+                <p>Post new content</p>
+              </div>
+            </Link>
+            <Link to="/computer-write" className="dash-action-card">
+              <div className="dash-action-icon dash-action-icon--green">
+                <i className="bi bi-laptop"></i>
+              </div>
+              <div>
+                <h6>Upload Computer</h6>
+                <p>Inventory update</p>
+              </div>
+            </Link>
+            <Link to="/shop-write" className="dash-action-card">
+              <div className="dash-action-icon dash-action-icon--blue">
+                <i className="bi bi-bag"></i>
+              </div>
+              <div>
+                <h6>Upload Product</h6>
+                <p>E-commerce management</p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Secondary links */}
+          <div className="dash-secondary-links">
+            <Link to="/blog" className="dash-pill-link">View Blog Page</Link>
+            <Link to="/computers" className="dash-pill-link">View Computer Page</Link>
+            <Link to="/products" className="dash-pill-link">View Shop Page</Link>
+          </div>
+
+          {/* Visitor Analytics */}
+          <div className="sad-table-card mb-4">
+            <div className="sad-table-header">
+              <span className="sad-table-title">VISITOR ANALYTICS</span>
+            </div>
+            <div className="dash-chart-wrap">
+              <ResponsiveContainer width="100%" height={320}>
+                <LineChart data={visitorData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="month" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Line
+                    type="monotone"
+                    dataKey="visitors"
+                    stroke="#dc3545"
+                    activeDot={{ r: 8 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          <div className="dash-grid-2col">
+            {/* Recent Content Updates */}
+            <div className="sad-table-card">
+              <div className="sad-table-header">
+                <span className="sad-table-title">RECENT CONTENT UPDATES</span>
+              </div>
+              {recentContent.length === 0 ? (
+                <div className="sad-loading">No recent content yet.</div>
+              ) : (
+                <div className="table-responsive">
+                  <table className="sad-table">
+                    <thead>
+                      <tr>
+                        <th>TITLE</th>
+                        <th>TYPE</th>
+                        <th>DATE</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {recentContent.map((item) => (
+                        <tr key={item._id}>
+                          <td data-label="Title">
+                            <Link to={item.link} className="dash-content-link">
+                              {item.title}
+                            </Link>
+                          </td>
+                          <td data-label="Type">
+                            <span className={`dash-type-badge ${getTypeBadgeClass(item.type)}`}>
+                              {item.type}
+                            </span>
+                          </td>
+                          <td data-label="Date" className="sad-date">
+                            {formatDate(item.createdAt)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-            </main>
-        </>
-    );
-}
+              )}
+            </div>
+
+            {/* Admin Insights — super admin only, since it relies on audit log access */}
+            {me?.role === "superAdmin" && mostActiveAdmin && (
+              <div className="dash-insights-card">
+                <h5>Admin Insights</h5>
+                <p className="dash-insights-label">Most Active Admin</p>
+                <p className="dash-insights-value">{mostActiveAdmin.name}</p>
+                <p className="dash-insights-sub">{mostActiveAdmin.count} logged actions</p>
+              </div>
+            )}
+          </div>
+        </main>
+      </div>
+    </>
+  );
+};
 
 export default Dashboard;

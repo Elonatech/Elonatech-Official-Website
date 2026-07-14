@@ -83,7 +83,12 @@ const shopWrite = () => {
       navigate("/products");
     } catch (error) {
       console.error("Error during API call:", error);
-      toast.warning("Please Fill All Required Fields");
+      const errors = error.response?.data?.errors;
+      if (errors?.length) {
+        errors.forEach(msg => toast.error(msg));
+      } else {
+        toast.error(error.response?.data?.message || "Failed to upload product");
+      }
     }finally {
       setLoading(false);
     }

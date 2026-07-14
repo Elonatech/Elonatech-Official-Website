@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 import { BASEURL } from '../../../BaseURL/BaseURL'
 import hgdelete from './caption/delete.png'
 import edit from './caption/editing.png'
@@ -87,10 +88,14 @@ const TrendDetails = () => {
   }, [])
 
   const handleDelete = async () => {
-    const token = JSON.parse(localStorage.getItem('token'))
-    const res = await axios.delete(`${BASEURL}/api/v1/blog/${id}`, { headers: { 'x-access-token': token } })
-    console.log(res)
-    navigate('/blog')
+    try {
+      const token = JSON.parse(localStorage.getItem('token'))
+      await axios.delete(`${BASEURL}/api/v1/blog/${id}`, { headers: { 'x-access-token': token } })
+      toast.success('Trends post deleted successfully')
+      setTimeout(() => navigate('/blog'), 1000)
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Failed to delete trends post')
+    }
   }
 
   const html = data.description

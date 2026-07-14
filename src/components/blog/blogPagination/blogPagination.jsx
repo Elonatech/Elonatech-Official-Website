@@ -10,7 +10,8 @@ const BlogPagination = ({
   paginate,
   handleNextbtn,
   handlePrevbtn,
-  disabled
+  disabled,
+  basePath = '/blog'
 }) => {
   const { pagenumber } = useParams()
 
@@ -38,7 +39,7 @@ const BlogPagination = ({
         >
           <Link
             onClick={productTop}
-            to={`/blog/page/${number}`}
+            to={`${basePath}/page/${number}`}
             class='page-link v-cursor'
           >
             {number}
@@ -75,7 +76,7 @@ const BlogPagination = ({
       <ul className='pagination justify-content-center mb-5'>
         <li className='page-item' onClick={productTop}>
           <Link
-            to={`/blog/page/${currentPage - 1}`}
+            to={`${basePath}/page/${currentPage - 1}`}
             className={`page-link ${
               currentPage == pages[0] ? 'disabled' : 'active'
             }`}
@@ -89,7 +90,7 @@ const BlogPagination = ({
         {pageIncrementBtn}
         <li className='page-item' onClick={productTop}>
           <Link
-            to={`/blog/page/${currentPage + 1}`}
+            to={`${basePath}/page/${currentPage + 1}`}
             className={`page-link ${
               currentPage == pages[pages.length - 1] ? 'disabled' : 'active'
             }`}

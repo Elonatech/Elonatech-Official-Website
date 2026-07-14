@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios, { isAxiosError } from "axios";
+import { toast } from "react-toastify";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import { useParams } from "react-router-dom";
 import { useNavigate, Link, useLocation } from "react-router-dom";
@@ -25,7 +26,6 @@ import {
 } from "swiper/modules";
 
 import { Helmet } from "react-helmet-async";
-import { toast } from "react-toastify";
 // import Navbar from "../../../components/navbar/navbar";
 
 const useWindowSize = () => {
@@ -334,38 +334,27 @@ const SingleProduct = () => {
   };
 
   const handleDelete = async () => {
-    const id = localStorage.getItem("_id");
     const token = JSON.parse(localStorage.getItem("token"));
 
     try {
-      if (!id) {
-        alert("Cannot find the ID of the product.");
-        return;
-      }
-
       if (!token) {
-        alert("Authentication token not found. Please log in again.");
+        toast.error("Authentication token not found. Please log in again.");
         return;
       }
 
-      const res = await axios.delete(
+      // Use the id from route params (useParams), not localStorage
+      await axios.delete(
         `${BASEURL}/api/v1/product/${id}`,
         { headers: { "x-access-token": token } }
       );
 
-      console.log("product-delete", res.data);
-
-      alert("Product deleted successfully!");
-      navigate("/products");
+      toast.success("Product deleted successfully");
+      setTimeout(() => navigate("/products"), 1000);
     } catch (error) {
-      let errMsg = "An error has occurred while deleting the product.";
-
-      if (isAxiosError(error)) {
-        errMsg = error.response?.data?.message || errMsg;
-      }
-
-      console.error("Delete error:", error);
-      alert(errMsg);
+      const errMsg = isAxiosError(error)
+        ? error.response?.data?.message || "Failed to delete product"
+        : "Failed to delete product";
+      toast.error(errMsg);
     }
   };
 
