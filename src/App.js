@@ -55,7 +55,8 @@ const Cctv = lazy(() => import("./components/cctv/cctv"));
 const Internet = lazy(() => import("./components/internet/internet"));
 const Security = lazy(() => import("./components/security/security"));
 const Time = lazy(() => import("./components/time/time"));
-const Blog = lazy(() => import("./components/blog/blog"));
+const 
+Blog = lazy(() => import("./components/blog/blog"));
 const News = lazy(() => import("./components/news/News"));
 const Trends = lazy(() => import("./components/trends/Trends"));
 
@@ -153,6 +154,9 @@ const BlogPages = lazy(() => import("./components/blog/blogPages"));
 const Emptdp = lazy(() => import("./components/emptdp/emptdp"));
 const SuperAdminDashboard = lazy(() => import("./components/admin/SuperAdminDashboard"));
 const AuditLog = lazy(() => import("./components/admin/AuditLog"));
+const JobApplications = lazy(() => import("./components/admin/JobApplications"));
+const CareerJobs = lazy(() => import("./components/admin/CareerJobs"));
+const BlogList = lazy(() => import("./components/admin/blogList"));
 // import Mailchimp from './components/mailchimp/mailchimp';
 
 
@@ -263,7 +267,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/siwes',
+        path: '/emptdp-ignite',
         element: <EmptdpIgnite />
       },
 
@@ -641,6 +645,21 @@ const router = createBrowserRouter([
   {
     path: "/dashboard/audit",
     element: <Suspense fallback={<></>}><PrivateRoute><AuditLog /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/job-applications",
+    element: <Suspense fallback={<></>}><PrivateRoute><JobApplications /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/career-jobs",
+    element: <Suspense fallback={<></>}><PrivateRoute><CareerJobs /></PrivateRoute></Suspense>
+  },
+
+   {
+    path: "/dashboard/blog-list",
+    element: <Suspense fallback={<></>}><PrivateRoute><BlogList /></PrivateRoute></Suspense>
   },
 
 ]);

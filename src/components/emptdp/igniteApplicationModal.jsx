@@ -110,8 +110,8 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
       errors.push("Please upload your CV.");
     } else if (file.type !== "application/pdf") {
       errors.push("Only PDF files are allowed.");
-    } else if (file.size > 150 * 1024 * 1024) {
-      errors.push("CV file must not exceed 150 MB.");
+    } else if (file.size > 15 * 1024 * 1024) {
+      errors.push("CV file must not exceed 15 MB.");
     }
 
     if (errors.length > 0) {
@@ -163,7 +163,7 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
       }
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error("Something went wrong. Please try again.");
+      toast.error(error.response?.data?.message || "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -330,7 +330,7 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
                   Selected: {file.name}
                 </span>
               ) : (
-                <span className="applymodal-file-hint">PDF only — max 150 MB</span>
+                <span className="applymodal-file-hint">PDF only — max 15 MB</span>
               )}
             </div>
 

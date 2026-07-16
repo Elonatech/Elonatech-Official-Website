@@ -14,60 +14,11 @@ const Checkout = () => {
   // =======================================================
   const { items, cartTotal, emptyCart } = useCart();
 
-  const mapItems = items.map((b) => {
-    return `
-	<table class="row row-9" align="center"  width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-top: 0; margin-top:0; background-image: url('https://d1oco4z2z1fhwp.cloudfront.net/templates/default/121/groovepaper_1.png'); background-position: top center; background-repeat: repeat;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F5F5F5; color: #000000; width: 620px; margin: 0 auto;" width="620">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-right: 1px solid #DFDFDF; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="5" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#555555;font-family:Oxygen, Trebuchet MS, Helvetica, sans-serif;font-size:14px;line-height:120%;text-align:center;mso-line-height-alt:16.8px;">
-																	<p style="margin: 0; word-break: break-word;"><span style="color: #000000;">${b.name}</span></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-												<td class="column column-2" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-right: 1px solid #DFDFDF; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="15" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#555555;font-family:Oxygen, Trebuchet MS, Helvetica, sans-serif;font-size:14px;line-height:120%;text-align:center;mso-line-height-alt:16.8px;">
-																	<p style="margin: 0; word-break: break-word;"><strong>${b.quantity}</strong></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-												<td class="column column-3" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="paragraph_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#555555;font-family:Oxygen, Trebuchet MS, Helvetica, sans-serif;font-size:14px;line-height:120%;text-align:center;mso-line-height-alt:16.8px;">
-																	<p style="margin: 0; word-break: break-word;"><strong>₦ ${b.price}</strong></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-
-	`;
-  }, ``);
-
-  const itemsOrdered = mapItems.join("").toString();
+  const itemsOrdered = items.map((item) => ({
+    name: item.name,
+    quantity: item.quantity,
+    price: item.price,
+  }));
 
   let dateNow = new Date().toLocaleDateString();
 
@@ -109,14 +60,18 @@ const Checkout = () => {
         { headers: { "Content-Type": "application/json" } }
       );
 
-      toast.success("Order Successfully Sent!!!", { toastId: response.data });
+      toast.success("Order Successfully Sent!!!");
       const firstItemUrl = items[0]?.slug
         ? `https://elonatech.com.ng/product/${items[0].slug}/${items[0].id}`
         : "https://elonatech.com.ng/products";
       navigate("/thank-you", { state: { firstItemUrl } });
       emptyCart();
     } catch (error) {
-      toast.error(error.response.data, { toastId: error.response.data });
+      const message =
+        error.response?.data?.message ||
+        (typeof error.response?.data === "string" ? error.response.data : null) ||
+        "Something went wrong. Please try again.";
+      toast.error(message);
       setButtonDisabled(false);
     }
   };

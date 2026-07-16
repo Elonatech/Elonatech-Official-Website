@@ -4,6 +4,32 @@
    Colors: #11253d (navy), #dc3545 (red), #ffffff (white)
    ============================================================================= */
 
+/* Hero taglines — two short, distinctly-styled lines instead of one dense
+   run-on sentence, so the key phrases (audience + use case) stand out */
+.ignite-hero-tag {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 6px 0;
+}
+
+.ignite-hero-tag--italic {
+  font-style: italic;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .ignite-hero-tag {
+    font-size: 0.9rem;
+  }
+
+  .ignite-hero-tag--italic {
+    font-size: 0.82rem;
+  }
+}
+
 /* Ignite's Journey has 7 steps vs ETMPDP's 6 — too tight for the shared
    horizontal timeline at tablet width, so stack it earlier (only here,
    the ETMPDP page's own timeline is untouched) */
@@ -33,7 +59,7 @@
 /* Ignite-specific hero background — distinct from the ETMPDP page's hero photo */
 .ignite-hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1784039004/pexels-edmond-dantes-8550845_ycwcdr.jpg") !important;
+    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1784102634/pexels-pnw-prod-8276643_incaav.jpg") !important;
 }
 
 

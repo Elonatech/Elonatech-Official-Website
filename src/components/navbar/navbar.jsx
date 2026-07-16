@@ -1283,9 +1283,9 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to="/siwes"
+                        to="/emptdp-ignite"
                         className={`dropdown-item ${
-                          isActive("/siwes")
+                          isActive("/emptdp-ignite")
                             ? "strategic-items-active"
                             : ""
                         }`}

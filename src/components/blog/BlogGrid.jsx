@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { BASEURL } from '../../BaseURL/BaseURL';
 import Loading from '../Loading/Loading';
 import DOMPurify from 'dompurify';
@@ -27,6 +28,16 @@ const normalizeCategories = raw => {
   }
   categories = Array.isArray(categories) ? categories : [categories];
   return categories.filter(Boolean);
+};
+
+// Strips HTML tags from the rich-text description and truncates on a word
+// boundary, so the card preview never cuts off mid-tag or mid-word.
+const getExcerpt = (html, maxLength = 130) => {
+  const plainText = DOMPurify.sanitize(html || '', { ALLOWED_TAGS: [] })
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (plainText.length <= maxLength) return plainText;
+  return plainText.slice(0, maxLength).replace(/\s+\S*$/, '') + '…';
 };
 
 // Shared card-grid + pill-filter listing, used by /blog, /news and /trends.
@@ -67,13 +78,19 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
 
   const handleSubmit = async e => {
     e.preventDefault();
+    if (!email.trim()) {
+      toast.error('Please enter your email address.');
+      return;
+    }
     try {
       const newData = { email };
       await axios.post(`${BASEURL}/api/v1/email/mailchimp`, newData, {
         headers: { 'Content-Type': 'application/json' }
       });
+      toast.success('Subscribed successfully!');
+      setEmail('');
     } catch (error) {
-      console.log(error);
+      toast.error('Failed to subscribe. Please try again.');
     }
   };
 
@@ -180,17 +197,11 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
                                   ))}
                                 </div>
                                 <h5 className='blog-card-title'>{item.title}</h5>
-                                <p
-                                  className='blog-card-excerpt'
-                                  dangerouslySetInnerHTML={{
-                                    __html: DOMPurify.sanitize(
-                                      (item.description ? item.description.slice(0, 150) : '').concat('...')
-                                    ),
-                                  }}
-                                ></p>
+                                <p className='blog-card-excerpt'>{getExcerpt(item.excerpt)}</p>
                                 <p className='blog-card-meta'>
                                   {item.author} / {new Date(item.createdAt).toDateString()}
                                 </p>
+                                <span className='blog-card-readmore'>Read More →</span>
                               </div>
                             </div>
                           </Link>

@@ -181,6 +181,17 @@
   flex: 1;
 }
 
+.related-card-excerpt {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #555;
+  margin: 4px 0 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .related-card-date {
   font-size: 11px;
   color: #8b949e;

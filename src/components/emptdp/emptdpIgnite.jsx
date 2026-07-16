@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import "./emptdp.css";
 import "./emptdpIgnite.css";
 import IgniteApplicationModal from "./igniteApplicationModal";
+import brochurePDF from "./data/ETMPDP Ignite (2).pdf";
 import MDImage from "../main/captions/Ceo1.png";
 
 /* ── Static data ────────────────────────────────────────────────────────── */
@@ -84,7 +85,7 @@ const specializations = [
     title: "IT Support, Networking & Infrastructure",
     desc: "Develop practical skills in networking, systems administration, structured cabling, technical support, computer hardware, and AI-assisted diagnostics.",
     image:
-      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039002/pexels-mikhail-nilov-9242892_wk1o7n.jpg",
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784103672/Network_engineer_in_server_room_using_laptop_minimal___Premium_Photo_ayqzyn.jpg",
   },
   {
     icon: "bi-cpu",
@@ -156,6 +157,7 @@ const leadershipItems = [
 ];
 
 const whyChooseItems = [
+  "ETMPDP Ignite Certificate of Completion",
   "Structured Executive Mentorship",
   "Weekly Leadership Development Sessions",
   "Practical Hands-on Learning",
@@ -218,6 +220,10 @@ const faqs = [
     q: "Is employment guaranteed?",
     a: "No. Participation in ETMPDP Ignite does not constitute employment. Outstanding participants may, however, be considered for employment opportunities where vacancies exist.",
   },
+  {
+    q: "Will I be issued a certificate?",
+    a: "Yes. Participants who successfully complete the program will receive a certificate of participation.",
+  },
 ];
 
 /* ── Component ──────────────────────────────────────────────────────────── */
@@ -228,11 +234,11 @@ const EmptdpIgnite = () => {
 
   const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
 
-  const handleDownloadGuide = () => {
-    toast.info(
-      "The ETMPDP Ignite program guide is being finalized — Apply Now and our team will send you full details."
-    );
-  };
+  // const handleDownloadGuide = () => {
+  //   toast.info(
+  //     "The ETMPDP Ignite program guide is being finalized — Apply Now and our team will send you full details."
+  //   );
+  // };
 
   return (
     <>
@@ -250,23 +256,24 @@ const EmptdpIgnite = () => {
       {/* ── 1. Hero ────────────────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section ignite-hero-section">
         <div className="emptdp-hero-text">
-          {/* <span className="emptdp-mentor-badge" style={{ marginBottom: "16px", display: "inline-block" }}>
+          <span
+            className="emptdp-mentor-badge"
+            style={{ marginBottom: "16px", display: "inline-block" }}
+          >
             ETMPDP Ignite
-          </span> */}
+          </span>
           <h2>Ignite Your Future Before Graduation</h2>
           <h5>
             The Undergraduate Professional Development Experience of the
             Executive Technology Mentorship &amp; Professional Development
             Program (ETMPDP)
           </h5>
-          <p className="lead">
-            Designed for Undergraduate Technology Students — Ideal for SIWES,
-            Industrial Training, Internship &amp; Career Development. Bridge the
-            gap between academic learning and professional practice through a
-            structured Professional Development Experience combining practical
-            technical skills, executive mentorship, leadership development,
-            AI-powered learning, workplace readiness, and supervised industry
-            exposure.
+          <p className="ignite-hero-tag">
+            Designed for Undergraduate Technology Students
+          </p>
+          <p className="ignite-hero-tag ignite-hero-tag--italic">
+            Ideal for SIWES, Industrial Training, Internship &amp; Career
+            Development
           </p>
         </div>
         <div className="emptdp-cta-buttons">
@@ -276,12 +283,11 @@ const EmptdpIgnite = () => {
           >
             Apply Now
           </button>
-          <button
-            className="emptdp-btn emptdp-btn--outline"
-            onClick={handleDownloadGuide}
-          >
-            Download Program Guide
-          </button>
+          <a href={brochurePDF} target="_blank" rel="noopener noreferrer">
+            <button className="emptdp-btn emptdp-btn--outline">
+              Download Program Guide
+            </button>
+          </a>
         </div>
       </div>
 
@@ -731,12 +737,11 @@ const EmptdpIgnite = () => {
             >
               Apply Now
             </button>
-            <button
-              className="emptdp-btn emptdp-btn--outline-dark"
-              onClick={handleDownloadGuide}
-            >
-              Download Program Guide
-            </button>
+            <a href={brochurePDF} target="_blank" rel="noopener noreferrer">
+              <button className="emptdp-btn emptdp-btn--outline border-danger text-danger">
+                Download Program Guide
+              </button>
+            </a>
           </div>
         </div>
       </section>

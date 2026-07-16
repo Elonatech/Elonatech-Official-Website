@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import { useAuth } from "./AuthContext";
 import { Helmet } from "react-helmet-async";
@@ -37,6 +38,8 @@ const SuperAdminDashboard = () => {
     role: "admin",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [showCreatePassword, setShowCreatePassword] = useState(false);
+  const [showEditPassword, setShowEditPassword] = useState(false);
   const [editingAdmin, setEditingAdmin] = useState(null);
   const [editForm, setEditForm] = useState({
     name: "",
@@ -294,6 +297,39 @@ const SuperAdminDashboard = () => {
                 <span>Audit Log</span>
               </Link>
             )}
+            <Link to="/dashboard/job-applications" className="sad-nav-item">
+              <i className="bi bi-inbox-fill"></i>
+              <span>Job Applications</span>
+            </Link>
+
+            <Link to="/dashboard/career-jobs" className="sad-nav-item">
+              <i className="bi bi-briefcase-fill"></i>
+              <span>Career Jobs</span>
+            </Link>
+
+            <Link to="/dashboard/blog-list" className="sad-nav-item">
+              <i className="bi bi-briefcase-fill"></i>
+              <span>Blog List</span>
+            </Link>
+
+            {/* <Link to="/dashboard/subscribers" className="sad-nav-item">
+              <i className="bi bi-briefcase-fill"></i>
+              <span>Subscribers</span>
+            </Link>
+
+            <Link to="/dashboard/quotes" className="sad-nav-item">
+              <i className="bi bi-briefcase-fill"></i>
+              <span>Quotes</span>
+            </Link>
+            <Link to="/dashboard/etmpdp" className="sad-nav-item">
+              <i className="bi bi-briefcase-fill"></i>
+              <span>Etmpdp</span>
+            </Link>
+            <Link to="/dashboard/orders" className="sad-nav-item">
+              <i className="bi bi-briefcase-fill"></i>
+              <span>Orders</span>
+            </Link> */}
+
           </nav>
           <div className="sad-sidebar-footer">
             <div className="sad-profile-row">
@@ -707,16 +743,26 @@ const SuperAdminDashboard = () => {
               </div>
               <div className="mb-3">
                 <label className="sad-label">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Set a strong password"
-                  value={form.password}
-                  onChange={(e) =>
-                    setForm({ ...form, password: e.target.value })
-                  }
-                  required
-                />
+                <div className="sad-password-wrap">
+                  <input
+                    type={showCreatePassword ? "text" : "password"}
+                    className="form-control"
+                    placeholder="Set a strong password"
+                    value={form.password}
+                    onChange={(e) =>
+                      setForm({ ...form, password: e.target.value })
+                    }
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="sad-eye-btn"
+                    onClick={() => setShowCreatePassword((v) => !v)}
+                    aria-label={showCreatePassword ? "Hide password" : "Show password"}
+                  >
+                    {showCreatePassword ? <FiEyeOff /> : <FiEye />}
+                  </button>
+                </div>
               </div>
               <div className="mb-4">
                 <label className="sad-label">Role</label>
@@ -787,15 +833,25 @@ const SuperAdminDashboard = () => {
                     (leave blank to keep current)
                   </span>
                 </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  value={editForm.password}
-                  onChange={(e) =>
-                    setEditForm({ ...editForm, password: e.target.value })
-                  }
-                  placeholder="Min. 8 characters"
-                />
+                <div className="sad-password-wrap">
+                  <input
+                    type={showEditPassword ? "text" : "password"}
+                    className="form-control"
+                    value={editForm.password}
+                    onChange={(e) =>
+                      setEditForm({ ...editForm, password: e.target.value })
+                    }
+                    placeholder="Min. 8 characters"
+                  />
+                  <button
+                    type="button"
+                    className="sad-eye-btn"
+                    onClick={() => setShowEditPassword((v) => !v)}
+                    aria-label={showEditPassword ? "Hide password" : "Show password"}
+                  >
+                    {showEditPassword ? <FiEyeOff /> : <FiEye />}
+                  </button>
+                </div>
               </div>
               <div className="mb-4">
                 <label className="sad-label">Role</label>

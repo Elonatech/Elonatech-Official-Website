@@ -180,6 +180,14 @@ const AuditLog = () => {
               <i className="bi bi-journal-text"></i>
               <span>Audit Log</span>
             </div>
+            <Link to="/dashboard/job-applications" className="sad-nav-item">
+              <i className="bi bi-inbox-fill"></i>
+              <span>Job Applications</span>
+            </Link>
+            <Link to="/dashboard/career-jobs" className="sad-nav-item">
+              <i className="bi bi-briefcase-fill"></i>
+              <span>Career Jobs</span>
+            </Link>
           </nav>
           <div className="sad-sidebar-footer">
             <div className="sad-profile-row">

@@ -10,6 +10,16 @@ import './blogDetails.css'
 import hgdelete from './caption/delete.png'
 import edit from './caption/editing.png'
 
+// Strips HTML tags from the rich-text description and truncates on a word
+// boundary, so the card preview never cuts off mid-tag or mid-word.
+const getExcerpt = (html, maxLength = 90) => {
+  const plainText = DOMPurify.sanitize(html || '', { ALLOWED_TAGS: [] })
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (plainText.length <= maxLength) return plainText;
+  return plainText.slice(0, maxLength).replace(/\s+\S*$/, '') + '…';
+};
+
 const BlogRelated = () => {
   const [data, setData] = useState({})
   const [relatedPosts, setRelatedPosts] = useState([])
@@ -211,6 +221,7 @@ const BlogRelated = () => {
                                   <span className='related-card-badge'>{post.category[0]}</span>
                                 )}
                                 <h6 className='related-card-title'>{post.title}</h6>
+                                <p className='related-card-excerpt'>{getExcerpt(post.excerpt)}</p>
                                 <p className='related-card-date'>
                                   {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                                 </p>
@@ -346,6 +357,7 @@ const BlogRelated = () => {
                           <span className='related-card-badge'>{post.category[0]}</span>
                         )}
                         <h6 className='related-card-title'>{post.title}</h6>
+                        <p className='related-card-excerpt'>{getExcerpt(post.excerpt)}</p>
                         <p className='related-card-date'>
                           {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                         </p>
