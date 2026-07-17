@@ -4,19 +4,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
-import { useAuth } from "./AuthContext";
+import AdminSidebar from "./AdminSidebar";
 import "./SuperAdminDashboard.css";
 
 const getToken = () => JSON.parse(localStorage.getItem("token"));
-
-const getInitials = (name, email) => {
-  const source = name?.trim() ? name.trim() : email?.split("@")[0] || "A";
-  return source
-    .split(/[\s._-]/)
-    .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase() || "")
-    .join("");
-};
 
 const EMPLOYMENT_TYPES = ["Full-Time", "Part-Time", "Contract", "Internship", "Freelance", "Mentorship", "Volunteer", "Other"];
 const WORKPLACE_TYPES = ["On-site", "Hybrid", "Remote"];
@@ -45,7 +36,6 @@ const statusBadgeClass = (status) => {
 };
 
 const CareerJobs = () => {
-  const { logout } = useAuth();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -60,15 +50,6 @@ const CareerJobs = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
 
-  const me = (() => {
-    try {
-      const token = getToken();
-      if (!token) return null;
-      return JSON.parse(atob(token.split(".")[1]));
-    } catch {
-      return null;
-    }
-  })();
 
   const fetchJobs = async () => {
     try {
@@ -186,58 +167,7 @@ const CareerJobs = () => {
       </Helmet>
 
       <div className="sad-wrapper">
-        <aside className="sad-sidebar">
-          <div className="sad-sidebar-brand">ADMIN CONSOLE</div>
-          <nav className="sad-nav">
-            <Link to="/dashboard" className="sad-nav-item">
-              <i className="bi bi-grid-1x2"></i>
-              <span>Dashboard</span>
-            </Link>
-            <Link to="/super-admin" className="sad-nav-item">
-              <i className="bi bi-people"></i>
-              <span>User Management</span>
-            </Link>
-            {me?.role === "superAdmin" && (
-              <Link to="/dashboard/audit" className="sad-nav-item">
-                <i className="bi bi-journal-text"></i>
-                <span>Audit Log</span>
-              </Link>
-            )}
-            <Link to="/dashboard/job-applications" className="sad-nav-item">
-              <i className="bi bi-inbox-fill"></i>
-              <span>Job Applications</span>
-            </Link>
-            <div className="sad-nav-item active">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Career Jobs</span>
-            </div>
-          </nav>
-          <div className="sad-sidebar-footer">
-            <div className="sad-profile-row">
-              {me?.email && (
-                <>
-                  <div className="sad-avatar sad-avatar-sm">
-                    {getInitials(me.name, me.email)}
-                  </div>
-                  <div className="sad-profile-info">
-                    <div className="sad-profile-name">
-                      {me.name || me.email.split("@")[0]}
-                    </div>
-                    <div className="sad-profile-email">{me.email}</div>
-                  </div>
-                </>
-              )}
-              <button
-                className="sad-logout-btn"
-                title="Logout"
-                onClick={logout}
-                style={{ marginLeft: "auto" }}
-              >
-                <i className="bi bi-box-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </aside>
+        <AdminSidebar active="career-jobs" />
 
         <main className="sad-main">
           <div className="sad-header">
@@ -481,7 +411,7 @@ const CareerJobs = () => {
       {/* Edit Job Modal */}
       {editingJob && (
         <div className="sad-overlay">
-          <div className="sad-modal" onClick={(e) => e.stopPropagation()}>
+          <div className="sad-modal sad-modal-lg" onClick={(e) => e.stopPropagation()}>
             <div className="sad-modal-header">
               <h5>Edit Job Posting</h5>
               <button className="sad-modal-close" onClick={() => setEditingJob(null)}>
@@ -628,12 +558,12 @@ const CareerJobs = () => {
                 <i className="bi bi-x-lg"></i>
               </button>
             </div>
-            <div className="sad-modal-body">
+            <div className="sad-modal-body" style={{ textAlign: "center" }}>
               <p>
                 Are you sure you want to delete <strong>{selectedJob?.title}</strong>? This
                 action cannot be undone.
               </p>
-              <div className="d-flex gap-2 mt-3">
+              <div className="d-flex gap-2 mt-3" style={{ justifyContent: "center" }}>
                 <button className="sad-btn-create" style={{ background: "#dc2626" }} onClick={handleDelete}>
                   Delete
                 </button>

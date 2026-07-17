@@ -13,7 +13,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
-import { useAuth } from "./AuthContext";
+import AdminSidebar from "./AdminSidebar";
 import "../admin/SuperAdminDashboard.css";
 import "./dashboard.css";
 
@@ -26,15 +26,6 @@ const getTypeBadgeClass = (type) => {
   return "dash-type-badge--product";
 };
 
-const getInitials = (name, email) => {
-  const source = name?.trim() ? name.trim() : email?.split("@")[0] || "A";
-  return source
-    .split(/[\s._-]/)
-    .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase() || "")
-    .join("");
-};
-
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString("en-GB", {
     day: "2-digit",
@@ -43,7 +34,6 @@ const formatDate = (iso) =>
   });
 
 const Dashboard = () => {
-  const { logout } = useAuth();
   const [visitorData, setVisitorData] = useState([]);
   const [recentContent, setRecentContent] = useState([]);
   const [mostActiveAdmin, setMostActiveAdmin] = useState(null);
@@ -158,59 +148,7 @@ const Dashboard = () => {
       </Helmet>
 
       <div className="sad-wrapper">
-        {/* Sidebar — same shell as Super Admin Management / Audit Log */}
-        <aside className="sad-sidebar">
-          <div className="sad-sidebar-brand">ADMIN CONSOLE</div>
-          <nav className="sad-nav">
-            <div className="sad-nav-item active">
-              <i className="bi bi-grid-1x2"></i>
-              <span>Dashboard</span>
-            </div>
-            <Link to="/super-admin" className="sad-nav-item">
-              <i className="bi bi-people"></i>
-              <span>User Management</span>
-            </Link>
-            {me?.role === "superAdmin" && (
-              <Link to="/dashboard/audit" className="sad-nav-item">
-                <i className="bi bi-journal-text"></i>
-                <span>Audit Log</span>
-              </Link>
-            )}
-            <Link to="/dashboard/job-applications" className="sad-nav-item">
-              <i className="bi bi-inbox-fill"></i>
-              <span>Job Applications</span>
-            </Link>
-            <Link to="/dashboard/career-jobs" className="sad-nav-item">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Career Jobs</span>
-            </Link>
-          </nav>
-          <div className="sad-sidebar-footer">
-            <div className="sad-profile-row">
-              {me?.email && (
-                <>
-                  <div className="sad-avatar sad-avatar-sm">
-                    {getInitials(me.name, me.email)}
-                  </div>
-                  <div className="sad-profile-info">
-                    <div className="sad-profile-name">
-                      {me.name || me.email.split("@")[0]}
-                    </div>
-                    <div className="sad-profile-email">{me.email}</div>
-                  </div>
-                </>
-              )}
-              <button
-                className="sad-logout-btn"
-                title="Logout"
-                onClick={logout}
-                style={{ marginLeft: "auto" }}
-              >
-                <i className="bi bi-box-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </aside>
+        <AdminSidebar active="dashboard" />
 
         {/* Main content */}
         <main className="sad-main">

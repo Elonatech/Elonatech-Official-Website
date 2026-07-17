@@ -4,8 +4,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { BASEURL } from "../../BaseURL/BaseURL";
-import { useAuth } from "./AuthContext";
 import { Helmet } from "react-helmet-async";
+import AdminSidebar from "./AdminSidebar";
 import "./SuperAdminDashboard.css";
 
 const getInitials = (name, email) => {
@@ -25,7 +25,6 @@ const getRoleBadge = (role) => {
 };
 
 const SuperAdminDashboard = () => {
-  const { logout } = useAuth();
   const [admins, setAdmins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -279,87 +278,7 @@ const SuperAdminDashboard = () => {
       </Helmet>
 
       <div className="sad-wrapper">
-        {/* Sidebar */}
-        <aside className="sad-sidebar">
-          <div className="sad-sidebar-brand">ADMIN CONSOLE</div>
-          <nav className="sad-nav">
-            <Link to="/dashboard" className="sad-nav-item">
-              <i className="bi bi-grid-1x2"></i>
-              <span>Dashboard</span>
-            </Link>
-            <div className="sad-nav-item active">
-              <i className="bi bi-people"></i>
-              <span>User Management</span>
-            </div>
-            {currentIsSuperAdmin && (
-              <Link to="/dashboard/audit" className="sad-nav-item">
-                <i className="bi bi-journal-text"></i>
-                <span>Audit Log</span>
-              </Link>
-            )}
-            <Link to="/dashboard/job-applications" className="sad-nav-item">
-              <i className="bi bi-inbox-fill"></i>
-              <span>Job Applications</span>
-            </Link>
-
-            <Link to="/dashboard/career-jobs" className="sad-nav-item">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Career Jobs</span>
-            </Link>
-
-            <Link to="/dashboard/blog-list" className="sad-nav-item">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Blog List</span>
-            </Link>
-
-            {/* <Link to="/dashboard/subscribers" className="sad-nav-item">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Subscribers</span>
-            </Link>
-
-            <Link to="/dashboard/quotes" className="sad-nav-item">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Quotes</span>
-            </Link>
-            <Link to="/dashboard/etmpdp" className="sad-nav-item">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Etmpdp</span>
-            </Link>
-            <Link to="/dashboard/orders" className="sad-nav-item">
-              <i className="bi bi-briefcase-fill"></i>
-              <span>Orders</span>
-            </Link> */}
-
-          </nav>
-          <div className="sad-sidebar-footer">
-            <div className="sad-profile-row">
-              {(() => {
-                const me = admins.find((a) => a._id === currentAdminId);
-                return me ? (
-                  <>
-                    <div className="sad-avatar sad-avatar-sm">
-                      {getInitials(me.name, me.email)}
-                    </div>
-                    <div className="sad-profile-info">
-                      <div className="sad-profile-name">
-                        {me.name || me.email.split("@")[0]}
-                      </div>
-                      <div className="sad-profile-email">{me.email}</div>
-                    </div>
-                  </>
-                ) : null;
-              })()}
-              <button
-                className="sad-logout-btn"
-                title="Logout"
-                onClick={logout}
-                style={{ marginLeft: "auto" }}
-              >
-                <i className="bi bi-box-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </aside>
+        <AdminSidebar active="user-management" />
 
         {/* Main Content */}
         <main className="sad-main">

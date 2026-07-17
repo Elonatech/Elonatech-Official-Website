@@ -157,6 +157,10 @@ const AuditLog = lazy(() => import("./components/admin/AuditLog"));
 const JobApplications = lazy(() => import("./components/admin/JobApplications"));
 const CareerJobs = lazy(() => import("./components/admin/CareerJobs"));
 const BlogList = lazy(() => import("./components/admin/blogList"));
+const Orders = lazy(() => import("./components/admin/orders"));
+const Quotes = lazy(() => import("./components/admin/quotes"));
+const EtmpdpList = lazy(() => import("./components/admin/etmpdpList"));
+const Subscribers = lazy(() => import("./components/admin/subscribers"));
 // import Mailchimp from './components/mailchimp/mailchimp';
 
 
@@ -660,6 +664,26 @@ const router = createBrowserRouter([
    {
     path: "/dashboard/blog-list",
     element: <Suspense fallback={<></>}><PrivateRoute><BlogList /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/orders",
+    element: <Suspense fallback={<></>}><PrivateRoute><Orders /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/quotes",
+    element: <Suspense fallback={<></>}><PrivateRoute><Quotes /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/etmpdp",
+    element: <Suspense fallback={<></>}><PrivateRoute><EtmpdpList /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/subscribers",
+    element: <Suspense fallback={<></>}><PrivateRoute><Subscribers /></PrivateRoute></Suspense>
   },
 
 ]);
