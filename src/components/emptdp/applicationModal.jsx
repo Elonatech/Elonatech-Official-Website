@@ -140,7 +140,7 @@ const ApplicationModal = ({ isOpen, onClose }) => {
       formData.append("statement", statement.trim());
       formData.append("file", file);
 
-      const res = await axios.post(`${BASEURL}/api/v1/email/emptdp`, formData);
+      const res = await axios.post(`${BASEURL}/api/v1/email/emptdp`, formData, { timeout: 25000 });
 
       if (res.data.status === "success") {
         toast.success("Application Sent Successfully");
@@ -160,7 +160,11 @@ const ApplicationModal = ({ isOpen, onClose }) => {
       }
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error(error.response?.data?.message || "Something went wrong. Please try again.");
+      toast.error(
+        error.code === "ECONNABORTED"
+          ? "This is taking too long — please check your connection and try again."
+          : error.response?.data?.message || "Something went wrong. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }

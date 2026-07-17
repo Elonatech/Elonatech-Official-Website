@@ -642,7 +642,18 @@ const SingleProduct = () => {
                         <div className="" key={data.id}>
                           <button
                             className="btn btn-dark mt-3"
-                            onClick={() => addItem({ ...data, stock: data.quantity })}
+                            onClick={() => {
+                              addItem({ ...data, stock: data.quantity });
+                              toast.success(`${data.name} added to cart!`, {
+                                position: "bottom-right",
+                                autoClose: 4000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                              });
+                            }}
                           >
                             <b>Add To Cart</b>
                           </button>

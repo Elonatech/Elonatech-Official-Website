@@ -57,7 +57,7 @@ const Checkout = () => {
       const response = await axios.post(
         `${BASEURL}/api/v1/email/checkout`,
         newData,
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" }, timeout: 25000 }
       );
 
       toast.success("Order Successfully Sent!!!");
@@ -68,9 +68,11 @@ const Checkout = () => {
       emptyCart();
     } catch (error) {
       const message =
-        error.response?.data?.message ||
-        (typeof error.response?.data === "string" ? error.response.data : null) ||
-        "Something went wrong. Please try again.";
+        error.code === "ECONNABORTED"
+          ? "This is taking too long — please check your connection and try again."
+          : error.response?.data?.message ||
+            (typeof error.response?.data === "string" ? error.response.data : null) ||
+            "Something went wrong. Please try again.";
       toast.error(message);
       setButtonDisabled(false);
     }

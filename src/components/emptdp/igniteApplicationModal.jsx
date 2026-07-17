@@ -17,6 +17,7 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
   const [programTrack, setProgramTrack] = useState("");
   const [statement, setStatement] = useState("");
   const [file, setFile] = useState(null);
+  const [siwesLetter, setSiwesLetter] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Honeypot — bots fill this, humans don't see it
@@ -46,7 +47,9 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
     const secondsSinceLastSubmit = (Date.now() - lastSubmitTime) / 1000;
     if (lastSubmitTime && secondsSinceLastSubmit < 60) {
       toast.error(
-        `Please wait ${Math.ceil(60 - secondsSinceLastSubmit)} seconds before submitting again.`
+        `Please wait ${Math.ceil(
+          60 - secondsSinceLastSubmit
+        )} seconds before submitting again.`
       );
       return false;
     }
@@ -57,7 +60,9 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
     } else if (fullName.trim().length < 3) {
       errors.push("Full name must be at least 3 characters.");
     } else if (!/^[a-zA-Z\s'-]+$/.test(fullName.trim())) {
-      errors.push("Full name can only contain letters, spaces, hyphens, and apostrophes.");
+      errors.push(
+        "Full name can only contain letters, spaces, hyphens, and apostrophes."
+      );
     }
 
     // Email
@@ -114,6 +119,16 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
       errors.push("CV file must not exceed 15 MB.");
     }
 
+    // Siwes letter — optional
+    if (siwesLetter) {
+      const allowedTypes = ["application/pdf", "image/jpeg"];
+      if (!allowedTypes.includes(siwesLetter.type)) {
+        errors.push("Siwes letter must be a PDF or JPEG file.");
+      } else if (siwesLetter.size > 15 * 1024 * 1024) {
+        errors.push("Siwes letter must not exceed 15 MB.");
+      }
+    }
+
     if (errors.length > 0) {
       errors.forEach((err) => toast.error(err));
       return false;
@@ -141,8 +156,9 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
       formData.append("programTrack", programTrack.trim());
       formData.append("statement", statement.trim());
       formData.append("file", file);
+      if (siwesLetter) formData.append("siwesLetter", siwesLetter);
 
-      const res = await axios.post(`${BASEURL}/api/v1/email/ignite`, formData);
+      const res = await axios.post(`${BASEURL}/api/v1/email/ignite`, formData, { timeout: 25000 });
 
       if (res.data.status === "success") {
         toast.success("Application Sent Successfully");
@@ -156,6 +172,7 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
         setProgramTrack("");
         setStatement("");
         setFile(null);
+        setSiwesLetter(null);
 
         onClose();
       } else {
@@ -163,7 +180,11 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
       }
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error(error.response?.data?.message || "Something went wrong. Please try again.");
+      toast.error(
+        error.code === "ECONNABORTED"
+          ? "This is taking too long — please check your connection and try again."
+          : error.response?.data?.message || "Something went wrong. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -185,7 +206,12 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
       <div className="applymodal-backdrop" onClick={onClose}></div>
 
       {/* Modal box */}
-      <div className="applymodal-wrapper" role="dialog" aria-modal="true" aria-labelledby="ignitemodal-title">
+      <div
+        className="applymodal-wrapper"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ignitemodal-title"
+      >
         <div className="applymodal-box">
           {/* Header */}
           <div className="applymodal-header">
@@ -193,11 +219,19 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
               <h2 id="ignitemodal-title" className="applymodal-title">
                 Apply to ETMPDP Ignite
               </h2>
-              <p className="applymodal-subtitle">Limited spaces available per cohort.</p>
+              <p className="applymodal-subtitle">
+                Limited spaces available per cohort.
+              </p>
             </div>
             <div className="applymodal-header-right">
-              <span className="applymodal-badge">Now Accepting Applications</span>
-              <button className="applymodal-close" onClick={onClose} aria-label="Close modal">
+              <span className="applymodal-badge">
+                Now Accepting Applications
+              </span>
+              <button
+                className="applymodal-close"
+                onClick={onClose}
+                aria-label="Close modal"
+              >
                 &times;
               </button>
             </div>
@@ -255,7 +289,9 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
 
             {/* Location */}
             <div className="applymodal-field">
-              <label className="applymodal-label">Location — City / State</label>
+              <label className="applymodal-label">
+                Location — City / State
+              </label>
               <input
                 type="text"
                 value={location}
@@ -268,7 +304,9 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
             {/* Qualification + Specialization */}
             <div className="applymodal-row">
               <div className="applymodal-field">
-                <label className="applymodal-label">Current Academic Status</label>
+                <label className="applymodal-label">
+                  Current Academic Status
+                </label>
                 <select
                   value={qualification}
                   onChange={(e) => setQualification(e.target.value)}
@@ -326,17 +364,46 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
                 className="applymodal-input applymodal-file"
               />
               {file ? (
-                <span className="applymodal-file-hint" style={{ color: "#28a745" }}>
+                <span
+                  className="applymodal-file-hint"
+                  style={{ color: "#28a745" }}
+                >
                   Selected: {file.name}
                 </span>
               ) : (
-                <span className="applymodal-file-hint">PDF only — max 15 MB</span>
+                <span className="applymodal-file-hint">
+                  PDF only — max 15 MB
+                </span>
+              )}
+            </div>
+
+            <div className="applymodal-field">
+              <label className="applymodal-label">Upload Siwes letter (Optional)</label>
+              <input
+                type="file"
+                accept=".pdf, .jpeg, .jpg"
+                onChange={(e) => setSiwesLetter(e.target.files[0])}
+                className="applymodal-input applymodal-file"
+              />
+              {siwesLetter ? (
+                <span
+                  className="applymodal-file-hint"
+                  style={{ color: "#28a745" }}
+                >
+                  Selected: {siwesLetter.name}
+                </span>
+              ) : (
+                <span className="applymodal-file-hint">
+                  PDF/jpeg — max 15 MB
+                </span>
               )}
             </div>
 
             {/* Statement */}
             <div className="applymodal-field">
-              <label className="applymodal-label">Short Statement of Purpose</label>
+              <label className="applymodal-label">
+                Short Statement of Purpose
+              </label>
               <textarea
                 rows={4}
                 value={statement}
@@ -344,11 +411,17 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
                 placeholder="Tell us why you want to join ETMPDP Ignite and what you hope to achieve..."
                 className="applymodal-input applymodal-textarea"
               />
-              <span className="applymodal-file-hint">{statement.length}/1000 characters</span>
+              <span className="applymodal-file-hint">
+                {statement.length}/1000 characters
+              </span>
             </div>
 
             {/* Submit */}
-            <button type="submit" className="applymodal-submit" disabled={isSubmitting}>
+            <button
+              type="submit"
+              className="applymodal-submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Submitting..." : "Submit Application"}
             </button>
           </form>
