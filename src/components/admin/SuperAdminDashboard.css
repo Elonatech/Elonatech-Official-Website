@@ -330,6 +330,37 @@
   text-transform: uppercase;
 }
 
+/* Status dropdown — a pill-shaped select with a custom caret and hover
+   feedback, so it reads clearly as an interactive control. Pair with a
+   status colour class (job-status-*) for the background/text colour. */
+.sad-status-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 4px 26px 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236b7280'%3E%3Cpath d='M4 6h8l-4 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 9px;
+  transition: filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sad-status-select:hover {
+  filter: brightness(0.96);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+}
+
+.sad-status-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
+}
+
 .sad-role-super {
   background: #ede9fe;
   color: #7c3aed;
@@ -543,6 +574,19 @@
   font-weight: 600;
   color: #374151;
   margin-bottom: 6px;
+}
+
+/* Read-only value styled to match .form-control inputs, so display modals
+   (e.g. Order Details) feel consistent with the form modals */
+.sad-readonly {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 14px;
+  color: #374151;
+  background: #f9fafb;
+  min-height: 40px;
+  word-break: break-word;
 }
 
 .sad-password-wrap {

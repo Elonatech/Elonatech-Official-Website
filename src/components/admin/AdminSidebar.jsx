@@ -27,6 +27,9 @@ const NAV_ITEMS = [
   { key: "quotes", label: "Quotes", to: "/dashboard/quotes", icon: "bi-file-earmark-ruled" },
   { key: "etmpdp", label: "Etmpdp", to: "/dashboard/etmpdp", icon: "bi-mortarboard" },
   { key: "orders", label: "Orders", to: "/dashboard/orders", icon: "bi-cart-check" },
+  { key: "consultations", label: "Consultations", to: "/dashboard/consultations", icon: "bi-chat-dots" },
+  { key: "retainerships", label: "Retainerships", to: "/dashboard/retainerships", icon: "bi-calendar-check" },
+  { key: "contacts", label: "Contacts", to: "/dashboard/contacts", icon: "bi-telephone" },
 ];
 
 const AdminSidebar = ({ active }) => {
