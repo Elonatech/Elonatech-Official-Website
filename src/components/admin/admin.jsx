@@ -15,6 +15,8 @@ const AdminLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [rememberMe, setRememberMe] = useState(false);
+
   // Step 2 state — only shown when the backend says 2FA is required
   const [totpRequired, setTotpRequired] = useState(false);
   const [adminId, setAdminId] = useState(null);
@@ -30,7 +32,7 @@ const AdminLogin = () => {
     try {
       const res = await axios.post(
         `${BASEURL}/api/v1/auth/login`,
-        { email, password },
+        { email, password, rememberMe },
         { headers: { "Content-Type": "application/json" } }
       );
 
@@ -60,6 +62,7 @@ const AdminLogin = () => {
       const res = await axios.post(`${BASEURL}/api/v1/auth/totp/login`, {
         adminId,
         token: totpToken,
+        rememberMe,
       });
 
       localStorage.setItem("token", JSON.stringify(res.data.access));
@@ -178,6 +181,15 @@ const AdminLogin = () => {
                   </button>
                 </div>
               </div>
+
+              <label className="alogin-remember">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                />
+                Remember me
+              </label>
 
               <button type="submit" className="alogin-submit" disabled={isSubmitting}>
                 {isSubmitting ? "Signing in..." : "Sign In to Dashboard"}

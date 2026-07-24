@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 import { BASEURL } from '../../BaseURL/BaseURL'
+import { sanitizeName } from '../../utils/sanitizeName'
 import { formatDistanceToNowStrict } from 'date-fns'
 import { BsReply } from 'react-icons/bs'
 import './blogComment.css'
@@ -146,8 +148,10 @@ const BlogComments = ({ blogId }) => {
       persistCommenterInfo()
       setNewComment('')
       await fetchComments()
+      toast.success('Your comment has been posted!')
     } catch (error) {
       console.error('Error submitting comment:', error)
+      toast.error('Failed to post your comment. Please try again.')
     }
   }
 
@@ -172,8 +176,10 @@ const BlogComments = ({ blogId }) => {
         ...prevReplies,
         [commentId]: [...(prevReplies[commentId] || []), newReplyData]
       }))
+      toast.success('Your reply has been posted!')
     } catch (error) {
       console.error('Error submitting reply:', error)
+      toast.error('Failed to post your reply. Please try again.')
     }
   }
 
@@ -252,7 +258,7 @@ const BlogComments = ({ blogId }) => {
               id='comment-name'
               placeholder='Your name'
               value={userName}
-              onChange={e => setUsername(e.target.value)}
+              onChange={e => setUsername(sanitizeName(e.target.value))}
               required
             />
           </div>
@@ -367,7 +373,7 @@ const BlogComments = ({ blogId }) => {
                         type='text'
                         placeholder='Your name'
                         value={userName}
-                        onChange={e => setUsername(e.target.value)}
+                        onChange={e => setUsername(sanitizeName(e.target.value))}
                         required
                       />
                     </div>
@@ -407,6 +413,9 @@ const BlogComments = ({ blogId }) => {
                           <div className='nameTime'>
                             <span className='reply-author'>
                               {reply.userName || 'Anonymous'}
+                              {reply.isAdmin && (
+                                <span className='reply-admin-badge'>Team</span>
+                              )}
                             </span>
                             <span className='reply-date'>
                               {formatDistanceToNowStrict(

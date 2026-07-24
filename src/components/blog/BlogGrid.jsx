@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { BASEURL } from '../../BaseURL/BaseURL';
-import Loading from '../Loading/Loading';
-import DOMPurify from 'dompurify';
-import BlogPagination from './blogPagination/blogPagination';
-import './blog.css';
-import { Helmet } from 'react-helmet-async';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { BASEURL } from "../../BaseURL/BaseURL";
+import Loading from "../Loading/Loading";
+import DOMPurify from "dompurify";
+import BlogPagination from "./blogPagination/blogPagination";
+import "./blog.css";
+import { Helmet } from "react-helmet-async";
 
 const FILTERS = [
-  { key: 'all', label: 'All' },
-  { key: 'news', label: 'News' },
-  { key: 'trends', label: 'Trends' },
-  { key: 'Info', label: 'Info' },
-  { key: 'editorial', label: 'Editorial' },
+  { key: "all", label: "All" },
+  { key: "news", label: "News" },
+  { key: "trends", label: "Trends" },
+  { key: "Info", label: "Info" },
+  { key: "editorial", label: "Editorial" },
 ];
 
-const normalizeCategories = raw => {
+const normalizeCategories = (raw) => {
   let categories = raw;
-  if (typeof categories === 'string') {
+  if (typeof categories === "string") {
     try {
       categories = JSON.parse(categories);
     } catch (err) {
@@ -33,18 +33,24 @@ const normalizeCategories = raw => {
 // Strips HTML tags from the rich-text description and truncates on a word
 // boundary, so the card preview never cuts off mid-tag or mid-word.
 const getExcerpt = (html, maxLength = 130) => {
-  const plainText = DOMPurify.sanitize(html || '', { ALLOWED_TAGS: [] })
-    .replace(/\s+/g, ' ')
+  const plainText = DOMPurify.sanitize(html || "", { ALLOWED_TAGS: [] })
+    .replace(/\s+/g, " ")
     .trim();
   if (plainText.length <= maxLength) return plainText;
-  return plainText.slice(0, maxLength).replace(/\s+\S*$/, '') + '…';
+  return plainText.slice(0, maxLength).replace(/\s+\S*$/, "") + "…";
 };
 
 // Shared card-grid + pill-filter listing, used by /blog, /news and /trends.
 // All three read from the same Blog collection and just differ in heading,
 // meta tags, the base path used for pagination links, and which pill is
 // active by default.
-const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, canonicalPath }) => {
+const BlogGrid = ({
+  initialFilter = "all",
+  basePath,
+  pageHeading,
+  metaTitle,
+  canonicalPath,
+}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -52,7 +58,7 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
   const [pageNumberLimit, setPageNumberLimit] = useState(4);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(4);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [activeFilter, setActiveFilter] = useState(initialFilter);
 
   useEffect(() => {
@@ -62,7 +68,7 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
         setData(response.data.getAllBlogs || []);
         setIsLoading(true);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
         setIsLoading(true);
       }
     };
@@ -76,32 +82,32 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
     setMinPageNumberLimit(0);
   }, [activeFilter]);
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email.trim()) {
-      toast.error('Please enter your email address.');
+      toast.error("Please enter your email address.");
       return;
     }
     try {
       const newData = { email };
       await axios.post(`${BASEURL}/api/v1/email/mailchimp`, newData, {
-        headers: { 'Content-Type': 'application/json' }
+        headers: { "Content-Type": "application/json" },
       });
-      toast.success('Subscribed successfully!');
-      setEmail('');
+      toast.success("Subscribed successfully!");
+      setEmail("");
     } catch (error) {
-      toast.error('Failed to subscribe. Please try again.');
+      toast.error("Failed to subscribe. Please try again.");
     }
   };
 
-  const paginate = page => setCurrentPage(page);
+  const paginate = (page) => setCurrentPage(page);
 
   const filteredData =
-    activeFilter === 'all'
+    activeFilter === "all"
       ? data
-      : data.filter(item =>
+      : data.filter((item) =>
           normalizeCategories(item.category)
-            .map(c => String(c).toLowerCase())
+            .map((c) => String(c).toLowerCase())
             .includes(activeFilter)
         );
 
@@ -125,83 +131,94 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
     }
   };
 
-  const generateBlogLink = (item, page) => `${basePath}/${item.slug}/${item._id}?page=${page}`;
+  const generateBlogLink = (item, page) =>
+    `${basePath}/${item.slug}/${item._id}?page=${page}`;
 
   return (
     <>
       <Helmet>
         <title>{metaTitle}</title>
         <meta
-          name='description'
+          name="description"
           content="We'd love to share our knowledge, experiences and the latest news, trends and info with you"
         />
-        <link rel='canonical' href={canonicalPath} />
+        <link rel="canonical" href={canonicalPath} />
       </Helmet>
 
-      <div className='container-fluid blog-section'>
-        <div className='text-content'>
+      <div className="container-fluid blog-section">
+        <div className="text-content">
           <h2>{pageHeading}</h2>
           <h5>Offering regularly updated and trendy contents</h5>
-          <p className='lead'>
-            We'd love to share our knowledge, experiences and the latest news, trends and info with you.
+          <p className="lead">
+            We'd love to share our knowledge, experiences and the latest news,
+            trends and info with you.
           </p>
         </div>
       </div>
 
-      <div className='container mb-5'>
-        <div className='row'>
-          <div className='col-lg-9 col-md-8'>
-            <div className='container'>
-              <div className='blog-pill-bar'>
-                {FILTERS.map(f => (
+      <div className="container mb-5">
+        <div className="row">
+          <div className="col-lg-9 col-md-8">
+            <div className="container">
+              <div className="blog-pill-bar">
+                {FILTERS.map((f) => (
                   <button
                     key={f.key}
-                    type='button'
-                    className={`blog-pill ${activeFilter === f.key ? 'active' : ''}`}
+                    type="button"
+                    className={`blog-pill ${
+                      activeFilter === f.key ? "active" : ""
+                    }`}
                     onClick={() => setActiveFilter(f.key)}
                   >
                     {f.label}
                   </button>
                 ))}
               </div>
-              <div className='row'>
+              <div className="row">
                 {isLoading ? (
                   currentPosts.length === 0 ? (
-                    <div className='blog-empty-state'>
+                    <div className="blog-empty-state">
                       No posts found in this category yet.
                     </div>
                   ) : (
-                    currentPosts.map(item => {
+                    currentPosts.map((item) => {
                       const categories = normalizeCategories(item.category);
 
                       return (
-                        <div className='col-lg-4 mb-4' key={item._id}>
+                        <div className="col-lg-4 mb-4" key={item._id}>
                           <Link
-                            className='text-decoration-none text-dark blog-card-link'
+                            className="text-decoration-none text-dark blog-card-link"
                             to={generateBlogLink(item, currentPage)}
                           >
-                            <div className='blog-card h-100'>
-                              <div className='blog-card-img-wrap'>
+                            <div className="blog-card h-100">
+                              <div className="blog-card-img-wrap">
                                 <img
                                   src={item.cloudinary_id}
-                                  className='blog-card-img'
+                                  className="blog-card-img"
                                   alt={item.title}
                                 />
                               </div>
-                              <div className='blog-card-body'>
-                                <div className='blog-card-badges'>
-                                  {categories.map(cat => (
-                                    <span key={cat} className='blog-card-badge'>
+                              <div className="blog-card-body">
+                                <div className="blog-card-badges">
+                                  {categories.map((cat) => (
+                                    <span key={cat} className="blog-card-badge">
                                       {cat}
                                     </span>
                                   ))}
                                 </div>
-                                <h5 className='blog-card-title'>{item.title}</h5>
-                                <p className='blog-card-excerpt'>{getExcerpt(item.excerpt)}</p>
-                                <p className='blog-card-meta'>
-                                  {item.author} / {new Date(item.createdAt).toDateString()}
+                                <h5 className="blog-card-title">
+                                  {item.title}
+                                </h5>
+                                <p className="blog-card-excerpt">
+                                  {getExcerpt(item.excerpt)}
                                 </p>
-                                <span className='blog-card-readmore'>Read More →</span>
+                                <p className="blog-card-meta">
+                                  {item.author} /{" "}
+                                  {new Date(item.createdAt).toDateString()}
+                                </p>
+                                <span className="blog-card-readmore">
+                                  Read More →
+                                </span>
                               </div>
                             </div>
                           </Link>
@@ -210,12 +227,12 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
                     })
                   )
                 ) : (
-                  <div className='d-flex justify-content-center my-5 py-5'>
+                  <div className="d-flex justify-content-center my-5 py-5">
                     <Loading />
                   </div>
                 )}
               </div>
-              <div className='mt-5'>
+              <div className="mt-5">
                 <BlogPagination
                   basePath={basePath}
                   totalPosts={filteredData.length}
@@ -231,34 +248,45 @@ const BlogGrid = ({ initialFilter = 'all', basePath, pageHeading, metaTitle, can
             </div>
           </div>
 
-          <div className='col-lg-3 col-md-4'>
-            <div className='mt-4'>
-              <h5 className='mt-2' style={{ color: '#34548c' }}>Be the first to know</h5>
-              <p>Enter your email address below to subscribe to our newsletter</p>
+          <div className="col-lg-3 col-md-4">
+            <div className="mt-4">
+              <h5 className="mt-2" style={{ color: "#34548c" }}>
+                Be the first to know
+              </h5>
+              <p>
+                Enter your email address below to subscribe to our newsletter
+              </p>
               <form>
-                <div className='mb-3'>
+                <div className="mb-3">
                   <input
-                    type='email'
-                    className='form-control rounded-0'
-                    style={{ width: '15rem' }}
-                    onChange={e => setEmail(e.target.value)}
-                    placeholder='Your email*'
+                    type="email"
+                    className="form-control rounded-0"
+                    style={{ width: "15rem" }}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your email*"
                     required
                   />
                 </div>
-                <div className='d-grid gap-2'>
+                <div className="d-grid gap-2">
                   <button
                     onClick={handleSubmit}
-                    className='btn btn-danger mb-3'
-                    style={{ width: '15rem' }}
+                    className="btn btn-danger mb-3"
+                    style={{ width: "15rem" }}
                   >
                     Subscribe
                   </button>
                 </div>
-                <div className='form-check'>
-                  <input type='checkbox' className='form-check-input' required />
-                  <label className='form-check-label'>
-                    I accept the <Link className='ps-2 text-dark' to={'/policy'}>Privacy Policy<span className='text-danger'>*</span></Link>
+                <div className="form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    required
+                  />
+                  <label className="form-check-label">
+                    I accept the{" "}
+                    <Link className="ps-2 text-dark" to={"/policy"}>
+                      Privacy Policy<span className="text-danger">*</span>
+                    </Link>
                   </label>
                 </div>
               </form>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../BaseURL/BaseURL";
+import { sanitizeName } from "../../utils/sanitizeName";
 import axios from "axios";
 import "../emptdp/applicationModal.css";
 
@@ -121,7 +122,7 @@ const ConsultForm = () => {
                 <div className="applymodal-row">
                   <div className="applymodal-field">
                     <label className="applymodal-label">Name</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your full name" className="applymodal-input" />
+                    <input type="text" value={name} onChange={(e) => setName(sanitizeName(e.target.value))} placeholder="Your full name" className="applymodal-input" />
                   </div>
                   <div className="applymodal-field">
                     <label className="applymodal-label">Email Address</label>

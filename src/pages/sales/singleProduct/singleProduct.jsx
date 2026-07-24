@@ -366,9 +366,11 @@ const SingleProduct = () => {
     const fallbackImage =
       "https://res.cloudinary.com/elonatech/image/upload/v1729523978/product_computer_qq8vkk.jpg";
     const productImage = product?.images?.[0]?.url || fallbackImage;
+    // The route is /product/:slug/:id — both segments are required, otherwise
+    // the URL falls through to the SPA fallback instead of the product page.
     const productUrl = `https://elonatech.com.ng/product/${
-      product?.slug || ""
-    }`;
+      product?.slug || slug
+    }/${product?._id || id}`;
 
     const structuredData = {
       "@context": "https://schema.org",
@@ -392,7 +394,11 @@ const SingleProduct = () => {
 
     return {
       title: `${product?.name || "Product"} - Elonatech Nigeria`,
-      description: product?.description || "Product description unavailable",
+      description: (product?.description || "Product description unavailable")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 160),
       image: productImage,
       url: productUrl,
       structuredData,
@@ -408,6 +414,7 @@ const SingleProduct = () => {
         <Helmet>
           <title>{seoData.title}</title>
           <meta name="description" content={seoData.description} />
+          <link rel="canonical" href={seoData.url} />
 
           {/* Open Graph Tags */}
           <meta property="og:title" content={seoData.title} />

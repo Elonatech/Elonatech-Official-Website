@@ -9,14 +9,7 @@ const TeamAdmin = () => {
         <title>Violet Laura O. - Tech Solution, Digital Solution</title>
         <meta
           name="description"
-          content="
-        Violet Laura is the Employee Relations and Admin Manager of Elonatech Nigeria Limited. 
-         She is a seasoned Document Controller by profession, and has worked with major international and indigenous 
-         reputable engineering companies within the West African Countries.
-         She is a hardworking and conscientious professional with more than 11 Years hands-on experience in managing company 
-         document through Electronic Document Management System (EDMS) 
-         in engineering environment while also ensuring their accuracy, quality and integrity in accordance with the company’s and archival procedures.
-       "
+          content="Violet Laura is the Employee Relations and Admin Manager of Elonatech Nigeria Limited. She is a seasoned Document Controller by profession, and has worked with major international and indigenous reputable engineering companies within the West African Countries. She is a hardworking and conscientious professional with more than 11 Years hands-on experience in managing company document through Electronic Document Management System (EDMS) in engineering environment while also ensuring their accuracy, quality and integrity in accordance with the company’s and archival procedures."
         />
         <link rel="canonical" href="https://elonatech.com.ng/violet-oku" />
       </Helmet>

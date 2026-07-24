@@ -8,7 +8,7 @@ const Retainerbanner = () => {
         <div
           className='getintouch-wrapper'
           style={{
-            backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1708529877/getIntouchBanner/Engage_in_a_Conversation_with_a_Specialist_Today_lomk1a.jpg)`
+            backgroundImage: `url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783674495/Engage_in_a_Conversation_with_a_Specialist_Today_lomk1a_g5vr6y.jpg`
           }}
         >
           <div className='getintouch-content'>

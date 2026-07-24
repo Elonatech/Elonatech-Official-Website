@@ -46,7 +46,7 @@ const JobApplicationSuccess = () => {
       <div className="success-page">
         <div className="success-content">
           <img
-            src="https://res.cloudinary.com/elonatech/image/upload/v1733321503/1ML5gECB9Y_q2yedk.gif"
+            src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694072/1ML5gECB9Y_q2yedk_cwnhvw.gif"
             alt="Application Success"
             className="success-image"
           />

@@ -212,6 +212,16 @@ const EtmpdpList = () => {
                     </span>
                   </div>
                 </div>
+                <div className="mb-3">
+                  <label className="sad-label">Confirmation Email</label>
+                  <div>
+                    <span
+                      className={`sad-role-badge ${viewing.emailSent ? "job-status-active" : "job-status-draft"}`}
+                    >
+                      {viewing.emailSent ? "Sent" : "Not sent"}
+                    </span>
+                  </div>
+                </div>
               </div>
               <div className="sad-form-row">
                 <div className="mb-3">
@@ -301,16 +311,6 @@ const EtmpdpList = () => {
                     </div>
                   </div>
                 )}
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Confirmation Email</label>
-                <div>
-                  <span
-                    className={`sad-role-badge ${viewing.emailSent ? "job-status-active" : "job-status-draft"}`}
-                  >
-                    {viewing.emailSent ? "Sent" : "Not sent"}
-                  </span>
-                </div>
               </div>
             </div>
           </div>

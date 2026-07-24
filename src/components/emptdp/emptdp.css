@@ -93,7 +93,7 @@
 
 @media (max-width: 576px) {
   .emptdp-section {
-    min-height: 150px;
+    min-height: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
       url("https://res.cloudinary.com/dahnwukbz/image/upload/v1781540864/mobile_view_empdtp_zxlvbd.png");
       background-size: cover;
@@ -101,7 +101,11 @@
     background-position: center;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
+    /* Top padding clears the fixed navbar (logo/hamburger) that overlays
+       the hero; bottom padding is intentionally small so the buttons rest
+       near the image edge, matching the homepage hero. */
+    padding: 65px 20px 12px;
   }
 }
 
@@ -116,7 +120,8 @@
 @media (max-width: 576px) {
   .emptdp-hero-text h2 {
     font-size: 1.2rem;
-    /* margin-top: 10px; */
+    margin-top: 0;
+    margin-bottom: 6px;
   }
 }
 
@@ -156,6 +161,19 @@
   justify-content: center;
 }
 
+@media (max-width: 576px) {
+  .emptdp-cta-buttons {
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .emptdp-btn {
+    padding: 7px 12px;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+}
+
 
 /* ── 2. Why This Program ─────────────────────────────────────────────────── */
 
@@ -193,13 +211,14 @@
   width: 100%;
   height: 360px;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   display: block;
 }
 
 @media (max-width: 767px) {
   .emptdp-why-content {
     flex-direction: column;
+    align-items: stretch;
     gap: 28px;
   }
 

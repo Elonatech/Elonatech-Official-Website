@@ -256,24 +256,44 @@ const EmptdpIgnite = () => {
       {/* ── 1. Hero ────────────────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section ignite-hero-section">
         <div className="emptdp-hero-text">
+          {/* Desktop layout — badge first, full headline + description + both tag lines */}
           <span
-            className="emptdp-mentor-badge"
-            style={{ marginBottom: "16px", display: "inline-block" }}
+            className="emptdp-mentor-badge ignite-desktop-only"
+            style={{ marginBottom: "16px" }}
           >
             ETMPDP Ignite
           </span>
-          <h2>Ignite Your Future Before Graduation</h2>
-          <h5>
+          <h2 className="ignite-desktop-only">Ignite Your Future Before Graduation</h2>
+          <h5 className="ignite-desktop-only">
             The Undergraduate Professional Development Experience of the
             Executive Technology Mentorship &amp; Professional Development
             Program (ETMPDP)
           </h5>
-          <p className="ignite-hero-tag">
+
+          {/* Mobile layout — shorter heading first, badge underneath, condensed tag */}
+          <h2 className="ignite-mobile-only">
+            Executive Technology Mentorship &amp; Professional Development Program
+          </h2>
+          <span
+            className="emptdp-mentor-badge ignite-mobile-only"
+            style={{ marginBottom: "6px" }}
+          >
+            ETMPDP Ignite
+          </span>
+
+          <p className="ignite-hero-tag ignite-desktop-only">
             Designed for Undergraduate Technology Students
           </p>
-          <p className="ignite-hero-tag ignite-hero-tag--italic">
+          <p className="ignite-hero-tag ignite-hero-tag--italic ignite-desktop-only">
             Ideal for SIWES, Industrial Training, Internship &amp; Career
             Development
+          </p>
+
+          <p className="ignite-hero-tag ignite-mobile-only">
+            Designed for Undergraduate Technology Students
+          </p>
+          <p className="ignite-hero-tag ignite-hero-tag--italic ignite-mobile-only">
+            Ideal for SIWES, Internship &amp; Career Development
           </p>
         </div>
         <div className="emptdp-cta-buttons">

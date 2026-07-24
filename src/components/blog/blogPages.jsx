@@ -111,7 +111,7 @@ const BlogPages = () => {
         style={{
           height: "500px",
           marginBottom: "45px",
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1709800940/blog/blog_xpgc41.jpg)`,
+          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783679862/blog_xpgc41_bdvddr.jpg)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover"

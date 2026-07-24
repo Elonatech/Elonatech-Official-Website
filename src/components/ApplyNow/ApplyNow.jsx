@@ -1,13 +1,16 @@
 ﻿import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../BaseURL/BaseURL";
+import { sanitizeName } from "../../utils/sanitizeName";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../emptdp/applicationModal.css";
 
 let lastSubmitTime = 0;
 
-const ApplyNow = () => {
+// `job` is the posting being applied to — { _id, title }. Supplied by the
+// job detail page so the application is linked to a real posting.
+const ApplyNow = ({ job }) => {
   let navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
@@ -19,7 +22,6 @@ const ApplyNow = () => {
   const [address, setAddress] = useState("");
   const [dob, setDob] = useState("");
   const [skill, setSkill] = useState("");
-  const [category, setCategory] = useState("");
   const [status, setStatus] = useState("Unemployed");
   const [file, setFile] = useState(null);
   const [letter, setLetter] = useState("");
@@ -60,7 +62,7 @@ const ApplyNow = () => {
     if (!address.trim()) errors.push("Residence is required.");
     if (!dob) errors.push("Date of birth is required.");
     if (!skill.trim()) errors.push("Skills/Specialty is required.");
-    if (!category) errors.push("Please select a job category.");
+    if (!job?._id) errors.push("No job selected. Please apply from a job posting.");
     if (!file) errors.push("Please upload your CV (PDF).");
     else if (file.type !== "application/pdf") errors.push("Only PDF files are allowed.");
     else if (file.size > 15 * 1024 * 1024) errors.push("CV file must not exceed 15 MB.");
@@ -87,7 +89,10 @@ const ApplyNow = () => {
       formData.append("gender", gender.trim());
       formData.append("address", address.trim());
       formData.append("dob", dob.trim());
-      formData.append("category", category.trim());
+      formData.append("jobId", job._id);
+      // The notification email template still renders `category` — send the
+      // job title so the email reads correctly.
+      formData.append("category", job.title);
       formData.append("status", status.trim());
       formData.append("letter", letter);
       formData.append("skill", skill.trim());
@@ -99,7 +104,7 @@ const ApplyNow = () => {
         toast.success("Job Application Sent Successfully");
         setFirstname(""); setLastname(""); setEmail(""); setNumber("");
         setGender("Male"); setAddress(""); setDob(""); setSkill("");
-        setCategory(""); setStatus("Unemployed"); setFile(null); setLetter("");
+        setStatus("Unemployed"); setFile(null); setLetter("");
         setShowModal(false);
         navigate("/application-success");
       } else {
@@ -121,7 +126,8 @@ const ApplyNow = () => {
     <>
       <div>
         <button
-          className="btn btn-primary border border-light text-light mt- mb-3"
+          className="btn border border-light text-light mt- mb-3"
+          style={{ backgroundColor: "#385994" }}
           onClick={() => setShowModal(true)}
         >
           <h6 className="mt-1">Apply Now</h6>
@@ -148,14 +154,19 @@ const ApplyNow = () => {
                     <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
                   </div>
 
+                  <div className="applymodal-section">
+                    <span className="applymodal-section-icon">&#128100;</span>
+                    <h6 className="applymodal-section-title">Personal Information</h6>
+                  </div>
+
                   <div className="applymodal-row">
                     <div className="applymodal-field">
                       <label className="applymodal-label">First Name</label>
-                      <input type="text" value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder="First name" className="applymodal-input" />
+                      <input type="text" value={firstname} onChange={(e) => setFirstname(sanitizeName(e.target.value))} placeholder="First name" className="applymodal-input" />
                     </div>
                     <div className="applymodal-field">
                       <label className="applymodal-label">Last Name</label>
-                      <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder="Last name" className="applymodal-input" />
+                      <input type="text" value={lastname} onChange={(e) => setLastname(sanitizeName(e.target.value))} placeholder="Last name" className="applymodal-input" />
                     </div>
                   </div>
 
@@ -189,6 +200,13 @@ const ApplyNow = () => {
                     <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Current residence (State, Area, Nearest Bus Stop)" className="applymodal-input" />
                   </div>
 
+                  <hr className="applymodal-divider" />
+
+                  <div className="applymodal-section">
+                    <span className="applymodal-section-icon">&#128188;</span>
+                    <h6 className="applymodal-section-title">Professional Information</h6>
+                  </div>
+
                   <div className="applymodal-field">
                     <label className="applymodal-label">Skills / Specialty</label>
                     <input type="text" value={skill} onChange={(e) => setSkill(e.target.value)} placeholder="Separate each skill with a comma" className="applymodal-input" />
@@ -196,16 +214,14 @@ const ApplyNow = () => {
 
                   <div className="applymodal-row">
                     <div className="applymodal-field">
-                      <label className="applymodal-label">Job Category</label>
-                      <select value={category} onChange={(e) => setCategory(e.target.value)} className="applymodal-input applymodal-select">
-                        <option value="">Select a category</option>
-                        <option value="Graphic Designer/Digital Marketer">Graphic Designer/Digital Marketer</option>
-                        <option value="Full Stack Web developer">Full Stack Web Developer</option>
-                        <option value="Digital Marketer">Digital Marketer</option>
-                        <option value="Motion Graphics Designer/Animator">Motion Graphics Designer/Animator</option>
-                        <option value="Systems/Network Engineer">Systems/Network Engineer</option>
-                        <option value="Marketing & Sales Representative">Marketing & Sales Representative</option>
-                      </select>
+                      <label className="applymodal-label">Applying For</label>
+                      <input
+                        type="text"
+                        value={job?.title || ""}
+                        readOnly
+                        className="applymodal-input"
+                        style={{ background: "#f1f3f5", cursor: "not-allowed" }}
+                      />
                     </div>
                     <div className="applymodal-field">
                       <label className="applymodal-label">Current Employment Status</label>
@@ -218,13 +234,13 @@ const ApplyNow = () => {
                   </div>
 
                   <div className="applymodal-field">
-                    <label className="applymodal-label">Upload your CV (PDF only)</label>
-                    <input type="file" accept=".pdf" onChange={(e) => setFile(e.target.files[0])} className="applymodal-input applymodal-file" />
-                    {file ? (
-                      <span className="applymodal-file-hint" style={{ color: "#28a745" }}>Selected: {file.name}</span>
-                    ) : (
-                      <span className="applymodal-file-hint">PDF only — max 15 MB</span>
-                    )}
+                    <label className="applymodal-label">Upload your CV</label>
+                    <label className={`applymodal-dropzone${file ? " has-file" : ""}`}>
+                      <span className="applymodal-dropzone-icon">{file ? "✅" : "⬆️"}</span>
+                      <p className="applymodal-dropzone-label">{file ? file.name : "Click to upload your CV"}</p>
+                      <p className="applymodal-dropzone-hint">{file ? "Click to replace" : "PDF only — max 15 MB"}</p>
+                      <input type="file" accept=".pdf" onChange={(e) => setFile(e.target.files[0])} />
+                    </label>
                   </div>
 
                   <div className="applymodal-field">

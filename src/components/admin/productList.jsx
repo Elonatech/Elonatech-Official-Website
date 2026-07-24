@@ -9,7 +9,7 @@ import "./SuperAdminDashboard.css";
 
 const PAGE_SIZE = 20;
 
-// Clicking a Link to a lazy-loaded route (BlogDetails/BlogUpdate) navigates
+// Clicking a Link to a lazy-loaded route (singleProduct/ShopUpdate) navigates
 // synchronously, which React 18 flags as "a component suspended while
 // responding to synchronous input". Driving the same navigation through
 // startTransition avoids the warning — same fix already used for the
@@ -20,71 +20,76 @@ const handleTransitionNav = (e, navigate, path) => {
   startTransition(() => navigate(path));
 };
 
-const BlogList = () => {
+const productList = () => {
   const navigate = useNavigate();
-  const [posts, setPosts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchProducts = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`${BASEURL}/api/v1/blog`);
-        setPosts(res.data.getAllBlogs || []);
+        const res = await axios.get(`${BASEURL}/api/v1/product`);
+        setProducts(res.data.getAllProducts || []);
       } catch (error) {
-        toast.error("Failed to load blog posts");
+        toast.error("Failed to load products");
       } finally {
         setLoading(false);
       }
     };
-    fetchPosts();
+    fetchProducts();
   }, []);
 
-  const totalPages = Math.ceil(posts.length / PAGE_SIZE);
-  const paginatedPosts = posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const totalPages = Math.ceil(products.length / PAGE_SIZE);
+  const paginatedProducts = products.slice(
+    (page - 1) * PAGE_SIZE,
+    page * PAGE_SIZE
+  );
 
   return (
     <>
       <Helmet>
         <meta name="robots" content="noindex" />
-        <title>Blog List — Elonatech</title>
+        <title>Product List — Elonatech</title>
       </Helmet>
 
       <div className="sad-wrapper">
-        <AdminSidebar active="blog-list" />
+        <AdminSidebar active="product-list" />
 
         <main className="sad-main">
           <div className="sad-header">
             <div>
-              <h4 className="sad-title">Blog List</h4>
-              <p className="sad-subtitle">All published blog posts</p>
+              <h4 className="sad-title">Product List</h4>
+              <p className="sad-subtitle">All published products</p>
             </div>
           </div>
 
           <div className="sad-table-card">
             {loading ? (
-              <div className="sad-loading">Loading blog posts...</div>
-            ) : posts.length === 0 ? (
-              <div className="sad-loading">No blog posts yet.</div>
+              <div className="sad-loading">Loading products...</div>
+            ) : products.length === 0 ? (
+              <div className="sad-loading">No products yet.</div>
             ) : (
               <div className="table-responsive">
                 <table className="sad-table">
                   <thead>
                     <tr>
-                      <th>TITLE</th>
-                      <th>AUTHOR</th>
+                      <th>NAME</th>
+                      <th>PRICE</th>
                       <th>DATE</th>
                       <th>ACTIONS</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {paginatedPosts.map((post) => (
-                      <tr key={post._id}>
-                        <td data-label="Title">{post.title}</td>
-                        <td data-label="Author">{post.author}</td>
+                    {paginatedProducts.map((product) => (
+                      <tr key={product._id}>
+                        <td data-label="Name">{product.name}</td>
+                        <td data-label="Price">
+                          ₦{Number(product.price || 0).toLocaleString()}
+                        </td>
                         <td data-label="Date">
-                          {new Date(post.createdAt).toLocaleDateString(
+                          {new Date(product.createdAt).toLocaleDateString(
                             "en-GB",
                             {
                               day: "2-digit",
@@ -96,13 +101,13 @@ const BlogList = () => {
                         <td data-label="Actions">
                           <span className="job-actions-cell">
                             <Link
-                              to={`/blog/${post.slug || post._id}/${post._id}`}
+                              to={`/product/${product.slug || product._id}/${product._id}`}
                               className="job-app-count-link"
                               onClick={(e) =>
                                 handleTransitionNav(
                                   e,
                                   navigate,
-                                  `/blog/${post.slug || post._id}/${post._id}`
+                                  `/product/${product.slug || product._id}/${product._id}`
                                 )
                               }
                             >
@@ -110,10 +115,14 @@ const BlogList = () => {
                             </Link>
 
                             <Link
-                              to={`/update/${post._id}`}
+                              to={`/product/${product._id}/update`}
                               className="job-app-count-link job-edit-link"
                               onClick={(e) =>
-                                handleTransitionNav(e, navigate, `/update/${post._id}`)
+                                handleTransitionNav(
+                                  e,
+                                  navigate,
+                                  `/product/${product._id}/update`
+                                )
                               }
                             >
                               Edit
@@ -166,4 +175,4 @@ const BlogList = () => {
   );
 };
 
-export default BlogList;
+export default productList;

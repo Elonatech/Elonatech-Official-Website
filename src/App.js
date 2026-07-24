@@ -1,6 +1,6 @@
 // App.js
 // src\App.js
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet, Navigate } from 'react-router-dom';
 import { lazy, useState, Suspense, useEffect } from 'react';
 import { CartProvider } from 'react-use-cart';
 import { ToastContainer } from 'react-toastify';
@@ -55,8 +55,8 @@ const Cctv = lazy(() => import("./components/cctv/cctv"));
 const Internet = lazy(() => import("./components/internet/internet"));
 const Security = lazy(() => import("./components/security/security"));
 const Time = lazy(() => import("./components/time/time"));
-const 
-Blog = lazy(() => import("./components/blog/blog"));
+const
+  Blog = lazy(() => import("./components/blog/blog"));
 const News = lazy(() => import("./components/news/News"));
 const Trends = lazy(() => import("./components/trends/Trends"));
 
@@ -108,18 +108,17 @@ const Video = lazy(() => import("./pages/add/video/Video"))
 const Motion = lazy(() => import("./pages/add/motion/motion"))
 const Uiux = lazy(() => import("./pages/add/uiux/uiux"))
 const Career = lazy(() => import("./pages/add/career/career"))
+const JobDetail = lazy(() => import("./pages/add/career/jobDetail"))
 const Technical = lazy(() => import("./pages/add/technical/technical"))
 const Remote = lazy(() => import("./pages/add/remote/remote"))
 const Livestreaming = lazy(() => import("./pages/add/livestreaming/livestreaming"))
 const Videoconferencing = lazy(() => import("./pages/add/videoconferencing/videoconferencing"))
 
 // ===========================================
-const AnimationCareer = lazy(() => import("./pages/add/animationCareer/animationCareer"))
-const DigitalCareer = lazy(() => import("./pages/add/digitalCareer/digitalCareer"))
-const GraphicCareer = lazy(() => import("./pages/add/graphicCareer/graphicCareer"))
-const MarketingCareer = lazy(() => import("./pages/add/marketingCareer/marketingCareer"))
-const SystemCareer = lazy(() => import("./pages/add/systemCareer/systemCareer"))
-const WebCareer = lazy(() => import("./pages/add/webCareer/webCareer"))
+// The 6 per-role career pages were superseded by the DB-driven /career
+// listing + /career/:slug/:id detail page. Their old routes now redirect to
+// /career, so the components are no longer imported. The files remain in
+// pages/add/*Career/ if the copy is ever needed for reference.
 const Shopwrite = lazy(() => import("./pages/sales/shop/shopWrite/shopWrite"))
 const ComputerWrite = lazy(() => import("./pages/sales/computer/computerWrite"))
 
@@ -157,6 +156,8 @@ const AuditLog = lazy(() => import("./components/admin/AuditLog"));
 const JobApplications = lazy(() => import("./components/admin/JobApplications"));
 const CareerJobs = lazy(() => import("./components/admin/CareerJobs"));
 const BlogList = lazy(() => import("./components/admin/blogList"));
+const Comments = lazy(() => import("./components/admin/comments"));
+const ProductList = lazy(() => import("./components/admin/productList"));
 const Orders = lazy(() => import("./components/admin/orders"));
 const Quotes = lazy(() => import("./components/admin/quotes"));
 const EtmpdpList = lazy(() => import("./components/admin/etmpdpList"));
@@ -512,6 +513,10 @@ const router = createBrowserRouter([
         element: < Career />
       },
       {
+        path: "/career/:slug/:id",
+        element: < JobDetail />
+      },
+      {
         path: "/technical-support",
         element: < Technical />
       },
@@ -528,29 +533,33 @@ const router = createBrowserRouter([
         element: < Videoconferencing />
       },
       // career page
+      // The old per-role career pages are superseded by the database-driven
+      // /career listing and /career/:slug/:id detail pages. They rendered
+      // <ApplyNow /> with no job attached, so applications from them would
+      // fail. Redirect old links (bookmarks, search results) to /career.
       {
         path: "/animation-career",
-        element: < AnimationCareer />
+        element: <Navigate to="/career" replace />
       },
       {
         path: "/digital-career",
-        element: < DigitalCareer />
+        element: <Navigate to="/career" replace />
       },
       {
         path: "/graphic-career",
-        element: < GraphicCareer />
+        element: <Navigate to="/career" replace />
       },
       {
         path: "/marketing-career",
-        element: <  MarketingCareer />
+        element: <Navigate to="/career" replace />
       },
       {
         path: "/system-career",
-        element: < SystemCareer />
+        element: <Navigate to="/career" replace />
       },
       {
         path: "/web-career",
-        element: < WebCareer />
+        element: <Navigate to="/career" replace />
       },
       {
         path: "/write",
@@ -664,11 +673,21 @@ const router = createBrowserRouter([
     element: <Suspense fallback={<></>}><PrivateRoute><CareerJobs /></PrivateRoute></Suspense>
   },
 
-   {
+  {
     path: "/dashboard/blog-list",
     element: <Suspense fallback={<></>}><PrivateRoute><BlogList /></PrivateRoute></Suspense>
   },
 
+  {
+    path: "/dashboard/comments",
+    element: <Suspense fallback={<></>}><PrivateRoute><Comments /></PrivateRoute></Suspense>
+  },
+  
+  {
+    path: "/dashboard/product-list",
+    element: <Suspense fallback={<></>}><PrivateRoute><ProductList /></PrivateRoute></Suspense>
+  },
+  
   {
     path: "/dashboard/orders",
     element: <Suspense fallback={<></>}><PrivateRoute><Orders /></PrivateRoute></Suspense>
@@ -689,7 +708,7 @@ const router = createBrowserRouter([
     element: <Suspense fallback={<></>}><PrivateRoute><Subscribers /></PrivateRoute></Suspense>
   },
 
-    {
+  {
     path: "/dashboard/contacts",
     element: <Suspense fallback={<></>}><PrivateRoute><Contacts /></PrivateRoute></Suspense>
   },
@@ -702,6 +721,16 @@ const router = createBrowserRouter([
   {
     path: "/dashboard/retainerships",
     element: <Suspense fallback={<></>}><PrivateRoute><RetainershipList /></PrivateRoute></Suspense>
+  },
+
+  // Explicit catch-all so a genuinely unknown URL renders the 404 page by
+  // matching, not by falling through to the root route's errorElement (which
+  // also fires on render crashes). Apache serves index.html with a 200 for any
+  // unknown path, so the noindex tag on <Error /> is what keeps these out of
+  // the index.
+  {
+    path: "*",
+    element: <Error />
   },
 
 ]);

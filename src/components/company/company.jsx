@@ -138,8 +138,8 @@ const Company = () => {
                 <img
                   className="image position-absolute w-100 h-100 rounded wow zoomIn lazyload"
                   data-wow-delay="0.9s"
-                  src="https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif"
-                  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709823981/groupPicture/group_discussion_k7mwxx.png"
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif"
+                  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783689965/group_discussion_k7mwxx_mazjpu.png"
                   alt="Company Image"
                 />
               </div>
@@ -185,7 +185,7 @@ const Company = () => {
             <div className=' text-center mt-2 mb-4'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1723798509/group_pics_dg1sql.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693203/group_pics_dg1sql_adgvd8.jpg'
                 className='img-fluid rounded lazyload'
               />
             </div>
@@ -231,7 +231,7 @@ const Company = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709823784/groupPicture/the_team_113_ma7z5p.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783689949/the_team_113_ma7z5p_gayh8i.png'
                 className='img-fluid lazyload rounded'
                 alt=''
               />
@@ -455,7 +455,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234681/homePage/clientLogo/amp-featured-image_fincna.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784812744/amp-featured-image_fincna_bvcdwl.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -465,7 +465,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234684/homePage/clientLogo/lsg_iph8mx.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784812806/lsg_iph8mx_ecjo7f.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -475,7 +475,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234695/homePage/clientLogo/hv_nzxyt1.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674297/hv_nzxyt1_k90ml1.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -485,7 +485,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234749/homePage/clientLogo/kosofe_yuqg5x.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674346/kosofe_yuqg5x_clfnni.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -495,7 +495,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234691/homePage/clientLogo/tru_h9afyy.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674292/tru_h9afyy_dkwrm9.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -505,7 +505,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234742/homePage/clientLogo/feii_a8rzqg.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674327/feii_a8rzqg_tebffi.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -519,7 +519,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234686/homePage/clientLogo/ireti_whpffr.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784812964/ireti_whpffr_hx9ahy.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -529,7 +529,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234744/homePage/clientLogo/remaben_yljc8l.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674334/remaben_yljc8l_k1bgtm.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -539,7 +539,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234696/homePage/clientLogo/domino_i6flnw.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674302/domino_i6flnw_vkftip.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -549,7 +549,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234746/homePage/clientLogo/olajide_e245yh.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674340/olajide_e245yh_gqxpz5.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -559,7 +559,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310619/PFN_Web_Logo_Green_y4sbrw.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693992/PFN_Web_Logo_Green_y4sbrw_tggmtq.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -569,7 +569,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234690/homePage/clientLogo/home_mwhzd9.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674246/home_mwhzd9_rjghhf.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -583,7 +583,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234739/homePage/clientLogo/safebrooks_smeauh.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674322/safebrooks_smeauh_omk8dg.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -593,7 +593,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234750/homePage/clientLogo/pentecostal_cutbi5.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674360/pentecostal_cutbi5_pgdr0e.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -603,7 +603,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234687/homePage/clientLogo/okhma_hrxdi7.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674176/okhma_hrxdi7_e97zik.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -613,7 +613,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234698/homePage/clientLogo/neyant_hesh5e.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674311/neyant_hesh5e_ly3tk2.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -623,7 +623,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234754/homePage/clientLogo/universal_vcrdgw.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674365/universal_vcrdgw_qijwuw.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -633,7 +633,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234683/homePage/clientLogo/women_right_uet6bw.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784813467/women_right_uet6bw_jsmdnp.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -645,9 +645,10 @@ const Company = () => {
             <div className='row  wow fadeInRight' data-wow-delay='0.9s'>
               <div className='col-md-2 col-6'>
                 <div className='card border-0'>
+                  {/*   */}
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234679/homePage/clientLogo/western_buckland_dt19jn.png'
+                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234679/homePage/clientLogo/weste  rn_buckland_dt19jn.png'
                     className='img-fluid lazyload'
                     alt=''
                   />

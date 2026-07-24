@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import NotificationBell from "./NotificationBell";
 
 const getToken = () => JSON.parse(localStorage.getItem("token"));
 
@@ -23,6 +25,8 @@ const NAV_ITEMS = [
   { key: "job-applications", label: "Job Applications", to: "/dashboard/job-applications", icon: "bi-inbox-fill" },
   { key: "career-jobs", label: "Career Jobs", to: "/dashboard/career-jobs", icon: "bi-briefcase-fill" },
   { key: "blog-list", label: "Blog List", to: "/dashboard/blog-list", icon: "bi-file-earmark-text" },
+  { key: "comments", label: "Comments", to: "/dashboard/comments", icon: "bi-chat-square-text" },
+  { key: "product-list", label: "Product List", to: "/dashboard/product-list", icon: "bi-box-seam" },
   { key: "subscribers", label: "Subscribers", to: "/dashboard/subscribers", icon: "bi-envelope" },
   { key: "quotes", label: "Quotes", to: "/dashboard/quotes", icon: "bi-file-earmark-ruled" },
   { key: "etmpdp", label: "Etmpdp", to: "/dashboard/etmpdp", icon: "bi-mortarboard" },
@@ -34,6 +38,7 @@ const NAV_ITEMS = [
 
 const AdminSidebar = ({ active }) => {
   const { logout } = useAuth();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const me = (() => {
     try {
@@ -45,12 +50,44 @@ const AdminSidebar = ({ active }) => {
     }
   })();
 
+  const visibleNavItems = NAV_ITEMS.filter(
+    (item) => !item.superAdminOnly || me?.role === "superAdmin"
+  );
+
   return (
-    <aside className="sad-sidebar">
-      <div className="sad-sidebar-brand">ADMIN CONSOLE</div>
-      <nav className="sad-nav">
-        {NAV_ITEMS.filter((item) => !item.superAdminOnly || me?.role === "superAdmin").map(
-          (item) =>
+    <>
+      {/* Mobile top bar — hamburger to open the drawer, only shown ≤600px */}
+      <div className="sad-mobile-topbar">
+        <button
+          className="sad-mobile-toggle"
+          onClick={() => setMobileOpen(true)}
+          aria-label="Open menu"
+        >
+          <i className="bi bi-list"></i>
+        </button>
+        <span className="sad-mobile-topbar-brand">ADMIN CONSOLE</span>
+        <NotificationBell />
+      </div>
+
+      {/* Backdrop — click to close the drawer */}
+      {mobileOpen && (
+        <div className="sad-mobile-overlay" onClick={() => setMobileOpen(false)} />
+      )}
+
+      <aside className={`sad-sidebar ${mobileOpen ? "sad-sidebar-open" : ""}`}>
+        <div className="sad-sidebar-brand">
+          <span>ADMIN CONSOLE</span>
+          <NotificationBell />
+          <button
+            className="sad-mobile-close"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+          >
+            <i className="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <nav className="sad-nav" onClick={() => setMobileOpen(false)}>
+          {visibleNavItems.map((item) =>
             item.key === active ? (
               <div key={item.key} className="sad-nav-item active">
                 <i className={`bi ${item.icon}`}></i>
@@ -62,34 +99,35 @@ const AdminSidebar = ({ active }) => {
                 <span>{item.label}</span>
               </Link>
             )
-        )}
-      </nav>
-      <div className="sad-sidebar-footer">
-        <div className="sad-profile-row">
-          {me?.email && (
-            <>
-              <div className="sad-avatar sad-avatar-sm">
-                {getInitials(me.name, me.email)}
-              </div>
-              <div className="sad-profile-info">
-                <div className="sad-profile-name">
-                  {me.name || me.email.split("@")[0]}
-                </div>
-                <div className="sad-profile-email">{me.email}</div>
-              </div>
-            </>
           )}
-          <button
-            className="sad-logout-btn"
-            title="Logout"
-            onClick={logout}
-            style={{ marginLeft: "auto" }}
-          >
-            <i className="bi bi-box-arrow-right"></i>
-          </button>
+        </nav>
+        <div className="sad-sidebar-footer">
+          <div className="sad-profile-row">
+            {me?.email && (
+              <>
+                <div className="sad-avatar sad-avatar-sm">
+                  {getInitials(me.name, me.email)}
+                </div>
+                <div className="sad-profile-info">
+                  <div className="sad-profile-name">
+                    {me.name || me.email.split("@")[0]}
+                  </div>
+                  <div className="sad-profile-email">{me.email}</div>
+                </div>
+              </>
+            )}
+            <button
+              className="sad-logout-btn"
+              title="Logout"
+              onClick={logout}
+              style={{ marginLeft: "auto" }}
+            >
+              <i className="bi bi-box-arrow-right"></i>
+            </button>
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 };
 

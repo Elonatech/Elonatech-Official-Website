@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../BaseURL/BaseURL";
+import { sanitizeName } from "../../utils/sanitizeName";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -112,7 +113,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       class="form-control"
-                      onChange={(e) => setFirstname(e.target.value)}
+                      onChange={(e) => setFirstname(sanitizeName(e.target.value))}
                       id="c_fname"
                       name="c_fname"
                     />
@@ -124,7 +125,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       class="form-control"
-                      onChange={(e) => setLastname(e.target.value)}
+                      onChange={(e) => setLastname(sanitizeName(e.target.value))}
                       id="c_lname"
                       name="c_lname"
                     />

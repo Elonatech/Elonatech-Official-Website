@@ -30,6 +30,11 @@ const BlogDetails = () => {
 
   const leftColumnRef = useRef(null)
 
+  // Canonical URL for this post. Several routes render this component
+  // (/blog/:slug/:id, /blog/related/:slug/:id, paginated variants), so the
+  // canonical must always point at the clean /blog/:slug/:id form.
+  const canonicalUrl = `https://elonatech.com.ng/blog/${slug}/${paramId}`
+
   useEffect(() => {
     setBlogUrl(window.location.href)
   }, [])
@@ -138,6 +143,13 @@ const BlogDetails = () => {
 
   const html = data.description || ''
 
+  // Search engines truncate descriptions well before 200 chars; feeding them the
+  // whole post body wastes the slot and reads as boilerplate.
+  const metaDescription = sanitizeHtml(html, { allowedTags: [] })
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 160)
+
   return (
     <>
       {/* header */}
@@ -183,31 +195,24 @@ const BlogDetails = () => {
                       <div className='col-md-12'>
                         <div className='card border-0 rounded '>
                           <Helmet>
-                            {/* <title>{data.title} </title> */}
+                            <title>{`${data.title || ''} - Elonatech Nigeria Limited`}</title>
                             <meta
                               name='description'
-                              content={sanitizeHtml(html, {
-                                allowedTags: ['strong']
-                              })}
+                              content={metaDescription}
                             />
-                            <link
-                              rel='canonical'
-                              href={`https://elonatech.com.ng/product/${id}`}
-                            />
+                            <link rel='canonical' href={canonicalUrl} />
 
                             {/* Open Graph Meta Tags */}
                             <meta property='og:title' content={data.title} />
                             <meta
                               property='og:description'
-                              content={sanitizeHtml(html, {
-                                allowedTags: []
-                              })}
+                              content={metaDescription}
                             />
                             <meta
                               property='og:image'
                               content={data.cloudinary_id}
                             />
-                            <meta property='og:url' content={blogUrl} />
+                            <meta property='og:url' content={canonicalUrl} />
                             <meta property='og:type' content='article' />
 
                             {/* Twitter Card Meta Tags */}
@@ -218,9 +223,7 @@ const BlogDetails = () => {
                             <meta name='twitter:title' content={data.title} />
                             <meta
                               name='twitter:description'
-                              content={sanitizeHtml(html, {
-                                allowedTags: []
-                              })}
+                              content={metaDescription}
                             />
                             <meta
                               name='twitter:image'

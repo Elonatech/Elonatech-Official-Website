@@ -39,7 +39,7 @@ What are the benefits of Access Control Systems?
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709568120/accessControlPage/depositphotos_354792732-stock-photo-business-technology-internet-network-concept_neflcv.webp'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674617/depositphotos_354792732-stock-photo-business-technology-internet-network-concept_neflcv_odhqci.webp'
                 className='img-fluid rounded lazyload'
                 alt='Access control panel with biometric reader'
               />
@@ -99,7 +99,7 @@ What are the benefits of Access Control Systems?
             <div className='mt-3 text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709568121/accessControlPage/Access-Control_rrrv2k.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674625/Access-Control_rrrv2k_bpw67c.jpg'
                 className='img-fluid lazyload'
                 alt='Physical access control system'
               />
@@ -122,7 +122,7 @@ What are the benefits of Access Control Systems?
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709568140/accessControlPage/access-control-system-removebg-preview_lgzgk2.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674635/access-control-system-removebg-preview_lgzgk2_vhnnwy.png'
                 className='img-fluid rounded lazyload'
                 alt='Access control system illustration'
               />

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useEffect, useRef, useState } from "react";
 import { BASEURL } from "../../BaseURL/BaseURL";
+import { sanitizeName } from "../../utils/sanitizeName";
 import axios from "axios";
 import "../emptdp/applicationModal.css";
 import Serve from "../serve/serve";
@@ -717,7 +718,7 @@ const Main = () => {
                             <input
                               type="text"
                               value={name}
-                              onChange={(e) => setName(e.target.value)}
+                              onChange={(e) => setName(sanitizeName(e.target.value))}
                               placeholder="Your full name"
                               className="applymodal-input"
                             />

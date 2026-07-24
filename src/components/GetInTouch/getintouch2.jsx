@@ -6,7 +6,7 @@ const Getintouch2 = () => {
   return (
     <div className="getintouch-container">
       <img 
-        src="https://res.cloudinary.com/elonatech/image/upload/v1708529944/getIntouchBanner/talk_to_expert_about_your_project_rysbie.jpg" 
+        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674503/talk_to_expert_about_your_project_rysbie_rn7yr7.jpg" 
         alt="Talk to an Expert" 
         className="getintouch-background"
       />

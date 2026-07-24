@@ -105,21 +105,21 @@ const AppDevelopment = () => {
       title: 'HealthTrack Pro',
       description: 'Fitness & wellness tracking application',
       image:
-        'https://res.cloudinary.com/elonatech/image/upload/v1731490847/healthcare_app_mm7wic.png',
+        'https://res.cloudinary.com/dahnwukbz/image/upload/v1783694055/healthcare_app_mm7wic_yfxszh.png',
       category: 'Healthcare'
     },
     {
       title: 'EduLearn',
       description: 'Interactive learning platform',
       image:
-        'https://res.cloudinary.com/elonatech/image/upload/v1731490847/Edu_learn_app_dnhjwj.png',
+        'https://res.cloudinary.com/dahnwukbz/image/upload/v1783694034/Edu_learn_app_dnhjwj_fge664.png',
       category: 'Education'
     },
     {
       title: 'SmartCommerce',
       description: 'E-commerce solution with AR features',
       image:
-        'https://res.cloudinary.com/elonatech/image/upload/v1731490846/e-commerce_bsvqan.png',
+        'https://res.cloudinary.com/dahnwukbz/image/upload/v1784733326/e-commerce_bsvqan_zhspww.png',
       category: 'Retail'
     }
   ]
@@ -211,7 +211,7 @@ const AppDevelopment = () => {
             <div className='text-center'>
               <video autoPlay loop muted className='background-video'>
                 <source
-                  src='https://res.cloudinary.com/elonatech/video/upload/v1731490848/background_video_mobile_app_zp2jgl.mp4'
+                  src='https://res.cloudinary.com/dahnwukbz/video/upload/v1784733382/background_video_mobile_app_zp2jgl_b1r1f9.mp4'
                   type='video/mp4'
                   className='img-fluid rounded lazyload '
                 />

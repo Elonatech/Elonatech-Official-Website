@@ -61,17 +61,32 @@ import SaleConsumbles from "./icons/Sales/home-office.png";
 import logoForXmas from "./icons/xmas/image (1).png";
 import XmasHeader from "../../decoration-header/XmasHeader";
 
+const getInitials = (name) => {
+  if (!name) return "AD";
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+};
+
+// Computed synchronously as the initial state value (not in a useEffect) so
+// the real initials are already correct on the very first render — avoids
+// a brief flash of the "AD" placeholder before the effect used to run.
+const getInitialsFromToken = () => {
+  try {
+    const auth = JSON.parse(localStorage.getItem("token"));
+    if (!auth) return "AD";
+    const base64 = auth.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+    const payload = JSON.parse(atob(base64));
+    return getInitials(payload.name);
+  } catch {
+    return "AD";
+  }
+};
+
 const Navbar = () => {
   const [currentAdmin, setCurrentAdmin] = useState("");
-  const [adminInitials, setAdminInitials] = useState("AD");
+  const [adminInitials, setAdminInitials] = useState(getInitialsFromToken);
   const { logout, isAuthenticated } = useAuth();
-
-  const getInitials = (name) => {
-    if (!name) return "AD";
-    const parts = name.trim().split(" ");
-    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  };
   const { totalUniqueItems } = useCart();
   const location = useLocation();
   const navigate = useNavigate();
@@ -94,13 +109,6 @@ const Navbar = () => {
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem("token"));
     setCurrentAdmin(auth);
-    if (auth) {
-      try {
-        const base64 = auth.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
-        const payload = JSON.parse(atob(base64));
-        setAdminInitials(getInitials(payload.name));
-      } catch {}
-    }
   }, []);
 
   const handleScroll = useCallback(() => {

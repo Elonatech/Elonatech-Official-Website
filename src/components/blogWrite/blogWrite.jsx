@@ -71,7 +71,7 @@ const BlogWrite = () => {
         style={{
           height: "500px",
           backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-            url(https://res.cloudinary.com/elonatech/image/upload/v1726158374/Blog-banner_qxxqnb.png)`,
+            url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783693232/Blog-banner_qxxqnb_kb3a3q.png)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

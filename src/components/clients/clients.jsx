@@ -39,7 +39,7 @@ const Clients = () => {
                     <div className="text-center">
                       <img
                         src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg"
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571472/TestimonialSection/Mary-Ephraim-Egbas_kcv6sr.jpg"
+                        data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674856/Mary-Ephraim-Egbas_kcv6sr_ccwa9c.jpg"
                         class="lazyload mt-5"
                         alt="image fail to load"
                         style={{ width: "100px", borderRadius: "60%" }}
@@ -94,7 +94,7 @@ const Clients = () => {
                     <div className="text-center">
                       <img
                         src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg"
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571469/TestimonialSection/Remeben-MD-1_mueqml.png"
+                        data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674834/Remeben-MD-1_mueqml_bhtosq.png"
                         class="lazyload mt-5"
                         alt="image fail to load"
                         style={{ width: "100px", borderRadius: "60%" }}
@@ -142,7 +142,7 @@ const Clients = () => {
                     <div className="text-center">
                       <img
                         src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg"
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571470/TestimonialSection/Chunyere-Nganwuchu_thzpc7.jpg"
+                        data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674840/Chunyere-Nganwuchu_thzpc7_hihgxf.jpg"
                         class="lazyload mt-5"
                         alt="image fail to load"
                         style={{ width: "100px", borderRadius: "60%" }}
@@ -193,7 +193,7 @@ const Clients = () => {
                     <div className="text-center">
                       <img
                         src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg"
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571469/TestimonialSection/Abayomi-Kakanfo_mmqbbt.jpg"
+                        data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674819/Abayomi-Kakanfo_mmqbbt_tgbkao.jpg"
                         class="lazyload mt-5"
                         alt="image fail to load"
                         style={{ width: "100px", borderRadius: "60%" }}
@@ -244,7 +244,7 @@ const Clients = () => {
                     <div className="text-center">
                       <img
                         src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg"
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571473/TestimonialSection/Mr._Yahaya_Olajide_upu7uz.jpg"
+                        data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674866/Mr._Yahaya_Olajide_upu7uz_ksbxmg.jpg"
                         class="lazyload mt-5"
                         alt="image fail to load"
                         style={{ width: "100px", borderRadius: "60%" }}
@@ -291,7 +291,7 @@ const Clients = () => {
                     <div className="text-center">
                       <img
                         src="https://img.freepik.com/premium-vector/blurred-mosaic-censor-blur-effect-texture_540598-61.jpg"
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1709571471/TestimonialSection/Gabriel-Osondu_jvgsjv.jpg"
+                        data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674849/Gabriel-Osondu_jvgsjv_z9tkxi.jpg"
                         class="lazyload mt-5"
                         alt="image fail to load"
                         style={{ width: "100px", borderRadius: "60%" }}

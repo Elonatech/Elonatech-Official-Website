@@ -21,7 +21,9 @@ const Thankyou = () => {
           name='description'
           content='Thank you for shopping with us. Your order was successfully completed!'
         />
-        <link rel='canonical' href='https://elonatech.com.ng/' />
+        {/* Post-checkout page: nothing to rank, and it must not consolidate
+            into the homepage the way a canonical to "/" would. */}
+        <meta name='robots' content='noindex, follow' />
       </Helmet>
 
       {/* Order Confirmation Section */}

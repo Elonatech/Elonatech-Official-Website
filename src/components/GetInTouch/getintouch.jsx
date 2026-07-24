@@ -7,7 +7,7 @@ const Getintouch = () => {
     <div className="getintouch-wrapper">
       <div className="getintouch-container">
         <img 
-          src="https://res.cloudinary.com/elonatech/image/upload/v1708598256/getIntouchBanner/talk_to_expert_about_your_digital_needs_jthbar.jpg" 
+          src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674521/talk_to_expert_about_your_digital_needs_jthbar_vcaljs.jpg" 
           alt="Talk with An Expert" 
           className="getintouch-background"
         />

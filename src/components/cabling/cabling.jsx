@@ -1,40 +1,42 @@
-import Getintouch2 from '../GetInTouch/getintouch2'
-import './cabling.css'
-import { Link } from 'react-router-dom'
+import Getintouch2 from "../GetInTouch/getintouch2";
+import "./cabling.css";
+import { Link } from "react-router-dom";
 
-import CablingHeader from './captions/structured_cabling_niejuu.jpg'
-import FirstCabling from './captions/Untitled-8_txf0ku.png'
-import SecondCabling from './captions/Untitled-7_k1jxj1.png'
-import { Helmet } from 'react-helmet-async'
+import CablingHeader from "./captions/structured_cabling_niejuu.jpg";
+import FirstCabling from "./captions/Untitled-8_txf0ku.png";
+import SecondCabling from "./captions/Untitled-7_k1jxj1.png";
+import { Helmet } from "react-helmet-async";
 
 const Cabling = () => {
   return (
     <>
       <Helmet>
-        <title>Structured Cabling Solutions - Network & Data Infrastructure</title>
+        <title>
+          Structured Cabling Solutions - Network & Data Infrastructure
+        </title>
         <meta
-          name='description'
-          content='The standardized infrastructure of communications cabling that supports network components
+          name="description"
+          content="The standardized infrastructure of communications cabling that supports network components
         Structured cabling design and installation is governed by a set of standards that 
         specify wiring data centers, offices, and apartment buildings for 
         data or voice communications using various kinds of cable, most commonly; category 
         5e (Cat 5e), category 6 (Cat 6), and fiber optic cabling and modular connectors.
         network 
         use or into an IP or PBX (private branch exchange) telephone system patch panel
-       '
+       "
         />
         <link
-          rel='canonical'
-          href='https://elonatech.com.ng/structure-cabling'
+          rel="canonical"
+          href="https://elonatech.com.ng/structure-cabling"
         />
       </Helmet>
 
       {/*============================================================= header ============================================================================*/}
-      <div class='container-fluid structured-cabling-section'>
-        <div class='text-content'>
+      <div class="container-fluid structured-cabling-section">
+        <div class="text-content">
           <h2>Structured Cabling</h2>
           <h5>Any System is Only As Reliable As Its Weakest Link.</h5>
-          <p class='lead'>
+          <p class="lead">
             The standardized infrastructure of communications cabling that
             supports network components
           </p>
@@ -42,13 +44,13 @@ const Cabling = () => {
       </div>
 
       {/*================================================================= Cabling =========================================================================*/}
-      <div className='container mb-5'>
-        <p className='text-center'></p>
-        <div className='row'>
-          <div className='col-lg-6'>
-            <div className='mt-4'>
-              <p className='' style={{ textAlign: 'justify' }}>
-                <span className='fw-bold'>Structured cabling</span> is the
+      <div className="container mb-5">
+        <p className="text-center"></p>
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="mt-4">
+              <p className="" style={{ textAlign: "justify" }}>
+                <span className="fw-bold">Structured cabling</span> is the
                 design and installation of a cabling system that will support
                 multiple hardware uses and be suitable for today's needs and
                 those of the future.
@@ -68,32 +70,32 @@ const Cabling = () => {
               </p>
             </div>
           </div>
-          <div className='col-lg-6'>
-            <div className='text-center'>
+          <div className="col-lg-6">
+            <div className="text-center">
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
+                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif"
                 data-src={FirstCabling}
-                className='img-fluid rounded lazyload'
-                alt='Structured cabling installation'
+                className="img-fluid rounded lazyload"
+                alt="Structured cabling installation"
               />
             </div>
           </div>
         </div>
 
-        <div className='row mt-3'>
-          <div className='col-lg-6'>
-            <div className='text-center'>
+        <div className="row mt-3">
+          <div className="col-lg-6">
+            <div className="text-center">
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
+                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif"
                 data-src={SecondCabling}
-                className='img-fluid rounded lazyload'
-                alt='Network rack wiring'
+                className="img-fluid rounded lazyload"
+                alt="Network rack wiring"
               />
             </div>
           </div>
-          <div className='col-lg-6'>
-            <div className='mt-3'>
-              <p className='' style={{ textAlign: 'justify' }}>
+          <div className="col-lg-6">
+            <div className="mt-3">
+              <p className="" style={{ textAlign: "justify" }}>
                 These standards define how to lay the cabling in various
                 topologies in order to meet the needs of the customer, typically
                 using a central patch panel (which is 19-inch rack-mounted),
@@ -116,77 +118,77 @@ const Cabling = () => {
         </div>
       </div>
       {/*========================================================= completed project =====================================================================*/}
-      <div className='container '>
-        <h4 className='text-center'>Some Of Our Recently Completed Projects</h4>
-        <div class='text-bg-light shadow py-4 rounded'>
-          <h6 className='text-center p-3'>
+      <div className="container ">
+        <h4 className="text-center">Some Of Our Recently Completed Projects</h4>
+        <div class="text-bg-light shadow py-4 rounded">
+          <h6 className="text-center p-3">
             Network Installation, Points tracing, correction and labelling,
             recently done on a 3 floor building for LSG Sky Chef, Ikeja, Lagos.
           </h6>
-          <div class='slider'>
-            <div class='slide-track'>
-              <div class='slide'>
+          <div class="slider">
+            <div class="slide-track">
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709798593/structuredCablingPage/LSG/img_1_c4yjoe.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt='Cat6 cable routing'
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679802/img_1_c4yjoe_uznso7.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt="Cat6 cable routing"
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709798591/structuredCablingPage/LSG/img_8_c1h674.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679796/img_8_c1h674_tfkumu.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709798589/structuredCablingPage/LSG/img_7_szcrgh.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679789/img_7_szcrgh_l9wuci.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709798595/structuredCablingPage/LSG/img_2_r8qqer.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679806/img_2_r8qqer_nlj6zt.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709798588/structuredCablingPage/LSG/img_6_moib5j.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679780/img_6_moib5j_jzcs0j.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709798586/structuredCablingPage/LSG/img_5_morysq.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679740/img_5_morysq_ylclwj.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709798585/structuredCablingPage/LSG/img_3_sexrtq.png'
-                  className='img-fluid lazyload p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679729/img_3_sexrtq_im5q6c.png"
+                  className="img-fluid lazyload p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709798584/structuredCablingPage/LSG/img_4_ma29jk.png'
-                  className='img-fluid lazyload p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679717/img_4_ma29jk_e3nnbx.png"
+                  className="img-fluid lazyload p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
             </div>
@@ -194,79 +196,79 @@ const Cabling = () => {
         </div>
       </div>
       {/*========================================================= completed project 2 =====================================================================*/}
-      <div className='container '>
+      <div className="container ">
         {/* <h4 className='text-center'>Some Of Our Recently Completed Projects</h4> */}
-        <div class='text-bg-light shadow py-4 rounded'>
-          <h6 className='text-center p-3' style={{ textAlign: 'justify' }}>
+        <div class="text-bg-light shadow py-4 rounded">
+          <h6 className="text-center p-3" style={{ textAlign: "justify" }}>
             Sub-Contractor To Pine Height Systems On Networking/Structure
             Cabling Of An 8 Floor Luxury Flat BUILDING (96 Points) LAN Setup For
             Samsung Electronics Nigeria Ltd. at Admiralty Way, Lekki Phase 1.
             Project Phase 1
           </h6>
-          <div class='slider'>
-            <div class='slide-track'>
-              <div class='slide'>
+          <div class="slider">
+            <div class="slide-track">
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570314/structuredCablingPage/phase1/IMG-20130627-00055_mif7x9.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674666/IMG-20130627-00055_mif7x9_wbjgbg.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570546/structuredCablingPage/phase1/IMG-20130923-00302_b6gily.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674704/IMG-20130923-00302_b6gily_wza1lf.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570384/structuredCablingPage/phase1/IMG-20130627-00058_oamrun.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784735450/IMG-20130627-00058_oamrun_rywptz.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570421/structuredCablingPage/phase1/IMG-20130629-00070_wpdjab.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674678/IMG-20130629-00070_wpdjab_dwxbcb.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570440/structuredCablingPage/phase1/IMG-20130910-00269_w38omt.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674686/IMG-20130910-00269_w38omt_pwriat.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570443/structuredCablingPage/phase1/IMG-20130911-00204_z9hr1t.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674696/IMG-20130911-00204_z9hr1t_h3nk1g.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709570547/structuredCablingPage/phase1/Lagos-20130908-00189_utw2mo.png'
-                  className='img-fluid lazyload p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674711/Lagos-20130908-00189_utw2mo_fyjrgb.png"
+                  className="img-fluid lazyload p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709570546/structuredCablingPage/phase1/IMG-20130923-00302_b6gily.png'
-                  className='img-fluid lazyload p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674704/IMG-20130923-00302_b6gily_wza1lf.png"
+                  className="img-fluid lazyload p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
             </div>
@@ -274,86 +276,86 @@ const Cabling = () => {
         </div>
       </div>
       {/*=========================================================== completed project 3 ===========================================*/}
-      <div className='container mb-5'>
-        <div class='text-bg-light shadow py-4 rounded'>
-          <h6 className='text-center p-3'>
+      <div className="container mb-5">
+        <div class="text-bg-light shadow py-4 rounded">
+          <h6 className="text-center p-3">
             Sub-Contractor To Pine Height Systems On Networking/Structure
             Cabling Of An 8 Floor Luxury Flat BUILDING (96 Points) LAN Setup For
             Samsung Electronics Nigeria Ltd. at Admiralty Way, Lekki Phase 1.
             Project Phase 2
           </h6>
-          <div class='slider'>
-            <div class='slide-track'>
-              <div class='slide'>
+          <div class="slider">
+            <div class="slide-track">
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570975/structuredCablingPage/phase2/DSC06972_rtglhc.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674753/DSC06972_rtglhc_wxexq0.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570981/structuredCablingPage/phase2/DSC06951_h3seuk.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674799/DSC06951_h3seuk_vlaq0o.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570980/structuredCablingPage/phase2/DSC06947_u7elgy.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674790/DSC06947_u7elgy_ac5xoa.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570979/structuredCablingPage/phase2/DSC06940_m2jdcm.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674785/DSC06940_m2jdcm_crsr6g.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570978/structuredCablingPage/phase2/DSC06935_pfmijp.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674779/DSC06935_pfmijp_tofrwm.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570973/structuredCablingPage/phase2/DSC06969_ork4sg.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674717/DSC06969_ork4sg_a2gyyc.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570977/structuredCablingPage/phase2/DSC06909_llhahz.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674774/DSC06909_llhahz_sbmxze.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570976/structuredCablingPage/phase2/DSC06949_pgrg0v.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674765/DSC06949_pgrg0v_eaaodz.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
-              <div class='slide'>
+              <div class="slide">
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1709570973/structuredCablingPage/phase2/DSC06969_ork4sg.png'
-                  className='img-fluid p-2'
-                  style={{ height: '25rem' }}
-                  alt=''
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674717/DSC06969_ork4sg_a2gyyc.png"
+                  className="img-fluid p-2"
+                  style={{ height: "25rem" }}
+                  alt=""
                 />
               </div>
             </div>
@@ -365,7 +367,7 @@ const Cabling = () => {
       <Getintouch2 />
       {/* =================================================== hhdff ================================================================= */}
     </>
-  )
-}
+  );
+};
 
-export default Cabling
+export default Cabling;

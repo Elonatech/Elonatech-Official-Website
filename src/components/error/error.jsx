@@ -14,13 +14,12 @@ const Error = () => {
         <title>Page Not Found | Elonatech Nigeria</title>
         <meta
           name="description"
-          content="Our Technical Support Team
-          is composed of individuals that are familiar with the ins and outs of the device they are assigned to. They offer user-friendly assistance for individuals having technical problems with computer/electronic devices. With this knowledge, they are able to troubleshoot most problems that a user experiences. Technical support may be provided over the phone, through email, a live-chat interface or with a remote support solution."
+          content="The page you are looking for could not be found."
         />
-        <link
-          rel="canonical"
-          href="https://elonatech.com.ng/technical-support"
-        />
+        {/* The server can only return 200 for this SPA route, so noindex is the
+            signal that keeps dead URLs out of the index. Deliberately no
+            canonical: this page is not a duplicate of any real page. */}
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       {/*======================================================== header ==============================================*/}

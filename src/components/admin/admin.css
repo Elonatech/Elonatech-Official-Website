@@ -170,6 +170,20 @@
   cursor: not-allowed;
 }
 
+.alogin-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #495057;
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+.alogin-remember input {
+  cursor: pointer;
+}
+
 .alogin-notice {
   display: flex;
   align-items: flex-start;

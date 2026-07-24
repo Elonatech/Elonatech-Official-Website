@@ -13,8 +13,7 @@ const Cctv = () => {
         <title>CCTV Surveillance Systems - Enhance Security with Video Monitoring</title>
         <meta
           name='description'
-          content='Surveillance is the monitoring of behavior, many activities, or information for the purpose of information gathering, influencing, managing or directing. This can include observation from a distance by means of electronic equipment, such as closed-circuit television (CCTV), or interception of electronically transmitted information like Internet traffic. It can also include simple technical methods, such as human intelligence gathering and postal interception.
-       Closed-circuit television (CCTV), also known as video surveillance, is the use of video cameras to transmit a signal to a specific place, on a limited set of monitors. It may employ point-to-point (P2P), point-to-multipoint (P2MP), or mesh wired or wireless links. Even though almost all video cameras fit this definition, the term is most often applied to those used for surveillance in areas that require additional security or ongoing monitoring.
+          content='Surveillance is the monitoring of behavior, many activities, or information for the purpose of information gathering, influencing, managing or directing. This can include observation from a distance by means of electronic equipment, such as closed-circuit television (CCTV), or interception of electronically transmitted information like Internet traffic. It can also include simple technical methods, such as human intelligence gathering and postal interception.Closed-circuit television (CCTV), also known as video surveillance, is the use of video cameras to transmit a signal to a specific place, on a limited set of monitors. It may employ point-to-point (P2P), point-to-multipoint (P2MP), or mesh wired or wireless links. Even though almost all video cameras fit this definition, the term is most often applied to those used for surveillance in areas that require additional security or ongoing monitoring.
        '
         />
         <link rel='canonical' href='https://elonatech.com.ng/cctv' />
@@ -76,7 +75,7 @@ const Cctv = () => {
                 <div
                   className='col-md-6 boda-right'
                   style={{
-                    backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1709572001/cctvPage/photo1_yrqdx7.jpg)`,
+                    backgroundImage: `url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783674876/photo1_yrqdx7_pyb9rd.jpg)`,
                     backgroundPosition: 'center',
                     backgroundSize: '40rem'
                   }}
@@ -142,7 +141,7 @@ const Cctv = () => {
                 <div
                   className='col-md-6'
                   style={{
-                    backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1709571995/cctvPage/photo2_g93bvy.jpg)`,
+                    backgroundImage: `url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783674871/photo2_g93bvy_fvivxb.jpg)`,
                     backgroundPosition: 'center',
                     backgroundSize: '40rem'
                   }}
@@ -156,7 +155,7 @@ const Cctv = () => {
                 <div
                   className='col-md-6 boda-phot03'
                   style={{
-                    backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1709572001/cctvPage/photo3_wy2xm8.jpg)`,
+                    backgroundImage: `url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783674882/photo3_wy2xm8_nj2kdo.jpg)`,
                     backgroundPosition: 'center',
                     backgroundSize: '40rem'
                   }}
@@ -227,7 +226,7 @@ const Cctv = () => {
                 <div
                   className='col-md-6'
                   style={{
-                    backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1709572001/cctvPage/photo4_n7i5r1.jpg)`,
+                    backgroundImage: `url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783674886/photo4_n7i5r1_kfrj4g.jpg)`,
                     backgroundPosition: 'center',
                     backgroundSize: '40rem'
                   }}

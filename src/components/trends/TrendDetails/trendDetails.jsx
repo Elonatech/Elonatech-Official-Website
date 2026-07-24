@@ -100,6 +100,15 @@ const TrendDetails = () => {
 
   const html = data.description
 
+  // Several routes render this component (/trends/:slug/:id and the paginated
+  // and related variants), so the canonical must always point at the clean form.
+  const canonicalUrl = `https://elonatech.com.ng/trends/${slug}/${id}`
+
+  const metaDescription = sanitizeHtml(html || '', { allowedTags: [] })
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 160)
+
   return (
     <>
       <div class='container-fluid bg-dark py-5 blog-detail-heaad'>
@@ -144,17 +153,12 @@ const TrendDetails = () => {
                       <div className='col-md-12'>
                         <div className='card border-0 rounded '>
                           <Helmet>
-                            <title>{data.title} </title>
+                            <title>{`${data.title || ''} - Elonatech Nigeria Limited`}</title>
                             <meta
                               name='description'
-                              content={sanitizeHtml(html, {
-                                allowedTags: ['strong']
-                              })}
+                              content={metaDescription}
                             />
-                            <link
-                              rel='canonical'
-                              href={`https://elonatech.com.ng/product/${slug}`}
-                            />
+                            <link rel='canonical' href={canonicalUrl} />
                           </Helmet>
 
                           <img

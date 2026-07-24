@@ -100,7 +100,7 @@ const TrendsPages = () => {
           name="description"
           content="We'd love to share our knowledge, experiences and the latest news, trends and info with you"
         />
-        <link rel="canonical" href="https://elonatech.com.ng/blog" />
+        <link rel="canonical" href="https://elonatech.com.ng/trends" />
       </Helmet>
 
       <div

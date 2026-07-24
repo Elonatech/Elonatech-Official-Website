@@ -22,11 +22,12 @@
 
 @media (max-width: 576px) {
   .ignite-hero-tag {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    margin: 3px 0;
   }
 
   .ignite-hero-tag--italic {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 }
 
@@ -60,6 +61,34 @@
 .ignite-hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url("https://res.cloudinary.com/dahnwukbz/image/upload/v1784102634/pexels-pnw-prod-8276643_incaav.jpg") !important;
+}
+
+/* Mobile gets a shorter, restructured hero (heading, then badge, then a
+   condensed 2-line tag) so the section doesn't run taller than the buttons
+   plus a small breathing gap — desktop keeps the full original copy. */
+.ignite-mobile-only {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .ignite-desktop-only {
+    display: none;
+  }
+
+  /* Match each element's own natural display when shown — a blanket
+     "display: block" here would stretch the badge <span> full-width,
+     since it'd win the tie against .emptdp-mentor-badge's inline-block
+     (this stylesheet loads after emptdp.css). */
+  h2.ignite-mobile-only,
+  p.ignite-mobile-only {
+    display: block;
+  }
+
+  span.ignite-mobile-only {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.65rem;
+  }
 }
 
 

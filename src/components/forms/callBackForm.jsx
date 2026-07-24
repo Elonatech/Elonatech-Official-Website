@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../BaseURL/BaseURL";
+import { sanitizeName } from "../../utils/sanitizeName";
 import axios from "axios";
 import "../emptdp/applicationModal.css";
 
@@ -78,7 +79,7 @@ const CallBackForm = () => {
         { headers: { "Content-Type": "application/json" } }
       );
       if (response.data.status === "success") {
-        toast.success("Your form request has been submitted successfully!");
+        toast.success("Your Contact Request has been submitted successfully");
         setName("");
         setEmail("");
         setSubject("");
@@ -156,7 +157,7 @@ const CallBackForm = () => {
                     <input
                       type="text"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => setName(sanitizeName(e.target.value))}
                       placeholder="Your full name"
                       className="applymodal-input"
                     />

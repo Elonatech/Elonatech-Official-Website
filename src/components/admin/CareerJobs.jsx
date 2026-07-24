@@ -25,6 +25,9 @@ const emptyForm = {
   minimumQualification: "",
   jobSummary: "",
   jobDescription: "",
+  responsibilities: "",
+  requirements: "",
+  benefits: "",
   status: "Draft",
   hiringTimeline: "2 weeks",
 };
@@ -101,6 +104,9 @@ const CareerJobs = () => {
       minimumQualification: job.minimumQualification,
       jobSummary: job.jobSummary,
       jobDescription: job.jobDescription,
+      responsibilities: job.responsibilities || "",
+      requirements: job.requirements || "",
+      benefits: job.benefits || "",
       status: job.status,
       hiringTimeline: job.hiringTimeline,
     });
@@ -368,10 +374,40 @@ const CareerJobs = () => {
                 <textarea
                   className="form-control"
                   rows={4}
-                  placeholder="Full role responsibilities, requirements, etc."
+                  placeholder="Overview of the role and what the candidate will be doing"
                   value={form.jobDescription}
                   onChange={(e) => setForm({ ...form, jobDescription: e.target.value })}
                   required
+                />
+              </div>
+              <div className="mb-3">
+                <label className="sad-label">Responsibilities</label>
+                <textarea
+                  className="form-control"
+                  rows={4}
+                  placeholder="List the key responsibilities — one per line"
+                  value={form.responsibilities}
+                  onChange={(e) => setForm({ ...form, responsibilities: e.target.value })}
+                />
+              </div>
+              <div className="mb-3">
+                <label className="sad-label">Requirements</label>
+                <textarea
+                  className="form-control"
+                  rows={4}
+                  placeholder="Required skills, experience and qualifications — one per line"
+                  value={form.requirements}
+                  onChange={(e) => setForm({ ...form, requirements: e.target.value })}
+                />
+              </div>
+              <div className="mb-3">
+                <label className="sad-label">Benefits (optional)</label>
+                <textarea
+                  className="form-control"
+                  rows={3}
+                  placeholder="Perks and benefits — one per line"
+                  value={form.benefits}
+                  onChange={(e) => setForm({ ...form, benefits: e.target.value })}
                 />
               </div>
               <div className="sad-form-row">
@@ -514,6 +550,36 @@ const CareerJobs = () => {
                   value={editForm.jobDescription}
                   onChange={(e) => setEditForm({ ...editForm, jobDescription: e.target.value })}
                   required
+                />
+              </div>
+              <div className="mb-3">
+                <label className="sad-label">Responsibilities</label>
+                <textarea
+                  className="form-control"
+                  rows={4}
+                  placeholder="List the key responsibilities — one per line"
+                  value={editForm.responsibilities}
+                  onChange={(e) => setEditForm({ ...editForm, responsibilities: e.target.value })}
+                />
+              </div>
+              <div className="mb-3">
+                <label className="sad-label">Requirements</label>
+                <textarea
+                  className="form-control"
+                  rows={4}
+                  placeholder="Required skills, experience and qualifications — one per line"
+                  value={editForm.requirements}
+                  onChange={(e) => setEditForm({ ...editForm, requirements: e.target.value })}
+                />
+              </div>
+              <div className="mb-3">
+                <label className="sad-label">Benefits (optional)</label>
+                <textarea
+                  className="form-control"
+                  rows={3}
+                  placeholder="Perks and benefits — one per line"
+                  value={editForm.benefits}
+                  onChange={(e) => setEditForm({ ...editForm, benefits: e.target.value })}
                 />
               </div>
               <div className="mb-3">

@@ -17,7 +17,7 @@ It is created by projecting sequenced images quickly, one after another, to crea
 3D animations is essential for providing context and engaging your audience also give viewers an idea of what to expect with a story
 '
         />
-        <link rel='canonical' href='https://elonatech.com.ng/' />
+        <link rel='canonical' href='https://elonatech.com.ng/animation' />
       </Helmet>
       {/*===================================================================== header =======================================================*/}
       <div class='container-fluid animations-section'>

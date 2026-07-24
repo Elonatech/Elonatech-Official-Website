@@ -26,6 +26,179 @@
   letter-spacing: 1.5px;
   padding: 28px 24px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* ── Notification bell ──────────────────────────────────────────────────── */
+.nbell-wrapper {
+  position: relative;
+}
+
+.nbell-btn {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nbell-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.nbell-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #e63946;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1a1a2e;
+}
+
+.nbell-panel {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  z-index: 1200;
+  overflow: hidden;
+  color: #1a1a2e;
+}
+
+.nbell-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.nbell-panel-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+}
+
+.nbell-mark-all {
+  background: none;
+  border: none;
+  color: #1a6ef5;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.nbell-mark-all:hover {
+  text-decoration: underline;
+}
+
+.nbell-list {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.nbell-empty {
+  padding: 32px 16px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.nbell-item {
+  display: block;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f5f5f5;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.nbell-item:last-child {
+  border-bottom: none;
+}
+
+.nbell-item:hover {
+  background-color: #f9fafb;
+  color: inherit;
+}
+
+.nbell-item-unread {
+  background-color: #eff6ff;
+}
+
+.nbell-item-unread:hover {
+  background-color: #e3efff;
+}
+
+.nbell-item-message {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  line-height: 1.5;
+}
+
+.nbell-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nbell-item-time {
+  font-size: 0.66rem;
+  color: #9ca3af;
+}
+
+.nbell-mark-one {
+  background: none;
+  border: none;
+  color: #e63946;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.nbell-mark-one:hover {
+  text-decoration: underline;
+}
+
+/* ── Mobile top bar + drawer nav (hidden above 600px) ───────────────────── */
+.sad-mobile-topbar,
+.sad-mobile-overlay,
+.sad-mobile-close {
+  display: none;
 }
 
 .sad-nav {
@@ -401,6 +574,10 @@
   text-decoration: underline;
 }
 
+.job-edit-link {
+  color: #059669;
+}
+
 .job-actions-cell {
   display: flex;
   gap: 14px;
@@ -669,91 +846,24 @@
   .sad-main {
     padding: 24px 20px;
   }
-}
 
-/* Responsive — mobile */
-@media (max-width: 600px) {
-  .sad-wrapper {
-    flex-direction: column;
+  /* Card-style rows from tablet width down — a real <table> loses columns
+     (Actions especially) once it's wider than the viewport and the card
+     container clips overflow. Stacked label/value rows never lose data,
+     they just take more vertical space instead. */
+  .sad-table-card {
+    background: #e9ebef;
+    box-shadow: none;
+    padding: 12px;
   }
 
-  .sad-sidebar {
-    width: 100%;
-    min-width: unset;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .sad-sidebar-brand {
-    padding: 14px 16px;
+  .sad-table-header {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 4px;
     border-bottom: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0;
   }
 
-  .sad-sidebar-brand::after {
-    content: "AC";
-    font-size: 11px;
-    font-weight: 800;
-    color: #e63946;
-  }
-
-  .sad-nav {
-    flex-direction: row;
-    padding: 0;
-    flex: 1;
-  }
-
-  .sad-sidebar-footer {
-    border-top: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 0 12px;
-    display: flex;
-    align-items: center;
-  }
-
-  .sad-profile-row {
-    gap: 0;
-  }
-
-  .sad-nav-item {
-    flex-direction: row;
-    padding: 14px 16px;
-    border-left: none;
-    border-bottom: none;
-    font-size: 13px;
-  }
-
-  .sad-nav-item.active {
-    border-left: none;
-    border-bottom: 3px solid #e63946;
-  }
-
-  .sad-main {
-    padding: 20px 16px;
-  }
-
-  .sad-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .sad-btn-create {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .sad-stats-row {
-    flex-direction: column;
-  }
-
-  /* Card-style rows on mobile instead of table */
   .sad-table thead {
     display: none;
   }
@@ -767,11 +877,16 @@
   }
 
   .sad-table tr {
-    border: 1px solid #f1f3f5;
-    border-radius: 8px;
-    margin-bottom: 12px;
+    border: 1px solid #dfe3e8;
+    border-radius: 10px;
+    margin-bottom: 16px;
     padding: 4px 0;
     background: #fff;
+    box-shadow: 0 2px 6px rgba(17, 24, 39, 0.06);
+  }
+
+  .sad-table tr:last-child {
+    margin-bottom: 0;
   }
 
   .sad-table td {
@@ -800,5 +915,182 @@
 
   .sad-admin-cell {
     justify-content: flex-end;
+  }
+}
+
+/* Responsive — mobile */
+@media (max-width: 600px) {
+  .sad-wrapper {
+    flex-direction: column;
+  }
+
+  /* Fixed top bar with hamburger — replaces the sidebar in normal flow */
+  .sad-mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background: #1a1a2e;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .sad-mobile-toggle {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .sad-mobile-topbar-brand {
+    flex: 1;
+    color: #e63946;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+
+  /* Backdrop behind the drawer */
+  .sad-mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+  }
+
+  /* The drawer itself — off-canvas by default, slides in when open */
+  .sad-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    min-width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 950;
+  }
+
+  /* Only one bell should be visible on mobile — the fixed top bar's.
+     The one duplicated inside the drawer brand row is redundant and was
+     opening a second, independently-positioned dropdown. */
+  .sad-sidebar-brand .nbell-wrapper {
+    display: none;
+  }
+
+  .nbell-panel {
+    left: auto;
+    right: 0;
+    max-width: 90vw;
+  }
+
+  .sad-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sad-sidebar-brand {
+    padding: 20px 20px 16px;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .sad-sidebar-brand::after {
+    content: none;
+  }
+
+  .sad-nav-item span {
+    display: inline;
+  }
+
+  .sad-profile-info {
+    display: block;
+  }
+
+  .sad-profile-name {
+    font-size: 14px;
+  }
+
+  .sad-profile-email {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .sad-logout-btn {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .sad-mobile-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .sad-nav {
+    flex-direction: column;
+    padding: 16px 0;
+  }
+
+  .sad-nav-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px 20px;
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  .sad-nav-item.active {
+    border-left: 3px solid #e63946;
+    border-bottom: none;
+  }
+
+  .sad-sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: none;
+    /* Extra bottom clearance — the Tawk.to chat bubble is pinned
+       bottom-left (see public/index.html) and would otherwise sit on
+       top of the profile name/logout button. */
+    padding: 16px 20px 88px;
+    justify-content: flex-start;
+    background: #1a1a2e;
+  }
+
+  .sad-main {
+    padding: 20px 16px;
+  }
+
+  .sad-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sad-btn-create {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sad-stats-row {
+    flex-direction: column;
   }
 }
