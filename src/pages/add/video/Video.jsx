@@ -37,7 +37,7 @@ const Video = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709721186/VideoEditingPage/editing_tvderp.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679570/editing_tvderp_rv8m61.png'
                   className='lazyload img-fluid'
                 />
               </div>
@@ -90,7 +90,7 @@ const Video = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709721187/VideoEditingPage/video_z0jhlg.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679601/video_z0jhlg_vm6wmy.png'
                   class='img-fluid lazyload'
                 />
               </div>
@@ -105,7 +105,7 @@ const Video = () => {
             <div className='mb-4 text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1710316557/VideoEditingPage/Video_editing_2_ssge3i.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693076/Video_editing_2_ssge3i_b8c9t4.jpg'
                 class='img-fluid lazyload'
                 alt='...'
               />
@@ -150,7 +150,7 @@ const Video = () => {
             <div class='card h-100'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709721966/VideoEditingPage/png-transparent-board-clapper-cut-director-making-movie-take-the-movies-icon_utwhix.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679643/png-transparent-board-clapper-cut-director-making-movie-take-the-movies-icon_utwhix_jaoryb.png'
                 alt=''
                 className='image-icon lazyload'
               />
@@ -170,7 +170,7 @@ const Video = () => {
             <div class='card h-100'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709721963/VideoEditingPage/download_1_n6f85z.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679636/download_1_n6f85z_blmpe6.png'
                 alt=''
                 className='image-icon lazyload'
               />
@@ -192,7 +192,7 @@ const Video = () => {
             <div class='card h-100'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709722077/VideoEditingPage/974485_el8btv.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785160796/974485_el8btv_jkurju.png'
                 alt=''
                 className='image-icon lazyload'
               />
@@ -218,7 +218,7 @@ const Video = () => {
             <div class='card h-100'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709721962/VideoEditingPage/png-transparent-volume-icon-volume-computer-icons-sound-icon-volume-miscellaneous-text-hand-thumbnail_b0mafu.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679622/png-transparent-volume-icon-volume-computer-icons-sound-icon-volume-miscellaneous-text-hand-thumbnail_b0mafu_jubykj.png'
                 alt=''
                 className='image-icon lazyload'
               />
@@ -239,7 +239,7 @@ const Video = () => {
             <div class='card h-100'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709722151/VideoEditingPage/7602189_tfynou.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679683/7602189_tfynou_n15vaw.png'
                 alt=''
                 className='image-icon lazyload img-fluid'
               />
@@ -260,7 +260,7 @@ const Video = () => {
             <div class='card h-100'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709721961/VideoEditingPage/convert-video-icon-design-isolated-260nw-2179748723_daxp2m.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679614/convert-video-icon-design-isolated-260nw-2179748723_daxp2m_ujukdc.jpg'
                 alt=''
                 className='image-icon lazyload img-fluid'
               />

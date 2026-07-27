@@ -84,7 +84,7 @@ const Consulting = () => {
           <div className='col-lg-6 align-self-center'>
             <div className=' border-0'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1707896947/consultingPage/What-Is-Consulting-2048x1120_tzdvml.png'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674421/What-Is-Consulting-2048x1120_tzdvml_c48sck.png'
                 className='img-fluid'
                 alt=''
               />
@@ -161,7 +161,7 @@ const Consulting = () => {
           <div className='col-lg-6 '>
             <div className=''>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1709306134/consultingPage/Consulting_image_jffvfy.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784903926/Consulting_image_jffvfy_ank9dn.jpg'
                 className='img-fluid rounded'
                 alt=''
               />
@@ -212,7 +212,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <div className='text-center mb-3'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1707905549/consultingPage/Clock_qciofe.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674441/Clock_qciofe_elerpd.png'
                   className='img-fluid'
                   alt=''
                 />
@@ -227,7 +227,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <div className='text-center mb-2'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1707905548/consultingPage/green_tz5kmb.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674430/green_tz5kmb_ichsxs.png'
                   className='img-fluid'
                   alt=''
                 />
@@ -243,7 +243,7 @@ const Consulting = () => {
             <div className=' border-0'>
               <div className='text-center mb-2'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1707905549/consultingPage/Stat_y6mvap.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674476/Stat_y6mvap_qoouvm.png'
                   className='img-fluid'
                   alt=''
                 />
@@ -263,7 +263,7 @@ const Consulting = () => {
           <div className='col-lg-6'>
             <div className=' border-0'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1709308083/consultingPage/consulting_image_2_jk3dne.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674598/consulting_image_2_jk3dne_jcgby4.jpg'
                 className='img-fluid'
                 alt=''
               />

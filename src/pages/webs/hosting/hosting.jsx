@@ -440,7 +440,7 @@ Our cloud web hosting is designed to deliver a faster site. A faster website mea
           <div className='col-md-6'>
             <div className='text-center'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709647614/hostingPage/Why-Choose-Cloud-Hosting-withVerpex.com_2023-04-30-114836_ynww_kv7oij.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677035/Why-Choose-Cloud-Hosting-withVerpex.com_2023-04-30-114836_ynww_kv7oij_d8gjci.png'
                 className='lazyload img-fluid'
                 style={{ height: '20rem', width: '30rem' }}
                 alt=''

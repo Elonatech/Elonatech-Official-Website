@@ -13,7 +13,7 @@ const tabs = [
   {
     label: "Technology Foundations",
     image:
-      "https://res.cloudinary.com/djogptxxc/image/upload/v1781171095/pexels-mikhail-nilov-9301314_gkohy1.jpg",
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905632/pexels-mikhail-nilov-9301314_gkohy1_zbay4p.jpg",
     skills: [
       "Computer fundamentals & architecture",
       "Operating systems & environments",
@@ -25,7 +25,7 @@ const tabs = [
   {
     label: "Networking & Systems",
     image:
-      "https://res.cloudinary.com/djogptxxc/image/upload/v1781175713/pexels-brett-sayles-5326748_kjo74t.jpg",
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905669/pexels-brett-sayles-5326748_kjo74t_tdxhmg.jpg",
     skills: [
       "Network design & administration",
       "Server configuration & management",
@@ -37,7 +37,7 @@ const tabs = [
   {
     label: "Web & Digital",
     image:
-      "https://res.cloudinary.com/djogptxxc/image/upload/v1781176056/pexels-pnw-prod-8091335_nca7aw.jpg",
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905691/pexels-pnw-prod-8091335_nca7aw_owcdzq.jpg",
     skills: [
       "HTML, CSS & JavaScript",
       "Frontend frameworks & libraries",
@@ -61,7 +61,7 @@ const tabs = [
   {
     label: "Creative Design",
     image:
-      "https://res.cloudinary.com/djogptxxc/image/upload/v1781171098/pexels-gabby-k-9432945_alnrcq.jpg",
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905713/pexels-rdne-7414035_sbhtzl_z8aivy.jpg",
     skills: [
       "UI/UX design principles",
       "Adobe Creative Suite tools",
@@ -73,7 +73,7 @@ const tabs = [
   {
     label: "Leadership & Career",
     image:
-      "https://res.cloudinary.com/djogptxxc/image/upload/v1781171096/pexels-kampus-5940713_s9bdaz.jpg",
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905744/pexels-kampus-5940713_s9bdaz_bzeilg.jpg",
     skills: [
       "Professional communication skills",
       "Team leadership & collaboration",
@@ -280,7 +280,7 @@ const Emptdp = () => {
               {/* Replace src with actual image when ready */}
               <img
                 src={
-                  "https://res.cloudinary.com/djogptxxc/image/upload/v1781171098/pexels-jep-gambardella-7689856_hltynt.jpg"
+                  "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905771/pexels-jep-gambardella-7689856_hltynt_gwrlaz.jpg"
                 }
                 alt="Mentorship session"
               />

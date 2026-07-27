@@ -68,7 +68,7 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709648752/IPTelephonyPage/phone-network_xiocp0.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677177/phone-network_xiocp0_ajxioz.jpg'
                 alt=''
                 className='img-fluid lazyload rounded'
               />
@@ -83,7 +83,7 @@ The traditional telephone system is dubbed the Public Switched Telephone Network
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709648863/IPTelephonyPage/meetings_phone_chat_img_hfxyqd.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677183/meetings_phone_chat_img_hfxyqd_bdqid0.jpg'
                 alt=''
                 className='img-fluid lazyload rounded'
               />

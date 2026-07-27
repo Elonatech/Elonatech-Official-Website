@@ -99,7 +99,7 @@ const Time = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709636381/timePage/real-time-presence_jqm9k3.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784904160/real-time-presence_jqm9k3_f5ok1o.png'
                 className='img-fluid lazyload'
                 alt=''
               />
@@ -237,7 +237,7 @@ const Time = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709636380/timePage/vodenje-odsotnosti_1__xftio6.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676640/vodenje-odsotnosti_1__xftio6_aojuxt.png'
                 className='img-fluid lazyload'
                 alt=''
               />

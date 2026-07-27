@@ -179,7 +179,7 @@ This includes application software that enables a user to perform a task, such a
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709654709/applicationPage/application_software_ej1iaz.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677267/application_software_ej1iaz_wuwy88.jpg'
                 alt=''
                 className='img-fluid rounded lazyload'
                 srcset=''

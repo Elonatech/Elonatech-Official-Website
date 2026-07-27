@@ -30,7 +30,7 @@ const Server = () => {
     <div class="col-md-5">
       <div className="border-0">
         <div className="text-center">
-        <img src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif' data-src={FirstServerImage} className='img-fluid lazyload'  alt="" />
+        <img src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif' data-src={FirstServerImage} className='img-fluid lazyload'  alt="" />
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@ const Server = () => {
     <div className="row">
     <div className="col-lg-6 mb-5">
       <div className="text-center">
-        <img src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif' data-src={SecondServerImage} className='img-fluid lazyload rounded' alt="" />
+        <img src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif' data-src={SecondServerImage} className='img-fluid lazyload rounded' alt="" />
     </div>
     </div>
     <div className="col-lg-6 ">
@@ -79,7 +79,7 @@ const Server = () => {
 {/*================================================================ window server ====================================================================================*/}
  <div className="container" >
   <div className="text-center">
-  <img src="https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif" data-src={ThirdServerImage} className='img-fluid lazyload rounded mrth'  alt="" />
+  <img src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif" data-src={ThirdServerImage} className='img-fluid lazyload rounded mrth'  alt="" />
   </div>
  </div>
 {/*======= Services Section =======*/}
@@ -94,7 +94,7 @@ const Server = () => {
           <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative" style={{boxShadow:" 0 0 10px 2px rgba(0,0,0,0.6)"}}>
             <div className="text-center mb-2">
-              <img data-src="https://res.cloudinary.com/elonatech/image/upload/v1707470880/serverPage/server-shutdown_cmbxgv.png" className='img-fluid lazyload' alt="" />
+              <img data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674374/server-shutdown_cmbxgv_zcrvgh.png" className='img-fluid lazyload' alt="" />
             </div>
               <p  style={{textAlign: 'justify'}}>
                 While Server administrators work primarily with servers, our 
@@ -120,7 +120,7 @@ const Server = () => {
           <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative" style={{boxShadow:" 0 0 10px 2px rgba(0,0,0,0.6)"}}>
             <div className="text-center mb-2">
-              <img data-src="https://res.cloudinary.com/elonatech/image/upload/v1707470880/serverPage/server-shutdown_cmbxgv.png" className='img-fluid lazyload' alt="" />
+              <img data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674374/server-shutdown_cmbxgv_zcrvgh.png" className='img-fluid lazyload' alt="" />
             </div>
               <p  style={{textAlign: 'justify'}}>
               They are primarily responsible for configuring, managing, and implementing operating systems. Our Administrators are in charge of backups and retrieval of resources. 
@@ -132,7 +132,7 @@ const Server = () => {
           <div class="col-lg-6 col-md-6">
           <div class="service-item  position-relative" style={{boxShadow:" 0 0 10px 2px rgba(0,0,0,0.6)"}}>
             <div className="text-center mb-2">
-              <img data-src="https://res.cloudinary.com/elonatech/image/upload/v1707470880/serverPage/server-shutdown_cmbxgv.png" className='img-fluid lazyload' alt="" />
+              <img data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674374/server-shutdown_cmbxgv_zcrvgh.png" className='img-fluid lazyload' alt="" />
             </div>
               <p  style={{textAlign: 'justify'}}>
               Elonatech's Server administrators have adequate knowledge of many types of server-based business applications. 
@@ -144,7 +144,7 @@ const Server = () => {
           <div class="col-lg-6 col-md-6">
           <div class="service-item  position-relative" style={{boxShadow:" 0 0 10px 2px rgba(0,0,0,0.6)"}}>
             <div className="text-center mb-2">
-              <img data-src="https://res.cloudinary.com/elonatech/image/upload/v1707470880/serverPage/server-shutdown_cmbxgv.png" className='img-fluid lazyload' alt="" />
+              <img data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674374/server-shutdown_cmbxgv_zcrvgh.png" className='img-fluid lazyload' alt="" />
             </div>
               <p  style={{textAlign: 'justify'}}>
               Our Server Administrators often work with other staff members in an organization to evaluate their technology needs, 
@@ -157,7 +157,7 @@ const Server = () => {
            <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative" style={{boxShadow:" 0 0 10px 2px rgba(0,0,0,0.6)"}}>
             <div className="text-center mb-2">
-              <img data-src="https://res.cloudinary.com/elonatech/image/upload/v1707470880/serverPage/server-shutdown_cmbxgv.png" className='img-fluid lazyload' alt="" />
+              <img data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674374/server-shutdown_cmbxgv_zcrvgh.png" className='img-fluid lazyload' alt="" />
             </div>
               <p  style={{textAlign: 'justify'}}>
               They take part in the design, architecture, implementation, and maintenance of technology projects. 
@@ -170,7 +170,7 @@ const Server = () => {
           <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative" style={{boxShadow:" 0 0 10px 2px rgba(0,0,0,0.6)"}}>
             <div className="text-center mb-2">
-              <img data-src="https://res.cloudinary.com/elonatech/image/upload/v1707470880/serverPage/server-shutdown_cmbxgv.png" className='img-fluid lazyload' alt="" />
+              <img data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674374/server-shutdown_cmbxgv_zcrvgh.png" className='img-fluid lazyload' alt="" />
             </div>
               <p  style={{textAlign: 'justify'}}>
               As IT professionals, they also have to be on top of the latest developments in technology
@@ -182,7 +182,7 @@ const Server = () => {
           <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative" style={{boxShadow:" 0 0 10px 2px rgba(0,0,0,0.6)"}}>
             <div className="text-center mb-2">
-              <img data-src="https://res.cloudinary.com/elonatech/image/upload/v1707470880/serverPage/server-shutdown_cmbxgv.png" className='img-fluid lazyload' alt="" />
+              <img data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674374/server-shutdown_cmbxgv_zcrvgh.png" className='img-fluid lazyload' alt="" />
             </div>
               <p  style={{textAlign: 'justify'}}>
               Although our Windows server administrators, Mac server administrators, and Unix/Linux server administrators, 

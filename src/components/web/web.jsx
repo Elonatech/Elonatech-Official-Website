@@ -10,55 +10,55 @@ import { Helmet } from 'react-helmet-async'
 const Web = () => {
   const features = [
     {
-      icon: 'bolt_zbtbl9',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152305/bolt_zbtbl9_mwpxhd.png',
       title: 'Super Fast Loading In Less Than 3 Seconds',
       description:
         "Your website will be hosted on the world's fastest LiteSpeed Web Server to ensure a smooth user experience."
     },
     {
-      icon: 'responsive-design_l9aqtn',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152341/responsive-design_l9aqtn_ma7e04.png',
       title: 'Mobile, Tablet & Desktop Responsive Sites',
       description:
         'Your Customers/Clients will be able to easily access your website from desktop, tablet and mobile devices.'
     },
     {
-      icon: 'uiux_zuvfez',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152406/uiux_zuvfez_q1rtzm.png',
       title: 'UI/UX. Preview Your Project',
       description:
         "You can have a feel of exactly how the website will look. We'll design a prototype with an excellent User Interface (UI) & User Experience (UX)."
     },
     {
-      icon: 'web-design_s8nmai',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152459/web-design_s8nmai_afnrur.png',
       title: 'Premium Designs And Exclusive Branding',
       description:
         'Expect nothing less than a Premium Website that will allow you stand out from your competitors.'
     },
     {
-      icon: 'good-conversion-rate_nljzbs',
-      title: 'Built For Conversions, Leads And Sales',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152489/good-conversion-rate_nljzbs_n4riuj.png',
+      title: 'Built For Conversions, Leads And Sales', 
       description:
-        'We tailor all our design elements and functionalities to help you achieve all your business objectives.'
+        'We tailor all our design elements and funct ionalities to help you achieve all your business objectives.'
     },
     {
-      icon: 'custom-email_gurd7u',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152533/custom-email_gurd7u_xhhj8x.png',
       title: 'Unlimited Custom Email For You & Your Staff',
       description:
         'Create your vibe with an ultra-secure custom email address - one that uses your own domain name.'
     },
     {
-      icon: 'web-technologies_nz19qg',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152591/web-technologies_nz19qg_wgzpf1.png',
       title: 'Built With The Most Advanced Technologies',
       description:
         'We are experts in all major web technologies like React, Express, MongoDB, Laravel, CodeIgniter, WordPress, & several others.'
     },
     {
-      icon: 'ssl_auwnuw',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152658/ssl_auwnuw_rno11i.png',
       title: 'Guaranteed Security With SSL Encryption',
       description:
         "Your website will be secured with the world's best SSL encryption to guarantee constant security."
     },
     {
-      icon: 'engineering_q9zyu2',
+      icon: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785152684/engineering_q9zyu2_dteu4n.png',
       title: 'Continuous Maintenance, Updates & Back-Ups',
       description:
         'Even after project completion, we will still continue to carry out regular updates, bug fixes & monthly back-ups.'
@@ -95,50 +95,50 @@ const Web = () => {
   const projects = [
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637836/webDesignPage/webProject/ElonatechNigeria_bjybah.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783676961/ElonatechNigeria_bjybah_q8g4r2.png',
       web: 'https://elonatech.com.ng',
       company: 'Elonatech Nigeria Limited'
     },
 
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637837/webDesignPage/webProject/HyperthreadVentures_gb4dbm.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783676966/HyperthreadVentures_gb4dbm_qeg7z1.png',
       web: 'https://hyperthread.com.ng',
       company: 'Hyperthread Ventures Limited'
     },
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637602/webDesignPage/webProject/KappachemLaboratory_drdurm.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783676666/KappachemLaboratory_drdurm_bl0bbg.png',
       web: 'https://kappachemlabs.com',
       company: 'kappachem Laboratory Services'
     },
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637603/webDesignPage/webProject/PFNLagosState_sh0dhr.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783676688/PFNLagosState_sh0dhr_nc1fb4.png',
       web: 'https://pfnlagosstate.org',
       company: 'Pentecostal Fellowship Of Nigeria (PFN), Lagos State'
     },
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637604/webDesignPage/webProject/RemabenScientific_wkasfd.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785151745/RemabenScientific_wkasfd_xeqmak.png',
       web: 'https://remabenscientific.com/',
       company: 'Remaben Scientific Services Limited'
     },
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637825/webDesignPage/webProject/SafebrooksNigeria_nqs6gs.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783676916/SafebrooksNigeria_nqs6gs_bem7rt.png',
       web: 'https://www.safebrooks.com.ng/',
       company: 'SafeBrooks Nigeria Limited'
     },
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637832/webDesignPage/webProject/SupremeFamily_qwjvyh.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783676943/SupremeFamily_qwjvyh_vj673o.png',
       web: 'https://supremefamily.org',
       company: 'Supreme Family Entertainment International Initiative'
     },
     {
       id: uuidv4(),
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709637834/webDesignPage/webProject/TheHomeBuildersMinistries_koqgvt.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783676955/TheHomeBuildersMinistries_koqgvt_jfiztq.png',
       web: 'https://thbcmi.org',
       company: 'The Home-Builders Christian Ministry International'
     }
@@ -208,7 +208,7 @@ const Web = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709638089/webDesignPage/devops_acdkca.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676972/devops_acdkca_injnsz.jpg'
                 className='img-fluid rounded lazyload '
                 alt='Web design and development project showcase'
               />
@@ -263,9 +263,8 @@ const Web = () => {
                     style={{ width: '3rem', height: '3rem' }}
                   >
                     <img
-                      src='https://i.stack.imgur.com/qq8AE.gif'
-                      data-src={`https://res.cloudinary.com/elonatech/image/upload/v1709638790/webDesignPage/icons/${feature.icon}.png`}
-                      className='img-fluid lazyload'
+                      src={feature.icon}
+                      className='img-fluid'
                       style={{ width: '25px' }}
                       alt='Web design and development project showcase'
                     />
@@ -310,7 +309,7 @@ const Web = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709638113/webDesignPage/Programming_n706wf.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676979/Programming_n706wf_dtay6t.jpg'
                 className='img-fluid rounded lazyload'
                 alt='Web design and development project showcase'
               />
@@ -462,7 +461,7 @@ const Web = () => {
                         <div className='text-center'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676989/logo2_v2vwex_yotcz3.png'
                             class='lazyload'
                             alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
@@ -489,7 +488,7 @@ const Web = () => {
                         <div className='text-center pb-2'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676989/logo2_v2vwex_yotcz3.png'
                             class='lazyload'
                             alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
@@ -515,7 +514,7 @@ const Web = () => {
                         <div className='text-center pb-2'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676989/logo2_v2vwex_yotcz3.png'
                             class='lazyload'
                             alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
@@ -542,7 +541,7 @@ const Web = () => {
                         <div className='text-center pb-2'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676989/logo2_v2vwex_yotcz3.png'
                             class='lazyload'
                             alt='Web design and development project showcase'
                             style={{ width: '3rem' }}
@@ -569,7 +568,7 @@ const Web = () => {
                         <div className='text-center pb-2'>
                           <img
                             src='https://i.stack.imgur.com/qq8AE.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1709644853/webDesignPage/icons/logo2_v2vwex.png'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676989/logo2_v2vwex_yotcz3.png'
                             class='lazyload'
                             alt='Web design and development project showcase'
                             style={{ width: '3rem' }}

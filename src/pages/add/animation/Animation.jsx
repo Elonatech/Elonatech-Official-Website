@@ -119,7 +119,7 @@ It is created by projecting sequenced images quickly, one after another, to crea
         <div class='row align-items-center '>
           <div class='col-md-6'>
             <img
-              src='https://res.cloudinary.com/elonatech/image/upload/v1709645935/2dAnimationPage/animation_111_720_aoesan.png'
+              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676995/animation_111_720_aoesan_g85j2g.png'
               alt=''
               style={{ marginBottom: '100px' }}
               className='mb-2 img-fluid'
@@ -221,7 +221,7 @@ It is created by projecting sequenced images quickly, one after another, to crea
         <div className='col-lg-6'>
           <div className='card border-0'>
             <img
-              src='https://res.cloudinary.com/elonatech/image/upload/v1709645939/2dAnimationPage/animation_jeperf.jpg'
+              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677018/animation_jeperf_iw4o1v.jpg'
               alt='img-fluid lazyload rounded'
               style={{ height: '35rem' }}
             />

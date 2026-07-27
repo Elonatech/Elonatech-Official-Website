@@ -184,7 +184,7 @@ const Team = () => {
                 >
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1710243151/teamPage/chairman_esjmiy.jpg"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783693039/chairman_esjmiy_zmtvwz.jpg"
                     alt=""
                   />
                   <h4
@@ -257,7 +257,7 @@ const Team = () => {
                     <Link className="text-decoration-none" to={"/oreva-p-oku"}>
                       <img
                         class="img-fluid mb-4"
-                        src="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png"
+                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908745/Image-Resize-1_4_flng2u_fqhhga.png"
                         alt=""
                       />
                       <h4 className="fw-bold" style={{ color: "#34548c" }}>
@@ -327,7 +327,7 @@ const Team = () => {
                     <Link className="text-decoration-none" to={"/violet-oku"}>
                       <img
                         class="img-fluid mb-4"
-                        src="https://res.cloudinary.com/djogptxxc/image/upload/v1778082344/Image-Resize-2_1_vlwrnr.png"
+                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908688/Image-Resize-2_1_vlwrnr_zafov0.png"
                         alt=""
                       />
                       <h4 className="fw-bold" style={{ color: "#34548c" }}>
@@ -478,7 +478,7 @@ const Team = () => {
                     >
                       <img
                         class="img-fluid mb-4 team-img"
-                        src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/joseph_picture_rurbzo.jpg"
+                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694125/joseph_picture_rurbzo_km2xak.jpg"
                         alt=""
                       />
                       <h5 className="fw-bold" style={{ color: "#34548c" }}>
@@ -532,7 +532,7 @@ const Team = () => {
                     <Link className="text-decoration-none" to={"/jamiu-noah"}>
                       <img
                         class="img-fluid mb-4 team-img"
-                        src="https://res.cloudinary.com/elonatech/image/upload/v1709808291/teamPage/Jamiu_noah_ghhfjl.png"
+                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783689788/Jamiu_noah_ghhfjl_deaooc.png"
                         alt=""
                       />
                       <h4 className="fw-bold" style={{ color: "#34548c" }}>
@@ -616,7 +616,7 @@ const Team = () => {
             <div className="text-center">
               <img
                 src="https://i.stack.imgur.com/qq8AE.gif"
-                data-src="https://res.cloudinary.com/elonatech/image/upload/v1709549735/teamPage/BOD_hlkh5z.jpg"
+                data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674607/BOD_hlkh5z_t0psjw.jpg"
                 className="img-fluid lazyload"
                 alt=""
               />

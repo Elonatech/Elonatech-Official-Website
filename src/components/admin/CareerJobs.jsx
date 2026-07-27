@@ -5,31 +5,18 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import AdminSidebar from "./AdminSidebar";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import "./SuperAdminDashboard.css";
 
 const getToken = () => JSON.parse(localStorage.getItem("token"));
 
-const EMPLOYMENT_TYPES = ["Full-Time", "Part-Time", "Contract", "Internship", "Freelance", "Mentorship", "Volunteer", "Other"];
-const WORKPLACE_TYPES = ["On-site", "Hybrid", "Remote"];
-const JOB_LEVELS = ["No Experience", "Internship & Graduate", "Entry-level", "Mid-level", "Senior-level", "Executive-level"];
-const HIRING_TIMELINES = ["2 weeks", "1 Month", "2 Months", "3 Months"];
 const JOB_STATUSES = ["Active", "Draft", "Closed"];
 
 const emptyForm = {
   title: "",
-  location: "",
-  numberOfOpenings: 1,
-  employmentType: "Full-Time",
-  workplaceType: "On-site",
-  jobLevel: "Entry-level",
-  minimumQualification: "",
-  jobSummary: "",
   jobDescription: "",
-  responsibilities: "",
-  requirements: "",
-  benefits: "",
   status: "Draft",
-  hiringTimeline: "2 weeks",
 };
 
 const statusBadgeClass = (status) => {
@@ -96,19 +83,8 @@ const CareerJobs = () => {
     setEditingJob(job);
     setEditForm({
       title: job.title,
-      location: job.location,
-      numberOfOpenings: job.numberOfOpenings,
-      employmentType: job.employmentType,
-      workplaceType: job.workplaceType,
-      jobLevel: job.jobLevel,
-      minimumQualification: job.minimumQualification,
-      jobSummary: job.jobSummary,
       jobDescription: job.jobDescription,
-      responsibilities: job.responsibilities || "",
-      requirements: job.requirements || "",
-      benefits: job.benefits || "",
       status: job.status,
-      hiringTimeline: job.hiringTimeline,
     });
   };
 
@@ -207,9 +183,6 @@ const CareerJobs = () => {
                   <thead>
                     <tr>
                       <th>TITLE</th>
-                      <th>LOCATION</th>
-                      <th>TYPE</th>
-                      <th>OPENINGS</th>
                       <th>STATUS</th>
                       <th>APPLICATIONS</th>
                       <th>ACTIONS</th>
@@ -219,12 +192,6 @@ const CareerJobs = () => {
                     {jobs.map((job) => (
                       <tr key={job._id}>
                         <td data-label="Title">{job.title}</td>
-                        <td data-label="Location">{job.location}</td>
-                        <td data-label="Type">
-                          {job.employmentType}
-                          <div className="job-workplace-subtext">{job.workplaceType}</div>
-                        </td>
-                        <td data-label="Openings">{job.numberOfOpenings}</td>
                         <td data-label="Status">
                           <span className={`sad-role-badge ${statusBadgeClass(job.status)}`}>
                             {job.status}
@@ -283,158 +250,29 @@ const CareerJobs = () => {
                   required
                 />
               </div>
-              <div className="sad-form-row">
-                <div className="mb-3">
-                  <label className="sad-label">Location</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="e.g. Lagos"
-                    value={form.location}
-                    onChange={(e) => setForm({ ...form, location: e.target.value })}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="sad-label">Number of Openings</label>
-                  <input
-                    type="number"
-                    min={1}
-                    className="form-control"
-                    value={form.numberOfOpenings}
-                    onChange={(e) => setForm({ ...form, numberOfOpenings: e.target.value })}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="sad-form-row">
-                <div className="mb-3">
-                  <label className="sad-label">Employment Type</label>
-                  <select
-                    className="form-select"
-                    value={form.employmentType}
-                    onChange={(e) => setForm({ ...form, employmentType: e.target.value })}
-                  >
-                    {EMPLOYMENT_TYPES.map((t) => (
-                      <option key={t} value={t}>{t}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="mb-3">
-                  <label className="sad-label">Workplace Type</label>
-                  <select
-                    className="form-select"
-                    value={form.workplaceType}
-                    onChange={(e) => setForm({ ...form, workplaceType: e.target.value })}
-                  >
-                    {WORKPLACE_TYPES.map((t) => (
-                      <option key={t} value={t}>{t}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className="sad-form-row">
-                <div className="mb-3">
-                  <label className="sad-label">Job Level</label>
-                  <select
-                    className="form-select"
-                    value={form.jobLevel}
-                    onChange={(e) => setForm({ ...form, jobLevel: e.target.value })}
-                  >
-                    {JOB_LEVELS.map((l) => (
-                      <option key={l} value={l}>{l}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="mb-3">
-                  <label className="sad-label">Minimum Qualification</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="e.g. HND/BSc in Computer Science"
-                    value={form.minimumQualification}
-                    onChange={(e) => setForm({ ...form, minimumQualification: e.target.value })}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Job Summary</label>
-                <textarea
-                  className="form-control"
-                  rows={2}
-                  placeholder="A short summary shown on the job listing card"
-                  value={form.jobSummary}
-                  onChange={(e) => setForm({ ...form, jobSummary: e.target.value })}
-                  required
-                />
-              </div>
               <div className="mb-3">
                 <label className="sad-label">Job Description</label>
-                <textarea
-                  className="form-control"
-                  rows={4}
-                  placeholder="Overview of the role and what the candidate will be doing"
-                  value={form.jobDescription}
-                  onChange={(e) => setForm({ ...form, jobDescription: e.target.value })}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Responsibilities</label>
-                <textarea
-                  className="form-control"
-                  rows={4}
-                  placeholder="List the key responsibilities — one per line"
-                  value={form.responsibilities}
-                  onChange={(e) => setForm({ ...form, responsibilities: e.target.value })}
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Requirements</label>
-                <textarea
-                  className="form-control"
-                  rows={4}
-                  placeholder="Required skills, experience and qualifications — one per line"
-                  value={form.requirements}
-                  onChange={(e) => setForm({ ...form, requirements: e.target.value })}
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Benefits (optional)</label>
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Perks and benefits — one per line"
-                  value={form.benefits}
-                  onChange={(e) => setForm({ ...form, benefits: e.target.value })}
-                />
-              </div>
-              <div className="sad-form-row">
-                <div className="mb-3">
-                  <label className="sad-label">Hiring Timeline</label>
-                  <select
-                    className="form-select"
-                    value={form.hiringTimeline}
-                    onChange={(e) => setForm({ ...form, hiringTimeline: e.target.value })}
-                  >
-                    {HIRING_TIMELINES.map((h) => (
-                      <option key={h} value={h}>{h}</option>
-                    ))}
-                  </select>
+                <div className="editorContainer">
+                  <ReactQuill
+                    className="editor"
+                    theme="snow"
+                    placeholder="Full role overview — location, employment type, responsibilities, requirements, benefits, everything"
+                    value={form.jobDescription}
+                    onChange={(value) => setForm({ ...form, jobDescription: value })}
+                  />
                 </div>
-                <div className="mb-4">
-                  <label className="sad-label">Status</label>
-                  <select
-                    className="form-select"
-                    value={form.status}
-                    onChange={(e) => setForm({ ...form, status: e.target.value })}
-                  >
-                    {JOB_STATUSES.map((s) => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
-                </div>
+              </div>
+              <div className="mb-4">
+                <label className="sad-label">Status</label>
+                <select
+                  className="form-select"
+                  value={form.status}
+                  onChange={(e) => setForm({ ...form, status: e.target.value })}
+                >
+                  {JOB_STATUSES.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
               </div>
               <button type="submit" className="sad-btn-create w-100" disabled={submitting}>
                 {submitting ? "Creating..." : "Create Job"}
@@ -466,133 +304,15 @@ const CareerJobs = () => {
                 />
               </div>
               <div className="mb-3">
-                <label className="sad-label">Location</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={editForm.location}
-                  onChange={(e) => setEditForm({ ...editForm, location: e.target.value })}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Number of Openings</label>
-                <input
-                  type="number"
-                  min={1}
-                  className="form-control"
-                  value={editForm.numberOfOpenings}
-                  onChange={(e) => setEditForm({ ...editForm, numberOfOpenings: e.target.value })}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Employment Type</label>
-                <select
-                  className="form-select"
-                  value={editForm.employmentType}
-                  onChange={(e) => setEditForm({ ...editForm, employmentType: e.target.value })}
-                >
-                  {EMPLOYMENT_TYPES.map((t) => (
-                    <option key={t} value={t}>{t}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Workplace Type</label>
-                <select
-                  className="form-select"
-                  value={editForm.workplaceType}
-                  onChange={(e) => setEditForm({ ...editForm, workplaceType: e.target.value })}
-                >
-                  {WORKPLACE_TYPES.map((t) => (
-                    <option key={t} value={t}>{t}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Job Level</label>
-                <select
-                  className="form-select"
-                  value={editForm.jobLevel}
-                  onChange={(e) => setEditForm({ ...editForm, jobLevel: e.target.value })}
-                >
-                  {JOB_LEVELS.map((l) => (
-                    <option key={l} value={l}>{l}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Minimum Qualification</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={editForm.minimumQualification}
-                  onChange={(e) => setEditForm({ ...editForm, minimumQualification: e.target.value })}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Job Summary</label>
-                <textarea
-                  className="form-control"
-                  rows={2}
-                  value={editForm.jobSummary}
-                  onChange={(e) => setEditForm({ ...editForm, jobSummary: e.target.value })}
-                  required
-                />
-              </div>
-              <div className="mb-3">
                 <label className="sad-label">Job Description</label>
-                <textarea
-                  className="form-control"
-                  rows={4}
-                  value={editForm.jobDescription}
-                  onChange={(e) => setEditForm({ ...editForm, jobDescription: e.target.value })}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Responsibilities</label>
-                <textarea
-                  className="form-control"
-                  rows={4}
-                  placeholder="List the key responsibilities — one per line"
-                  value={editForm.responsibilities}
-                  onChange={(e) => setEditForm({ ...editForm, responsibilities: e.target.value })}
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Requirements</label>
-                <textarea
-                  className="form-control"
-                  rows={4}
-                  placeholder="Required skills, experience and qualifications — one per line"
-                  value={editForm.requirements}
-                  onChange={(e) => setEditForm({ ...editForm, requirements: e.target.value })}
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Benefits (optional)</label>
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Perks and benefits — one per line"
-                  value={editForm.benefits}
-                  onChange={(e) => setEditForm({ ...editForm, benefits: e.target.value })}
-                />
-              </div>
-              <div className="mb-3">
-                <label className="sad-label">Hiring Timeline</label>
-                <select
-                  className="form-select"
-                  value={editForm.hiringTimeline}
-                  onChange={(e) => setEditForm({ ...editForm, hiringTimeline: e.target.value })}
-                >
-                  {HIRING_TIMELINES.map((h) => (
-                    <option key={h} value={h}>{h}</option>
-                  ))}
-                </select>
+                <div className="editorContainer">
+                  <ReactQuill
+                    className="editor"
+                    theme="snow"
+                    value={editForm.jobDescription}
+                    onChange={(value) => setEditForm({ ...editForm, jobDescription: value })}
+                  />
+                </div>
               </div>
               <div className="mb-4">
                 <label className="sad-label">Status</label>

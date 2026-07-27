@@ -52,7 +52,7 @@ const GetInTouchPage = () => {
               <div class="grid-container">
                 <div>
                   <img
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1734539524/X_Twitter_bmsqus.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694166/X_Twitter_bmsqus_lftndp.png"
                     alt="Twitter QR Code"
                     width="100px"
                   />
@@ -60,7 +60,7 @@ const GetInTouchPage = () => {
                 </div>
                 <div>
                   <img
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1734539519/Facebook_ugpimx.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694146/Facebook_ugpimx_mpwr8b.png"
                     alt="Facebook Messenger QR Code"
                     width="100px"
                   />
@@ -68,7 +68,7 @@ const GetInTouchPage = () => {
                 </div>
                 <div>
                   <img
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1734532454/IMG_20241218_121244_013_lw58ij.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694137/IMG_20241218_121244_013_lw58ij_lephrt.png"
                     alt="Instagram QR Code"
                     width="100px"
                   />
@@ -76,7 +76,7 @@ const GetInTouchPage = () => {
                 </div>
                 <div>
                   <img
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1734539519/Linkedin_zqf2na.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694152/Linkedin_zqf2na_onypiy.png"
                     alt="LinkedIn QR Code"
                     width="100px"
                   />
@@ -84,7 +84,7 @@ const GetInTouchPage = () => {
                 </div>
                 <div>
                   <img
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1734539519/Youtube_gjsxlo.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694159/Youtube_gjsxlo_vovhhs.png"
                     alt="Youtube QR Code"
                     width="100px"
                   />
@@ -92,7 +92,7 @@ const GetInTouchPage = () => {
                 </div>
                 <div>
                   <img
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1734532454/WhatsApp-QR-code01_cofo4y.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694142/WhatsApp-QR-code01_cofo4y_njicms.png"
                     alt="WhatsApp QR Code"
                     width="100px"
                   />
@@ -104,8 +104,8 @@ const GetInTouchPage = () => {
           <div className="col-md-6">
             <div className="card border-0">
               <img
-                src="https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif"
-                data-src="https://res.cloudinary.com/elonatech/image/upload/v1709803845/getInTouchPage/Customer_Support_nes0ot.png"
+                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif"
+                data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783680137/Customer_Support_nes0ot_wsdx96.png"
                 className="img-fluid rounded lazyload"
                 alt=""
               />
@@ -121,7 +121,7 @@ const GetInTouchPage = () => {
               className=""
               style={{
                 height: "230px",
-                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1706795181/getInTouchPage/old-blue-dial-telephone-white-background-3d-illustration_101266-2521_psrxnm.jpg)`,
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783673680/old-blue-dial-telephone-white-background-3d-illustration_101266-2521_psrxnm_lywf5e.jpg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 color: "#f0f0f0",
@@ -138,7 +138,7 @@ const GetInTouchPage = () => {
               className=""
               style={{
                 height: "230px",
-                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1706795180/getInTouchPage/focused-african-american-office-manager-sitting-office-with-laptop-reading-important-documents-with-puzzled-expression-holding-head-with-his-hand_1258-3884_cz543d.jpg)`,
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783673673/focused-african-american-office-manager-sitting-office-with-laptop-reading-important-documents-with-puzzled-expression-holding-head-with-his-hand_1258-3884_cz543d_gdj2to.jpg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 color: "#f0f0f0",
@@ -155,7 +155,7 @@ const GetInTouchPage = () => {
               className=""
               style={{
                 height: "230px",
-                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1706795185/getInTouchPage/business-people-doing-handshake-partnership-agreeing-startup-collaboration-teamwork-company-presentation-working-with-research-data-documents-laptop-office_482257-49371_xjiblq.jpg)`,
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783673705/business-people-doing-handshake-partnership-agreeing-startup-collaboration-teamwork-company-presentation-working-with-research-data-documents-laptop-office_482257-49371_xjiblq_tpbll0.jpg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 color: "#f0f0f0",
@@ -172,7 +172,7 @@ const GetInTouchPage = () => {
               className=""
               style={{
                 height: "230px",
-                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/elonatech/image/upload/v1706795183/getInTouchPage/attractive-african-businessman-glasses-suit-holding-papers_273609-9306_qmeads.jpg)`,
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783673692/attractive-african-businessman-glasses-suit-holding-papers_273609-9306_qmeads_mjmhtq.jpg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 color: "#f0f0f0",

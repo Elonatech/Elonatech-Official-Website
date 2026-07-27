@@ -29,12 +29,12 @@ const Serve = () => {
           <div class="card card-1 border-0  bg-lazy" style={{backgroundImage:`url(${WebBackground}) `, height:" 360px" , backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-4 text-white">WEB DESIGN & DEVELOPMENT</h5>
-          <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632436/homePage/What%20we%20do/icons/website_svappk.png" class="lazyload mb-4"  />
+          <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676562/website_svappk_tkmas5.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">WEB DESIGN & DEVELOPMENT</h4>
-            <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632436/homePage/What%20we%20do/icons/website_svappk.png" class="lazyload mb-4"  />
+            <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676562/website_svappk_tkmas5.png" class="lazyload mb-4"  />
             <p class="text-white">At Elonatech, we build websites that are not only visually beautiful but also functionally effective. Our team of web strategists.</p>
             <Link  to={'/web-design'}    class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -46,12 +46,12 @@ const Serve = () => {
           <div class="card card-1 border-0  bg-lazy" style={{backgroundImage:`url(${DigitalBackground})`, height:" 360px", backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-4 text-white"> DIGITIAL MARKETING</h5>
-          <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632429/homePage/What%20we%20do/icons/network_2_hbxvaz.png" class="lazyload mb-4"  />
+          <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676519/network_2_hbxvaz_j4dkhx.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">DIGITIAL MARKETING</h4>
-            <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632429/homePage/What%20we%20do/icons/network_2_hbxvaz.png" class="lazyload mb-4"  />
+            <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676519/network_2_hbxvaz_j4dkhx.png" class="lazyload mb-4"  />
             <p class="text-white">With Digital marketing, we have successfully changed the way brands and businesses use technology for marketing. Digital platforms are..</p>
             <Link  to={'/digital-marketing'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -63,12 +63,12 @@ const Serve = () => {
           <div class="card card-1 border-0  bg-lazy" style={{backgroundImage:`url(${GraphicsBackground})`, height:" 360px",backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-4 text-white">GRAPHICS & BRANDING</h5>
-          <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632428/homePage/What%20we%20do/icons/graphic_pkt8ib.png" class="lazyload mb-4"  />
+          <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676509/graphic_pkt8ib_pkbllj.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">GRAPHICS & BRANDING</h4>
-            <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632428/homePage/What%20we%20do/icons/graphic_pkt8ib.png" class="lazyload mb-4"  />
+            <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676509/graphic_pkt8ib_pkbllj.png" class="lazyload mb-4"  />
             <p class="text-white">Brand identity is not limited to a specific mark or name. Branding can incorporate multiple touch points...</p>
             <Link to={'/graphics-design'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -80,12 +80,12 @@ const Serve = () => {
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${NetworkBackground})`, height:" 360px", backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-2 text-white">NETWORK ENGINEERING / ADMINISTRATION</h5>
-          <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632430/homePage/What%20we%20do/icons/network_bcyqi7.png" class="lazyload mb-4"  />
+          <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676530/network_bcyqi7_vil4vi.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">NETWORK ENGINEERING / ADMINISTRATION</h4>
-            <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632430/homePage/What%20we%20do/icons/network_bcyqi7.png" class="lazyload mb-4"  />
+            <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676530/network_bcyqi7_vil4vi.png" class="lazyload mb-4"  />
             <p class="text-white">Responsible for installing, implementing, and maintaining business applications for organizations...</p>
             <Link to={'/network-administration-implementation'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -97,12 +97,12 @@ const Serve = () => {
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${ComputerBackground})`, height:" 360px",backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-4 text-white">COMPUTER ENGINEERING</h5>
-          <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632438/homePage/What%20we%20do/icons/computer_rzvqra.png" class="lazyload mb-4"  />
+          <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676587/computer_rzvqra_fyj8q6.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">COMPUTER ENGINEERING</h4>
-            <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632438/homePage/What%20we%20do/icons/computer_rzvqra.png" class="lazyload mb-4"  />
+            <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676587/computer_rzvqra_fyj8q6.png" class="lazyload mb-4"  />
             <p class="text-white">While computer hardware configurations vary widely, we work on a broad range of hardware systems..</p>
             <Link  to={'/hardware-engineering'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -114,12 +114,12 @@ const Serve = () => {
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${AccessBackground})`, height:" 360px" ,backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-4 text-white">ACCESS CONTROL & SURVEILLANCE </h5>
-          <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632432/homePage/What%20we%20do/icons/suvalliance_tbxssd.png" class="lazyload mb-4"  />
+          <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676543/suvalliance_tbxssd_g8xkca.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">ACCESS CONTROL & SURVEILLANCE</h4>
-            <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632432/homePage/What%20we%20do/icons/suvalliance_tbxssd.png" class="lazyload mb-4"  />
+            <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676543/suvalliance_tbxssd_g8xkca.png" class="lazyload mb-4"  />
             <p class="text-white">While network security should always be a prime concern for your business, you shouldn’t neglect your physical security either...</p>
             <Link to={'/surveillance'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -131,12 +131,12 @@ const Serve = () => {
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${AnimationBackground})`, height:" 360px" ,backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-4 text-white">ANIMATIONS & VIDEO GRAPHIC</h5>
-          <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632435/homePage/What%20we%20do/icons/video-gallery_ymfxwv.png" class="lazyload mb-4"  />
+          <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676554/video-gallery_ymfxwv_rpzqgk.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">ANIMATIONS & VIDEO GRAPHIC</h4>
-            <img alt="product" data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632435/homePage/What%20we%20do/icons/video-gallery_ymfxwv.png" class="lazyload mb-4"  />
+            <img alt="product" data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676554/video-gallery_ymfxwv_rpzqgk.png" class="lazyload mb-4"  />
             <p class="text-white">Animations have the power to convey complex concepts, evoke emotions, and leave a lasting impression on your audience.</p>
             <Link to={'/animation'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -148,12 +148,12 @@ const Serve = () => {
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${LiveStreamBackground})`, height:" 360px" ,backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-2 text-white">LIVESTREAMING & VIDEOCONFERENCING</h5>
-          <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632433/homePage/What%20we%20do/icons/video_shovcl.png" class="lazyload mb-4"  />
+          <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676549/video_shovcl_c4tee8.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">LIVESTREAMING & VIDEOCONFERENCING</h4>
-            <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632433/homePage/What%20we%20do/icons/video_shovcl.png" class="lazyload mb-4"  />
+            <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676549/video_shovcl_c4tee8.png" class="lazyload mb-4"  />
             <p class="text-white">As we adjust to the new normal, everyone is moving their social life online. Happy hours, concerts, events, seminars, late night talk shows...</p>
             <Link to={'/livestreaming'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>
@@ -165,12 +165,12 @@ const Serve = () => {
           <div class="card card-1 border-0 bg-lazy" style={{backgroundImage:`url(${ConsultBackground})`, height:" 360px" ,backgroundSize:"cover", backgroundPosition:"center center", backgroundRepeat:"none"}}>
           <div class="pue text-center "  style={{position:"absolute", bottom:"-0"}} >
           <h5 class="mt-4 text-white">CONSULTING</h5>
-          <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632439/homePage/What%20we%20do/icons/consult_lwwnnq.png" class="lazyload mb-4"  />
+          <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676594/consult_lwwnnq_idutic.png" class="lazyload mb-4"  />
            </div>
           <div class="melo">
           <div class="text-center">
             <h4 class="mt-5 text-white">CONSULTING</h4>
-            <img alt="product"  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709632439/homePage/What%20we%20do/icons/consult_lwwnnq.png"  class="lazyload mb-4"  />
+            <img alt="product"  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783676594/consult_lwwnnq_idutic.png"  class="lazyload mb-4"  />
             <p class="text-white">We help brands & businesses gain a competitive advantage in the connected world helping business find the best solutions. With over 12 years of experience...</p>
             <Link to={'/consulting'} class="btn btn-danger"><h5>See More</h5></Link>
             </div>

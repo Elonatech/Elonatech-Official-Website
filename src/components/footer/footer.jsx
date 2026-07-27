@@ -97,10 +97,10 @@ const Footer = () => {
             <div class="col-lg-3 col-md-5 footer-info">
               <div className="">
                 <img
-                  data-src={eloa2}
-                  className="lazyload mx-4"
+                  src={eloa2}
+                  className="mx-4"
                   style={{ height: "5rem", width: "5rem" }}
-                  alt="Description of the image content"
+                  alt="Elonatech logo"
                 />
               </div>
               <div className="">
@@ -443,10 +443,10 @@ const Footer = () => {
             <div class="col-6 footer-info">
               <div className="">
                 <img
-                  data-src={eloa2}
-                  className="lazyload mx-4"
+                  src={eloa2}
+                  className="mx-4"
                   style={{ height: "5rem", width: "5rem" }}
-                  alt="Description of the image content"
+                  alt="Elonatech logo"
                 />
               </div>
               <div className="">

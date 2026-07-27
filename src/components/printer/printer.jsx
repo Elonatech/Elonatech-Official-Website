@@ -158,7 +158,7 @@ Xerox
           <div class='col-md-6'>
             <div className='text-center'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
                 data-src={Repair}
                 alt=''
                 className='img-fluid  lazyload rounded'

@@ -42,7 +42,7 @@ is composed of individuals that are familiar with the ins and outs of the device
               <div className="text-center">
                 <img
                   src="https://i.stack.imgur.com/qq8AE.gif"
-                  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709227041/techSupportPage/Tech_support_l7kwim.jpg"
+                  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783674580/Tech_support_l7kwim_ngtrpj.jpg"
                   alt=""
                   className="img-fluid lazyload"
                 />
@@ -99,7 +99,7 @@ is composed of individuals that are familiar with the ins and outs of the device
               <div className="text-center">
                 <img
                   src="https://i.stack.imgur.com/qq8AE.gif"
-                  data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717198/techSupportPage/fixing-server_wrgsqu.jpg"
+                  data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679417/fixing-server_wrgsqu_ygsor4.jpg"
                   alt=""
                   className="img-fluid rounded lazyload"
                 />
@@ -134,7 +134,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li className="pl-1">
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -148,7 +148,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li>
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -162,7 +162,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li>
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -175,7 +175,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li>
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -190,7 +190,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li>
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -207,7 +207,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li>
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -219,7 +219,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li className="">
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -232,7 +232,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li className="">
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -244,7 +244,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li>
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />
@@ -257,7 +257,7 @@ is composed of individuals that are familiar with the ins and outs of the device
                 <li className="">
                   <div className="d-flex ">
                     <img
-                      data-src="https://res.cloudinary.com/elonatech/image/upload/v1709717145/techSupportPage/star_vwt9yq.png"
+                      data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783679402/star_vwt9yq_m544xd.png"
                       alt=""
                       className="star me-3 lazyload"
                     />

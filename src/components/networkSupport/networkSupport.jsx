@@ -54,7 +54,7 @@ const NetworkSupport = () => {
           <div className='col-lg-6'>
             <img
               src='https://i.stack.imgur.com/qq8AE.gif'
-              data-src='https://res.cloudinary.com/elonatech/image/upload/v1708965714/networkSupportPage/Network_support_rvwiw0.jpg'
+              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674527/Network_support_rvwiw0_wqz8gr.jpg'
               className='img-fluid lazyload rounded'
               alt=''
             />
@@ -220,7 +220,7 @@ const NetworkSupport = () => {
           <div className='col-md-6'>
             <img
               src='https://i.stack.imgur.com/qq8AE.gif'
-              data-src='https://res.cloudinary.com/elonatech/image/upload/v1708966049/networkSupportPage/image_27_red0ri.png'
+              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674532/image_27_red0ri_clqnvc.png'
               className='img-fluid lazyload rounded'
               alt=''
             />

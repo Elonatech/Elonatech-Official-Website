@@ -199,8 +199,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0 mt-5'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706620934/hardware%20page/computer/HP/HP%20Desktop/HP_omen_desktop_monitor_1588656829650_glulwm.webp'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418789/HP_omen_desktop_monitor_1588656829650_glulwm_zjzvou.webp'
                               className='img-fluid lazyload mt-1'
                               alt=''
                             />
@@ -210,8 +210,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0 mt-4'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706620935/hardware%20page/computer/HP/HP%20Desktop/c08163334_500x367_e0cjwo.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418834/c08163334_500x367_e0cjwo_imw9in.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -221,8 +221,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706620934/hardware%20page/computer/HP/HP%20Desktop/hp-desktop-computer-500x500_gbk63u.webp'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418805/hp-desktop-computer-500x500_gbk63u_eitg6i.webp'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -232,8 +232,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0 mt-4'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706620934/hardware%20page/computer/HP/HP%20Desktop/images_4_iio9kb.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418815/images_4_iio9kb_yss3ci.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -243,8 +243,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0 mt-4'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706193145/hardware%20page/computer/HP/HP%20Desktop/Hp_pavilion-removebg-preview_yghxuz.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418682/Hp_pavilion-removebg-preview_yghxuz_q5yjjm.png'
                               className='img-fluid mt-4 lazyload'
                               alt=''
                             />
@@ -254,8 +254,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0 mt-3'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706193145/hardware%20page/computer/HP/HP%20Desktop/Hp_essential-removebg-preview_dul8r5.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418658/Hp_essential-removebg-preview_dul8r5_of0uqj.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -265,8 +265,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0 mt-5'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706620934/hardware%20page/computer/HP/HP%20Desktop/6a52c968e7a03d652d4137c6444a83ebc84b418a_wagzip.webp'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418777/6a52c968e7a03d652d4137c6444a83ebc84b418a_wagzip_rfr2ct.webp'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -276,8 +276,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706620934/hardware%20page/computer/HP/HP%20Desktop/images_5_wtfpnv.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418827/images_5_wtfpnv_xglxee.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -292,8 +292,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0 mt-1'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621288/hardware%20page/computer/HP/Hp%20Notebooks/convertible_x360_13_black_sbcyyf.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418878/convertible_x360_13_black_sbcyyf_v4xi54.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -303,8 +303,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621288/hardware%20page/computer/HP/Hp%20Notebooks/t-900-a-Omen-17-c-44-C-Tabbed-Teaser_ayzfvz.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418884/t-900-a-Omen-17-c-44-C-Tabbed-Teaser_ayzfvz_bry04j.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -314,8 +314,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621288/hardware%20page/computer/HP/Hp%20Notebooks/A24GD200807LWIKH_bd6b2003-6d74-483c-8b2e-7250fbf1efe9_800x_yw3pog.webp'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418869/A24GD200807LWIKH_bd6b2003-6d74-483c-8b2e-7250fbf1efe9_800x_yw3pog_vhbyf4.webp'
                               className='img-fluid mb-2 lazyload'
                               alt=''
                             />
@@ -325,8 +325,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621287/hardware%20page/computer/HP/Hp%20Notebooks/s-l1200_2_dmi6na.webp'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418857/s-l1200_2_dmi6na_hi1ugg.webp'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -336,8 +336,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621287/hardware%20page/computer/HP/Hp%20Notebooks/Untitled-design-5_zjgyre.webp'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418862/Untitled-design-5_zjgyre_apc2pq.webp'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -347,8 +347,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621291/hardware%20page/computer/HP/Hp%20Notebooks/c08534131_1750x1285_zdfmfh.avif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418906/c08534131_1750x1285_zdfmfh_xdvoj4.avif'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -358,8 +358,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621290/hardware%20page/computer/HP/Hp%20Notebooks/c08227735_ei7ugw.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418896/c08227735_ei7ugw_ii5deh.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -369,7 +369,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://www.digitaltrends.com/wp-content/uploads/2023/05/HP-Pavilion-Laptop-15t-eg300.jpg?fit=1200%2C900&p=1'
                               className='img-fluid lazyload'
                               alt=''
@@ -385,8 +385,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621380/hardware%20page/computer/HP/Hp%20servers/hpe-dl388-server-gen10_1_cfbm81.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418972/hpe-dl388-server-gen10_1_cfbm81_bblsnm.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -398,8 +398,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621379/hardware%20page/computer/HP/Hp%20servers/hpe-dl20-gen10-4sff-server_gtghpj.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418963/hpe-dl20-gen10-4sff-server_gtghpj_xgofk8.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -409,8 +409,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621378/hardware%20page/computer/HP/Hp%20servers/hpe-p19720-b21_fkylr6.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418956/hpe-p19720-b21_fkylr6_t9mn5v.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -420,8 +420,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621377/hardware%20page/computer/HP/Hp%20servers/hpe-ml10-gen10-server_5_gpldgk.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418937/hpe-ml10-gen10-server_5_gpldgk_l6zzy0.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -431,8 +431,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621377/hardware%20page/computer/HP/Hp%20servers/hpe-p23579-aa1_pocu2i.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418945/hpe-p23579-aa1_pocu2i_iqqpys.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -443,8 +443,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621376/hardware%20page/computer/HP/Hp%20servers/hpe-server-2-5-harddrive_187_j5k6yd.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418928/hpe-server-2-5-harddrive_187_j5k6yd_h4bc7l.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -457,8 +457,9 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621375/hardware%20page/computer/HP/Hp%20servers/hpe-869853-aa1_dfhbtj.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418921/hpe-869853-aa1_dfhbtj_blsmxo.jpg
+                              '
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -471,8 +472,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621375/hardware%20page/computer/HP/Hp%20servers/hpe-859085-s01-front_evukuz.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418914/hpe-859085-s01-front_evukuz_dkib1k.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -527,8 +528,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621553/hardware%20page/computer/Dell/Dell%20monitors/images_4_cpqyu0.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419001/images_4_cpqyu0_tqtv5o.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -538,8 +539,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621552/hardware%20page/computer/Dell/Dell%20monitors/7-1280.ac9725b1_to9zny.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418979/7-1280.ac9725b1_to9zny_hhkp7w.jpg'
                               className='img-fluid lazyload mb-4 mt-3'
                               alt=''
                             />
@@ -551,8 +552,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621555/hardware%20page/computer/Dell/Dell%20monitors/a09549d03f81991b009ccf4d70bcd616-hi_bhfxp2.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419014/a09549d03f81991b009ccf4d70bcd616-hi_bhfxp2_xzzcml.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -564,8 +565,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706621553/hardware%20page/computer/Dell/Dell%20monitors/510XOvy4ntL._AC_UF894_1000_QL80__jgjroz.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418992/510XOvy4ntL._AC_UF894_1000_QL80__jgjroz_q2gkw3.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -580,8 +581,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622248/hardware%20page/computer/Dell/Dell%20Notebook/Screenshot2022-01-19090318_vo0jxh.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419036/Screenshot2022-01-19090318_vo0jxh_p4ubne.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -593,8 +594,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622249/hardware%20page/computer/Dell/Dell%20Notebook/1000546768_487x350_1_ikahwi.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419048/1000546768_487x350_1_ikahwi_jy07cm.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -604,8 +605,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622255/hardware%20page/computer/Dell/Dell%20Notebook/Dell-Inspiron-7000-2-in-1-QHD-Touch-Screen_1_blux7w.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419095/Dell-Inspiron-7000-2-in-1-QHD-Touch-Screen_1_blux7w_arjmb9.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -615,8 +616,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622251/hardware%20page/computer/Dell/Dell%20Notebook/b96e4cd75fda40d5b4aec803334052f2_800x_n1vgpy.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419076/b96e4cd75fda40d5b4aec803334052f2_800x_n1vgpy_yr2jh2.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -626,8 +627,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622250/hardware%20page/computer/Dell/Dell%20Notebook/eng_pl_Touchscreen-Dell-Chromebook-11-3189-Celeron-N3060-4GB-32GB-1366x768-Class-A-Chrome-OS-225694_3_casfw4.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419067/eng_pl_Touchscreen-Dell-Chromebook-11-3189-Celeron-N3060-4GB-32GB-1366x768-Class-A-Chrome-OS-225694_3_casfw4_gqvtag.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -637,8 +638,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622254/hardware%20page/computer/Dell/Dell%20Notebook/notebook-g16-7630-nt-black-gallery-1_y5jwny.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419085/notebook-g16-7630-nt-black-gallery-1_y5jwny_k0qyqk.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -648,8 +649,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622247/hardware%20page/computer/Dell/Dell%20Notebook/00439066_large-570_t7lein.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419021/00439066_large-570_t7lein_zh7eo9.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -659,8 +660,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622247/hardware%20page/computer/Dell/Dell%20Notebook/Dell-G5-15-Special-Edition-Ryzen_keyboard-view-678_678x452_lrjx3b.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419029/Dell-G5-15-Special-Edition-Ryzen_keyboard-view-678_678x452_lrjx3b_j29oip.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -675,8 +676,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622403/hardware%20page/computer/Dell/Dell%20server/dellemc-pet150-emc-lf_nzgwal.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419110/dellemc-pet150-emc-lf_nzgwal_h4k4dx.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -689,8 +690,8 @@ const Hardware = () => {
                           <div className='card border-0 mt-5'>
                             <div className='mt-5'>
                               <img
-                                src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                                data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622404/hardware%20page/computer/Dell/Dell%20server/dellemc-per250-honeycomb-4x3-5-lf_wtifaw.png'
+                                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419117/dellemc-per250-honeycomb-4x3-5-lf_wtifaw_s5357r.png'
                                 className='img-fluid mt-5 lazyload'
                                 alt=''
                               />
@@ -703,8 +704,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622405/hardware%20page/computer/Dell/Dell%20server/dellemc-pet350-emc-lf_fjlcuq.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419127/dellemc-pet350-emc-lf_fjlcuq_vycj68.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -717,8 +718,8 @@ const Hardware = () => {
                           <div className='card border-0'>
                             <div className='mt-5'>
                               <img
-                                src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                                data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622402/hardware%20page/computer/Dell/Dell%20server/dellemc-per7515-8x35-emc-lcd-bezel-lf_kef745.png'
+                                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419102/dellemc-per7515-8x35-emc-lcd-bezel-lf_kef745_qrg6bj.pngg'
                                 className='img-fluid mt-2 lazyload'
                                 alt=''
                               />
@@ -774,8 +775,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622587/hardware%20page/computer/Apple/Apple%20Desktop/apple-imac-pro-three_ubjmsz.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419160/apple-imac-pro-three_ubjmsz_jkklzf.jpgg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -785,8 +786,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622586/hardware%20page/computer/Apple/Apple%20Desktop/images_4_dbr8hr.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419148/images_4_dbr8hr_lxlqc8.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -796,8 +797,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3  col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622585/hardware%20page/computer/Apple/Apple%20Desktop/Mac_Studio_M2_PDP_Image_Position_8__en-US_umnzxr.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419141/Mac_Studio_M2_PDP_Image_Position_8__en-US_umnzxr_jhujfz.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -807,8 +808,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622584/hardware%20page/computer/Apple/Apple%20Desktop/Mac_Pro_Tower_M2_Ultra_PDP_Image_Position-9__en-US_zfgxfo.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419134/Mac_Pro_Tower_M2_Ultra_PDP_Image_Position-9__en-US_zfgxfo_je4jcr.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -823,8 +824,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-6 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622629/hardware%20page/computer/Apple/Apple%20Notebook/newair-600x375_gtguqg.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420157/newair-600x375_gtguqg_bqeqpr.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -834,8 +835,8 @@ const Hardware = () => {
                         <li class='col-md-6 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622628/hardware%20page/computer/Apple/Apple%20Notebook/newpro-600x375_ihgy1l.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783419168/newpro-600x375_ihgy1l_stf3aj.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -850,8 +851,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622691/hardware%20page/computer/Apple/Apple%20Ipad/pro-2021_xyeo42.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420302/pro-2021_xyeo42_kkuuug.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -861,8 +862,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622690/hardware%20page/computer/Apple/Apple%20Ipad/ipad-air-2020_trplkw.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420294/ipad-air-2020_trplkw_ibdpmj.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -872,8 +873,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3  col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622688/hardware%20page/computer/Apple/Apple%20Ipad/ipad-2021_u6m975.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420186/ipad-2021_u6m975_jkl4tc.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -883,8 +884,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622687/hardware%20page/computer/Apple/Apple%20Ipad/ipad-mini-2021_i0pt75.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420175/ipad-mini-2021_i0pt75_vnerjo.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -938,8 +939,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622884/hardware%20page/computer/samsung/Desktop/high-end-setup_kdculr.webp'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420329/high-end-setup_kdculr_os71dh.webp'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -949,8 +950,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622882/hardware%20page/computer/samsung/Desktop/samsung-ls32bm80guuxen-s32bm80guu-81-3-cm-32-3840-x-2160-pixeles-4k-ultra-hd-verde-blanco_wv43u3.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420321/samsung-ls32bm80guuxen-s32bm80guu-81-3-cm-32-3840-x-2160-pixeles-4k-ultra-hd-verde-blanco_wv43u3_uhspsb.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -960,8 +961,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622887/hardware%20page/computer/samsung/Desktop/images_4_kjnube.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420353/images_4_kjnube_sysfhu.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -971,8 +972,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706622885/hardware%20page/computer/samsung/Desktop/auto_20180823103513_44162651_06_1691bb31-3069-47ab-8b33-61e07542aad1_LS27F358FWUXEN_full_p9b2wq.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420344/auto_20180823103513_44162651_06_1691bb31-3069-47ab-8b33-61e07542aad1_LS27F358FWUXEN_full_p9b2wq_fwcmj4.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -987,8 +988,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623033/hardware%20page/computer/samsung/Notebook/21G9H9xuBDL._AC__fmeb0u.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420371/21G9H9xuBDL._AC__fmeb0u_wz8qgz.jpg'
                               className='img-fluid mt-1 lazyload'
                               alt=''
                             />
@@ -1000,8 +1001,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623034/hardware%20page/computer/samsung/Notebook/GalaxyBookPro360MO_myi2di.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420381/GalaxyBookPro360MO_myi2di_rmvajg.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1011,8 +1012,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623031/hardware%20page/computer/samsung/Notebook/images_4_g2p1vd.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420362/images_4_g2p1vd_ld8hra.jpg'
                               className='img-fluid mt-3 lazyload'
                               alt=''
                             />
@@ -1022,8 +1023,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1710166957/hardware%20page/computer/samsung/Notebook/samsung-2-1_nkufvu.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692848/samsung-2-1_nkufvu_diikbv.jpg'
                               className='img-fluid mt-4 lazyload'
                               alt=''
                             />
@@ -1040,8 +1041,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623164/hardware%20page/computer/samsung/Tabs/images_4_enkzf6.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420397/images_4_enkzf6_tnf2bj.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1051,8 +1052,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0 '>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623163/hardware%20page/computer/samsung/Tabs/1359190_R_Z001A_1_udlwlu.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420388/1359190_R_Z001A_1_udlwlu_tflnwy.jpg'
                               className='img-fluid mb-3 lazyload'
                               alt=''
                             />
@@ -1062,8 +1063,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3  col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623168/hardware%20page/computer/samsung/Tabs/images_5_s582vn.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420409/images_5_s582vn_yctg2b.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1073,8 +1074,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623166/hardware%20page/computer/samsung/Tabs/61FwTVP_KjL._AC_UF1000_1000_QL80__yx0loz.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420403/61FwTVP_KjL._AC_UF1000_1000_QL80__yx0loz_bz8ien.jpg'
                               className='img-fluid mb-2 lazyload'
                               alt=''
                             />
@@ -1128,8 +1129,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623983/hardware%20page/computer/Lenovo/desktop/eFhm2kaGLkQSfgAr3keWVn-1200-80_re6ouy.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420960/eFhm2kaGLkQSfgAr3keWVn-1200-80_re6ouy_rz79li.jpg'
                               className='img-fluid mt-3 mb-5 lazyload'
                               alt=''
                             />
@@ -1139,8 +1140,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623987/hardware%20page/computer/Lenovo/desktop/82tmwscevpkns4m8t2xn5df0py2rve323130_tiurqe.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420988/82tmwscevpkns4m8t2xn5df0py2rve323130_tiurqe_utvszh.png'
                               className='img-fluid mb-5 lazyload'
                               alt=''
                             />
@@ -1150,8 +1151,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623986/hardware%20page/computer/Lenovo/desktop/d2c99b52-8509-453b-b7e0-1273a841369a.745334f6adbec3ec7ac5d2fb14d74d4f_okrfxw.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420981/d2c99b52-8509-453b-b7e0-1273a841369a.745334f6adbec3ec7ac5d2fb14d74d4f_okrfxw_ghnrca.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1161,8 +1162,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623980/hardware%20page/computer/Lenovo/desktop/LENOVCODEDP1579505669742_1579505671_lg_ssbqj5.jpg'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420938/LENOVCODEDP1579505669742_1579505671_lg_ssbqj5_ivwwhl.jpg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1177,8 +1178,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623677/hardware%20page/computer/Lenovo/notebook/yofiwjxag9102x15eo5mzd2f6icmew758030_xvsd13.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420860/yofiwjxag9102x15eo5mzd2f6icmew758030_xvsd13_aijoyg.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1188,8 +1189,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623674/hardware%20page/computer/Lenovo/notebook/lenovo-laptops-yoga-slim-7i-carbon-gen-8-13-intel-series_ysldak.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420840/lenovo-laptops-yoga-slim-7i-carbon-gen-8-13-intel-series_ysldak_vhn2ui.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1199,8 +1200,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623681/hardware%20page/computer/Lenovo/notebook/images_4_xy2kdg.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420907/images_4_xy2kdg_dnl7hm.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1210,8 +1211,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623683/hardware%20page/computer/Lenovo/notebook/lenovo-laptops-thinkbook-16p-gen-3-16-amd-series_xhae9h.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420929/lenovo-laptops-thinkbook-16p-gen-3-16-amd-series_xhae9h_ey7ezs.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1221,8 +1222,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623672/hardware%20page/computer/Lenovo/notebook/lenovo-laptop-thinkpad-x1-fold-16-intel-series-front_gzs4xj.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420834/lenovo-laptop-thinkpad-x1-fold-16-intel-series-front_gzs4xj_lspza9.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1232,8 +1233,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623679/hardware%20page/computer/Lenovo/notebook/lenovo-yoga-slim-6-gen-8-14-amd-series-tn_asbfvs.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420898/lenovo-yoga-slim-6-gen-8-14-amd-series-tn_asbfvs_lg1o6r.png'
                               className='img-fluid'
                               alt=''
                             />
@@ -1243,8 +1244,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623676/hardware%20page/computer/Lenovo/notebook/lenovo-laptops-think-thinkpad-x-series-x12-detachable-front_kcgbkn.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420851/lenovo-laptops-think-thinkpad-x-series-x12-detachable-front_kcgbkn_qixtxi.png'
                               className='img-fluid'
                               alt=''
                             />
@@ -1254,7 +1255,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://www.lenovo.com/medias/?context=bWFzdGVyfHJvb3R8OTQzODF8YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtfGg2Ny9oMTIvMTY5NDI0MjM4Njc0MjIucG5nfGEzZDA5NDQ3OTNjMjE4YjU3OGVkY2M2NjIxYjc1NjM1NmNhYzc4OWUyYWQxM2RmMTQyODA2NzJhYzQ0YTJmOTU'
                               className='img-fluid'
                               alt=''
@@ -1272,8 +1273,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623424/hardware%20page/computer/Lenovo/server/lenovo-servers-products-racks_devnna.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420813/lenovo-servers-products-racks_devnna_sjghzp.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1283,8 +1284,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623421/hardware%20page/computer/Lenovo/server/lenovo-servers-products-towers_zpda4s.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420467/lenovo-servers-products-towers_zpda4s_qwq2hc.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1294,8 +1295,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623426/hardware%20page/computer/Lenovo/server/lenovo-servers-products-edge_kuxa8c.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420820/lenovo-servers-products-edge_kuxa8c_duh4ro.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1305,8 +1306,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623428/hardware%20page/computer/Lenovo/server/lenovo-servers-products-mission-critical_v81l9q.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420828/lenovo-servers-products-mission-critical_v81l9q_tzpmpm.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1318,8 +1319,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623415/hardware%20page/computer/Lenovo/server/lenovo-servers-products-high-density_xcqjxj.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420432/lenovo-servers-products-high-density_xcqjxj_sxissp.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1331,8 +1332,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623417/hardware%20page/computer/Lenovo/server/lenovo-servers-products-multi-node_droo9a.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420442/lenovo-servers-products-multi-node_droo9a_vlfdss.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1342,8 +1343,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623422/hardware%20page/computer/Lenovo/server/lenovo-servers-products-software-defined-infrastructure_u5gdph.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420805/lenovo-servers-products-software-defined-infrastructure_u5gdph_alpj2d.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1355,8 +1356,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706623419/hardware%20page/computer/Lenovo/server/lenovo-servers-products-options_scoaan.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420455/lenovo-servers-products-options_scoaan_pm2mfo.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1412,7 +1413,7 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://dlcdnwebimgs.asus.com/gain/df68ceeb-206c-44b1-9b97-6d5a30ae1315/w800'
                               className='img-fluid lazyload'
                               alt=''
@@ -1423,7 +1424,7 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://i5.walmartimages.com/asr/7cb7110f-d84f-4013-bb9e-9de724f3b9f9.741b8a5a73f2fb8613885b7ffa2b7d0d.jpeg'
                               className='img-fluid lazyload'
                               alt=''
@@ -1434,7 +1435,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://assets.products-live.ao.com/Images/50def354-71a3-4ff0-9c7b-b0631c681374/1280x1280/4fe0dc694534f99bd6052a9f12bd4962_2.jpg'
                               className='img-fluid lazyload'
                               alt=''
@@ -1445,7 +1446,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src=''
                               className='img-fluid lazyload'
                               alt=''
@@ -1461,7 +1462,7 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://dlcdnwebimgs.asus.com/gain/d742f85e-6859-4a12-8e37-1f90c085a6a9/'
                               className='img-fluid lazyload'
                               alt=''
@@ -1472,7 +1473,7 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://m.media-amazon.com/images/I/71-k29VH73L._AC_UF894,1000_QL80_.jpg'
                               className='img-fluid lazyload'
                               alt=''
@@ -1483,7 +1484,7 @@ const Hardware = () => {
                         <li class='nav-item col-md-3  col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMYmjjcMMiCNP-NeWnQ4ZCABWAh9FIP_pdw&usqp=CAU'
                               className='img-fluid lazyload'
                               alt=''
@@ -1494,7 +1495,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://assets.products-live.ao.com/Images/56b335c1-a5bb-4be7-a258-0994dc163716/1280x1280/92881785_9488351780_17.jpg'
                               className='img-fluid lazyload'
                               alt=''
@@ -1505,7 +1506,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://plecom.imgix.net/iil-336611-657644.jpg?fit=fillmax&fill=solid&fill-color=ffffff&auto=format&w=1000&h=1000'
                               className='img-fluid lazyload'
                               alt=''
@@ -1516,7 +1517,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0 '>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://oechsle.vteximg.com.br/arquivos/ids/15211351-1000-1000/image-3a480d3277404d13aa90bb88721c847f.jpg?v=638280118955170000'
                               className='img-fluid lazyload'
                               alt=''
@@ -1527,7 +1528,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://www.quicktech.co.za/cdn/shop/products/expertbook_b5302fba_product_photo_1a_star_black_28-4_2400x2400_dc8e02dc-e70b-403e-a02c-2268a8ff390a.jpg?v=1682450802&width=1080'
                               className='img-fluid lazyload'
                               alt=''
@@ -1538,7 +1539,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://dlcdnwebimgs.asus.com/gain/993c153b-62ab-41cd-a8be-b714095d1bb8/w800/fwebp'
                               className='img-fluid lazyload'
                               alt=''
@@ -1554,8 +1555,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706624491/hardware%20page/computer/Asus/server/44a2a8f4644e4297894a97a441a6f7ea_ruzvzi.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783420995/44a2a8f4644e4297894a97a441a6f7ea_ruzvzi_dhszgl.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1565,8 +1566,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706624498/hardware%20page/computer/Asus/server/13074f92040a40b68d56c079f1a3615d_si3afy.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421017/13074f92040a40b68d56c079f1a3615d_si3afy_zsc0dw.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1576,8 +1577,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706624496/hardware%20page/computer/Asus/server/ec99a001e6fd4a42b34dd28bde7b8eff_lzsn1d.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421010/ec99a001e6fd4a42b34dd28bde7b8eff_lzsn1d_uh2o4p.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1589,8 +1590,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706624493/hardware%20page/computer/Asus/server/ffa65ab896624553aaf0839ddadac194_hom7om.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421003/ffa65ab896624553aaf0839ddadac194_hom7om_ouajxt.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -1620,8 +1621,8 @@ const Hardware = () => {
           <div className='col-lg-6'>
             <div className='text-center'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1706599424/hardware%20page/network/hardware_qqbzmj.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418767/hardware_qqbzmj_ikpuf3.jpg'
                 className='img-fluid lazyload mt-2'
                 alt=''
               />
@@ -1666,8 +1667,8 @@ const Hardware = () => {
                 data-bs-target='#network-1'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706278131/test/cisco-photo_vekgvf.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418714/cisco-photo_vekgvf_hfypeb.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -1681,8 +1682,8 @@ const Hardware = () => {
                 data-bs-target='#network-2'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706278131/test/Tp-link-Photo_q8gdw1.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418741/Tp-link-Photo_q8gdw1_du7jzt.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -1696,8 +1697,8 @@ const Hardware = () => {
                 data-bs-target='#network-3'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706278131/test/d-link-photo_tqxjti.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418732/d-link-photo_tqxjti_c7phcs.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -1711,8 +1712,8 @@ const Hardware = () => {
                 data-bs-target='#network-4'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706278606/test/miko_zdmwh3.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783418752/miko_zdmwh3_g7nsyn.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -1775,8 +1776,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706628749/hardware%20page/network/cisco/router/1576087571473_of242b.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421037/1576087571473_of242b_o25r46.aviff'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1786,8 +1787,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706628820/hardware%20page/network/cisco/router/1702022057305_gksanf.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421059/1702022057305_gksanf_v8x6bc.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1797,8 +1798,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706628944/hardware%20page/network/cisco/router/1672920192907_1_jcl1x9.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421078/1672920192907_1_jcl1x9_jtdciq.avif'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1808,8 +1809,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706628894/hardware%20page/network/cisco/router/1702022084889_adagdf.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421071/1702022084889_adagdf_erlvub.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1819,8 +1820,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706628746/hardware%20page/network/cisco/router/1677567588510_ry43pb.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421031/1677567588510_ry43pb_g4awo3.avif'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1832,8 +1833,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706628744/hardware%20page/network/cisco/router/1584117774275_yw71wf.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421024/1584117774275_yw71wf_oi84uq.avif'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1843,8 +1844,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706628752/hardware%20page/network/cisco/router/1576087573352_uybmox.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421045/1576087573352_uybmox_foarf2.avif'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1854,8 +1855,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706629270/hardware%20page/network/cisco/router/57000_c_y4uvbo.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785144333/57000_c_y4uvbo_yoy3xd.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1870,8 +1871,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706630894/hardware%20page/network/cisco/wireless%20ap/cisco-catalyst-iw6300-heavy-duty-series-access-points_f40xdy.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421510/cisco-catalyst-iw6300-heavy-duty-series-access-points_f40xdy_fpczld.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1883,8 +1884,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706630891/hardware%20page/network/cisco/wireless%20ap/61398-18029325_pu2ycm.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421339/61398-18029325_pu2ycm_hmqdet.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1896,8 +1897,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706630887/hardware%20page/network/cisco/wireless%20ap/images_4_uidryr.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421324/images_4_uidryr_dzwwgu.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1909,8 +1910,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706630859/hardware%20page/network/cisco/wireless%20ap/MerakiCW9163E-MRNoAntenna_ifhoat.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421307/MerakiCW9163E-MRNoAntenna_ifhoat_posvpp.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1927,8 +1928,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706710035/hardware%20page/network/cisco/firewall/1000443368_881x350_n5lopo.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592281/1000443368_881x350_n5lopo_qoyeni.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1938,8 +1939,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631178/hardware%20page/network/cisco/firewall/xgs-3100-front-minqZiX8GqGh3icZ_rsm47u.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421658/xgs-3100-front-minqZiX8GqGh3icZ_rsm47u_g0e3wi.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1949,8 +1950,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631182/hardware%20page/network/cisco/firewall/security-firepower-4100-series_bhtjsg.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421665/security-firepower-4100-series_bhtjsg_ukuvfm.avif'
                             className='img-fluid mb-4 lazyload'
                             alt=''
                           />
@@ -1960,8 +1961,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631185/hardware%20page/network/cisco/firewall/security-secure-firewall-4200-series_mztl4t.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421674/security-secure-firewall-4200-series_mztl4t_hq1nu5.avif'
                             className='img-fluid mb-4 mt-4 lazyload'
                             alt=''
                           />
@@ -1971,8 +1972,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631165/hardware%20page/network/cisco/firewall/1606118112322_lsz96y.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421519/1606118112322_lsz96y_oxizrt.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1982,8 +1983,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631168/hardware%20page/network/cisco/firewall/ISA-3000-2C2F-K9_fhd7l0.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421535/ISA-3000-2C2F-K9_fhd7l0_pyxklc.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -1995,8 +1996,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631171/hardware%20page/network/cisco/firewall/1._th6mxa.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421552/1._th6mxa_ybol9p.jpg'
                             className='img-fluid mb-4 lazyload'
                             alt=''
                           />
@@ -2008,7 +2009,7 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1706631175/hardware%20page/network/cisco/firewall/1575271733726703_kssfu6.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421646/1575271733726703_kssfu6_rmqzid.jpg'
                             className='img-fluid mb-3'
                             alt=''
                           />
@@ -2023,8 +2024,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706707899/hardware%20page/network/cisco/ip%20%20phone/41okNK25ZjL._AC_UF1000_1000_QL80__1_wta8kp.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421713/41okNK25ZjL._AC_UF1000_1000_QL80__1_wta8kp_cnmpa6.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2036,8 +2037,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631395/hardware%20page/network/cisco/ip%20%20phone/Phone-8845-01_okpyl9.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421686/Phone-8845-01_okpyl9_bcdtdd.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2049,8 +2050,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631404/hardware%20page/network/cisco/ip%20%20phone/Cisco-8811-k9_exa30d.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421697/Cisco-8811-k9_exa30d_hg1ksb.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2062,8 +2063,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706631628/hardware%20page/network/cisco/ip%20%20phone/446406_sqdjio.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421705/446406_sqdjio_djvuut.webp'
                             className='img-fluid mb-3 lazyload'
                             alt=''
                           />
@@ -2121,8 +2122,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708204/hardware%20page/network/tp-link/router/2005461954_txlmwu.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421770/2005461954_txlmwu_ykwvey.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2132,8 +2133,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708205/hardware%20page/network/tp-link/router/images_ksw2w8.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421803/images_ksw2w8_vjczpb.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2143,8 +2144,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3  col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708204/hardware%20page/network/tp-link/router/Archer-GE800-3_qnjykj.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421777/Archer-GE800-3_qnjykj_g9z102.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2154,8 +2155,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708204/hardware%20page/network/tp-link/router/0de2cd4bd8974a83f532a30279e8ba3c_xvznnj.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421761/0de2cd4bd8974a83f532a30279e8ba3c_xvznnj_fd2zrr.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2165,8 +2166,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708203/hardware%20page/network/tp-link/router/tp-link-archer-ax75-ax5400-wireless-tri-band-gigabit-router-archer-ax75-color-black.jpg.mst_msmzsu.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421734/tp-link-archer-ax75-ax5400-wireless-tri-band-gigabit-router-archer-ax75-color-black.jpg.mst_msmzsu_v3it3h.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2176,8 +2177,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706087459/Archer_AX5400_Pro_WiFi_6_VPN_Router_with_2.5G_Port_1_normal_20221216122017w_cvyjql.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421728/Archer_AX5400_Pro_WiFi_6_VPN_Router_with_2.5G_Port_1_normal_20221216122017w_ksilsf_h2voze.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2187,8 +2188,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708203/hardware%20page/network/tp-link/router/Archer_AX5400_Pro_WiFi_6_VPN_Router_with_2.5G_Port_1_normal_20221216122017w_ksilsf.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421728/Archer_AX5400_Pro_WiFi_6_VPN_Router_with_2.5G_Port_1_normal_20221216122017w_ksilsf_h2voze.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2198,8 +2199,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708204/hardware%20page/network/tp-link/router/images_1_eabzdv.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421785/images_1_eabzdv_vvticr.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2209,8 +2210,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708205/hardware%20page/network/tp-link/router/RoteadorWirelessTP-LinkArcherAX60004804MBPS_grande_zztas6.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421814/RoteadorWirelessTP-LinkArcherAX60004804MBPS_grande_zztas6_yeq4cc.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2220,8 +2221,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708204/hardware%20page/network/tp-link/router/000000000001026520_1_yoauz0.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421745/000000000001026520_1_yoauz0_tjbacx.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2231,8 +2232,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708204/hardware%20page/network/tp-link/router/images_2_iyajp6.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421793/images_2_iyajp6_es2mn6.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2242,8 +2243,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708203/hardware%20page/network/tp-link/router/450Mbps-Wireless-N-Router-TL-WR940N-8019593_aczcen.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421721/450Mbps-Wireless-N-Router-TL-WR940N-8019593_aczcen_ons5xy.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2258,8 +2259,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777925/hardware%20page/network/tp-link/expansion/tp-link-re450-ac1750-wi-fi-range-extender_eom8ct.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673658/tp-link-re450-ac1750-wi-fi-range-extender_eom8ct_sectmk.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2269,8 +2270,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777920/hardware%20page/network/tp-link/expansion/auto_20210125223112_44336634_01_b7b6c435-324f-4ba1-9f94-1350a09a9509_TL-WPA8631P-KIT-V3_lr5na0.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673638/auto_20210125223112_44336634_01_b7b6c435-324f-4ba1-9f94-1350a09a9509_TL-WPA8631P-KIT-V3_lr5na0_cwgro3.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2280,8 +2281,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777915/hardware%20page/network/tp-link/expansion/61v1wxmNifL_ytewvg.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673610/61v1wxmNifL_ytewvg_foeuru.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2291,8 +2292,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777917/hardware%20page/network/tp-link/expansion/519exto4CqS._AC_UF1000_1000_QL80__awlyv9.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673617/519exto4CqS._AC_UF1000_1000_QL80__awlyv9_vabbhx.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2302,8 +2303,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777912/hardware%20page/network/tp-link/expansion/2_qoduzl.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673563/2_qoduzl_biu0hu.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2313,8 +2314,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777923/hardware%20page/network/tp-link/expansion/images_sa9fqw.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673646/images_sa9fqw_uwyops.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2324,8 +2325,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777913/hardware%20page/network/tp-link/expansion/tp-link-tl-wa1201-ac1200-wireless-access-point-500x500_yxzfg5.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673576/tp-link-tl-wa1201-ac1200-wireless-access-point-500x500_yxzfg5_o7qax2.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2335,8 +2336,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706777918/hardware%20page/network/tp-link/expansion/54634545_extra_large_lm4d6t.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673623/54634545_extra_large_lm4d6t_fd3dji.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2351,8 +2352,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708420/hardware%20page/network/tp-link/switches/d-link-tl-sg105mpe-gigabit-easy-smart-switch-500x500_ga9u2t.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421868/d-link-tl-sg105mpe-gigabit-easy-smart-switch-500x500_ga9u2t_uxuudm.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2363,8 +2364,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708419/hardware%20page/network/tp-link/switches/207472_1692332105_qnv9ln.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421838/207472_1692332105_qnv9ln_ci5t4v.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2374,8 +2375,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708420/hardware%20page/network/tp-link/switches/gsc_123032620_3312808_1_xnybu1.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421881/gsc_123032620_3312808_1_xnybu1_frhjgs.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2385,8 +2386,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708421/hardware%20page/network/tp-link/switches/images_czjkvo.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421897/images_czjkvo_tiacnd.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2396,8 +2397,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708421/hardware%20page/network/tp-link/switches/TL-SG608_1_1024x_ncefbg.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421911/TL-SG608_1_1024x_ncefbg_josnry.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2407,8 +2408,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708419/hardware%20page/network/tp-link/switches/6576d74ef3d40-73082-1_gvzraf.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421845/6576d74ef3d40-73082-1_gvzraf_wwqkjg.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2418,8 +2419,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708418/hardware%20page/network/tp-link/switches/2_k5vymq.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421829/2_k5vymq_gxpurp.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2429,8 +2430,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708417/hardware%20page/network/tp-link/switches/images_1_crg97t.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421821/images_1_crg97t_a4fyxr.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -2486,8 +2487,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708588/hardware%20page/network/d-link/router/R32_A1_Front_al5fat.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783424059/R32_A1_Front_al5fat_mlcv25.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2499,8 +2500,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3  col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708587/hardware%20page/network/d-link/router/DWR_960_B1_Front_oomaby.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783424019/DWR_960_B1_Front_oomaby_p3nz8e.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2512,8 +2513,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708588/hardware%20page/network/d-link/router/G416_A1_Front_ole90j.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783424049/G416_A1_Front_ole90j_zqi4q4.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2525,8 +2526,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708587/hardware%20page/network/d-link/router/DIRX48601_cp3hsa.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783422166/DIRX48601_cp3hsa_o8vx9z.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2538,8 +2539,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708584/hardware%20page/network/d-link/router/DIR26401_rkjbpw.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783421944/DIR26401_rkjbpw_yklcbm.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2549,8 +2550,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708584/hardware%20page/network/d-link/router/DIRX1870Frontwithlogo_wrhyqo.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783422112/DIRX1870Frontwithlogo_wrhyqo_najokf.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2562,8 +2563,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708585/hardware%20page/network/d-link/router/DIRX6060Back_bfucgk.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783422125/DIRX6060Back_bfucgk_wwg3xg.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2575,8 +2576,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708585/hardware%20page/network/d-link/router/DIRX6060Back_bfucgk.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783422125/DIRX6060Back_bfucgk_wwg3xg.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2591,8 +2592,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708635/hardware%20page/network/d-link/extenders/E15_A1_FrontOEU_bssu24.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783424139/E15_A1_FrontOEU_bssu24_gi5xr2.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2604,8 +2605,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708635/hardware%20page/network/d-link/extenders/DRA2060A1Back_ezbdmq.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783424130/DRA2060A1Back_ezbdmq_tkgli3.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2617,8 +2618,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708634/hardware%20page/network/d-link/extenders/DAP1820A1Side_av4t7e.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783424097/DAP1820A1Side_av4t7e_fzx4zs.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2630,8 +2631,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708634/hardware%20page/network/d-link/extenders/DAP1650front_gzefew.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783424079/DAP1650front_gzefew_kj4cpb.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2648,8 +2649,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708736/hardware%20page/network/d-link/switches/DMS_105_A1_Right_Side2_mgr9do.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497123/DMS_105_A1_Right_Side2_mgr9do_eshr3n.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2661,8 +2662,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708738/hardware%20page/network/d-link/switches/DMS_107_A1_Front_ux6ppk.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785147140/DMS_107_A1_Front_ux6ppk_tdejqy.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2674,8 +2675,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3  col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708737/hardware%20page/network/d-link/switches/DMS_106XT_A1_Front_Colour_RD_dij2mv.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497131/DMS_106XT_A1_Front_Colour_RD_dij2mv_jfepei.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2687,8 +2688,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708735/hardware%20page/network/d-link/switches/DGS_1016S_A1_Side_s4jcto.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497107/DGS_1016S_A1_Side_s4jcto_iv3ajh.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2700,8 +2701,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708734/hardware%20page/network/d-link/switches/DES1008DL1Image_LFront_01_cyip6a.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497093/DES1008DL1Image_LFront_01_cyip6a_quiivf.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2713,8 +2714,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708736/hardware%20page/network/d-link/switches/DGS1005DJ1Image_LFront_s7clym.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497116/DGS1005DJ1Image_LFront_s7clym_ei5mxi.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2726,8 +2727,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708733/hardware%20page/network/d-link/switches/DES1005PB1Image_LFront_am1k6w.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497066/DES1005PB1Image_LFront_am1k6w_dkxtmp.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2739,8 +2740,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708733/hardware%20page/network/d-link/switches/DGS_1520_28_28MP_52_52MP_A1_Front_fvimhg.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497081/DGS_1520_28_28MP_52_52MP_A1_Front_fvimhg_xjdpqx.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2799,8 +2800,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708873/hardware%20page/network/Mikro/router/2267_m_obzi29.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498148/2267_m_obzi29_ij2bhs.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2810,8 +2811,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708873/hardware%20page/network/Mikro/router/2267_m_obzi29.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498148/2267_m_obzi29_ij2bhs.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2821,8 +2822,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708870/hardware%20page/network/Mikro/router/1446_m_tpks3i.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498075/1446_m_tpks3i_pl6wzi.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2832,7 +2833,7 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
                               data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708871/hardware%20page/network/Mikro/router/1539_m_sxioda.png'
                               className='img-fluid lazyload'
                               alt=''
@@ -2843,8 +2844,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708867/hardware%20page/network/Mikro/router/1040_m_gskf0x.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498021/1040_m_gskf0x_dr8crh.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2854,8 +2855,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708872/hardware%20page/network/Mikro/router/1633_m_gjvf2i.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498141/1633_m_gjvf2i_igjus9.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2865,8 +2866,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708868/hardware%20page/network/Mikro/router/1344_m_pd3lva.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498066/1344_m_pd3lva_iu4rhn.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2876,8 +2877,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708866/hardware%20page/network/Mikro/router/2115_m_syryyd.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783497455/2115_m_syryyd_s5gqja.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2892,8 +2893,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708940/hardware%20page/network/Mikro/antennas/1499_m_uprpmd.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783591919/1499_m_uprpmd_obyhhw.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2903,8 +2904,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708939/hardware%20page/network/Mikro/antennas/1442_m_q2xegd.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785147687/1442_m_q2xegd_jhv97q.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2914,8 +2915,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708938/hardware%20page/network/Mikro/antennas/1086_m_cibdw1.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498163/1086_m_cibdw1_qhno5n.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2925,8 +2926,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706708937/hardware%20page/network/Mikro/antennas/1133_m_x2sajz.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783498155/1133_m_x2sajz_vk47yi.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2941,8 +2942,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709003/hardware%20page/network/Mikro/switches/1329_m_ipz61p.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592226/1329_m_ipz61p_akhmgp.pngg'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2952,8 +2953,8 @@ const Hardware = () => {
                         <li class='col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709002/hardware%20page/network/Mikro/switches/1257_m_hqcmpy.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592221/1257_m_hqcmpy_a0mg5l.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2963,8 +2964,8 @@ const Hardware = () => {
                         <li class='nav-item col-md-3 col-6 '>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709005/hardware%20page/network/Mikro/switches/1659_m_wnsq7w.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592234/1659_m_wnsq7w_plg1vs.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2974,8 +2975,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709008/hardware%20page/network/Mikro/switches/2147_m_anj1jg.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592254/2147_m_anj1jg_qfgwbz.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2985,8 +2986,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709006/hardware%20page/network/Mikro/switches/1899_m_w5jini.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592241/1899_m_w5jini_qnwqax.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -2996,8 +2997,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709009/hardware%20page/network/Mikro/switches/2193_m_budg9q.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592260/2193_m_budg9q_no8njp.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -3007,8 +3008,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709007/hardware%20page/network/Mikro/switches/1923_m_mpgvjq.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592249/1923_m_mpgvjq_dsx572.png'
                               className='img-fluid lazyload'
                               alt=''
                             />
@@ -3018,8 +3019,8 @@ const Hardware = () => {
                         <li class='nav-item  col-md-3 col-6'>
                           <div className='card border-0'>
                             <img
-                              src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                              data-src='https://res.cloudinary.com/elonatech/image/upload/v1706709001/hardware%20page/network/Mikro/switches/2218_m_fleevm.png'
+                              src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592215/2218_m_fleevm_obbnjw.png'
                               className='img-fluid layload'
                               alt=''
                             />
@@ -3083,7 +3084,7 @@ const Hardware = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
                   data-src='https://elonatech.com.ng/wp-content/uploads/2021/08/Printers-Scanners-and-Copiers.-2048x594-1-e1630746286693.jpg'
                   className='img-fluid lazyload'
                   alt=''
@@ -3112,8 +3113,8 @@ const Hardware = () => {
                 data-bs-target='#printer-1'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706713717/hardware%20page/printer/printer%20logos/HP-Logo_t2pe45.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592361/HP-Logo_t2pe45_owr9yi.png'
                   className='img-fluid mt-3 lazyload'
                   alt=''
                 />
@@ -3127,8 +3128,8 @@ const Hardware = () => {
                 data-bs-target='#printer-2'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706713713/hardware%20page/printer/printer%20logos/Epson-Logo_l3hdkp.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592295/Epson-Logo_l3hdkp_uuyamo.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -3142,8 +3143,8 @@ const Hardware = () => {
                 data-bs-target='#printer-3'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706713719/hardware%20page/printer/printer%20logos/images_wcdv29.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592368/images_wcdv29_ejme8s.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -3157,8 +3158,8 @@ const Hardware = () => {
                 data-bs-target='#printer-4'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706713711/hardware%20page/printer/printer%20logos/Canon-Emblem_elkj2q.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592289/Canon-Emblem_elkj2q_fzlqfr.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -3172,8 +3173,8 @@ const Hardware = () => {
                 data-bs-target='#printer-5'
               >
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706713709/hardware%20page/printer/printer%20logos/LexmarkLogo_CMYK__1_Logo_djo3uu.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592276/LexmarkLogo_CMYK__1_Logo_djo3uu_nbsoot.jpg'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -3188,8 +3189,8 @@ const Hardware = () => {
               >
                 <img src='' className='img-fluid  mt-1' alt='' />
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706713715/hardware%20page/printer/printer%20logos/Final2_hrohmt_abyxgt.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592303/Final2_hrohmt_abyxgt_yycscl.png'
                   className='img-fluid lazyload mt-3'
                   alt=''
                 />
@@ -3251,8 +3252,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717499/hardware%20page/printer/hp/officeJet/c05141873_wc3evr.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592377/c05141873_wc3evr_ci9o6x.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3262,8 +3263,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717499/hardware%20page/printer/hp/officeJet/c05141873_wc3evr.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592377/c05141873_wc3evr_ci9o6x.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3273,8 +3274,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717499/hardware%20page/printer/hp/officeJet/c05141873_wc3evr.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592377/c05141873_wc3evr_ci9o6x.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3284,8 +3285,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717499/hardware%20page/printer/hp/officeJet/c06761004_ph3jqa.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592384/c06761004_ph3jqa_vi2frr.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3302,8 +3303,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717555/hardware%20page/printer/hp/Deskjet/c08871079_seugpq.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592811/c08871079_seugpq_mo17w0.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3313,8 +3314,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717553/hardware%20page/printer/hp/Deskjet/c08742721_rnbtfy.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592804/c08742721_rnbtfy_vsirq5.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3324,8 +3325,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717556/hardware%20page/printer/hp/Deskjet/c08752487_qlrys5.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592830/c08752487_qlrys5_ljur1l.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3335,8 +3336,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706717552/hardware%20page/printer/hp/Deskjet/c08751578_n3l0hb.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592799/c08751578_n3l0hb_sveonu.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3351,8 +3352,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718162/hardware%20page/printer/hp/laserjet/c03122578_ylxyuj.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592873/c03122578_ylxyuj_uveriq.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3364,8 +3365,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718161/hardware%20page/printer/hp/laserjet/994dc3bb-8764-4cdd-9057-3ac82ed59755_fsnyep.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592855/994dc3bb-8764-4cdd-9057-3ac82ed59755_fsnyep_a1eedp.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3377,8 +3378,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718164/hardware%20page/printer/hp/laserjet/Printer_Desktop_rowngq.avif'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592893/Printer_Desktop_rowngq_h8wqur.avif'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3390,8 +3391,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718163/hardware%20page/printer/hp/laserjet/c08208290_z7mqrt.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592881/c08208290_z7mqrt_offm6v.png'
                             className='img-fluid mb-3 lazyload'
                             alt=''
                           />
@@ -3403,8 +3404,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718163/hardware%20page/printer/hp/laserjet/hp-laserjet-enterprise-mfp-m631dn-500x500_ouoatq.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592887/hp-laserjet-enterprise-mfp-m631dn-500x500_ouoatq_udl8x1.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3416,8 +3417,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718161/hardware%20page/printer/hp/laserjet/3fd28550_hp_m575f_xfxkdm.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592852/3fd28550_hp_m575f_xfxkdm_jzssbc.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3429,8 +3430,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718161/hardware%20page/printer/hp/laserjet/c02874173_fzukm3.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592863/c02874173_fzukm3_kghl9j.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3442,8 +3443,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718160/hardware%20page/printer/hp/laserjet/c03376046_niqe3t.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592841/c03376046_niqe3t_qgaqew.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3460,8 +3461,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718213/hardware%20page/printer/hp/envy/c07016941_npqbm5.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592918/c07016941_npqbm5_hpb1xd.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3471,8 +3472,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718212/hardware%20page/printer/hp/envy/c07016761_evze3h.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592902/c07016761_evze3h_hsu6eh.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3482,8 +3483,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718214/hardware%20page/printer/hp/envy/c07936205_ws1oi2.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592928/c07936205_ws1oi2_ztxkrk.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3493,8 +3494,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718212/hardware%20page/printer/hp/envy/c07900539_n6ho1s.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592909/c07900539_n6ho1s_qzjhms.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3559,8 +3560,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718272/hardware%20page/printer/epson/WorkForce%20Series/wf-610_C11CA50201_rx2fjv.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592936/wf-610_C11CA50201_rx2fjv_o0wooa.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3570,8 +3571,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718301/hardware%20page/printer/epson/WorkForce%20Series/WorkForce_Pro_WF-4820_SPT_C11CJ06201_384x286_akt9i8.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592990/WorkForce_Pro_WF-4820_SPT_C11CJ06201_384x286_akt9i8_c7ejho.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3581,8 +3582,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3  col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718274/hardware%20page/printer/epson/WorkForce%20Series/WF-M5899_SPT_C11CK76201_384x286_onalhf.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592953/WF-M5899_SPT_C11CK76201_384x286_onalhf_mzoanr.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3592,8 +3593,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718273/hardware%20page/printer/epson/WorkForce%20Series/ST-C8000_SPT_C11CH71202_384x286_sn9slf.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592945/ST-C8000_SPT_C11CH71202_384x286_sn9slf_orkktw.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3608,8 +3609,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718323/hardware%20page/printer/epson/ET%20Series/ET-2400_SPT_C11CJ67201_384x286_vvxckb.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783596355/ET-2400_SPT_C11CJ67201_384x286_vvxckb_uuwmcz.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3619,8 +3620,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718324/hardware%20page/printer/epson/ET%20Series/et4750_C11CG19201_384x286_yez5pm.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783596367/et4750_C11CG19201_384x286_yez5pm_wiqqu0.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3630,8 +3631,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718325/hardware%20page/printer/epson/ET%20Series/et7700_C11CG15201_bu6qfk.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783596377/et7700_C11CG15201_bu6qfk_c9bhyo.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3641,8 +3642,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718322/hardware%20page/printer/epson/ET%20Series/ET-M3170_SPT_C11CG92201_384x286_pngabt.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783592999/ET-M3170_SPT_C11CG92201_384x286_pngabt_z2d04y.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3657,8 +3658,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718370/hardware%20page/printer/epson/XP%20Series/xp-330_C11CE60201_j4fgaf.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783596393/xp-330_C11CE60201_j4fgaf_d2a58k.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3668,8 +3669,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718371/hardware%20page/printer/epson/XP%20Series/xp-800_C11CC45201_tiar8b.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783596402/xp-800_C11CC45201_tiar8b_ml8mea.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3679,8 +3680,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718372/hardware%20page/printer/epson/XP%20Series/XP-4205_SPT_C11CK65202_384x286_v2_oxry1o.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598293/XP-4205_SPT_C11CK65202_384x286_v2_oxry1o_xva0jj.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3690,8 +3691,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718369/hardware%20page/printer/epson/XP%20Series/XP-8700_SPT_C11CK46201_384x286_klo8tw.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783596384/XP-8700_SPT_C11CK46201_384x286_klo8tw_fwqf94.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3706,8 +3707,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718803/hardware%20page/printer/epson/Laser%20Series/CX11N_C11C588061_p9afum.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598324/CX11N_C11C588061_p9afum_ffmevn.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3717,8 +3718,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718803/hardware%20page/printer/epson/Laser%20Series/artis-837_C11CB20201_jjmwl5.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598315/artis-837_C11CB20201_jjmwl5_eafq55.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3728,8 +3729,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718804/hardware%20page/printer/epson/Laser%20Series/CX11NF_001_tuewsj.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598332/CX11NF_001_tuewsj_ijqcgu.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3739,8 +3740,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718802/hardware%20page/printer/epson/Laser%20Series/Art_730_C11CB18201_viimq7.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598307/Art_730_C11CB18201_viimq7_wdi1xe.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3795,8 +3796,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718960/hardware%20page/printer/brother/Brother%20Inkjet/DCPJ1800DW_main_n138du.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598339/DCPJ1800DW_main_n138du_mqg15t.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3806,8 +3807,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718963/hardware%20page/printer/brother/Brother%20Inkjet/MFCJ4335DW_main_jmx3vd.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598354/MFCJ4335DW_main_jmx3vd_fxwffe.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3817,8 +3818,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3  col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718964/hardware%20page/printer/brother/Brother%20Inkjet/MFCJ6540DWE_main_nf3y6t.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598363/MFCJ6540DWE_main_nf3y6t_numdfg.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3828,8 +3829,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706718961/hardware%20page/printer/brother/Brother%20Inkjet/DCPJ1200W_main_vof1ri.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598347/DCPJ1200W_main_vof1ri_j1aulk.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3844,8 +3845,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719019/hardware%20page/printer/brother/Brother%20Laser/HL1212W_main_xlcqjw.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598372/HL1212W_main_xlcqjw_mnbq6d.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3855,8 +3856,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719022/hardware%20page/printer/brother/Brother%20Laser/HLL6410DN_main_enk0pe.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598385/HLL6410DN_main_enk0pe_u8vrua.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3866,8 +3867,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719024/hardware%20page/printer/brother/Brother%20Laser/MFCL6910DN_main_j9iokl.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598393/MFCL6910DN_main_j9iokl_dlua2n.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3877,8 +3878,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719021/hardware%20page/printer/brother/Brother%20Laser/DCP1612W_main_gail87.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783598379/DCP1612W_main_gail87_uahjrm.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3893,8 +3894,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719077/hardware%20page/printer/brother/Brother%20LED/MFCL8340CDW_main_qqh3dx.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672374/MFCL8340CDW_main_qqh3dx_k63pbp.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3904,8 +3905,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719075/hardware%20page/printer/brother/Brother%20LED/HLL5100DN_main_zvsbwz.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672330/HLL5100DN_main_zvsbwz_tho537.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3915,8 +3916,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3  col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719078/hardware%20page/printer/brother/Brother%20LED/MFCL8900CDW_main_v1bfwo.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672390/MFCL8900CDW_main_v1bfwo_fn1l0m.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3926,8 +3927,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719073/hardware%20page/printer/brother/Brother%20LED/MFCL3750CDW_main_slpxoo.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672300/MFCL3750CDW_main_slpxoo_o1pn13.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -3991,8 +3992,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719179/hardware%20page/printer/canon/Canon%20Inkjet/canon-pixma-ts7750i-wireless-colour-3-in-1-inkjet-photo-printer-product-front-view_jdem18.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672441/canon-pixma-ts7750i-wireless-colour-3-in-1-inkjet-photo-printer-product-front-view_jdem18_wr6x48.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4002,8 +4003,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719177/hardware%20page/printer/canon/Canon%20Inkjet/canon-maxify-gx6050-wireless-3-in-1-refillable-megatank-inkjet-printer-product-front-view_rhzkbk.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672431/canon-maxify-gx6050-wireless-3-in-1-refillable-megatank-inkjet-printer-product-front-view_rhzkbk_or673u.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4013,8 +4014,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719174/hardware%20page/printer/canon/Canon%20Inkjet/5449c008-pixma-ts7450i-eur-black_01_ghu049.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672431/canon-maxify-gx6050-wireless-3-in-1-refillable-megatank-inkjet-printer-product-front-view_rhzkbk_or673u.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4024,8 +4025,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719176/hardware%20page/printer/canon/Canon%20Inkjet/canon-pixma-ts7650i-wireless-colour-3-in-1-inkjet-photo-printer-product-front-view_qin5gm.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672420/canon-pixma-ts7650i-wireless-colour-3-in-1-inkjet-photo-printer-product-front-view_qin5gm_iyzvac.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4040,8 +4041,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719267/hardware%20page/printer/canon/Canon%20Laser/5951c026_i-sensys-mf463dw_01_new_ddkgiu.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785151648/5951c026_i-sensys-mf463dw_01_new_ddkgiu_emipfr.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4051,8 +4052,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719270/hardware%20page/printer/canon/Canon%20Laser/front-view_tmjty1.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672542/front-view_tmjty1_tbyeiy.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4062,8 +4063,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719272/hardware%20page/printer/canon/Canon%20Laser/i-sensys-mf3010_1_a6mx6l.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672550/i-sensys-mf3010_1_a6mx6l_gvqf1c.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4073,8 +4074,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719268/hardware%20page/printer/canon/Canon%20Laser/5160c020_mf553dw_01_uxxxu7.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672527/5160c020_mf553dw_01_uxxxu7_sqjvi4.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4089,8 +4090,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719466/hardware%20page/printer/canon/Canon%20Office/front-view_j5rypu.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672603/front-view_j5rypu_x87xk1.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4100,8 +4101,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719462/hardware%20page/printer/canon/Canon%20Office/5074c028_pixma-tr4751i-eur-white_01_vfq2s9.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672584/5074c028_pixma-tr4751i-eur-white_01_vfq2s9_phv99j.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4111,8 +4112,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719464/hardware%20page/printer/canon/Canon%20Office/canon-maxify-mb5440-product-front-view_qgvn9v.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672594/canon-maxify-mb5440-product-front-view_qgvn9v_c6jly6.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4122,8 +4123,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719412/hardware%20page/printer/canon/Canon%20Office/3109c006_ts705_01_nrsgss.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672567/3109c006_ts705_01_nrsgss_bfrdlq.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4138,8 +4139,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719790/hardware%20page/printer/canon/Canon%20Home/3771c006aa_pixma-ts3351-white_01_p4dcbj.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672644/3771c006aa_pixma-ts3351-white_01_p4dcbj_nd3afs.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4149,8 +4150,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719791/hardware%20page/printer/canon/Canon%20Home/3775c048_pixma-ts8352-red_01_wb8lv5.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672652/3775c048_pixma-ts8352-red_01_wb8lv5_noashz.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4160,8 +4161,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719791/hardware%20page/printer/canon/Canon%20Home/pixma-ip8750_2_jxcbew.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672664/pixma-ip8750_2_jxcbew_drfwyo.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4171,8 +4172,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706719790/hardware%20page/printer/canon/Canon%20Home/3109c006_ts705_01_v1gchc.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672628/3109c006_ts705_01_v1gchc_ytbtru.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4236,8 +4237,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720074/hardware%20page/printer/lexmark/Lexmark%20Monochrome/7676_da8or2.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672683/7676_da8or2_wmaovb.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4247,8 +4248,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720075/hardware%20page/printer/lexmark/Lexmark%20Monochrome/7694_t6rc41.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785152042/7694_t6rc41_digyhb.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4258,8 +4259,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720076/hardware%20page/printer/lexmark/Lexmark%20Monochrome/9198_jiej0v.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672861/9198_jiej0v_yrpg1v.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4269,8 +4270,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720073/hardware%20page/printer/lexmark/Lexmark%20Monochrome/9326_ibwgl9.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672674/9326_ibwgl9_fo4yh9.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4285,8 +4286,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720123/hardware%20page/printer/lexmark/Lexmark%20Color/7611_ivl39o.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672918/7611_ivl39o_bgs5a9.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4296,8 +4297,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720124/hardware%20page/printer/lexmark/Lexmark%20Color/7649_uyxgpm.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672934/7649_uyxgpm_rev1ai.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4307,8 +4308,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720123/hardware%20page/printer/lexmark/Lexmark%20Color/6506_ldqrpf.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672903/6506_ldqrpf_arod6j.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4318,8 +4319,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720120/hardware%20page/printer/lexmark/Lexmark%20Color/11409_sp0cja.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672888/11409_sp0cja_frmi3t.png'
                             className='img-fluid layload'
                             alt=''
                           />
@@ -4334,8 +4335,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720274/hardware%20page/printer/lexmark/Lexmark%20Multifunction/7777_arm7e4.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672985/7777_arm7e4_bew8kf.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4345,8 +4346,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720274/hardware%20page/printer/lexmark/Lexmark%20Multifunction/14450_xwouw6.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672963/14450_xwouw6_e9ppvd.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4356,8 +4357,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720273/hardware%20page/printer/lexmark/Lexmark%20Multifunction/6466_j0uuia.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672943/6466_j0uuia_amqxzj.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4367,8 +4368,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720273/hardware%20page/printer/lexmark/Lexmark%20Multifunction/6650_vadqms.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672952/6650_vadqms_habohf.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4383,8 +4384,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720328/hardware%20page/printer/lexmark/Lexmark%20Dot%20Matrix/4210_q8ujmf.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673376/4210_q8ujmf_eq0odb.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4394,8 +4395,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720329/hardware%20page/printer/lexmark/Lexmark%20Dot%20Matrix/7729_aaif6o.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673392/7729_aaif6o_i201s5.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4405,8 +4406,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720330/hardware%20page/printer/lexmark/Lexmark%20Dot%20Matrix/9351_k2k3y4.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673409/9351_k2k3y4_ulnorc.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4416,8 +4417,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720324/hardware%20page/printer/lexmark/Lexmark%20Dot%20Matrix/7702_nwxwvx.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783672994/7702_nwxwvx_gomb0o.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4481,8 +4482,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720490/hardware%20page/printer/ricoh/Ricoh%20IM/ricohimages_Equipment_Printers-and-Copiers_eqp-im-4000-tile_koyytj.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673441/ricohimages_Equipment_Printers-and-Copiers_eqp-im-4000-tile_koyytj_h6rv82.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4492,8 +4493,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720491/hardware%20page/printer/ricoh/Ricoh%20IM/ricohimages_Equipment_Printers-and-Copiers_eqp-p-C400SRF-tile_gesxhy.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673448/ricohimages_Equipment_Printers-and-Copiers_eqp-p-C400SRF-tile_gesxhy_t4o0co.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4503,8 +4504,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720488/hardware%20page/printer/ricoh/Ricoh%20IM/ricohimages_Equipment_Printers-and-Copiers_eqp-im-430F-tile_t29lvq.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673419/ricohimages_Equipment_Printers-and-Copiers_eqp-im-430F-tile_t29lvq_a65ynd.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4514,8 +4515,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720489/hardware%20page/printer/ricoh/Ricoh%20IM/ricohimages_Equipment_Printers-and-Copiers_eqp-im-460FTL-tile_e8h0l7.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673428/ricohimages_Equipment_Printers-and-Copiers_eqp-im-460FTL-tile_e8h0l7_miclhb.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4530,8 +4531,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720573/hardware%20page/printer/ricoh/Ricoh%20MP/refurbished-ricoh-mp-c305sp_spm9em.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673475/refurbished-ricoh-mp-c305sp_spm9em_ztlt0r.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4541,8 +4542,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720572/hardware%20page/printer/ricoh/Ricoh%20MP/refurbished-ricoh-mp-201spf_ze0f6i.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673468/refurbished-ricoh-mp-201spf_ze0f6i_d9e0tc.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4552,8 +4553,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720574/hardware%20page/printer/ricoh/Ricoh%20MP/ricoh-mp-6054-multifunction-printer_biqweo.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673487/ricoh-mp-6054-multifunction-printer_biqweo_btrrxc.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4563,8 +4564,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720571/hardware%20page/printer/ricoh/Ricoh%20MP/remanufactured-ricoh-mp-c6004_mlwo14.png'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673457/remanufactured-ricoh-mp-c6004_mlwo14_j09e2z.png'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4579,8 +4580,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720620/hardware%20page/printer/ricoh/Ricoh%20P/ricohimages_Equipment_Printers-and-Copiers_eqp-p-501-tile_uhdxph.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673508/ricohimages_Equipment_Printers-and-Copiers_eqp-p-501-tile_uhdxph_boiyrw.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4590,8 +4591,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720622/hardware%20page/printer/ricoh/Ricoh%20P/ricohimages_Equipment_Printers-and-Copiers_eqp-p-c600-tile_kez32j.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673522/ricohimages_Equipment_Printers-and-Copiers_eqp-p-c600-tile_kez32j_g2atfy.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4601,8 +4602,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720621/hardware%20page/printer/ricoh/Ricoh%20P/ricohimages_Equipment_Printers-and-Copiers_eqp-p-c311W-tile_ljf9il.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785153069/ricohimages_Equipment_Printers-and-Copiers_eqp-p-c311W-tile_ljf9il_nilcpd.webp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4612,8 +4613,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720619/hardware%20page/printer/ricoh/Ricoh%20P/ricohimages_Equipment_Printers-and-Copiers_eqp-p-800-tile_svsglw.webp'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673498/ricohimages_Equipment_Printers-and-Copiers_eqp-p-800-tile_svsglw_sckl2f.webpp'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4629,8 +4630,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720667/hardware%20page/printer/ricoh/Ricoh%20SP/sp5100n_bklbfc.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673550/sp5100n_bklbfc_buln1w.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4640,8 +4641,8 @@ const Hardware = () => {
                       <li class='col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720666/hardware%20page/printer/ricoh/Ricoh%20SP/sp3410dn_3_rsv1dm.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673543/sp3410dn_3_rsv1dm_rdmxxs.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4651,8 +4652,8 @@ const Hardware = () => {
                       <li class='nav-item  col-md-3 col-6'>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720665/hardware%20page/printer/ricoh/Ricoh%20SP/ricoh-spc250sf-right-large_fw7vyv.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673537/ricoh-spc250sf-right-large_fw7vyv_cbckc5.jpgg'
                             className='img-fluid lazyload'
                             alt=''
                           />
@@ -4662,8 +4663,8 @@ const Hardware = () => {
                       <li class='nav-item col-md-3 col-6 '>
                         <div className='card border-0'>
                           <img
-                            src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                            data-src='https://res.cloudinary.com/elonatech/image/upload/v1706720663/hardware%20page/printer/ricoh/Ricoh%20SP/spc220s_uzlrvd.jpg'
+                            src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                            data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673529/spc220s_uzlrvd_h1r2as.jpg'
                             className='img-fluid lazyload'
                             alt=''
                           />

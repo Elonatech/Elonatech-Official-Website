@@ -39,8 +39,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1710177287/consumablePage/sharp-printer_jfzqr3.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692905/sharp-printer_jfzqr3_pa2oko.png'
                   className='img-fluid rounded lazyload'
                   alt=''
                 />
@@ -54,8 +54,8 @@ const Consumable = () => {
                   <div className='card border-0'>
                     <div className='text-center'>
                       <img
-                        src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                        data-src='https://res.cloudinary.com/elonatech/image/upload/v1709802108/consumablePage/convin_kjl8rg.png'
+                        src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                        data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679978/convin_kjl8rg_rcfkys.png'
                         className='img-fluid rounded-circle lazyload'
                         alt=''
                       />
@@ -67,8 +67,8 @@ const Consumable = () => {
                   <div className='card border-0'>
                     <div className='text-center'>
                       <img
-                        src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                        data-src='https://res.cloudinary.com/elonatech/image/upload/v1709801530/consumablePage/Efficient_o4x2om.jpg'
+                        src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                        data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679894/Efficient_o4x2om_iztqie.jpg'
                         className='img-fluid rounded-circle lazyload'
                         alt=''
                       />
@@ -80,8 +80,8 @@ const Consumable = () => {
                   <div className='card border-0 '>
                     <div className='text-center'>
                       <img
-                        src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                        data-src='https://res.cloudinary.com/elonatech/image/upload/v1709801908/consumablePage/Cost_effective_duqh7z.jpg'
+                        src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                        data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679903/Cost_effective_duqh7z_ef7zyo.jpg'
                         className='img-fluid rounded-circle lazyload'
                         alt=''
                       />
@@ -136,8 +136,8 @@ const Consumable = () => {
             <div className='card curkl border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798166/consumablePage/Toners/hp_toners_fl42ij.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673720/hp_toners_fl42ij_mrigyv.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -150,8 +150,8 @@ const Consumable = () => {
             <div className='card curkl border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798172/consumablePage/Toners/espon_toner_anbxrz.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673758/espon_toner_anbxrz_bvfswh.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -163,8 +163,8 @@ const Consumable = () => {
             <div className='card curkl border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798174/consumablePage/Toners/brother_toner_x3fley.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673765/brother_toner_x3fley_zqxsrk.pngg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -176,8 +176,8 @@ const Consumable = () => {
             <div className='card curkl border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798169/consumablePage/Toners/ricoh_toners_yko3km.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673735/ricoh_toners_yko3km_imjknq.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -189,8 +189,8 @@ const Consumable = () => {
             <div className='card curkl border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798164/consumablePage/Toners/canon_toner_pxsuse.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673713/canon_toner_pxsuse_jpexdw.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -202,8 +202,8 @@ const Consumable = () => {
             <div className='card curkl border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798167/consumablePage/Toners/lexmark_toner_locyum.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673728/lexmark_toner_locyum_sh8llm.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -232,8 +232,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798513/consumablePage/ink%20cartridge/122-color_av2beg.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673786/122-color_av2beg_vayybd.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -245,8 +245,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798752/consumablePage/ink%20cartridge/29xl_fqnnom.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673790/29xl_fqnnom_nchrhr.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -258,8 +258,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://www-konga-com-res.cloudinary.com/w_400,f_auto,fl_lossy,dpr_3.0,q_auto/media/catalog/product/U/I/128285_1606218698.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784905069/128285_1606218698_rvznyw.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -271,8 +271,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706798511/consumablePage/ink%20cartridge/5-pack-hp-564xl-compatible-inkjet-cartridges-cn684wacb322wa-cb325wa-1bk1pbk1c1m1y-118593_tmoha7.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673775/5-pack-hp-564xl-compatible-inkjet-cartridges-cn684wacb322wa-cb325wa-1bk1pbk1c1m1y-118593_tmoha7_lw555z.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -301,8 +301,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706799071/consumablePage/storage%20devices/images_eecjxp.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673799/images_eecjxp_sq8lbd.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -314,8 +314,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706799078/consumablePage/storage%20devices/31gckR25CqL._AC_UF1000_1000_QL80__omh1nc.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='31gckR25CqL._AC_UF1000_1000_QL80__omh1nc'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -327,8 +327,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706799073/consumablePage/storage%20devices/memory-ddr4_g2npfj.webp'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673805/memory-ddr4_g2npfj_foc3tx.webp'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -340,8 +340,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706799083/consumablePage/storage%20devices/images_1_tbe2h1.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673833/images_1_tbe2h1_tz7lte.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -353,8 +353,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706799081/consumablePage/storage%20devices/cloud_sfamrn.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673827/cloud_sfamrn_rriyaq.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -366,8 +366,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706799075/consumablePage/storage%20devices/images_2_uwhyfk.jpg'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673815/images_2_uwhyfk_lytjih.jpg'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -396,8 +396,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706800018/consumablePage/other%20devices/screen_w0jwpg.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674005/screen_w0jwpg_xwft5d.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -409,8 +409,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706800015/consumablePage/other%20devices/s-l1200_yptes4.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673887/s-l1200_yptes4_wfeoae.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -422,8 +422,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706800012/consumablePage/other%20devices/keyboard_aln32n.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='keyboard_aln32n'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -435,8 +435,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706800018/consumablePage/other%20devices/battery-fou_lxotd4.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673994/battery-fou_lxotd4_hmsima.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -448,8 +448,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706800013/consumablePage/other%20devices/mouse_ywognj.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673853/mouse_ywognj_eltawm.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -461,8 +461,8 @@ const Consumable = () => {
             <div className='card border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706800011/consumablePage/other%20devices/hdmi_hobgvp.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783673838/hdmi_hobgvp_hpwib0.png'
                   className='img-fluid  lazyload'
                   alt=''
                 />
@@ -479,8 +479,8 @@ const Consumable = () => {
           <div className='col-md-4 mt-4'>
             <div className='text-center'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1710319447/consumablePage/AB-Icon-Reduce-Costs_1_xalruo.svg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693089/AB-Icon-Reduce-Costs_1_xalruo_twqmj9.svg'
                 height='180'
                 width='180'
                 className='img-fluid lazyload'
@@ -506,8 +506,8 @@ const Consumable = () => {
           <div className='col-md-4 mt-4'>
             <div className='text-center'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1710319455/consumablePage/AB-Icon-Simplify-Purchasing_hop6gh.svg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693109/AB-Icon-Simplify-Purchasing_hop6gh_vljshh.svg'
                 height='180'
                 width='180'
                 className='img-fluid lazyload'
@@ -532,8 +532,8 @@ const Consumable = () => {
           <div className='col-md-4 mt-4'>
             <div className='text-center'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1710319450/consumablePage/AB-Icon-Future-Procurement_zixz1n.svg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693104/AB-Icon-Future-Procurement_zixz1n_z5v8un.svg'
                 height='180'
                 width='180'
                 className='img-fluid lazyload'
@@ -583,8 +583,8 @@ const Consumable = () => {
           <div className='col-md-6'>
             <div className='card border-0'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1710233756/consumablePage/consumables_page_2_eidzqk.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692929/consumables_page_2_eidzqk_vyikgw.jpg'
                 className='img-fluid lazyload rounded'
                 alt=''
               />

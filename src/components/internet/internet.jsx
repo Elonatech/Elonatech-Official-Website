@@ -105,7 +105,7 @@ const Internet = () => {
             <div
               className='card rounded-0'
               style={{
-                backgroundImage: `url(https://res.cloudinary.com/elonatech/image/upload/v1709623006/internetPage/p07br2yz_skl37i.jpg)`,
+                backgroundImage: `url(https://res.cloudinary.com/dahnwukbz/image/upload/v1783674893/p07br2yz_skl37i_agvoy5.jpg)`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 height: '100%'

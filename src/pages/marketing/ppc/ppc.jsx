@@ -35,7 +35,7 @@ Today, the digital landscape keeps growing and websites are proliferating at war
               <div className=''>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1710316279/ppcPage/ppc_2_ruweku.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693070/ppc_2_ruweku_rlx63n.jpg'
                   alt=''
                   class='img-fluid lazyload'
                 />
@@ -93,8 +93,8 @@ Today, the digital landscape keeps growing and websites are proliferating at war
             <div class='col-lg-6'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709659228/ppcPage/ppc3_opin7l.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677349/ppc3_opin7l_mbhriq.png'
                   alt=''
                   class='img-fluid lazyload'
                   style={{ height: '26rem' }}
@@ -113,7 +113,7 @@ Today, the digital landscape keeps growing and websites are proliferating at war
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709659226/ppcPage/ppc2_zwmohy.webp'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677344/ppc2_zwmohy_us4zrb.webp'
                   alt=''
                   class='img-fluid lazyload mb-4 mt-4'
                 />
@@ -297,7 +297,7 @@ Today, the digital landscape keeps growing and websites are proliferating at war
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709659322/ppcPage/ppc-ads-image_neww_r0nkxi.webp'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677357/ppc-ads-image_neww_r0nkxi_jcdl2o.webp'
                 className='img-fluid lazyload'
                 alt=''
               />

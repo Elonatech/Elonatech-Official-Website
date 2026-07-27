@@ -104,7 +104,7 @@ const Security = () => {
           <div className='col-lg-3 col-md-4'>
             <div className='card-body d-flex align-items-center flex-sm-row'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631131/networkSecurityPage/Icon1_raaxvh.svg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676474/Icon1_raaxvh_rrqh7k.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', weight: '4rem' }}
                 alt='Network security monitoring setup'
@@ -115,7 +115,7 @@ const Security = () => {
           <div className='col-lg-3 col-md-4'>
             <div className='card-body d-flex align-items-center flex-sm-row'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631132/networkSecurityPage/Icon2_dxz8cg.svg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676481/Icon2_dxz8cg_jswfg2.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', weight: '4rem' }}
                 alt='Network security monitoring setup'
@@ -126,7 +126,7 @@ const Security = () => {
           <div className='col-lg-3 col-md-4'>
             <div className='card-body d-flex align-items-center flex-sm-row'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631134/networkSecurityPage/Icon3_xygxid.svg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676489/Icon3_xygxid_guybve.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', weight: '4rem' }}
                 alt='Network security monitoring setup'
@@ -137,7 +137,7 @@ const Security = () => {
           <div className='col-lg-3 col-md-4'>
             <div className='card-body d-flex align-items-center flex-sm-row'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709631134/networkSecurityPage/Icon3_xygxid.svg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676489/Icon3_xygxid_guybve.svg'
                 className='img-fluid lazyload'
                 style={{ height: '4rem', width: '4rem' }}
                 alt='Network security monitoring setup'

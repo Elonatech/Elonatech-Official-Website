@@ -305,7 +305,7 @@ const Digital = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709919164/digitalPage/digital_market_2_ig15b2.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692820/digital_market_2_ig15b2_oggh4h.jpg'
                   className='lazyload img-fluid'
                   alt='Digital Marketing'
                   style={{ maxWidth: '100%', height: 'auto' }}

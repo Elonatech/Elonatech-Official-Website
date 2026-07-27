@@ -65,7 +65,7 @@ const Livestreaming = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709712614/livestreamingPage/Supreme-Image-1030x579_q9lmj2.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679101/Supreme-Image-1030x579_q9lmj2_qtqcnt.jpg'
                 alt=''
                 className='img-fluid lazyload'
               />
@@ -81,7 +81,7 @@ const Livestreaming = () => {
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 style={{ width: '600px', height: '350px' }}
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709712614/livestreamingPage/video-live-streaming-service-1B_ysu5np.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679122/video-live-streaming-service-1B_ysu5np_x0dul8.jpg'
                 className='img-fluid lazyload'
               />
             </div>
@@ -151,7 +151,7 @@ const Livestreaming = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709712671/livestreamingPage/img-3_aicpbn.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679130/img-3_aicpbn_dgwjq0.jpg'
                   className='img-fluid lazyload pt-md-4 pt-0'
                 />
               </div>

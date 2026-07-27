@@ -47,7 +47,7 @@ const Remote = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709715682/remoteSupportPage/image-asset-removebg-preview_kox026.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679144/image-asset-removebg-preview_kox026_y4mrzn.png'
                 alt=''
                 className='img-fluid lazyload'
               />
@@ -60,7 +60,7 @@ const Remote = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709715683/remoteSupportPage/african-woman-sitting-computer-science-class-lady-with-glasses-female-student-sitting-computer_1157-42317_p3stwn.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679151/african-woman-sitting-computer-science-class-lady-with-glasses-female-student-sitting-computer_1157-42317_p3stwn_onjxkn.jpg'
                   className='img-fluid lazyload'
                 />
               </div>
@@ -107,7 +107,7 @@ const Remote = () => {
             <div class='card h-100 '>
               <img
                 src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709715713/remoteSupportPage/cost-reduction-business-concept-finance_220873-30348_xxdwmd.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679156/cost-reduction-business-concept-finance_220873-30348_xxdwmd_d5iddt.jpg'
                 alt=''
                 className='img-fluid lazyload'
               />
@@ -125,7 +125,7 @@ const Remote = () => {
             <div class='card h-100'>
               <img
                 src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709715713/remoteSupportPage/sand-running-through-bulbs_488220-37412_x9ry16.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679163/sand-running-through-bulbs_488220-37412_x9ry16_n2vfeo.jpg'
                 alt=''
                 className='img-fluid lazyload'
               />
@@ -143,7 +143,7 @@ const Remote = () => {
             <div class='card h-100'>
               <img
                 src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709715739/remoteSupportPage/human-resources-concept-with-man_r1xgau.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679201/human-resources-concept-with-man_r1xgau_c0c8v6.jpg'
                 alt=''
                 className='img-fluid lazyload'
               />
@@ -162,7 +162,7 @@ const Remote = () => {
             <div class='card h-100'>
               <img
                 src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709715740/remoteSupportPage/top-view-tools-clockwork-spare-parts_696657-21926_rqvdlw.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679232/top-view-tools-clockwork-spare-parts_696657-21926_rqvdlw_qztjkr.jpg'
                 alt=''
                 className='img-fluid lazyload'
               />
@@ -191,7 +191,7 @@ const Remote = () => {
               <div class='card remote-card h-100' >
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709716548/remoteSupportPage/teleworking_puzpx1.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679378/teleworking_puzpx1_ndfszg.png'
                   alt=''
                   className='photo-icon lazyload'
                 />
@@ -211,7 +211,7 @@ const Remote = () => {
               <div class='card remote-card h-100' >
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709716548/remoteSupportPage/sharing_d1odru.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679265/sharing_d1odru_zuz7l1.png'
                   alt=''
                   className='photo-icon lazyload'
                 />
@@ -230,7 +230,7 @@ const Remote = () => {
               <div class='card remote-card h-100' >
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709716547/remoteSupportPage/remote-access_vfvnhv.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679259/remote-access_vfvnhv_xxzgov.png'
                   alt=''
                   className='photo-icon lazyload'
                 />

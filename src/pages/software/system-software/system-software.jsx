@@ -64,7 +64,7 @@ System software is the most important software in a computer, it enables other s
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
                 className='img-fluid rounded lazyload'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709652504/systempage/system-software1_dwwxyj.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677189/system-software1_dwwxyj_il1xhs.png'
                 alt=''
               />
             </div>
@@ -159,7 +159,7 @@ System software is the most important software in a computer, it enables other s
                 >
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709652758/systempage/program_translation_2_n1dsur.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677263/program_translation_2_n1dsur_jo3duw.png'
                     alt=''
                     class='img-fluid lazyload'
                   />
@@ -199,7 +199,7 @@ System software is the most important software in a computer, it enables other s
                 <div class='col-lg-4 order-1 order-lg-2 text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709652753/systempage/operating-system-structure_crv0hm.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677258/operating-system-structure_crv0hm_nlmkyy.png'
                     alt=''
                     style={{ height: '19rem' }}
                     class='img-fluid lazyload'
@@ -242,7 +242,7 @@ System software is the most important software in a computer, it enables other s
                 <div class='col-lg-4 order-1 order-lg-2 text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709652747/systempage/Device_driver30ac685128a8498ca455a6908da1dda9_vfxx0z.webp'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677237/Device_driver30ac685128a8498ca455a6908da1dda9_vfxx0z_ibpzcx.webp'
                     alt=''
                     class='img-fluid lazyload'
                   />
@@ -282,7 +282,7 @@ System software is the most important software in a computer, it enables other s
                 <div class='col-lg-4 order-1 order-lg-2 text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709652750/systempage/firmware_ruhcau.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677249/firmware_ruhcau_fw10xi.png'
                     alt=''
                     style={{ height: '18rem' }}
                     class='img-fluid lazyload'
@@ -322,7 +322,7 @@ System software is the most important software in a computer, it enables other s
                 <div class='col-lg-4 order-1 order-lg-2 text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709652745/systempage/bios-vs-uefi_dybm2f.jpg'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677228/bios-vs-uefi_dybm2f_sneuvd.jpg'
                     class='img-fluid lazyload'
                   />
                 </div>
@@ -359,7 +359,7 @@ System software is the most important software in a computer, it enables other s
                 </div>
                 <div class='col-lg-4 order-1 order-lg-2 text-center'>
                   <img
-                    src='https://res.cloudinary.com/elonatech/image/upload/v1709652741/systempage/Utility-System-Software-1024x576_bp1ytq.webp'
+                    src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677196/Utility-System-Software-1024x576_bp1ytq_juojbv.webp'
                     alt=''
                     class='img-fluid'
                   />

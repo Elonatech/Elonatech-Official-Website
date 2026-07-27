@@ -37,7 +37,7 @@ const Uiux = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718062/uiuxPage/safebrooks-uiux_me4g7t.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679564/safebrooks-uiux_me4g7t_e9ms7j.png'
                 alt=''
                 className='img-fluid lazyload rounded'
               />
@@ -82,7 +82,7 @@ const Uiux = () => {
                 <div class='p-3 mb-2  text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718055/uiuxPage/ui-1_w6pfok.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679557/ui-1_w6pfok_tindk0.png'
                     className='lazyload'
                     style={{ width: '100px' }}
                     alt=''
@@ -108,7 +108,7 @@ const Uiux = () => {
                 <div class='p-3 mb-2  text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718046/uiuxPage/ui-2_fwa5wv.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679512/ui-2_fwa5wv_eykx98.png'
                     className='lazyload'
                     style={{ width: '100px' }}
                     alt=''
@@ -134,7 +134,7 @@ const Uiux = () => {
                 <div class='p-3 mb-2  text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718047/uiuxPage/ui-3_ypwcpt.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679526/ui-3_ypwcpt_og2okj.png'
                     className='lazyload'
                     style={{ width: '100px' }}
                     alt=''
@@ -159,7 +159,7 @@ const Uiux = () => {
                 <div class='p-3 mb-2  text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718052/uiuxPage/ui-4_pp9bfa.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679538/ui-4_pp9bfa_lauy8q.png'
                     className='lazyload'
                     style={{ width: '100px' }}
                     alt=''
@@ -183,7 +183,7 @@ const Uiux = () => {
                 <div class='p-3 mb-2  text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718053/uiuxPage/ui-5_or8mms.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679547/ui-5_or8mms_nwt1wm.png'
                     className='lazyload'
                     style={{ width: '100px' }}
                     alt=''
@@ -208,7 +208,7 @@ const Uiux = () => {
                 <div class='p-3 mb-2  text-center'>
                   <img
                     src='https://i.stack.imgur.com/qq8AE.gif'
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718054/uiuxPage/ui-6_onu1jn.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679550/ui-6_onu1jn_frlrfm.png'
                     className='lazyload'
                     style={{ width: '100px' }}
                     alt=''
@@ -237,7 +237,7 @@ const Uiux = () => {
             >
               <div className='text-center'>
                 <img
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709718589/uiuxPage/remaben_khx8gx.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785159169/remaben_khx8gx_g4ihue.png'
                   className='img-fluid lazyload'
                   alt=''
                   style={{ height: '23.9rem' }}

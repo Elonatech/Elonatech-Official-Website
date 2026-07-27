@@ -6,21 +6,44 @@ const TeamMd = () => {
   return (
     <>
       <Helmet>
-        <title>Oreva P. Oku — Managing Director | Elonatech Nigeria Limited</title>
+        <title>
+          Oreva P. Oku — Managing Director | Elonatech Nigeria Limited
+        </title>
         <meta
           name="description"
           content="Oreva P. Oku is the Managing Director, Lead Consultant and Creative Director of Elonatech Nigeria Limited. Technology Consultant, Brand Developer, and Corporate IT CEO of the Year 2024 (Innovation in Business). Expert in Network Administration, Web Design, Graphic Design, Branding and Digital Marketing."
         />
         <link rel="canonical" href="https://elonatech.com.ng/oreva-p-oku/" />
-        <meta property="og:title" content="Oreva P. Oku — Managing Director | Elonatech Nigeria Limited" />
-        <meta property="og:description" content="Oreva P. Oku is the Managing Director and Creative Director of Elonatech Nigeria Limited. Technology Consultant, Brand Developer, and Corporate IT CEO of the Year 2024." />
-        <meta property="og:url" content="https://elonatech.com.ng/oreva-p-oku/" />
+        <meta
+          property="og:title"
+          content="Oreva P. Oku — Managing Director | Elonatech Nigeria Limited"
+        />
+        <meta
+          property="og:description"
+          content="Oreva P. Oku is the Managing Director and Creative Director of Elonatech Nigeria Limited. Technology Consultant, Brand Developer, and Corporate IT CEO of the Year 2024."
+        />
+        <meta
+          property="og:url"
+          content="https://elonatech.com.ng/oreva-p-oku/"
+        />
         <meta property="og:type" content="profile" />
-        <meta property="og:image" content="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908745/Image-Resize-1_4_flng2u_fqhhga.png"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Oreva P. Oku — Managing Director | Elonatech Nigeria Limited" />
-        <meta name="twitter:description" content="Oreva P. Oku is the Managing Director and Creative Director of Elonatech Nigeria Limited. Corporate IT CEO of the Year 2024." />
-        <meta name="twitter:image" content="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png" />
+        <meta
+          name="twitter:title"
+          content="Oreva P. Oku — Managing Director | Elonatech Nigeria Limited"
+        />
+        <meta
+          name="twitter:description"
+          content="Oreva P. Oku is the Managing Director and Creative Director of Elonatech Nigeria Limited. Corporate IT CEO of the Year 2024."
+        />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908745/Image-Resize-1_4_flng2u_fqhhga.png"
+        />
       </Helmet>
 
       <div class="container-fluid team-section">
@@ -41,7 +64,7 @@ const TeamMd = () => {
           <div className="col-md-4">
             <div className="card border-0">
               <img
-                src="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png"
+                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908745/Image-Resize-1_4_flng2u_fqhhga.png"
                 className="img-fluid"
                 alt=""
               />
@@ -124,7 +147,7 @@ const TeamMd = () => {
                 >
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1710243151/teamPage/chairman_esjmiy.jpg"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783693039/chairman_esjmiy_zmtvwz.jpg"
                     alt=""
                   />
                   <h4
@@ -335,7 +358,7 @@ const TeamMd = () => {
                 <Link className="text-decoration-none" to={"/jamiu-noah"}>
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1709808291/teamPage/Jamiu_noah_ghhfjl.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783689788/Jamiu_noah_ghhfjl_deaooc.png"
                     alt=""
                   />
                   <h4 className="fw-bold" style={{ color: "#34548c" }}>
@@ -389,7 +412,7 @@ const TeamMd = () => {
                 <Link className="text-decoration-none" to={"/joseph-okoronkwo"}>
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/joseph_picture_rurbzo.jpg"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694125/joseph_picture_rurbzo_km2xak.jpg"
                     alt=""
                   />
                   <h5 className="fw-bold" style={{ color: "#34548c" }}>

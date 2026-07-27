@@ -61,7 +61,7 @@ const Seo = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709660086/seoPage/seo2_nllimj.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677364/seo2_nllimj_eket6q.png'
                   className='img-fluid lazyload rounded'
                   alt=''
                 />
@@ -80,7 +80,7 @@ const Seo = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1711626740/seoPage/seo_mryeoa.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693168/seo_mryeoa_v4dfig.jpg'
                   alt=''
                   class='img-fluid lazyload rounded'
                 />

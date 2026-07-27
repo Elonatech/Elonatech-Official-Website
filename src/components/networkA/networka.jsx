@@ -197,7 +197,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628915/networkAdminPage/project/img6_uzhzgz.jpg'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674963/img6_uzhzgz_p9rr9w.jpg'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -207,7 +207,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628914/networkAdminPage/project/img4_omh8ux.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674940/img4_omh8ux_l1tbct.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -217,7 +217,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628913/networkAdminPage/project/img3_nijzec.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674936/img3_nijzec_ofc3qf.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -227,7 +227,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628915/networkAdminPage/project/img5_fpkpyl.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674947/img5_fpkpyl_tovgzt.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -237,7 +237,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628913/networkAdminPage/project/img2_uzlgri.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674930/img2_uzlgri_gcv3wo.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -247,7 +247,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628911/networkAdminPage/project/img1_tteiv8.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674927/img1_tteiv8_isp3a6.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -257,7 +257,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628910/networkAdminPage/project/img10_cualgc.jpg'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674918/img10_cualgc_x54j1f.jpg'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -267,7 +267,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628910/networkAdminPage/project/img9_ueqfak.jpg'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674921/img9_ueqfak_gexagp.jpg'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -277,7 +277,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628909/networkAdminPage/project/img8_ghklii.jpg'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674909/img8_ghklii_cb8ofc.jpg'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -287,7 +287,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709628908/networkAdminPage/project/img7_yqx8gb.jpg'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674903/img7_yqx8gb_q4enis.jpg'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -315,7 +315,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629410/networkAdminPage/project2/IMG_2_dbwbvi.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783675052/IMG_2_dbwbvi_rfmmh3.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -325,7 +325,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629411/networkAdminPage/project2/IMG_3_md0fve.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676442/IMG_3_md0fve_fsw7pw.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -335,7 +335,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629411/networkAdminPage/project2/IMG_6_s2yyab.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676467/IMG_6_s2yyab_xzvnfn.pngg'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -345,7 +345,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629409/networkAdminPage/project2/IMG_1_iqposh.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783675047/IMG_1_iqposh_ctirxx.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -355,7 +355,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629408/networkAdminPage/project2/IMG_10_te0scj.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783675023/IMG_10_te0scj_tan2cs.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -365,7 +365,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629408/networkAdminPage/project2/IMG_8_zcx5ay.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783675032/IMG_8_zcx5ay_yv0dcr.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -375,7 +375,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629408/networkAdminPage/project2/IMG_9_uuhurr.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783675041/IMG_9_uuhurr_gcbgph.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -385,7 +385,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629405/networkAdminPage/project2/IMG_7_rm2xpu.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783675003/IMG_7_rm2xpu_qp4r8u.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -395,7 +395,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629403/networkAdminPage/project2/IMG_4_p6tobc.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674990/IMG_4_p6tobc_fh3oa5.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''
@@ -405,7 +405,7 @@ const Networka = () => {
               <div class='slide'>
                 <div className='card border border-white'>
                   <img
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1709629404/networkAdminPage/project2/IMG_5_riabde.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674998/IMG_5_riabde_wy9y9p.png'
                     className='img-fluid lazyload p-2'
                     style={{ height: '25rem' }}
                     alt=''

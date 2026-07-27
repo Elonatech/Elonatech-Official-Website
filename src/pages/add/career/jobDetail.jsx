@@ -62,70 +62,54 @@ const JobDetail = () => {
       <div className="container-fluid bg-dark py-5">
         <div className="py-5 mt-5 text-center">
           <h2 className="text-white">{job.title}</h2>
-          <p className="lead text-white mb-0">
-            {job.location} &nbsp;|&nbsp; {job.employmentType} &nbsp;|&nbsp; {job.workplaceType}
-          </p>
+          {(job.location || job.employmentType || job.workplaceType) && (
+            <p className="lead text-white mb-0">
+              {[job.location, job.employmentType, job.workplaceType]
+                .filter(Boolean)
+                .join("  |  ")}
+            </p>
+          )}
         </div>
       </div>
 
       <div className="container my-5">
         <div className="row">
           <div className="col-lg-8">
-            <h4 className="fw-bold mb-3">Job summary</h4>
-            <p style={{ fontWeight: 400 }}>{job.jobSummary}</p>
-
-            <h5 className="fw-bold mt-4 mb-3">Job description</h5>
+            <h4 className="fw-bold mb-3">Job description</h4>
             <div
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(job.jobDescription || ""),
               }}
             />
-
-            {job.responsibilities && (
-              <>
-                <h5 className="fw-bold mt-4 mb-3">Responsibilities</h5>
-                <p style={{ fontWeight: 400, whiteSpace: "pre-line" }}>
-                  {job.responsibilities}
-                </p>
-              </>
-            )}
-
-            {job.requirements && (
-              <>
-                <h5 className="fw-bold mt-4 mb-3">Requirements</h5>
-                <p style={{ fontWeight: 400, whiteSpace: "pre-line" }}>
-                  {job.requirements}
-                </p>
-              </>
-            )}
-
-            {job.benefits && (
-              <>
-                <h5 className="fw-bold mt-4 mb-3">Benefits</h5>
-                <p style={{ fontWeight: 400, whiteSpace: "pre-line" }}>
-                  {job.benefits}
-                </p>
-              </>
-            )}
           </div>
 
           <div className="col-lg-4">
             <div className="card p-4 mt-4 mt-lg-0">
-              <h6 className="fw-bold mb-3">Role details</h6>
+              {(job.jobLevel || job.minimumQualification || job.numberOfOpenings || job.hiringTimeline) && (
+                <>
+                  <h6 className="fw-bold mb-3">Role details</h6>
 
-              <p className="mb-2">
-                <strong>Experience level:</strong> {job.jobLevel}
-              </p>
-              <p className="mb-2">
-                <strong>Minimum qualification:</strong> {job.minimumQualification}
-              </p>
-              <p className="mb-2">
-                <strong>Openings:</strong> {job.numberOfOpenings}
-              </p>
-              {job.hiringTimeline && (
-                <p className="mb-2">
-                  <strong>Hiring timeline:</strong> {job.hiringTimeline}
-                </p>
+                  {job.jobLevel && (
+                    <p className="mb-2">
+                      <strong>Experience level:</strong> {job.jobLevel}
+                    </p>
+                  )}
+                  {job.minimumQualification && (
+                    <p className="mb-2">
+                      <strong>Minimum qualification:</strong> {job.minimumQualification}
+                    </p>
+                  )}
+                  {job.numberOfOpenings && (
+                    <p className="mb-2">
+                      <strong>Openings:</strong> {job.numberOfOpenings}
+                    </p>
+                  )}
+                  {job.hiringTimeline && (
+                    <p className="mb-2">
+                      <strong>Hiring timeline:</strong> {job.hiringTimeline}
+                    </p>
+                  )}
+                </>
               )}
 
               <div className="mt-4">

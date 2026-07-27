@@ -38,7 +38,7 @@ expedite the efficiency and effectiveness of organizational success"
           <div className="col-md-4">
             <div className="card border-0">
               <img
-                src="https://res.cloudinary.com/elonatech/image/upload/v1733493382/joseph_picture_rurbzo.jpg"
+                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694125/joseph_picture_rurbzo_km2xak.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -101,7 +101,7 @@ expedite the efficiency and effectiveness of organizational success"
                 >
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1710243151/teamPage/chairman_esjmiy.jpg"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783693039/chairman_esjmiy_zmtvwz.jpg"
                     alt=""
                   />
                   <h4
@@ -172,7 +172,7 @@ expedite the efficiency and effectiveness of organizational success"
                 <Link className="text-decoration-none" to={"/oreva-p-oku"}>
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/djogptxxc/image/upload/v1778154939/Image-Resize-1_4_flng2u.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908745/Image-Resize-1_4_flng2u_fqhhga.png"
                     alt=""
                   />
                   <h4 className="fw-bold" style={{ color: "#34548c" }}>
@@ -381,7 +381,7 @@ expedite the efficiency and effectiveness of organizational success"
                 <Link className="text-decoration-none" to={"/jamiu-noah"}>
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/elonatech/image/upload/v1709808291/teamPage/Jamiu_noah_ghhfjl.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783689788/Jamiu_noah_ghhfjl_deaooc.png"
                     alt=""
                   />
                   <h4 className="fw-bold" style={{ color: "#34548c" }}>

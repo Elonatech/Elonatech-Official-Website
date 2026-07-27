@@ -658,7 +658,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234678/homePage/clientLogo/veoc_y61crf.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674094/veoc_y61crf_hhk349.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -668,7 +668,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707234699/homePage/clientLogo/pineheight_sljytj.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674316/pineheight_sljytj_wlmtug.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -678,7 +678,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1728401842/Taanet_logo_resized_putvik.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693254/Taanet_logo_resized_putvik_sicgkq.png'
                     className='img-fluid lazyload taanet'
                     alt=''
                   />
@@ -688,7 +688,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1728401858/Vivon_logo_fogs5t.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693264/Vivon_logo_fogs5t_hfn775.png'
                     className='img-fluid lazyload vivon'
                     alt=''
                   />
@@ -698,7 +698,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707753249/homePage/clientLogo/diva_cakes_betw0b.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674402/diva_cakes_betw0b_d5mivn.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -713,7 +713,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1707753250/homePage/clientLogo/cathenet_lgod6k.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784903447/cathenet_lgod6k_lswbr8.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -723,7 +723,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310818/Logo_rqijd4.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783694002/Logo_rqijd4_ydjj92.png'
                     className='img-fluid lazyload first'
                     alt=''
                   />
@@ -733,7 +733,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310816/SHEKINAH_SACRED_PLACE_MINISTRIES_Logo_fu5map.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693997/SHEKINAH_SACRED_PLACE_MINISTRIES_Logo_fu5map_zqjsrs.png'
                     className='img-fluid lazyload second'
                     alt=''
                   />
@@ -743,7 +743,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1730393956/Piers_Spectra_Consulting_logo_abcobj.jpg'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783694005/Piers_Spectra_Consulting_logo_abcobj_fbmcu8.jpg'
                     className='img-fluid lazyload third'
                     alt=''
                   />
@@ -753,7 +753,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310619/Kappachem_Labs_Web_logo_op3szo.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693984/Kappachem_Labs_Web_logo_op3szo_hsbe2r.png'
                     className='img-fluid lazyload'
                     alt=''
                   />
@@ -763,7 +763,7 @@ const Company = () => {
                 <div className='card border-0'>
                   <img
                     src=''
-                    data-src='https://res.cloudinary.com/elonatech/image/upload/v1730310618/Ozone_Cinemas_Logo-removebg-preview_e0aiav.png'
+                    data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693973/Ozone_Cinemas_Logo-removebg-preview_e0aiav_waq4xm.png'
                     className='img-fluid lazyload'
                     alt=''
                   />

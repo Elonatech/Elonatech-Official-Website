@@ -37,7 +37,7 @@ const Social = () => {
           <div className='col-md-6'>
             <div className='card border-0'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709660673/socialPage/Social-Media-Marketing_jh9suk.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677377/Social-Media-Marketing_jh9suk_mkseey.jpg'
                 className='img-fluid lazyload '
                 style={{ height: '23.6rem' }}
               />
@@ -74,7 +74,7 @@ const Social = () => {
               <div class='img-about dots text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709660670/socialPage/social-media-marketing-fundamentals_dktk73.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785164329/social-media-marketing-fundamentals_dktk73_jw8d02.png'
                   alt='Image'
                   class='img-fluid lazyload'
                 />

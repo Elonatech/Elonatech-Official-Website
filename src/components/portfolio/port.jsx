@@ -6,11 +6,11 @@
         {
           "category": "Web Design",
           "images": [
-            "https://res.cloudinary.com/elonatech/image/upload/v1709831302/portfolioPage/projects/remaben/web/remeban_new_j3fijv.jpg",
-            "https://res.cloudinary.com/elonatech/image/upload/v1709831561/portfolioPage/projects/remaben/web/image_13_.885229344d4f7190611a_1_pzmzlf.png",
-            "https://res.cloudinary.com/elonatech/image/upload/v1709831554/portfolioPage/projects/remaben/web/remaben-3333.6bf2a5e13755b8d3a90c_kqw08s.jpg",
-            "https://res.cloudinary.com/elonatech/image/upload/v1709831547/portfolioPage/projects/remaben/web/web2.711211b78ebdaad7caa2_1_qsyknu.png",
-            "https://res.cloudinary.com/elonatech/image/upload/v1709831539/portfolioPage/projects/remaben/web/web3.48503773bb5890237fcc_1_o5jiqs.png"
+            "https://res.cloudinary.com/dahnwukbz/image/upload/v1783690230/remeban_new_j3fijv_nopqdv.jpg",
+            "https://res.cloudinary.com/dahnwukbz/image/upload/v1783690252/image_13_.885229344d4f7190611a_1_pzmzlf_jjszxy.png",
+            "https://res.cloudinary.com/dahnwukbz/image/upload/v1783690247/remaben-3333.6bf2a5e13755b8d3a90c_kqw08s_puh2vm.jpg",
+            "https://res.cloudinary.com/dahnwukbz/image/upload/v1783690242/web2.711211b78ebdaad7caa2_1_qsyknu_etenfa.png",
+            "https://res.cloudinary.com/dahnwukbz/image/upload/v1783690236/web3.48503773bb5890237fcc_1_o5jiqs_yseuz3.png"
           ]
         },
         {
@@ -22,8 +22,8 @@
         {
           "category": "Digital Marketing",
           "images": [
-            "https://res.cloudinary.com/elonatech/image/upload/v1709831750/portfolioPage/projects/remaben/digital/digital6.e32f6a20512bf7f4a446_lsoumk.jpg",
-            "https://res.cloudinary.com/elonatech/image/upload/v1709831743/portfolioPage/projects/remaben/digital/digital5.5c6d288e85583e24f034_wlf2zm.jpg",
+            "https://res.cloudinary.com/dahnwukbz/image/upload/v1783690327/digital6.e32f6a20512bf7f4a446_lsoumk_lia56d.jpg",
+            "https://res.cloudinary.com/dahnwukbz/image/upload/v1783690322/digital5.5c6d288e85583e24f034_wlf2zm_gdcszk.jpg",
             // ... (other digital marketing images)
           ]
         },

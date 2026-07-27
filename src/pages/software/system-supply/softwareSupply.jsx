@@ -63,7 +63,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866422/softwarePage/Untitled_design_15_emx6ft.avif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674032/Untitled_design_15_emx6ft_tzy89e.avif'
                   style={{ height: '8rem' }}
                   alt=''
                 />
@@ -83,7 +83,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866422/softwarePage/Untitled_design_9_r6ny5y.avif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674049/Untitled_design_9_r6ny5y_gftnn0.avif'
                   style={{ height: '8rem' }}
                   alt=''
                 />
@@ -104,7 +104,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866422/softwarePage/Untitled_design_21_k5uaqq.avif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674038/Untitled_design_21_k5uaqq_aumkzv.avif'
                   style={{ height: '8rem' }}
                   alt=''
                 />
@@ -125,7 +125,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866422/softwarePage/OneDrive_256x256_wssgwc.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674027/OneDrive_256x256_wssgwc_dsg2fk.png'
                   style={{ height: '8rem' }}
                   alt=''
                 />
@@ -146,7 +146,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866423/softwarePage/64d40a59191e9c063680d9d5_sharepoint_ndrcyg.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674060/64d40a59191e9c063680d9d5_sharepoint_ndrcyg_zgy7kg.png'
                   style={{ height: '8rem' }}
                   alt=''
                 />
@@ -168,7 +168,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866422/softwarePage/microsoft-visio-profesional-2021-elektronik-lisans-kcm51249417-1-f47330fe18f3460d8ffec90cbe4aeaff_dapnxx.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674014/microsoft-visio-profesional-2021-elektronik-lisans-kcm51249417-1-f47330fe18f3460d8ffec90cbe4aeaff_dapnxx_tlrpox.jpg'
                   style={{ height: '8rem' }}
                   alt=''
                 />
@@ -196,7 +196,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866423/softwarePage/download_1_yt8wot.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674069/download_1_yt8wot_gl0uws.png'
                   // style={{ height: '12rem' }}
                   alt=''
                 />
@@ -217,7 +217,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866423/softwarePage/download_1_yt8wot.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674069/download_1_yt8wot_gl0uws.png'
                   // style={{ height: '12rem' }}
                   alt=''
                 />
@@ -242,7 +242,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866472/softwarePage/480_hxr2nz.webp'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674079/480_hxr2nz_qlvul4.webp'
                   style={{ height: '12rem' }}
                   alt=''
                 />
@@ -260,7 +260,7 @@ const SoftwareSupply = () => {
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
                   className='lazyload'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706866423/softwarePage/152324_1662137145_lcmkly.webp'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674054/152324_1662137145_lcmkly_utpark.webp'
                   style={{ height: '12rem' }}
                   alt=''
                 />

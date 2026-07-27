@@ -59,7 +59,7 @@ It's the act of sending a commercial message, typically to a group of people, us
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709658350/emailPage/email-marketing-business-removebg-preview_w2rpyv.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677325/email-marketing-business-removebg-preview_w2rpyv_orfux0.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -78,7 +78,7 @@ It's the act of sending a commercial message, typically to a group of people, us
               style={{ height: '25rem' }}
             >
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709658352/emailPage/email1_720_lq0e3a.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677331/email1_720_lq0e3a_jvmyap.jpg'
                 alt=''
                 className='img-fluid lazyload'
                 style={{ height: '24.6rem' }}
@@ -180,7 +180,7 @@ It's the act of sending a commercial message, typically to a group of people, us
               style={{ height: '25rem' }}
             >
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709658356/emailPage/54790_ypqd1o.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677337/54790_ypqd1o_ms9brj.jpg'
                 alt=''
                 className='img-fluid lazyload'
                 style={{ height: '24.6rem' }}

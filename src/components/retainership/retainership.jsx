@@ -56,7 +56,7 @@ const Retainership = () => {
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709807330/retainerPage/RETAINER_PARTNERSHIP_IMAGE_mjbect.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783689755/RETAINER_PARTNERSHIP_IMAGE_mjbect_ypk81l.jpg'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -186,7 +186,7 @@ const Retainership = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709225486/retainerPage/Retainer_1-min_agpncq.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674569/Retainer_1-min_agpncq_zpkzn5.jpg'
                 className='img-fluid lazyload'
                 alt=''
               />
@@ -196,7 +196,7 @@ const Retainership = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709225485/retainerPage/Retainer_2-min_kvlmp3.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674560/Retainer_2-min_kvlmp3_emybar.jpg'
                 className='img-fluid lazyload'
                 alt=''
               />
@@ -205,7 +205,7 @@ const Retainership = () => {
           <div className='col-md-4'>
             <img
               src='https://i.stack.imgur.com/qq8AE.gif'
-              data-src='https://res.cloudinary.com/elonatech/image/upload/v1709225483/retainerPage/Retainer_3-min_y50gxv.jpg'
+              data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674555/Retainer_3-min_y50gxv_uoou4i.jpg'
               className='img-fluid lazyload'
               alt=''
             />
@@ -219,8 +219,8 @@ const Retainership = () => {
             <div className=' border-0'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710164778/loaderImage/Loading_icon_wrnmya.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706967234/retainerPage/9c0c2a6fb794b63f8840c5f174b25f15-1_uzzw78.png'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783692828/Loading_icon_wrnmya_bw2kv6.gif'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784902626/9c0c2a6fb794b63f8840c5f174b25f15-1_uzzw78_iq7awu.png'
                   className='img-fluid lazyload rounded'
                   alt=''
                 />

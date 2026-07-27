@@ -156,7 +156,7 @@ You can easily register any domain name of your choice with us. We offer several
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709647317/domainPage/domain-1-removebg-preview_zveocr.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677023/domain-1-removebg-preview_zveocr_oqru76.png'
                 className='lazyload img-fluid me-3'
                 alt=''
               />
@@ -224,7 +224,7 @@ You can easily register any domain name of your choice with us. We offer several
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709647318/domainPage/choose-plan_sqw915.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677028/choose-plan_sqw915_rou9av.png'
                   className='lazyload img-fluid me-3'
                   alt=''
                 />

@@ -38,7 +38,7 @@ const Motion = () =>{
             </div>
             <div class="col-md-6">
               <div class="p-3 text-center">
-              <img src='https://i.stack.imgur.com/qq8AE.gif' data-src="https://res.cloudinary.com/elonatech/image/upload/v1710509453/motionPage/Motion_graphics_Ist_image_rsi8u7.jpg" alt="" className='img-fluid lazyload rounded' />
+              <img src='https://i.stack.imgur.com/qq8AE.gif' data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783693125/Motion_graphics_Ist_image_rsi8u7_q4zzu6.jpg" alt="" className='img-fluid lazyload rounded' />
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ const Motion = () =>{
     <div class="row justify-content-around mt-5 align-items-center">
     <div class="col-md-6">
             <div class="p-3 text-center">
-              <img src='https://i.stack.imgur.com/qq8AE.gif' data-src="https://res.cloudinary.com/elonatech/image/upload/v1710508220/motionPage/Motion_Graphics_Why_choose_us_tqpfmh.jpg" alt="" className='img-fluid lazyload rounded' />
+              <img src='https://i.stack.imgur.com/qq8AE.gif' data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783693120/Motion_Graphics_Why_choose_us_tqpfmh_nhpjmm.jpg" alt="" className='img-fluid lazyload rounded' />
               </div>
           </div>
           <div class="col-md-6">
@@ -112,7 +112,7 @@ const Motion = () =>{
         </div>
           <div class="col-md-6">
             <div className="text-center">
-                <img src='https://i.stack.imgur.com/qq8AE.gif' data-src="https://res.cloudinary.com/elonatech/image/upload/v1710233971/motionPage/Motion_Graphics_Why_choose_us_pzbn4r.jpg" alt="" className='img-fluid lazyload rounded' />
+                <img src='https://i.stack.imgur.com/qq8AE.gif' data-src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783692963/Motion_Graphics_Why_choose_us_pzbn4r_dmmcoh.jpg" alt="" className='img-fluid lazyload rounded' />
             </div>
           </div>
         </div>

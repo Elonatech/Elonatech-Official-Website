@@ -86,7 +86,7 @@ const Branding = () => {
             </div>
             <div class=' col-lg-6'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1709661458/brandingPage/branding_hlrwz8.png'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677417/branding_hlrwz8_emfj1o.png'
                 class='img-fluid rounded '
                 alt=''
               />
@@ -96,7 +96,7 @@ const Branding = () => {
           <div class='row justify-content-evenly mt-4  flex-column-reverse flex-lg-row'>
             <div class='col-lg-6'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710315652/brandingPage/brandin_2_aj6mxs.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693063/brandin_2_aj6mxs_wzsjuh.jpg'
                 class='img-fluid rounded'
                 alt=''
               />
@@ -164,21 +164,21 @@ const Branding = () => {
           <div class='carousel-inner'>
             <div class='carousel-item   active'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1709661554/brandingPage/elona_sationaries_brand_wvtpjy.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677429/elona_sationaries_brand_wvtpjy_p5blfn.jpg'
                 class='d-block w-100 '
                 alt='...'
               />
             </div>
             <div class='carousel-item'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710315639/brandingPage/Remaben_brand_vwwd8m.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693047/Remaben_brand_vwwd8m_mqtguq.jpg'
                 class='d-block w-100 '
                 alt='...'
               />
             </div>
             <div class='carousel-item'>
               <img
-                src='https://res.cloudinary.com/elonatech/image/upload/v1710315639/brandingPage/safebrooks_fupkl3.jpg'
+                src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785160624/safebrooks_fupkl3_sewhj8.jpg'
                 class='d-block w-100 '
                 alt='...'
               />

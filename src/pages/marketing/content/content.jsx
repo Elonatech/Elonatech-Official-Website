@@ -100,7 +100,7 @@ It is a marketing approach focused on distributing valuable, relevant, and consi
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709657624/contentPage/2._Content_Marketing_logo_removed_roukjn.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677313/2._Content_Marketing_logo_removed_roukjn_ghn0ny.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -208,7 +208,7 @@ It is a marketing approach focused on distributing valuable, relevant, and consi
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709657627/contentPage/Content-marketing-cycle_a2cbnq.webp'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677320/Content-marketing-cycle_a2cbnq_q5o12y.webp'
                 alt=''
                 className='img-fluid rounded lazyload'
                 srcset=''
@@ -320,7 +320,7 @@ It is a marketing approach focused on distributing valuable, relevant, and consi
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709657623/contentPage/Content-Marketing-Process-removebg-preview_c81gsg.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677272/Content-Marketing-Process-removebg-preview_c81gsg_rlhbe3.png'
                 alt=''
                 className='img-fluid rounded lazyload'
                 srcset=''

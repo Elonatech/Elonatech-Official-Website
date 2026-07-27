@@ -13,9 +13,9 @@ const Career = () => {
   const [jobs, setJobs] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
-  const [employmentFilter, setEmploymentFilter] = useState([])
-  const [workplaceFilter, setWorkplaceFilter] = useState([])
-  const [levelFilter, setLevelFilter] = useState([])
+  const [employmentFilter, setEmploymentFilter] = useState('')
+  const [workplaceFilter, setWorkplaceFilter] = useState('')
+  const [levelFilter, setLevelFilter] = useState('')
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -31,12 +31,18 @@ const Career = () => {
     fetchJobs()
   }, [])
 
-  const employmentTypes = [...new Set(jobs.map(j => j.employmentType).filter(Boolean))]
-  const workplaceTypes = [...new Set(jobs.map(j => j.workplaceType).filter(Boolean))]
-  const jobLevels = [...new Set(jobs.map(j => j.jobLevel).filter(Boolean))]
+  // Hardcoded from the Job model's enums (not derived from current jobs) so
+  // the filter panel shows the full set of options even if not every value
+  // has a live posting right now — same as any normal job board filter.
+  const employmentTypes = ["Full-Time", "Part-Time", "Contract", "Internship", "Freelance", "Mentorship", "Volunteer", "Other"]
+  const workplaceTypes = ["On-site", "Hybrid", "Remote"]
+  const jobLevels = ["No Experience", "Internship & Graduate", "Entry-level", "Mid-level", "Senior-level", "Executive-level"]
 
-  const toggleFilter = (value, list, setList) => {
-    setList(list.includes(value) ? list.filter(v => v !== value) : [...list, value])
+  // Single-select per category — clicking an already-selected option clears
+  // it back to "no filter" for that category, since a radio input alone
+  // can't be deselected by clicking it again.
+  const selectFilter = (value, current, setValue) => {
+    setValue(current === value ? '' : value)
   }
 
   const filteredJobs = jobs.filter(job => {
@@ -44,17 +50,17 @@ const Career = () => {
       !search.trim() ||
       job.title?.toLowerCase().includes(search.toLowerCase()) ||
       job.jobSummary?.toLowerCase().includes(search.toLowerCase())
-    const matchesEmployment = employmentFilter.length === 0 || employmentFilter.includes(job.employmentType)
-    const matchesWorkplace = workplaceFilter.length === 0 || workplaceFilter.includes(job.workplaceType)
-    const matchesLevel = levelFilter.length === 0 || levelFilter.includes(job.jobLevel)
+    const matchesEmployment = !employmentFilter || employmentFilter === job.employmentType
+    const matchesWorkplace = !workplaceFilter || workplaceFilter === job.workplaceType
+    const matchesLevel = !levelFilter || levelFilter === job.jobLevel
     return matchesSearch && matchesEmployment && matchesWorkplace && matchesLevel
   })
 
   const clearFilters = () => {
     setSearch('')
-    setEmploymentFilter([])
-    setWorkplaceFilter([])
-    setLevelFilter([])
+    setEmploymentFilter('')
+    setWorkplaceFilter('')
+    setLevelFilter('')
   }
 
   const unusedCareerCards = [
@@ -62,41 +68,41 @@ const Career = () => {
       title: 'Graphic Designer / Digital Marketer',
       description:
         'With at least 1 year work experience with proof of professional Graphics Design and Animations.',
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709662758/careerPage/illustration_s7lm6h.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783678841/illustration_s7lm6h_hailx0.png',
       link: '/graphic-career'
     },
     {
       title: 'Full Stack Software Developer',
       description:
         "Must have at least 2 years' work experience with proof of Web Development.",
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709662773/careerPage/web-development_psuko3.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783678998/web-development_psuko3_paiy8j.png',
         link: '/web-career'
     },
     {
       title: 'Digital Marketer',
       description:
         'Must have at least 1 year work experience with proof of professional Digital Marketing.',
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709662766/careerPage/social-media_iund4b.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783678971/social-media_iund4b_mph9xw.png',
       link: '/digital-career'
     },
     {
       title: 'Motion Graphics Designer / Animator',
       description: 'Must be able to use Figma, Adobe XD, Photoshop, etc.',
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709662762/careerPage/montage_brxkxi.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783678964/montage_brxkxi_aqtuh3.png',
       link: '/animation-career'
     },
     {
       title: 'Tech Support Personnel',
       description:
         "Minimum of 2 years' experience in maintenance of computer hardware, software systems, and supporting network.",
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709662770/careerPage/ux-design_kjglok.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1783678978/ux-design_kjglok_oda19t.png',
       link: '/system-career'
     },
     {
       title: 'Marketing & Sales Representative',
       description:
         'Previous work experience as a Marketer/Sales Representative. Basic knowledge (MS Office/Excel).',
-      img: 'https://res.cloudinary.com/elonatech/image/upload/v1709662750/careerPage/branding_cbu4tb.png',
+      img: 'https://res.cloudinary.com/dahnwukbz/image/upload/v1785168076/branding_cbu4tb_icr55n.png',
       link: '/marketing-career'
     }
   ]
@@ -159,7 +165,7 @@ const Career = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709823779/groupPicture/admin_d4aiix.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783689938/admin_d4aiix_lj8jb4.jpg'
                 className='img-fluid rounded lazyload mb-2'
               />
             </div>
@@ -198,7 +204,7 @@ const Career = () => {
                 <div className='job-filter-card'>
                   <div className='d-flex justify-content-between align-items-center mb-3'>
                     <h6 className='job-filter-title mb-0'>Refine your search</h6>
-                    {(search || employmentFilter.length > 0 || workplaceFilter.length > 0 || levelFilter.length > 0) && (
+                    {(search || employmentFilter || workplaceFilter || levelFilter) && (
                       <button className='job-filter-clear' onClick={clearFilters}>
                         Clear filters
                       </button>
@@ -211,9 +217,11 @@ const Career = () => {
                       {employmentTypes.map(type => (
                         <label className='job-filter-check' key={type}>
                           <input
-                            type='checkbox'
-                            checked={employmentFilter.includes(type)}
-                            onChange={() => toggleFilter(type, employmentFilter, setEmploymentFilter)}
+                            type='radio'
+                            name='employmentType'
+                            checked={employmentFilter === type}
+                            onChange={() => {}}
+                            onClick={() => selectFilter(type, employmentFilter, setEmploymentFilter)}
                           />
                           {type}
                         </label>
@@ -227,9 +235,11 @@ const Career = () => {
                       {workplaceTypes.map(type => (
                         <label className='job-filter-check' key={type}>
                           <input
-                            type='checkbox'
-                            checked={workplaceFilter.includes(type)}
-                            onChange={() => toggleFilter(type, workplaceFilter, setWorkplaceFilter)}
+                            type='radio'
+                            name='workplaceType'
+                            checked={workplaceFilter === type}
+                            onChange={() => {}}
+                            onClick={() => selectFilter(type, workplaceFilter, setWorkplaceFilter)}
                           />
                           {type}
                         </label>
@@ -243,9 +253,11 @@ const Career = () => {
                       {jobLevels.map(level => (
                         <label className='job-filter-check' key={level}>
                           <input
-                            type='checkbox'
-                            checked={levelFilter.includes(level)}
-                            onChange={() => toggleFilter(level, levelFilter, setLevelFilter)}
+                            type='radio'
+                            name='jobLevel'
+                            checked={levelFilter === level}
+                            onChange={() => {}}
+                            onClick={() => selectFilter(level, levelFilter, setLevelFilter)}
                           />
                           {level}
                         </label>
@@ -290,8 +302,8 @@ const Career = () => {
                         <div className='job-row-main'>
                           <h5 className='job-row-title'>{job.title}</h5>
                           <div className='job-row-meta'>
-                            <span>📍 {job.location}</span>
-                            <span>🕒 {job.employmentType}</span>
+                            {job.location && <span>📍 {job.location}</span>}
+                            {job.employmentType && <span>🕒 {job.employmentType}</span>}
                             {job.workplaceType && <span className='job-row-tag'>{job.workplaceType}</span>}
                           </div>
                           <p className='job-row-summary'>{job.jobSummary}</p>
@@ -314,7 +326,7 @@ const Career = () => {
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1710841677/careerPage/jpeg-optimizer_black-_z3pvzk.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693157/jpeg-optimizer_black-_z3pvzk_jew84v.jpg'
                 alt=''
                 className='img-fluid lazyload rounded mt-2'
                 srcset=''

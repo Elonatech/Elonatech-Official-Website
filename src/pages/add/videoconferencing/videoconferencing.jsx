@@ -39,7 +39,7 @@ This technology is particularly convenient for business users in different citie
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709724222/videoConferencingPage/meeting-room_quurwd.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679692/meeting-room_quurwd_jx22bu.jpg'
                 alt=''
                 className='img-fluid lazyload rounded'
               />
@@ -102,7 +102,7 @@ This technology is particularly convenient for business users in different citie
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1709724223/videoConferencingPage/recordvideo_krq3kg.jpg'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679700/recordvideo_krq3kg_n92vj8.jpg'
                   alt=''
                   className='img-fluid lazyload pt-2 pt-md-0'
                 />
@@ -131,7 +131,7 @@ This technology is particularly convenient for business users in different citie
             <div className='text-center mb-3'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709724295/videoConferencingPage/webcam_xobc6j.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783679711/webcam_xobc6j_otmsji.jpg'
                 alt=''
                 className='img-fluid lazyload'
               />

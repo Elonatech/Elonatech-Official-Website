@@ -376,7 +376,7 @@ const Shop = () => {
                               <div className='text-center take'>
                                 <LazyLoadImage
                                   src={product.images[0]?.url}
-                                  placeholderSrc='https://res.cloudinary.com/elonatech/image/upload/v1710241889/loaderImage/blurred_o4delz.avif'
+                                  placeholderSrc='https://res.cloudinary.com/dahnwukbz/image/upload/v1783693028/blurred_o4delz_jg3keg.avif'
                                   className='lazyload'
                                   width='130'
                                   height='130'

@@ -51,7 +51,7 @@ const Integration = () => {
             >
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
                   data-src={FirstInfastructureImage}
                   className='img-fluid lazyload'
                   alt='image fail to load'
@@ -206,7 +206,7 @@ const Integration = () => {
             <div class='col-md-5'>
               <div className='text-center'>
                 <img
-                  src='https://res.cloudinary.com/elonatech/image/upload/v1710165001/loaderImage/qq8AE_a5blke.gif'
+                  src='https://res.cloudinary.com/dahnwukbz/image/upload/v1784735122/qq8AE_a5blke_on16ik.gif'
                   data-src={SixthInfastructureImage}
                   className='img-fluid lazyload'
                   alt=''

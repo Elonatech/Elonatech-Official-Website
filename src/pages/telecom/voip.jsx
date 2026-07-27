@@ -56,7 +56,7 @@ We help organizations to communicate better. We provide the leading VoIP phone s
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709648091/voipPage/voip-image_yipevc.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1785167532/voip-image_yipevc_ceztgl.jpg'
                 alt=''
                 className='img-fluid lazyload rounded'
                 srcset=''
@@ -95,7 +95,7 @@ We help organizations to communicate better. We provide the leading VoIP phone s
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709648126/voipPage/call-center_fb1qzk.jpg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783677043/call-center_fb1qzk_ieukpo.jpg'
                 alt=''
                 className='img-fluid lazyload rounded'
                 srcset=''

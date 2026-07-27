@@ -56,7 +56,7 @@ These systems can be applied to both interior and exterior areas of a building o
               <div className='text-center'>
                 <img
                   src='https://i.stack.imgur.com/qq8AE.gif'
-                  data-src='https://res.cloudinary.com/elonatech/image/upload/v1706956614/surveillance/Smile-Desktop_klsmqf.png'
+                  data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674088/Smile-Desktop_klsmqf_z793lu.png'
                   className='img-fluid lazyload'
                   alt=''
                 />
@@ -72,7 +72,7 @@ These systems can be applied to both interior and exterior areas of a building o
           <div className='col-md-4'>
             <div className='d-flex d-md-block align-items-center gap-2'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709635933/surveillance/Video-Icon_xp0fyx.svg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676616/Video-Icon_xp0fyx_v2zmul.svg'
                 className='lazyload'
                 alt=''
               />
@@ -86,7 +86,7 @@ These systems can be applied to both interior and exterior areas of a building o
           <div className='col-md-4'>
             <div className='d-flex d-md-block align-items-center gap-2'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709635936/surveillance/Cloud-Icon_zip0au.svg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676634/Cloud-Icon_zip0au_a5x0et.svg'
                 className='lazyload'
                 alt=''
               />
@@ -101,7 +101,7 @@ These systems can be applied to both interior and exterior areas of a building o
           <div className='col-md-4 mt-3'>
             <div className='d-flex d-md-block align-items-center gap-2'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709635934/surveillance/Battery_s82mei.svg'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676626/Battery_s82mei_h1c6gz.svg'
                 className='lazyload'
                 alt=''
               />
@@ -118,7 +118,7 @@ These systems can be applied to both interior and exterior areas of a building o
           <div className='col-lg-6'>
             <div className='card border-0 text-center'>
               <img
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1706955253/surveillance/image_26_ksokim.png'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783674083/image_26_ksokim_bfymft.png'
                 className='img-fluid lazyload'
                 alt=''
               />
@@ -185,7 +185,7 @@ These systems can be applied to both interior and exterior areas of a building o
               <li className=''>
                 <div className='d-flex'>
                   <img
-                    src='https://res.cloudinary.com/elonatech/image/upload/v1709635934/surveillance/Battery_s82mei.svg'
+                    src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676626/Battery_s82mei_h1c6gz.svg'
                     alt=''
                     className='mb-4'
                   />
@@ -231,7 +231,7 @@ These systems can be applied to both interior and exterior areas of a building o
             <div className='text-center'>
               <img
                 src='https://i.stack.imgur.com/qq8AE.gif'
-                data-src='https://res.cloudinary.com/elonatech/image/upload/v1709635654/surveillance/Shield-expanded_csd60b.webp'
+                data-src='https://res.cloudinary.com/dahnwukbz/image/upload/v1783676599/Shield-expanded_csd60b_fxdob8.webp'
                 className='img-fluid lazyload'
                 alt=''
               />
