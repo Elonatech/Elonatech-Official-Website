@@ -9,12 +9,20 @@ import "./SuperAdminDashboard.css";
 
 const getToken = () => JSON.parse(localStorage.getItem("token"));
 
-const APPLICATION_STATUSES = ["Pending", "Reviewed", "Accepted", "Rejected"];
+const APPLICATION_STATUSES = ["Pending", "In Review", "Reviewed", "Accepted", "Rejected"];
+const SORT_FIELDS = [
+  { value: "createdAt", label: "Date applied" },
+  { value: "firstname", label: "First name" },
+  { value: "lastname", label: "Last name" },
+  { value: "status", label: "Status" },
+];
+const LIMIT = 20;
 
 const statusBadgeClass = (status) => {
   if (status === "Accepted") return "job-status-active";
   if (status === "Pending") return "job-status-draft";
   if (status === "Rejected") return "job-status-closed";
+  if (status === "In Review") return "sad-role-super"; // purple
   return "sad-role-admin"; // Reviewed — blue
 };
 
@@ -32,6 +40,13 @@ const JobApplications = () => {
 
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [total, setTotal] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const [page, setPage] = useState(1);
+  const [statusFilter, setStatusFilter] = useState("");
+  const [sortBy, setSortBy] = useState("createdAt");
+  const [sortOrder, setSortOrder] = useState("desc");
 
   const [viewing, setViewing] = useState(null);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -40,13 +55,17 @@ const JobApplications = () => {
   const fetchApplications = async () => {
     try {
       setLoading(true);
-      const url = jobFilter
-        ? `${BASEURL}/api/v1/job-applications/all?job=${jobFilter}`
-        : `${BASEURL}/api/v1/job-applications/all`;
-      const res = await axios.get(url, {
+      const params = { page, limit: LIMIT, sortBy, sortOrder };
+      if (jobFilter) params.job = jobFilter;
+      if (statusFilter) params.status = statusFilter;
+
+      const res = await axios.get(`${BASEURL}/api/v1/job-applications/all`, {
+        params,
         headers: { "x-access-token": getToken() },
       });
       setApplications(res.data.applications || []);
+      setTotal(res.data.total || 0);
+      setTotalPages(res.data.totalPages || 1);
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to load applications");
     } finally {
@@ -56,7 +75,13 @@ const JobApplications = () => {
 
   useEffect(() => {
     fetchApplications();
-  }, [jobFilter]);
+  }, [jobFilter, statusFilter, sortBy, sortOrder, page]);
+
+  // Any filter/sort change resets back to page 1 — otherwise you could land
+  // on page 4 of a filter that only has 1 page of results.
+  useEffect(() => {
+    setPage(1);
+  }, [jobFilter, statusFilter, sortBy, sortOrder]);
 
   const changeStatus = async (application, status) => {
     try {
@@ -131,22 +156,56 @@ const JobApplications = () => {
           </div>
 
           <div className="sad-table-card">
-            <div className="sad-table-header">
+            <div className="sad-table-header" style={{ flexWrap: "wrap", gap: 12 }}>
               <span className="sad-table-title">
                 {jobFilter ? "FILTERED APPLICATIONS" : "ALL APPLICATIONS"}
               </span>
-              <span className="sad-active-badge">
-                <span className="sad-dot"></span>
-                {applications.length} Total
-              </span>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                <select
+                  className="form-select form-select-sm"
+                  style={{ width: "auto" }}
+                  value={statusFilter}
+                  onChange={(e) => setStatusFilter(e.target.value)}
+                >
+                  <option value="">All Statuses</option>
+                  {APPLICATION_STATUSES.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
+
+                <select
+                  className="form-select form-select-sm"
+                  style={{ width: "auto" }}
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                >
+                  {SORT_FIELDS.map((f) => (
+                    <option key={f.value} value={f.value}>Sort: {f.label}</option>
+                  ))}
+                </select>
+
+                <button
+                  className="job-action-edit"
+                  onClick={() => setSortOrder((o) => (o === "asc" ? "desc" : "asc"))}
+                  title="Toggle sort direction"
+                >
+                  {sortOrder === "asc" ? "↑ Ascending" : "↓ Descending"}
+                </button>
+
+                <span className="sad-active-badge">
+                  <span className="sad-dot"></span>
+                  {total} Total
+                </span>
+              </div>
             </div>
 
             {loading ? (
               <div className="sad-loading">Loading applications...</div>
             ) : applications.length === 0 ? (
               <div className="sad-loading">
-                {jobFilter
-                  ? "No applications for this position yet."
+                {jobFilter || statusFilter
+                  ? "No applications match this filter."
                   : "No applications yet."}
               </div>
             ) : (
@@ -209,6 +268,36 @@ const JobApplications = () => {
                     ))}
                   </tbody>
                 </table>
+              </div>
+            )}
+
+            {!loading && totalPages > 1 && (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 12,
+                  padding: "16px 0 4px",
+                }}
+              >
+                <button
+                  className="job-action-edit"
+                  disabled={page <= 1}
+                  onClick={() => setPage((p) => p - 1)}
+                >
+                  ← Previous
+                </button>
+                <span className="job-workplace-subtext">
+                  Page {page} of {totalPages}
+                </span>
+                <button
+                  className="job-action-edit"
+                  disabled={page >= totalPages}
+                  onClick={() => setPage((p) => p + 1)}
+                >
+                  Next →
+                </button>
               </div>
             )}
           </div>

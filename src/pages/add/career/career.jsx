@@ -7,6 +7,17 @@ import Loading from '../../../components/Loading/Loading'
 import './career.css'
 import { Helmet } from 'react-helmet-async'
 
+// jobSummary is rich-text HTML from the admin's editor — strip tags AND
+// decode entities (e.g. "&nbsp;" from a trailing space in Quill) for the
+// plain-text teaser shown on the listing card. A regex tag-strip alone
+// leaves entities as literal text ("...brand.&nbsp;"), so parse it as real
+// HTML and read .textContent, which decodes them properly.
+const plainText = (html) => {
+  if (!html) return ''
+  const doc = new DOMParser().parseFromString(String(html), 'text/html')
+  return (doc.body.textContent || '').replace(/\s+/g, ' ').trim()
+}
+
 const Career = () => {
   // Open positions come from the Job collection managed in the admin —
   // /api/v1/jobs returns Active postings only.
@@ -49,7 +60,7 @@ const Career = () => {
     const matchesSearch =
       !search.trim() ||
       job.title?.toLowerCase().includes(search.toLowerCase()) ||
-      job.jobSummary?.toLowerCase().includes(search.toLowerCase())
+      plainText(job.jobSummary).toLowerCase().includes(search.toLowerCase())
     const matchesEmployment = !employmentFilter || employmentFilter === job.employmentType
     const matchesWorkplace = !workplaceFilter || workplaceFilter === job.workplaceType
     const matchesLevel = !levelFilter || levelFilter === job.jobLevel
@@ -306,7 +317,7 @@ const Career = () => {
                             {job.employmentType && <span>🕒 {job.employmentType}</span>}
                             {job.workplaceType && <span className='job-row-tag'>{job.workplaceType}</span>}
                           </div>
-                          <p className='job-row-summary'>{job.jobSummary}</p>
+                          <p className='job-row-summary'>{plainText(job.jobSummary)}</p>
                         </div>
                         <span className='btn job-row-btn'>View &amp; Apply</span>
                       </Link>

@@ -304,7 +304,7 @@
 /* Submit button */
 .applymodal-submit {
   width: 100%;
-  background-color: #385994;
+  background-color: #dc3545;
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -317,6 +317,6 @@
 }
 
 .applymodal-submit:hover {
-  background-color: #2c4677;
+  background-color: #bb2d3b;
   transform: translateY(-1px);
 }

@@ -280,10 +280,10 @@ const router = createBrowserRouter([
       },
 
 
-      {
-        path: '/products',
-        element: <Shop />
-      },
+      // {
+      //   path: '/products',
+      //   element: <Shop />
+      // },
 
       // team ==============================
       {

@@ -6,6 +6,35 @@
 
     color: #f0f0f0;
 } */
+/* Tightens the vertical rhythm of the admin-typed rich text on the public
+   job detail page — Quill's default heading/paragraph margins are quite
+   generous, leaving too much gap between sections like "Responsibilities"
+   and "Requirements and skills". */
+.job-description-content h1,
+.job-description-content h2,
+.job-description-content h3,
+.job-description-content h4,
+.job-description-content h5,
+.job-description-content h6 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-description-content h1:first-child,
+.job-description-content h2:first-child,
+.job-description-content h3:first-child {
+  margin-top: 0;
+}
+
+.job-description-content p {
+  margin-bottom: 0.75rem;
+}
+
+.job-description-content ul,
+.job-description-content ol {
+  margin-bottom: 0.75rem;
+}
+
 .align-self-center {
   width: 40%;
 }
@@ -29,7 +58,7 @@
   background-image: linear-gradient(0deg,
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)),
-    url('https://res.cloudinary.com/elonatech/image/upload/v1709288295/careerPage/career_page_testing_1_clrx3t.png');
+    url('https://res.cloudinary.com/dahnwukbz/image/upload/v1783674587/career_page_testing_1_clrx3t_p0nvrq.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -40,6 +69,38 @@
   color: white;
   padding: 20px;
   /* margin-bottom: 50px; */
+}
+
+/* Single job detail page hero — same image/overlay treatment as the career
+   listing hero above, just shorter since it only needs to hold the title
+   and location/type line, not the whole intro copy.
+   The navbar stays transparent until the user scrolls (see navbar.css), so
+   it relies on whatever's behind it being dark enough for the white nav
+   links to read — a plain 50% tint isn't always enough depending on the
+   photo. This gradient darkens just the top ~110px (roughly the navbar's
+   height) more heavily than the rest, so nav legibility doesn't depend on
+   which image gets used here. */
+.job-hero-section {
+  min-height: 280px;
+  background-color: #11253D;
+  background-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.8) 0px,
+      rgba(0, 0, 0, 0.5) 110px,
+      rgba(0, 0, 0, 0.5) 100%),
+    url('https://res.cloudinary.com/dahnwukbz/image/upload/v1785334897/job_details_large_lwk79q.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* Vertically centers the title/location text within the hero — same
+     approach as .career-section above. Without this, the text needed a
+     manual margin-top to sit lower, but that margin also pushed the whole
+     hero section itself down, leaving a plain gap above the image where
+     the fixed navbar sits instead of the image extending behind it. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Text styling for desktop */
@@ -68,11 +129,21 @@
     background-image: linear-gradient(0deg,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)),
-      url('https://res.cloudinary.com/elonatech/image/upload/v1729523966/Career_2_mobile_tkr2uw.jpg');
+      url('https://res.cloudinary.com/dahnwukbz/image/upload/v1783693295/Career_2_mobile_tkr2uw_xcj0ur.jpg');
     background-size: cover;
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
+  }
+
+  .job-hero-section {
+    min-height: 200px;
+    background-image: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.8) 0px,
+        rgba(0, 0, 0, 0.5) 110px,
+        rgba(0, 0, 0, 0.5) 100%),
+      url('https://res.cloudinary.com/dahnwukbz/image/upload/v1785334896/job_details_small_uuvkbo.jpg');
+    background-size: cover;
   }
 
   /* Adjusting text for mobile view */

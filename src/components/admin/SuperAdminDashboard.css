@@ -1,17 +1,49 @@
 /* Rich text editor (react-quill) fields — Job Description, Responsibilities,
-   Requirements, Benefits */
+   Requirements, Benefits. Grows/shrinks with its content (min-height only)
+   instead of reserving a fixed tall box that shows mostly blank space when
+   there's little or no content yet. Long content scrolls within a capped
+   max-height instead of pushing the whole page down indefinitely. */
 .editorContainer {
-  height: 200px;
-  overflow: scroll;
+  max-height: 320px;
+  overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid #dee2e6;
   border-radius: 8px;
 }
 
 .editorContainer .editor {
-  height: 300%;
   border: none;
-  overflow-y: hidden;
+}
+
+.editorContainer .ql-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.editorContainer .ql-container {
+  border: none;
+}
+
+.editorContainer .ql-editor {
+  min-height: 100px;
+}
+
+/* Job Summary is a short 1-2 sentence teaser, not a full document — no need
+   for as much room as Job Description/Responsibilities/etc. */
+.editorContainer-summary .ql-editor {
+  min-height: 50px;
+}
+
+/* Locks the background page from scrolling whenever any admin modal is
+   open — every modal across every admin page uses .sad-overlay, so this
+   one rule covers all of them without touching each page's JS. */
+body:has(.sad-overlay) {
+  overflow: hidden;
 }
 
 /* Layout */
@@ -738,7 +770,7 @@
 }
 
 .sad-modal-body {
-  padding: 24px;
+  padding: 24px 24px 32px;
   overflow-y: auto;
   flex: 1;
 }

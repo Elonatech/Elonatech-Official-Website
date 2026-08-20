@@ -379,7 +379,7 @@ const Computer = () => {
           name="description"
           content="Shop through a wide selection of computers and laptops at Elonatech."
         />
-        <link rel="canonical" href="/computers" />
+        <link rel="canonical" href="https://elonatech.com.ng/computers" />
         <meta name="keywords" content="computers, laptops, Elonatech" />
       </Helmet>
 

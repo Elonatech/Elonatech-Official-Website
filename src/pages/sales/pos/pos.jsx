@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Pagination from "../../../components/Pagination/Pagination";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import Loading from "../../../components/Loading/Loading";
@@ -236,6 +237,17 @@ const Pos = () => {
 
   return (
     <>
+      <Helmet>
+        <title>POS Systems at Elonatech - Point of Sale Devices & Software</title>
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="description"
+          content="Shop Point of Sale (POS) systems, hardware, and software at Elonatech — devices merchants use to process payments and log sales."
+        />
+        <link rel="canonical" href="https://elonatech.com.ng/pos-system" />
+        <meta name="keywords" content="POS system, point of sale, Elonatech" />
+      </Helmet>
+
       <div className="container-fluid point-of-sale-section">
         <div className="text-content">
           <h2>Point Of Sale</h2>

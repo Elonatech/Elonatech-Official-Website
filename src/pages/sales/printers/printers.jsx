@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Pagination from "../../../components/Pagination/Pagination";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import Loading from "../../../components/Loading/Loading";
@@ -239,6 +240,17 @@ const Printers = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Printers, Copiers & Scanners at Elonatech</title>
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="description"
+          content="Shop printers, copiers, and scanners at Elonatech — reliable office printing equipment for every business need."
+        />
+        <link rel="canonical" href="https://elonatech.com.ng/printers" />
+        <meta name="keywords" content="printers, copiers, scanners, Elonatech" />
+      </Helmet>
+
       <div className="container-fluid printers-section">
         <div className="text-content">
           <h2>Printers, Copiers and Scanners</h2>
