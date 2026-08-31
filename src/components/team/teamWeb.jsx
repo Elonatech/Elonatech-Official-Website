@@ -35,7 +35,7 @@ expedite the efficiency and effectiveness of organizational success"
           <div className="col-md-4">
             <div className="card border-0">
               <img
-                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1787933848/Enoch_J._Enebeli_h0en6k.png"
+                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788189360/Enoch_J._Enebeli_last_chance_jigbw1.png"
                 className="img-fluid"
                 alt=""
               />
@@ -313,7 +313,7 @@ expedite the efficiency and effectiveness of organizational success"
           <div class="col-lg-2  mx-1 p-3 mb-5 rounded">
             <div class="kontribusi">
               <div class="team-item rounded overflow-hidden pb-4">
-                <Link className="text-decoration-none" to={"/toju-okenejoe"}>
+                <Link className="text-decoration-none" to={"/toju-okene-joe"}>
                   <img
                     class="img-fluid mb-4"
                     src="https://res.cloudinary.com/djogptxxc/image/upload/v1778154940/Image-Resize-3_1_pyikij.png"

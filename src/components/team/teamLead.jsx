@@ -374,7 +374,7 @@ const TeamLead = () => {
                 <Link className="text-decoration-none" to={"/enoch-enebeli"}>
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788169822/Enoch_J._Enebeli_-_cropped_ehouim.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788189916/Enoch_J._Enebeli_last_chance_2_jispeq.png"
                     alt=""
                   />
                   <h5 className="fw-bold" style={{ color: "#34548c" }}>

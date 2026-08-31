@@ -569,8 +569,15 @@ const EmptdpIgnite = () => {
       {/* ── 7b. Other Mentors ────────────────────────────────────────────────── */}
       <section className="emptdp-mentor-section">
         <div className="container">
-          <div className="emptdp-mentor-grid">
-            <div className="emptdp-mentor-bio">
+          <div className="emptdp-mentor-row">
+            <div className="emptdp-mentor-card">
+              <Link to="/violet-oku">
+                <img
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908688/Image-Resize-2_1_vlwrnr_zafov0.png"
+                  alt="Violet Laura O."
+                  className="emptdp-mentor-card-photo"
+                />
+              </Link>
               <p className="emptdp-mentor-label">Mentor, ETMPDP Ignite</p>
               <h3 className="emptdp-mentor-name">Violet Laura O.</h3>
               <p className="emptdp-mentor-role">
@@ -588,23 +595,14 @@ const EmptdpIgnite = () => {
               </p>
             </div>
 
-            <div className="emptdp-mentor-photo-col">
-              <Link to="/violet-oku">
+            <div className="emptdp-mentor-card">
+              <Link to="/enoch-enebeli">
                 <img
-                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908688/Image-Resize-2_1_vlwrnr_zafov0.png"
-                  alt="Violet Laura O."
-                  className="emptdp-mentor-photo"
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788169822/Enoch_J._Enebeli_-_cropped_ehouim.png"
+                  alt="Enoch J. Enebeli"
+                  className="emptdp-mentor-card-photo"
                 />
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="emptdp-mentor-section">
-        <div className="container">
-          <div className="emptdp-mentor-grid emptdp-mentor-grid--reverse">
-            <div className="emptdp-mentor-bio">
               <p className="emptdp-mentor-label">Mentor, ETMPDP Ignite</p>
               <h3 className="emptdp-mentor-name">Enoch J. Enebeli</h3>
               <p className="emptdp-mentor-role">
@@ -620,16 +618,6 @@ const EmptdpIgnite = () => {
                 user-focused solutions to help participants become technically
                 competent professionals.
               </p>
-            </div>
-
-            <div className="emptdp-mentor-photo-col">
-              <Link to="/enoch-enebeli">
-                <img
-                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1787933848/Enoch_J._Enebeli_h0en6k.png"
-                  alt="Enoch J. Enebeli"
-                  className="emptdp-mentor-photo"
-                />
-              </Link>
             </div>
           </div>
         </div>

@@ -400,7 +400,7 @@ const Team = () => {
                   <div class="team-item rounded overflow-hidden pb-4">
                     <Link
                       className="text-decoration-none"
-                      to={"/toju-okenejoe"}
+                      to={"/toju-okene-joe"}
                     >
                       <img
                         class="img-fluid mb-4 team-img"
@@ -478,7 +478,7 @@ const Team = () => {
                     >
                       <img
                         class="img-fluid mb-4 team-img"
-                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1787933848/Enoch_J._Enebeli_h0en6k.png"
+                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788189916/Enoch_J._Enebeli_last_chance_2_jispeq.png"
                         alt=""
                       />
                       <h5 className="fw-bold" style={{ color: "#34548c" }}>
