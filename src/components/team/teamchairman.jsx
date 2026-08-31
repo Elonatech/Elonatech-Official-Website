@@ -383,25 +383,25 @@ const Teamchairman = () => {
           </div>
 
           <div class="col-lg-2 mx-1 p-3 mb-5 rounded">
-            <Link className="text-decoration-none" to={"/joseph-okoronkwo"}>
+            <Link className="text-decoration-none" to={"/enoch-enebeli"}>
               <div class="kontribusi">
                 <div class="team-item rounded overflow-hidden pb-4">
                   <img
                     class="img-fluid mb-4"
-                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694125/joseph_picture_rurbzo_km2xak.jpg"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788169822/Enoch_J._Enebeli_-_cropped_ehouim.png"
                     alt=""
                   />
                   <h5 className="fw-bold" style={{ color: "#34548c" }}>
-                    Joseph Okoronkwo
+                    Enoch J. Enebeli
                   </h5>
-                  <h6 class="text-danger">Lead Full Stack Developer</h6>
+                  <h6 class="text-danger">Lead Full Stack Software Developer</h6>
                   <ul class="team-social">
                     <li>
                       <Link
                         class="btn btn-square"
                         target="_blank"
                         rel="noopener noreferrer"
-                        to={"https://www.linkedin.com/in/joe40/"}
+                        to={"https://www.linkedin.com/in/enoch-enebeli-8165231ab/"}
                       >
                         <i class="fab fa-linkedin-in"></i>
                       </Link>

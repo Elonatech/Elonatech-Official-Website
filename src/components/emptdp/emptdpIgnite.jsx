@@ -263,7 +263,9 @@ const EmptdpIgnite = () => {
           >
             ETMPDP Ignite
           </span>
-          <h2 className="ignite-desktop-only">Ignite Your Future Before Graduation</h2>
+          <h2 className="ignite-desktop-only">
+            Ignite Your Future Before Graduation
+          </h2>
           <h5 className="ignite-desktop-only">
             The Undergraduate Professional Development Experience of the
             Executive Technology Mentorship &amp; Professional Development
@@ -272,7 +274,8 @@ const EmptdpIgnite = () => {
 
           {/* Mobile layout — shorter heading first, badge underneath, condensed tag */}
           <h2 className="ignite-mobile-only">
-            Executive Technology Mentorship &amp; Professional Development Program
+            Executive Technology Mentorship &amp; Professional Development
+            Program
           </h2>
           <span
             className="emptdp-mentor-badge ignite-mobile-only"
@@ -519,6 +522,12 @@ const EmptdpIgnite = () => {
       {/* ── 7. Meet Your Lead Mentor ─────────────────────────────────────────── */}
       <section className="emptdp-mentor-section">
         <div className="container">
+          <div className="emptdp-section-header emptdp-section-header--light">
+            <h2 className="emptdp-section-title emptdp-section-title--white">
+              Meet our mentors
+            </h2>
+          </div>
+
           <div className="emptdp-mentor-grid">
             <div className="emptdp-mentor-photo-col">
               <Link to="/oreva-p-oku">
@@ -552,6 +561,75 @@ const EmptdpIgnite = () => {
                 professional development to help participants become competent,
                 ethical, and industry-ready professionals.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7b. Other Mentors ────────────────────────────────────────────────── */}
+      <section className="emptdp-mentor-section">
+        <div className="container">
+          <div className="emptdp-mentor-grid">
+            <div className="emptdp-mentor-bio">
+              <p className="emptdp-mentor-label">Mentor, ETMPDP Ignite</p>
+              <h3 className="emptdp-mentor-name">Violet Laura O.</h3>
+              <p className="emptdp-mentor-role">
+                Employee Relations/Admin Manager
+              </p>
+              <p className="emptdp-mentor-bio-text">
+                With over 11 years of professional experience, Violet has
+                developed strong expertise across employee relations, document
+                control, records management, administration, and organizational
+                support within engineering environments. Through ETMPDP Ignite,
+                she provides guidance in workplace professionalism,
+                administrative practices, employee relations, and organizational
+                effectiveness to help participants become responsible and
+                workplace-ready professionals.
+              </p>
+            </div>
+
+            <div className="emptdp-mentor-photo-col">
+              <Link to="/violet-oku">
+                <img
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908688/Image-Resize-2_1_vlwrnr_zafov0.png"
+                  alt="Violet Laura O."
+                  className="emptdp-mentor-photo"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="emptdp-mentor-section">
+        <div className="container">
+          <div className="emptdp-mentor-grid emptdp-mentor-grid--reverse">
+            <div className="emptdp-mentor-bio">
+              <p className="emptdp-mentor-label">Mentor, ETMPDP Ignite</p>
+              <h3 className="emptdp-mentor-name">Enoch J. Enebeli</h3>
+              <p className="emptdp-mentor-role">
+                Lead Full Stack Software Developer
+              </p>
+              <p className="emptdp-mentor-bio-text">
+                With strong experience in software engineering and modern web
+                development, Enoch has developed expertise across full stack
+                development, software architecture, quality assurance, website
+                testing, and programming instruction. Through ETMPDP Ignite, he
+                provides technical mentorship and practical guidance in software
+                development, emerging technologies, and building scalable,
+                user-focused solutions to help participants become technically
+                competent professionals.
+              </p>
+            </div>
+
+            <div className="emptdp-mentor-photo-col">
+              <Link to="/enoch-enebeli">
+                <img
+                  src="https://res.cloudinary.com/dahnwukbz/image/upload/v1787933848/Enoch_J._Enebeli_h0en6k.png"
+                  alt="Enoch J. Enebeli"
+                  className="emptdp-mentor-photo"
+                />
+              </Link>
             </div>
           </div>
         </div>

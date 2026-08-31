@@ -6,17 +6,14 @@ const TeamWeb = () => {
   return (
     <>
       <Helmet>
-        <title>Joseph Okoronkwo - Tech Solution, Digital Solution</title>
+        <title>Enoch J. Enebeli - Tech Solution, Digital Solution</title>
         <meta
           name="description"
-          content="Joseph Okoronkwo is the Lead Web Developer of Elonatech Nigeria Limited.
-A seasoned full stack developer with 4+ years of extensive web applications and passion for developing innovative websites that 
+          content="Enoch J. Enebeli is the Lead Web Developer of Elonatech Nigeria Limited.
+A seasoned full stack developer with 4+ years of extensive web applications and passion for developing innovative websites that
 expedite the efficiency and effectiveness of organizational success"
         />
-        <link
-          rel="canonical"
-          href="https://elonatech.com.ng/joseph-okoronkwo"
-        />
+        <link rel="canonical" href="https://elonatech.com.ng/enoch-enebeli" />
       </Helmet>
 
       <div class="container-fluid team-section">
@@ -38,7 +35,7 @@ expedite the efficiency and effectiveness of organizational success"
           <div className="col-md-4">
             <div className="card border-0">
               <img
-                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694125/joseph_picture_rurbzo_km2xak.jpg"
+                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1787933848/Enoch_J._Enebeli_h0en6k.png"
                 className="img-fluid"
                 alt=""
               />
@@ -47,40 +44,49 @@ expedite the efficiency and effectiveness of organizational success"
           <div className="col-md-8">
             <div className="card border-0">
               <h1 className="fw-bold" style={{ color: "#34548c" }}>
-                Joseph Okoronkwo
+                Enoch J. Enebeli
               </h1>
-              <h6 className="text-danger mt-0">Lead Full Stack Developer</h6>
+              <h6 className="text-danger mt-0">
+                Lead Full Stack Software Developer
+              </h6>
               <p>
-                Joseph Okoronkwo is the Lead Full Stack Developer at Elonatech
-                Nigeria Limited, with over five years of experience in software
-                development. Known for his passion and innovation, Joseph
-                specializes in creating scalable, user-centric digital
-                solutions. His expertise spans modern frameworks like Angular,
-                React, Node.js, and NestJS, alongside backend tools such as
-                MongoDB, Prisma, and Express.
+                Enoch Enebeli is the Lead Full Stack Software Developer at
+                Elonatech Nigeria Limited, with strong expertise in building
+                scalable and user-focused digital solutions. Known for his
+                analytical approach, attention to detail, and passion for
+                technology, Enoch specializes in modern web development and
+                software architecture, with experience across technologies
+                including Angular, React, Next.js, NestJS, Node.js, MongoDB,
+                Prisma, and Express.
               </p>
               <p>
-                A certified Full Stack Developer, Joseph has earned credentials
-                from renowned programs, including Python and Full Stack Web
-                Development certifications from Angela Yu’s Udemy courses. His
-                foundational knowledge in Computer Engineering, gained at Yaba
-                College of Technology, Lagos, Nigeria, has been instrumental in
-                shaping his career.
+                His professional journey began at Excite Panacea, where he
+                trained in frontend development using HTML, CSS, Tailwind CSS,
+                and JavaScript, while also gaining experience in quality
+                assurance, website testing, data collection, and mapping. He
+                subsequently worked as an Assistant Frontend Engineer at Clover
+                Tech, further strengthening his development skills through
+                hands-on projects and mentorship.
               </p>
               <p>
-                Joseph's journey began in 2018 and includes mentoring aspiring
-                developers at Algorithm Tech, as well as internships with Bincom
-                Code Academy and Power Learn Project Africa. At Elonatech, he
-                leads the development of advanced applications, designs scalable
-                architectures, and delivers enterprise-grade solutions, aligning
-                technical efforts with business objectives.
+                During his NYSC service year at New Horizons Systems Solution,
+                Akure, Enoch served as an instructor, teaching programming
+                fundamentals and ICT literacy to groups of students. The
+                experience strengthened both his technical foundation and his
+                ability to communicate complex concepts effectively.
               </p>
               <p>
-                A strategic thinker and collaborative leader, Joseph has
-                successfully delivered projects such as secure e-commerce
-                platforms and bespoke enterprise tools. His commitment to
-                advancing technology and inspiring growth underscores his
-                impactful contributions to the tech industry.
+                A certified Full Stack Developer, Enoch holds professional
+                credentials in Python and Full Stack Web Development through
+                Angela Yu's Udemy courses. He holds a degree in Computer
+                Engineering from Covenant University.
+              </p>
+              <p>
+                A thoughtful and continuously evolving technologist, Enoch is
+                passionate about software engineering, emerging technologies,
+                and building practical solutions to real-world challenges.
+                Outside technology, he plays the keyboard, enjoys listening to
+                music, and values meeting and connecting with new people.{" "}
               </p>
             </div>
           </div>

@@ -73,7 +73,7 @@
   /* background-color: red; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url("https://res.cloudinary.com/dahnwukbz/image/upload/v1781520365/Picture_mobile_xkewv5.png");
-    /* url("https://res.cloudinary.com/dahnwukbz/image/upload/v1781519966/Gemini_Generated_Image_gq7in9gq7in9gq7i-cc_kee65n.png"); */
+  /* url("https://res.cloudinary.com/dahnwukbz/image/upload/v1781519966/Gemini_Generated_Image_gq7in9gq7in9gq7i-cc_kee65n.png"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -86,7 +86,7 @@
   padding: 60px 20px;
 }
 
-.emptdp-cta-buttons-header{
+.emptdp-cta-buttons-header {
   display: flex;
   /* gap: 2px; */
 }
@@ -96,7 +96,7 @@
     min-height: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
       url("https://res.cloudinary.com/dahnwukbz/image/upload/v1781540864/mobile_view_empdtp_zxlvbd.png");
-      background-size: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -759,6 +759,11 @@
   margin: 0;
 }
 
+.emptdp-price-note-subtext {
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
 /* Receive checklist */
 .emptdp-receive-list {
   list-style: none;
@@ -835,6 +840,14 @@
   display: flex;
   gap: 60px;
   align-items: center;
+}
+
+.emptdp-mentor-grid--reverse {
+  flex-direction: row-reverse;
+}
+
+.emptdp-mentor-section + .emptdp-mentor-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .emptdp-mentor-photo-col {

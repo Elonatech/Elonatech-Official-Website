@@ -486,27 +486,34 @@ const Emptdp = () => {
               <h3 className="emptdp-invest-heading">Programme Investment</h3>
               <div className="emptdp-price-cards">
                 <div className="emptdp-price-card emptdp-price-card--light">
-                  <p className="emptdp-price-phase">Phase 1 — Probation</p>
-                  <p className="emptdp-price-amount">₦75,000</p>
+                  <p className="emptdp-price-phase">Initial Enrollment</p>
+                  <p className="emptdp-price-amount">₦300,000</p>
                   <p className="emptdp-price-note">
-                    One-month probation and suitability assessment
+                    80% of Total Program Investment <br />
+                    <span className="emptdp-price-note-subtext">
+                      Payable upon enrollment and before commencement.
+                    </span>
                   </p>
                 </div>
                 <div className="emptdp-price-divider"></div>
                 <div className="emptdp-price-card emptdp-price-card--dark">
                   <p className="emptdp-price-phase emptdp-price-phase--white">
-                    Phase 2 — Full Enrolment
+                    Continuation Balance
                   </p>
                   <p className="emptdp-price-amount emptdp-price-amount--white">
-                    ₦300,000
+                    ₦75,000{" "}
                   </p>
                   <p className="emptdp-price-note emptdp-price-note--white">
-                    Upon successful completion of probation
+                    20% of Total Program Investment <br />
+                    <span className="emptdp-price-note-subtext">
+                      Payable at the completion of the initial assessment
+                      period.
+                    </span>
                   </p>
                 </div>
               </div>
               <p className="emptdp-total-label">
-                Total Investment: <strong>₦375,000</strong>
+                Total Program Investment: <strong>₦375,000</strong>
               </p>
               <p className="emptdp-refund-note">
                 All payments are strictly non-refundable.

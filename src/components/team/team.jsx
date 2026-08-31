@@ -474,17 +474,17 @@ const Team = () => {
                   <div class="team-item rounded overflow-hidden pb-4">
                     <Link
                       className="text-decoration-none"
-                      to={"/joseph-okoronkwo"}
+                      to={"/enoch-enebeli"}
                     >
                       <img
                         class="img-fluid mb-4 team-img"
-                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1783694125/joseph_picture_rurbzo_km2xak.jpg"
+                        src="https://res.cloudinary.com/dahnwukbz/image/upload/v1787933848/Enoch_J._Enebeli_h0en6k.png"
                         alt=""
                       />
                       <h5 className="fw-bold" style={{ color: "#34548c" }}>
-                        Joseph Okoronkwo
+                        Enoch J. Enebeli
                       </h5>
-                      <h6 class="text-danger">Lead Full Stack Developer</h6>
+                      <h6 class="text-danger">Lead Full Stack Software Developer</h6>
                     </Link>
                     <ul class="team-social">
                       <li>
@@ -492,7 +492,7 @@ const Team = () => {
                           class="btn btn-square"
                           target="_blank"
                           rel="noopener noreferrer"
-                          to={"https://www.linkedin.com/in/joe40/"}
+                          to={"https://www.linkedin.com/in/enoch-enebeli-8165231ab/"}
                         >
                           <i class="fab fa-linkedin-in"></i>
                         </Link>
