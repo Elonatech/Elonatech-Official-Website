@@ -220,10 +220,10 @@ const Emptdp = () => {
           name="description"
           content="A selective 12-month mentorship and professional development program designed to equip aspiring technology professionals with practical skills, leadership capacity, business awareness, and career direction."
         />
-        <link rel="canonical" href="https://elonatech.com.ng/emptdp" />
+        <link rel="canonical" href="https://elonatech.com.ng/etmpdp" />
       </Helmet>
 
-      {/* ── 1. Hero ────────────────────────────────────────────────────────── */}
+      {/* ── 1. Hero ────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section">
         <div className="emptdp-hero-text">
           <h2>

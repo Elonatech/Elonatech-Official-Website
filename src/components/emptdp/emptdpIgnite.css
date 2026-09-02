@@ -31,36 +31,230 @@
   }
 }
 
-/* Ignite's Journey has 7 steps vs ETMPDP's 6 — too tight for the shared
-   horizontal timeline at tablet width, so stack it earlier (only here,
-   the ETMPDP page's own timeline is untouched) */
-@media (min-width: 768px) and (max-width: 1099px) {
-  .ignite-journey-section .emptdp-timeline-desktop {
-    display: none;
+/* "Why Ignite?" progression — Learning → Practicing → Applying →
+   Contributing → Growing, drawn as a connected chain (red node + connector
+   line) rather than separate pills, echoing the admission timeline */
+.ignite-progression {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 0;
+  max-width: 780px;
+  margin: 0 auto 40px;
+}
+
+.ignite-progression-step {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.ignite-progression-step::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #dc3545;
+  margin-right: 9px;
+  flex: none;
+}
+
+.ignite-progression-step:not(:last-child)::after {
+  content: "";
+  width: 42px;
+  height: 2px;
+  background: #dc3545;
+  margin: 0 14px;
+  flex: none;
+}
+
+@media (max-width: 576px) {
+  .ignite-progression-step {
+    font-size: 0.78rem;
   }
 
-  .ignite-journey-section .emptdp-timeline-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .ignite-progression-step:not(:last-child)::after {
+    width: 20px;
+    margin: 0 8px;
+  }
+}
+
+/* Compact card grids used by "Why Ignite?" (6 cards, 3 x 2) and
+   "How Ignite Works" (7 cards, 4 + 3) — smaller than the default
+   diff-card so these sections stay short */
+.ignite-why-grid,
+.ignite-how-grid {
+  display: grid;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.ignite-why-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 900px;
+}
+
+.ignite-how-grid {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1000px;
+}
+
+.ignite-why-grid .emptdp-diff-card,
+.ignite-how-grid .emptdp-diff-card {
+  max-width: 100%;
+  padding: 20px 18px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.14);
+}
+
+.ignite-why-grid .emptdp-diff-icon,
+.ignite-how-grid .emptdp-diff-icon {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 12px;
+}
+
+.ignite-why-grid .emptdp-diff-icon i,
+.ignite-how-grid .emptdp-diff-icon i {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 992px) {
+  .ignite-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
   }
 
-  .ignite-journey-section .emptdp-timeline-step-mobile {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
+  .ignite-how-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
   }
+}
 
-  .ignite-journey-section .emptdp-timeline-step-mobile .emptdp-step-circle {
-    margin: 0;
-    flex-shrink: 0;
+@media (max-width: 560px) {
+  .ignite-why-grid,
+  .ignite-how-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
   }
+}
+
+/* Section 4 — "Choose Your Primary Specialization" reuses the ETMPDP tab
+   component. Add the per-track tagline under the panel title and tighten
+   the Core Areas list so the longer tracks (e.g. Data Analytics) stay
+   compact. */
+.ignite-spec-tagline {
+  margin: -16px 0 22px;
+  color: #dc3545;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.emptdp-learn-content .emptdp-skills-list {
+  gap: 10px;
+}
+
+.emptdp-learn-content .emptdp-skill-text {
+  font-size: 1.05rem;
+}
+
+.emptdp-learn-content .emptdp-skill-dot {
+  margin-top: 8px;
+}
+
+/* Section 5 — Ignite 360° (concept + six-month eligibility, no card grid) */
+.ignite-360-lead {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.ignite-360-elig {
+  max-width: 520px;
+  margin: 28px auto 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.ignite-360-elig-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+}
+
+.ignite-360-elig-sub {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+}
+
+.ignite-360-elig-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+}
+
+.ignite-360-elig-list li {
+  position: relative;
+  padding-left: 16px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.ignite-360-elig-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dc3545;
 }
 
 /* Ignite-specific hero background — distinct from the ETMPDP page's hero photo */
 .ignite-hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url("https://res.cloudinary.com/dahnwukbz/image/upload/v1784102634/pexels-pnw-prod-8276643_incaav.jpg") !important;
+}
+
+/* Constrain the hero copy so the description sits in a readable column
+   (about two lines) instead of running edge-to-edge on wide screens */
+.ignite-hero-section .emptdp-hero-text {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ignite-hero-section .emptdp-hero-text h5 {
+  font-size: 1.05rem;
+}
+
+/* Mobile: keep the hero as short as the original — show only the badge,
+   headline, the one short use-case line and the buttons. Hiding the long
+   description and the value-prop sentence is what keeps the copy from
+   pushing the image area taller (no min-height added). */
+@media (max-width: 576px) {
+  .ignite-hero-section .emptdp-hero-text h5,
+  .ignite-hero-section
+    .ignite-hero-tag:not(.ignite-hero-tag--italic) {
+    display: none;
+  }
 }
 
 /* Mobile gets a shorter, restructured hero (heading, then badge, then a
@@ -242,6 +436,71 @@
 @media (max-width: 767px) {
   .ignite-check-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Professional Development is a longer list of short labels — 3 columns
+   keeps it compact */
+.ignite-pd-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 820px;
+}
+
+@media (max-width: 900px) {
+  .ignite-pd-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ignite-pd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section 9 — AI across every specialization (dark section, 7 compact
+   translucent panels, 4 + 3) */
+.ignite-ai-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ignite-ai-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.ignite-ai-card-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0 0 5px;
+}
+
+.ignite-ai-card-desc {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .ignite-ai-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ignite-ai-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
   }
 }
 

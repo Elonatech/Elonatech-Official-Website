@@ -20,140 +20,249 @@ const highlights = [
   "SIWES Documentation Support (Where Applicable)",
 ];
 
-const journey = [
+const whyIgnite = [
   {
-    num: 1,
-    title: "Professional Onboarding",
-    desc: "Workplace culture, professional ethics, communication, and collaboration foundations.",
+    icon: "bi-wrench-adjustable",
+    title: "Practical Technical Learning",
+    desc: "Build practical skills through guided exercises and hands-on technical tasks.",
   },
   {
-    num: 2,
-    title: "Technical Development",
-    desc: "Practical competencies within your chosen specialization through structured learning.",
+    icon: "bi-briefcase",
+    title: "Professional Development",
+    desc: "Develop workplace communication, discipline, accountability and professional etiquette.",
   },
   {
-    num: 3,
-    title: "Guided Practical Experience",
-    desc: "Apply your knowledge through assignments, technical challenges, and mentor-guided activities.",
-  },
-  {
-    num: 4,
+    icon: "bi-person-workspace",
     title: "Executive Mentorship",
-    desc: "Continuous guidance from experienced professionals committed to your growth.",
+    desc: "Learn from experienced professionals and gain exposure to real workplace thinking.",
   },
   {
-    num: 5,
+    icon: "bi-award",
     title: "Leadership Development",
-    desc: "Confidence, accountability, communication skills, and workplace discipline.",
+    desc: "Develop initiative, responsibility, confidence and leadership capacity.",
   },
   {
-    num: 6,
+    icon: "bi-robot",
+    title: "AI-Integrated Learning",
+    desc: "Learn how AI can support your chosen specialization and professional productivity.",
+  },
+  {
+    icon: "bi-building",
     title: "Industry Exposure",
-    desc: "Supervised exposure to selected real-world technology environments where applicable.",
-  },
-  {
-    num: 7,
-    title: "Career Readiness",
-    desc: "Graduate with stronger technical competence, professional maturity, and industry confidence.",
+    desc: "Gain supervised exposure to selected real-world technology projects.",
   },
 ];
 
-const specializations = [
+const progression = [
+  "Learning",
+  "Practicing",
+  "Applying",
+  "Contributing",
+  "Growing",
+];
+
+/* Seven specialization tracks. `tab` is the short label for the tab row;
+   `title` is the full name shown in the panel. Core Areas are per the
+   ETMPDP Ignite spec.
+   NOTE: the Virtual Assistance and Data Analytics images are placeholders
+   reusing existing repo photos — swap for dedicated shots when available. */
+const specializationTracks = [
   {
-    icon: "bi-code-slash",
+    tab: "Software Engineering",
     title: "Software Engineering",
-    desc: "Design and develop responsive websites, web applications, backend systems, APIs, databases, and AI-assisted software solutions.",
+    tagline: "Build Digital Solutions.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039005/pexels-naboth-otieno-83498565-19805876_ziwrjo.jpg",
+    coreAreas: [
+      "Web Design & Development",
+      "Frontend Development",
+      "Backend Development",
+      "Database Fundamentals",
+      "APIs & Integrations",
+      "AI-Assisted Software Development",
+    ],
   },
   {
-    icon: "bi-palette",
+    tab: "Graphics & Brand Design",
     title: "Graphics, Motion Graphics & Brand Design",
-    desc: "Develop professional expertise in branding, graphic design, motion graphics, multimedia production, video editing, and AI-assisted creative workflows.",
+    tagline: "Create. Communicate. Build Brands.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039003/pexels-darlene-alderson-7971537_lqlqy9.jpg",
+    coreAreas: [
+      "Graphic Design",
+      "Motion Graphics",
+      "Video Editing",
+      "Brand Identity Development",
+      "Creative Content Production",
+      "AI-Assisted Creative Workflow",
+    ],
   },
   {
-    icon: "bi-megaphone",
+    tab: "Digital Marketing",
     title: "Digital Marketing & Content Strategy",
-    desc: "Learn SEO, social media marketing, analytics, content strategy, campaign planning, email marketing, and AI-powered marketing techniques.",
+    tagline: "Turn Digital Attention into Business Value.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039003/pexels-rdne-8370329_j6gibu.jpg",
+    coreAreas: [
+      "Social Media Marketing",
+      "SEO",
+      "Content Marketing",
+      "Email Marketing",
+      "Digital Campaign Planning",
+      "Marketing Analytics",
+      "AI-Assisted Digital Marketing",
+    ],
   },
   {
-    icon: "bi-hdd-network",
+    tab: "IT & Networking",
     title: "IT Support, Networking & Infrastructure",
-    desc: "Develop practical skills in networking, systems administration, structured cabling, technical support, computer hardware, and AI-assisted diagnostics.",
+    tagline: "Keep Technology Connected and Working.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784103672/Network_engineer_in_server_room_using_laptop_minimal___Premium_Photo_ayqzyn.jpg",
+    coreAreas: [
+      "Computer Hardware",
+      "Networking",
+      "Technical Support",
+      "Systems Administration",
+      "Structured Cabling",
+      "AI-Assisted Troubleshooting",
+    ],
   },
   {
-    icon: "bi-cpu",
+    tab: "Computer Engineering",
     title: "Computer Engineering",
-    desc: "Build competencies in computer systems, hardware assembly, diagnostics, preventive maintenance, peripheral integration, and AI-assisted engineering workflows.",
+    tagline: "Understand the Technology Behind the Technology.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039620/pexels-mikhail-nilov-9242178_qz3i57.jpg",
+    coreAreas: [
+      "Computer Systems",
+      "Hardware Assembly",
+      "Preventive Maintenance",
+      "System Diagnostics",
+      "Peripheral Integration",
+      "AI-Assisted Engineering Workflow",
+    ],
+  },
+  {
+    tab: "Virtual Assistance",
+    title: "Virtual Assistance & Digital Operations",
+    tagline: "Organize. Support. Execute.",
+    image:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905744/pexels-kampus-5940713_s9bdaz_bzeilg.jpg",
+    coreAreas: [
+      "Digital Workplace Tools",
+      "Administrative Operations",
+      "Executive & Client Support",
+      "Digital Documentation",
+      "Task & Workflow Management",
+      "Business Support Operations",
+      "AI-Powered Productivity",
+    ],
+  },
+  {
+    tab: "Data Analytics",
+    title: "Data Analytics & Business Intelligence",
+    tagline: "Turn Data into Insight.",
+    image:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905632/pexels-mikhail-nilov-9301314_gkohy1_zbay4p.jpg",
+    coreAreas: [
+      "Data Fundamentals",
+      "Excel for Data Analysis",
+      "Data Cleaning",
+      "Data Analysis",
+      "Data Visualization",
+      "Power BI",
+      "SQL Fundamentals",
+      "Business Intelligence",
+      "AI-Assisted Data Analysis",
+    ],
   },
 ];
 
-const experienceItems = [
-  "Instructor-led learning",
-  "Guided practical exercises",
-  "Hands-on technical tasks",
-  "Weekly Executive Mentorship Classes",
-  "Weekly Leadership Development Sessions",
-  "Weekly Technical Review Meetings",
+const howIgniteWorks = [
+  {
+    icon: "bi-person-video3",
+    title: "Instructor-Led Learning",
+    desc: "Structured technical and professional instruction.",
+  },
+  {
+    icon: "bi-tools",
+    title: "Hands-On Practice",
+    desc: "Guided exercises and practical technical tasks.",
+  },
+  {
+    icon: "bi-person-workspace",
+    title: "Executive Mentorship",
+    desc: "Weekly executive mentorship sessions.",
+  },
+  {
+    icon: "bi-award",
+    title: "Leadership Development",
+    desc: "Weekly leadership development sessions.",
+  },
+  {
+    icon: "bi-clipboard-check",
+    title: "Technical Review",
+    desc: "Weekly technical review meetings.",
+  },
+  {
+    icon: "bi-graph-up-arrow",
+    title: "Performance Coaching",
+    desc: "Continuous feedback, evaluation and professional coaching.",
+  },
+  {
+    icon: "bi-building",
+    title: "Industry Exposure",
+    desc: "Supervised exposure to selected real-world projects.",
+  },
+];
+
+const ignite360Eligibility = [
+  "Performance",
+  "Mentor recommendation",
+  "Operational requirements",
+  "Program scheduling",
+];
+
+const aiAcrossSpecs = [
+  {
+    title: "Software Engineering",
+    desc: "AI-assisted development and debugging.",
+  },
+  {
+    title: "Digital Marketing",
+    desc: "AI-assisted research, content and campaign planning.",
+  },
+  { title: "Creative Media", desc: "AI-assisted creative workflows." },
+  { title: "IT Support", desc: "AI-assisted troubleshooting." },
+  {
+    title: "Computer Engineering",
+    desc: "AI-assisted engineering workflows.",
+  },
+  {
+    title: "Virtual Assistance",
+    desc: "AI-powered productivity and workflow support.",
+  },
+  {
+    title: "Data Analytics",
+    desc: "AI-assisted data analysis and insight generation.",
+  },
+];
+
+const professionalDevItems = [
+  "Business Communication",
+  "Professional Etiquette",
+  "Workplace Ethics",
+  "Time Management",
+  "Critical Thinking",
+  "Accountability",
+  "Problem Solving",
   "Team Collaboration",
-  "Continuous Performance Coaching",
-  "Supervised Industry Exposure",
-  "Continuous Feedback & Evaluation",
-];
-
-const ignite360Disciplines = [
-  {
-    icon: "bi-code-slash",
-    title: "Software Engineers",
-    desc: "Collaborate with designers and marketers on real product work.",
-  },
-  {
-    icon: "bi-palette",
-    title: "Designers",
-    desc: "Work alongside engineers and marketers to shape brand experiences.",
-  },
-  {
-    icon: "bi-megaphone",
-    title: "Digital Marketers",
-    desc: "Partner with engineering and design on campaigns and content.",
-  },
-  {
-    icon: "bi-hdd-network",
-    title: "Network & IT",
-    desc: "Support software teams with infrastructure and systems knowledge.",
-  },
-  {
-    icon: "bi-cpu",
-    title: "Computer Engineers",
-    desc: "Support infrastructure and hardware across every specialization.",
-  },
-  {
-    icon: "bi-people-fill",
-    title: "All Thrive Together",
-    desc: "Understand the full lifecycle of technology product development.",
-  },
-];
-
-const leadershipItems = [
-  { icon: "bi-award", title: "Leadership" },
-  { icon: "bi-chat-dots", title: "Communication" },
-  { icon: "bi-shield-check", title: "Professional Ethics" },
-  { icon: "bi-briefcase-fill", title: "Workplace Discipline" },
-  { icon: "bi-clipboard-check", title: "Accountability" },
-  { icon: "bi-clock-history", title: "Time Management" },
-  { icon: "bi-lightbulb", title: "Critical Thinking" },
-  { icon: "bi-heart", title: "Emotional Intelligence" },
-  { icon: "bi-people", title: "Team Collaboration" },
-  { icon: "bi-robot", title: "Responsible AI Usage" },
-  { icon: "bi-graph-up-arrow", title: "Career Development" },
+  "Leadership Development",
+  "Career Development",
+  "Emotional Intelligence",
+  "Responsible AI in the Workplace",
+  "Workplace Leadership & Executive Presence",
 ];
 
 const whyChooseItems = [
@@ -231,6 +340,7 @@ const faqs = [
 const EmptdpIgnite = () => {
   const [openFaq, setOpenFaq] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [activeSpec, setActiveSpec] = useState(0);
 
   const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
 
@@ -250,53 +360,33 @@ const EmptdpIgnite = () => {
           name="description"
           content="ETMPDP Ignite is the undergraduate Professional Development Experience of the Executive Technology Mentorship & Professional Development Program — ideal for SIWES, Industrial Training, Internship & Career Development."
         />
-        <link rel="canonical" href="https://elonatech.com.ng/siwes" />
+        <link rel="canonical" href="https://elonatech.com.ng/emptdp-ignite" />
       </Helmet>
 
       {/* ── 1. Hero ────────────────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section ignite-hero-section">
         <div className="emptdp-hero-text">
-          {/* Desktop layout — badge first, full headline + description + both tag lines */}
           <span
-            className="emptdp-mentor-badge ignite-desktop-only"
+            className="emptdp-mentor-badge"
             style={{ marginBottom: "16px" }}
           >
             ETMPDP Ignite
           </span>
-          <h2 className="ignite-desktop-only">
-            Ignite Your Future Before Graduation
-          </h2>
-          <h5 className="ignite-desktop-only">
-            The Undergraduate Professional Development Experience of the
+          <h2>Enter the Industry. Build Your Edge.</h2>
+          <h5>
+            The undergraduate Professional Development Experience of the
             Executive Technology Mentorship &amp; Professional Development
-            Program (ETMPDP)
+            Program (ETMPDP), designed to bridge the gap between academic
+            learning and the technology industry.
           </h5>
 
-          {/* Mobile layout — shorter heading first, badge underneath, condensed tag */}
-          <h2 className="ignite-mobile-only">
-            Executive Technology Mentorship &amp; Professional Development
-            Program
-          </h2>
-          <span
-            className="emptdp-mentor-badge ignite-mobile-only"
-            style={{ marginBottom: "6px" }}
-          >
-            ETMPDP Ignite
-          </span>
-
-          <p className="ignite-hero-tag ignite-desktop-only">
-            Designed for Undergraduate Technology Students
+          <p className="ignite-hero-tag">
+            Practical learning. Executive mentorship. Leadership development.
+            Professional experience. AI-integrated skills.
           </p>
-          <p className="ignite-hero-tag ignite-hero-tag--italic ignite-desktop-only">
-            Ideal for SIWES, Industrial Training, Internship &amp; Career
-            Development
-          </p>
-
-          <p className="ignite-hero-tag ignite-mobile-only">
-            Designed for Undergraduate Technology Students
-          </p>
-          <p className="ignite-hero-tag ignite-hero-tag--italic ignite-mobile-only">
-            Ideal for SIWES, Internship &amp; Career Development
+          <p className="ignite-hero-tag ignite-hero-tag--italic">
+            Ideal for SIWES &bull; Industrial Training &bull; Internship &bull;
+            Career Development
           </p>
         </div>
         <div className="emptdp-cta-buttons">
@@ -304,56 +394,36 @@ const EmptdpIgnite = () => {
             className="emptdp-btn emptdp-btn--primary"
             onClick={() => startTransition(() => setShowModal(true))}
           >
-            Apply Now
+            Apply for Ignite
           </button>
           <a href={brochurePDF} target="_blank" rel="noopener noreferrer">
             <button className="emptdp-btn emptdp-btn--outline">
-              Download Program Guide
+              Download Ignite Brochure
             </button>
           </a>
         </div>
       </div>
 
-      {/* ── 2. More Than Just SIWES ────────────────────────────────────────── */}
+      {/* ── 2. Introduction ───────────────────────────────────────────────── */}
       <section className="emptdp-why-section">
         <div className="container">
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">
-              A Professional Development Experience Designed For Your Future
+              Not Just Industrial Training. An Industry Experience.
             </h2>
-            <p className="emptdp-section-subtitle">More Than Just SIWES</p>
           </div>
           <div className="emptdp-why-content">
             <div className="emptdp-why-text">
               <p>
-                Many industrial training placements simply help students fulfil
-                an academic requirement. ETMPDP Ignite goes much further. It is
-                a structured Professional Development Experience designed to
-                prepare undergraduate students for successful careers by
-                combining practical technical learning, executive mentorship,
-                leadership development, workplace professionalism, and
-                supervised exposure to industry practices. Whether you are
-                completing SIWES, Industrial Training, Internship, or simply
-                seeking practical experience before graduation, ETMPDP Ignite
-                helps you build the confidence, competence, and discipline
-                required to succeed in today's technology industry.
+                ETMPDP Ignite is designed for undergraduate technology students
+                seeking practical industry experience, professional development
+                and workplace readiness. Whether participating through SIWES,
+                Industrial Training, internship or personal professional
+                development, Ignite combines structured technical learning,
+                practical experience, executive mentorship, leadership
+                development, workplace professionalism and supervised exposure
+                to real-world technology projects.
               </p>
-              <div className="ignite-compare-grid">
-                <div className="ignite-compare-card ignite-compare-card--light">
-                  <p className="ignite-compare-title">Traditional SIWES</p>
-                  <p className="ignite-compare-desc">
-                    Routine tasks, disconnected supervision, and limited
-                    exposure to real workplace practice.
-                  </p>
-                </div>
-                <div className="ignite-compare-card ignite-compare-card--dark">
-                  <p className="ignite-compare-title">ETMPDP Ignite</p>
-                  <p className="ignite-compare-desc">
-                    Executive mentorship, structured leadership development, and
-                    real technical specialization.
-                  </p>
-                </div>
-              </div>
             </div>
             <div className="emptdp-why-image">
               <img
@@ -365,139 +435,25 @@ const EmptdpIgnite = () => {
         </div>
       </section>
 
-      {/* ── 3. Your Professional Development Journey ───────────────────────── */}
-      <section className="emptdp-structure-section ignite-journey-section">
-        <div className="container">
-          <div className="emptdp-section-header">
-            <h2 className="emptdp-section-title">
-              Your Professional Development Journey
-            </h2>
-            <p className="emptdp-section-subtitle">
-              Your transformation at ETMPDP Ignite follows a structured pathway
-            </p>
-          </div>
-
-          <div className="emptdp-timeline-desktop">
-            {journey.map((s, i) => (
-              <div className="emptdp-timeline-step" key={i}>
-                {i < journey.length - 1 && (
-                  <div className="emptdp-timeline-connector"></div>
-                )}
-                <div className="emptdp-step-circle">{s.num}</div>
-                <h6 className="emptdp-step-title">{s.title}</h6>
-                <p className="emptdp-step-desc">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="emptdp-timeline-mobile">
-            {journey.map((s, i) => (
-              <div className="emptdp-timeline-step-mobile" key={i}>
-                <div className="emptdp-step-mobile-left">
-                  <div className="emptdp-step-circle">{s.num}</div>
-                  {i < journey.length - 1 && (
-                    <div className="emptdp-timeline-connector-mobile"></div>
-                  )}
-                </div>
-                <div>
-                  <h6 className="emptdp-step-title">{s.title}</h6>
-                  <p className="emptdp-step-desc">{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. Choose Your Specialization ───────────────────────────────────── */}
-      <section className="emptdp-who-section">
-        <div className="container">
-          <div className="emptdp-section-header">
-            <h2 className="emptdp-section-title">Choose Your Specialization</h2>
-            <p className="emptdp-section-subtitle">
-              Five tracks, one Professional Development Experience
-            </p>
-          </div>
-
-          <div className="ignite-zigzag">
-            {specializations.map((s, i) => (
-              <div
-                className={`ignite-zigzag-row${
-                  i % 2 === 1 ? " ignite-zigzag-row--reverse" : ""
-                }`}
-                key={i}
-              >
-                <div className="ignite-zigzag-image-wrap">
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="ignite-zigzag-image"
-                  />
-                </div>
-                <div className="ignite-zigzag-content">
-                  <div className="ignite-spec-icon">
-                    <i className={`bi ${s.icon}`}></i>
-                  </div>
-                  <h4 className="ignite-zigzag-title">{s.title}</h4>
-                  <p
-                    className="ignite-spec-desc"
-                    style={{ fontSize: "0.95rem", lineHeight: 1.8 }}
-                  >
-                    {s.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. The ETMPDP Ignite Experience ─────────────────────────────────── */}
-      <section className="emptdp-learn-section">
-        <div className="container">
-          <div className="emptdp-section-header">
-            <h2 className="emptdp-section-title">
-              The ETMPDP Ignite Experience
-            </h2>
-            <p className="emptdp-section-subtitle">
-              Every participant benefits from a balanced learning approach
-            </p>
-          </div>
-          <div className="ignite-check-grid">
-            {experienceItems.map((item, i) => (
-              <div
-                className="ignite-check-item ignite-check-item--dark"
-                key={i}
-              >
-                <i className="bi bi-check-circle-fill"></i>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-          <p className="ignite-check-note">
-            Participants may receive supervised exposure to selected live
-            projects based on demonstrated competence, project availability,
-            confidentiality requirements, and Management approval.
-          </p>
-        </div>
-      </section>
-
-      {/* ── 6. Ignite 360° ───────────────────────────────────────────────────── */}
+      {/* ── 3. Why Ignite? ────────────────────────────────────────────────── */}
       <section className="emptdp-diff-section">
         <div className="container">
           <div className="emptdp-section-header emptdp-section-header--light">
             <h2 className="emptdp-section-title emptdp-section-title--white">
-              Ignite 360° — See Beyond Your Specialization
+              From Classroom Knowledge to Industry Capability
             </h2>
-            <p
-              className="emptdp-section-subtitle"
-              style={{ color: "rgba(255,255,255,0.7)" }}
-            >
-              Technology professionals rarely work in isolation
-            </p>
           </div>
-          <div className="emptdp-diff-grid">
-            {ignite360Disciplines.map((c, i) => (
+
+          <div className="ignite-progression">
+            {progression.map((step, i) => (
+              <span className="ignite-progression-step" key={i}>
+                {step}
+              </span>
+            ))}
+          </div>
+
+          <div className="emptdp-diff-grid ignite-why-grid">
+            {whyIgnite.map((c, i) => (
               <div className="emptdp-diff-card" key={i}>
                 <div className="emptdp-diff-icon">
                   <i className={`bi ${c.icon}`}></i>
@@ -507,15 +463,174 @@ const EmptdpIgnite = () => {
               </div>
             ))}
           </div>
-          <p
-            className="ignite-check-note"
-            style={{ color: "rgba(255,255,255,0.6)" }}
-          >
-            Participants enrolled in the Ignite Executive (6-Month Track) may
-            qualify for the Ignite 360° Experience. Participation is based on
-            performance, mentor recommendation, operational requirements, and
-            program scheduling.
+        </div>
+      </section>
+
+      {/* ── 4. Choose Your Primary Specialization ─────────────────────────── */}
+      <section className="emptdp-who-section">
+        <div className="container">
+          <div className="emptdp-section-header">
+            <h2 className="emptdp-section-title">
+              Choose Your Primary Specialization
+            </h2>
+            <p className="emptdp-section-subtitle">
+              Every participant is admitted into a primary specialization while
+              benefiting from multidisciplinary learning opportunities designed
+              to broaden professional competence and industry awareness.
+            </p>
+          </div>
+
+          <div className="emptdp-learn-tabs">
+            {specializationTracks.map((t, i) => (
+              <button
+                key={i}
+                className={`emptdp-tab-btn${
+                  activeSpec === i ? " emptdp-tab-btn--active" : ""
+                }`}
+                onClick={() => setActiveSpec(i)}
+              >
+                {t.tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="emptdp-learn-content">
+            <div className="emptdp-learn-image-wrap">
+              <img
+                src={specializationTracks[activeSpec].image}
+                alt={specializationTracks[activeSpec].title}
+                className="emptdp-learn-image"
+              />
+            </div>
+            <div className="emptdp-learn-skills">
+              <h4 className="emptdp-learn-skills-title">
+                {specializationTracks[activeSpec].title}
+              </h4>
+              <p className="ignite-spec-tagline">
+                {specializationTracks[activeSpec].tagline}
+              </p>
+              <ul className="emptdp-skills-list">
+                {specializationTracks[activeSpec].coreAreas.map((s, i) => (
+                  <li key={i} className="emptdp-skill-item">
+                    <span className="emptdp-skill-dot"></span>
+                    <span className="emptdp-skill-text">{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. Ignite 360° ───────────────────────────────────────────────── */}
+      <section className="emptdp-diff-section">
+        <div className="container">
+          <div className="emptdp-section-header emptdp-section-header--light">
+            <h2 className="emptdp-section-title emptdp-section-title--white">
+              Ignite 360&deg;
+            </h2>
+            <p
+              className="emptdp-section-subtitle"
+              style={{ color: "rgba(255,255,255,0.75)" }}
+            >
+              Your specialization gives you depth. Ignite 360&deg; gives you
+              perspective.
+            </p>
+          </div>
+
+          <p className="ignite-360-lead">
+            Technology does not operate in isolated departments. Ignite
+            360&deg; provides structured cross-disciplinary exposure designed
+            to broaden your understanding of how different technology
+            disciplines connect. While every participant has a primary
+            specialization, eligible participants may observe, collaborate
+            with, or undertake selected learning activities across
+            complementary technology tracks.
           </p>
+
+          <div className="ignite-360-elig">
+            <p className="ignite-360-elig-title">
+              Ignite Executive &mdash; Six-Month Track
+            </p>
+            <p className="ignite-360-elig-sub">
+              Eligible participants may qualify for structured cross-track
+              rotations, based on:
+            </p>
+            <ul className="ignite-360-elig-list">
+              {ignite360Eligibility.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. Ignite Experience Options ──────────────────────────────────── */}
+      <section className="emptdp-invest-section">
+        <div className="container">
+          <div className="emptdp-section-header">
+            <h2 className="emptdp-section-title">
+              Choose Your Ignite Experience
+            </h2>
+          </div>
+          <div className="ignite-pricing-grid">
+            {pricingTiers.map((tier, i) => (
+              <div
+                className={`ignite-pricing-card${
+                  tier.featured ? " ignite-pricing-card--featured" : ""
+                }`}
+                key={i}
+              >
+                {tier.featured && (
+                  <span className="ignite-pricing-badge">Most Popular</span>
+                )}
+                <p className="ignite-pricing-name">{tier.name}</p>
+                <p className="ignite-pricing-duration">{tier.duration}</p>
+                <p className="ignite-pricing-desc">{tier.desc}</p>
+                <p className="ignite-pricing-amount">{tier.amount}</p>
+                <ul className="ignite-pricing-plan">
+                  {tier.plan.map((line, j) => (
+                    <li key={j}>{line}</li>
+                  ))}
+                </ul>
+                <button
+                  className={`emptdp-btn ignite-pricing-cta ${
+                    tier.featured
+                      ? "emptdp-btn--primary"
+                      : "emptdp-btn--outline-dark"
+                  }`}
+                  onClick={() => startTransition(() => setShowModal(true))}
+                >
+                  {tier.cta}
+                </button>
+              </div>
+            ))}
+          </div>
+          <p className="ignite-check-note">
+            All payments are strictly non-refundable.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 7. How Ignite Works ──────────────────────────────────────────── */}
+      <section className="emptdp-learn-section">
+        <div className="container">
+          <div className="emptdp-section-header">
+            <h2 className="emptdp-section-title">
+              The Ignite Learning Experience
+            </h2>
+          </div>
+          <div className="emptdp-diff-grid ignite-how-grid">
+            {howIgniteWorks.map((c, i) => (
+              <div className="emptdp-diff-card" key={i}>
+                <div className="emptdp-diff-icon">
+                  <i className={`bi ${c.icon}`}></i>
+                </div>
+                <h6 className="emptdp-diff-title">{c.title}</h6>
+                <p className="emptdp-diff-desc">{c.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -635,29 +750,63 @@ const EmptdpIgnite = () => {
         </div>
       </section>
 
-      {/* ── 8. Leadership Development ────────────────────────────────────────── */}
+      {/* ── 8. Professional Development ───────────────────────────────────── */}
       <section className="emptdp-who-section">
         <div className="container">
           <div className="emptdp-section-header">
-            <h2 className="emptdp-section-title">Leadership Development</h2>
+            <h2 className="emptdp-section-title">
+              Technical Skills Are Only Part of the Journey
+            </h2>
             <p className="emptdp-section-subtitle">
-              Technical knowledge alone does not guarantee professional success
+              Ignite develops the professional behind the skill
             </p>
           </div>
-          <div className="emptdp-diff-grid">
-            {leadershipItems.map((c, i) => (
-              <div className="emptdp-diff-card" key={i}>
-                <div className="emptdp-diff-icon">
-                  <i className={`bi ${c.icon}`}></i>
-                </div>
-                <h6 className="emptdp-diff-title">{c.title}</h6>
+          <div className="ignite-check-grid ignite-pd-grid">
+            {professionalDevItems.map((item, i) => (
+              <div
+                className="ignite-check-item ignite-check-item--dark"
+                key={i}
+              >
+                <i className="bi bi-check-circle-fill"></i>
+                <span>{item}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 9. Why Students & Parents Choose ETMPDP Ignite ──────────────────── */}
+      {/* ── 9. AI Across Every Specialization ─────────────────────────────── */}
+      <section className="emptdp-diff-section">
+        <div className="container">
+          <div className="emptdp-section-header emptdp-section-header--light">
+            <h2 className="emptdp-section-title emptdp-section-title--white">
+              AI-Integrated Learning
+            </h2>
+            <p
+              className="emptdp-section-subtitle"
+              style={{ color: "rgba(255,255,255,0.75)" }}
+            >
+              AI is integrated across all Ignite specializations
+            </p>
+          </div>
+          <div className="ignite-ai-grid">
+            {aiAcrossSpecs.map((a, i) => (
+              <div className="ignite-ai-card" key={i}>
+                <p className="ignite-ai-card-title">{a.title}</p>
+                <p className="ignite-ai-card-desc">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p
+            className="ignite-check-note"
+            style={{ color: "rgba(255,255,255,0.65)" }}
+          >
+            AI enhances your capability. It does not replace your judgement.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 12. Why Students & Parents Choose ETMPDP Ignite ─────────────────── */}
       <section className="emptdp-diff-section">
         <div className="container">
           <div className="emptdp-section-header emptdp-section-header--light">
@@ -676,51 +825,6 @@ const EmptdpIgnite = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── 10. Program Options ──────────────────────────────────────────────── */}
-      <section className="emptdp-invest-section">
-        <div className="container">
-          <div className="emptdp-section-header">
-            <h2 className="emptdp-section-title">Program Options</h2>
-          </div>
-          <div className="ignite-pricing-grid">
-            {pricingTiers.map((tier, i) => (
-              <div
-                className={`ignite-pricing-card${
-                  tier.featured ? " ignite-pricing-card--featured" : ""
-                }`}
-                key={i}
-              >
-                {tier.featured && (
-                  <span className="ignite-pricing-badge">Most Popular</span>
-                )}
-                <p className="ignite-pricing-name">{tier.name}</p>
-                <p className="ignite-pricing-duration">{tier.duration}</p>
-                <p className="ignite-pricing-desc">{tier.desc}</p>
-                <p className="ignite-pricing-amount">{tier.amount}</p>
-                <ul className="ignite-pricing-plan">
-                  {tier.plan.map((line, j) => (
-                    <li key={j}>{line}</li>
-                  ))}
-                </ul>
-                <button
-                  className={`emptdp-btn ignite-pricing-cta ${
-                    tier.featured
-                      ? "emptdp-btn--primary"
-                      : "emptdp-btn--outline-dark"
-                  }`}
-                  onClick={() => startTransition(() => setShowModal(true))}
-                >
-                  {tier.cta}
-                </button>
-              </div>
-            ))}
-          </div>
-          <p className="ignite-check-note">
-            All payments are strictly non-refundable.
-          </p>
         </div>
       </section>
 
