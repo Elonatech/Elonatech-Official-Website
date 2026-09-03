@@ -17,6 +17,7 @@ import WhatsappFloatingButton from './components/whatsapp/WhatsappFloatingButton
 import WhatsappEslint from './components/whatsapp/WhatsappEslint';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 import EmptdpIgnite from './components/emptdp/emptdpIgnite';
+import EmptdpCore from './components/emptdp/emptdpCore';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -277,6 +278,11 @@ const router = createBrowserRouter([
       {
         path: '/emptdp-ignite',
         element: <EmptdpIgnite />
+      },
+
+      {
+        path: '/emptdp-core',
+        element: <EmptdpCore />
       },
 
 

@@ -1,0 +1,433 @@
+.learning-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.learning-mode h6 {
+  font-style: italic;
+}
+
+/* ── 1. Hero ──────────────────────────────────────────────────────────────
+   Constrain the hero copy so the long headline and lead wrap to a readable
+   column instead of running edge-to-edge on wide screens. (The shared
+   .emptdp-hero-text .lead is already capped at 680px and hidden below
+   650px, so mobile stays short without a min-height.) */
+.core-hero-section .emptdp-hero-text {
+  width: 100%;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The CORE button labels ("APPLY FOR ETMPDP", "DOWNLOAD PROGRAM BROCHURE")
+   are longer than the original page's — let them wrap on mobile instead of
+   forcing one no-wrap row that overflows the viewport. */
+@media (max-width: 576px) {
+  .core-hero-section .emptdp-cta-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+/* ── 2. More Than Learning Technology ────────────────────────────────────
+   Section 2 now carries several short paragraphs (shared .emptdp-why-text p
+   has margin:0), so space them and lightly emphasise the closing line. */
+.emptdp-why-text p + p {
+  margin-top: 1rem;
+}
+
+.emptdp-why-closer {
+  font-weight: 600;
+  color: #11253d;
+}
+
+/* ── 3. Why ETMPDP Core? ────────────────────────────────────────────────
+   Six cards read best as 3 x 2 rather than the diff-grid's default 5-up
+   flow (which would orphan the sixth). */
+.core-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.core-why-grid .emptdp-diff-card {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .core-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 560px) {
+  .core-why-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}
+
+/* ── 4. Explore Eight Professional Technology Tracks ──────────────────────
+   Reuses the shared tab component (.emptdp-learn-*). The panel shows the
+   numbered full title + a description paragraph (no skills list here). */
+.core-tracks-intro {
+  max-width: 780px;
+  margin: -12px auto 36px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.core-track-num {
+  color: #dc3545;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.core-track-desc {
+  color: #6c757d;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.core-tracks-cta {
+  text-align: center;
+  margin-top: 44px;
+}
+
+/* ── 5. How The Core Experience Works ──────────────────────────────────────
+   Connected node + connector chain on the dark section. */
+.core-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 0;
+  max-width: 900px;
+  margin: 0 auto 34px;
+}
+
+.core-cycle-step {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.core-cycle-step::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #dc3545;
+  margin-right: 9px;
+  flex: none;
+}
+
+.core-cycle-step:not(:last-child)::after {
+  content: "";
+  width: 36px;
+  height: 2px;
+  background: #dc3545;
+  margin: 0 12px;
+  flex: none;
+}
+
+.core-cycle-lead,
+.core-cycle-closer {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.97rem;
+  line-height: 1.85;
+}
+
+.core-cycle-closer {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 576px) {
+  .core-cycle-step {
+    font-size: 0.72rem;
+  }
+
+  .core-cycle-step:not(:last-child)::after {
+    width: 16px;
+    margin: 0 7px;
+  }
+}
+
+/* ── 6. A 12-Month Journey ─────────────────────────────────────────────────
+   "PHASE 0N" eyebrow above each phase title in the shared timeline. */
+.core-phase-label {
+  margin: 10px 0 2px;
+  color: #dc3545;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.emptdp-timeline-mobile .core-phase-label {
+  margin-top: 0;
+}
+
+/* ── Centered copy block (Executive Mentorship, and similar text-only
+   sections) ─────────────────────────────────────────────────────────────── */
+.core-textblock {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.core-textblock p {
+  color: #495057;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.core-textblock p + p {
+  margin-top: 1rem;
+}
+
+/* Executive Mentorship and Residential Experience sit on the dark
+   (emptdp-diff-section) background — lighten their copy accordingly. */
+.emptdp-diff-section .core-textblock p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.emptdp-diff-section .core-textblock .emptdp-why-closer {
+  color: #fff;
+}
+
+/* ── Compact multi-column checklist — shared by Professional Development,
+   the AI list, Practical Experience and What You Receive ───────────────── */
+.core-check-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 32px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.core-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #495057;
+}
+
+.core-check-item i {
+  color: #dc3545;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 900px) {
+  .core-check-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 560px) {
+  .core-check-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+}
+
+/* ── Split sections (8 Professional Development, 9 AI, 10 Practical
+   Experience) — left: header + intro + 2-column checklist; right: image ─── */
+.core-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.core-split-header {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.core-split-intro {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0 0 22px;
+}
+
+.core-split-list {
+  columns: 2;
+  column-gap: 28px;
+}
+
+.core-split-list .core-check-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+.core-split-note {
+  margin: 22px 0 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #6c757d;
+  line-height: 1.7;
+}
+
+.core-split-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .core-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .core-split-image {
+    order: -1;
+  }
+
+  .core-split-list {
+    columns: 1;
+  }
+}
+
+/* ── 11. Who Should Apply? — five title + description cards ─────────────── */
+.core-who-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.core-who-grid .emptdp-diff-card {
+  max-width: 100%;
+}
+
+@media (max-width: 992px) {
+  .core-who-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  .core-who-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 460px) {
+  .core-who-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}
+
+/* ── 12. Delivery Options — three format cards + investment note ───────── */
+.core-delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.core-delivery-grid .emptdp-diff-card {
+  max-width: 100%;
+}
+
+.core-delivery-note {
+  max-width: 900px;
+  margin: 28px auto 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #495057;
+}
+
+/* Remote is highlighted in the brand red */
+.core-delivery-card--featured {
+  background: #dc3545;
+}
+
+.core-delivery-card--featured .emptdp-diff-title,
+.core-delivery-card--featured .emptdp-diff-desc {
+  color: #fff;
+}
+
+.core-delivery-card--featured .emptdp-diff-icon {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.core-delivery-card--featured .emptdp-diff-icon i {
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .core-delivery-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}
+
+/* ── 14 / 15. Program Investment + What You Receive (kept side by side) ── */
+.core-invest-note {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.core-invest-cta {
+  margin-top: 22px;
+}
+
+.core-invest-receive-intro {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+}
+
+/* Residential "Enquire" button — red border on the dark section, white
+   text; fills red on hover. */
+.core-residential-cta {
+  border-color: #dc3545;
+}
+
+.core-residential-cta:hover {
+  background-color: #dc3545;
+  color: #fff;
+  opacity: 1;
+}
+
+/* ── 18. Final CTA — "Build. Lead. Excel." tagline ────────────────────── */
+.core-cta-tagline {
+  margin: 8px 0 0;
+  color: #dc3545;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.05rem;
+}

@@ -110,7 +110,7 @@
 }
 
 
-.emptdp-hero-text h2 {
+.emptdp-hero-text h2, h1 {
   font-size: clamp(1.6rem, 3.5vw, 2.6rem);
   font-weight: 800;
   margin-bottom: 12px;
@@ -118,7 +118,7 @@
 }
 
 @media (max-width: 576px) {
-  .emptdp-hero-text h2 {
+  .emptdp-hero-text h2, h1 {
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 6px;

@@ -1459,7 +1459,18 @@ const MobileHeader = () => {
                          ETMPDP Ignite
                       </li>
                     </Link>
-                   
+                    <Link
+                      to={"/emptdp-core"}
+                      className="text-decoration-none text-dark"
+                    >
+                      <li
+                        className="dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
+                        data-bs-dismiss="offcanvas"
+                      >
+                        ETMPDP Core
+                      </li>
+                    </Link>
+
                   </ul>
                 </ul>
               </li>

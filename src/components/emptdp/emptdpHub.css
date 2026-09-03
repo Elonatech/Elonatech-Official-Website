@@ -1,0 +1,250 @@
+/* =============================================================================
+   ETMPDP Hub / central landing page — emptdpHub.css
+   Additive to emptdp.css. Route: /etmpdp
+   Colors: #11253d (navy), #dc3545 (red), #ffffff (white)
+   ============================================================================= */
+
+/* ── 1. Hero ────────────────────────────────────────────────────────────────
+   Constrain the hero copy so the long headline / lead wrap to a readable
+   column instead of running edge-to-edge on wide screens. The shared
+   .emptdp-hero-text .lead is already capped at 680px and hidden below
+   650px, so mobile stays short without a min-height. */
+.hub-hero-section .emptdp-hero-text {
+  width: 100%;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hub-learning-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.hub-learning-mode h6 {
+  font-style: italic;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .hub-hero-section .emptdp-cta-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+/* ── 2. More Than Learning Technology — text left, image right.
+   The shared .emptdp-why-text p has margin:0, so space stacked paragraphs. */
+.emptdp-why-text p + p {
+  margin-top: 1rem;
+}
+
+/* Justified body copy — "More Than Learning Technology", "Our Vision",
+   and the two experience cards. */
+.emptdp-why-text p,
+.hub-experience-desc {
+  text-align: justify;
+}
+
+/* ── Centered copy block — used by "Our Vision" ───────────────────────── */
+.hub-textblock {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hub-textblock p {
+  color: #495057;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.hub-textblock p + p {
+  margin-top: 1rem;
+}
+
+/* Subtle grey band so white cards separate from neighbouring white sections */
+.hub-tint {
+  background-color: #f5f7fa;
+}
+
+/* ── 3. Two Experiences. One ETMPDP Vision. — two program cards ────────── */
+.hub-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.hub-experience-card {
+  background: #fff;
+  border: 1px solid #e6e8ec;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-experience-name {
+  color: #11253d;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+}
+
+.hub-experience-tag {
+  color: #dc3545;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0 0 14px;
+}
+
+.hub-experience-desc {
+  color: #495057;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.hub-experience-ideal {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin: 12px 0 0;
+}
+
+.hub-experience-link {
+  margin-top: auto;
+  padding-top: 20px;
+  color: #dc3545;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hub-experience-link:hover {
+  color: #b9271f;
+}
+
+@media (max-width: 760px) {
+  .hub-experience-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
+/* ── 4. What Defines ETMPDP? — six cards, 3 x 2 ───────────────────────── */
+.hub-defines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.hub-defines-grid .emptdp-diff-card {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hub-defines-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hub-defines-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}
+
+/* ── 6. Find Your Path — two decision panels ─────────────────────────── */
+.hub-path-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hub-path-card {
+  border: none;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Ignite panel carries the navbar navy; Core panel carries the brand red */
+/* .hub-path-card--ignite {
+  background: #11253d;
+} */
+
+/* .hub-path-card--core {
+  background: #dc3545;
+} */
+
+.hub-path-q {
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+.hub-path-r{
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.hub-path-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hub-path-link:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Each panel's button carries the other programme's colour */
+.hub-path-card--ignite .hub-path-link {
+  background: #dc3545;
+}
+
+.hub-path-card--core .hub-path-link {
+  background: #11253d;
+}
+
+@media (max-width: 760px) {
+  .hub-path-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+}
+
+/* ── 7. Final CTA — "ETMPDP" eyebrow above the full programme name ─────── */
+.hub-cta-eyebrow {
+  margin: 6px 0 2px;
+  color: #11253d;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+}

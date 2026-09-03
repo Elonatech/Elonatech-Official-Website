@@ -1301,6 +1301,18 @@ const Navbar = () => {
                         ETMPDP Ignite
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="/emptdp-core"
+                        className={`dropdown-item ${
+                          isActive("/emptdp-core")
+                            ? "strategic-items-active"
+                            : ""
+                        }`}
+                      >
+                        ETMPDP Core
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </li>
