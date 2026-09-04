@@ -22,12 +22,51 @@
   margin-right: auto;
 }
 
+/* Trim the centred dead space in the hero — the shared 560px min-height
+   leaves a large empty band below "Onsite | Remote | Hybrid" on desktop. */
+.core-hero-section {
+  min-height: 480px;
+}
+
+.core-hero-section .learning-mode {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
 /* The CORE button labels ("APPLY FOR ETMPDP", "DOWNLOAD PROGRAM BROCHURE")
-   are longer than the original page's — let them wrap on mobile instead of
-   forcing one no-wrap row that overflows the viewport. */
+   are longer than the original page's — keep them on one row side by side
+   and let the longer label wrap to two lines inside its pill. */
 @media (max-width: 576px) {
   .core-hero-section .emptdp-cta-buttons {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+  }
+
+  .core-hero-section .emptdp-cta-buttons .emptdp-btn {
+    white-space: nowrap;
+    font-size: 0.7rem;
+    padding: 8px 14px;
+  }
+
+  /* Match the ETMPDP hub mobile hero height — drop the two sub-headings
+     ("Build. Lead. Excel." + "Transforming Potential…", both repeated
+     later on the page) and tighten the vertical rhythm. */
+  .core-hero-section .emptdp-hero-text h5,
+  .core-hero-section .emptdp-hero-text h6 {
+    display: none;
+  }
+
+  .core-hero-section {
+    min-height: 0;
+    padding-bottom: 6px;
+  }
+
+  .core-hero-section .emptdp-mentor-badge {
+    margin-bottom: 8px !important;
+  }
+
+  .core-hero-section .learning-mode {
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -41,6 +80,53 @@
 .emptdp-why-closer {
   font-weight: 600;
   color: #11253d;
+}
+
+/* Light grey band — breaks up runs of consecutive white sections
+   (e.g. the three split sections 8 / 9 / 10). */
+.core-tint {
+  background-color: #f5f7fa;
+}
+
+/* ── Page-wide vertical rhythm ──────────────────────────────────────────
+   The shared sections carry 70px top/bottom padding and a 40px header
+   margin, which leaves large empty bands (worst on mobile). Tighten it
+   across the Core page — scoped here so Ignite / the hub are untouched. */
+.emptdp-why-section,
+.emptdp-diff-section,
+.emptdp-learn-section,
+.emptdp-structure-section,
+.emptdp-who-section,
+.emptdp-invest-section,
+.emptdp-mentor-section,
+.emptdp-faq-section,
+.emptdp-cta-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.emptdp-section-header {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 576px) {
+
+  .emptdp-why-section,
+  .emptdp-diff-section,
+  .emptdp-learn-section,
+  .emptdp-structure-section,
+  .emptdp-who-section,
+  .emptdp-invest-section,
+  .emptdp-mentor-section,
+  .emptdp-faq-section,
+  .emptdp-cta-section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .emptdp-section-header {
+    margin-bottom: 16px;
+  }
 }
 
 /* ── 3. Why ETMPDP Core? ────────────────────────────────────────────────
@@ -65,10 +151,43 @@
   }
 }
 
+/* Stay 2-up on phones (6 cards) with tighter card chrome so the section
+   doesn't turn into a long single-column scroll — matches the ETMPDP hub. */
 @media (max-width: 560px) {
   .core-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 420px;
+  }
+
+  .core-why-grid .emptdp-diff-card {
+    padding: 16px 12px;
+  }
+
+  .core-why-grid .emptdp-diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  .core-why-grid .emptdp-diff-icon i {
+    font-size: 1.15rem;
+  }
+
+  .core-why-grid .emptdp-diff-title {
+    font-size: 0.82rem;
+  }
+
+  .core-why-grid .emptdp-diff-desc {
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 360px) {
+  .core-why-grid {
     grid-template-columns: 1fr;
-    max-width: 360px;
+    max-width: 300px;
   }
 }
 
@@ -77,11 +196,19 @@
    numbered full title + a description paragraph (no skills list here). */
 .core-tracks-intro {
   max-width: 780px;
-  margin: -12px auto 36px;
+  margin: -12px auto 22px;
   text-align: center;
   color: #6c757d;
   font-size: 0.95rem;
   line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .core-tracks-intro {
+    margin: 4px auto 16px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
 }
 
 .core-track-num {
@@ -99,7 +226,76 @@
 
 .core-tracks-cta {
   text-align: center;
-  margin-top: 44px;
+  margin-top: 28px;
+}
+
+/* ── Track tabs / panel spacing ────────────────────────────────────────
+   Desktop: all 8 pills on one straight line. Tablet: an even 4 x 2 grid.
+   Mobile: a 2-column grid. */
+.emptdp-learn-tabs {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1200px) {
+  .emptdp-learn-tabs {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .emptdp-learn-tabs .emptdp-tab-btn {
+    font-size: 0.8rem;
+    padding: 7px 12px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1199px) {
+  .emptdp-learn-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .emptdp-learn-tabs .emptdp-tab-btn {
+    white-space: normal;
+    text-align: center;
+    padding: 8px 6px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .emptdp-learn-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 360px;
+    margin-bottom: 18px;
+  }
+}
+
+/* Core's panel is just a short description (no skills list), so the shared
+   380px image / centred row leaves a large empty band on the right —
+   shorten the image and rebalance the columns. */
+.emptdp-learn-content {
+  gap: 40px;
+}
+
+.emptdp-learn-skills-title {
+  margin-bottom: 14px;
+}
+
+@media (min-width: 768px) {
+  .emptdp-learn-image-wrap {
+    height: 300px;
+    flex-basis: 44%;
+  }
+
+  .emptdp-learn-skills {
+    flex-basis: 52%;
+  }
 }
 
 /* ── 5. How The Core Experience Works ──────────────────────────────────────
@@ -160,13 +356,20 @@
 }
 
 @media (max-width: 576px) {
+  .core-cycle {
+    gap: 10px 16px;
+    margin-bottom: 22px;
+  }
+
   .core-cycle-step {
     font-size: 0.72rem;
   }
 
+  /* Drop the line connectors on mobile — the fixed-width dashes leave an
+     orphaned trailing dash at the wrap point. The red dot before each step
+     is enough to read it as a sequence. */
   .core-cycle-step:not(:last-child)::after {
-    width: 16px;
-    margin: 0 7px;
+    display: none;
   }
 }
 
@@ -201,6 +404,17 @@
 
 .core-textblock p + p {
   margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+  .core-textblock p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .core-textblock p + p {
+    margin-top: 0.75rem;
+  }
 }
 
 /* Executive Mentorship and Residential Experience sit on the dark
@@ -301,15 +515,31 @@
 @media (max-width: 900px) {
   .core-split {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
   .core-split-image {
     order: -1;
   }
+}
 
+/* Keep the checklist 2-up on phones (labels are short) so it doesn't
+   become a long single-column scroll. */
+@media (max-width: 576px) {
   .core-split-list {
-    columns: 1;
+    columns: 2;
+    column-gap: 16px;
+  }
+
+  .core-split-list .core-check-item {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .core-split-intro {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
   }
 }
 

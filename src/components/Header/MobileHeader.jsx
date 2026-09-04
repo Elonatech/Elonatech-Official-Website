@@ -1433,7 +1433,7 @@ const MobileHeader = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Programs
+                  ETMPDP
                 </a>
                 <ul className="dropdown-menu border-0 text-center p-4">
                   <ul className="mobile-strategic-items list-unstyled">
@@ -1445,20 +1445,10 @@ const MobileHeader = () => {
                         className="mobile-strategic-items-active dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
                         data-bs-dismiss="offcanvas"
                       >
-                        ETMPDP
+                        ETMPDP Overview
                       </li>
                     </Link>
-                    <Link
-                      to={"/emptdp-ignite"}
-                      className="text-decoration-none text-dark"
-                    >
-                      <li
-                        className="dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
-                        data-bs-dismiss="offcanvas"
-                      >
-                         ETMPDP Ignite
-                      </li>
-                    </Link>
+
                     <Link
                       to={"/emptdp-core"}
                       className="text-decoration-none text-dark"
@@ -1471,6 +1461,17 @@ const MobileHeader = () => {
                       </li>
                     </Link>
 
+                    <Link
+                      to={"/emptdp-ignite"}
+                      className="text-decoration-none text-dark"
+                    >
+                      <li
+                        className="dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
+                        data-bs-dismiss="offcanvas"
+                      >
+                        ETMPDP Ignite
+                      </li>
+                    </Link>
                   </ul>
                 </ul>
               </li>
@@ -1686,7 +1687,10 @@ const MobileHeader = () => {
                     aria-current="page"
                     style={{ cursor: "pointer" }}
                     href=""
-                    onClick={(e) => { e.preventDefault(); handleLogout(); }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLogout();
+                    }}
                   >
                     <i
                       className="bi bi-box-arrow-right mobile-dismiss-nav-man"

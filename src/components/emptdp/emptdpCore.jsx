@@ -177,7 +177,7 @@ const corePracticalItems = [
 
 const coreWhoApply = [
   {
-    icon: "bi-rocket-takeoff",
+    icon: "bi-rocket",
     title: "Aspiring Technology Professionals",
     desc: "Individuals beginning or transitioning into a technology career.",
   },
@@ -343,11 +343,11 @@ const EmptdpCore = () => {
             className="emptdp-btn emptdp-btn--primary"
             onClick={() => startTransition(() => setShowModal(true))}
           >
-            APPLY FOR ETMPDP
+            APPLY NOW
           </button>
           <a href={brocchurePDF} target="_blank" rel="noopener noreferrer">
             <button className="emptdp-btn emptdp-btn--outline">
-              DOWNLOAD PROGRAM BROCHURE
+              DOWNLOAD BROCHURE
             </button>
           </a>
         </div>
@@ -579,9 +579,7 @@ const EmptdpCore = () => {
       <section className="emptdp-diff-section">
         <div className="container">
           <div className="emptdp-section-header emptdp-section-header--light">
-            <h2 className="emptdp-section-title emptdp-section-title--white" style={{
-              color: "#dc3545"
-            }}>
+            <h2 className="emptdp-section-title emptdp-section-title--white">
               Executive Mentorship
             </h2>
             <p
@@ -647,7 +645,7 @@ const EmptdpCore = () => {
       </section>
 
       {/* ── 9. AI Is Part Of How You Learn ───────────────────────────────── */}
-      <section className="emptdp-why-section">
+      <section className="emptdp-why-section core-tint">
         <div className="container">
           <div className="core-split">
             <div className="core-split-body">

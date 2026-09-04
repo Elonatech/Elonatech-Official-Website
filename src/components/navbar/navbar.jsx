@@ -1269,12 +1269,14 @@ const Navbar = () => {
               </li>
 
               <li className="elonatechlistItem drop-show">
-                <span
-                  className="nav-link e-fonte text-white dropdown-toggle"
-                  style={{ cursor: "pointer" }}
-                >
-                  Programs
-                </span>
+                <Link to="/etmpdp" className="text-decoration-none text-dark">
+                  <span
+                    className="nav-link e-fonte text-white dropdown-toggle"
+                    style={{ cursor: "pointer" }}
+                  >
+                    ETMPDP
+                  </span>
+                </Link>
                 <div className="drop-menu">
                   <ul className="strategic-items list-unstyled">
                     <li>
@@ -1286,21 +1288,10 @@ const Navbar = () => {
                             : ""
                         }`}
                       >
-                        ETMPDP
+                        ETMPDP Overview
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/emptdp-ignite"
-                        className={`dropdown-item ${
-                          isActive("/emptdp-ignite")
-                            ? "strategic-items-active"
-                            : ""
-                        }`}
-                      >
-                        ETMPDP Ignite
-                      </Link>
-                    </li>
+
                     <li>
                       <Link
                         to="/emptdp-core"
@@ -1311,6 +1302,19 @@ const Navbar = () => {
                         }`}
                       >
                         ETMPDP Core
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        to="/emptdp-ignite"
+                        className={`dropdown-item ${
+                          isActive("/emptdp-ignite")
+                            ? "strategic-items-active"
+                            : ""
+                        }`}
+                      >
+                        ETMPDP Ignite
                       </Link>
                     </li>
                   </ul>

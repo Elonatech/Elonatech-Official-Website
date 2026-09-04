@@ -56,6 +56,7 @@ const Emptdp = () => {
         <link rel="canonical" href="https://elonatech.com.ng/etmpdp" />
       </Helmet>
 
+      <div className="etmpdp-hub">
       {/* ── 1. Hero ──────────────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section hub-hero-section">
         <div className="emptdp-hero-text">
@@ -107,26 +108,17 @@ const Emptdp = () => {
               Becoming a Technology Professional.
             </p>
           </div>
-          <div className="emptdp-why-content">
-            <div className="emptdp-why-text">
-              <p>
-                ETMPDP is built on the belief that technical knowledge alone
-                is not enough.
-              </p>
-              <p>
-                Our approach develops technical competence, professional
-                discipline, leadership capacity, critical thinking,
-                communication, business awareness and the mindset required to
-                create value in a rapidly evolving technology industry.
-              </p>
-            </div>
-            <div className="emptdp-why-image">
-              {/* Placeholder — swap for a dedicated ETMPDP photo */}
-              <img
-                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784905771/pexels-jep-gambardella-7689856_hltynt_gwrlaz.jpg"
-                alt="ETMPDP mentorship session"
-              />
-            </div>
+          <div className="hub-textblock">
+            <p>
+              ETMPDP is built on the belief that technical knowledge alone is
+              not enough.
+            </p>
+            <p>
+              Our approach develops technical competence, professional
+              discipline, leadership capacity, critical thinking,
+              communication, business awareness and the mindset required to
+              create value in a rapidly evolving technology industry.
+            </p>
           </div>
         </div>
       </section>
@@ -195,37 +187,26 @@ const Emptdp = () => {
         </div>
       </section>
 
-      {/* ── 5. Our Vision ────────────────────────────────────────────────── */}
-      <section className="emptdp-why-section">
+      {/* ── 5. Our Vision — full-bleed photo band ────────────────────────── */}
+      <section className="emptdp-why-section hub-vision-band">
         <div className="container">
-          <div className="emptdp-section-header">
-            <h2 className="emptdp-section-title">Our Vision</h2>
-            <p className="emptdp-section-subtitle">
+          <div className="hub-vision">
+            <p className="hub-vision-eyebrow">Our Vision</p>
+            <h2 className="hub-vision-statement">
               Developing Competent. Disciplined. Future-Ready Professionals.
+            </h2>
+            <p className="hub-vision-body">
+              ETMPDP exists to help develop technology professionals equipped
+              with practical skills, leadership capacity, business awareness
+              and professional excellence to create lasting impact within the
+              technology industry and beyond.
             </p>
-          </div>
-          <div className="emptdp-why-content">
-            <div className="emptdp-why-image">
-              {/* Placeholder — swap for a dedicated ETMPDP photo */}
-              <img
-                src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784905744/pexels-kampus-5940713_s9bdaz_bzeilg.jpg"
-                alt="ETMPDP participants"
-              />
-            </div>
-            <div className="emptdp-why-text">
-              <p>
-                ETMPDP exists to help develop technology professionals
-                equipped with practical skills, leadership capacity, business
-                awareness and professional excellence to create lasting
-                impact within the technology industry and beyond.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* ── 6. Find Your Path ────────────────────────────────────────────── */}
-      <section className="emptdp-who-section hub-tint">
+      <section className="emptdp-who-section">
         <div className="container">
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">Find Your Path</h2>
@@ -252,10 +233,12 @@ const Emptdp = () => {
       </section>
 
       {/* ── 7. Final CTA ─────────────────────────────────────────────────── */}
-      <section className="emptdp-cta-section">
+      <section className="emptdp-cta-section hub-tint">
         <div className="container emptdp-cta-inner">
           <h2 className="emptdp-cta-heading">
-            Your Journey. Your Development. Your Future.
+            Your Journey.{" "}
+            <span className="emptdp-cta-heading--dark">Your Development.</span>{" "}
+            Your Future.
           </h2>
           <p className="hub-cta-eyebrow">ETMPDP</p>
           <p className="emptdp-cta-sub">
@@ -275,6 +258,7 @@ const Emptdp = () => {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 };
