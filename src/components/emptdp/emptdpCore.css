@@ -1,3 +1,111 @@
+/* =============================================================================
+   RED THEME — Core-only, scoped under .etmpdp-core (both this file and
+   emptdpIgnite.css are bundled together app-wide, so an unscoped override
+   of a shared class name would win or lose depending on bundle order —
+   scoping via the wrapper class makes it correct regardless of that order).
+   Brand colors: #e00b05 (red), #34548c (blue), #a9abae (grey).
+   Core commits to the RED half: the shared "navy" heading/dark-background
+   role becomes a dark maroon shade of the brand red; the shared "red"
+   accent role (buttons, icons, badges) becomes the exact brand red.
+   ============================================================================= */
+:root {
+  /* Reserved for CTAs only (buttons + the CTA heading). */
+  --core-red: #dc3545;
+  /* Softer, less saturated red — every other recurring accent (icons,
+     dots, connectors, badges, small labels) so the page doesn't read as
+     wall-to-wall neon red. */
+  --core-red-soft: #c23a34;
+  --core-red-tint: rgba(194, 58, 52, 0.1);
+  /* A dark shade OF the CTA red (not a near-black brown) so the page reads
+     as one coherent red family, and tonally balances against the brand
+     blue (#34548c) the way a deep wine pairs with navy. */
+  --core-dark: #7a2430;
+}
+
+.etmpdp-core .emptdp-section-title,
+.etmpdp-core .emptdp-learn-skills-title,
+.etmpdp-core .emptdp-card-title,
+.etmpdp-core .emptdp-diff-title,
+.etmpdp-core .emptdp-step-title,
+.etmpdp-core .emptdp-invest-heading,
+.etmpdp-core .emptdp-price-phase,
+.etmpdp-core .emptdp-total-label,
+.etmpdp-core .emptdp-faq-num,
+.etmpdp-core .emptdp-faq-q,
+.etmpdp-core .emptdp-cta-heading--dark {
+  color: var(--core-dark);
+}
+
+.etmpdp-core .emptdp-section,
+.etmpdp-core .emptdp-diff-section,
+.etmpdp-core .emptdp-mentor-section {
+  background-color: var(--core-dark);
+}
+
+/* CTAs — the one place that keeps the sharp brand red */
+.etmpdp-core .emptdp-btn--primary {
+  background-color: var(--core-red);
+  border-color: var(--core-red);
+}
+
+.etmpdp-core .emptdp-btn--outline-dark {
+  color: var(--core-red);
+  border-color: var(--core-red);
+}
+
+.etmpdp-core .emptdp-cta-heading {
+  color: var(--core-red);
+}
+
+/* Everything else — softened */
+.etmpdp-core .emptdp-tab-btn:hover {
+  border-color: var(--core-red-soft);
+}
+
+.etmpdp-core .emptdp-tab-btn--active {
+  background-color: var(--core-red-soft);
+  border-color: var(--core-red-soft);
+}
+
+.etmpdp-core .emptdp-diff-icon,
+.etmpdp-core .emptdp-card-icon {
+  background-color: var(--core-red-tint);
+}
+
+.etmpdp-core .emptdp-diff-icon i,
+.etmpdp-core .emptdp-card-icon i,
+.etmpdp-core .emptdp-price-amount,
+.etmpdp-core .emptdp-receive-icon {
+  color: var(--core-red-soft);
+}
+
+.etmpdp-core .emptdp-mentor-badge,
+.etmpdp-core .emptdp-price-card--dark,
+.etmpdp-core .emptdp-step-circle,
+.etmpdp-core .emptdp-timeline-connector,
+.etmpdp-core .emptdp-timeline-connector-mobile,
+.etmpdp-core .emptdp-skill-dot {
+  background-color: var(--core-red-soft);
+}
+
+/* Headings/amounts that carry the shared "--white" modifier sit ON the
+   dark-red sections themselves — placed last so it always wins over the
+   base-color rules above regardless of their source order (they'd
+   otherwise become invisible: same color as their own background). */
+.etmpdp-core .emptdp-section-title--white,
+.etmpdp-core .emptdp-price-amount--white,
+.etmpdp-core .emptdp-price-phase--white {
+  color: #fff;
+}
+
+/* Mentor label/title sit on the dark-red mentor-section background — the
+   soft-red accent is too close in value to that background; use a light
+   dusty-pink instead so it stays in the red family but is readable. */
+.etmpdp-core .emptdp-mentor-label,
+.etmpdp-core .emptdp-mentor-title {
+  color: #f0aab0;
+}
+
 .learning-mode {
   display: flex;
   justify-content: center;
@@ -22,29 +130,74 @@
   margin-right: auto;
 }
 
-/* Trim the centred dead space in the hero — the shared 560px min-height
-   leaves a large empty band below "Onsite | Remote | Hybrid" on desktop. */
-.core-hero-section {
-  min-height: 480px;
-}
+/* Desktop: keep the SHARED hero formula (560px min-height, centred) so
+   the Core hero renders at the same height as the ETMPDP Ignite hero.
+   Core carries more copy than Ignite, so trim the hero-text spacing —
+   and drop the "Build. Lead. Excel." line (kept in the final CTA) — to
+   land the content at roughly the same footprint. Mobile keeps its own
+   rule below. */
+@media (min-width: 577px) {
 
-.core-hero-section .learning-mode {
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
-/* The CORE button labels ("APPLY FOR ETMPDP", "DOWNLOAD PROGRAM BROCHURE")
-   are longer than the original page's — keep them on one row side by side
-   and let the longer label wrap to two lines inside its pill. */
-@media (max-width: 576px) {
-  .core-hero-section .emptdp-cta-buttons {
-    flex-wrap: nowrap;
+  /* Keep the ~560px height but push the content down off the navbar —
+     the spare room sits at the bottom. */
+  .core-hero-section {
+    justify-content: flex-start;
+    padding-top: 128px;
+    padding-bottom: 24px;
   }
 
+  .core-hero-section .emptdp-hero-text h6 {
+    display: none;
+  }
+
+  .core-hero-section .emptdp-hero-text h2 {
+    margin-bottom: 8px;
+    line-height: 1.15;
+
+  }
+
+  .core-hero-section .emptdp-hero-text h5 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .core-hero-section .emptdp-hero-text .lead {
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .core-hero-section .emptdp-cta-buttons {
+    margin-top: 20px;
+  }
+}
+
+.core-hero-section {
+  margin-bottom: 2px;
+}
+
+.core-learning-mode  {
+  margin-top: 14px;
+
+
+}
+
+.core-learning-mode h6 {
+  font-style: italic;
+  color: #fff;
+  margin: 0;
+
+}
+
+@media (max-width: 576px) {
+
+  /* Full button labels ("Apply for ETMPDP Core" / "Download Program
+     Brochure") are a bit longer than the Ignite hero's — nudge the font
+     down so both still hold one line side by side, same as Ignite. */
   .core-hero-section .emptdp-cta-buttons .emptdp-btn {
     white-space: nowrap;
-    font-size: 0.7rem;
-    padding: 8px 14px;
+    font-size: 0.64rem;
+    padding: 8px 10px;
   }
 
   /* Match the ETMPDP hub mobile hero height — drop the two sub-headings
@@ -73,13 +226,13 @@
 /* ── 2. More Than Learning Technology ────────────────────────────────────
    Section 2 now carries several short paragraphs (shared .emptdp-why-text p
    has margin:0), so space them and lightly emphasise the closing line. */
-.emptdp-why-text p + p {
+.emptdp-why-text p+p {
   margin-top: 1rem;
 }
 
 .emptdp-why-closer {
   font-weight: 600;
-  color: #11253d;
+  color: var(--core-dark);
 }
 
 /* Light grey band — breaks up runs of consecutive white sections
@@ -212,7 +365,7 @@
 }
 
 .core-track-num {
-  color: #dc3545;
+  color: var(--core-red-soft);
   font-weight: 700;
   margin-right: 10px;
 }
@@ -326,7 +479,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #dc3545;
+  background: var(--core-red-soft);
   margin-right: 9px;
   flex: none;
 }
@@ -335,7 +488,7 @@
   content: "";
   width: 36px;
   height: 2px;
-  background: #dc3545;
+  background: var(--core-red-soft);
   margin: 0 12px;
   flex: none;
 }
@@ -377,7 +530,7 @@
    "PHASE 0N" eyebrow above each phase title in the shared timeline. */
 .core-phase-label {
   margin: 10px 0 2px;
-  color: #dc3545;
+  color: var(--core-red-soft);
   font-weight: 700;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
@@ -402,7 +555,7 @@
   margin: 0;
 }
 
-.core-textblock p + p {
+.core-textblock p+p {
   margin-top: 1rem;
 }
 
@@ -412,7 +565,7 @@
     line-height: 1.65;
   }
 
-  .core-textblock p + p {
+  .core-textblock p+p {
     margin-top: 0.75rem;
   }
 }
@@ -447,7 +600,7 @@
 }
 
 .core-check-item i {
-  color: #dc3545;
+  color: var(--core-red-soft);
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -563,17 +716,41 @@
   }
 }
 
+/* Stay 2-up on phones with condensed card chrome so 5 cards don't become
+   a long single-column scroll; the 5th card spans both columns so there's
+   no orphan. */
 @media (max-width: 640px) {
   .core-who-grid {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 480px;
+    gap: 12px;
+    max-width: 420px;
   }
-}
 
-@media (max-width: 460px) {
-  .core-who-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
+  .core-who-grid .emptdp-diff-card {
+    padding: 16px 12px;
+  }
+
+  .core-who-grid .emptdp-diff-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .core-who-grid .emptdp-diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  .core-who-grid .emptdp-diff-icon i {
+    font-size: 1.15rem;
+  }
+
+  .core-who-grid .emptdp-diff-title {
+    font-size: 0.82rem;
+  }
+
+  .core-who-grid .emptdp-diff-desc {
+    font-size: 0.72rem;
+    line-height: 1.45;
   }
 }
 
@@ -598,9 +775,9 @@
   color: #495057;
 }
 
-/* Remote is highlighted in the brand red */
+/* Remote is highlighted in a softer shade of the brand red */
 .core-delivery-card--featured {
-  background: #dc3545;
+  background: var(--core-red-soft);
 }
 
 .core-delivery-card--featured .emptdp-diff-title,
@@ -618,8 +795,26 @@
 
 @media (max-width: 760px) {
   .core-delivery-grid {
-    grid-template-columns: 1fr;
-    max-width: 360px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row dense;
+    max-width: 340px;
+    gap: 14px;
+  }
+
+  .core-delivery-grid .emptdp-diff-card {
+    padding: 18px 14px;
+  }
+
+  .core-delivery-grid .emptdp-diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  /* Remote (featured) is the middle card — keep it full-width on its own
+     row rather than squeezed into a 2-up cell. */
+  .core-delivery-grid .core-delivery-card--featured {
+    grid-column: 1 / -1;
   }
 }
 
@@ -644,11 +839,11 @@
 /* Residential "Enquire" button — red border on the dark section, white
    text; fills red on hover. */
 .core-residential-cta {
-  border-color: #dc3545;
+  border-color: var(--core-red);
 }
 
 .core-residential-cta:hover {
-  background-color: #dc3545;
+  background-color: var(--core-red);
   color: #fff;
   opacity: 1;
 }
@@ -656,8 +851,16 @@
 /* ── 18. Final CTA — "Build. Lead. Excel." tagline ────────────────────── */
 .core-cta-tagline {
   margin: 8px 0 0;
-  color: #dc3545;
+  color: var(--core-red-soft);
   font-style: italic;
   font-weight: 700;
   font-size: 1.05rem;
+}
+
+/* Keep the two CTA buttons comfortably on one row on phones. */
+@media (max-width: 576px) {
+  .emptdp-cta-section .emptdp-cta-buttons .emptdp-btn {
+    font-size: 0.72rem;
+    padding: 8px 12px;
+  }
 }

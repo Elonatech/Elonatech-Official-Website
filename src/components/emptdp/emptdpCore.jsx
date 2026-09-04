@@ -177,7 +177,7 @@ const corePracticalItems = [
 
 const coreWhoApply = [
   {
-    icon: "bi-rocket",
+    icon: "bi-stars",
     title: "Aspiring Technology Professionals",
     desc: "Individuals beginning or transitioning into a technology career.",
   },
@@ -230,18 +230,18 @@ const deliveryOptions = [
   {
     icon: "bi-building",
     title: "Onsite",
-    desc: "Structured physical learning, practical activities, collaboration and direct workplace exposure.",
+    desc: "Structured physical learning, hands-on activities and direct workplace exposure.",
   },
   {
     icon: "bi-laptop",
     title: "Remote",
-    desc: "A structured virtual learning experience incorporating live instruction, practical assignments, mentorship, technical reviews, collaboration and performance evaluation.",
+    desc: "Structured virtual learning with live instruction, mentorship and technical reviews.",
     featured: true,
   },
   {
     icon: "bi-arrow-left-right",
     title: "Hybrid",
-    desc: "A combination of onsite and remote learning designed around the participant's learning and practical requirements.",
+    desc: "A combination of onsite and remote learning tailored to your practical requirements.",
   },
 ];
 
@@ -308,6 +308,7 @@ const EmptdpCore = () => {
         <link rel="canonical" href="https://elonatech.com.ng/etmpdpCore" />
       </Helmet>
 
+      <div className="etmpdp-core">
       {/* ── 1. Hero ────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section core-hero-section">
         <div className="emptdp-hero-text">
@@ -325,7 +326,7 @@ const EmptdpCore = () => {
             style={{
               fontStyle: "italic",
               marginBottom: "16px",
-              color: "#dc3545",
+              color: "#c23a34",
             }}
           >
             Build. Lead. Excel.
@@ -343,11 +344,11 @@ const EmptdpCore = () => {
             className="emptdp-btn emptdp-btn--primary"
             onClick={() => startTransition(() => setShowModal(true))}
           >
-            APPLY NOW
+            Apply for ETMPDP Core
           </button>
           <a href={brocchurePDF} target="_blank" rel="noopener noreferrer">
             <button className="emptdp-btn emptdp-btn--outline">
-              DOWNLOAD BROCHURE
+              Download Program Brochure
             </button>
           </a>
         </div>
@@ -974,13 +975,17 @@ const EmptdpCore = () => {
             <h2 className="emptdp-section-title">Frequently Asked Questions</h2>
           </div>
 
-          {/* Two-column grid — left col gets odd items, right col gets even items */}
+          {/* Two-column grid — contiguous split: left gets the first 3, right
+             gets the last 4. The first item is open by default, so the
+             shorter left column balances against its extra height. */}
           <div className="emptdp-faq-grid">
-            <div className="emptdp-faq-col">
-              {faqs
-                .filter((_, i) => i % 2 === 0)
-                .map((faq, i) => {
-                  const realIndex = i * 2;
+            {[
+              [0, 3],
+              [3, faqs.length],
+            ].map(([start, end], colIndex) => (
+              <div className="emptdp-faq-col" key={colIndex}>
+                {faqs.slice(start, end).map((faq, i) => {
+                  const realIndex = start + i;
                   return (
                     <div className="emptdp-faq-item" key={realIndex}>
                       <button
@@ -1004,37 +1009,8 @@ const EmptdpCore = () => {
                     </div>
                   );
                 })}
-            </div>
-
-            <div className="emptdp-faq-col">
-              {faqs
-                .filter((_, i) => i % 2 !== 0)
-                .map((faq, i) => {
-                  const realIndex = i * 2 + 1;
-                  return (
-                    <div className="emptdp-faq-item" key={realIndex}>
-                      <button
-                        className="emptdp-faq-trigger"
-                        onClick={() => toggleFaq(realIndex)}
-                      >
-                        <span className="emptdp-faq-q">{faq.q}</span>
-                        <i
-                          className={`bi ${
-                            openFaq === realIndex
-                              ? "bi-chevron-up"
-                              : "bi-chevron-down"
-                          } emptdp-faq-icon`}
-                        ></i>
-                      </button>
-                      {openFaq === realIndex && (
-                        <div className="emptdp-faq-answer">
-                          <p>{faq.a}</p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1063,12 +1039,13 @@ const EmptdpCore = () => {
             </button>
             <a href={brocchurePDF} target="_blank" rel="noopener noreferrer">
               <button className="emptdp-btn emptdp-btn--outline-dark">
-                Download Program Brochure
+                Download Brochure
               </button>
             </a>
           </div>
         </div>
       </section>
+      </div>
 
       {/* Application Modal — opens when any "Apply Now" button is clicked */}
       <ApplicationModal
