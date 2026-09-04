@@ -22,29 +22,74 @@
   margin-right: auto;
 }
 
-/* Trim the centred dead space in the hero — the shared 560px min-height
-   leaves a large empty band below "Onsite | Remote | Hybrid" on desktop. */
-.core-hero-section {
-  min-height: 480px;
-}
+/* Desktop: keep the SHARED hero formula (560px min-height, centred) so
+   the Core hero renders at the same height as the ETMPDP Ignite hero.
+   Core carries more copy than Ignite, so trim the hero-text spacing —
+   and drop the "Build. Lead. Excel." line (kept in the final CTA) — to
+   land the content at roughly the same footprint. Mobile keeps its own
+   rule below. */
+@media (min-width: 577px) {
 
-.core-hero-section .learning-mode {
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
-/* The CORE button labels ("APPLY FOR ETMPDP", "DOWNLOAD PROGRAM BROCHURE")
-   are longer than the original page's — keep them on one row side by side
-   and let the longer label wrap to two lines inside its pill. */
-@media (max-width: 576px) {
-  .core-hero-section .emptdp-cta-buttons {
-    flex-wrap: nowrap;
+  /* Keep the ~560px height but push the content down off the navbar —
+     the spare room sits at the bottom. */
+  .core-hero-section {
+    justify-content: flex-start;
+    padding-top: 128px;
+    padding-bottom: 24px;
   }
 
+  .core-hero-section .emptdp-hero-text h6 {
+    display: none;
+  }
+
+  .core-hero-section .emptdp-hero-text h2 {
+    margin-bottom: 8px;
+    line-height: 1.15;
+
+  }
+
+  .core-hero-section .emptdp-hero-text h5 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .core-hero-section .emptdp-hero-text .lead {
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .core-hero-section .emptdp-cta-buttons {
+    margin-top: 20px;
+  }
+}
+
+.core-hero-section {
+  margin-bottom: 2px;
+}
+
+.core-learning-mode  {
+  margin-top: 14px;
+
+
+}
+
+.core-learning-mode h6 {
+  font-style: italic;
+  color: #fff;
+  margin: 0;
+
+}
+
+@media (max-width: 576px) {
+
+  /* Full button labels ("Apply for ETMPDP Core" / "Download Program
+     Brochure") are a bit longer than the Ignite hero's — nudge the font
+     down so both still hold one line side by side, same as Ignite. */
   .core-hero-section .emptdp-cta-buttons .emptdp-btn {
     white-space: nowrap;
-    font-size: 0.7rem;
-    padding: 8px 14px;
+    font-size: 0.64rem;
+    padding: 8px 10px;
   }
 
   /* Match the ETMPDP hub mobile hero height — drop the two sub-headings
@@ -73,7 +118,7 @@
 /* ── 2. More Than Learning Technology ────────────────────────────────────
    Section 2 now carries several short paragraphs (shared .emptdp-why-text p
    has margin:0), so space them and lightly emphasise the closing line. */
-.emptdp-why-text p + p {
+.emptdp-why-text p+p {
   margin-top: 1rem;
 }
 
@@ -402,7 +447,7 @@
   margin: 0;
 }
 
-.core-textblock p + p {
+.core-textblock p+p {
   margin-top: 1rem;
 }
 
@@ -412,7 +457,7 @@
     line-height: 1.65;
   }
 
-  .core-textblock p + p {
+  .core-textblock p+p {
     margin-top: 0.75rem;
   }
 }
@@ -563,17 +608,41 @@
   }
 }
 
+/* Stay 2-up on phones with condensed card chrome so 5 cards don't become
+   a long single-column scroll; the 5th card spans both columns so there's
+   no orphan. */
 @media (max-width: 640px) {
   .core-who-grid {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 480px;
+    gap: 12px;
+    max-width: 420px;
   }
-}
 
-@media (max-width: 460px) {
-  .core-who-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
+  .core-who-grid .emptdp-diff-card {
+    padding: 16px 12px;
+  }
+
+  .core-who-grid .emptdp-diff-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .core-who-grid .emptdp-diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  .core-who-grid .emptdp-diff-icon i {
+    font-size: 1.15rem;
+  }
+
+  .core-who-grid .emptdp-diff-title {
+    font-size: 0.82rem;
+  }
+
+  .core-who-grid .emptdp-diff-desc {
+    font-size: 0.72rem;
+    line-height: 1.45;
   }
 }
 
@@ -618,8 +687,26 @@
 
 @media (max-width: 760px) {
   .core-delivery-grid {
-    grid-template-columns: 1fr;
-    max-width: 360px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row dense;
+    max-width: 340px;
+    gap: 14px;
+  }
+
+  .core-delivery-grid .emptdp-diff-card {
+    padding: 18px 14px;
+  }
+
+  .core-delivery-grid .emptdp-diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  /* Remote (featured) is the middle card — keep it full-width on its own
+     row rather than squeezed into a 2-up cell. */
+  .core-delivery-grid .core-delivery-card--featured {
+    grid-column: 1 / -1;
   }
 }
 
@@ -660,4 +747,12 @@
   font-style: italic;
   font-weight: 700;
   font-size: 1.05rem;
+}
+
+/* Keep the two CTA buttons comfortably on one row on phones. */
+@media (max-width: 576px) {
+  .emptdp-cta-section .emptdp-cta-buttons .emptdp-btn {
+    font-size: 0.72rem;
+    padding: 8px 12px;
+  }
 }

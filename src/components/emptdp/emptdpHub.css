@@ -16,6 +16,45 @@
   margin-right: auto;
 }
 
+/* Desktop: keep the SHARED hero formula (560px min-height, centred) so
+   the hub hero renders at the same height as the ETMPDP Ignite hero.
+   The hub carries slightly more copy, so trim the hero-text spacing to
+   match its footprint. Mobile keeps its own rule. */
+@media (min-width: 577px) {
+  /* Keep the ~560px height but push the content down off the navbar —
+     the spare room sits at the bottom. */
+  .hub-hero-section {
+    justify-content: flex-start;
+    padding-top: 128px;
+    padding-bottom: 24px;
+  }
+
+  .hub-hero-section .emptdp-hero-text h2 {
+    margin-bottom: 8px;
+    line-height: 1.15;
+  }
+
+  .hub-hero-section .emptdp-hero-text h5 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .hub-hero-section .emptdp-hero-text .lead {
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .hub-hero-section .emptdp-cta-buttons {
+    margin-top: 20px;
+  }
+
+  .hub-hero-section .hub-learning-mode {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+}
+
 .hub-learning-mode {
   display: flex;
   justify-content: center;
