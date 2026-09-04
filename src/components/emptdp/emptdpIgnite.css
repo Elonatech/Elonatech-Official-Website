@@ -1,8 +1,49 @@
 /* =============================================================================
    ETMPDP Ignite Page — emptdpIgnite.css
    Additive to emptdp.css — reuses the shared color system:
-   Colors: #11253d (navy), #   (red), #ffffff (white)
+   Colors: #11253d (navy), #dc3545 (red), #ffffff (white)
    ============================================================================= */
+
+/* ── Page-wide vertical rhythm ──────────────────────────────────────────
+   The shared sections carry 70px top/bottom padding and a 40px header
+   margin, which leaves large empty bands (worst on mobile) — same fix
+   already applied on the Core page. Scoped here so the hub is untouched. */
+.emptdp-why-section,
+.emptdp-diff-section,
+.emptdp-learn-section,
+.emptdp-structure-section,
+.emptdp-who-section,
+.emptdp-invest-section,
+.emptdp-mentor-section,
+.emptdp-faq-section,
+.emptdp-cta-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.emptdp-section-header {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 576px) {
+
+  .emptdp-why-section,
+  .emptdp-diff-section,
+  .emptdp-learn-section,
+  .emptdp-structure-section,
+  .emptdp-who-section,
+  .emptdp-invest-section,
+  .emptdp-mentor-section,
+  .emptdp-faq-section,
+  .emptdp-cta-section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .emptdp-section-header {
+    margin-bottom: 16px;
+  }
+}
 
 /* Hero taglines — two short, distinctly-styled lines instead of one dense
    run-on sentence, so the key phrases (audience + use case) stand out */
@@ -27,7 +68,73 @@
   }
 
   .ignite-hero-tag--italic {
-    font-size: 0.78rem;
+    font-size: 0.64rem;
+  }
+}
+
+/* Section 3 — "From Classroom Knowledge to Industry Capability": a short
+   run of rhetorical questions instead of a card grid, for a more direct,
+   energetic tone. */
+.ignite-questions-intro {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.ignite-questions-list {
+  list-style: none;
+  margin: 0 auto 28px;
+  padding: 0;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 32px;
+}
+
+.ignite-questions-list li {
+  position: relative;
+  padding-left: 30px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.ignite-questions-list li::before {
+  content: "?";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: #dc3545;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.ignite-questions-closer {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* For use on light-background sections (e.g. "Who Should Apply?") */
+.ignite-questions-closer--dark {
+  color: #11253d;
+}
+
+@media (max-width: 640px) {
+  .ignite-questions-list {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .ignite-questions-list li {
+    font-size: 0.95rem;
   }
 }
 
@@ -74,13 +181,18 @@
 }
 
 @media (max-width: 576px) {
+  .ignite-progression {
+    gap: 10px 16px;
+  }
+
   .ignite-progression-step {
     font-size: 0.78rem;
   }
 
+  /* Drop the line connectors on mobile — the fixed-width dashes leave an
+     orphaned trailing dash at the wrap point (same fix as Core's cycle). */
   .ignite-progression-step:not(:last-child)::after {
-    width: 20px;
-    margin: 0 8px;
+    display: none;
   }
 }
 
@@ -100,8 +212,8 @@
 }
 
 .ignite-how-grid {
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 1000px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 900px;
 }
 
 .ignite-why-grid .emptdp-diff-card,
@@ -135,11 +247,50 @@
   }
 }
 
+/* Stay 2-up on phones (6-7 cards each) with condensed chrome instead of a
+   long single-column scroll — same treatment as the Core page's grids. */
 @media (max-width: 560px) {
   .ignite-why-grid,
   .ignite-how-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 420px;
+  }
+
+  .ignite-why-grid .emptdp-diff-card,
+  .ignite-how-grid .emptdp-diff-card {
+    padding: 16px 12px;
+  }
+
+  .ignite-why-grid .emptdp-diff-icon,
+  .ignite-how-grid .emptdp-diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  .ignite-why-grid .emptdp-diff-icon i,
+  .ignite-how-grid .emptdp-diff-icon i {
+    font-size: 1.15rem;
+  }
+
+  .ignite-why-grid .emptdp-diff-title,
+  .ignite-how-grid .emptdp-diff-title {
+    font-size: 0.82rem;
+  }
+
+  .ignite-why-grid .emptdp-diff-desc,
+  .ignite-how-grid .emptdp-diff-desc {
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 360px) {
+  .ignite-why-grid,
+  .ignite-how-grid {
     grid-template-columns: 1fr;
-    max-width: 340px;
+    max-width: 300px;
   }
 }
 
@@ -152,6 +303,72 @@
   color: #dc3545;
   font-weight: 700;
   font-size: 1rem;
+}
+
+/* Delivery Options — 3 cards; on phones keep Onsite/Remote 2-up and let
+   Hybrid span the full width on its own row instead of sitting narrow
+   under Onsite. */
+@media (max-width: 560px) {
+  .ignite-delivery-grid .emptdp-diff-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ignite-delivery-grid .emptdp-diff-card {
+    padding: 18px 14px;
+  }
+
+  .ignite-delivery-grid .emptdp-diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+}
+
+.ignite-spec-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* 8 tracks now (added Cybersecurity) — one straight line on desktop, an
+   even 4 x 2 grid on tablet, 2 x 4 on mobile. Same treatment as the Core
+   page's tabs, kept local to Ignite. */
+@media (min-width: 1200px) {
+  .emptdp-learn-tabs {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .emptdp-learn-tabs .emptdp-tab-btn {
+    font-size: 0.8rem;
+    padding: 7px 12px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1199px) {
+  .emptdp-learn-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .emptdp-learn-tabs .emptdp-tab-btn {
+    white-space: normal;
+    text-align: center;
+    padding: 8px 6px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .emptdp-learn-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 360px;
+  }
 }
 
 .emptdp-learn-content .emptdp-skills-list {
@@ -176,8 +393,40 @@
   line-height: 1.8;
 }
 
+/* Compact wrapped flow instead of one line per item — was a tall vertical
+   stack that made the section unnecessarily long. */
+.ignite-360-examples {
+  list-style: none;
+  margin: 18px auto;
+  padding: 0;
+  max-width: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 26px;
+}
+
+.ignite-360-examples li {
+  position: relative;
+  padding-left: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+.ignite-360-examples li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #dc3545;
+}
+
 .ignite-360-elig {
-  max-width: 520px;
+  max-width: 760px;
   margin: 28px auto 0;
   text-align: center;
   background: rgba(255, 255, 255, 0.06);
@@ -195,8 +444,9 @@
 
 .ignite-360-elig-sub {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin: 0 0 14px;
+  white-space: nowrap;
 }
 
 .ignite-360-elig-list {
@@ -204,16 +454,28 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 10px 20px;
+  gap: 10px 24px;
+  white-space: nowrap;
 }
 
 .ignite-360-elig-list li {
   position: relative;
   padding-left: 16px;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 760px) {
+  .ignite-360-elig-sub {
+    white-space: normal;
+  }
+
+  .ignite-360-elig-list {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
 }
 
 .ignite-360-elig-list li::before {
@@ -245,14 +507,66 @@
   font-size: 1.05rem;
 }
 
+/* Desktop: the hero content sat packed at the top of the 560px section
+   with a big empty band below the buttons. Push it down (padding-top,
+   using the room already there — the section height is unchanged) and
+   open up a little breathing room between the lines. */
+@media (min-width: 577px) {
+  .ignite-hero-section {
+    justify-content: flex-start;
+    padding-top: 130px;
+    padding-bottom: 24px;
+  }
+
+  .ignite-hero-section .emptdp-hero-text h2 {
+    margin-bottom: 16px;
+  }
+
+  .ignite-hero-section .emptdp-hero-text h5 {
+    margin-bottom: 8px;
+  }
+
+  .ignite-hero-section .emptdp-hero-text .lead {
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .ignite-hero-section .ignite-hero-tag {
+    margin: 10px 0 0;
+  }
+
+  .ignite-hero-section .emptdp-cta-buttons {
+    margin-top: 20px;
+  }
+}
+
+.ignite-learning-mode {
+  margin-top: 14px;
+}
+
+.ignite-learning-mode h6 {
+  font-style: italic;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .ignite-learning-mode {
+    margin-top: 6px;
+  }
+
+  .ignite-learning-mode h6 {
+    font-size: 0.85rem;
+  }
+}
+
 /* Mobile: keep the hero as short as the original — show only the badge,
    headline, the one short use-case line and the buttons. Hiding the long
    description and the value-prop sentence is what keeps the copy from
    pushing the image area taller (no min-height added). */
 @media (max-width: 576px) {
-  .ignite-hero-section .emptdp-hero-text h5,
-  .ignite-hero-section
-    .ignite-hero-tag:not(.ignite-hero-tag--italic) {
+  .ignite-hero-section .emptdp-hero-text h5 {
     display: none;
   }
 }
@@ -455,7 +769,12 @@
 
 @media (max-width: 560px) {
   .ignite-pd-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+  }
+
+  .ignite-pd-grid .ignite-check-item {
+    font-size: 0.85rem;
   }
 }
 
@@ -528,6 +847,70 @@
 
 .ignite-check-item--light i {
   color: #ff8a93;
+}
+
+/* Light grey band — breaks up runs of consecutive dark or white sections */
+.ignite-tint {
+  background-color: #f5f7fa;
+}
+
+/* "Who Should Apply?" — a tag cloud instead of a checklist column so it
+   doesn't read as a repeat of "What You Receive" right above it. */
+.ignite-apply-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.ignite-apply-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1.5px solid #e6e8ec;
+  color: #11253d;
+  font-weight: 600;
+  font-size: 0.88rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 576px) {
+  .ignite-apply-tag {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+}
+
+.ignite-cta-tagline {
+  margin: 8px 0 0;
+  color: #dc3545;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.ignite-siwes-lead {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+/* Residential "Enquire" button — red border, fills red on hover */
+.ignite-residential-cta {
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.ignite-residential-cta:hover {
+  background-color: #dc3545;
+  color: #fff;
+  opacity: 1;
 }
 
 .ignite-check-note {
