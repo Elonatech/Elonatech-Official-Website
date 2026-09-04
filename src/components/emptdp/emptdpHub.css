@@ -179,7 +179,6 @@
 .hub-experience-link {
   margin-top: auto;
   padding-top: 20px;
-  color: #dc3545;
   font-weight: 700;
   text-decoration: none;
   display: inline-flex;
@@ -187,8 +186,37 @@
   gap: 8px;
 }
 
-.hub-experience-link:hover {
+/* Balance the two program colors on this dual-theme page: Core = red,
+   Ignite = blue, everywhere the two are shown side by side. */
+.hub-link-core {
+  color: #dc3545;
+}
+
+.hub-link-core:hover {
   color: #b9271f;
+}
+
+.hub-link-ignite {
+  color: #34548c;
+}
+
+.hub-link-ignite:hover {
+  color: #2a4571;
+}
+
+/* Hero "Explore ETMPDP Ignite" — filled navy, matching Ignite's own CTA
+   button style (not an outline), pairs with the red filled "Explore
+   ETMPDP Core" button. */
+.hub-btn-ignite {
+  background-color: #11253d;
+  border-color: #11253d;
+  color: #fff;
+}
+
+/* Final CTA "Explore Ignite" — dark-outline variant, on the light tint band */
+.hub-btn-ignite-dark {
+  color: #34548c;
+  border-color: #34548c;
 }
 
 @media (max-width: 760px) {
@@ -235,6 +263,19 @@
 
 .hub-defines-grid .emptdp-diff-card {
   max-width: 100%;
+}
+
+/* Alternate red/blue across the 6 cards so the section reads as "both"
+   programs rather than a wall of one color: 1st/3rd/5th (Technical
+   Development, Professional Excellence, Business Awareness) go blue;
+   2nd/4th/6th (Executive Mentorship, Leadership Development, AI
+   Readiness) stay red. */
+.hub-defines-grid .emptdp-diff-card:nth-child(odd) .emptdp-diff-icon {
+  background-color: rgba(52, 84, 140, 0.1);
+}
+
+.hub-defines-grid .emptdp-diff-card:nth-child(odd) .emptdp-diff-icon i {
+  color: #34548c;
 }
 
 @media (max-width: 900px) {
@@ -388,7 +429,9 @@
 
 .hub-path-card--core {
   border-color: #11253d;
-  background: #f2f5f9;
+  /* Was #f2f5f9 — too close to white per MD; more visibly blue while
+     staying a light tint. */
+  background: #dfe8f5;
 }
 
 .hub-path-q {

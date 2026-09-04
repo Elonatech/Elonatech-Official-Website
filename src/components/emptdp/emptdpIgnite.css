@@ -1,8 +1,72 @@
 /* =============================================================================
    ETMPDP Ignite Page — emptdpIgnite.css
    Additive to emptdp.css — reuses the shared color system:
-   Colors: #11253d (navy), #dc3545 (red), #ffffff (white)
+   Colors: #11253d (navy), #dc3545 (brand red — repainted to blue below)
    ============================================================================= */
+
+/* =============================================================================
+   BLUE THEME — Ignite-only, scoped under .etmpdp-ignite (this file and
+   emptdpCore.css are bundled together app-wide, so an unscoped override of
+   a shared class name would win or lose depending on bundle order — scoping
+   via the wrapper class makes it correct regardless of that order).
+   Brand colors: #e00b05 (red), #34548c (blue), #a9abae (grey). #34548c is
+   already used live on elonatech.com.ng as the link/accent blue.
+   Ignite commits to the BLUE half: dark section backgrounds already use
+   navy (#11253d, itself a dark blue and the site's established chrome
+   color) so they're left as-is; every shared "red" accent role below
+   (buttons, active states, icons, badges, connectors) becomes the exact
+   brand blue instead.
+   ============================================================================= */
+:root {
+  --ignite-blue: #34548c;
+  --ignite-blue-tint: rgba(52, 84, 140, 0.1);
+  /* CTAs use the navy — matches the dark sections and reads calmer than
+     the brighter accent blue. */
+  --ignite-cta: #11253d;
+}
+
+.etmpdp-ignite .emptdp-btn--primary {
+  background-color: var(--ignite-cta);
+  border-color: var(--ignite-cta);
+}
+
+.etmpdp-ignite .emptdp-btn--outline-dark {
+  color: var(--ignite-cta);
+  border-color: var(--ignite-cta);
+}
+
+.etmpdp-ignite .emptdp-tab-btn:hover {
+  border-color: var(--ignite-blue);
+}
+
+.etmpdp-ignite .emptdp-tab-btn--active {
+  background-color: var(--ignite-blue);
+  border-color: var(--ignite-blue);
+}
+
+.etmpdp-ignite .emptdp-diff-icon,
+.etmpdp-ignite .emptdp-card-icon {
+  background-color: var(--ignite-blue-tint);
+}
+
+.etmpdp-ignite .emptdp-diff-icon i,
+.etmpdp-ignite .emptdp-card-icon i,
+.etmpdp-ignite .emptdp-cta-heading {
+  color: var(--ignite-blue);
+}
+
+/* Mentor label/title sit on the navy mentor-section background — the
+   mid-tone accent blue is too close in value to navy (contrast ~2:1);
+   use the lighter tint reserved for text-on-navy instead. */
+.etmpdp-ignite .emptdp-mentor-label,
+.etmpdp-ignite .emptdp-mentor-title {
+  color: #8fb4e0;
+}
+
+.etmpdp-ignite .emptdp-mentor-badge,
+.etmpdp-ignite .emptdp-skill-dot {
+  background-color: var(--ignite-blue);
+}
 
 /* ── Page-wide vertical rhythm ──────────────────────────────────────────
    The shared sections carry 70px top/bottom padding and a 40px header
@@ -107,7 +171,7 @@
   position: absolute;
   left: 0;
   top: -2px;
-  color: #dc3545;
+  color: var(--ignite-blue);
   font-weight: 800;
   font-size: 1.3rem;
 }
@@ -166,7 +230,7 @@
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #dc3545;
+  background: var(--ignite-blue);
   margin-right: 9px;
   flex: none;
 }
@@ -175,7 +239,7 @@
   content: "";
   width: 42px;
   height: 2px;
-  background: #dc3545;
+  background: var(--ignite-blue);
   margin: 0 14px;
   flex: none;
 }
@@ -300,7 +364,7 @@
    compact. */
 .ignite-spec-tagline {
   margin: -16px 0 22px;
-  color: #dc3545;
+  color: var(--ignite-blue);
   font-weight: 700;
   font-size: 1rem;
 }
@@ -422,7 +486,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #dc3545;
+  background: var(--ignite-blue);
 }
 
 .ignite-360-elig {
@@ -486,7 +550,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #dc3545;
+  background: var(--ignite-blue);
 }
 
 /* Ignite-specific hero background — distinct from the ETMPDP page's hero photo */
@@ -611,7 +675,7 @@
 }
 
 .ignite-compare-card {
-  border-left: 4px solid #dc3545;
+  border-left: 4px solid var(--ignite-blue);
   border-radius: 10px;
   padding: 20px 24px;
 }
@@ -631,11 +695,11 @@
 }
 
 .ignite-compare-card--light .ignite-compare-title {
-  color: #dc3545;
+  color: var(--ignite-blue);
 }
 
 .ignite-compare-card--dark .ignite-compare-title {
-  color: #ff8a93;
+  color: #8fb4e0;
 }
 
 .ignite-compare-desc {
@@ -725,7 +789,7 @@
 }
 
 .ignite-spec-icon i {
-  color: #dc3545;
+  color: var(--ignite-blue);
   font-size: 1.3rem;
 }
 
@@ -832,7 +896,7 @@
 }
 
 .ignite-check-item i {
-  color: #dc3545;
+  color: var(--ignite-blue);
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -846,7 +910,7 @@
 }
 
 .ignite-check-item--light i {
-  color: #ff8a93;
+  color: #8fb4e0;
 }
 
 /* Light grey band — breaks up runs of consecutive dark or white sections */
@@ -884,9 +948,19 @@
   }
 }
 
+/* Violet's and Enoch's source photos are tight portrait crops, so at the
+   same 280x340 frame as Oreva's (a wider, more zoomed-out landscape shot)
+   they read as visually bigger/closer even though the box is identical.
+   Scale them down slightly so all three mentors read at the same visual
+   scale, per MD's request — the frame size itself is unchanged. */
+.ignite-mentor-photo--zoomout {
+  transform: scale(0.8);
+  transform-origin: top center;
+}
+
 .ignite-cta-tagline {
   margin: 8px 0 0;
-  color: #dc3545;
+  color: var(--ignite-blue);
   font-style: italic;
   font-weight: 700;
   font-size: 1.05rem;
@@ -903,12 +977,12 @@
 
 /* Residential "Enquire" button — red border, fills red on hover */
 .ignite-residential-cta {
-  border-color: #dc3545;
+  border-color: var(--ignite-blue);
   color: #fff;
 }
 
 .ignite-residential-cta:hover {
-  background-color: #dc3545;
+  background-color: var(--ignite-blue);
   color: #fff;
   opacity: 1;
 }
@@ -955,7 +1029,7 @@
 
 .ignite-pricing-card--featured {
   background-color: #11253d;
-  border-color: #dc3545;
+  border-color: var(--ignite-blue);
   transform: scale(1.03);
   position: relative;
 }
@@ -969,7 +1043,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #dc3545;
+  background-color: var(--ignite-blue);
   color: #fff;
   font-size: 0.7rem;
   font-weight: 800;
@@ -1014,7 +1088,7 @@
 .ignite-pricing-amount {
   font-weight: 800;
   font-size: 1.9rem;
-  color: #dc3545;
+  color: var(--ignite-blue);
   margin-bottom: 4px;
 }
 
@@ -1041,6 +1115,14 @@
   text-align: center;
 }
 
+/* The featured card's own background is navy — the (now navy) primary
+   button would be invisible on it, so keep this one button white. */
+.ignite-pricing-card--featured .ignite-pricing-cta.emptdp-btn--primary {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--ignite-cta);
+}
+
 
 /* ── SIWES & Institutional Documentation Support banner ──────────────────── */
 
@@ -1065,7 +1147,7 @@
 }
 
 .ignite-siwes-icon i {
-  color: #dc3545;
+  color: var(--ignite-blue);
   font-size: 1.3rem;
 }
 
