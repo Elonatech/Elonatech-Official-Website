@@ -308,6 +308,7 @@ const EmptdpCore = () => {
         <link rel="canonical" href="https://elonatech.com.ng/etmpdpCore" />
       </Helmet>
 
+      <div className="etmpdp-core">
       {/* ── 1. Hero ────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section core-hero-section">
         <div className="emptdp-hero-text">
@@ -325,7 +326,7 @@ const EmptdpCore = () => {
             style={{
               fontStyle: "italic",
               marginBottom: "16px",
-              color: "#dc3545",
+              color: "#c23a34",
             }}
           >
             Build. Lead. Excel.
@@ -1044,6 +1045,7 @@ const EmptdpCore = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* Application Modal — opens when any "Apply Now" button is clicked */}
       <ApplicationModal

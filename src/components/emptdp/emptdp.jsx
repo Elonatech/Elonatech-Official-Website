@@ -87,7 +87,7 @@ const Emptdp = () => {
             </button>
           </Link>
           <Link to="/emptdp-ignite">
-            <button className="emptdp-btn emptdp-btn--outline">
+            <button className="emptdp-btn hub-btn-ignite">
               Explore ETMPDP Ignite
             </button>
           </Link>
@@ -140,7 +140,7 @@ const Emptdp = () => {
                 executive mentorship experience for individuals seeking
                 deeper technical, professional and leadership development.
               </p>
-              <Link to="/emptdp-core" className="hub-experience-link">
+              <Link to="/emptdp-core" className="hub-experience-link hub-link-core">
                 Explore ETMPDP Core <i className="bi bi-arrow-right"></i>
               </Link>
             </div>
@@ -157,7 +157,7 @@ const Emptdp = () => {
                 Ideal for SIWES &bull; Industrial Training &bull; Internship
                 &bull; Career Development.
               </p>
-              <Link to="/emptdp-ignite" className="hub-experience-link">
+              <Link to="/emptdp-ignite" className="hub-experience-link hub-link-ignite">
                 Explore ETMPDP Ignite <i className="bi bi-arrow-right"></i>
               </Link>
             </div>
@@ -251,7 +251,7 @@ const Emptdp = () => {
               </button>
             </Link>
             <Link to="/emptdp-ignite">
-              <button className="emptdp-btn emptdp-btn--outline-dark">
+              <button className="emptdp-btn emptdp-btn--outline-dark hub-btn-ignite-dark">
                 Explore Ignite
               </button>
             </Link>

@@ -435,6 +435,7 @@ const EmptdpIgnite = () => {
         <link rel="canonical" href="https://elonatech.com.ng/emptdp-ignite" />
       </Helmet>
 
+      <div className="etmpdp-ignite">
       {/* ── 1. Hero ────────────────────────────────────────────────────────── */}
       <div className="container-fluid emptdp-section ignite-hero-section">
         <div className="emptdp-hero-text">
@@ -794,7 +795,7 @@ const EmptdpIgnite = () => {
                 <img
                   src="https://res.cloudinary.com/dahnwukbz/image/upload/v1784908688/Image-Resize-2_1_vlwrnr_zafov0.png"
                   alt="Violet Laura O."
-                  className="emptdp-mentor-photo"
+                  className="emptdp-mentor-photo ignite-mentor-photo--zoomout"
                 />
               </Link>
             </div>
@@ -828,7 +829,7 @@ const EmptdpIgnite = () => {
                 <img
                   src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788189916/Enoch_J._Enebeli_last_chance_2_jispeq.png"
                   alt="Enoch J. Enebeli"
-                  className="emptdp-mentor-photo"
+                  className="emptdp-mentor-photo ignite-mentor-photo--zoomout"
                 />
               </Link>
             </div>
@@ -1230,6 +1231,7 @@ const EmptdpIgnite = () => {
           </div>
         </div>
       </section>
+      </div>
 
       <IgniteApplicationModal
         isOpen={showModal}
