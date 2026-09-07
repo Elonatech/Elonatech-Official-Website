@@ -320,3 +320,38 @@
   background-color: #bb2d3b;
   transform: translateY(-1px);
 }
+/* ── Ignite variant ────────────────────────────────────────────────────────
+   The Ignite application modal (`.applymodal--ignite`) swaps the shared red
+   accent for Ignite's brand blue. Scoped so the Core modal keeps red. */
+.applymodal--ignite .applymodal-badge,
+.applymodal--ignite .applymodal-submit {
+  background-color: #34548c;
+}
+
+.applymodal--ignite .applymodal-submit:hover {
+  background-color: #2a4571;
+}
+
+.applymodal--ignite .applymodal-form::-webkit-scrollbar-thumb {
+  background: #34548c;
+}
+
+.applymodal--ignite .applymodal-close:hover {
+  background-color: #34548c;
+}
+
+.applymodal--ignite .applymodal-input:focus,
+.applymodal--ignite .applymodal-select:focus,
+.applymodal--ignite .applymodal-textarea:focus {
+  border-color: #34548c;
+  box-shadow: 0 0 0 3px rgba(52, 84, 140, 0.12);
+}
+
+.applymodal--ignite .applymodal-dropzone:hover {
+  border-color: #34548c;
+  background-color: rgba(52, 84, 140, 0.04);
+}
+
+.applymodal--ignite .applymodal-dropzone-icon {
+  color: #34548c;
+}

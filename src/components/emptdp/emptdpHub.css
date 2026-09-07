@@ -16,6 +16,16 @@
   margin-right: auto;
 }
 
+/* Hub-specific hero photo — a professional development session (three
+   colleagues, whiteboard, modern office). Colour-neutral so it sits with
+   both the red (Core) and blue (Ignite) themes this landing page routes to.
+   Overlay + height are unchanged from the shared hero. Pexels #8276671 —
+   swap for a real ETMPDP cohort shot on Cloudinary when available. */
+.hub-hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1788794219/pexels-photo-8276671_h2o1hp.jpg") !important;
+}
+
 /* Desktop: keep the SHARED hero formula (560px min-height, centred) so
    the hub hero renders at the same height as the ETMPDP Ignite hero.
    The hub carries slightly more copy, so trim the hero-text spacing to
@@ -187,7 +197,27 @@
 }
 
 /* Balance the two program colors on this dual-theme page: Core = red,
-   Ignite = blue, everywhere the two are shown side by side. */
+   Ignite = blue, everywhere the two are shown side by side. Each card
+   also gets a coloured top-bar so the two read as distinct blocks
+   rather than one row. */
+.hub-card-core {
+  border-top: 4px solid #dc3545;
+}
+
+.hub-card-ignite {
+  border-top: 4px solid #34548c;
+}
+
+.hub-card-core .hub-experience-name,
+.hub-card-core .hub-experience-tag {
+  color: #dc3545;
+}
+
+.hub-card-ignite .hub-experience-name,
+.hub-card-ignite .hub-experience-tag {
+  color: #34548c;
+}
+
 .hub-link-core {
   color: #dc3545;
 }
@@ -358,7 +388,9 @@
   line-height: 1.8;
 }
 
-/* Full-bleed photo band — swap the URL for a real ETMPDP cohort shot */
+/* Full-bleed photo band behind the vision statement — left on the original
+   image per instruction. Swap for a real ETMPDP cohort shot on Cloudinary
+   when available. */
 .hub-vision-band {
   background-image: linear-gradient(
       rgba(17, 37, 61, 0.82),

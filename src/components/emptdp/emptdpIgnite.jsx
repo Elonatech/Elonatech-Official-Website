@@ -25,8 +25,9 @@ const classroomQuestions = [
 /* Eight specialization tracks. `tab` is the short label for the tab row;
    `title` is the full name shown in the panel. Core Areas are per the
    ETMPDP Ignite spec.
-   NOTE: the Virtual Assistance and Data Analytics images are placeholders
-   reusing existing repo photos — swap for dedicated shots when available. */
+   NOTE: the Virtual Assistance image still reuses a repo photo as a placeholder
+   — swap for a dedicated shot. Data Analytics and Cybersecurity now use
+   topic-specific images (kept in sync with the Core page's coreTracks). */
 const specializationTracks = [
   {
     tab: "Software Engineering",
@@ -125,7 +126,7 @@ const specializationTracks = [
     title: "Data Analytics & Business Intelligence",
     tagline: "Turn Data into Insight.",
     image:
-      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905632/pexels-mikhail-nilov-9301314_gkohy1_zbay4p.jpg",
+      "https://images.pexels.com/photos/7876494/pexels-photo-7876494.jpeg?auto=compress&cs=tinysrgb&w=1400",
     coreAreas: [
       "Data Fundamentals",
       "Excel for Data Analysis",
@@ -143,7 +144,7 @@ const specializationTracks = [
     title: "Cybersecurity & Information Security",
     tagline: "Protect What Technology Depends On.",
     image:
-      "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905669/pexels-brett-sayles-5326748_kjo74t_tdxhmg.jpg",
+      "https://images.pexels.com/photos/1181341/pexels-photo-1181341.jpeg?auto=compress&cs=tinysrgb&w=1400",
     coreAreas: [
       "Security Foundations",
       "Network Security",
@@ -768,8 +769,9 @@ const EmptdpIgnite = () => {
         </div>
       </section>
 
-      {/* ── 7b. Other Mentors ────────────────────────────────────────────────── */}
-      <section className="emptdp-mentor-section">
+      {/* ── 7b. Other Mentors — middle block on a light band so the run of
+             three navy mentor sections gets a visual break. ───────────────── */}
+      <section className="emptdp-mentor-section emptdp-mentor-section--light">
         <div className="container">
           <div className="emptdp-mentor-grid">
             <div className="emptdp-mentor-bio">
@@ -1135,12 +1137,17 @@ const EmptdpIgnite = () => {
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">Frequently Asked Questions</h2>
           </div>
+          {/* Two-column grid — contiguous split: left gets the first 3, right
+             gets the rest. The first item is open by default, so the shorter
+             left column balances against its extra height. */}
           <div className="emptdp-faq-grid">
-            <div className="emptdp-faq-col">
-              {faqs
-                .filter((_, i) => i % 2 === 0)
-                .map((faq, i) => {
-                  const realIndex = i * 2;
+            {[
+              [0, 3],
+              [3, faqs.length],
+            ].map(([start, end], colIndex) => (
+              <div className="emptdp-faq-col" key={colIndex}>
+                {faqs.slice(start, end).map((faq, i) => {
+                  const realIndex = start + i;
                   return (
                     <div className="emptdp-faq-item" key={realIndex}>
                       <button
@@ -1164,36 +1171,29 @@ const EmptdpIgnite = () => {
                     </div>
                   );
                 })}
-            </div>
-            <div className="emptdp-faq-col">
-              {faqs
-                .filter((_, i) => i % 2 !== 0)
-                .map((faq, i) => {
-                  const realIndex = i * 2 + 1;
-                  return (
-                    <div className="emptdp-faq-item" key={realIndex}>
-                      <button
-                        className="emptdp-faq-trigger"
-                        onClick={() => toggleFaq(realIndex)}
-                      >
-                        <span className="emptdp-faq-q">{faq.q}</span>
-                        <i
-                          className={`bi ${
-                            openFaq === realIndex
-                              ? "bi-chevron-up"
-                              : "bi-chevron-down"
-                          } emptdp-faq-icon`}
-                        ></i>
-                      </button>
-                      {openFaq === realIndex && (
-                        <div className="emptdp-faq-answer">
-                          <p>{faq.a}</p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-            </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Sibling programme — points across to ETMPDP Core ──────────────── */}
+      <section className="emptdp-why-section ignite-sibling">
+        <div className="container">
+          <div className="ignite-sibling-inner">
+            <h3 className="ignite-sibling-title">
+              Ready for a deeper professional-development journey?
+            </h3>
+            <p className="ignite-sibling-text">
+              Discover <strong>ETMPDP Core</strong> &mdash; our flagship
+              12-month Executive Technology Mentorship &amp; Professional
+              Development Program.
+            </p>
+            <Link to="/emptdp-core">
+              <button className="emptdp-btn emptdp-btn--outline-dark ignite-sibling-cta">
+                Explore ETMPDP Core <span aria-hidden="true">&rarr;</span>
+              </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -171,7 +171,10 @@
   position: absolute;
   left: 0;
   top: -2px;
-  color: var(--ignite-blue);
+  /* Blended red — the small, deliberate presence of the sibling colour on
+     the blue Ignite page. Red takes the "question / prompt" role (these
+     marks + the FAQ chevrons). Also reads better than blue-on-navy here. */
+  color: #dc3545;
   font-weight: 800;
   font-size: 1.3rem;
 }
@@ -896,7 +899,10 @@
 }
 
 .ignite-check-item i {
-  color: var(--ignite-blue);
+  /* Blended red — the check-marks across every list section give the blue
+     Ignite page a small, consistent, visible red presence without denting
+     the theme. Pairs with the red "?" marks and FAQ chevrons. */
+  color: #dc3545;
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -910,7 +916,9 @@
 }
 
 .ignite-check-item--light i {
-  color: #8fb4e0;
+  /* red check-marks on the dark navy sections — a touch brighter so they
+     stay legible against navy */
+  color: #ef5b64;
 }
 
 /* Light grey band — breaks up runs of consecutive dark or white sections */
@@ -1167,4 +1175,76 @@
     flex-direction: column;
     text-align: center;
   }
+}
+/* ── Sibling-programme callout (points to ETMPDP Core) ──────────────────
+   This is the ONE deliberate spot of red on the otherwise-blue Ignite
+   page: the callout carries Core's red as its accent (tint, programme
+   name, button) because it literally points to the red programme. The
+   heading stays Ignite-navy so the page identity holds. */
+.ignite-sibling {
+  background-color: rgba(220, 53, 69, 0.06);
+}
+
+.ignite-sibling-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ignite-sibling-title {
+  color: #11253d;
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  margin: 0 0 12px;
+}
+
+.ignite-sibling-text {
+  color: #495057;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin: 0 0 22px;
+}
+
+.ignite-sibling-text strong {
+  color: #dc3545;
+}
+
+.ignite-sibling-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.etmpdp-ignite .ignite-sibling-cta {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.etmpdp-ignite .ignite-sibling-cta:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* ── Middle mentor block on a light band ───────────────────────────────────
+   Breaks the run of three navy "Meet our mentors" sections (navy → light →
+   navy). Flip the text off white so it stays readable on the light band. */
+.etmpdp-ignite .emptdp-mentor-section--light {
+  background-color: #f5f7fa;
+}
+
+.etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-name {
+  color: #11253d;
+}
+
+.etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-role {
+  color: #5b626a;
+}
+
+.etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-bio-text {
+  color: #495057;
+}
+
+.etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-label,
+.etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-title {
+  color: #34548c;
 }

@@ -132,7 +132,7 @@ const Emptdp = () => {
             </h2>
           </div>
           <div className="hub-experience-grid">
-            <div className="hub-experience-card">
+            <div className="hub-experience-card hub-card-core">
               <h3 className="hub-experience-name">ETMPDP Core</h3>
               <p className="hub-experience-tag">Build. Lead. Excel.</p>
               <p className="hub-experience-desc">
@@ -144,7 +144,7 @@ const Emptdp = () => {
                 Explore ETMPDP Core <i className="bi bi-arrow-right"></i>
               </Link>
             </div>
-            <div className="hub-experience-card">
+            <div className="hub-experience-card hub-card-ignite">
               <h3 className="hub-experience-name">ETMPDP Ignite</h3>
               <p className="hub-experience-tag">
                 Enter the Industry. Build Your Edge.

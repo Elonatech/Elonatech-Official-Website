@@ -207,7 +207,7 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
 
       {/* Modal box */}
       <div
-        className="applymodal-wrapper"
+        className="applymodal-wrapper applymodal--ignite"
         role="dialog"
         aria-modal="true"
         aria-labelledby="ignitemodal-title"
