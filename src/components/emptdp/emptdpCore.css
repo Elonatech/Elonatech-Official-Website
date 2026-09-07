@@ -135,14 +135,24 @@
   margin-right: auto;
 }
 
-/* Core-specific hero photo — two senior professionals in a positive
-   working exchange, matching Core's "flagship 12-month executive
-   programme" positioning. Overlay + height are unchanged from the shared
-   hero. Pexels #8124412 — swap for a real ETMPDP cohort shot on
-   Cloudinary when available. */
+/* Audience line under the hero sub-heading. */
+.core-hero-audience {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Core-specific hero photo — a group of young Black professionals working
+   through a session around the boardroom table, matching Core's "for
+   graduates and emerging technology professionals" positioning. Overlay +
+   height are unchanged from the shared hero. Pexels #9301294 — swap for a
+   real ETMPDP cohort shot on Cloudinary when available. */
 .core-hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1788794717/core-photo-8124412_2_kydajs.jpg") !important;
+    url("https://images.pexels.com/photos/9301294/pexels-photo-9301294.jpeg?auto=compress&cs=tinysrgb&w=1600") !important;
 }
 
 /* Desktop: keep the SHARED hero formula (560px min-height, centred) so
@@ -174,6 +184,11 @@
   .core-hero-section .emptdp-hero-text h5 {
     font-size: 1.05rem;
     margin-bottom: 8px;
+  }
+
+  .core-hero-section .core-hero-audience {
+    font-size: 0.82rem;
+    margin-top: 4px;
   }
 
   .core-hero-section .emptdp-hero-text .lead {
@@ -219,7 +234,8 @@
      ("Build. Lead. Excel." + "Transforming Potential…", both repeated
      later on the page) and tighten the vertical rhythm. */
   .core-hero-section .emptdp-hero-text h5,
-  .core-hero-section .emptdp-hero-text h6 {
+  .core-hero-section .emptdp-hero-text h6,
+  .core-hero-section .core-hero-audience {
     display: none;
   }
 

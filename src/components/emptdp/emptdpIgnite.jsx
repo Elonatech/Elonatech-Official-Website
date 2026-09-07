@@ -25,9 +25,9 @@ const classroomQuestions = [
 /* Eight specialization tracks. `tab` is the short label for the tab row;
    `title` is the full name shown in the panel. Core Areas are per the
    ETMPDP Ignite spec.
-   NOTE: the Virtual Assistance image still reuses a repo photo as a placeholder
-   — swap for a dedicated shot. Data Analytics and Cybersecurity now use
-   topic-specific images (kept in sync with the Core page's coreTracks). */
+   NOTE: the Virtual Assistance image still reuses a repo photo as a
+   placeholder — swap for a dedicated shot. Every other track has a
+   topic-specific image (kept in sync with the Core page's coreTracks). */
 const specializationTracks = [
   {
     tab: "Software Engineering",

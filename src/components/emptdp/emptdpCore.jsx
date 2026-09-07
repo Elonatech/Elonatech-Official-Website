@@ -13,9 +13,9 @@ import { MoveRight } from "lucide-react";
 /* Eight professional technology tracks. `tab` is the short label for the
    tab row; `title` is the full name shown in the panel.
    NOTE: the Virtual Assistance image still reuses a repo photo as a
-   placeholder — swap for a dedicated shot. Data Analytics and
-   Cybersecurity now use topic-specific images (kept in sync with the
-   Ignite page's specializationTracks). */
+   placeholder — swap for a dedicated shot. Every other track has a
+   topic-specific image (kept in sync with the Ignite page's
+   specializationTracks). */
 const coreTracks = [
   {
     tab: "Software Engineering",
@@ -335,9 +335,12 @@ const EmptdpCore = () => {
               Build. Lead. Excel.
             </h6>
             <h5>Transforming Potential into Professional Excellence</h5>
+            <p className="core-hero-audience">
+              For graduates and emerging technology professionals
+            </p>
             <p className="lead">
               A 12-month professional development and executive mentorship
-              experience designed to develop technically competent,
+              experience designed to develop technically competent graduates,
               professionally disciplined, business-aware and future-ready
               technology professionals.
             </p>
@@ -375,6 +378,7 @@ const EmptdpCore = () => {
               <div className="emptdp-why-text">
                 <p>Technology careers demand more than technical knowledge.</p>
                 <p>
+                  Built for graduates and emerging technology professionals,
                   ETMPDP Core is a structured 12-month professional development
                   experience designed to help participants develop the technical
                   capability, professional discipline, leadership mindset,

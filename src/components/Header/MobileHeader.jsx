@@ -1445,7 +1445,7 @@ const MobileHeader = () => {
                         className="mobile-strategic-items-active dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
                         data-bs-dismiss="offcanvas"
                       >
-                        ETMPDP Overview
+                        ETMPDP 
                       </li>
                     </Link>
 

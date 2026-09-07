@@ -1288,7 +1288,7 @@ const Navbar = () => {
                             : ""
                         }`}
                       >
-                        ETMPDP Overview
+                        ETMPDP 
                       </Link>
                     </li>
 
