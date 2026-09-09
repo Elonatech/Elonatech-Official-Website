@@ -81,8 +81,8 @@
 .emptdp-mentor-section,
 .emptdp-faq-section,
 .emptdp-cta-section {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .emptdp-section-header {
@@ -144,7 +144,7 @@
   margin: 0 auto 28px;
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.7;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .ignite-questions-closer {
-  max-width: 640px;
+  /* max-width: 640px; */
   margin: 0 auto;
   text-align: center;
   color: #fff;
@@ -194,6 +194,13 @@
   color: #11253d;
 }
 
+@media (max-width: 576px) {
+  .ignite-questions-closer {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 640px) {
   .ignite-questions-list {
     grid-template-columns: 1fr;
@@ -202,64 +209,6 @@
 
   .ignite-questions-list li {
     font-size: 0.95rem;
-  }
-}
-
-/* "Why Ignite?" progression — Learning → Practicing → Applying →
-   Contributing → Growing, drawn as a connected chain (red node + connector
-   line) rather than separate pills, echoing the admission timeline */
-.ignite-progression {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px 0;
-  max-width: 780px;
-  margin: 0 auto 40px;
-}
-
-.ignite-progression-step {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-}
-
-.ignite-progression-step::before {
-  content: "";
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--ignite-blue);
-  margin-right: 9px;
-  flex: none;
-}
-
-.ignite-progression-step:not(:last-child)::after {
-  content: "";
-  width: 42px;
-  height: 2px;
-  background: var(--ignite-blue);
-  margin: 0 14px;
-  flex: none;
-}
-
-@media (max-width: 576px) {
-  .ignite-progression {
-    gap: 10px 16px;
-  }
-
-  .ignite-progression-step {
-    font-size: 0.78rem;
-  }
-
-  /* Drop the line connectors on mobile — the fixed-width dashes leave an
-     orphaned trailing dash at the wrap point (same fix as Core's cycle). */
-  .ignite-progression-step:not(:last-child)::after {
-    display: none;
   }
 }
 
@@ -372,6 +321,20 @@
   font-size: 1rem;
 }
 
+/* "Key distinction" line between the section header and the track tabs —
+   aligned to the container edges, directly under the section subtitle. */
+.ignite-spec-keynote {
+  margin: 4px 0 24px;
+  text-align: left;
+  color: #6c757d;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.ignite-spec-keynote strong {
+  color: var(--ignite-blue);
+}
+
 /* Delivery Options — 3 cards; on phones keep Onsite/Remote 2-up and let
    Hybrid span the full width on its own row instead of sitting narrow
    under Onsite. */
@@ -460,100 +423,18 @@
   line-height: 1.8;
 }
 
-/* Compact wrapped flow instead of one line per item — was a tall vertical
-   stack that made the section unnecessarily long. */
-.ignite-360-examples {
-  list-style: none;
-  margin: 18px auto;
-  padding: 0;
-  max-width: 640px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 26px;
-}
-
-.ignite-360-examples li {
-  position: relative;
-  padding-left: 14px;
-  color: rgba(255, 255, 255, 0.85);
-  font-style: italic;
-  font-size: 0.92rem;
-}
-
-.ignite-360-examples li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--ignite-blue);
-}
-
-.ignite-360-elig {
+/* "Highlight" line closing the Ignite 360° section. */
+.ignite-360-highlight {
   max-width: 760px;
-  margin: 28px auto 0;
+  margin: 26px auto 0;
   text-align: center;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 14px;
-  padding: 24px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
-.ignite-360-elig-title {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.05rem;
-  margin: 0 0 6px;
-}
-
-.ignite-360-elig-sub {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.85rem;
-  margin: 0 0 14px;
-  white-space: nowrap;
-}
-
-.ignite-360-elig-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 10px 24px;
-  white-space: nowrap;
-}
-
-.ignite-360-elig-list li {
-  position: relative;
-  padding-left: 16px;
-  color: #fff;
-  font-size: 0.85rem;
-}
-
-@media (max-width: 760px) {
-  .ignite-360-elig-sub {
-    white-space: normal;
-  }
-
-  .ignite-360-elig-list {
-    flex-wrap: wrap;
-    white-space: normal;
-  }
-}
-
-.ignite-360-elig-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--ignite-blue);
+.ignite-360-highlight strong {
+  color: #8fb4e0;
 }
 
 /* Ignite-specific hero background — distinct from the ETMPDP page's hero photo */
@@ -620,7 +501,7 @@
 
 @media (max-width: 576px) {
   .ignite-learning-mode {
-    margin-top: 6px;
+    margin-top: 0;
   }
 
   .ignite-learning-mode h6 {
@@ -638,33 +519,6 @@
   }
 }
 
-/* Mobile gets a shorter, restructured hero (heading, then badge, then a
-   condensed 2-line tag) so the section doesn't run taller than the buttons
-   plus a small breathing gap — desktop keeps the full original copy. */
-.ignite-mobile-only {
-  display: none;
-}
-
-@media (max-width: 576px) {
-  .ignite-desktop-only {
-    display: none;
-  }
-
-  /* Match each element's own natural display when shown — a blanket
-     "display: block" here would stretch the badge <span> full-width,
-     since it'd win the tie against .emptdp-mentor-badge's inline-block
-     (this stylesheet loads after emptdp.css). */
-  h2.ignite-mobile-only,
-  p.ignite-mobile-only {
-    display: block;
-  }
-
-  span.ignite-mobile-only {
-    display: inline-block;
-    padding: 4px 12px;
-    font-size: 0.65rem;
-  }
-}
 
 
 
@@ -808,23 +662,28 @@
 
 .ignite-check-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 32px;
+  /* auto-width columns + justify-content:center so the pair of columns
+     hugs its content and sits truly centred in the section, instead of a
+     wide 1fr grid that visually drifts left. */
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 14px 48px;
   max-width: 900px;
   margin: 0 auto;
 }
 
 @media (max-width: 767px) {
   .ignite-check-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
+    justify-content: start;
+    max-width: 420px;
   }
 }
 
-/* Professional Development is a longer list of short labels — 3 columns
-   keeps it compact */
+/* Professional Development is a longer list of short labels — inherits the
+   content-hugging, centred 2-column layout from .ignite-check-grid. */
 .ignite-pd-grid {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 820px;
+  max-width: 720px;
 }
 
 @media (max-width: 900px) {
@@ -842,51 +701,6 @@
 
   .ignite-pd-grid .ignite-check-item {
     font-size: 0.85rem;
-  }
-}
-
-/* Section 9 — AI across every specialization (dark section, 7 compact
-   translucent panels, 4 + 3) */
-.ignite-ai-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.ignite-ai-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 12px;
-  padding: 16px 18px;
-}
-
-.ignite-ai-card-title {
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin: 0 0 5px;
-}
-
-.ignite-ai-card-desc {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.82rem;
-  line-height: 1.55;
-  margin: 0;
-}
-
-@media (max-width: 992px) {
-  .ignite-ai-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 560px;
-  }
-}
-
-@media (max-width: 560px) {
-  .ignite-ai-grid {
-    grid-template-columns: 1fr;
-    max-width: 360px;
   }
 }
 
@@ -909,16 +723,6 @@
 
 .ignite-check-item--dark {
   color: #495057;
-}
-
-.ignite-check-item--light {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.ignite-check-item--light i {
-  /* red check-marks on the dark navy sections — a touch brighter so they
-     stay legible against navy */
-  color: #ef5b64;
 }
 
 /* Light grey band — breaks up runs of consecutive dark or white sections */
@@ -966,6 +770,14 @@
   transform-origin: top center;
 }
 
+/* Slightly wider mentor photos on mobile (shared rule is 220x270). */
+@media (max-width: 767px) {
+  .etmpdp-ignite .emptdp-mentor-photo {
+    width: 248px;
+    height: 304px;
+  }
+}
+
 .ignite-cta-tagline {
   margin: 8px 0 0;
   color: var(--ignite-blue);
@@ -981,6 +793,17 @@
   color: #6c757d;
   font-size: 0.97rem;
   line-height: 1.8;
+}
+
+/* SIWES tag line — centred, bullet-separated, blue accent. */
+.ignite-siwes-tags {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--ignite-blue);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 
 /* Residential "Enquire" button — red border, fills red on hover */
@@ -1246,5 +1069,23 @@
 
 .etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-label,
 .etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-title {
+  color: #34548c;
+}
+
+/* "View Mentor Profile" link on each mentor card. */
+.etmpdp-ignite .emptdp-mentor-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #8fb4e0;
+  text-decoration: none;
+}
+
+.etmpdp-ignite .emptdp-mentor-link:hover {
+  text-decoration: underline;
+}
+
+.etmpdp-ignite .emptdp-mentor-section--light .emptdp-mentor-link {
   color: #34548c;
 }

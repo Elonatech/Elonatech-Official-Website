@@ -17,8 +17,14 @@ const statusBadgeClass = (status) => {
   return "sad-role-admin"; // Reviewed — blue
 };
 
+// The Core form historically stored program as "Regular"; newer submissions
+// store "Core". Show "Core" for both. Ignite is unchanged.
+const programLabel = (program) => (program === "Regular" ? "Core" : program);
+
+const isIgnite = (program) => program === "Ignite";
+
 const programBadgeClass = (program) =>
-  program === "Regular" ? "sad-role-super" : "sad-role-admin";
+  isIgnite(program) ? "sad-role-admin" : "sad-role-super";
 
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString("en-GB", {
@@ -102,7 +108,7 @@ const EtmpdpList = () => {
           <div className="sad-header">
             <div>
               <h4 className="sad-title">ETMPDP Applications</h4>
-              <p className="sad-subtitle">Regular & Ignite program applications</p>
+              <p className="sad-subtitle">Core & Ignite program applications</p>
             </div>
           </div>
 
@@ -145,7 +151,7 @@ const EtmpdpList = () => {
                         </td>
                         <td data-label="Program">
                           <span className={`sad-role-badge ${programBadgeClass(app.program)}`}>
-                            {app.program}
+                            {programLabel(app.program)}
                           </span>
                         </td>
                         <td data-label="Contact">
@@ -200,7 +206,7 @@ const EtmpdpList = () => {
                   <label className="sad-label">Program</label>
                   <div>
                     <span className={`sad-role-badge ${programBadgeClass(viewing.program)}`}>
-                      {viewing.program}
+                      {programLabel(viewing.program)}
                     </span>
                   </div>
                 </div>
@@ -248,24 +254,30 @@ const EtmpdpList = () => {
                   <label className="sad-label">Qualification</label>
                   <div className="sad-readonly">{viewing.qualification || "—"}</div>
                 </div>
-                {viewing.program === "Regular" ? (
-                  <div className="mb-3">
-                    <label className="sad-label">Area of Interest</label>
-                    <div className="sad-readonly">{viewing.areaOfInterest || "—"}</div>
-                  </div>
-                ) : (
+                {isIgnite(viewing.program) ? (
                   <div className="mb-3">
                     <label className="sad-label">Specialization</label>
                     <div className="sad-readonly">{viewing.specialization || "—"}</div>
                   </div>
+                ) : (
+                  <div className="mb-3">
+                    <label className="sad-label">Area of Interest</label>
+                    <div className="sad-readonly">{viewing.areaOfInterest || "—"}</div>
+                  </div>
                 )}
               </div>
-              {viewing.program === "Ignite" && (
+              {isIgnite(viewing.program) && (
                 <div className="mb-3">
                   <label className="sad-label">Program Track</label>
                   <div className="sad-readonly">{viewing.programTrack || "—"}</div>
                 </div>
               )}
+              <div className="mb-3">
+                <label className="sad-label">Residential Experience</label>
+                <div className="sad-readonly">
+                  {viewing.residentialInterest || "—"}
+                </div>
+              </div>
               {viewing.statement && (
                 <div className="mb-3">
                   <label className="sad-label">Statement of Purpose</label>
@@ -291,7 +303,7 @@ const EtmpdpList = () => {
                     )}
                   </div>
                 </div>
-                {viewing.program === "Ignite" && (
+                {isIgnite(viewing.program) && (
                   <div className="mb-3">
                     <label className="sad-label">Siwes Letter</label>
                     <div>

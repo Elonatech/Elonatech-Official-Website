@@ -355,3 +355,83 @@
 .applymodal--ignite .applymodal-dropzone-icon {
   color: #34548c;
 }
+
+/* ── Success screen ───────────────────────────────────────────────────────
+   Shown after a successful submit instead of the form. */
+.applymodal-success {
+  padding: 32px 28px 28px;
+  text-align: center;
+}
+
+.applymodal-success-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 56px;
+}
+
+.applymodal--ignite .applymodal-success-icon {
+  background-color: #34548c;
+}
+
+.applymodal-success-text {
+  margin: 0 auto;
+  max-width: 420px;
+  color: #495057;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.applymodal-success-residential {
+  margin: 22px auto 0;
+  max-width: 440px;
+  padding: 18px 20px;
+  border: 1px solid #f0d9da;
+  border-radius: 12px;
+  background-color: #fdf6f6;
+}
+
+.applymodal--ignite .applymodal-success-residential {
+  border-color: #d9e0ee;
+  background-color: #f6f8fc;
+}
+
+.applymodal-success-residential-text {
+  margin: 0 0 10px;
+  color: #495057;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.applymodal-success-residential-text strong {
+  color: #dc3545;
+}
+
+.applymodal--ignite .applymodal-success-residential-text strong {
+  color: #34548c;
+}
+
+.applymodal-success-link {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #dc3545;
+  text-decoration: none;
+}
+
+.applymodal--ignite .applymodal-success-link {
+  color: #34548c;
+}
+
+.applymodal-success-link:hover {
+  text-decoration: underline;
+}
+
+.applymodal-success .applymodal-submit {
+  max-width: 220px;
+  margin: 26px auto 0;
+}

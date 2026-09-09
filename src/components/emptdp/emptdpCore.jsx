@@ -7,104 +7,178 @@ import ApplicationModal from "./applicationModal.jsx";
 import MDImage from "../main/captions/Ceo1.png";
 import brocchurePDF from "./data/EMPTDP_brochure.pdf";
 import { MoveRight } from "lucide-react";
+import CardDeck from "./CardDeck";
 
 /* ── Static data ────────────────────────────────────────────────────────── */
 
-/* Eight professional technology tracks. `tab` is the short label for the
-   tab row; `title` is the full name shown in the panel.
-   NOTE: the Virtual Assistance image still reuses a repo photo as a
-   placeholder — swap for a dedicated shot. Every other track has a
-   topic-specific image (kept in sync with the Ignite page's
-   specializationTracks). */
 const coreTracks = [
   {
     tab: "Software Engineering",
     title: "Software Engineering",
-    desc: "Build practical foundations in software development, web technologies, databases, development workflows and AI-assisted programming.",
+    tagline: "Build Digital Solutions.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039005/pexels-naboth-otieno-83498565-19805876_ziwrjo.jpg",
+    areas: [
+      "Programming Fundamentals",
+      "Web Development",
+      "Frontend & Backend Development",
+      "Databases",
+      "Software Development",
+      "Testing & Debugging",
+      "Version Control",
+      "AI-Assisted Development",
+    ],
   },
   {
     tab: "Graphics & Brand Design",
     title: "Graphics, Motion Graphics & Brand Design",
-    desc: "Develop creative and visual communication skills across graphic design, branding, motion graphics, video and digital content.",
+    tagline: "Create. Communicate. Build Brands.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039003/pexels-darlene-alderson-7971537_lqlqy9.jpg",
+    areas: [
+      "Graphic Design",
+      "Brand Identity",
+      "Digital Content Design",
+      "Motion Graphics",
+      "Video Editing",
+      "Visual Communication",
+      "AI-Assisted Creative Workflows",
+    ],
   },
   {
     tab: "Digital Marketing",
     title: "Digital Marketing & Content Strategy",
-    desc: "Understand digital marketing, content strategy, social media, SEO, campaigns, audience engagement and marketing analytics.",
+    tagline: "Reach. Engage. Grow.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039003/pexels-rdne-8370329_j6gibu.jpg",
+    areas: [
+      "Social Media Marketing",
+      "Content Strategy",
+      "Email Marketing",
+      "SEO",
+      "Audience Engagement",
+      "Campaign Planning",
+      "Content Performance",
+      "AI-Assisted Marketing Workflows",
+    ],
   },
   {
     tab: "IT & Networking",
     title: "IT Support, Networking & Infrastructure",
-    desc: "Develop practical understanding of computer systems, technical support, networking, infrastructure, systems administration and troubleshooting.",
+    tagline: "Connect. Configure. Maintain. Secure.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784103672/Network_engineer_in_server_room_using_laptop_minimal___Premium_Photo_ayqzyn.jpg",
+    areas: [
+      "Hardware & Technical Support",
+      "Networking",
+      "LAN/WAN Infrastructure",
+      "Configuration & Troubleshooting",
+      "Structured Cabling",
+      "Systems Administration",
+      "Server Concepts",
+      "Network Security",
+    ],
   },
   {
     tab: "Computer Engineering",
     title: "Computer Engineering",
-    desc: "Explore computer systems, hardware, diagnostics, maintenance, integration and practical engineering concepts.",
+    tagline: "Build. Diagnose. Integrate.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784039620/pexels-mikhail-nilov-9242178_qz3i57.jpg",
+    areas: [
+      "Computer Systems",
+      "Hardware Diagnostics",
+      "Assembly & Maintenance",
+      "Operating Systems",
+      "Hardware/Software Integration",
+      "Embedded Systems Concepts",
+      "Technical Troubleshooting",
+      "Practical Projects",
+    ],
   },
   {
     tab: "Virtual Assistance",
     title: "Virtual Assistance & Digital Operations",
-    desc: "Develop capabilities in digital workplace support, administration, research, documentation, workflow coordination and productivity.",
+    tagline: "Organize. Execute. Optimize.",
     image:
       "https://res.cloudinary.com/dahnwukbz/image/upload/v1784905744/pexels-kampus-5940713_s9bdaz_bzeilg.jpg",
+    areas: [
+      "Administrative Support",
+      "Digital Workplace Tools",
+      "Calendar, Email & Task Management",
+      "Research & Documentation",
+      "Customer Support",
+      "Information Management",
+      "Workflow Coordination",
+      "AI-Assisted Productivity",
+    ],
   },
   {
     tab: "Data Analytics",
     title: "Data Analytics & Business Intelligence",
-    desc: "Learn the foundations of data preparation, analysis, visualization, reporting, dashboards and business intelligence.",
+    tagline: "Turn Data Into Insight.",
     image:
       "https://images.pexels.com/photos/7876494/pexels-photo-7876494.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    areas: [
+      "Data Fundamentals",
+      "Data Preparation",
+      "Spreadsheet Analysis",
+      "Visualization",
+      "Business Reporting",
+      "Dashboards & Metrics",
+      "BI Concepts",
+      "AI-Assisted Data Analysis",
+    ],
   },
   {
     tab: "Cybersecurity",
     title: "Cybersecurity & Information Security",
-    desc: "Build foundational understanding of cybersecurity, information security, network security, identity and access, vulnerabilities, monitoring and incident response.",
+    tagline: "Protect. Detect. Respond.",
     image:
       "https://images.pexels.com/photos/1181341/pexels-photo-1181341.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    areas: [
+      "Cybersecurity Foundations",
+      "Information Security",
+      "Network & Infrastructure Security",
+      "Identity & Access Security",
+      "Threats & Vulnerabilities",
+      "Security Monitoring",
+      "Incident Response Concepts",
+      "Security Assessment",
+    ],
   },
 ];
 
 const whyCore = [
   {
     icon: "bi-wrench-adjustable",
-    title: "Technical Competence",
-    desc: "Develop practical knowledge and hands-on capability across key areas of the technology ecosystem.",
+    title: "Technical Development",
+    desc: "Develop practical capability across multiple technology disciplines.",
   },
   {
     icon: "bi-patch-check",
     title: "Professional Excellence",
-    desc: "Build communication, discipline, accountability, teamwork, critical thinking and workplace professionalism.",
+    desc: "Build communication, workplace effectiveness and professional confidence.",
   },
   {
     icon: "bi-award",
     title: "Leadership Development",
-    desc: "Develop initiative, ownership, decision-making ability and the mindset required to grow into leadership.",
+    desc: "Develop responsibility, initiative and leadership capability.",
   },
   {
     icon: "bi-graph-up-arrow",
     title: "Business Awareness",
-    desc: "Understand how technology connects with customers, business operations, service delivery, value creation and organizational growth.",
+    desc: "Understand technology within the context of organizations, customers and value creation.",
   },
   {
     icon: "bi-robot",
-    title: "AI Readiness",
-    desc: "Learn to use Artificial Intelligence responsibly as a productivity, research, creative, analytical and problem-solving tool.",
+    title: "AI-Integrated Learning",
+    desc: "Learn to use AI responsibly across modern professional workflows.",
   },
   {
     icon: "bi-person-workspace",
     title: "Executive Mentorship",
-    desc: "Gain structured guidance designed to help you develop professional maturity, career direction and strategic thinking.",
+    desc: "Gain guidance, feedback and strategic professional perspective.",
   },
 ];
 
@@ -112,119 +186,93 @@ const phases = [
   {
     num: 1,
     title: "Professional Foundation",
-    desc: "Develop professional identity, discipline, communication, workplace awareness and the mindset required for continuous learning.",
+    desc: "Workplace readiness, professional discipline, communication and technology foundations.",
   },
   {
     num: 2,
     title: "Technology Professional",
-    desc: "Develop technical competence, practical skills, digital capability and problem-solving ability.",
+    desc: "Multidisciplinary technical development, practical assignments and applied learning.",
   },
   {
     num: 3,
     title: "Leadership",
-    desc: "Develop initiative, accountability, teamwork, communication, decision-making and leadership capacity.",
+    desc: "Leadership development, responsibility, collaboration and executive mindset.",
   },
   {
     num: 4,
     title: "Business",
-    desc: "Understand customers, operations, value creation and the relationship between technology and business.",
+    desc: "Business awareness, customer value, operations and the relationship between technology and business.",
   },
   {
     num: 5,
     title: "Executive Excellence",
-    desc: "Develop professional maturity, executive presence, strategic thinking, career direction and continuous improvement.",
+    desc: "Professional direction, strategic thinking, executive presence, career development and value creation.",
   },
 ];
 
 const coreProfDevItems = [
   "Business Communication",
-  "Professional Etiquette",
+  "Professional Etiquette & Workplace Conduct",
   "Time Management",
   "Critical Thinking",
-  "Accountability",
+  "Accountability & Ownership",
   "Problem Solving",
   "Team Collaboration",
   "Leadership Development",
   "Emotional Intelligence",
   "Career Development",
-  "Professional Networking",
   "Responsible AI Use",
-];
-
-const coreAiItems = [
-  "Research",
-  "Brainstorming",
-  "Problem Solving",
-  "Software Development",
-  "Creative Work",
-  "Marketing",
-  "Data Analysis",
-  "Documentation",
-  "Productivity",
-  "Workflow Support",
-];
-
-const corePracticalItems = [
-  "Guided practical exercises",
-  "Technical assignments",
-  "Project-based learning",
-  "Team collaboration",
-  "Technical reviews",
-  "Research and presentations",
-  "Executive mentorship",
-  "Leadership development",
-  "Continuous performance feedback",
-  "Supervised exposure to selected real-world projects",
+  "Executive Presence & Strategic Thinking",
 ];
 
 const coreWhoApply = [
   {
     icon: "bi-stars",
     title: "Aspiring Technology Professionals",
-    desc: "Individuals beginning or transitioning into a technology career.",
+    desc: "Individuals building a long-term career in technology.",
   },
   {
     icon: "bi-mortarboard",
-    title: "Students & Recent Graduates",
-    desc: "Individuals seeking structured professional development alongside or beyond academic education.",
-  },
-  {
-    icon: "bi-graph-up-arrow",
-    title: "Emerging Technology Professionals",
-    desc: "Individuals who want to broaden their technical exposure and strengthen their professional capabilities.",
+    title: "Graduates & Emerging Professionals",
+    desc: "Those seeking stronger practical and professional capability.",
   },
   {
     icon: "bi-arrow-repeat",
     title: "Career Changers",
-    desc: "Individuals seeking a structured pathway into the technology ecosystem.",
+    desc: "Individuals developing a new technology direction.",
+  },
+  {
+    icon: "bi-compass",
+    title: "Technology Enthusiasts",
+    desc: "Those seeking structured multidisciplinary exposure and guided development.",
   },
   {
     icon: "bi-award",
     title: "Future Technology Leaders",
-    desc: "Individuals interested in developing not only technical competence, but also leadership, business awareness and professional maturity.",
+    desc: "Individuals seeking to combine technology capability with leadership and professional growth.",
   },
 ];
 
 const admissionSteps = [
   {
     num: 1,
-    title: "Apply",
-    desc: "Submit your application and required documents.",
+    title: "Application",
+    desc: "Submit the required application and supporting documents.",
   },
   {
     num: 2,
     title: "Interview & Assessment",
-    desc: "Participate in the required interview and assessment process.",
+    desc: "Personal interview, character assessment, aptitude evaluation and career/professional-development assessment.",
   },
   {
     num: 3,
-    title: "Initial Assessment",
-    desc: "Successful applicants begin the structured initial assessment period.",
+    title: "Initial Assessment Period",
+    desc: "Assessment of discipline, professional conduct, commitment, communication, learning capacity and work ethic.",
   },
   {
     num: 4,
-    title: "Continue",
-    desc: "Participants who satisfy the required standards continue through the full ETMPDP Core experience.",
+    title: "Program Continuation",
+    desc: "Successful participants continue into the full 12-month ETMPDP Core experience.",
   },
 ];
 
@@ -232,59 +280,61 @@ const deliveryOptions = [
   {
     icon: "bi-building",
     title: "Onsite",
-    desc: "Structured physical learning, hands-on activities and direct workplace exposure.",
+    desc: "Structured in-person learning, practical engagement and direct workplace interaction.",
   },
   {
     icon: "bi-laptop",
     title: "Remote",
-    desc: "Structured virtual learning with live instruction, mentorship and technical reviews.",
+    desc: "A structured virtual learning environment with live sessions, digital collaboration, practical assignments, mentorship and progress tracking.",
     featured: true,
   },
   {
     icon: "bi-arrow-left-right",
     title: "Hybrid",
-    desc: "A combination of onsite and remote learning tailored to your practical requirements.",
+    desc: "A combination of remote learning and scheduled onsite engagement where appropriate.",
   },
-];
-
-const checklist = [
-  "Executive Technology Mentorship Certificate",
-  "Professional Development Evaluation Report",
-  "Career Guidance & Professional Recommendation",
-  "Professional Portfolio Development Guidance",
-  "Practical Industry Exposure",
-  "Mentorship & Leadership Development Recognition",
-  "Employment Consideration, Where Applicable",
 ];
 
 const faqs = [
   {
-    q: "Is ETMPDP Core an employment program?",
-    a: "No. ETMPDP Core is a professional development and executive mentorship experience. Participation does not constitute employment.",
+    q: "What is ETMPDP Core?",
+    a: "A 12-month multidisciplinary Executive Technology Mentorship & Professional Development experience that builds technical capability, professional excellence, leadership capacity, business awareness, AI readiness and career direction.",
   },
   {
-    q: "Will I become an Elonatech employee after completion?",
-    a: "Completion does not guarantee employment. Exceptional participants may, however, be considered for employment where suitable opportunities exist.",
+    q: "Who is eligible for ETMPDP Core?",
+    a: "Aspiring and emerging technology professionals, graduates, career changers, technology enthusiasts and future technology leaders who are ready to develop beyond short-term technical training. A selection process applies.",
   },
   {
-    q: "Do I have to choose only one technology track?",
-    a: "No. ETMPDP Core provides multidisciplinary exposure across the eight technology tracks, with deeper development based on interests, demonstrated ability, assignments and project work.",
+    q: "Is ETMPDP Core a training course or employment program?",
+    a: "Neither. It is a professional development and executive mentorship experience. Participation is not employment and does not create an employment relationship with Elonatech.",
   },
   {
-    q: "Is the ₦375,000 different for Remote or Hybrid participants?",
-    a: "No. The Program investment is ₦375,000 regardless of whether participation is Onsite, Remote or Hybrid.",
+    q: "Do I need prior technology experience?",
+    a: "No. Extensive technical experience is not required. Core builds capability from the ground up, although applicants must show genuine commitment and the aptitude to keep pace.",
   },
   {
-    q: "Is accommodation included?",
-    a: "No. Residential accommodation is optional and separately priced.",
+    q: "How does the multidisciplinary track structure work?",
+    a: "Core is not eight separate courses. Participants gain exposure across all eight technology tracks and develop deeper competence in the directions that fit their interests, demonstrated ability, projects and professional goals.",
   },
   {
-    q: "Do I need my own laptop?",
-    a: "Yes. Participants are expected to have access to a suitable laptop for their learning activities.",
+    q: "Can I participate remotely?",
+    a: "Yes. Core can be completed Onsite, Remote or Hybrid, and the ₦375,000 investment is the same for all three. Selected activities take place in person where applicable.",
   },
   {
-    q: "Is ETMPDP Core suitable for someone without extensive technology experience?",
-    a: "Yes. The Program is designed as a structured professional-development journey, although applicants must demonstrate the commitment and potential required for participation.",
+    q: "Is the Residential Experience compulsory?",
+    a: "No. The Residential Experience is optional and separately priced. It is available for participants attending onsite who require accommodation.",
+  },
+  {
+    q: "How does the ₦300,000 + ₦75,000 payment structure work?",
+    a: "The total is ₦375,000. ₦300,000 (80%) is the Initial Enrollment, due on enrollment and before commencement. The ₦75,000 (20%) Continuation Balance is due after the initial assessment period.",
+  },
+  {
+    q: "Are payments refundable?",
+    a: "No. All payments made under the Program are strictly non-refundable.",
+  },
+  {
+    q: "Does completing ETMPDP guarantee employment?",
+    a: "No. Completion does not guarantee employment. Exceptional participants may be considered for employment opportunities at Elonatech where suitable roles exist.",
   },
 ];
 
@@ -308,7 +358,7 @@ const EmptdpCore = () => {
           name="description"
           content="A 12-month professional development and executive mentorship experience designed to develop technically competent, professionally disciplined, business-aware and future-ready technology professionals"
         />
-        <link rel="canonical" href="https://elonatech.com.ng/etmpdpCore" />
+        <link rel="canonical" href="https://elonatech.com.ng/emptdp-core" />
       </Helmet>
 
       <div className="etmpdp-core">
@@ -321,28 +371,20 @@ const EmptdpCore = () => {
             >
               ETMPDP Core
             </span>
-            <h2>
-              Executive Technology Mentorship &amp; Professional Development
-              Program
-            </h2>
-            <h6
-              style={{
-                fontStyle: "italic",
-                marginBottom: "16px",
-                color: "#c23a34",
-              }}
-            >
-              Build. Lead. Excel.
-            </h6>
-            <h5>Transforming Potential into Professional Excellence</h5>
-            <p className="core-hero-audience">
-              For graduates and emerging technology professionals
-            </p>
+            <h2>Build. Lead. Excel.</h2>
+            <h5>
+              The 12-Month Executive Technology Mentorship &amp; Professional
+              Development Journey
+            </h5>
             <p className="lead">
-              A 12-month professional development and executive mentorship
-              experience designed to develop technically competent graduates,
-              professionally disciplined, business-aware and future-ready
-              technology professionals.
+              A multidisciplinary professional development experience designed
+              to develop practical technology capability, professional
+              excellence, leadership capacity, business awareness, AI readiness
+              and career direction.
+            </p>
+            <p className="core-hero-tag">
+              Technology &bull; Leadership &bull; Business &bull; AI &bull;
+              Career
             </p>
           </div>
           <div className="emptdp-cta-buttons">
@@ -354,7 +396,7 @@ const EmptdpCore = () => {
             </button>
             <a href={brocchurePDF} target="_blank" rel="noopener noreferrer">
               <button className="emptdp-btn emptdp-btn--outline">
-                Download Program Brochure
+                Download Core Brochure
               </button>
             </a>
           </div>
@@ -371,29 +413,26 @@ const EmptdpCore = () => {
                 More Than Learning Technology.
               </h2>
               <p className="emptdp-section-subtitle">
-                Becoming A Technology Professional.
+                A broader approach to becoming a technology professional.
               </p>
             </div>
             <div className="emptdp-why-content">
               <div className="emptdp-why-text">
-                <p>Technology careers demand more than technical knowledge.</p>
                 <p>
-                  Built for graduates and emerging technology professionals,
-                  ETMPDP Core is a structured 12-month professional development
-                  experience designed to help participants develop the technical
-                  capability, professional discipline, leadership mindset,
-                  business awareness and career direction required to thrive in
-                  a rapidly evolving technology industry.
+                  Learning technology is only one part of professional
+                  development.
                 </p>
                 <p>
-                  Through multidisciplinary technology exposure, practical
-                  experience, executive mentorship, leadership development and
-                  AI-integrated learning, participants are challenged to learn,
-                  practice, contribute and continuously improve.
+                  ETMPDP Core combines multidisciplinary technology exposure
+                  with practical experience, executive mentorship, leadership
+                  development, business awareness and professional excellence.
                 </p>
-                <p className="emptdp-why-closer">
-                  This is not simply about learning technology. It is about
-                  becoming a professional who can create value with technology.
+                <p>
+                  Rather than limiting participants to one narrow training
+                  course, Core provides a broader development journey through
+                  which participants can explore multiple technology directions
+                  and develop deeper competence according to their interests,
+                  demonstrated ability, projects and professional goals.
                 </p>
               </div>
               <div className="emptdp-why-image">
@@ -416,8 +455,15 @@ const EmptdpCore = () => {
               <h2 className="emptdp-section-title emptdp-section-title--white">
                 Why ETMPDP Core?
               </h2>
+              <p
+                className="emptdp-section-subtitle"
+                style={{ color: "rgba(255,255,255,0.75)" }}
+              >
+                A 12-month journey designed to develop complete technology
+                professionals.
+              </p>
             </div>
-            <div className="emptdp-diff-grid core-why-grid">
+            <CardDeck className="emptdp-diff-grid core-why-grid" onDark>
               {whyCore.map((c, i) => (
                 <div className="emptdp-diff-card" key={i}>
                   <div className="emptdp-diff-icon">
@@ -427,7 +473,7 @@ const EmptdpCore = () => {
                   <p className="emptdp-diff-desc">{c.desc}</p>
                 </div>
               ))}
-            </div>
+            </CardDeck>
           </div>
         </section>
 
@@ -438,18 +484,13 @@ const EmptdpCore = () => {
               <h2 className="emptdp-section-title">
                 Explore Eight Professional Technology Tracks
               </h2>
-              <p className="emptdp-section-subtitle">
-                Multidisciplinary exposure across eight professional technology
-                tracks
-              </p>
             </div>
 
             <p className="core-tracks-intro">
-              Participants are not expected to become experts in every area. The
-              experience provides broad technology exposure while allowing
-              deeper competence to develop through practical assignments,
-              demonstrated ability, individual interests, project work and
-              professional development objectives.
+              Core provides multidisciplinary exposure across the technology
+              ecosystem, with deeper competence developed through practical
+              work, demonstrated ability, interests, projects and professional
+              objectives.
             </p>
 
             <div className="emptdp-learn-tabs">
@@ -481,7 +522,17 @@ const EmptdpCore = () => {
                   </span>
                   {coreTracks[activeTab].title}
                 </h4>
-                <p className="core-track-desc">{coreTracks[activeTab].desc}</p>
+                <p className="core-track-tagline">
+                  {coreTracks[activeTab].tagline}
+                </p>
+                <ul className="emptdp-skills-list">
+                  {coreTracks[activeTab].areas.map((s, i) => (
+                    <li key={i} className="emptdp-skill-item">
+                      <span className="emptdp-skill-dot"></span>
+                      <span className="emptdp-skill-text">{s}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
@@ -506,10 +557,12 @@ const EmptdpCore = () => {
                 className="emptdp-section-subtitle"
                 style={{ color: "rgba(255,255,255,0.75)" }}
               >
-                A progressive professional-development model
+                A structured learning model built around progressive
+                professional development.
               </p>
             </div>
 
+            <p className="core-cycle-label">Learning Model</p>
             <div className="core-cycle">
               {[
                 "Observe",
@@ -526,14 +579,9 @@ const EmptdpCore = () => {
             </div>
 
             <p className="core-cycle-lead">
-              Participants move from guided exposure and understanding into
-              practical application, feedback, ownership and continuous
-              improvement.
-            </p>
-            <p className="core-cycle-closer">
-              The objective is not merely to complete lessons. It is to develop
-              the ability to understand problems, apply knowledge, work
-              professionally, accept responsibility and continually improve.
+              Participants learn through guided instruction, practical
+              assignments, collaboration, mentorship, independent development,
+              project exposure and continuous feedback.
             </p>
           </div>
         </section>
@@ -546,7 +594,8 @@ const EmptdpCore = () => {
                 A 12-Month Journey of Professional Development
               </h2>
               <p className="emptdp-section-subtitle">
-                ETMPDP Core is designed as a progressive professional journey.
+                Progressive development across technology, professional
+                capability, leadership and business awareness.
               </p>
             </div>
 
@@ -597,20 +646,19 @@ const EmptdpCore = () => {
                 className="emptdp-section-subtitle"
                 style={{ color: "rgba(255,255,255,0.75)" }}
               >
-                Learn From Experience. Develop With Direction.
+                Learn from experience. Develop with perspective.
               </p>
             </div>
             <div className="core-textblock">
-              <p>ETMPDP Core goes beyond technical instruction.</p>
               <p>
-                Executive mentorship provides participants with structured
-                opportunities to understand professional expectations, develop
-                stronger judgment, receive guidance, reflect on their progress
-                and gain perspective on career and professional growth.
+                ETMPDP Core provides structured executive mentorship designed
+                to broaden participants&apos; professional perspective,
+                strengthen decision-making, develop leadership capacity and
+                connect technical development with real workplace expectations.
               </p>
-              <p className="emptdp-why-closer">
-                Mentorship is integrated into the wider learning experience
-                rather than treated as an occasional session.
+              <p>
+                Mentorship complements technical learning through guidance,
+                feedback, professional conversations and strategic insight.
               </p>
             </div>
           </div>
@@ -632,15 +680,9 @@ const EmptdpCore = () => {
                     Professional Development
                   </h2>
                   <p className="emptdp-section-subtitle">
-                    Technical Skills Get You Started. Professional Excellence
-                    Takes You Further.
+                    Technical skill is only part of professional capability.
                   </p>
                 </div>
-                <p className="core-split-intro">
-                  Participants develop the professional capabilities that
-                  influence how effectively they work with people, clients,
-                  teams and organizations.
-                </p>
                 <div className="core-split-list">
                   {coreProfDevItems.map((item, i) => (
                     <div className="core-check-item" key={i}>
@@ -665,21 +707,19 @@ const EmptdpCore = () => {
                   </h2>
                 </div>
                 <p className="core-split-intro">
-                  Artificial Intelligence is integrated throughout ETMPDP Core.
-                  Participants learn to use AI responsibly for:
+                  AI is integrated into modern professional practice &mdash; not
+                  treated as a separate technology topic.
                 </p>
-                <div className="core-split-list">
-                  {coreAiItems.map((item, i) => (
-                    <div className="core-check-item" key={i}>
-                      <i className="bi bi-check-circle-fill"></i>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
+                <p className="core-split-intro">
+                  Participants learn to use Artificial Intelligence responsibly
+                  to support research, problem-solving, communication, software
+                  development, creative production, marketing, data analysis,
+                  productivity and workflow improvement.
+                </p>
                 <p className="core-split-note">
-                  AI does not replace professional judgment. Participants remain
-                  responsible for the accuracy, originality, quality, integrity
-                  and outcome of their work.
+                  AI is used to enhance human capability while participants
+                  remain responsible for the accuracy, originality, quality,
+                  judgment and integrity of their work.
                 </p>
               </div>
               <div className="core-split-image">
@@ -706,26 +746,19 @@ const EmptdpCore = () => {
                 <div className="emptdp-section-header core-split-header">
                   <h2 className="emptdp-section-title">Practical Experience</h2>
                   <p className="emptdp-section-subtitle">
-                    From Knowledge to Application.
+                    Learn it. Apply it. Improve it.
                   </p>
                 </div>
                 <p className="core-split-intro">
-                  ETMPDP Core combines structured learning with practical
-                  experience through:
+                  ETMPDP Core connects learning with practical application
+                  through assignments, technical exercises, collaborative work,
+                  project activities and supervised exposure to relevant
+                  real-world technology environments.
                 </p>
-                <div className="core-split-list">
-                  {corePracticalItems.map((item, i) => (
-                    <div className="core-check-item" key={i}>
-                      <i className="bi bi-check-circle-fill"></i>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <p className="core-split-note">
-                  Where appropriate, participants may receive supervised
-                  exposure to selected projects based on competence, project
-                  availability, confidentiality requirements and Management
-                  approval.
+                <p className="core-split-intro">
+                  Participants are encouraged to apply what they develop,
+                  receive feedback and progressively take greater ownership of
+                  their work.
                 </p>
               </div>
             </div>
@@ -738,11 +771,11 @@ const EmptdpCore = () => {
             <div className="emptdp-section-header">
               <h2 className="emptdp-section-title">Who Should Apply?</h2>
               <p className="emptdp-section-subtitle">
-                ETMPDP Core is designed for individuals who want more than
-                short-term technical training.
+                ETMPDP Core is designed for individuals ready to develop
+                themselves beyond technical training.
               </p>
             </div>
-            <div className="emptdp-diff-grid core-who-grid">
+            <CardDeck className="emptdp-diff-grid core-who-grid">
               {coreWhoApply.map((c, i) => (
                 <div className="emptdp-diff-card" key={i}>
                   <div className="emptdp-diff-icon">
@@ -752,7 +785,11 @@ const EmptdpCore = () => {
                   <p className="emptdp-diff-desc">{c.desc}</p>
                 </div>
               ))}
-            </div>
+            </CardDeck>
+            <p className="core-who-closer">
+              You do not have to know everything before you begin. You need the
+              commitment to learn, practice, improve and grow.
+            </p>
           </div>
         </section>
 
@@ -762,7 +799,8 @@ const EmptdpCore = () => {
             <div className="emptdp-section-header">
               <h2 className="emptdp-section-title">Delivery Options</h2>
               <p className="emptdp-section-subtitle">
-                Learn In The Format That Works For You.
+                Choose the learning environment that best fits your
+                circumstances.
               </p>
             </div>
             <div className="emptdp-diff-grid core-delivery-grid">
@@ -785,8 +823,8 @@ const EmptdpCore = () => {
               className="core-delivery-note"
               style={{ marginTop: "16px", fontStyle: "italic" }}
             >
-              Program Investment: <strong>&#8358;375,000</strong> across all
-              three delivery formats.
+              Program investment is <strong>&#8358;375,000</strong>, the same
+              across Onsite, Remote and Hybrid participation.
             </p>
           </div>
         </section>
@@ -802,100 +840,84 @@ const EmptdpCore = () => {
                 className="emptdp-section-subtitle"
                 style={{ color: "rgba(255,255,255,0.75)" }}
               >
-                An Optional Residential Experience
+                An optional residential arrangement for eligible onsite
+                participants.
               </p>
             </div>
             <div className="core-textblock">
               <p>
-                Participants who require accommodation while undertaking onsite
-                ETMPDP Core may opt for the ETMPDP Residential Experience,
-                subject to availability.
-              </p>
-              <p className="emptdp-why-closer">
-                Residential accommodation is separate from Program tuition and
-                priced independently.
+                Participants who require accommodation may request the ETMPDP
+                Residential Experience, subject to availability and applicable
+                accommodation terms.
               </p>
             </div>
             <div className="core-tracks-cta">
               <Link to="/get-in-touch">
                 <button className="emptdp-btn emptdp-btn--outline core-residential-cta">
-                  Enquire About Residential Experience <MoveRight />
+                  Request Residential Experience <MoveRight />
                 </button>
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ── 15. Investment + What You Receive (side by side) ───────────────── */}
+        {/* ── 14. Program Investment ───────────────────────────────────────── */}
         <section className="emptdp-invest-section">
           <div className="container">
-            <div className="emptdp-invest-grid">
-              {/* Left — pricing */}
-              <div className="emptdp-invest-left">
-                <h3 className="emptdp-invest-heading">Program Investment</h3>
-                <div className="emptdp-price-cards">
-                  <div className="emptdp-price-card emptdp-price-card--light">
-                    <p className="emptdp-price-phase">Initial Enrollment</p>
-                    <p className="emptdp-price-amount">₦300,000</p>
-                    <p className="emptdp-price-note">
-                      80% of Total Program Investment <br />
-                      <span className="emptdp-price-note-subtext">
-                        Payable upon enrollment and before commencement.
-                      </span>
-                    </p>
-                  </div>
-                  <div className="emptdp-price-divider"></div>
-                  <div className="emptdp-price-card emptdp-price-card--dark">
-                    <p className="emptdp-price-phase emptdp-price-phase--white">
-                      Continuation Balance
-                    </p>
-                    <p className="emptdp-price-amount emptdp-price-amount--white">
-                      ₦75,000{" "}
-                    </p>
-                    <p className="emptdp-price-note emptdp-price-note--white">
-                      20% of Total Program Investment <br />
-                      <span className="emptdp-price-note-subtext">
-                        Payable at the completion of the initial assessment
-                        period.
-                      </span>
-                    </p>
+            <div className="core-invest-card">
+              <h3 className="emptdp-invest-heading">Program Investment</h3>
+              <div className="core-invest-cols">
+                {/* left — the 80 / 20 breakdown */}
+                <div className="core-invest-breakdown">
+                  <div className="emptdp-price-cards">
+                    <div className="emptdp-price-card emptdp-price-card--light">
+                      <p className="emptdp-price-phase">Initial Enrollment</p>
+                      <p className="emptdp-price-amount">₦300,000</p>
+                      <p className="emptdp-price-note">
+                        80% of total <br />
+                        <span className="emptdp-price-note-subtext">
+                          Due on enrollment, before commencement.
+                        </span>
+                      </p>
+                    </div>
+                    <div className="emptdp-price-divider"></div>
+                    <div className="emptdp-price-card emptdp-price-card--dark">
+                      <p className="emptdp-price-phase emptdp-price-phase--white">
+                        Continuation Balance
+                      </p>
+                      <p className="emptdp-price-amount emptdp-price-amount--white">
+                        ₦75,000
+                      </p>
+                      <p className="emptdp-price-note emptdp-price-note--white">
+                        20% of total <br />
+                        <span className="emptdp-price-note-subtext">
+                          Due after the initial assessment period.
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <p className="emptdp-total-label">
-                  Total Program Investment: <strong>₦375,000</strong>
-                </p>
-                <p className="emptdp-refund-note">
-                  All payments are strictly non-refundable.
-                </p>
-                <p className="core-invest-note">
-                  The investment is the same for Onsite, Remote and Hybrid
-                  participation. Residential accommodation, where required, is
-                  separate.
-                </p>
-                <button
-                  className="emptdp-btn emptdp-btn--primary core-invest-cta"
-                  onClick={() => startTransition(() => setShowModal(true))}
-                >
-                  Apply for ETMPDP Core
-                </button>
-              </div>
 
-              <div className="emptdp-invest-divider"></div>
-
-              {/* Right — what you receive */}
-              <div className="emptdp-invest-right">
-                <h3 className="emptdp-invest-heading">What You Receive</h3>
-                <p className="core-invest-receive-intro">
-                  Successful participants may receive:
-                </p>
-                <ul className="emptdp-receive-list">
-                  {checklist.map((item, i) => (
-                    <li key={i} className="emptdp-receive-item">
-                      <i className="bi bi-check-circle-fill emptdp-receive-icon"></i>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* right — total + terms + CTA */}
+                <div className="core-invest-summary">
+                  <p className="core-invest-eyebrow">Total Program Investment</p>
+                  <p className="core-invest-figure">&#8358;375,000</p>
+                  <p className="core-invest-note">
+                    The ₦375,000 investment is the same for Onsite, Hybrid and
+                    Remote participation. Residential accommodation is optional
+                    and separately priced.
+                  </p>
+                  <p className="emptdp-refund-note">
+                    All payments made under the Program are strictly
+                    non-refundable.
+                  </p>
+                  <button
+                    className="emptdp-btn emptdp-btn--primary core-invest-cta"
+                    onClick={() => startTransition(() => setShowModal(true))}
+                  >
+                    Apply for ETMPDP Core
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -940,9 +962,20 @@ const EmptdpCore = () => {
           </div>
         </section>
 
-        {/* ── 8. Programme Mentor ────────────────────────────────────────────── */}
+        {/* ── 16. Executive Mentor ─────────────────────────────────────────── */}
         <section className="emptdp-mentor-section">
           <div className="container">
+            <div className="emptdp-section-header emptdp-section-header--light">
+              <h2 className="emptdp-section-title emptdp-section-title--white">
+                Executive Mentor
+              </h2>
+              <p
+                className="emptdp-section-subtitle"
+                style={{ color: "rgba(255,255,255,0.75)" }}
+              >
+                Leadership. Experience. Perspective.
+              </p>
+            </div>
             <div className="emptdp-mentor-grid">
               <div className="emptdp-mentor-photo-col">
                 <Link to="/oreva-p-oku">
@@ -958,7 +991,7 @@ const EmptdpCore = () => {
               </div>
 
               <div className="emptdp-mentor-bio">
-                <p className="emptdp-mentor-label">Programme Mentor</p>
+                <p className="emptdp-mentor-label">Executive Mentor</p>
                 <h3 className="emptdp-mentor-name">Oreva Oku</h3>
                 <p className="emptdp-mentor-role">
                   Managing Director, Elonatech Nigeria Limited
@@ -974,6 +1007,10 @@ const EmptdpCore = () => {
                   provides direct mentorship designed to help participants
                   accelerate their professional growth and career readiness.
                 </p>
+                <Link to="/oreva-p-oku" className="emptdp-mentor-link">
+                  View Executive Mentor Profile{" "}
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -988,13 +1025,13 @@ const EmptdpCore = () => {
               </h2>
             </div>
 
-            {/* Two-column grid — contiguous split: left gets the first 3, right
-             gets the last 4. The first item is open by default, so the
-             shorter left column balances against its extra height. */}
+            {/* Two-column grid — contiguous split. The first item is open by
+             default, so the left column carries fewer items to keep the two
+             columns roughly level in height. */}
             <div className="emptdp-faq-grid">
               {[
-                [0, 3],
-                [3, faqs.length],
+                [0, 4],
+                [4, faqs.length],
               ].map(([start, end], colIndex) => (
                 <div className="emptdp-faq-col" key={colIndex}>
                   {faqs.slice(start, end).map((faq, i) => {
@@ -1036,9 +1073,9 @@ const EmptdpCore = () => {
                 Looking for an undergraduate industry experience?
               </h3>
               <p className="core-sibling-text">
-                Discover <strong>ETMPDP Ignite</strong> &mdash; the professional
-                development experience designed for students, SIWES, Industrial
-                Training and internship.
+                Discover <strong>ETMPDP Ignite</strong> &mdash; a structured
+                Professional Development Experience designed to bridge academic
+                learning and industry practice.
               </p>
               <Link to="/emptdp-ignite">
                 <button className="emptdp-btn emptdp-btn--outline-dark core-sibling-cta">
@@ -1060,9 +1097,8 @@ const EmptdpCore = () => {
             </h2>
             <p className="core-cta-tagline">Build. Lead. Excel.</p>
             <p className="emptdp-cta-sub">
-              Develop the technical competence, professional discipline,
-              leadership mindset and business awareness to take your next step
-              with confidence.
+              Develop technical capability. Build professional confidence. Grow
+              into greater responsibility.
             </p>
             <div className="emptdp-cta-buttons">
               <button
@@ -1073,7 +1109,7 @@ const EmptdpCore = () => {
               </button>
               <a href={brocchurePDF} target="_blank" rel="noopener noreferrer">
                 <button className="emptdp-btn emptdp-btn--outline-dark">
-                  Download Brochure
+                  Download Core Brochure
                 </button>
               </a>
             </div>

@@ -101,11 +101,13 @@
     background-position: center;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    /* A touch more gap between badge / headline / buttons for breathing
+       room; the reduced bottom padding keeps the overall height the same. */
+    gap: 8px;
     /* Top padding clears the fixed navbar (logo/hamburger) that overlays
        the hero; bottom padding is intentionally small so the buttons rest
        near the image edge, matching the homepage hero. */
-    padding: 65px 20px 12px;
+    padding: 65px 20px 8px;
   }
 }
 
@@ -329,6 +331,38 @@
   line-height: 1.6;
 }
 
+/* ── Mobile density pass ────────────────────────────────────────────────────
+   The track panel (title + tagline + 8 skill bullets) and the alternating
+   text blocks render far too large on phones — tighten type and spacing.
+   Selectors are deliberately specific to win over the unscoped
+   ".emptdp-learn-content .emptdp-skill-*" rules in emptdpIgnite.css. */
+@media (max-width: 576px) {
+  .emptdp-learn-skills .emptdp-learn-skills-title {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+
+  .emptdp-learn-content .emptdp-skills-list {
+    gap: 9px;
+  }
+
+  .emptdp-learn-content .emptdp-skills-list .emptdp-skill-dot {
+    width: 8px;
+    height: 8px;
+    margin-top: 6px;
+  }
+
+  .emptdp-learn-content .emptdp-skills-list .emptdp-skill-text {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .emptdp-why-content .emptdp-why-text p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+}
+
 @media (max-width: 767px) {
   .emptdp-learn-content {
     flex-direction: column;
@@ -347,6 +381,76 @@
   .emptdp-tab-btn {
     font-size: 0.8rem;
     padding: 6px 14px;
+  }
+}
+
+
+/* ── Manual card deck (shared by Core + Ignite) ─────────────────────────────
+   Desktop: .emptdp-deck-track keeps whatever grid classes it is given, and
+   the dot row is hidden — nothing changes above 576px.
+   Mobile: the track becomes a horizontal scroll-snap row with a peek of the
+   next card, and tappable dots track the scroll position. No auto-advance.
+   Each page sets --deck-accent for the active dot (default = Ignite blue). */
+.emptdp-deck-dots {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .emptdp-diff-grid.emptdp-deck-track {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    grid-template-columns: none;
+    max-width: none;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 16px;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 16px 10px;
+    margin: 0 -16px;
+    scrollbar-width: none;
+  }
+
+  .emptdp-diff-grid.emptdp-deck-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .emptdp-diff-grid.emptdp-deck-track > .emptdp-diff-card {
+    flex: 0 0 76%;
+    scroll-snap-align: start;
+  }
+
+  .emptdp-deck-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 14px;
+  }
+
+  .emptdp-deck-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.22);
+    transition: background 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+
+  .emptdp-deck-dot.is-active {
+    background: var(--deck-accent, #34548c);
+    transform: scale(1.4);
+  }
+
+  .emptdp-deck--on-dark .emptdp-deck-dot {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .emptdp-deck--on-dark .emptdp-deck-dot.is-active {
+    background: #8fb4e0;
   }
 }
 
@@ -646,35 +750,6 @@
   background-color: #fff;
 }
 
-.emptdp-invest-grid {
-  display: flex;
-  gap: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #e9ecef;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-}
-
-.emptdp-invest-left,
-.emptdp-invest-right {
-  flex: 1 1 50%;
-  padding: 48px 40px;
-}
-
-.emptdp-invest-left {
-  background-color: #fff;
-}
-
-.emptdp-invest-right {
-  background-color: #f8f9fa;
-}
-
-.emptdp-invest-divider {
-  width: 1px;
-  background-color: #e9ecef;
-  flex-shrink: 0;
-}
-
 .emptdp-invest-heading {
   color: #11253d;
   font-weight: 800;
@@ -746,12 +821,6 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.emptdp-total-label {
-  color: #11253d;
-  font-size: 1rem;
-  margin-bottom: 4px;
-}
-
 .emptdp-refund-note {
   color: #6c757d;
   font-style: italic;
@@ -764,60 +833,8 @@
   font-style: italic;
 }
 
-/* Receive checklist */
-.emptdp-receive-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.emptdp-receive-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.emptdp-receive-icon {
-  color: #dc3545;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.emptdp-receive-item span {
-  color: #495057;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Tablet — stack the two panels */
-@media (max-width: 1024px) {
-  .emptdp-invest-grid {
-    flex-direction: column;
-  }
-
-  .emptdp-invest-divider {
-    width: 100%;
-    height: 1px;
-  }
-
-  .emptdp-invest-left,
-  .emptdp-invest-right {
-    padding: 40px 32px;
-  }
-}
-
-/* Mobile — tighten padding + stack price cards */
+/* Mobile — stack the price cards */
 @media (max-width: 575px) {
-
-  .emptdp-invest-left,
-  .emptdp-invest-right {
-    padding: 28px 20px;
-  }
-
   .emptdp-price-cards {
     flex-direction: column;
   }

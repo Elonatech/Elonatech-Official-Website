@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./applicationModal.css";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../BaseURL/BaseURL";
@@ -7,6 +8,10 @@ import axios from "axios";
 // Rate limit: track last submission time outside component so it persists
 let lastSubmitTime = 0;
 
+// Where the "Learn more" link on the success screen points. Swap this for the
+// dedicated Residential Experience page once it exists.
+const RESIDENTIAL_PATH = "/get-in-touch";
+
 const ApplicationModal = ({ isOpen, onClose }) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,9 +19,14 @@ const ApplicationModal = ({ isOpen, onClose }) => {
   const [location, setLocation] = useState("");
   const [qualification, setQualification] = useState("");
   const [areaOfInterest, setAreaOfInterest] = useState("");
+  const [residentialInterest, setResidentialInterest] = useState("");
   const [statement, setStatement] = useState("");
   const [file, setFile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Success screen shown after a successful submit
+  const [submitted, setSubmitted] = useState(false);
+  const [wantsResidential, setWantsResidential] = useState(false);
 
   // Honeypot — bots fill this, humans don't see it
   const [honeypot, setHoneypot] = useState("");
@@ -137,6 +147,7 @@ const ApplicationModal = ({ isOpen, onClose }) => {
       formData.append("location", location.trim());
       formData.append("qualification", qualification.trim());
       formData.append("areaOfInterest", areaOfInterest.trim());
+      formData.append("residentialInterest", residentialInterest.trim());
       formData.append("statement", statement.trim());
       formData.append("file", file);
 
@@ -145,16 +156,21 @@ const ApplicationModal = ({ isOpen, onClose }) => {
       if (res.data.status === "success") {
         toast.success("Application Sent Successfully");
 
+        setWantsResidential(
+          residentialInterest.trim().toLowerCase().startsWith("yes")
+        );
+
         setFullName("");
         setEmail("");
         setPhone("");
         setLocation("");
         setQualification("");
         setAreaOfInterest("");
+        setResidentialInterest("");
         setStatement("");
         setFile(null);
 
-        onClose();
+        setSubmitted(true);
       } else {
         toast.error(res.data.message || "Submission failed. Please try again.");
       }
@@ -170,6 +186,13 @@ const ApplicationModal = ({ isOpen, onClose }) => {
     }
   };
 
+  /* Close: reset the success screen so the form shows again next open */
+  const handleClose = () => {
+    setSubmitted(false);
+    setWantsResidential(false);
+    onClose();
+  };
+
   /* Lock body scroll while modal is open */
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -183,7 +206,7 @@ const ApplicationModal = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Backdrop */}
-      <div className="applymodal-backdrop" onClick={onClose}></div>
+      <div className="applymodal-backdrop" onClick={handleClose}></div>
 
       {/* Modal box */}
       <div
@@ -197,19 +220,23 @@ const ApplicationModal = ({ isOpen, onClose }) => {
           <div className="applymodal-header">
             <div>
               <h2 id="applymodal-title" className="applymodal-title">
-                Apply Now
+                {submitted ? "Application Received" : "Apply Now"}
               </h2>
               <p className="applymodal-subtitle">
-                Limited spaces available per cohort.
+                {submitted
+                  ? "Thank you for applying to ETMPDP Core."
+                  : "Limited spaces available per cohort."}
               </p>
             </div>
             <div className="applymodal-header-right">
-              <span className="applymodal-badge">
-                Now Accepting Applications
-              </span>
+              {!submitted && (
+                <span className="applymodal-badge">
+                  Now Accepting Applications
+                </span>
+              )}
               <button
                 className="applymodal-close"
-                onClick={onClose}
+                onClick={handleClose}
                 aria-label="Close modal"
               >
                 &times;
@@ -217,7 +244,42 @@ const ApplicationModal = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Form */}
+          {submitted ? (
+            /* Success screen */
+            <div className="applymodal-success">
+              <div className="applymodal-success-icon" aria-hidden="true">
+                &#10003;
+              </div>
+              <p className="applymodal-success-text">
+                We&apos;ve received your ETMPDP Core application. Our team will
+                review it and contact you with the next steps.
+              </p>
+
+              {wantsResidential && (
+                <div className="applymodal-success-residential">
+                  <p className="applymodal-success-residential-text">
+                    You also expressed interest in the optional{" "}
+                    <strong>Residential Experience</strong>.
+                  </p>
+                  <Link
+                    to={RESIDENTIAL_PATH}
+                    className="applymodal-success-link"
+                    onClick={handleClose}
+                  >
+                    Learn more about the Residential Experience &rarr;
+                  </Link>
+                </div>
+              )}
+
+              <button
+                type="button"
+                className="applymodal-submit"
+                onClick={handleClose}
+              >
+                Done
+              </button>
+            </div>
+          ) : (
           <form onSubmit={handleSubmit} className="applymodal-form">
             {/* Honeypot — hidden from humans, bots fill it */}
             <div style={{ display: "none" }} aria-hidden="true">
@@ -320,6 +382,25 @@ const ApplicationModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
+            {/* Residential Experience */}
+            <div className="applymodal-field">
+              <label className="applymodal-label">
+                Residential Experience (optional accommodation)
+              </label>
+              <select
+                value={residentialInterest}
+                onChange={(e) => setResidentialInterest(e.target.value)}
+                className="applymodal-input applymodal-select"
+              >
+                <option value="">Select an option</option>
+                <option>No &mdash; I don&apos;t need accommodation</option>
+                <option>
+                  Yes &mdash; I&apos;m interested in the Residential Experience
+                </option>
+                <option>Undecided</option>
+              </select>
+            </div>
+
             {/* CV Upload */}
             <div className="applymodal-field">
               <label className="applymodal-label">Upload CV (PDF only)</label>
@@ -369,6 +450,7 @@ const ApplicationModal = ({ isOpen, onClose }) => {
               {isSubmitting ? "Submitting..." : "Submit Application"}
             </button>
           </form>
+          )}
         </div>
       </div>
     </>

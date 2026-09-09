@@ -7,6 +7,7 @@ import "./emptdpIgnite.css";
 import IgniteApplicationModal from "./igniteApplicationModal";
 import brochurePDF from "./data/ETMPDP Ignite (2).pdf";
 import MDImage from "../main/captions/Ceo1.png";
+import CardDeck from "./CardDeck";
 
 /* ── Static data ────────────────────────────────────────────────────────── */
 
@@ -15,10 +16,10 @@ import MDImage from "../main/captions/Ceo1.png";
    grid (younger, more direct tone). */
 const classroomQuestions = [
   "Can you apply what you know?",
-  "Can you work with others?",
   "Can you communicate professionally?",
-  "Can you solve problems?",
   "Can you learn new tools?",
+  "Can you work with others?",
+  "Can you solve problems?",
   "Can you take responsibility?",
 ];
 
@@ -161,62 +162,33 @@ const learningExperience = [
   {
     icon: "bi-book",
     title: "Learn",
-    desc: "Instructor-led sessions and guided technical learning.",
+    desc: "Structured instructor-led learning.",
   },
   {
     icon: "bi-tools",
     title: "Practice",
-    desc: "Hands-on exercises and technical assignments.",
+    desc: "Guided practical exercises and technical tasks.",
   },
   {
     icon: "bi-clipboard-check",
     title: "Review",
-    desc: "Technical reviews, feedback and performance evaluation.",
+    desc: "Technical reviews, feedback and performance coaching.",
   },
   {
     icon: "bi-people",
     title: "Collaborate",
-    desc: "Team activities and professional workplace interaction.",
+    desc: "Team-based learning and professional collaboration.",
   },
   {
-    icon: "bi-award",
-    title: "Develop",
-    desc: "Leadership, communication, accountability and professional skills.",
+    icon: "bi-lightning-charge-fill",
+    title: "Apply",
+    desc: "Practical projects and supervised industry exposure where appropriate.",
   },
   {
-    icon: "bi-building",
-    title: "Experience",
-    desc: "Supervised exposure to selected real-world projects where appropriate.",
+    icon: "bi-arrow-repeat",
+    title: "Reflect",
+    desc: "Continuous evaluation, improvement and professional development.",
   },
-];
-
-const ignite360CrossExamples = [
-  "Software interacts with infrastructure.",
-  "Marketing interacts with data.",
-  "Cybersecurity interacts with networks.",
-  "Design interacts with digital marketing.",
-  "Business operations depend on technology.",
-];
-
-const ignite360Eligibility = [
-  "Performance",
-  "Mentor recommendation",
-  "Operational requirements",
-  "Program scheduling",
-];
-
-/* Section 10 — AI-Integrated Learning */
-const aiUseAreas = [
-  "Research",
-  "Productivity",
-  "Content Creation",
-  "Software Development",
-  "Creative Workflows",
-  "Data Analysis",
-  "Documentation",
-  "Problem Solving",
-  "Digital Marketing",
-  "Automation",
 ];
 
 const professionalDevItems = [
@@ -228,28 +200,11 @@ const professionalDevItems = [
   "Accountability",
   "Problem Solving",
   "Team Collaboration",
-  "Leadership",
+  "Leadership Development",
   "Career Development",
   "Emotional Intelligence",
-  "Responsible AI Use",
-];
-
-/* Section 11 — Real Industry Exposure */
-const realExposureConditions = [
-  "Demonstrated competence",
-  "Project availability",
-  "Confidentiality requirements",
-  "Operational requirements",
-  "Management approval",
-];
-
-/* Section 12 — SIWES & Industrial Training Support */
-const siwesSupportItems = [
-  "SIWES logbooks",
-  "Employer evaluation forms",
-  "Industrial training assessment forms",
-  "Institutional completion documentation",
-  "Other approved institutional requirements",
+  "Workplace Leadership & Executive Presence",
+  "Responsible AI in the Workplace",
 ];
 
 /* Section 13 — Your Ignite Outcomes */
@@ -257,32 +212,32 @@ const outcomeCards = [
   {
     icon: "bi-cpu",
     title: "Technical Capability",
-    desc: "Practical exposure within their chosen specialization.",
+    desc: "Build practical skills within your primary specialization.",
   },
   {
     icon: "bi-chat-square-text",
     title: "Professional Confidence",
-    desc: "Greater confidence communicating, collaborating and operating in a professional environment.",
+    desc: "Develop stronger communication, discipline and workplace readiness.",
   },
   {
-    icon: "bi-briefcase",
-    title: "Workplace Readiness",
-    desc: "A better understanding of professional expectations and workplace culture.",
+    icon: "bi-building",
+    title: "Industry Awareness",
+    desc: "Understand how technology work happens in real organizations.",
   },
   {
     icon: "bi-award",
-    title: "Leadership Foundation",
-    desc: "Experience with accountability, teamwork, initiative and leadership development.",
+    title: "Leadership Development",
+    desc: "Develop responsibility, collaboration and leadership capability.",
   },
   {
     icon: "bi-signpost-split",
     title: "Career Direction",
-    desc: "Greater clarity around technology career possibilities and areas of interest.",
+    desc: "Gain clearer perspective on your professional interests and next steps.",
   },
   {
     icon: "bi-folder2-open",
     title: "Professional Portfolio",
-    desc: "Guidance toward documenting and presenting relevant work and achievements.",
+    desc: "Build evidence of practical learning and professional development.",
   },
 ];
 
@@ -294,19 +249,37 @@ const whatYouReceiveItems = [
   "Professional Portfolio Development Guidance",
   "Practical Industry Exposure",
   "Leadership Development Recognition",
-  "Eligible SIWES/Industrial Training/Internship Documentation",
-  "Employment Consideration, Where Applicable",
+  "Eligible SIWES / Industrial Training / Internship documentation support",
+  "Employment Consideration, where applicable",
 ];
 
-/* Section 15 — Who Should Apply? */
+/* Section 16 — Who Should Apply? */
 const whoShouldApplyItems = [
-  "Undergraduate technology students",
-  "Students preparing for SIWES",
-  "Students undertaking Industrial Training",
-  "Students seeking structured internship experience",
-  "Students seeking practical technology exposure",
-  "Students preparing for technology careers",
-  "Students who want to develop professionally before graduation",
+  {
+    icon: "bi-mortarboard",
+    title: "Undergraduate Technology Students",
+    desc: "Students seeking structured practical and professional development.",
+  },
+  {
+    icon: "bi-file-earmark-text",
+    title: "SIWES Students",
+    desc: "Students completing institutionally required industrial experience.",
+  },
+  {
+    icon: "bi-building",
+    title: "Industrial Training Participants",
+    desc: "Students seeking a more structured technology-industry environment.",
+  },
+  {
+    icon: "bi-briefcase",
+    title: "Internship Seekers",
+    desc: "Students seeking practical exposure and workplace development.",
+  },
+  {
+    icon: "bi-graph-up-arrow",
+    title: "Career-Focused Undergraduates",
+    desc: "Students who want to begin building their professional edge before graduation.",
+  },
 ];
 
 /* Section 16 — Delivery Options */
@@ -314,97 +287,114 @@ const deliveryOptions = [
   {
     icon: "bi-building",
     title: "Onsite",
-    desc: "Direct practical learning, collaboration and workplace exposure.",
+    desc: "Structured in-person learning, practical engagement and direct interaction.",
   },
   {
     icon: "bi-laptop",
     title: "Remote",
-    desc: "Structured virtual learning, practical assignments, mentorship, technical reviews and collaboration.",
+    desc: "Structured virtual learning, collaboration, mentorship and practical assignments.",
     featured: true,
   },
   {
     icon: "bi-arrow-left-right",
     title: "Hybrid",
-    desc: "A combination of onsite and remote learning, subject to specialization and practical requirements.",
+    desc: "A combination of remote learning and scheduled onsite engagement where appropriate.",
   },
 ];
 
 /* Section 18 — "Why Choose ETMPDP Ignite?" (near the end, before FAQ) */
 const whyChooseItems = [
   "Structured Executive Mentorship",
-  "Practical Hands-On Experience",
   "Primary Technology Specialization",
+  "Weekly Leadership Development",
+  "Practical Hands-on Technical Learning",
   "AI-Integrated Learning",
-  "Leadership Development",
-  "Professional Workplace Experience",
   "Small Cohort Learning",
-  "Ignite 360° Cross-Track Exposure",
+  "Ignite 360° Experience — Six-Month Track",
   "Supervised Real-World Project Exposure",
-  "Continuous Performance Feedback",
+  "Continuous Performance Evaluation",
   "Career Development Guidance",
+  "Professional Workplace Experience",
   "SIWES & Institutional Documentation Support",
 ];
 
 const pricingTiers = [
   {
     name: "Ignite Foundation",
-    duration: "Three (3) Months",
-    desc: "Ideal for standard SIWES and Industrial Training placements.",
+    duration: "3 Months",
+    desc: "A focused professional-development experience built around your primary specialization.",
     amount: "₦120,000",
     plan: ["₦80,000 on Admission", "₦40,000 within 30 Days"],
-    cta: "Apply for Foundation",
+    cta: "Apply for Ignite Foundation",
   },
   {
     name: "Ignite Professional",
-    duration: "Four (4) Months",
-    desc: "Extended practical exposure with additional project participation and mentorship.",
+    duration: "4 Months",
+    desc: "Extended specialization development with deeper practical and professional exposure.",
     amount: "₦160,000",
     plan: ["₦120,000 on Admission", "₦40,000 before the End of Month One"],
-    cta: "Apply for Professional",
+    cta: "Apply for Ignite Professional",
     featured: true,
   },
   {
     name: "Ignite Executive",
-    duration: "Six (6) Months",
-    desc: "Our most comprehensive Professional Development Experience. Includes eligibility for the Ignite 360° Experience.",
+    duration: "6 Months",
+    desc: "The most comprehensive Ignite experience, with eligibility for Ignite 360° subject to applicable requirements.",
     amount: "₦240,000",
     plan: ["₦160,000 on Admission", "₦80,000 before the End of Month One"],
-    cta: "Apply for Executive",
+    cta: "Apply for Ignite Executive",
   },
 ];
 
+/* FAQ — the 12 questions from the final content spec, in that order. */
 const faqs = [
   {
-    q: "Is Ignite only for SIWES students?",
-    a: "No. Ignite is ideal for SIWES and Industrial Training, but students may also participate for internship, career development and professional growth.",
+    q: "Who can apply for ETMPDP Ignite?",
+    a: "Undergraduate technology students — including those preparing for or undertaking SIWES, Industrial Training or an internship, and any student who wants to develop professionally before graduation. No prior technical experience is required.",
+  },
+  {
+    q: "Is Ignite only for SIWES or Industrial Training?",
+    a: "No. Ignite supports SIWES and Industrial Training, but students may also join for an internship, practical technology exposure or career development.",
   },
   {
     q: "Do I choose a specialization?",
-    a: "Yes. Every participant selects one primary specialization.",
+    a: "Yes. Every participant selects one primary specialization for the duration of the experience.",
   },
   {
-    q: "Can I learn other technology areas?",
-    a: "Yes. Selected participants may receive cross-disciplinary exposure. Eligible participants in the 6-month Ignite Executive experience may participate in Ignite 360° subject to the applicable requirements.",
+    q: "What is Ignite 360°?",
+    a: "A structured cross-disciplinary experience that lets eligible participants observe, collaborate with or take selected learning activities across complementary specializations, beyond their primary one.",
   },
   {
-    q: "Which Ignite option should I choose?",
-    a: "Ignite Foundation is 3 months, Ignite Professional is 4 months, while Ignite Executive is 6 months and provides the most comprehensive experience.",
+    q: "Who qualifies for Ignite 360°?",
+    a: "Participants on the Six-Month Ignite Executive Track, based on performance, mentor recommendation, operational requirements and Program scheduling.",
   },
   {
-    q: "Is Ignite an employment program?",
-    a: "No. Participation does not constitute employment and completion does not guarantee employment.",
+    q: "What are the 3-, 4- and 6-month options?",
+    a: "Ignite Foundation (3 months, ₦120,000), Ignite Professional (4 months, ₦160,000) and Ignite Executive (6 months, ₦240,000). Executive is the most comprehensive and includes eligibility for Ignite 360°.",
   },
   {
-    q: "Can Elonatech sign my SIWES documents?",
-    a: "Where applicable, Elonatech may serve as the official host organization and complete or endorse required institutional documentation.",
+    q: "Can I participate remotely?",
+    a: "Yes. Ignite is available Onsite, Remote or Hybrid. Some specializations have practical requirements that influence the delivery mode, confirmed during selection.",
+  },
+  {
+    q: "Is residential accommodation compulsory?",
+    a: "No. The Residential Experience is optional, for participants attending onsite, and is priced separately from the Ignite fee.",
   },
   {
     q: "Do I need my own laptop?",
     a: "Yes. Participants are expected to provide and maintain a laptop that meets the requirements of their selected specialization.",
   },
   {
-    q: "Is accommodation included in the fee?",
-    a: "No. Residential accommodation is optional and separately priced.",
+    q: "Does Ignite guarantee employment?",
+    a: "No. Participation is not employment and completion does not guarantee employment. Strong participants may be considered for opportunities at Elonatech where suitable roles exist.",
+  },
+  {
+    q: "What documentation can Elonatech provide for SIWES/IT?",
+    a: "Where applicable, Elonatech can serve as the official host organization and complete or endorse the institutional documentation required for SIWES, Industrial Training or an internship.",
+  },
+  {
+    q: "Are payments refundable?",
+    a: "No. All payments made under the Program are strictly non-refundable.",
   },
 ];
 
@@ -417,11 +407,6 @@ const EmptdpIgnite = () => {
 
   const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
 
-  // const handleDownloadGuide = () => {
-  //   toast.info(
-  //     "The ETMPDP Ignite program guide is being finalized — Apply Now and our team will send you full details."
-  //   );
-  // };
 
   return (
     <>
@@ -488,13 +473,19 @@ const EmptdpIgnite = () => {
             <div className="emptdp-why-text">
               <p>
                 Industrial training should be more than simply showing up at an
-                office. ETMPDP Ignite gives undergraduate students a structured
+                office.
+              </p>
+              <p>
+                ETMPDP Ignite gives undergraduate students a structured
                 environment where they can learn, practice, collaborate, receive
                 mentorship, develop professionally and experience how technology
-                work is actually done. Whether you're completing SIWES,
-                Industrial Training, an internship, or simply investing in your
-                professional development, Ignite is designed to help you enter
-                the technology industry with greater confidence and capability.
+                work is actually done.
+              </p>
+              <p>
+                Whether you're completing SIWES, Industrial Training, an
+                internship or investing in your professional development, Ignite
+                is designed to help you enter the technology industry with
+                greater confidence and capability.
               </p>
             </div>
             <div className="emptdp-why-image">
@@ -519,7 +510,7 @@ const EmptdpIgnite = () => {
           <p className="ignite-questions-intro">
             University and classroom learning provide important foundations.
             <br />
-            But the technology industry demands more:
+            But the technology industry demands more.
           </p>
 
           <ul className="ignite-questions-list">
@@ -543,10 +534,18 @@ const EmptdpIgnite = () => {
               Choose Your Primary Specialization
             </h2>
             <p className="emptdp-section-subtitle">
-              Ignite gives every participant a primary specialization aligned
-              with their interests, academic background and career direction.
+              Develop practical and professional capability around a technology
+              direction aligned with your interests, academic background and
+              career goals.
             </p>
           </div>
+
+          <p className="ignite-spec-keynote">
+            <strong>Key distinction:</strong> Every participant is admitted into
+            a primary specialization while benefiting from multidisciplinary
+            learning opportunities designed to broaden professional competence
+            and industry awareness.
+          </p>
 
           <div className="emptdp-learn-tabs">
             {specializationTracks.map((t, i) => (
@@ -609,43 +608,31 @@ const EmptdpIgnite = () => {
               className="emptdp-section-subtitle"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
-              Your specialization gives you depth. Ignite 360&deg; gives you
-              perspective.
+              Broaden your industry perspective beyond your primary
+              specialization.
             </p>
           </div>
 
           <p className="ignite-360-lead">
-            Every Ignite participant has a primary specialization. But
-            technology does not exist in isolated departments.
+            Participants in the Six-Month Ignite Executive Track may qualify for
+            the Ignite 360&deg; Experience, providing structured
+            cross-disciplinary exposure to complementary technology areas.
           </p>
 
-          <ul className="ignite-360-examples">
-            {ignite360CrossExamples.map((line, i) => (
-              <li key={i}>{line}</li>
-            ))}
-          </ul>
-
-          <p className="ignite-360-lead">
-            Ignite 360&deg; introduces eligible participants to this
-            interconnected technology ecosystem. Participants may observe,
-            collaborate or undertake selected activities across complementary
-            technology areas.
+          <p className="ignite-360-lead" style={{ marginTop: "16px" }}>
+            Eligible participants may have opportunities to observe, collaborate
+            with or undertake selected learning activities across complementary
+            specializations based on performance, mentor recommendation,
+            operational requirements and Program scheduling.
           </p>
 
-          <div className="ignite-360-elig">
-            <p className="ignite-360-elig-title">
-              Ignite Executive &mdash; Six-Month Track
-            </p>
-            <p className="ignite-360-elig-sub">
-              Eligible participants may qualify for structured cross-track
-              rotations, based on:
-            </p>
-            <ul className="ignite-360-elig-list">
-              {ignite360Eligibility.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          <p className="ignite-360-highlight">
+            <strong>
+              Your primary specialization remains your core development
+              direction.
+            </strong>{" "}
+            Ignite 360&deg; adds broader industry exposure.
+          </p>
         </div>
       </section>
 
@@ -656,6 +643,10 @@ const EmptdpIgnite = () => {
             <h2 className="emptdp-section-title">
               Choose Your Ignite Experience
             </h2>
+            <p className="emptdp-section-subtitle">
+              Select the duration that fits your academic schedule and
+              professional-development goals.
+            </p>
           </div>
           <div className="ignite-pricing-grid">
             {pricingTiers.map((tier, i) => (
@@ -691,7 +682,7 @@ const EmptdpIgnite = () => {
             ))}
           </div>
           <p className="ignite-check-note">
-            All payments are strictly non-refundable.
+            All payments made under the Program are strictly non-refundable.
           </p>
         </div>
       </section>
@@ -704,11 +695,10 @@ const EmptdpIgnite = () => {
               The Ignite Learning Experience
             </h2>
             <p className="emptdp-section-subtitle">
-              Ignite combines structured learning with practical industry
-              exposure.
+              Learn. Practice. Review. Collaborate. Apply. Reflect.
             </p>
           </div>
-          <div className="emptdp-diff-grid ignite-how-grid">
+          <CardDeck className="emptdp-diff-grid ignite-how-grid">
             {learningExperience.map((c, i) => (
               <div className="emptdp-diff-card" key={i}>
                 <div className="emptdp-diff-icon">
@@ -718,7 +708,7 @@ const EmptdpIgnite = () => {
                 <p className="emptdp-diff-desc">{c.desc}</p>
               </div>
             ))}
-          </div>
+          </CardDeck>
         </div>
       </section>
 
@@ -729,6 +719,12 @@ const EmptdpIgnite = () => {
             <h2 className="emptdp-section-title emptdp-section-title--white">
               Meet our mentors
             </h2>
+            <p
+              className="emptdp-section-subtitle"
+              style={{ color: "rgba(255,255,255,0.75)" }}
+            >
+              Learn from experienced professionals. Develop with guidance.
+            </p>
           </div>
 
           <div className="emptdp-mentor-grid">
@@ -764,6 +760,9 @@ const EmptdpIgnite = () => {
                 professional development to help participants become competent,
                 ethical, and industry-ready professionals.
               </p>
+              <Link to="/oreva-p-oku" className="emptdp-mentor-link">
+                View Mentor Profile <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -790,6 +789,9 @@ const EmptdpIgnite = () => {
                 effectiveness to help participants become responsible and
                 workplace-ready professionals.
               </p>
+              <Link to="/violet-oku" className="emptdp-mentor-link">
+                View Mentor Profile <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
 
             <div className="emptdp-mentor-photo-col">
@@ -824,6 +826,9 @@ const EmptdpIgnite = () => {
                 user-focused solutions to help participants become technically
                 competent professionals.
               </p>
+              <Link to="/enoch-enebeli" className="emptdp-mentor-link">
+                View Mentor Profile <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
 
             <div className="emptdp-mentor-photo-col">
@@ -847,8 +852,8 @@ const EmptdpIgnite = () => {
               Weekly Professional Development
             </h2>
             <p className="emptdp-section-subtitle">
-              Ignite goes beyond technical specialization. Participants
-              develop:
+              Build the professional capabilities that help technical skills
+              create real value.
             </p>
           </div>
           <div className="ignite-check-grid ignite-pd-grid">
@@ -876,19 +881,17 @@ const EmptdpIgnite = () => {
               className="emptdp-section-subtitle"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
-              Don&apos;t Just Learn. Learn With Direction.
+              Professional perspective beyond the classroom.
             </p>
           </div>
           <p className="ignite-360-lead">
-            Weekly Executive Mentorship sessions provide participants with
-            structured guidance on professional growth, workplace
-            expectations, career development and the realities of working in
-            technology.
+            Weekly executive mentorship sessions help participants develop
+            professional perspective, confidence, leadership awareness and a
+            stronger understanding of workplace expectations.
           </p>
-          <p className="ignite-questions-closer">
-            The objective is to help students begin developing the mindset of
-            a technology professional, not simply a student completing an
-            attachment.
+          <p className="ignite-360-lead" style={{ marginTop: "16px" }}>
+            Mentorship complements technical development by connecting learning
+            with professional growth and career direction.
           </p>
         </div>
       </section>
@@ -899,25 +902,18 @@ const EmptdpIgnite = () => {
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">AI-Integrated Learning</h2>
             <p className="emptdp-section-subtitle">
-              AI is already changing the way technology professionals work.
-              Ignite introduces participants to responsible AI use across
-              their learning experience, including:
+              Learn to use AI as a responsible professional tool.
             </p>
           </div>
-          <div className="ignite-check-grid ignite-pd-grid">
-            {aiUseAreas.map((item, i) => (
-              <div
-                className="ignite-check-item ignite-check-item--dark"
-                key={i}
-              >
-                <i className="bi bi-check-circle-fill"></i>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
+          <p className="ignite-siwes-lead">
+            AI is integrated across Ignite learning and professional workflows
+            to support research, problem-solving, communication, software
+            development, creative production, marketing, data analysis and
+            productivity.
+          </p>
           <p className="ignite-check-note">
-            Participants are expected to maintain critical thinking,
-            originality, accuracy and professional integrity when using AI.
+            Participants are expected to verify, refine and take responsibility
+            for AI-assisted work.
           </p>
         </div>
       </section>
@@ -929,19 +925,18 @@ const EmptdpIgnite = () => {
             <h2 className="emptdp-section-title emptdp-section-title--white">
               Real Industry Exposure
             </h2>
+            <p
+              className="emptdp-section-subtitle"
+              style={{ color: "rgba(255,255,255,0.75)" }}
+            >
+              Where appropriate, learning can extend beyond the classroom into
+              real-world technology work.
+            </p>
           </div>
           <p className="ignite-360-lead">
-            Where appropriate, participants may receive supervised exposure to
-            selected live or real-world projects. Such exposure depends on:
-          </p>
-          <ul className="ignite-360-elig-list" style={{ marginTop: "20px" }}>
-            {realExposureConditions.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-          <p className="ignite-questions-closer" style={{ marginTop: "24px" }}>
-            The goal is to help participants understand how technical
-            knowledge is applied in an actual professional environment.
+            Participants may receive supervised exposure to selected real-world
+            projects based on demonstrated competence, project availability,
+            confidentiality requirements and Management approval.
           </p>
         </div>
       </section>
@@ -954,28 +949,23 @@ const EmptdpIgnite = () => {
               SIWES &amp; Industrial Training Support
             </h2>
             <p className="emptdp-section-subtitle">
-              Your Institution Requires Documentation. We Understand.
+              Professional development that can support your institutionally
+              required industry experience.
             </p>
           </div>
           <p className="ignite-siwes-lead">
-            Where applicable, Elonatech Nigeria Limited may serve as the
-            official host organization for participants undertaking SIWES,
-            Industrial Training, Internship or approved Work-Integrated
-            Learning. Support may include:
+            Where applicable, Elonatech may serve as the official host
+            organization for SIWES, Industrial Training, Internship or other
+            approved work-integrated learning requirements and complete the
+            relevant institutional documentation in accordance with your
+            institution&apos;s requirements.
           </p>
-          <div className="ignite-check-grid">
-            {siwesSupportItems.map((item, i) => (
-              <div
-                className="ignite-check-item ignite-check-item--dark"
-                key={i}
-              >
-                <i className="bi bi-check-circle-fill"></i>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
+          <p className="ignite-siwes-tags">
+            SIWES &bull; Industrial Training &bull; Internship &bull;
+            Institutional Documentation
+          </p>
           <p className="ignite-check-note">
-            Participants are responsible for submitting institutional
+            Participants are responsible for submitting required institutional
             documents promptly and in the required format.
           </p>
         </div>
@@ -992,11 +982,11 @@ const EmptdpIgnite = () => {
               className="emptdp-section-subtitle"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
-              By the end of the experience, participants should have developed
-              more than technical knowledge.
+              Develop practical capability, professional confidence and
+              industry awareness.
             </p>
           </div>
-          <div className="emptdp-diff-grid ignite-how-grid">
+          <CardDeck className="emptdp-diff-grid ignite-how-grid" onDark>
             {outcomeCards.map((c, i) => (
               <div className="emptdp-diff-card" key={i}>
                 <div className="emptdp-diff-icon">
@@ -1006,7 +996,7 @@ const EmptdpIgnite = () => {
                 <p className="emptdp-diff-desc">{c.desc}</p>
               </div>
             ))}
-          </div>
+          </CardDeck>
         </div>
       </section>
 
@@ -1016,7 +1006,7 @@ const EmptdpIgnite = () => {
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">What You Receive</h2>
             <p className="emptdp-section-subtitle">
-              Successful participants may receive:
+              Tangible outcomes from your professional-development experience.
             </p>
           </div>
           <div className="ignite-check-grid">
@@ -1038,20 +1028,28 @@ const EmptdpIgnite = () => {
         <div className="container">
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">Who Should Apply?</h2>
+            <p className="emptdp-section-subtitle">
+              Ignite is designed for undergraduate students who want more from
+              their industry experience.
+            </p>
           </div>
-          <p className="ignite-siwes-lead">
-            ETMPDP Ignite is designed primarily for undergraduate technology
-            students &mdash; whether you&apos;re preparing for SIWES,
-            Industrial Training, a structured internship, or simply seeking
-            practical technology exposure and professional development before
-            graduation.
-          </p>
+          <CardDeck className="emptdp-diff-grid ignite-why-grid">
+            {whoShouldApplyItems.map((c, i) => (
+              <div className="emptdp-diff-card" key={i}>
+                <div className="emptdp-diff-icon">
+                  <i className={`bi ${c.icon}`}></i>
+                </div>
+                <h6 className="emptdp-diff-title">{c.title}</h6>
+                <p className="emptdp-diff-desc">{c.desc}</p>
+              </div>
+            ))}
+          </CardDeck>
           <p
             className="ignite-questions-closer ignite-questions-closer--dark"
-            style={{ marginTop: "8px" }}
+            style={{ marginTop: "24px" }}
           >
-            You don&apos;t have to know everything. You need the willingness
-            to learn, practice, contribute and grow.
+            You don&apos;t have to wait until graduation to start developing
+            professionally.
           </p>
         </div>
       </section>
@@ -1062,7 +1060,7 @@ const EmptdpIgnite = () => {
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">Delivery Options</h2>
             <p className="emptdp-section-subtitle">
-              Your Learning. Your Format.
+              Choose the learning environment that fits your circumstances.
             </p>
           </div>
           <div className="emptdp-diff-grid ignite-why-grid ignite-delivery-grid">
@@ -1076,6 +1074,10 @@ const EmptdpIgnite = () => {
               </div>
             ))}
           </div>
+          <p className="ignite-check-note">
+            Program requirements may vary by specialization and practical
+            activity.
+          </p>
         </div>
       </section>
 
@@ -1090,19 +1092,20 @@ const EmptdpIgnite = () => {
               className="emptdp-section-subtitle"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
-              Need Accommodation?
+              An optional accommodation arrangement for eligible onsite
+              participants.
             </p>
           </div>
           <p className="ignite-360-lead">
-            An optional ETMPDP Residential Experience may be available for
-            participants who require accommodation while participating
-            onsite. Residential accommodation is optional, separate from
-            tuition and subject to availability.
+            Participants who require accommodation may request the ETMPDP
+            Residential Experience, subject to availability and applicable
+            accommodation terms.
           </p>
           <div className="ignite-spec-cta">
             <Link to="/get-in-touch">
               <button className="emptdp-btn emptdp-btn--outline ignite-residential-cta">
-                Enquire About Residential Experience
+                Request Residential Experience{" "}
+                <span aria-hidden="true">&rarr;</span>
               </button>
             </Link>
           </div>
@@ -1116,6 +1119,9 @@ const EmptdpIgnite = () => {
             <h2 className="emptdp-section-title">
               Why Choose ETMPDP Ignite?
             </h2>
+            <p className="emptdp-section-subtitle">
+              A structured alternative to conventional industrial training.
+            </p>
           </div>
           <div className="ignite-check-grid">
             {whyChooseItems.map((item, i) => (
@@ -1137,13 +1143,13 @@ const EmptdpIgnite = () => {
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">Frequently Asked Questions</h2>
           </div>
-          {/* Two-column grid — contiguous split: left gets the first 3, right
-             gets the rest. The first item is open by default, so the shorter
-             left column balances against its extra height. */}
+          {/* Two-column grid — contiguous split. The first item is open by
+             default, so the left column carries fewer items to keep the two
+             columns roughly level in height. */}
           <div className="emptdp-faq-grid">
             {[
-              [0, 3],
-              [3, faqs.length],
+              [0, 5],
+              [5, faqs.length],
             ].map(([start, end], colIndex) => (
               <div className="emptdp-faq-col" key={colIndex}>
                 {faqs.slice(start, end).map((faq, i) => {
@@ -1185,9 +1191,9 @@ const EmptdpIgnite = () => {
               Ready for a deeper professional-development journey?
             </h3>
             <p className="ignite-sibling-text">
-              Discover <strong>ETMPDP Core</strong> &mdash; our flagship
-              12-month Executive Technology Mentorship &amp; Professional
-              Development Program.
+              Explore <strong>ETMPDP Core</strong> &mdash; the 12-month
+              multidisciplinary pathway for broader technology, professional
+              and leadership development.
             </p>
             <Link to="/emptdp-core">
               <button className="emptdp-btn emptdp-btn--outline-dark ignite-sibling-cta">
@@ -1211,10 +1217,9 @@ const EmptdpIgnite = () => {
             Enter the Industry. Build Your Edge.
           </p>
           <p className="emptdp-cta-sub">
-            Don&apos;t wait until graduation to start developing the
-            professional skills the industry expects. Start building your
-            technical capability, professional confidence, workplace
-            readiness and career direction today.
+            Start developing the technical capability, professional confidence
+            and industry awareness that can give you an edge before
+            graduation.
           </p>
           <div className="emptdp-cta-buttons">
             <button

@@ -102,6 +102,13 @@
     margin-top: 2px;
     margin-bottom: 2px;
   }
+
+  /* Keep the two-tagline small-text on a single line so the hero height
+     doesn't grow — nudged up slightly for legibility. */
+  .hub-hero-section .hub-learning-mode h6 {
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
 }
 
 
@@ -178,12 +185,6 @@
   font-size: 0.95rem;
   line-height: 1.8;
   margin: 0;
-}
-
-.hub-experience-ideal {
-  color: #6c757d;
-  font-size: 0.85rem;
-  margin: 12px 0 0;
 }
 
 .hub-experience-link {
@@ -512,15 +513,6 @@
     grid-template-columns: 1fr;
     max-width: 440px;
   }
-}
-
-/* ── 7. Final CTA — "ETMPDP" eyebrow above the full programme name ─────── */
-.hub-cta-eyebrow {
-  margin: 6px 0 2px;
-  color: #11253d;
-  font-weight: 800;
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
 }
 
 /* ── Tighter vertical rhythm — the hub sections carried the full 70px

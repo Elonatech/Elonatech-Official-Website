@@ -27,6 +27,11 @@
   --core-heading: #9a1f24;
 }
 
+/* Active dot colour for the shared mobile card deck. */
+.etmpdp-core {
+  --deck-accent: #c23a34;
+}
+
 .etmpdp-core .emptdp-section-title,
 .etmpdp-core .emptdp-learn-skills-title,
 .etmpdp-core .emptdp-card-title,
@@ -34,7 +39,6 @@
 .etmpdp-core .emptdp-step-title,
 .etmpdp-core .emptdp-invest-heading,
 .etmpdp-core .emptdp-price-phase,
-.etmpdp-core .emptdp-total-label,
 .etmpdp-core .emptdp-faq-num,
 .etmpdp-core .emptdp-faq-q,
 .etmpdp-core .emptdp-cta-heading--dark {
@@ -79,8 +83,7 @@
 
 .etmpdp-core .emptdp-diff-icon i,
 .etmpdp-core .emptdp-card-icon i,
-.etmpdp-core .emptdp-price-amount,
-.etmpdp-core .emptdp-receive-icon {
+.etmpdp-core .emptdp-price-amount {
   color: var(--core-red-soft);
 }
 
@@ -111,6 +114,19 @@
   color: #f0aab0;
 }
 
+.etmpdp-core .emptdp-mentor-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #f0aab0;
+  text-decoration: none;
+}
+
+.etmpdp-core .emptdp-mentor-link:hover {
+  text-decoration: underline;
+}
+
 .learning-mode {
   display: flex;
   justify-content: center;
@@ -135,14 +151,21 @@
   margin-right: auto;
 }
 
-/* Audience line under the hero sub-heading. */
-.core-hero-audience {
-  margin: 6px 0 0;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
+/* One-line pillar tag under the hero lead — mirrors Ignite's italic
+   use-case line. Stays on a single line on mobile (small font). */
+.core-hero-tag {
+  margin: 8px 0 0;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 576px) {
+  .core-hero-tag {
+    margin: 2px 0 0;
+    font-size: 0.62rem;
+  }
 }
 
 /* Core-specific hero photo — a group of young Black professionals working
@@ -163,12 +186,12 @@
    rule below. */
 @media (min-width: 577px) {
 
-  /* Keep the ~560px height but push the content down off the navbar —
-     the spare room sits at the bottom. */
+  /* Content is compact now (short headline) — centre it vertically in the
+     ~560px hero, with a navbar-safe top padding floor. */
   .core-hero-section {
-    justify-content: flex-start;
-    padding-top: 128px;
-    padding-bottom: 24px;
+    justify-content: center;
+    padding-top: 96px;
+    padding-bottom: 48px;
   }
 
   .core-hero-section .emptdp-hero-text h6 {
@@ -186,11 +209,6 @@
     margin-bottom: 8px;
   }
 
-  .core-hero-section .core-hero-audience {
-    font-size: 0.82rem;
-    margin-top: 4px;
-  }
-
   .core-hero-section .emptdp-hero-text .lead {
     margin-top: 8px;
     margin-bottom: 0;
@@ -204,19 +222,6 @@
 
 .core-hero-section {
   margin-bottom: 2px;
-}
-
-.core-learning-mode  {
-  margin-top: 14px;
-
-
-}
-
-.core-learning-mode h6 {
-  font-style: italic;
-  color: #fff;
-  margin: 0;
-
 }
 
 @media (max-width: 576px) {
@@ -234,23 +239,22 @@
      ("Build. Lead. Excel." + "Transforming Potential…", both repeated
      later on the page) and tighten the vertical rhythm. */
   .core-hero-section .emptdp-hero-text h5,
-  .core-hero-section .emptdp-hero-text h6,
-  .core-hero-section .core-hero-audience {
+  .core-hero-section .emptdp-hero-text h6 {
     display: none;
   }
 
   .core-hero-section {
     min-height: 0;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
 
   .core-hero-section .emptdp-mentor-badge {
-    margin-bottom: 8px !important;
+    margin-bottom: 2px !important;
   }
 
   .core-hero-section .learning-mode {
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -401,11 +405,20 @@
   margin-right: 10px;
 }
 
-.core-track-desc {
-  color: #6c757d;
-  font-size: 1.05rem;
-  line-height: 1.85;
-  margin: 0;
+/* Per-track tagline above the skills list (mirrors Ignite's spec-tagline
+   in the Core red). */
+.core-track-tagline {
+  margin: -12px 0 20px;
+  color: var(--core-red-soft);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@media (max-width: 576px) {
+  .core-track-tagline {
+    margin: -6px 0 16px;
+    font-size: 0.9rem;
+  }
 }
 
 .core-tracks-cta {
@@ -484,6 +497,16 @@
 
 /* ── 5. How The Core Experience Works ──────────────────────────────────────
    Connected node + connector chain on the dark section. */
+.core-cycle-label {
+  margin: 0 0 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .core-cycle {
   display: flex;
   flex-wrap: wrap;
@@ -524,8 +547,7 @@
   flex: none;
 }
 
-.core-cycle-lead,
-.core-cycle-closer {
+.core-cycle-lead {
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
@@ -534,9 +556,15 @@
   line-height: 1.85;
 }
 
-.core-cycle-closer {
-  margin-top: 16px;
-  color: rgba(255, 255, 255, 0.65);
+/* Closing line under "Who Should Apply?" — on a light section. Wide enough
+   to hold one line on desktop; wraps naturally on smaller screens. */
+.core-who-closer {
+  max-width: 960px;
+  margin: 24px auto 0;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 @media (max-width: 576px) {
@@ -859,7 +887,119 @@
   }
 }
 
-/* ── 14 / 15. Program Investment + What You Receive (kept side by side) ── */
+/* ── 14. Program Investment ──────────────────────────────────────────────
+   One wide, short card: the 80 / 20 breakdown on the left, the headline
+   total + terms + CTA on the right. */
+.core-invest-card {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 44px;
+  background: #fff;
+  border: 1px solid #f1dcdd;
+  border-radius: 20px;
+  box-shadow: 0 12px 44px rgba(154, 31, 36, 0.08);
+}
+
+.core-invest-card .emptdp-invest-heading {
+  margin-bottom: 22px;
+}
+
+.core-invest-cols {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.core-invest-breakdown {
+  flex: 1 1 60%;
+}
+
+.core-invest-breakdown .emptdp-price-cards {
+  margin-bottom: 0;
+}
+
+.core-invest-breakdown .emptdp-price-card {
+  padding: 20px 12px;
+}
+
+.core-invest-summary {
+  flex: 1 1 40%;
+}
+
+.core-invest-eyebrow {
+  margin: 0 0 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9aa0a6;
+}
+
+.core-invest-figure {
+  margin: 0 0 16px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--core-heading);
+}
+
+.core-invest-summary .core-invest-note {
+  margin-top: 0;
+}
+
+.core-invest-summary .emptdp-refund-note {
+  margin-top: 8px;
+}
+
+.core-invest-summary .core-invest-cta {
+  margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .core-invest-card {
+    padding: 28px 22px;
+  }
+
+  .core-invest-cols {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .core-invest-summary {
+    text-align: center;
+  }
+}
+
+/* Scale the figures down on phones — 2.2rem amounts dominate a stacked card. */
+@media (max-width: 480px) {
+  .core-invest-card {
+    padding: 26px 18px;
+  }
+
+  .core-invest-card .emptdp-invest-heading {
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+  }
+
+  .core-invest-breakdown .emptdp-price-amount {
+    font-size: 1.55rem;
+  }
+
+  .core-invest-breakdown .emptdp-price-card {
+    padding: 16px 12px;
+  }
+
+  .core-invest-figure {
+    font-size: 1.9rem;
+  }
+
+  .core-invest-summary .core-invest-note,
+  .core-invest-summary .emptdp-refund-note {
+    font-size: 0.8rem;
+  }
+}
+
 .core-invest-note {
   margin: 10px 0 0;
   font-size: 0.82rem;
@@ -869,12 +1009,6 @@
 
 .core-invest-cta {
   margin-top: 22px;
-}
-
-.core-invest-receive-intro {
-  color: #6c757d;
-  font-size: 0.9rem;
-  margin: 0 0 14px;
 }
 
 /* Residential "Enquire" button — red border on the dark section, white

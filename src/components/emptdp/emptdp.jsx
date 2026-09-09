@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./emptdp.css";
 import "./emptdpHub.css";
+import CardDeck from "./CardDeck";
 
 /* ── Static data ────────────────────────────────────────────────────────── */
 
@@ -10,32 +11,32 @@ const whatDefines = [
   {
     icon: "bi-wrench-adjustable",
     title: "Technical Development",
-    desc: "Practical technology knowledge and hands-on experience.",
+    desc: "Build practical technology capability through structured learning and application.",
   },
   {
     icon: "bi-person-workspace",
     title: "Executive Mentorship",
-    desc: "Guidance, perspective and professional insight.",
+    desc: "Gain guidance, perspective and professional insight from experienced mentors.",
   },
   {
     icon: "bi-patch-check",
     title: "Professional Excellence",
-    desc: "Communication, discipline, accountability and workplace readiness.",
+    desc: "Develop communication, workplace effectiveness, discipline and professional confidence.",
   },
   {
     icon: "bi-award",
     title: "Leadership Development",
-    desc: "Initiative, responsibility, teamwork and leadership capacity.",
+    desc: "Build the mindset and capabilities required to take responsibility and lead.",
   },
   {
     icon: "bi-graph-up-arrow",
     title: "Business Awareness",
-    desc: "Understanding how technology creates organizational and customer value.",
+    desc: "Understand how technology, people and business operations work together.",
   },
   {
     icon: "bi-robot",
     title: "AI Readiness",
-    desc: "Responsible use of AI within modern professional practice.",
+    desc: "Develop the ability to use AI responsibly as part of modern professional practice.",
   },
 ];
 
@@ -68,16 +69,14 @@ const Emptdp = () => {
           </span>
           <h2>
             Executive Technology Mentorship &amp; Professional Development
+            Program
           </h2>
-          <h5>
-            Developing technology professionals for the workplace, leadership
-            and the future.
-          </h5>
+          <h5>Transforming Potential into Professional Excellence.</h5>
           <p className="lead">
-            ETMPDP is Elonatech&apos;s professional development ecosystem
-            combining technology, executive mentorship, leadership development,
-            practical experience, business awareness and professional
-            excellence.
+            A structured professional development experience designed to
+            develop practical technology capability, professional discipline,
+            leadership capacity, business awareness, AI readiness and career
+            direction.
           </p>
         </div>
         <div className="emptdp-cta-buttons">
@@ -93,7 +92,9 @@ const Emptdp = () => {
           </Link>
         </div>
         <div className="hub-learning-mode">
-          <h6>Onsite | Remote | Hybrid</h6>
+          <h6>
+            Build. Lead. Excel. | Enter the Industry. Build Your Edge.
+          </h6>
         </div>
       </div>
 
@@ -105,19 +106,21 @@ const Emptdp = () => {
               More Than Learning Technology.
             </h2>
             <p className="emptdp-section-subtitle">
-              Becoming a Technology Professional.
+              Developing Technology &amp; Professional Excellence.
             </p>
           </div>
           <div className="hub-textblock">
             <p>
-              ETMPDP is built on the belief that technical knowledge alone is
-              not enough.
+              Technology skills are increasingly important, but professional
+              success requires more than technical knowledge alone. ETMPDP
+              brings technical development together with practical experience,
+              mentorship, leadership, professional development, business
+              awareness and responsible use of emerging technologies.
             </p>
             <p>
-              Our approach develops technical competence, professional
-              discipline, leadership capacity, critical thinking,
-              communication, business awareness and the mindset required to
-              create value in a rapidly evolving technology industry.
+              The result is a structured development journey designed to help
+              participants become more capable, confident and workplace-ready
+              technology professionals.
             </p>
           </div>
         </div>
@@ -130,15 +133,20 @@ const Emptdp = () => {
             <h2 className="emptdp-section-title">
               Two Experiences. One ETMPDP Vision.
             </h2>
+            <p className="emptdp-section-subtitle">
+              Choose the professional development pathway that best fits your
+              stage and goals.
+            </p>
           </div>
           <div className="hub-experience-grid">
             <div className="hub-experience-card hub-card-core">
               <h3 className="hub-experience-name">ETMPDP Core</h3>
               <p className="hub-experience-tag">Build. Lead. Excel.</p>
               <p className="hub-experience-desc">
-                A 12-month multidisciplinary professional development and
-                executive mentorship experience for individuals seeking
-                deeper technical, professional and leadership development.
+                A 12-month multidisciplinary Executive Technology Mentorship
+                &amp; Professional Development journey designed for aspiring and
+                emerging technology professionals seeking broader technical,
+                professional and leadership development.
               </p>
               <Link to="/emptdp-core" className="hub-experience-link hub-link-core">
                 Explore ETMPDP Core <i className="bi bi-arrow-right"></i>
@@ -150,12 +158,10 @@ const Emptdp = () => {
                 Enter the Industry. Build Your Edge.
               </p>
               <p className="hub-experience-desc">
-                An undergraduate professional development experience designed
-                to bridge academic learning and the technology industry.
-              </p>
-              <p className="hub-experience-ideal">
-                Ideal for SIWES &bull; Industrial Training &bull; Internship
-                &bull; Career Development.
+                A structured Professional Development Experience for
+                undergraduate students designed to bridge academic learning and
+                industry practice through specialization, practical exposure,
+                mentorship and professional development.
               </p>
               <Link to="/emptdp-ignite" className="hub-experience-link hub-link-ignite">
                 Explore ETMPDP Ignite <i className="bi bi-arrow-right"></i>
@@ -172,8 +178,15 @@ const Emptdp = () => {
             <h2 className="emptdp-section-title emptdp-section-title--white">
               What Defines ETMPDP?
             </h2>
+            <p
+              className="emptdp-section-subtitle"
+              style={{ color: "rgba(255,255,255,0.75)" }}
+            >
+              A professional development experience built around more than
+              technical training.
+            </p>
           </div>
-          <div className="emptdp-diff-grid hub-defines-grid">
+          <CardDeck className="emptdp-diff-grid hub-defines-grid" onDark>
             {whatDefines.map((c, i) => (
               <div className="emptdp-diff-card" key={i}>
                 <div className="emptdp-diff-icon">
@@ -183,7 +196,7 @@ const Emptdp = () => {
                 <p className="emptdp-diff-desc">{c.desc}</p>
               </div>
             ))}
-          </div>
+          </CardDeck>
         </div>
       </section>
 
@@ -193,13 +206,17 @@ const Emptdp = () => {
           <div className="hub-vision">
             <p className="hub-vision-eyebrow">Our Vision</p>
             <h2 className="hub-vision-statement">
-              Developing Competent. Disciplined. Future-Ready Professionals.
+              Developing Competent, Disciplined, Future-Ready Professionals.
             </h2>
             <p className="hub-vision-body">
-              ETMPDP exists to help develop technology professionals equipped
-              with practical skills, leadership capacity, business awareness
-              and professional excellence to create lasting impact within the
-              technology industry and beyond.
+              ETMPDP develops more than technical ability.
+            </p>
+            <p className="hub-vision-body">
+              Through structured learning, practical exposure, mentorship,
+              leadership development and continuous professional growth, ETMPDP
+              helps participants develop the competence, discipline, confidence
+              and professional mindset required to contribute effectively in
+              today&apos;s technology environment.
             </p>
           </div>
         </div>
@@ -210,22 +227,28 @@ const Emptdp = () => {
         <div className="container">
           <div className="emptdp-section-header">
             <h2 className="emptdp-section-title">Find Your Path</h2>
+            <p className="emptdp-section-subtitle">
+              Choose the ETMPDP experience that fits your current stage and
+              professional direction.
+            </p>
           </div>
           <div className="hub-path-grid">
             <div className="hub-path-card hub-path-card--ignite">
               <p className="hub-path-q">
-                Are you an undergraduate preparing to enter the industry?
+                Are you an undergraduate preparing to enter the technology
+                industry?
               </p>
               <Link to="/emptdp-ignite" className="hub-path-link">
-                Choose ETMPDP Ignite <i className="bi bi-arrow-right"></i>
+                Explore ETMPDP Ignite <i className="bi bi-arrow-right"></i>
               </Link>
             </div>
             <div className="hub-path-card hub-path-card--core">
               <p className="hub-path-r">
-                Are you ready for a deeper professional development journey?
+                Are you ready to develop broader professional and technology
+                capability?
               </p>
               <Link to="/emptdp-core" className="hub-path-link">
-                Choose ETMPDP Core <i className="bi bi-arrow-right"></i>
+                Explore ETMPDP Core <i className="bi bi-arrow-right"></i>
               </Link>
             </div>
           </div>
@@ -240,19 +263,23 @@ const Emptdp = () => {
             <span className="emptdp-cta-heading--dark">Your Development.</span>{" "}
             Your Future.
           </h2>
-          <p className="hub-cta-eyebrow">ETMPDP</p>
           <p className="emptdp-cta-sub">
-            Executive Technology Mentorship &amp; Professional Development
+            Technology changes quickly. Your professional development should
+            keep moving with it.
+          </p>
+          <p className="emptdp-cta-sub">
+            Explore the ETMPDP experience designed for your stage, interests
+            and professional goals.
           </p>
           <div className="emptdp-cta-buttons">
             <Link to="/emptdp-core">
               <button className="emptdp-btn emptdp-btn--primary">
-                Explore Core
+                Explore ETMPDP Core
               </button>
             </Link>
             <Link to="/emptdp-ignite">
               <button className="emptdp-btn emptdp-btn--outline-dark hub-btn-ignite-dark">
-                Explore Ignite
+                Explore ETMPDP Ignite
               </button>
             </Link>
           </div>
