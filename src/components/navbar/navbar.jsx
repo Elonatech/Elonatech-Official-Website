@@ -1288,7 +1288,7 @@ const Navbar = () => {
                             : ""
                         }`}
                       >
-                        ETMPDP 
+                        ETMPDP
                       </Link>
                     </li>
 
@@ -1315,6 +1315,19 @@ const Navbar = () => {
                         }`}
                       >
                         ETMPDP Ignite
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        to="/residential-experience"
+                        className={`dropdown-item ${
+                          isActive("/residential-experience")
+                            ? "strategic-items-active"
+                            : ""
+                        }`}
+                      >
+                        Residential Experience
                       </Link>
                     </li>
                   </ul>

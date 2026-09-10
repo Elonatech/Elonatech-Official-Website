@@ -18,6 +18,7 @@ import WhatsappEslint from './components/whatsapp/WhatsappEslint';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 import EmptdpIgnite from './components/emptdp/emptdpIgnite';
 import EmptdpCore from './components/emptdp/emptdpCore';
+import ResidentialExperience from './components/emptdp/residentialExperience';
 
 const NewsDetails = lazy(() => import("./components/news/newsDetails/newsDetails"));
 const NewsRelated = lazy(() => import("./components/news/newsDetails/newsRelated"));
@@ -283,6 +284,10 @@ const router = createBrowserRouter([
       {
         path: '/emptdp-core',
         element: <EmptdpCore />
+      },
+      {
+        path: '/residential-experience',
+        element: <ResidentialExperience />
       },
 
 
@@ -688,12 +693,12 @@ const router = createBrowserRouter([
     path: "/dashboard/comments",
     element: <Suspense fallback={<></>}><PrivateRoute><Comments /></PrivateRoute></Suspense>
   },
-  
+
   {
     path: "/dashboard/product-list",
     element: <Suspense fallback={<></>}><PrivateRoute><ProductList /></PrivateRoute></Suspense>
   },
-  
+
   {
     path: "/dashboard/orders",
     element: <Suspense fallback={<></>}><PrivateRoute><Orders /></PrivateRoute></Suspense>

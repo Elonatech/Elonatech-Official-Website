@@ -8,9 +8,8 @@ import axios from "axios";
 // Rate limit: track last submission time outside component so it persists
 let lastSubmitTime = 0;
 
-// Where the "Learn more" link on the success screen points. Swap this for the
-// dedicated Residential Experience page once it exists.
-const RESIDENTIAL_PATH = "/get-in-touch";
+// Where the "Learn more" link on the success screen points.
+const RESIDENTIAL_PATH = "/residential-experience";
 
 const ApplicationModal = ({ isOpen, onClose }) => {
   const [fullName, setFullName] = useState("");
@@ -371,12 +370,14 @@ const ApplicationModal = ({ isOpen, onClose }) => {
                   className="applymodal-input applymodal-select"
                 >
                   <option value="">Select area of interest</option>
-                  <option>Technology Foundations</option>
-                  <option>Networking</option>
-                  <option>Web Design</option>
-                  <option>Digital Marketing</option>
-                  <option>Creative Design</option>
-                  <option>Leadership</option>
+                  <option>Software Engineering</option>
+                  <option>Graphics, Motion Graphics &amp; Brand Design</option>
+                  <option>Digital Marketing &amp; Content Strategy</option>
+                  <option>IT Support, Networking &amp; Infrastructure</option>
+                  <option>Computer Engineering</option>
+                  <option>Virtual Assistance &amp; Digital Operations</option>
+                  <option>Data Analytics &amp; Business Intelligence</option>
+                  <option>Cybersecurity &amp; Information Security</option>
                   <option>Not Sure Yet</option>
                 </select>
               </div>

@@ -852,7 +852,7 @@ const EmptdpCore = () => {
               </p>
             </div>
             <div className="core-tracks-cta">
-              <Link to="/get-in-touch">
+              <Link to="/residential-experience">
                 <button className="emptdp-btn emptdp-btn--outline core-residential-cta">
                   Request Residential Experience <MoveRight />
                 </button>
@@ -1077,6 +1077,8 @@ const EmptdpCore = () => {
                 Professional Development Experience designed to bridge academic
                 learning and industry practice.
               </p>
+
+
               <Link to="/emptdp-ignite">
                 <button className="emptdp-btn emptdp-btn--outline-dark core-sibling-cta">
                   Explore ETMPDP Ignite <span aria-hidden="true">&rarr;</span>

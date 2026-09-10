@@ -8,9 +8,8 @@ import axios from "axios";
 // Rate limit: track last submission time outside component so it persists
 let lastSubmitTime = 0;
 
-// Where the "Learn more" link on the success screen points. Swap this for the
-// dedicated Residential Experience page once it exists.
-const RESIDENTIAL_PATH = "/get-in-touch";
+// Where the "Learn more" link on the success screen points.
+const RESIDENTIAL_PATH = "/residential-experience";
 
 const IgniteApplicationModal = ({ isOpen, onClose }) => {
   const [fullName, setFullName] = useState("");
@@ -395,6 +394,9 @@ const IgniteApplicationModal = ({ isOpen, onClose }) => {
                   <option>Digital Marketing & Content Strategy</option>
                   <option>IT Support, Networking & Infrastructure</option>
                   <option>Computer Engineering</option>
+                  <option>Virtual Assistance & Digital Operations</option>
+                  <option>Data Analytics & Business Intelligence</option>
+                  <option>Cybersecurity & Information Security</option>
                   <option>Not Sure Yet</option>
                 </select>
               </div>

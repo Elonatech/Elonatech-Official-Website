@@ -1,0 +1,361 @@
+/* =============================================================================
+   ETMPDP Residential Experience page — additive to emptdp.css
+   Scoped under .residential-experience so nothing leaks to the other pages.
+   ============================================================================= */
+
+/* Hero gets its own residence photo instead of the shared ETMPDP hero
+   background (overrides .emptdp-section, incl. its mobile override). */
+.residential-experience .res-hero,
+.residential-experience .res-hero.emptdp-section {
+  background-image: linear-gradient(rgba(17, 37, 61, 0.72), rgba(17, 37, 61, 0.72)),
+    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1789050482/pexels-photo-3702948_o82eft.jpg");
+}
+
+@media (max-width: 576px) {
+  .residential-experience .res-hero,
+  .residential-experience .res-hero.emptdp-section {
+    background-image: linear-gradient(rgba(17, 37, 61, 0.72), rgba(17, 37, 61, 0.72)),
+      url("https://res.cloudinary.com/dahnwukbz/image/upload/v1789050514/pexels-photo-3702948_iindyj.jpg");
+  }
+}
+
+.residential-experience .res-hero-note {
+  margin: 14px 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+}
+
+/* "What Each Room Provides" — force a tidy 4-per-row grid (8 cards → 4 + 4)
+   instead of the default diff-grid's content-width wrapping. */
+.residential-experience .res-features .emptdp-diff-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.residential-experience .res-features .emptdp-diff-card {
+  flex: 0 0 calc(25% - 15px);
+  max-width: calc(25% - 15px);
+}
+
+@media (max-width: 900px) {
+  .residential-experience .res-features .emptdp-diff-card {
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 560px) {
+  .residential-experience .res-features .emptdp-diff-card {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Section headers left-aligned inside the two-column blocks */
+.residential-experience .emptdp-why-text .emptdp-section-title {
+  margin-bottom: 16px;
+}
+
+.residential-experience .res-eligibility {
+  list-style: none;
+  margin: 6px 0 12px;
+  padding: 0;
+}
+
+.residential-experience .res-eligibility li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  color: #495057;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.residential-experience .res-eligibility li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #dc3545;
+}
+
+.residential-experience .res-fineprint {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-style: italic;
+  margin: 4px 0 0;
+  text-align: left;
+}
+
+/* ── Fees ──────────────────────────────────────────────────────────────── */
+.residential-experience .res-fees-section {
+  padding: 70px 0;
+  background-color: #f8f9fa;
+}
+
+.residential-experience .res-fees-table-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.residential-experience .res-fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.residential-experience .res-fees-table th {
+  background: #11253d;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.residential-experience .res-fees-table td {
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.residential-experience .res-fees-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.residential-experience .res-fee-total {
+  font-weight: 800;
+  color: #11253d;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.residential-experience .res-pay-notes {
+  max-width: 820px;
+  margin: 24px auto 0;
+}
+
+.residential-experience .res-pay-notes p {
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.7;
+  margin: 0 0 10px;
+}
+
+.residential-experience .res-pay-notes strong {
+  color: #11253d;
+}
+
+/* ── Booking steps ─────────────────────────────────────────────────────── */
+.residential-experience .res-steps {
+  list-style: none;
+  counter-reset: none;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Booking section runs shorter than the shared 70px rhythm — it's a light
+   list, not a full content block. */
+.residential-experience .res-booking-section {
+  padding: 48px 0 44px;
+}
+
+.residential-experience .res-booking-section .emptdp-section-header {
+  margin-bottom: 22px;
+}
+
+.residential-experience .res-steps li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.residential-experience .res-steps li:last-child {
+  border-bottom: 0;
+}
+
+.residential-experience .res-step-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #dc3545;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.residential-experience .res-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.residential-experience .res-step-body strong {
+  color: #11253d;
+  font-size: 0.98rem;
+}
+
+.residential-experience .res-step-body span {
+  color: #6c757d;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.residential-experience .res-before-checkin {
+  max-width: 780px;
+  margin: 20px auto 0;
+  background: #f8f9fa;
+  border-left: 4px solid #11253d;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 22px;
+}
+
+.residential-experience .res-before-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #11253d;
+  font-size: 0.9rem;
+}
+
+.residential-experience .res-before-checkin ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.residential-experience .res-before-checkin li {
+  color: #495057;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+/* ── House rules ───────────────────────────────────────────────────────── */
+.residential-experience .res-rules-section {
+  padding: 56px 0;
+  background-color: #11253d;
+}
+
+.residential-experience .res-rules-section .emptdp-section-title {
+  color: #fff;
+}
+
+.residential-experience .res-rules-section .emptdp-section-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.residential-experience .res-rules-section .res-rules-note {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.residential-experience .res-rules {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 940px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.residential-experience .res-rules li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #e6e9ee;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #495057;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.residential-experience .res-rules li i {
+  color: #dc3545;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Odd count (9) — centre the lone last card instead of leaving it
+   ragged in the left column. */
+.residential-experience .res-rules li:last-child {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 6px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.residential-experience .res-rules-note {
+  max-width: 940px;
+  margin: 18px auto 0;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .residential-experience .res-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .residential-experience .res-rules li:last-child {
+    max-width: none;
+  }
+
+  /* Stacked fee "table" — each row becomes a card, cells labelled */
+  .residential-experience .res-fees-table,
+  .residential-experience .res-fees-table tbody,
+  .residential-experience .res-fees-table tr,
+  .residential-experience .res-fees-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .residential-experience .res-fees-table thead {
+    display: none;
+  }
+
+  .residential-experience .res-fees-table tr {
+    margin-bottom: 14px;
+    border: 1px solid #e5e8ec;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .residential-experience .res-fees-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.85rem;
+  }
+
+  .residential-experience .res-fees-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #11253d;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
+  }
+}

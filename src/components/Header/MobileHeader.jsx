@@ -1445,7 +1445,7 @@ const MobileHeader = () => {
                         className="mobile-strategic-items-active dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
                         data-bs-dismiss="offcanvas"
                       >
-                        ETMPDP 
+                        ETMPDP
                       </li>
                     </Link>
 
@@ -1470,6 +1470,18 @@ const MobileHeader = () => {
                         data-bs-dismiss="offcanvas"
                       >
                         ETMPDP Ignite
+                      </li>
+                    </Link>
+
+                    <Link
+                      to={"/residential-experience"}
+                      className="text-decoration-none text-dark"
+                    >
+                      <li
+                        className="dropdown-item mt-1 p-2 mobile-dismiss-nav-man"
+                        data-bs-dismiss="offcanvas"
+                      >
+                        Residential Experience
                       </li>
                     </Link>
                   </ul>
