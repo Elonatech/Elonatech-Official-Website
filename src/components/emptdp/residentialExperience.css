@@ -19,38 +19,68 @@
   }
 }
 
-.residential-experience .res-hero-note {
-  margin: 14px 0 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.75);
-  text-transform: uppercase;
+/* ── Tighter vertical rhythm on the body sections — keep this page short.
+   (The hero keeps the shared .emptdp-section height used site-wide.) ──── */
+.residential-experience .emptdp-why-section,
+.residential-experience .emptdp-diff-section,
+.residential-experience .emptdp-who-section,
+.residential-experience .emptdp-cta-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-/* "What Each Room Provides" — force a tidy 4-per-row grid (8 cards → 4 + 4)
-   instead of the default diff-grid's content-width wrapping. */
-.residential-experience .res-features .emptdp-diff-grid {
-  max-width: 1000px;
-  margin: 0 auto;
+.residential-experience .emptdp-section-header {
+  margin-bottom: 22px;
 }
 
-.residential-experience .res-features .emptdp-diff-card {
-  flex: 0 0 calc(25% - 15px);
-  max-width: calc(25% - 15px);
+/* Hero CTAs — full labels on desktop, shorter labels on phones so the two
+   buttons stay compact and don't balloon the hero height. */
+.residential-experience .res-cta-short {
+  display: none;
 }
 
-@media (max-width: 900px) {
-  .residential-experience .res-features .emptdp-diff-card {
-    flex-basis: calc(50% - 10px);
-    max-width: calc(50% - 10px);
+@media (max-width: 576px) {
+  .residential-experience .res-cta-long {
+    display: none;
+  }
+
+  .residential-experience .res-cta-short {
+    display: inline;
+  }
+
+  .residential-experience .res-hero .emptdp-cta-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .residential-experience .res-hero .emptdp-btn {
+    font-size: 0.8rem;
+    padding: 9px 16px;
+    white-space: nowrap;
   }
 }
 
-@media (max-width: 560px) {
+/* "Accommodation Features" — tidy 4-per-row grid (8 cards → 4 + 4) on
+   desktop, 2-up on tablet. Below 577px CardDeck turns it into a swipe
+   deck, so these rules are held above that width to avoid fighting the
+   deck's own card sizing. */
+@media (min-width: 577px) {
+  .residential-experience .res-features .emptdp-diff-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
   .residential-experience .res-features .emptdp-diff-card {
-    flex-basis: 100%;
-    max-width: 100%;
+    flex: 0 0 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 900px) {
+  .residential-experience .res-features .emptdp-diff-card {
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
   }
 }
 
@@ -94,9 +124,39 @@
   text-align: left;
 }
 
+/* Section 5 — Who can request */
+.residential-experience .res-who-list {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.residential-experience .res-who-list li {
+  font-size: 1rem;
+}
+
+.residential-experience .res-who-note {
+  max-width: 640px;
+  margin: 16px auto 0;
+  text-align: center;
+}
+
+/* Reusable "Highlight:" callout from the content doc */
+.residential-experience .res-highlight {
+  margin: 18px 0 0;
+  padding: 12px 16px;
+  background: #f0f3f7;
+  border-left: 4px solid #dc3545;
+  border-radius: 0 8px 8px 0;
+  color: #11253d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.55;
+  text-align: left;
+}
+
 /* ── Fees ──────────────────────────────────────────────────────────────── */
 .residential-experience .res-fees-section {
-  padding: 70px 0;
+  padding: 40px 0;
   background-color: #f8f9fa;
 }
 
@@ -146,8 +206,9 @@
 }
 
 .residential-experience .res-pay-notes {
-  max-width: 820px;
-  margin: 24px auto 0;
+  /* Match the fee table's width so the notes read in fewer lines. */
+  max-width: 920px;
+  margin: 20px auto 0;
 }
 
 .residential-experience .res-pay-notes p {
@@ -165,15 +226,25 @@
 .residential-experience .res-steps {
   list-style: none;
   counter-reset: none;
-  max-width: 780px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0;
+  /* Four steps laid out 2 x 2 so the block is only two rows tall. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+}
+
+@media (max-width: 700px) {
+  .residential-experience .res-steps {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Booking section runs shorter than the shared 70px rhythm — it's a light
    list, not a full content block. */
 .residential-experience .res-booking-section {
-  padding: 48px 0 44px;
+  padding: 40px 0;
 }
 
 .residential-experience .res-booking-section .emptdp-section-header {
@@ -182,14 +253,12 @@
 
 .residential-experience .res-steps li {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: flex-start;
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.residential-experience .res-steps li:last-child {
-  border-bottom: 0;
+  padding: 14px 16px;
+  background: #f8f9fa;
+  border: 1px solid #e6e9ee;
+  border-radius: 10px;
 }
 
 .residential-experience .res-step-num {
@@ -223,36 +292,19 @@
   line-height: 1.6;
 }
 
-.residential-experience .res-before-checkin {
+.residential-experience .res-booking-cta {
+  text-align: center;
+  margin: 26px 0 0;
+}
+
+.residential-experience .res-booking-important {
   max-width: 780px;
   margin: 20px auto 0;
-  background: #f8f9fa;
-  border-left: 4px solid #11253d;
-  border-radius: 0 8px 8px 0;
-  padding: 16px 22px;
-}
-
-.residential-experience .res-before-title {
-  margin: 0 0 8px;
-  font-weight: 700;
-  color: #11253d;
-  font-size: 0.9rem;
-}
-
-.residential-experience .res-before-checkin ul {
-  margin: 0;
-  padding-left: 18px;
-}
-
-.residential-experience .res-before-checkin li {
-  color: #495057;
-  font-size: 0.87rem;
-  line-height: 1.7;
 }
 
 /* ── House rules ───────────────────────────────────────────────────────── */
 .residential-experience .res-rules-section {
-  padding: 56px 0;
+  padding: 40px 0;
   background-color: #11253d;
 }
 
@@ -358,4 +410,40 @@
     font-size: 0.68rem;
     letter-spacing: 0.5px;
   }
+}
+
+/* ── Tighter vertical rhythm on phones (kept at end so it wins source order
+   against the per-section padding rules above) ────────────────────────── */
+@media (max-width: 576px) {
+  .residential-experience .emptdp-why-section,
+  .residential-experience .emptdp-diff-section,
+  .residential-experience .emptdp-who-section,
+  .residential-experience .emptdp-cta-section,
+  .residential-experience .res-fees-section,
+  .residential-experience .res-rules-section,
+  .residential-experience .res-booking-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .residential-experience .emptdp-section-header {
+    margin-bottom: 16px;
+  }
+}
+
+/* Section 11 — small Core/Ignite cross-links under the final CTA */
+.residential-experience .res-cta-links {
+  margin: 18px 0 0;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.residential-experience .res-cta-links a {
+  color: #dc3545;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.residential-experience .res-cta-links a:hover {
+  text-decoration: underline;
 }

@@ -286,7 +286,7 @@ const router = createBrowserRouter([
         element: <EmptdpCore />
       },
       {
-        path: '/residential-experience',
+        path: '/etmpdp-residential',
         element: <ResidentialExperience />
       },
 

@@ -852,7 +852,7 @@ const EmptdpCore = () => {
               </p>
             </div>
             <div className="core-tracks-cta">
-              <Link to="/residential-experience">
+              <Link to="/etmpdp-residential">
                 <button className="emptdp-btn emptdp-btn--outline core-residential-cta">
                   Request Residential Experience <MoveRight />
                 </button>

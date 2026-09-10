@@ -1320,9 +1320,9 @@ const Navbar = () => {
 
                     <li>
                       <Link
-                        to="/residential-experience"
+                        to="/etmpdp-residential"
                         className={`dropdown-item ${
-                          isActive("/residential-experience")
+                          isActive("/etmpdp-residential")
                             ? "strategic-items-active"
                             : ""
                         }`}

@@ -1060,7 +1060,7 @@ const EmptdpIgnite = () => {
               accommodation terms.
             </p>
             <div className="ignite-spec-cta">
-              <Link to="/residential-experience">
+              <Link to="/etmpdp-residential">
                 <button className="emptdp-btn emptdp-btn--outline ignite-residential-cta">
                   Request Residential Experience{" "}
                   <span aria-hidden="true">&rarr;</span>

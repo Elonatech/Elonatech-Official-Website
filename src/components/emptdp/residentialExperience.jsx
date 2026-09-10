@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./emptdp.css";
 import "./residentialExperience.css";
-import ApplicationModal from "./applicationModal.jsx";
-import IgniteApplicationModal from "./igniteApplicationModal";
+import ResidentialModal from "./residentialModal";
+import CardDeck from "./CardDeck";
+import guideFile from "./data/ETMPDP_Residential_Experience_Accommodation_Guide.pdf";
 
 const IMG_LIVING =
   "https://res.cloudinary.com/dahnwukbz/image/upload/v1789050574/pexels-photo-17527758_lwxrk0.jpg";
@@ -19,16 +21,16 @@ const roomFeatures = [
   {
     icon: "bi-lock",
     title: "Personal Storage",
-    desc: "Individual lockable storage compartments for each resident.",
+    desc: "Individual lockable storage compartments.",
   },
   {
     icon: "bi-book",
     title: "Study Space",
-    desc: "Dedicated reading and study space with seating.",
+    desc: "Dedicated reading/study space with seating.",
   },
   {
     icon: "bi-droplet",
-    title: "Private Ensuite",
+    title: "Private Ensuite Facilities",
     desc: "Self-contained toilet and kitchen facilities.",
   },
   {
@@ -39,17 +41,17 @@ const roomFeatures = [
   {
     icon: "bi-wifi",
     title: "Internet Access",
-    desc: "Wi-Fi / internet connectivity provided.",
+    desc: "Wi-Fi/internet connectivity provided.",
   },
   {
     icon: "bi-shield-check",
     title: "Secured Environment",
-    desc: "Accommodation within a secure environment.",
+    desc: "Residential accommodation within a secure environment.",
   },
   {
     icon: "bi-geo-alt",
     title: "Convenient Location",
-    desc: "Close to the ETMPDP onsite learning environment.",
+    desc: "Convenient access to the ETMPDP onsite learning environment.",
   },
 ];
 
@@ -58,62 +60,61 @@ const fees = [
     name: "Ignite Foundation Residential",
     duration: "3 Months",
     total: "₦350,000",
-    plan: "₦210,000 + ₦140,000",
+    plan: "₦210,000 first + ₦140,000 second",
   },
   {
     name: "Ignite Professional Residential",
     duration: "4 Months",
     total: "₦450,000",
-    plan: "₦270,000 + ₦180,000",
+    plan: "₦270,000 first + ₦180,000 second",
   },
   {
     name: "Ignite Executive Residential",
     duration: "6 Months",
     total: "₦600,000",
-    plan: "₦360,000 + ₦240,000",
+    plan: "₦360,000 first + ₦240,000 second",
   },
   {
     name: "ETMPDP Core Residential",
     duration: "12 Months",
     total: "₦1,000,000",
-    plan: "₦600,000 + ₦400,000",
+    plan: "₦600,000 first + ₦400,000 second",
   },
 ];
 
 const bookingSteps = [
   {
     title: "Indicate Interest",
-    desc: "Tick the Residential Experience option on your ETMPDP Core or Ignite application, or submit the Residential Accommodation Request Form.",
+    desc: "Submit the Residential Accommodation Request Form.",
   },
   {
     title: "Availability Check",
-    desc: "Elonatech confirms available residential space for your Program period.",
+    desc: "Elonatech confirms available residential space for the required period.",
   },
   {
     title: "Receive Details",
-    desc: "You receive the applicable residential fee, the two-installment payment schedule and residential requirements.",
+    desc: "Elonatech confirms the applicable Residential Experience fee, two-installment payment schedule and residential requirements.",
   },
   {
     title: "Complete Booking",
-    desc: "Complete the required documentation and pay the first installment to secure the accommodation. The second installment is due before check-in.",
+    desc: "Complete the required documentation and pay the first residential installment to secure the accommodation. The second installment is due before check-in.",
   },
 ];
 
 const houseRules = [
-  "Hotplates are not permitted — bring an appropriate camp-gas arrangement where cooking is required.",
-  "Electricity and residential resources must be used responsibly; abuse or excessive use is not permitted.",
-  "Residents must maintain a respectful and responsible environment.",
+  "Hotplates are not permitted.",
+  "Participants should bring an appropriate camp-gas arrangement where cooking is required.",
+  "Electricity and other residential resources must be used responsibly; abuse, excessive use or misuse is not permitted.",
   "Noise or activities that disturb the surrounding neighbourhood are not permitted.",
   "Late-night movements are not permitted.",
   "Visitors are not permitted beyond 7:00 PM.",
-  "Visitors are not permitted inside residential rooms; approved visitors only during permitted hours.",
+  "Visitors are not permitted inside residential rooms. Approved visitors may only be received during permitted visiting hours and in accordance with Management's visitor arrangements.",
   "Overnight visitors or sleepover guests are strictly prohibited.",
-  "Residents must comply with additional instructions issued by Management.",
+  "Residents must comply with applicable residential instructions and house rules.",
 ];
 
 const ResidentialExperience = () => {
-  const [coreModal, setCoreModal] = useState(false);
-  const [igniteModal, setIgniteModal] = useState(false);
+  const [resModal, setResModal] = useState(false);
 
   return (
     <>
@@ -127,7 +128,7 @@ const ResidentialExperience = () => {
         />
         <link
           rel="canonical"
-          href="https://elonatech.com.ng/residential-experience"
+          href="https://elonatech.com.ng/etmpdp-residential"
         />
       </Helmet>
 
@@ -139,31 +140,40 @@ const ResidentialExperience = () => {
               className="emptdp-mentor-badge"
               style={{ marginBottom: "16px" }}
             >
-              ETMPDP
+              ETMPDP Residential Experience
             </span>
-            <h2>Residential Experience</h2>
+            <h2>An Optional Residential Experience</h2>
             <h5>
-              Optional accommodation for participants attending onsite ETMPDP
+              Comfortable, self-contained accommodation for eligible participants
+              undertaking onsite ETMPDP.
             </h5>
             <p className="lead">
-              Optional shared accommodation for participants undertaking onsite
-              ETMPDP Core or ETMPDP Ignite. Accommodation is subject to
-              availability and applicable residential requirements.
+              Available to eligible ETMPDP Core and ETMPDP Ignite participants,
+              subject to availability.
             </p>
             <div className="emptdp-cta-buttons">
-              <a href="mailto:training@elonatech.com.ng?subject=Residential%20Accommodation%20Request">
-                <button className="emptdp-btn emptdp-btn--primary">
-                  Request Accommodation
+              <button
+                className="emptdp-btn emptdp-btn--primary"
+                onClick={() => setResModal(true)}
+              >
+                <span className="res-cta-long">
+                  Request Residential Accommodation
+                </span>
+                <span className="res-cta-short">Request Accommodation</span>
+              </button>
+              <a href={guideFile} target="_blank" rel="noopener noreferrer">
+                <button className="emptdp-btn emptdp-btn--outline">
+                  <span className="res-cta-long">
+                    Download Residential Accommodation Guide
+                  </span>
+                  <span className="res-cta-short">Download Guide</span>
                 </button>
               </a>
             </div>
-            <p className="res-hero-note">
-              Separate from Program tuition &bull; Priced independently
-            </p>
           </div>
         </div>
 
-        {/* ── 2. Who it's for ─────────────────────────────────────────────── */}
+        {/* ── 2. A practical place to stay while you learn ────────────────── */}
         <section className="emptdp-why-section">
           <div className="container">
             <div className="emptdp-why-content">
@@ -172,51 +182,44 @@ const ResidentialExperience = () => {
                   className="emptdp-section-title"
                   style={{ textAlign: "left" }}
                 >
-                  Immersive Living, Focused Learning
+                  A Practical Place to Stay While You Learn
                 </h2>
                 <p>
-                  The Residential Experience is for participants accepted into
-                  an onsite ETMPDP experience who require accommodation during
-                  their participation.
+                  The ETMPDP Residential Experience provides optional shared
+                  accommodation for participants who require a convenient place to
+                  stay while undertaking onsite ETMPDP. The accommodation is
+                  designed around essential living, study and connectivity needs,
+                  with separate male and female residential arrangements.
                 </p>
-                <p>It is available to eligible participants in:</p>
-                <ul className="res-eligibility">
-                  <li>
-                    <strong>ETMPDP Core</strong> — the 12-month Executive
-                    Technology Mentorship &amp; Professional Development
-                    Program.
-                  </li>
-                  <li>
-                    <strong>ETMPDP Ignite</strong> — the 3-, 4- or 6-month
-                    undergraduate professional development experience.
-                  </li>
-                </ul>
-                <p className="res-fineprint">
-                  Residential space is subject to availability.
+                <p className="res-highlight">
+                  Residential accommodation is separate from Program tuition and
+                  priced independently.
                 </p>
               </div>
               <div className="emptdp-why-image">
-                <img src={IMG_LIVING} alt="Participants studying together" />
+                <img src={IMG_LIVING} alt="Shared residential accommodation" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── 3. What each room provides ──────────────────────────────────── */}
+        {/* ── 3. Accommodation features ──────────────────────────────────── */}
         <section className="emptdp-diff-section res-features">
           <div className="container">
             <div className="emptdp-section-header emptdp-section-header--light">
               <h2 className="emptdp-section-title emptdp-section-title--white">
-                What Each Room Provides
+                Accommodation Features
               </h2>
               <p
                 className="emptdp-section-subtitle"
                 style={{ color: "rgba(255,255,255,0.75)" }}
               >
-                The essentials for comfortable living and personal study.
+                Each residential room is designed to provide the essential
+                facilities participants need for comfortable living and personal
+                study during their ETMPDP experience.
               </p>
             </div>
-            <div className="emptdp-diff-grid">
+            <CardDeck className="emptdp-diff-grid" onDark>
               {roomFeatures.map((f, i) => (
                 <div className="emptdp-diff-card" key={i}>
                   <div className="emptdp-diff-icon">
@@ -226,7 +229,7 @@ const ResidentialExperience = () => {
                   <p className="emptdp-diff-desc">{f.desc}</p>
                 </div>
               ))}
-            </div>
+            </CardDeck>
           </div>
         </section>
 
@@ -242,15 +245,15 @@ const ResidentialExperience = () => {
                   className="emptdp-section-title"
                   style={{ textAlign: "left" }}
                 >
-                  Room Arrangement
+                  Shared Residential Accommodation
                 </h2>
                 <p>
-                  Accommodation is arranged on a shared basis, with up to four
-                  participants per room. Each room provides bunk-bed sleeping
-                  facilities, individual lockable storage, a dedicated study
-                  area, and private ensuite toilet and kitchen facilities.
+                  Residential accommodation is arranged on a shared basis, with
+                  up to four participants per room. Each room provides bunk-bed
+                  sleeping facilities, individual lockable storage, a dedicated
+                  study area, and private ensuite toilet and kitchen facilities.
                 </p>
-                <p className="res-fineprint">
+                <p className="res-highlight">
                   Male and female participants are accommodated separately.
                 </p>
               </div>
@@ -258,61 +261,58 @@ const ResidentialExperience = () => {
           </div>
         </section>
 
-        {/* ── 5. Fees ────────────────────────────────────────────────────── */}
-        <section className="res-fees-section">
+        {/* ── 5. Who can request residential accommodation? ──────────────── */}
+        <section className="emptdp-who-section">
           <div className="container">
             <div className="emptdp-section-header">
               <h2 className="emptdp-section-title">
-                Residential Experience Fees
+                Who Can Request Residential Accommodation?
               </h2>
-              <p className="emptdp-section-subtitle">
-                Accommodation fees only — separate from ETMPDP Program tuition.
-              </p>
             </div>
-
-            <div className="res-fees-table-wrap">
-              <table className="res-fees-table">
-                <thead>
-                  <tr>
-                    <th>Residential Experience</th>
-                    <th>Duration</th>
-                    <th>Total Fee</th>
-                    <th>Instalments</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {fees.map((f, i) => (
-                    <tr key={i}>
-                      <td data-label="Residential Experience">{f.name}</td>
-                      <td data-label="Duration">{f.duration}</td>
-                      <td data-label="Total Fee" className="res-fee-total">
-                        {f.total}
-                      </td>
-                      <td data-label="Instalments">{f.plan}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="res-pay-notes">
-              <p>
-                <strong>Payment plan.</strong> The fee is payable in two
-                instalments — 60% to secure the booking, and the remaining 40%
-                before check-in. Full payment and documentation must be
-                completed before occupancy.
-              </p>
-              <p>
-                <strong>Refunds.</strong> Residential fees are non-refundable
-                once the booking is confirmed and the first installment is paid,
-                as payment secures the space for the approved Program period.
-                The second installment is also non-refundable once paid.
-              </p>
-            </div>
+            <ul className="res-eligibility res-who-list">
+              <li>Participants accepted/enrolled for onsite ETMPDP Core.</li>
+              <li>Participants accepted/enrolled for onsite ETMPDP Ignite.</li>
+              <li>
+                Participants who require accommodation during their approved
+                Program period.
+              </li>
+            </ul>
+            <p className="res-fineprint res-who-note">
+              Availability is subject to available residential space and
+              applicable residential requirements.
+            </p>
           </div>
         </section>
 
-        {/* ── 6. Booking process ─────────────────────────────────────────── */}
+        {/* ── 6. Residential guidelines & house rules ────────────────────── */}
+        <section className="res-rules-section">
+          <div className="container">
+            <div className="emptdp-section-header">
+              <h2 className="emptdp-section-title">
+                Residential Guidelines &amp; House Rules
+              </h2>
+              <p className="emptdp-section-subtitle">
+                The Residential Experience is intended to provide a safe,
+                respectful and conducive environment. Residents are expected to
+                observe the following rules:
+              </p>
+            </div>
+            <ul className="res-rules">
+              {houseRules.map((r, i) => (
+                <li key={i}>
+                  <i className="bi bi-shield-check"></i>
+                  <span>{r}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="res-fineprint res-rules-note">
+              A more detailed Residential Agreement/House Rules document may be
+              issued and acknowledged during the booking process.
+            </p>
+          </div>
+        </section>
+
+        {/* ── 7. Booking process ─────────────────────────────────────────── */}
         <section className="emptdp-why-section res-booking-section">
           <div className="container">
             <div className="emptdp-section-header">
@@ -329,86 +329,122 @@ const ResidentialExperience = () => {
                 </li>
               ))}
             </ol>
-            <div className="res-before-checkin">
-              <p className="res-before-title">
-                Before check-in you will receive:
-              </p>
-              <ul>
-                <li>
-                  Confirmation of residential availability and the applicable
-                  fee.
-                </li>
-                <li>Residential terms and house rules.</li>
-                <li>Required documentation and payment instructions.</li>
-                <li>
-                  Confirmation that the required residential payment is
-                  complete.
-                </li>
-                <li>Check-in information and residential instructions.</li>
-              </ul>
+            <div className="res-booking-cta">
+              <button
+                className="emptdp-btn emptdp-btn--primary"
+                onClick={() => setResModal(true)}
+              >
+                Book Now
+              </button>
             </div>
-          </div>
-        </section>
-
-        {/* ── 7. House rules ─────────────────────────────────────────────── */}
-        <section className="res-rules-section">
-          <div className="container">
-            <div className="emptdp-section-header">
-              <h2 className="emptdp-section-title">House Rules</h2>
-              <p className="emptdp-section-subtitle">
-                A safe, respectful and conducive environment for every resident.
-              </p>
-            </div>
-            <ul className="res-rules">
-              {houseRules.map((r, i) => (
-                <li key={i}>
-                  <i className="bi bi-shield-check"></i>
-                  <span>{r}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="res-fineprint res-rules-note">
-              A more detailed Residential Agreement / House Rules document may
-              be issued and acknowledged during the booking process.
+            <p className="res-highlight res-booking-important">
+              <strong>Important:</strong> Submission of a request does not itself
+              guarantee accommodation. Residential space is confirmed only after
+              availability and applicable booking requirements have been formally
+              confirmed.
             </p>
           </div>
         </section>
 
-        {/* ── 8. CTA ─────────────────────────────────────────────────────── */}
+        {/* ── 8. Residential investment ─────────────────────────────────── */}
+        <section className="res-fees-section">
+          <div className="container">
+            <div className="emptdp-section-header">
+              <h2 className="emptdp-section-title">Residential Investment</h2>
+              <p className="emptdp-section-subtitle">
+                The Residential Experience fees below apply according to the
+                participant&apos;s ETMPDP Program duration. These are
+                accommodation fees and are separate from ETMPDP Program tuition.
+              </p>
+            </div>
+
+            <div className="res-fees-table-wrap">
+              <table className="res-fees-table">
+                <thead>
+                  <tr>
+                    <th>Residential Experience</th>
+                    <th>Duration</th>
+                    <th>Total Fee</th>
+                    <th>Payment Plan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {fees.map((f, i) => (
+                    <tr key={i}>
+                      <td data-label="Residential Experience">{f.name}</td>
+                      <td data-label="Duration">{f.duration}</td>
+                      <td data-label="Total Fee" className="res-fee-total">
+                        {f.total}
+                      </td>
+                      <td data-label="Payment Plan">{f.plan}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="res-pay-notes">
+              <p>
+                <strong>Residential Payment Plan:</strong> The Residential
+                Experience fee is payable in two installments. The first
+                installment (60%) is required to secure the residential booking,
+                while the remaining 40% is payable before check-in. Full payment
+                and required documentation must be completed before occupancy.
+              </p>
+              <p>
+                <strong>Residential Refund Policy:</strong> Residential
+                Experience fees are non-refundable once the residential booking
+                has been confirmed and the first installment has been paid, as
+                the payment secures residential space for the participant for the
+                approved Program period. The second installment is also
+                non-refundable once paid.
+              </p>
+              <p>
+                Where Elonatech is unable to provide confirmed residential
+                accommodation due to circumstances attributable to Elonatech, any
+                applicable refund or alternative arrangement will be determined
+                by Management.
+              </p>
+              <p>
+                Residential space is not confirmed until availability, applicable
+                terms and the required payment/documentation have been formally
+                confirmed by Elonatech.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 11. Final CTA ─────────────────────────────────────────────── */}
         <section className="emptdp-cta-section">
           <div className="emptdp-cta-inner">
             <h2 className="emptdp-cta-heading emptdp-cta-heading--dark">
-              Interested in the Residential Experience?
+              Need a Place to Stay While You Learn?
             </h2>
             <p className="emptdp-cta-sub">
-              Apply to ETMPDP below and tick the Residential Experience option
-              on the form. The training team will follow up with availability
-              and booking details.
+              If you are joining ETMPDP onsite and require accommodation, submit
+              a residential request and our team will confirm availability and
+              the applicable details.
             </p>
             <div className="emptdp-cta-buttons">
               <button
                 className="emptdp-btn emptdp-btn--primary"
-                onClick={() => setCoreModal(true)}
+                onClick={() => setResModal(true)}
               >
-                Apply to ETMPDP Core
-              </button>
-              <button
-                className="emptdp-btn emptdp-btn--outline-dark"
-                onClick={() => setIgniteModal(true)}
-              >
-                Apply to ETMPDP Ignite
+                Request Residential Accommodation
               </button>
             </div>
+            <p className="res-cta-links">
+              Joining ETMPDP?{" "}
+              <Link to="/emptdp-core">ETMPDP Core</Link>
+              {" · "}
+              <Link to="/emptdp-ignite">ETMPDP Ignite</Link>
+            </p>
           </div>
         </section>
 
-        <ApplicationModal
-          isOpen={coreModal}
-          onClose={() => setCoreModal(false)}
-        />
-        <IgniteApplicationModal
-          isOpen={igniteModal}
-          onClose={() => setIgniteModal(false)}
+        <ResidentialModal
+          isOpen={resModal}
+          onClose={() => setResModal(false)}
         />
       </div>
     </>

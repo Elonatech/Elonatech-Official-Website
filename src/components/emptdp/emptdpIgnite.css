@@ -169,16 +169,16 @@
 }
 
 .ignite-questions-list li::before {
-  content: "?";
+  content: "\2192"; /* → */
   position: absolute;
   left: 0;
-  top: -2px;
+  top: 0;
   /* Blended red — the small, deliberate presence of the sibling colour on
-     the blue Ignite page. Red takes the "question / prompt" role (these
-     marks + the FAQ chevrons). Also reads better than blue-on-navy here. */
+     the blue Ignite page. */
   color: #dc3545;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
+  line-height: 1.4;
 }
 
 .ignite-questions-closer {

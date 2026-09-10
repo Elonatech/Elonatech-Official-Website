@@ -9,7 +9,7 @@ import axios from "axios";
 let lastSubmitTime = 0;
 
 // Where the "Learn more" link on the success screen points.
-const RESIDENTIAL_PATH = "/residential-experience";
+const RESIDENTIAL_PATH = "/etmpdp-residential";
 
 const IgniteApplicationModal = ({ isOpen, onClose }) => {
   const [fullName, setFullName] = useState("");
