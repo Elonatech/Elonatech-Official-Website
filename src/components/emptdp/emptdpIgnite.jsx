@@ -218,41 +218,57 @@ const outcomeCards = [
     icon: "bi-cpu",
     title: "Technical Capability",
     desc: "Practical skills built within your primary specialization.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143631/pexels-photo-19805876_ld9b2g.jpg",
   },
   {
     icon: "bi-chat-square-text",
     title: "Professional Confidence",
     desc: "Stronger communication, discipline and workplace readiness.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143724/pexels-photo-5940835_beilrv.jpg",
   },
   {
     icon: "bi-building",
     title: "Industry Exposure & Awareness",
     desc: "Practical exposure to how technology work happens in real organizations.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143670/pexels-photo-3894378_d8kpoe.jpg",
   },
   {
     icon: "bi-award",
     title: "Leadership Development",
     desc: "Responsibility, collaboration and leadership capability — with formal recognition.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143752/pexels-photo-9430884_otfx7v.jpg",
   },
   {
     icon: "bi-signpost-split",
     title: "Career Direction & Recommendation",
     desc: "Clearer professional direction, plus career guidance and a professional recommendation.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143777/pexels-photo-7993903_vkgrkk.jpg",
   },
   {
     icon: "bi-folder2-open",
     title: "Professional Portfolio",
     desc: "Guided development of a portfolio that evidences your practical learning.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143804/pexels-photo-285814_nn3quw.jpg",
   },
   {
     icon: "bi-patch-check",
     title: "Certificate & Evaluation",
     desc: "ETMPDP Ignite Executive Technology Mentorship Certificate and a professional development evaluation report.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143839/pexels-photo-20240506_ojav3d.jpg",
   },
   {
     icon: "bi-briefcase",
     title: "SIWES & Employment Support",
     desc: "Eligible SIWES / Industrial Training / Internship documentation support, and employment consideration where applicable.",
+    photoBg:
+      "https://res.cloudinary.com/dahnwukbz/image/upload/v1789143866/pexels-photo-13116381_hov2hk.jpg",
   },
 ];
 
@@ -932,16 +948,27 @@ const EmptdpIgnite = () => {
               </p>
             </div>
             <CardDeck
-              className="emptdp-diff-grid ignite-how-grid ignite-beyond-grid"
+              className="emptdp-diff-grid ignite-how-grid ignite-beyond-grid ignite-outcomes-grid"
               onDark
             >
               {outcomeCards.map((c, i) => (
-                <div className="emptdp-diff-card" key={i}>
-                  <div className="emptdp-diff-icon">
-                    <i className={`bi ${c.icon}`}></i>
+                <div
+                  className={`emptdp-diff-card ignite-outcome-card${
+                    c.photoBg ? " ignite-outcome-card--photo" : ""
+                  }`}
+                  style={c.photoBg ? { backgroundImage: `url(${c.photoBg})` } : undefined}
+                  key={i}
+                >
+                  <div className="ignite-outcome-card-front">
+                    <div className="emptdp-diff-icon">
+                      <i className={`bi ${c.icon}`}></i>
+                    </div>
+                    <h6 className="emptdp-diff-title">{c.title}</h6>
                   </div>
-                  <h6 className="emptdp-diff-title">{c.title}</h6>
-                  <p className="emptdp-diff-desc">{c.desc}</p>
+                  <div className="ignite-outcome-card-desc">
+                    <h6 className="emptdp-diff-title">{c.title}</h6>
+                    <p className="emptdp-diff-desc">{c.desc}</p>
+                  </div>
                 </div>
               ))}
             </CardDeck>

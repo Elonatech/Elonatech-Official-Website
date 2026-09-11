@@ -929,6 +929,99 @@
   }
 }
 
+/* "Your Ignite Outcomes" cards — icon + title show by default; hovering
+   slides the description up over the card instead of showing it inline,
+   same reveal-on-hover interaction as the homepage service cards. Card
+   footprint (padding/icon size inherited from .ignite-how-grid) stays the
+   same — only a fixed height is added since the sliding panels are
+   absolutely positioned and no longer contribute to the card's own height. */
+.ignite-outcomes-grid .ignite-outcome-card {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  padding: 0;
+}
+
+.ignite-outcome-card-front,
+.ignite-outcome-card-desc {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 18px;
+  background: #fff;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.ignite-outcome-card-front .emptdp-diff-icon {
+  margin-bottom: 12px;
+}
+
+.ignite-outcome-card-front .emptdp-diff-title,
+.ignite-outcome-card-desc .emptdp-diff-title {
+  margin-bottom: 0;
+}
+
+.ignite-outcome-card-desc {
+  transform: translateY(100%);
+  gap: 8px;
+}
+
+.ignite-outcome-card-desc .emptdp-diff-desc {
+  margin: 0;
+}
+
+.ignite-outcome-card:hover .ignite-outcome-card-front {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.ignite-outcome-card:hover .ignite-outcome-card-desc {
+  transform: translateY(0);
+}
+
+/* Photo-background variant — mockup for comparison against the plain icon
+   cards above. Dark gradient under both sliding panels keeps text readable
+   over the photo, same idea as the homepage service cards. */
+.ignite-outcome-card--photo {
+  background-size: cover;
+  background-position: center;
+}
+
+.ignite-outcome-card--photo .ignite-outcome-card-front,
+.ignite-outcome-card--photo .ignite-outcome-card-desc {
+  background: linear-gradient(180deg, rgba(17, 37, 61, 0.35), rgba(17, 37, 61, 0.82));
+}
+
+.ignite-outcome-card--photo .emptdp-diff-icon {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.ignite-outcome-card--photo .emptdp-diff-icon i {
+  color: #fff;
+}
+
+.ignite-outcome-card--photo .emptdp-diff-title {
+  color: #fff;
+}
+
+.ignite-outcome-card--photo .emptdp-diff-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 560px) {
+  .ignite-outcomes-grid .ignite-outcome-card {
+    height: 210px;
+  }
+
+  .ignite-outcome-card-front,
+  .ignite-outcome-card-desc {
+    padding: 16px 12px;
+  }
+}
+
 .etmpdp-ignite .emptdp-mentor-title {
   margin-bottom: 14px;
 }
