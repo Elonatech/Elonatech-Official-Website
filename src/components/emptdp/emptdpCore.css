@@ -937,6 +937,14 @@
 
 .core-invest-summary {
   flex: 1 1 40%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, #fdf0f1, #fbe4e5);
+  border: 1px solid #f1dcdd;
+  border-radius: 16px;
+  padding: 26px 30px;
 }
 
 .core-invest-eyebrow {
@@ -981,6 +989,7 @@
 
   .core-invest-summary {
     text-align: center;
+    align-items: center;
   }
 }
 

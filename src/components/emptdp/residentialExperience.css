@@ -8,14 +8,14 @@
 .residential-experience .res-hero,
 .residential-experience .res-hero.emptdp-section {
   background-image: linear-gradient(rgba(17, 37, 61, 0.72), rgba(17, 37, 61, 0.72)),
-    url("https://res.cloudinary.com/dahnwukbz/image/upload/v1789050482/pexels-photo-3702948_o82eft.jpg");
+    url("https://images.pexels.com/photos/19919922/pexels-photo-19919922.jpeg?auto=compress&cs=tinysrgb&w=1600");
 }
 
 @media (max-width: 576px) {
   .residential-experience .res-hero,
   .residential-experience .res-hero.emptdp-section {
     background-image: linear-gradient(rgba(17, 37, 61, 0.72), rgba(17, 37, 61, 0.72)),
-      url("https://res.cloudinary.com/dahnwukbz/image/upload/v1789050514/pexels-photo-3702948_iindyj.jpg");
+      url("https://images.pexels.com/photos/19919922/pexels-photo-19919922.jpeg?auto=compress&cs=tinysrgb&w=900");
   }
 }
 
@@ -320,43 +320,66 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* Accordion — 6 grouped headings (2 x 3), each expanding to reveal its
+   detail text on click. Not an FAQ (statements, not questions) but uses
+   the same click-to-reveal interaction. */
 .residential-experience .res-rules {
-  list-style: none;
   margin: 0 auto;
   padding: 0;
   max-width: 940px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  align-items: start;
 }
 
-.residential-experience .res-rules li {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
+.residential-experience .res-rule-item {
   background: #fff;
   border: 1px solid #e6e9ee;
   border-radius: 10px;
-  padding: 14px 16px;
-  color: #495057;
-  font-size: 0.86rem;
-  line-height: 1.55;
+  overflow: hidden;
 }
 
-.residential-experience .res-rules li i {
+.residential-experience .res-rule-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.residential-experience .res-rule-icon {
   color: #dc3545;
   font-size: 1rem;
   flex-shrink: 0;
-  margin-top: 1px;
 }
 
-/* Odd count (9) — centre the lone last card instead of leaving it
-   ragged in the left column. */
-.residential-experience .res-rules li:last-child {
-  grid-column: 1 / -1;
-  max-width: calc(50% - 6px);
-  margin-left: auto;
-  margin-right: auto;
+.residential-experience .res-rule-heading {
+  flex: 1;
+  color: #11253d;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.residential-experience .res-rule-caret {
+  color: #6c757d;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.residential-experience .res-rule-detail {
+  padding: 0 16px 16px 42px;
+}
+
+.residential-experience .res-rule-detail p {
+  margin: 0;
+  color: #495057;
+  font-size: 0.86rem;
+  line-height: 1.6;
 }
 
 .residential-experience .res-rules-note {
@@ -368,10 +391,6 @@
 @media (max-width: 767px) {
   .residential-experience .res-rules {
     grid-template-columns: 1fr;
-  }
-
-  .residential-experience .res-rules li:last-child {
-    max-width: none;
   }
 
   /* Stacked fee "table" — each row becomes a card, cells labelled */
@@ -446,4 +465,9 @@
 
 .residential-experience .res-cta-links a:hover {
   text-decoration: underline;
+}
+
+/* Ignite's brand blue, to match its own page theme */
+.residential-experience .res-cta-links a.res-cta-links-ignite {
+  color: #34548c;
 }

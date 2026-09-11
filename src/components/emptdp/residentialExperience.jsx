@@ -8,9 +8,9 @@ import CardDeck from "./CardDeck";
 import guideFile from "./data/ETMPDP_Residential_Experience_Accommodation_Guide.pdf";
 
 const IMG_LIVING =
-  "https://res.cloudinary.com/dahnwukbz/image/upload/v1789050574/pexels-photo-17527758_lwxrk0.jpg";
+  "https://images.pexels.com/photos/6578386/pexels-photo-6578386.jpeg?auto=compress&cs=tinysrgb&w=1400";
 const IMG_ROOM =
-  "https://res.cloudinary.com/dahnwukbz/image/upload/v1789050796/Turnkey_Educational_Infrastructure_mbh4kh.jpg";
+  "https://res.cloudinary.com/dahnwukbz/image/upload/v1789119041/99_Metal_Bunk_Beds_for_Hostels_Check_more_at_http___imagepoop_com_201-metal-bunk-beds-for-hostels__zig6cn.jpg";
 
 const roomFeatures = [
   {
@@ -102,19 +102,41 @@ const bookingSteps = [
 ];
 
 const houseRules = [
-  "Hotplates are not permitted.",
-  "Participants should bring an appropriate camp-gas arrangement where cooking is required.",
-  "Electricity and other residential resources must be used responsibly; abuse, excessive use or misuse is not permitted.",
-  "Noise or activities that disturb the surrounding neighbourhood are not permitted.",
-  "Late-night movements are not permitted.",
-  "Visitors are not permitted beyond 7:00 PM.",
-  "Visitors are not permitted inside residential rooms. Approved visitors may only be received during permitted visiting hours and in accordance with Management's visitor arrangements.",
-  "Overnight visitors or sleepover guests are strictly prohibited.",
-  "Residents must comply with applicable residential instructions and house rules.",
+  {
+    heading: "Cooking & Hotplates",
+    detail:
+      "Hotplates are not permitted. Participants should bring an appropriate camp-gas arrangement where cooking is required.",
+  },
+  {
+    heading: "Electricity & Resource Use",
+    detail:
+      "Electricity and other residential resources must be used responsibly; abuse, excessive use or misuse is not permitted.",
+  },
+  {
+    heading: "Noise & Conduct",
+    detail:
+      "Noise or activities that disturb the surrounding neighbourhood are not permitted.",
+  },
+  {
+    heading: "Late-Night Movement",
+    detail: "Late-night movements are not permitted.",
+  },
+  {
+    heading: "Visitors",
+    detail:
+      "Visitors are not permitted beyond 7:00 PM, or inside residential rooms. Approved visitors may only be received during permitted visiting hours and in accordance with Management's visitor arrangements. Overnight visitors or sleepover guests are strictly prohibited.",
+  },
+  {
+    heading: "General Compliance",
+    detail:
+      "Residents must comply with applicable residential instructions and house rules.",
+  },
 ];
 
 const ResidentialExperience = () => {
   const [resModal, setResModal] = useState(false);
+  const [openRule, setOpenRule] = useState(null);
+  const toggleRule = (i) => setOpenRule(openRule === i ? null : i);
 
   return (
     <>
@@ -284,69 +306,7 @@ const ResidentialExperience = () => {
           </div>
         </section>
 
-        {/* ── 6. Residential guidelines & house rules ────────────────────── */}
-        <section className="res-rules-section">
-          <div className="container">
-            <div className="emptdp-section-header">
-              <h2 className="emptdp-section-title">
-                Residential Guidelines &amp; House Rules
-              </h2>
-              <p className="emptdp-section-subtitle">
-                The Residential Experience is intended to provide a safe,
-                respectful and conducive environment. Residents are expected to
-                observe the following rules:
-              </p>
-            </div>
-            <ul className="res-rules">
-              {houseRules.map((r, i) => (
-                <li key={i}>
-                  <i className="bi bi-shield-check"></i>
-                  <span>{r}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="res-fineprint res-rules-note">
-              A more detailed Residential Agreement/House Rules document may be
-              issued and acknowledged during the booking process.
-            </p>
-          </div>
-        </section>
-
-        {/* ── 7. Booking process ─────────────────────────────────────────── */}
-        <section className="emptdp-why-section res-booking-section">
-          <div className="container">
-            <div className="emptdp-section-header">
-              <h2 className="emptdp-section-title">Booking Process</h2>
-            </div>
-            <ol className="res-steps">
-              {bookingSteps.map((s, i) => (
-                <li key={i}>
-                  <span className="res-step-num">{i + 1}</span>
-                  <span className="res-step-body">
-                    <strong>{s.title}</strong>
-                    <span>{s.desc}</span>
-                  </span>
-                </li>
-              ))}
-            </ol>
-            <div className="res-booking-cta">
-              <button
-                className="emptdp-btn emptdp-btn--primary"
-                onClick={() => setResModal(true)}
-              >
-                Book Now
-              </button>
-            </div>
-            <p className="res-highlight res-booking-important">
-              <strong>Important:</strong> Submission of a request does not itself
-              guarantee accommodation. Residential space is confirmed only after
-              availability and applicable booking requirements have been formally
-              confirmed.
-            </p>
-          </div>
-        </section>
-
-        {/* ── 8. Residential investment ─────────────────────────────────── */}
+          {/* ── 8. Residential investment ─────────────────────────────────── */}
         <section className="res-fees-section">
           <div className="container">
             <div className="emptdp-section-header">
@@ -414,6 +374,87 @@ const ResidentialExperience = () => {
           </div>
         </section>
 
+        {/* ── 6. Residential guidelines & house rules ────────────────────── */}
+        <section className="res-rules-section">
+          <div className="container">
+            <div className="emptdp-section-header">
+              <h2 className="emptdp-section-title">
+                Residential Guidelines &amp; House Rules
+              </h2>
+              <p className="emptdp-section-subtitle">
+                The Residential Experience is intended to provide a safe,
+                respectful and conducive environment. Residents are expected to
+                observe the following rules:
+              </p>
+            </div>
+            <div className="res-rules">
+              {houseRules.map((r, i) => (
+                <div className="res-rule-item" key={i}>
+                  <button
+                    type="button"
+                    className="res-rule-trigger"
+                    onClick={() => toggleRule(i)}
+                    aria-expanded={openRule === i}
+                  >
+                    <i className="bi bi-shield-check res-rule-icon"></i>
+                    <span className="res-rule-heading">{r.heading}</span>
+                    <i
+                      className={`bi ${
+                        openRule === i ? "bi-chevron-up" : "bi-chevron-down"
+                      } res-rule-caret`}
+                    ></i>
+                  </button>
+                  {openRule === i && (
+                    <div className="res-rule-detail">
+                      <p>{r.detail}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <p className="res-fineprint res-rules-note">
+              A more detailed Residential Agreement/House Rules document may be
+              issued and acknowledged during the booking process.
+            </p>
+          </div>
+        </section>
+
+        {/* ── 7. Booking process ─────────────────────────────────────────── */}
+        <section className="emptdp-why-section res-booking-section">
+          <div className="container">
+            <div className="emptdp-section-header">
+              <h2 className="emptdp-section-title">Booking Process</h2>
+            </div>
+            <ol className="res-steps">
+              {bookingSteps.map((s, i) => (
+                <li key={i}>
+                  <span className="res-step-num">{i + 1}</span>
+                  <span className="res-step-body">
+                    <strong>{s.title}</strong>
+                    <span>{s.desc}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+            <div className="res-booking-cta">
+              <button
+                className="emptdp-btn emptdp-btn--primary"
+                onClick={() => setResModal(true)}
+              >
+                Book Now
+              </button>
+            </div>
+            <p className="res-highlight res-booking-important">
+              <strong>Important:</strong> Submission of a request does not itself
+              guarantee accommodation. Residential space is confirmed only after
+              availability and applicable booking requirements have been formally
+              confirmed.
+            </p>
+          </div>
+        </section>
+
+      
+
         {/* ── 11. Final CTA ─────────────────────────────────────────────── */}
         <section className="emptdp-cta-section">
           <div className="emptdp-cta-inner">
@@ -437,7 +478,9 @@ const ResidentialExperience = () => {
               Joining ETMPDP?{" "}
               <Link to="/emptdp-core">ETMPDP Core</Link>
               {" · "}
-              <Link to="/emptdp-ignite">ETMPDP Ignite</Link>
+              <Link to="/emptdp-ignite" className="res-cta-links-ignite">
+                ETMPDP Ignite
+              </Link>
             </p>
           </div>
         </section>
