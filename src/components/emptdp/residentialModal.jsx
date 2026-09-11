@@ -276,11 +276,7 @@ const ResidentialModal = ({ isOpen, onClose }) => {
                 &#10003;
               </div>
               <p className="applymodal-success-text">
-                We&apos;ve received your residential accommodation request. Our
-                team will confirm available residential space and provide the
-                applicable fee, payment schedule and requirements. This is not a
-                confirmed booking until availability and the required
-                payment/documentation are formally confirmed.
+               We've received your residential accommodation request. Our team will confirm residential space availability and, where space is available, provide the applicable payment schedule and requirements. This is not a confirmed booking until residential space has been confirmed and payment received.
               </p>
               <button
                 type="button"
