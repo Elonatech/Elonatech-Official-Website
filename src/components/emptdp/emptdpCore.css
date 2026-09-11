@@ -941,10 +941,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(135deg, #fdf0f1, #fbe4e5);
-  border: 1px solid #f1dcdd;
+  background: #fff;
+  border: 1px solid #e9ecef;
   border-radius: 16px;
   padding: 26px 30px;
+  /* White like the parent card, but its own shadow lifts it off that
+     background so it still pops the way the enrollment price card does. */
+  box-shadow: 0 10px 28px rgba(154, 31, 36, 0.12);
 }
 
 .core-invest-eyebrow {
