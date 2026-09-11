@@ -8,7 +8,7 @@ import CardDeck from "./CardDeck";
 import guideFile from "./data/ETMPDP_Residential_Experience_Accommodation_Guide.pdf";
 
 const IMG_LIVING =
-  "https://images.pexels.com/photos/6578386/pexels-photo-6578386.jpeg?auto=compress&cs=tinysrgb&w=1400";
+  "https://res.cloudinary.com/dahnwukbz/image/upload/v1789137181/pexels-tima-miroshnichenko-6860396_bsi8ne.jpg";
 const IMG_ROOM =
   "https://res.cloudinary.com/dahnwukbz/image/upload/v1789119041/99_Metal_Bunk_Beds_for_Hostels_Check_more_at_http___imagepoop_com_201-metal-bunk-beds-for-hostels__zig6cn.jpg";
 
@@ -103,14 +103,14 @@ const bookingSteps = [
 
 const houseRules = [
   {
-    heading: "Cooking & Hotplates",
+    heading: "Cooking & Cooking Appliances",
     detail:
       "Hotplates are not permitted. Participants should bring an appropriate camp-gas arrangement where cooking is required.",
   },
   {
     heading: "Electricity & Resource Use",
     detail:
-      "Electricity and other residential resources must be used responsibly; abuse, excessive use or misuse is not permitted.",
+      "Electricity, water, internet and other residential resources must be used responsibly; abuse, excessive use or misuse is not permitted.",
   },
   {
     heading: "Noise & Conduct",
@@ -124,12 +124,12 @@ const houseRules = [
   {
     heading: "Visitors",
     detail:
-      "Visitors are not permitted beyond 7:00 PM, or inside residential rooms. Approved visitors may only be received during permitted visiting hours and in accordance with Management's visitor arrangements. Overnight visitors or sleepover guests are strictly prohibited.",
+      "Visitors are not permitted beyond 7:00 PM. Approved visitors may only be received during permitted visiting hours and in accordance with Management's visitor arrangements. Overnight visitors or sleepover guests are strictly prohibited.",
   },
   {
     heading: "General Compliance",
     detail:
-      "Residents must comply with applicable residential instructions and house rules.",
+      "Residents must comply with applicable residential instructions, house rules and other rules that may be provided.",
   },
 ];
 

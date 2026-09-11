@@ -443,14 +443,12 @@ const ResidentialModal = ({ isOpen, onClose }) => {
 
               {/* Preferred start */}
               <div className="applymodal-field">
-                <label className="applymodal-label">
-                  Preferred Start Date / Period
-                </label>
+                <label className="applymodal-label">Preferred Start Date</label>
                 <input
-                  type="text"
+                  type="date"
                   value={startPeriod}
                   onChange={(e) => setStartPeriod(e.target.value)}
-                  placeholder="e.g. October 2026, or Q1 2027"
+                  min={new Date().toISOString().slice(0, 10)}
                   className="applymodal-input"
                 />
               </div>
