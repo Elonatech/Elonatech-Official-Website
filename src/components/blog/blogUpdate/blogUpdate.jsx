@@ -13,28 +13,56 @@ const BlogUpdate = () => {
   const [author, setAuthor] = useState("");
   const [category, setCategory] = useState("");
   const [cloudinary_id, setCloudinary_id] = useState(null);
+  const [publishMode, setPublishMode] = useState("now"); // "now" | "schedule"
+  const [publishAt, setPublishAt] = useState("");
+  const [originalStatus, setOriginalStatus] = useState("published");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/blog/${id}`);
-        setTitle(res.data.title);
-        setDescription(res.data.description);
-        setAuthor(res.data.author);
+        // Admin endpoint — unfiltered, so a scheduled or draft post can still
+        // be opened here. The public /api/v1/blog/:id hides those entirely,
+        // which would make it impossible to ever edit/reschedule them.
+        const token = JSON.parse(localStorage.getItem("token"));
+        const res = await axios.get(`${BASEURL}/api/v1/blog/admin/${id}`, {
+          headers: { "x-access-token": token },
+        });
+        const blog = res.data.data;
+        setTitle(blog.title);
+        setDescription(blog.description);
+        setAuthor(blog.author);
+        setOriginalStatus(blog.status || "published");
+        if (blog.status === "scheduled" && blog.publishAt) {
+          setPublishMode("schedule");
+          // datetime-local wants local time with no timezone/seconds
+          const local = new Date(blog.publishAt);
+          local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
+          setPublishAt(local.toISOString().slice(0, 16));
+        }
       } catch (error) {
         console.log(error);
+        toast.error("Failed to load blog post");
       }
     };
     fetchBlog();
   }, []);
 
   const handleUpdate = async (e) => {
-    e.preventDefault();   
+    e.preventDefault();
+
+    if (isLoading) return; // guard against double-submit (e.g. double-click while a slow upload is in flight)
+
+    if (publishMode === "schedule" && (!publishAt || new Date(publishAt) <= new Date())) {
+      return toast.error("Scheduled time must be in the future");
+    }
+
+    setIsLoading(true);
 
     // Create FormData instead of a plain object
-    const formData = new FormData(); 
+    const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
     formData.append("author", author);
@@ -43,6 +71,16 @@ const BlogUpdate = () => {
     // Attach the new file if it exists
     if (cloudinary_id instanceof File) {
       formData.append("cloudinary_image", cloudinary_id); // key must match Multer
+    }
+
+    // Only touch scheduling fields if the user actually changed something
+    // here — the backend deliberately leaves status/publishAt untouched
+    // otherwise, so a plain content edit never accidentally reschedules a post.
+    if (publishMode === "schedule") {
+      formData.append("publishAt", new Date(publishAt).toISOString());
+    } else if (originalStatus !== "published") {
+      // was draft/scheduled, admin switched it to "Publish now"
+      formData.append("status", "published");
     }
 
     try {
@@ -68,6 +106,8 @@ const BlogUpdate = () => {
       } else {
         toast.error(error.response?.data?.message || 'Failed to update blog');
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -180,6 +220,63 @@ const BlogUpdate = () => {
                       News
                     </label>
                   </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      checked={category === "info"}
+                      name="cat"
+                      value="info"
+                      onChange={(e) => setCategory(e.target.value)}
+                      id="catInfo"
+                    />
+                    <label class="form-check-label" for="catInfo">
+                      Info
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      checked={category === "editorial"}
+                      name="cat"
+                      value="editorial"
+                      onChange={(e) => setCategory(e.target.value)}
+                      id="catEditorial"
+                    />
+                    <label class="form-check-label" for="catEditorial">
+                      Editorial
+                    </label>
+                  </div>
+
+                  <div class="mb-3 mt-3">
+                    <label class="form-label fw-bold d-block">When</label>
+                    <div className="btn-group" role="group" aria-label="Publish timing">
+                      <button
+                        type="button"
+                        className={`btn btn-sm ${publishMode === "now" ? "btn-primary" : "btn-outline-primary"}`}
+                        onClick={() => setPublishMode("now")}
+                      >
+                        Publish now
+                      </button>
+                      <button
+                        type="button"
+                        className={`btn btn-sm ${publishMode === "schedule" ? "btn-primary" : "btn-outline-primary"}`}
+                        onClick={() => setPublishMode("schedule")}
+                      >
+                        Schedule for later
+                      </button>
+                    </div>
+
+                    {publishMode === "schedule" && (
+                      <input
+                        type="datetime-local"
+                        class="form-control mt-2"
+                        value={publishAt}
+                        onChange={(e) => setPublishAt(e.target.value)}
+                      />
+                    )}
+                  </div>
                 </div>
 
                 <div className="col-md-5 mt-3">
@@ -187,8 +284,9 @@ const BlogUpdate = () => {
                     type="submit"
                     class="btn btn-primary"
                     onClick={handleUpdate}
+                    disabled={isLoading}
                   >
-                    Update
+                    {isLoading ? "Updating..." : "Update"}
                   </button>
                 </div>
               </div>

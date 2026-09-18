@@ -30,8 +30,14 @@ const BlogList = () => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`${BASEURL}/api/v1/blog`);
-        setPosts(res.data.getAllBlogs || []);
+        // Admin endpoint — unfiltered, so drafts and scheduled-but-not-yet-live
+        // posts still show up here for management. The public /api/v1/blog
+        // endpoint deliberately hides those.
+        const token = JSON.parse(localStorage.getItem("token"));
+        const res = await axios.get(`${BASEURL}/api/v1/blog/admin/all`, {
+          headers: { "x-access-token": token },
+        });
+        setPosts(res.data.blogs || []);
       } catch (error) {
         toast.error("Failed to load blog posts");
       } finally {
@@ -40,6 +46,23 @@ const BlogList = () => {
     };
     fetchPosts();
   }, []);
+
+  const statusBadge = (post) => {
+    if (post.status === "draft") {
+      return <span className="blog-status-badge blog-status-draft">Draft</span>;
+    }
+    if (post.status === "scheduled") {
+      const when = new Date(post.publishAt).toLocaleString("en-GB", {
+        day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
+      });
+      return (
+        <span className="blog-status-badge blog-status-scheduled" title={`Publishes ${when}`}>
+          Scheduled — {when}
+        </span>
+      );
+    }
+    return <span className="blog-status-badge blog-status-published">Published</span>;
+  };
 
   const totalPages = Math.ceil(posts.length / PAGE_SIZE);
   const paginatedPosts = posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -58,7 +81,7 @@ const BlogList = () => {
           <div className="sad-header">
             <div>
               <h4 className="sad-title">Blog List</h4>
-              <p className="sad-subtitle">All published blog posts</p>
+              <p className="sad-subtitle">All blog posts, including drafts and scheduled</p>
             </div>
           </div>
 
@@ -75,6 +98,7 @@ const BlogList = () => {
                       <th>TITLE</th>
                       <th>AUTHOR</th>
                       <th>DATE</th>
+                      <th>STATUS</th>
                       <th>ACTIONS</th>
                     </tr>
                   </thead>
@@ -93,6 +117,7 @@ const BlogList = () => {
                             }
                           )}
                         </td>
+                        <td data-label="Status">{statusBadge(post)}</td>
                         <td data-label="Actions">
                           <span className="job-actions-cell">
                             <Link

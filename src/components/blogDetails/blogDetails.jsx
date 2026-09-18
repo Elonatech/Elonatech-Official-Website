@@ -21,6 +21,7 @@ const BlogDetails = () => {
   const [recentlyViewed, setRecentlyViewed] = useState([])
   const [currentAdmin, setCurrentAdmin] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [notFound, setNotFound] = useState(false)
   const { slug, id: paramId } = useParams()
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
@@ -69,16 +70,37 @@ const BlogDetails = () => {
 
   useEffect(() => {
     const fetchBlog = async () => {
+      // prefer the MongoDB _id param (from /blog/:slug/:id), fall back to slug
+      const identifier = paramId || slug
+      const token = JSON.parse(localStorage.getItem('token'))
+
       try {
-        // prefer the MongoDB _id param (from /blog/:slug/:id), fall back to slug
-        const identifier = paramId || slug
+        if (token) {
+          // Logged-in admin — use the unfiltered admin endpoint so a
+          // scheduled or draft post can still be previewed here before it
+          // goes live. Falls through to the public fetch below if this
+          // fails (e.g. an expired token), same as an anonymous visitor.
+          try {
+            const res = await axios.get(`${BASEURL}/api/v1/blog/admin/${identifier}`, {
+              headers: { 'x-access-token': token },
+            })
+            setData(res.data.data)
+            setId(res.data.data._id)
+            setNotFound(false)
+            return
+          } catch (adminError) {
+            // fall through to the public fetch
+          }
+        }
+
         const res = await axios.get(`${BASEURL}/api/v1/blog/${identifier}`)
         setData(res.data)
-        setId(res.data._id);
-        // console.log(id, res.data, 'thuebeiuuuer   ewuue e')
-        setIsLoading(true)
+        setId(res.data._id)
+        setNotFound(false)
       } catch (error) {
         console.log(error)
+        setNotFound(true)
+      } finally {
         setIsLoading(true)
       }
     }
@@ -187,7 +209,17 @@ const BlogDetails = () => {
         <div className='row'>
           <div className='col-lg-9 leftt'>
             <div className='mt-2'>
-              {isLoading ? (
+              {isLoading && notFound ? (
+                <div className='text-center py-5'>
+                  <h4>This post isn't available.</h4>
+                  <p className='text-muted'>
+                    It may have been removed, or it's scheduled and not live yet.
+                  </p>
+                  <Link to='/blog' className='btn btn-outline-primary mt-2'>
+                    ← Back to Blog
+                  </Link>
+                </div>
+              ) : isLoading ? (
                 <div>
                   <h3 className='fw-bold'>{data.title}</h3>
                   <div className='mt-4 '>

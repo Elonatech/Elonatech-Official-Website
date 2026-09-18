@@ -15,6 +15,8 @@ const BlogWrite = () => {
   const [category, setCategory] = useState("");
   const [cloudinary_id, setCloudinary_url] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [publishMode, setPublishMode] = useState("now"); // "now" | "schedule"
+  const [publishAt, setPublishAt] = useState("");
 
   const navigate = useNavigate();
 
@@ -27,6 +29,11 @@ const BlogWrite = () => {
     if (!author.trim()) return toast.error("Author is required");
     if (!category) return toast.error("Please select a category");
     if (!cloudinary_id) return toast.error("Please select an image");
+    if (publishMode === "schedule") {
+      if (!publishAt) return toast.error("Pick a date and time to schedule for");
+      if (new Date(publishAt) <= new Date())
+        return toast.error("Scheduled time must be in the future");
+    }
 
     try {
       setIsLoading(true);
@@ -36,6 +43,12 @@ const BlogWrite = () => {
       formData.append("author", author);
       formData.append("category", JSON.stringify([category]));
       formData.append("cloudinary_image", cloudinary_id);
+      if (publishMode === "schedule") {
+        // datetime-local has no timezone info — resolve it against the
+        // browser's own timezone, then send an unambiguous UTC ISO string
+        // so the server's own timezone setting can never cause a mismatch.
+        formData.append("publishAt", new Date(publishAt).toISOString());
+      }
 
       const token = JSON.parse(localStorage.getItem("token"));
       const res = await axios.post(`${BASEURL}/api/v1/blog/create`, formData, {
@@ -46,7 +59,9 @@ const BlogWrite = () => {
       });
 
       if (res) {
-        toast.success("Blog Published Successfully");
+        toast.success(
+          publishMode === "schedule" ? "Blog Scheduled Successfully" : "Blog Published Successfully"
+        );
         setTimeout(() => {
           navigate("/blog");
         }, 1000);
@@ -226,12 +241,47 @@ const BlogWrite = () => {
                       Editorial
                     </label>
                   </div>
+                  <div className="mb-3 mt-3">
+                    <label className="form-label fw-bold d-block">When</label>
+                    <div className="btn-group" role="group" aria-label="Publish timing">
+                      <button
+                        type="button"
+                        className={`btn btn-sm ${publishMode === "now" ? "btn-primary" : "btn-outline-primary"}`}
+                        onClick={() => setPublishMode("now")}
+                      >
+                        Publish now
+                      </button>
+                      <button
+                        type="button"
+                        className={`btn btn-sm ${publishMode === "schedule" ? "btn-primary" : "btn-outline-primary"}`}
+                        onClick={() => setPublishMode("schedule")}
+                      >
+                        Schedule for later
+                      </button>
+                    </div>
+
+                    {publishMode === "schedule" && (
+                      <input
+                        type="datetime-local"
+                        className="form-control mt-2"
+                        value={publishAt}
+                        min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+                          .toISOString()
+                          .slice(0, 16)}
+                        onChange={(e) => setPublishAt(e.target.value)}
+                      />
+                    )}
+                  </div>
                 </div>
 
                 {/* PUBLISH BUTTON */}
                 <div className="col-md-5 mt-3">
-                  <button type="submit" className="btn btn-primary">
-                    {isLoading ? "Loading" : "Publish"}
+                  <button type="submit" className="btn btn-primary" disabled={isLoading}>
+                    {isLoading
+                      ? "Loading"
+                      : publishMode === "schedule"
+                      ? "Schedule"
+                      : "Publish"}
                   </button>
                 </div>
               </div>
