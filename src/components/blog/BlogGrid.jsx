@@ -75,6 +75,31 @@ const BlogGrid = ({
     fetchData();
   }, []);
 
+  // Quietly re-check for new/newly-published posts every minute, so a
+  // scheduled post appears without the visitor having to reload. Deliberately
+  // low-key: no loading spinner, no touching scroll/filter/page state, and it
+  // skips the update entirely if nothing actually changed — so a visitor
+  // mid-scroll or filling in the newsletter field is never disrupted.
+  useEffect(() => {
+    const POLL_INTERVAL = 60000;
+    const interval = setInterval(async () => {
+      try {
+        const response = await axios.get(`${BASEURL}/api/v1/blog/`);
+        const fresh = response.data.getAllBlogs || [];
+        setData((prev) =>
+          fresh.length === prev.length && fresh[0]?._id === prev[0]?._id
+            ? prev
+            : fresh
+        );
+      } catch (error) {
+        // Silent — a failed background refresh isn't worth alarming the
+        // visitor over; the page they already have still works fine.
+      }
+    }, POLL_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // Reset back to page 1 whenever the active category filter changes
   useEffect(() => {
     setCurrentPage(1);
