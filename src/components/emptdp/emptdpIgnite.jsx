@@ -848,7 +848,7 @@ const EmptdpIgnite = () => {
               <div className="emptdp-mentor-photo-col">
                 <Link to="/enoch-enebeli">
                   <img
-                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1788189916/Enoch_J._Enebeli_last_chance_2_jispeq.png"
+                    src="https://res.cloudinary.com/dahnwukbz/image/upload/v1790069073/enoch_cutout_tesey9.png"
                     alt="Enoch J. Enebeli"
                     className="emptdp-mentor-photo ignite-mentor-photo--zoomout"
                   />

@@ -117,7 +117,7 @@ const BlogWrite = () => {
       </div>
 
       {/* ====================== FORM ====================== */}
-      <div className="container py-5">
+      <div className="container py-5">  
         <div className="container my-5 py-5">
           <form onSubmit={handleSubmit}>
             <div className="container mb-5">
