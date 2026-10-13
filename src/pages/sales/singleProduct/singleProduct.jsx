@@ -6,7 +6,7 @@ import { BASEURL } from "../../../BaseURL/BaseURL";
 import { useParams } from "react-router-dom";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
-import DOMPurify from "dompurify";
+import { linkifyPostHtml } from "../../../components/blogDetails/linkifyPostHtml";
 import { useCart } from "react-use-cart";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -722,7 +722,7 @@ const SingleProduct = () => {
                         <div
                           className="description mt-2 mb-5 p-"
                           dangerouslySetInnerHTML={{
-                            __html: DOMPurify.sanitize(data.description),
+                            __html: linkifyPostHtml(data.description),
                           }}
                         ></div>
                       </div>
@@ -746,7 +746,7 @@ const SingleProduct = () => {
                           <div
                             className="description mt-2 mb-5"
                             dangerouslySetInnerHTML={{
-                              __html: DOMPurify.sanitize(data.description),
+                              __html: linkifyPostHtml(data.description),
                             }}
                           ></div>
                         </div>

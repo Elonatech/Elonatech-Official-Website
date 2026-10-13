@@ -4,7 +4,7 @@ import axios from 'axios';
 import { BASEURL } from '../../../BaseURL/BaseURL';
 import './newsDetails.css';
 import Loading from '../../Loading/Loading';
-import DOMPurify from 'dompurify';
+import { linkifyPostHtml } from '../../blogDetails/linkifyPostHtml';
 
 
 const NewsRelated = () => {
@@ -171,7 +171,7 @@ return (
                     <div
                       class="description"
                       dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(data.description)
+                        __html: linkifyPostHtml(data.description)
                       }}
                     ></div>
                   </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
-import DOMPurify from "dompurify";
+import { linkifyPostHtml } from "../../../components/blogDetails/linkifyPostHtml";
 import { BASEURL } from "../../../BaseURL/BaseURL";
 import Loading from "../../../components/Loading/Loading";
 import ApplyNow from "../../../components/ApplyNow/ApplyNow";
@@ -120,7 +120,7 @@ const JobDetail = () => {
               <div
                 className="job-description-content mb-4"
                 dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(job.jobSummary),
+                  __html: linkifyPostHtml(job.jobSummary),
                 }}
               />
             )}
@@ -129,7 +129,7 @@ const JobDetail = () => {
             <div
               className="job-description-content"
               dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(
+                __html: linkifyPostHtml(
                   stripSidebarOnlyLines(job.jobDescription || "")
                 ),
               }}
@@ -141,7 +141,7 @@ const JobDetail = () => {
                 <div
                   className="job-description-content"
                   dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(job.responsibilities),
+                    __html: linkifyPostHtml(job.responsibilities),
                   }}
                 />
               </>
@@ -153,7 +153,7 @@ const JobDetail = () => {
                 <div
                   className="job-description-content"
                   dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(job.requirements),
+                    __html: linkifyPostHtml(job.requirements),
                   }}
                 />
               </>
@@ -165,7 +165,7 @@ const JobDetail = () => {
                 <div
                   className="job-description-content"
                   dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(job.benefits),
+                    __html: linkifyPostHtml(job.benefits),
                   }}
                 />
               </>

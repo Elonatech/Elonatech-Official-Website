@@ -5,6 +5,7 @@ import { BASEURL } from '../../BaseURL/BaseURL'
 import './blogDetails.css'
 import Loading from '../Loading/Loading'
 import DOMPurify from 'dompurify'
+import { linkifyPostHtml } from './linkifyPostHtml'
 import BlogComments from './blogComment'
 import './blogDetails.css'
 import hgdelete from './caption/delete.png'
@@ -196,7 +197,7 @@ const BlogRelated = () => {
                       <div
                         class='description'
                         dangerouslySetInnerHTML={{
-                          __html: DOMPurify.sanitize(data.description)
+                          __html: linkifyPostHtml(data.description)
                         }}
                       ></div>
 

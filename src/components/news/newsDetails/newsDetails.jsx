@@ -7,7 +7,7 @@ import hgdelete from './caption/delete.png'
 import edit from './caption/editing.png'
 import './newsDetails.css'
 import Loading from '../../Loading/Loading'
-import DOMPurify from 'dompurify'
+import { linkifyPostHtml } from '../../blogDetails/linkifyPostHtml'
 import { Helmet } from 'react-helmet-async'
 import sanitizeHtml from 'sanitize-html'
 import BlogComments from '../../blogDetails/blogComment'
@@ -217,7 +217,7 @@ const NewsDetails = () => {
                   <div
                     class='description'
                     dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.description)
+                      __html: linkifyPostHtml(data.description)
                     }}
                   ></div>
                 </div>

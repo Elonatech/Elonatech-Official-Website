@@ -8,7 +8,7 @@ import hgdelete from './caption/delete.png'
 import edit from './caption/editing.png'
 import './blogDetails.css'
 import Loading from '../Loading/Loading'
-import DOMPurify from 'dompurify'
+import { linkifyPostHtml } from './linkifyPostHtml'
 import { Helmet } from 'react-helmet-async'
 import sanitizeHtml from 'sanitize-html'
 import BlogSocialShareButtons from './blogShareButton'
@@ -338,7 +338,7 @@ const BlogDetails = () => {
                   <div
                     class='description taj'
                     dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.description)
+                      __html: linkifyPostHtml(data.description)
                     }}
                   ></div>
                 </div>
