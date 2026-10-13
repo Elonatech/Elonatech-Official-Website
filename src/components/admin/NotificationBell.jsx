@@ -61,8 +61,16 @@ const NotificationBell = () => {
   const toggleOpen = () => {
     const next = !open;
     setOpen(next);
-    if (next) fetchNotifications();
+    if (next) {
+      fetchNotifications();
+      fetchUnreadCount();
+    }
   };
+
+  // Based on the list itself, not just the badge count: if the count request
+  // ever failed, "Mark all as read" would otherwise stay hidden while unread
+  // items were visibly sitting in the dropdown.
+  const hasUnread = unreadCount > 0 || notifications.some((n) => !n.read);
 
   const markAsRead = async (id) => {
     try {
@@ -111,7 +119,7 @@ const NotificationBell = () => {
         <div className="nbell-panel">
           <div className="nbell-panel-header">
             <h6 className="nbell-panel-title">Notifications</h6>
-            {unreadCount > 0 && (
+            {hasUnread && (
               <button className="nbell-mark-all" onClick={markAllAsRead}>
                 Mark all as read
               </button>

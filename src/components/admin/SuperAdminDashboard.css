@@ -65,6 +65,12 @@ body:has(.sad-overlay) {
   position: sticky;
   top: 0;
   height: 100vh;
+  /* A sticky element forms its own stacking context, so the notification
+     dropdown's z-index only counts *inside* the sidebar. Without a z-index
+     here, later page content (the dashboard chart) paints over the part of
+     the dropdown that hangs out into the main area. Modals (9999) and toasts
+     stay above this. */
+  z-index: 20;
 }
 
 .sad-sidebar-brand {
