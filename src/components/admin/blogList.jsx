@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import AdminSidebar from "./AdminSidebar";
+import { useAutoRefresh } from "./useAutoRefresh";
 import "./SuperAdminDashboard.css";
 
 const PAGE_SIZE = 20;
@@ -26,26 +27,31 @@ const BlogList = () => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
+  // `silent` = background refresh: no loading state, no error toast. A
+  // scheduled post flips to Published on its own once its time passes.
+  const fetchPosts = async (silent = false) => {
+    try {
+      if (!silent) setLoading(true);
+      // Admin endpoint — unfiltered, so drafts and scheduled-but-not-yet-live
+      // posts still show up here for management. The public /api/v1/blog
+      // endpoint deliberately hides those.
+      const token = JSON.parse(localStorage.getItem("token"));
+      const res = await axios.get(`${BASEURL}/api/v1/blog/admin/all`, {
+        headers: { "x-access-token": token },
+      });
+      setPosts(res.data.blogs || []);
+    } catch (error) {
+      if (!silent) toast.error("Failed to load blog posts");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        setLoading(true);
-        // Admin endpoint — unfiltered, so drafts and scheduled-but-not-yet-live
-        // posts still show up here for management. The public /api/v1/blog
-        // endpoint deliberately hides those.
-        const token = JSON.parse(localStorage.getItem("token"));
-        const res = await axios.get(`${BASEURL}/api/v1/blog/admin/all`, {
-          headers: { "x-access-token": token },
-        });
-        setPosts(res.data.blogs || []);
-      } catch (error) {
-        toast.error("Failed to load blog posts");
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchPosts();
   }, []);
+
+  useAutoRefresh(() => fetchPosts(true));
 
   const statusBadge = (post) => {
     if (post.status === "draft") {
@@ -108,7 +114,7 @@ const BlogList = () => {
                         <td data-label="Title">{post.title}</td>
                         <td data-label="Author">{post.author}</td>
                         <td data-label="Date">
-                          {new Date(post.createdAt).toLocaleDateString(
+                          {new Date(post.publishAt).toLocaleDateString(
                             "en-GB",
                             {
                               day: "2-digit",

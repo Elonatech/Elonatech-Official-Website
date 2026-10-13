@@ -223,7 +223,7 @@ const BlogRelated = () => {
                                 <h6 className='related-card-title'>{post.title}</h6>
                                 <p className='related-card-excerpt'>{getExcerpt(post.excerpt)}</p>
                                 <p className='related-card-date'>
-                                  {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                  {new Date(post.publishAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                                 </p>
                                 <span className='related-card-link'>Read More →</span>
                               </div>
@@ -359,7 +359,7 @@ const BlogRelated = () => {
                         <h6 className='related-card-title'>{post.title}</h6>
                         <p className='related-card-excerpt'>{getExcerpt(post.excerpt)}</p>
                         <p className='related-card-date'>
-                          {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          {new Date(post.publishAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                         </p>
                         <span className='related-card-link'>Read More →</span>
                       </div>

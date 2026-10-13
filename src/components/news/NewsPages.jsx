@@ -180,7 +180,7 @@ const NewsPages = () => {
                                 <p className="fs-6">
                                   {" "}
                                   {item.author} /{" "}
-                                  {new Date(item.createdAt).toDateString()}{" "}
+                                  {new Date(item.publishAt).toDateString()}{" "}
                                 </p>
                               </div>
                             </div>

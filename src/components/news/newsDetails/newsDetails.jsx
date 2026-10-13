@@ -254,7 +254,7 @@ const NewsDetails = () => {
                         </h6>
                       </Link>
                       <h6 className='text-danger related-post-date'>
-                        {new Date(post.createdAt).toDateString()}{' '}
+                        {new Date(post.publishAt).toDateString()}{' '}
                       </h6>
                     </div>
                   </div>
@@ -380,7 +380,7 @@ const NewsDetails = () => {
                           </h6>
                         </Link>
                         <h6 className='text-danger related-post-date'>
-                          {new Date(post.createdAt).toDateString()}{' '}
+                          {new Date(post.publishAt).toDateString()}{' '}
                         </h6>
                       </div>
                     </div>

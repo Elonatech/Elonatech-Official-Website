@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { BASEURL } from '../../BaseURL/BaseURL'
+import { publicAxios } from '../../BaseURL/publicAxios'
 import hgdelete from './caption/delete.png'
 import edit from './caption/editing.png'
 import './blogDetails.css'
@@ -80,10 +81,29 @@ const BlogDetails = () => {
           // scheduled or draft post can still be previewed here before it
           // goes live. Falls through to the public fetch below if this
           // fails (e.g. an expired token), same as an anonymous visitor.
-          try {
-            const res = await axios.get(`${BASEURL}/api/v1/blog/admin/${identifier}`, {
-              headers: { 'x-access-token': token },
+          // publicAxios: the global axios would log the admin out and send
+          // them to /login on that 401 instead of letting this fall through.
+          const getAdminPost = tok =>
+            publicAxios.get(`${BASEURL}/api/v1/blog/admin/${identifier}`, {
+              headers: { 'x-access-token': tok },
             })
+          try {
+            let res
+            try {
+              res = await getAdminPost(token)
+            } catch (adminError) {
+              // Expired access token: renew it quietly (same call the global
+              // handler makes) and retry once. If renewal fails too, the
+              // outer catch falls through to the public post.
+              if (adminError.response?.status !== 401) throw adminError
+              const renewed = await publicAxios.post(
+                `${BASEURL}/api/v1/auth/refresh`,
+                {},
+                { withCredentials: true }
+              )
+              localStorage.setItem('token', JSON.stringify(renewed.data.access))
+              res = await getAdminPost(renewed.data.access)
+            }
             setData(res.data.data)
             setId(res.data.data._id)
             setNotFound(false)
@@ -357,7 +377,7 @@ const BlogDetails = () => {
                       )}
                       <h6 className='related-card-title'>{post.title}</h6>
                       <p className='related-card-date'>
-                        {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        {new Date(post.publishAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                       </p>
                       <span className='related-card-link'>Read More →</span>
                     </div>
@@ -390,7 +410,7 @@ const BlogDetails = () => {
                         )}
                         <h6 className='related-card-title'>{post.title}</h6>
                         <p className='related-card-date'>
-                          {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          {new Date(post.publishAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                         </p>
                         <span className='related-card-link'>Read More →</span>
                       </div>
@@ -511,7 +531,7 @@ const BlogDetails = () => {
                         )}
                         <h6 className='related-card-title'>{post.title}</h6>
                         <p className='related-card-date'>
-                          {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          {new Date(post.publishAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                         </p>
                         <span className='related-card-link'>Read More →</span>
                       </div>
@@ -543,7 +563,7 @@ const BlogDetails = () => {
                           )}
                           <h6 className='related-card-title'>{post.title}</h6>
                           <p className='related-card-date'>
-                            {new Date(post.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                            {new Date(post.publishAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                           </p>
                           <span className='related-card-link'>Read More →</span>
                         </div>

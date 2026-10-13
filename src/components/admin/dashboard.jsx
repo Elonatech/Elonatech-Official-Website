@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import AdminSidebar from "./AdminSidebar";
+import { useAutoRefresh } from "./useAutoRefresh";
 import "../admin/SuperAdminDashboard.css";
 import "./dashboard.css";
 
@@ -37,6 +38,13 @@ const Dashboard = () => {
   const [visitorData, setVisitorData] = useState([]);
   const [recentContent, setRecentContent] = useState([]);
   const [mostActiveAdmin, setMostActiveAdmin] = useState(null);
+
+  // Bumping this re-runs the three fetch effects below. It's driven by a
+  // quiet background timer so new posts/products/visits show up without a
+  // manual reload. Each effect only updates state when the data actually
+  // changed, so the chart doesn't re-animate and nothing flickers.
+  const [refreshTick, setRefreshTick] = useState(0);
+  useAutoRefresh(() => setRefreshTick((t) => t + 1), 60000);
 
   // Decode the JWT directly for profile info + role — avoids fetching the
   // full admin list just to render a name/avatar (matches AuditLog.jsx's pattern)
@@ -65,13 +73,17 @@ const Dashboard = () => {
           month: months[v._id.month - 1],
           visitors: v.count,
         }));
-        setVisitorData(transformedData);
+        setVisitorData((prev) =>
+          JSON.stringify(prev) === JSON.stringify(transformedData)
+            ? prev
+            : transformedData
+        );
       } catch (error) {
         console.error("Error fetching visitor data:", error);
       }
     };
     fetchVisitorData();
-  }, []);
+  }, [refreshTick]);
 
   // Recent Content Updates — merges the latest blog posts + products, no
   // fabricated "status" field since neither model tracks a publish state
@@ -87,7 +99,7 @@ const Dashboard = () => {
           _id: b._id,
           title: b.title,
           type: "Blog",
-          createdAt: b.createdAt,
+          createdAt: b.publishAt,
           link: `/blog/${b.slug || b._id}/${b._id}`,
         }));
 
@@ -103,13 +115,15 @@ const Dashboard = () => {
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
           .slice(0, 5);
 
-        setRecentContent(merged);
+        setRecentContent((prev) =>
+          JSON.stringify(prev) === JSON.stringify(merged) ? prev : merged
+        );
       } catch (error) {
         console.error("Error fetching recent content:", error);
       }
     };
     fetchRecentContent();
-  }, []);
+  }, [refreshTick]);
 
   // Most Active Admin — derived from real audit log entries. Only fetched for
   // super admins since /api/v1/auth/audit is already restricted to that role.
@@ -131,14 +145,19 @@ const Dashboard = () => {
 
         const sorted = Object.entries(tally).sort((a, b) => b[1] - a[1]);
         if (sorted.length) {
-          setMostActiveAdmin({ name: sorted[0][0], count: sorted[0][1] });
+          const [name, count] = sorted[0];
+          setMostActiveAdmin((prev) =>
+            prev && prev.name === name && prev.count === count
+              ? prev
+              : { name, count }
+          );
         }
       } catch (error) {
         console.error("Error fetching admin insights:", error);
       }
     };
     fetchInsights();
-  }, [me?.role]);
+  }, [me?.role, refreshTick]);
 
   return (
     <>

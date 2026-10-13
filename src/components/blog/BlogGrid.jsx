@@ -239,7 +239,7 @@ const BlogGrid = ({
                                 </p>
                                 <p className="blog-card-meta">
                                   {item.author} /{" "}
-                                  {new Date(item.createdAt).toDateString()}
+                                  {new Date(item.publishAt).toDateString()}
                                 </p>
                                 <span className="blog-card-readmore">
                                   Read More →
