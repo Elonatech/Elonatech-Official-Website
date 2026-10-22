@@ -69,7 +69,6 @@ const SingleProduct = () => {
   const [nextProductId, setNextProductId] = useState(null);
   const [nextProductSlug, setNextProductSlug] = useState(null);
   const [product, setProduct] = useState(null);
-  const [previewInfo, setPreviewInfo] = useState(null);
   const [allProductsInCategory, setAllProductsInCategory] = useState([]);
 
   // Use the windowSize hook properly INSIDE the component
@@ -202,7 +201,6 @@ const SingleProduct = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        setPreviewInfo(null);
         const loaded = await loadProduct();
         const res = { data: { product: loaded.product } };
         console.log("single-id-product", res.data.product);
@@ -216,14 +214,6 @@ const SingleProduct = () => {
           // Admin looking at a product that isn't live yet. Skip everything
           // that only works for public products (next / related / recently
           // viewed) so it can't fail and bounce the admin to /products.
-          const p = res.data.product;
-          setPreviewInfo(
-            p.status === "draft"
-              ? "This product is a draft and isn't visible to visitors."
-              : `This product is scheduled to go live on ${new Date(p.publishAt).toLocaleString("en-GB", {
-                  day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
-                })}. Visitors can't see this page until then.`
-          );
           setNextProductId(null);
           setNextProductSlug(null);
           return;
@@ -521,13 +511,6 @@ const SingleProduct = () => {
           </div>
         ) : (
           <>
-            {previewInfo && (
-              <div className="container mt-4">
-                <div className="alert alert-warning mb-0" role="alert">
-                  <strong>Preview only.</strong> {previewInfo}
-                </div>
-              </div>
-            )}
             <div className="container mt-4">
               <button
                 onClick={handleGoBackToProducts}
