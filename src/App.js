@@ -163,6 +163,10 @@ const ProductList = lazy(() => import("./components/admin/productList"));
 const Orders = lazy(() => import("./components/admin/orders"));
 const Quotes = lazy(() => import("./components/admin/quotes"));
 const EtmpdpList = lazy(() => import("./components/admin/etmpdpList"));
+const Certificates = lazy(() => import("./components/admin/Certificates"));
+const CertificateShell = lazy(() => import("./pages/verify/CertificateShell"));
+const VerifyCertificate = lazy(() => import("./pages/verify/VerifyCertificate"));
+const EtmpdpCertificates = lazy(() => import("./pages/verify/EtmpdpCertificates"));
 const Subscribers = lazy(() => import("./components/admin/subscribers"));
 const Contacts = lazy(() => import("./components/admin/contacts"));
 const ConsultationList = lazy(() => import("./components/admin/consultationList"));
@@ -221,6 +225,23 @@ const Layout = () => {
 
 
 const router = createBrowserRouter([
+  // What the QR code on an ETMPDP certificate opens. Not linked from anywhere
+  // on the site and marked noindex on the page itself. Kept out of the main
+  // layout on purpose: just the logo at the top and the footer, no menu.
+  {
+    path: "/verify/:code",
+    element: <Suspense fallback={<LoadingPages />}><CertificateShell><VerifyCertificate /></CertificateShell></Suspense>,
+    errorElement: <Error />,
+  },
+
+  // Unlisted list of every ETMPDP certificate, shared by link only. Not in the
+  // menu, footer or sitemap; noindex on the page itself. Same plain frame.
+  {
+    path: "/etmpdp-certificates",
+    element: <Suspense fallback={<LoadingPages />}><CertificateShell><EtmpdpCertificates /></CertificateShell></Suspense>,
+    errorElement: <Error />,
+  },
+
   {
     path: "/",
     element: <Layout />,
@@ -712,6 +733,11 @@ const router = createBrowserRouter([
   {
     path: "/dashboard/etmpdp",
     element: <Suspense fallback={<></>}><PrivateRoute><EtmpdpList /></PrivateRoute></Suspense>
+  },
+
+  {
+    path: "/dashboard/certificates",
+    element: <Suspense fallback={<></>}><PrivateRoute><Certificates /></PrivateRoute></Suspense>
   },
 
   {

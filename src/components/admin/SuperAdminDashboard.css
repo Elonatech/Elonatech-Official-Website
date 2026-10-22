@@ -347,6 +347,13 @@ body:has(.sad-overlay) {
   font-size: 16px;
 }
 
+/* lucide icons (items that pass `Icon` instead of a Bootstrap Icon class) */
+.sad-nav-item .sad-nav-lucide {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
 /* Main */
 .sad-main {
   flex: 1;

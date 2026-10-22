@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BadgeCheck } from "lucide-react";
 import { useAuth } from "./AuthContext";
 import NotificationBell from "./NotificationBell";
 
@@ -30,11 +31,21 @@ const NAV_ITEMS = [
   { key: "subscribers", label: "Subscribers", to: "/dashboard/subscribers", icon: "bi-envelope" },
   { key: "quotes", label: "Quotes", to: "/dashboard/quotes", icon: "bi-file-earmark-ruled" },
   { key: "etmpdp", label: "Etmpdp", to: "/dashboard/etmpdp", icon: "bi-mortarboard" },
+  { key: "certificates", label: "Certificates", to: "/dashboard/certificates", Icon: BadgeCheck },
   { key: "orders", label: "Orders", to: "/dashboard/orders", icon: "bi-cart-check" },
   { key: "consultations", label: "Consultations", to: "/dashboard/consultations", icon: "bi-chat-dots" },
   { key: "retainerships", label: "Retainerships", to: "/dashboard/retainerships", icon: "bi-calendar-check" },
   { key: "contacts", label: "Contacts", to: "/dashboard/contacts", icon: "bi-telephone" },
 ];
+
+// Most items use a Bootstrap Icon class; newer ones pass a lucide `Icon`
+// component instead (the bundled Bootstrap Icons version lacks newer glyphs).
+const NavIcon = ({ item }) =>
+  item.Icon ? (
+    <item.Icon className="sad-nav-lucide" size={18} aria-hidden="true" />
+  ) : (
+    <i className={`bi ${item.icon}`}></i>
+  );
 
 const AdminSidebar = ({ active }) => {
   const { logout } = useAuth();
@@ -90,12 +101,12 @@ const AdminSidebar = ({ active }) => {
           {visibleNavItems.map((item) =>
             item.key === active ? (
               <div key={item.key} className="sad-nav-item active">
-                <i className={`bi ${item.icon}`}></i>
+                <NavIcon item={item} />
                 <span>{item.label}</span>
               </div>
             ) : (
               <Link key={item.key} to={item.to} className="sad-nav-item">
-                <i className={`bi ${item.icon}`}></i>
+                <NavIcon item={item} />
                 <span>{item.label}</span>
               </Link>
             )
