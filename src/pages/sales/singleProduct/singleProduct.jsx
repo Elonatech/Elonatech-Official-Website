@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import axios, { isAxiosError } from "axios";
 import { toast } from "react-toastify";
 import { BASEURL } from "../../../BaseURL/BaseURL";
+import { publicAxios } from "../../../BaseURL/publicAxios";
 import { useParams } from "react-router-dom";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
@@ -68,6 +69,7 @@ const SingleProduct = () => {
   const [nextProductId, setNextProductId] = useState(null);
   const [nextProductSlug, setNextProductSlug] = useState(null);
   const [product, setProduct] = useState(null);
+  const [previewInfo, setPreviewInfo] = useState(null);
   const [allProductsInCategory, setAllProductsInCategory] = useState([]);
 
   // Use the windowSize hook properly INSIDE the component
@@ -156,19 +158,76 @@ const SingleProduct = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // The public endpoint 404s a product that is scheduled for later (or a
+  // draft). When that happens and an admin is signed in, fall back to the
+  // admin endpoint so they can preview it before it goes live. Visitors, and
+  // every normally-published product, behave exactly as before.
+  const loadProduct = async () => {
+    try {
+      const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
+      return { product: res.data?.product, preview: false };
+    } catch (error) {
+      let token = null;
+      try { token = JSON.parse(localStorage.getItem("token")); } catch { /* none */ }
+      if (error.response?.status !== 404 || !token) throw error;
+
+      try {
+        // publicAxios: the global axios would log the admin out and send them
+        // to /login on a 401 instead of letting us fall back.
+        const getAdminProduct = (tok) =>
+          publicAxios.get(`${BASEURL}/api/v1/product/admin/${id}`, {
+            headers: { "x-access-token": tok },
+          });
+        let adminRes;
+        try {
+          adminRes = await getAdminProduct(token);
+        } catch (adminError) {
+          if (adminError.response?.status !== 401) throw adminError;
+          const renewed = await publicAxios.post(
+            `${BASEURL}/api/v1/auth/refresh`,
+            {},
+            { withCredentials: true }
+          );
+          localStorage.setItem("token", JSON.stringify(renewed.data.access));
+          adminRes = await getAdminProduct(renewed.data.access);
+        }
+        return { product: adminRes.data.product, preview: true };
+      } catch {
+        throw error; // genuinely not found — same behaviour as before
+      }
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const res = await axios.get(
-          `${BASEURL}/api/v1/product/${id}`
-        );
+        setPreviewInfo(null);
+        const loaded = await loadProduct();
+        const res = { data: { product: loaded.product } };
         console.log("single-id-product", res.data.product);
         setData(res.data?.product);
         setImage(res.data?.product.images);
         setCategory(res.data?.product.category);
         setComputer(res.data?.product.computerProperty);
         setProduct(res.data?.product);
+
+        if (loaded.preview) {
+          // Admin looking at a product that isn't live yet. Skip everything
+          // that only works for public products (next / related / recently
+          // viewed) so it can't fail and bounce the admin to /products.
+          const p = res.data.product;
+          setPreviewInfo(
+            p.status === "draft"
+              ? "This product is a draft and isn't visible to visitors."
+              : `This product is scheduled to go live on ${new Date(p.publishAt).toLocaleString("en-GB", {
+                  day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
+                })}. Visitors can't see this page until then.`
+          );
+          setNextProductId(null);
+          setNextProductSlug(null);
+          return;
+        }
 
         // Store category in localStorage for back navigation
         localStorage.setItem("lastProductCategory", res.data.product.category);
@@ -462,6 +521,13 @@ const SingleProduct = () => {
           </div>
         ) : (
           <>
+            {previewInfo && (
+              <div className="container mt-4">
+                <div className="alert alert-warning mb-0" role="alert">
+                  <strong>Preview only.</strong> {previewInfo}
+                </div>
+              </div>
+            )}
             <div className="container mt-4">
               <button
                 onClick={handleGoBackToProducts}

@@ -12,6 +12,7 @@ import "./networkDevices.css";
 import { Helmet } from "react-helmet-async";
 import NetworkFilter from "./networkDevicesFilter";
 import Slider from "@mui/material/Slider";
+import { useLiveProducts } from "../useLiveProducts";
 
 const NetworkDevices = () => {
   const [filters, setFilters] = useState({
@@ -22,6 +23,8 @@ const NetworkDevices = () => {
   });
 
   const [filteredProducts, setFilteredProducts] = useState([]);
+  // Bumped by useLiveProducts to quietly re-run the loaders below
+  const [refreshTick, setRefreshTick] = useState(0);
   const [brands, setBrands] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
@@ -51,7 +54,7 @@ const NetworkDevices = () => {
         setBrands(uniqueBrands);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
-  }, []);
+  }, [refreshTick]);
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
@@ -155,7 +158,14 @@ const NetworkDevices = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [refreshTick]);
+
+  useLiveProducts({
+    probe: async () =>
+      (await axios.get(`${BASEURL}/api/v1/product/filter?category=Network`)).data.data,
+    shown: records,
+    onStale: () => setRefreshTick((t) => t + 1),
+  });
 
   useEffect(() => {
     const page = parseInt(searchParams.get("page") || "1", 10);

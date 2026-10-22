@@ -7,8 +7,9 @@ import axios from "axios";
 import { BASEURL } from "../../../../BaseURL/BaseURL";
 import { toast } from "react-toastify";
 import { AiOutlineDashboard } from 'react-icons/ai';
+import PublishTiming, { scheduleError, toUtcIso } from "../../../../components/admin/PublishTiming";
 
-const shopWrite = () => {
+const ShopWrite = () => {
   const getInitialState = () => {
     const value = "Pos";
     return value;
@@ -23,6 +24,8 @@ const shopWrite = () => {
   const [category, setCategory] = useState(getInitialState);
   // const [category, setCategory] = useState("");
   const [images, setImages] = useState([]);
+  const [publishMode, setPublishMode] = useState("now"); // "now" | "schedule"
+  const [publishAt, setPublishAt] = useState("");
 
   // Handle Price
   const handleChangePrice = (e) => {
@@ -49,8 +52,11 @@ const shopWrite = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+    const timingError = scheduleError(publishMode, publishAt);
+    if (timingError) return toast.error(timingError);
+
     try {
-      e.preventDefault();
       setLoading(true);
       const formData = new FormData();
       formData.append("name", name);
@@ -60,7 +66,9 @@ const shopWrite = () => {
       formData.append("brand", brand);
       formData.append("quantity", quantity);
       formData.append("category", category);
-
+      if (publishMode === "schedule") {
+        formData.append("publishAt", toUtcIso(publishAt));
+      }
 
       images.forEach((file) => formData.append("images", file));
 
@@ -78,7 +86,9 @@ const shopWrite = () => {
       // console.log("API Response:", response);
   
       // Success handling
-      toast.success("Product Added Successfully");
+      toast.success(
+        publishMode === "schedule" ? "Product Scheduled Successfully" : "Product Added Successfully"
+      );
       setImages([]);
       navigate("/products");
     } catch (error) {
@@ -253,13 +263,20 @@ const shopWrite = () => {
               />
             </div>
           </div>
+          <PublishTiming
+            mode={publishMode}
+            onModeChange={setPublishMode}
+            value={publishAt}
+            onChange={setPublishAt}
+          />
           <div className="col-md-5 mt-3">
             <button
               type="submit"
               class="btn btn-primary"
               onClick={handleSubmit}
+              disabled={loading}
             >
-              {loading ? 'loading' : 'Upload'}
+              {loading ? 'loading' : publishMode === "schedule" ? "Schedule" : "Upload"}
             </button>
           </div>
         </div>
@@ -268,4 +285,4 @@ const shopWrite = () => {
   );
 };
 
-export default shopWrite;
+export default ShopWrite;

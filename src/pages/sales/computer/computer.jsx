@@ -12,6 +12,7 @@ import "rc-slider/assets/index.css";
 import ComputerFilter from "./computerFilter";
 import "./computer.css";
 import Slider from "@mui/material/Slider";
+import { useLiveProducts } from "../useLiveProducts";
 import { toast } from "react-toastify";
 import Navbar from "../../../components/navbar/navbar";
 
@@ -30,6 +31,8 @@ const Computer = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [showNoResultsDialog, setShowNoResultsDialog] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  // Bumped by useLiveProducts to quietly re-run the loaders below
+  const [refreshTick, setRefreshTick] = useState(0);
 
   const normalizeRam = (ramString) => {
     if (!ramString) return null;
@@ -147,7 +150,7 @@ const Computer = () => {
         setFilteredProducts(data.data);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
-  }, []);
+  }, [refreshTick]);
 
   const applyFilters = (currentFilters) => {
     let filteredResults = [...allProducts];
@@ -274,11 +277,9 @@ const Computer = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
+      if (refreshTick === 0) setIsLoading(true);
       try {
-        const response = await axios.get(
-          `https://backend-api-mbln.onrender.com/api/v1/product/`
-        );
+        const response = await axios.get(`${BASEURL}/api/v1/product/`);
         const filtered = response.data.getAllProducts.filter(
           (user) => user.category === "Computer"
         );
@@ -291,7 +292,14 @@ const Computer = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [refreshTick]);
+
+  useLiveProducts({
+    probe: async () =>
+      (await axios.get(`${BASEURL}/api/v1/product/filter?category=Computer`)).data.data,
+    shown: records,
+    onStale: () => setRefreshTick((t) => t + 1),
+  });
 
   useEffect(() => {
     if (filteredProducts.length > 0) {

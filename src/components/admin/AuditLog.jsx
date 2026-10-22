@@ -39,11 +39,35 @@ const ACTION_LABELS = {
     bg: "#fef2f2",
     border: "#fecaca",
   },
+  SCHEDULE_BLOG: {
+    label: "Scheduled Blog",
+    color: "#7c3aed",
+    bg: "#f5f3ff",
+    border: "#ddd6fe",
+  },
+  RESCHEDULE_BLOG: {
+    label: "Rescheduled Blog",
+    color: "#7c3aed",
+    bg: "#f5f3ff",
+    border: "#ddd6fe",
+  },
   CREATE_PRODUCT: {
     label: "Created Product",
     color: "#059669",
     bg: "#ecfdf5",
     border: "#a7f3d0",
+  },
+  SCHEDULE_PRODUCT: {
+    label: "Scheduled Product",
+    color: "#7c3aed",
+    bg: "#f5f3ff",
+    border: "#ddd6fe",
+  },
+  RESCHEDULE_PRODUCT: {
+    label: "Rescheduled Product",
+    color: "#7c3aed",
+    bg: "#f5f3ff",
+    border: "#ddd6fe",
   },
   UPDATE_PRODUCT: {
     label: "Updated Product",

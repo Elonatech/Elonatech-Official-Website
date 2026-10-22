@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import AdminSidebar from "./AdminSidebar";
+import { useAutoRefresh } from "./useAutoRefresh";
 import "./SuperAdminDashboard.css";
 
 const PAGE_SIZE = 20;
@@ -20,26 +21,60 @@ const handleTransitionNav = (e, navigate, path) => {
   startTransition(() => navigate(path));
 };
 
-const productList = () => {
+const ProductList = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
+  // `silent` = background refresh: no loading state, no error toast. A
+  // scheduled product flips to Published on its own once its time passes.
+  const fetchProducts = async (silent = false) => {
+    try {
+      if (!silent) setLoading(true);
+      // Admin endpoint — unfiltered, so scheduled and draft products show up
+      // here for management. The public /api/v1/product hides them.
+      const token = JSON.parse(localStorage.getItem("token"));
+      const res = await axios.get(`${BASEURL}/api/v1/product/admin/all`, {
+        headers: { "x-access-token": token },
+      });
+      // Newest first by publish date. The API returns natural database order,
+      // which would bury a just-scheduled product on the last page.
+      const sorted = [...(res.data.products || [])].sort(
+        (a, b) =>
+          new Date(b.publishAt || b.createdAt) -
+          new Date(a.publishAt || a.createdAt)
+      );
+      setProducts(sorted);
+    } catch (error) {
+      if (!silent) toast.error("Failed to load products");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get(`${BASEURL}/api/v1/product`);
-        setProducts(res.data.getAllProducts || []);
-      } catch (error) {
-        toast.error("Failed to load products");
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchProducts();
   }, []);
+
+  useAutoRefresh(() => fetchProducts(true));
+
+  const statusBadge = (product) => {
+    if (product.status === "draft") {
+      return <span className="blog-status-badge blog-status-draft">Draft</span>;
+    }
+    if (product.status === "scheduled") {
+      const when = new Date(product.publishAt).toLocaleString("en-GB", {
+        day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
+      });
+      return (
+        <span className="blog-status-badge blog-status-scheduled" title={`Publishes ${when}`}>
+          Scheduled — {when}
+        </span>
+      );
+    }
+    return <span className="blog-status-badge blog-status-published">Uploaded</span>;
+  };
 
   const totalPages = Math.ceil(products.length / PAGE_SIZE);
   const paginatedProducts = products.slice(
@@ -61,7 +96,7 @@ const productList = () => {
           <div className="sad-header">
             <div>
               <h4 className="sad-title">Product List</h4>
-              <p className="sad-subtitle">All published products</p>
+              <p className="sad-subtitle">All products, including drafts and scheduled</p>
             </div>
           </div>
 
@@ -78,6 +113,7 @@ const productList = () => {
                       <th>NAME</th>
                       <th>PRICE</th>
                       <th>DATE</th>
+                      <th>STATUS</th>
                       <th>ACTIONS</th>
                     </tr>
                   </thead>
@@ -89,7 +125,7 @@ const productList = () => {
                           ₦{Number(product.price || 0).toLocaleString()}
                         </td>
                         <td data-label="Date">
-                          {new Date(product.createdAt).toLocaleDateString(
+                          {new Date(product.publishAt || product.createdAt).toLocaleDateString(
                             "en-GB",
                             {
                               day: "2-digit",
@@ -98,6 +134,7 @@ const productList = () => {
                             }
                           )}
                         </td>
+                        <td data-label="Status">{statusBadge(product)}</td>
                         <td data-label="Actions">
                           <span className="job-actions-cell">
                             <Link
@@ -175,4 +212,4 @@ const productList = () => {
   );
 };
 
-export default productList;
+export default ProductList;

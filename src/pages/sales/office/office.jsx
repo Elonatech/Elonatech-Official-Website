@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./office.css";
 import OfficeFilter from "./officeFilter";
 import Slider from "@mui/material/Slider";
+import { useLiveProducts } from "../useLiveProducts";
 
 const Office = () => {
   const [filters, setFilters] = useState({
@@ -20,6 +21,8 @@ const Office = () => {
     price: [0, 1000000],
   });
   const [filteredProducts, setFilteredProducts] = useState([]);
+  // Bumped by useLiveProducts to quietly re-run the loaders below
+  const [refreshTick, setRefreshTick] = useState(0);
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
   const [brands, setBrands] = useState([]);
@@ -60,7 +63,7 @@ const Office = () => {
         setBrands(uniqueBrands);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
-  }, []);
+  }, [refreshTick]);
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
@@ -148,7 +151,14 @@ const Office = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [refreshTick]);
+
+  useLiveProducts({
+    probe: async () =>
+      (await axios.get(`${BASEURL}/api/v1/product/filter?category=Office`)).data.data,
+    shown: records,
+    onStale: () => setRefreshTick((t) => t + 1),
+  });
 
   useEffect(() => {
     const page = parseInt(searchParams.get("page") || "1", 10);

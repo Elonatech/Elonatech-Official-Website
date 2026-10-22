@@ -107,7 +107,7 @@ const Dashboard = () => {
           _id: p._id,
           title: p.name,
           type: p.category || "Product",
-          createdAt: p.createdAt,
+          createdAt: p.publishAt || p.createdAt,
           link: `/product/${p.slug || p._id}/${p._id}`,
         }));
 

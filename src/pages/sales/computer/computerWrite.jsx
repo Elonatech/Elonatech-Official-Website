@@ -7,6 +7,7 @@ import { BASEURL } from "../../../BaseURL/BaseURL";
 import "./computer.css";
 import { toast } from "react-toastify";
 import { AiOutlineDashboard } from 'react-icons/ai';
+import PublishTiming, { scheduleError, toUtcIso } from "../../../components/admin/PublishTiming";
 
 const ComputerWrite = () => {
   const getInitialState = () => {
@@ -15,6 +16,8 @@ const ComputerWrite = () => {
   };
 
   const [Loading, setLoading] = useState(false);
+  const [publishMode, setPublishMode] = useState("now"); // "now" | "schedule"
+  const [publishAt, setPublishAt] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -72,6 +75,8 @@ const ComputerWrite = () => {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
+  const timingError = scheduleError(publishMode, publishAt);
+  if (timingError) return toast.error(timingError);
   try {
     setLoading(true);
     const formData = new FormData();
@@ -82,6 +87,9 @@ const ComputerWrite = () => {
     formData.append("odd", odd);
     formData.append("quantity", quantity);
     formData.append("category", category);
+    if (publishMode === "schedule") {
+      formData.append("publishAt", toUtcIso(publishAt));
+    }
 
     // append computerProperty
     const computerProperty = [
@@ -119,7 +127,9 @@ const ComputerWrite = () => {
 
     // console.log('form-data', formData);
     
-    toast.success("✅ Product Added Successfully");
+    toast.success(
+      publishMode === "schedule" ? "✅ Product Scheduled Successfully" : "✅ Product Added Successfully"
+    );
     setImages([]);
     navigate("/products");
   } catch (error) {
@@ -474,9 +484,15 @@ const ComputerWrite = () => {
             />
           </div>
         </div>
+        <PublishTiming
+          mode={publishMode}
+          onModeChange={setPublishMode}
+          value={publishAt}
+          onChange={setPublishAt}
+        />
         <div className="col-md-5 mt-3">
-          <button type="submit" class="btn btn-primary" onClick={handleSubmit}>
-            {Loading ? 'loading' : 'Upload'}
+          <button type="submit" class="btn btn-primary" onClick={handleSubmit} disabled={Loading}>
+            {Loading ? 'loading' : publishMode === "schedule" ? "Schedule" : "Upload"}
           </button>
         </div>
       </div>

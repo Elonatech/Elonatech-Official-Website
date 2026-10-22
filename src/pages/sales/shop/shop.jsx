@@ -17,11 +17,14 @@ import 'rc-slider/assets/index.css'
 import ShopFilter from './shopFilter'
 import { startTransition } from 'react'
 import Slider from '@mui/material/Slider'
+import { useLiveProducts } from '../useLiveProducts'
 
 const Shop = () => {
   const [filteredProducts, setFilteredProducts] = useState([])
   const [data, setData] = useState([])
   const [records, setRecords] = useState([])
+  // Bumped by useLiveProducts to quietly re-run the product load below
+  const [refreshTick, setRefreshTick] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage] = useState(12)
@@ -43,11 +46,11 @@ const Shop = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true)
+      // Background refreshes stay silent: no spinner over a list being read
+      if (refreshTick === 0) setIsLoading(true)
       try {
         const response = await axios.get(`${BASEURL}/api/v1/product`)
         const products = response.data.getAllProducts.reverse()
-        console.log(products)
         setData(products)
         setRecords(products)
         setIsLoading(false)
@@ -57,7 +60,14 @@ const Shop = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [refreshTick])
+
+  useLiveProducts({
+    probe: async () =>
+      (await axios.get(`${BASEURL}/api/v1/product`)).data.getAllProducts,
+    shown: records,
+    onStale: () => setRefreshTick(t => t + 1)
+  })
 
   useEffect(() => {
     const page = parseInt(searchParams.get('page') || '1', 10)

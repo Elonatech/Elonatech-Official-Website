@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PosFilter from "./posFilter.jsx";
 import Slider from "@mui/material/Slider";
+import { useLiveProducts } from "../useLiveProducts";
 
 const Pos = () => {
   const [filters, setFilters] = useState({
@@ -20,6 +21,8 @@ const Pos = () => {
     price: [0, 1000000],
   });
   const [filteredProducts, setFilteredProducts] = useState([]);
+  // Bumped by useLiveProducts to quietly re-run the loaders below
+  const [refreshTick, setRefreshTick] = useState(0);
   const [priceRange, setPriceRange] = useState([0, 1000000]);
   const [defaultPriceRange, setDefaultPriceRange] = useState([0, 1000000]);
   const [availableBrands, setAvailableBrands] = useState([]);
@@ -60,7 +63,7 @@ const Pos = () => {
         setFilteredProducts(reversedProducts);
       })
       .catch((error) => console.error("Error fetching initial data:", error));
-  }, []);
+  }, [refreshTick]);
 
   const resetPriceRange = () => {
     setPriceRange(defaultPriceRange);
@@ -147,7 +150,14 @@ const Pos = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [refreshTick]);
+
+  useLiveProducts({
+    probe: async () =>
+      (await axios.get(`${BASEURL}/api/v1/product/filter?category=Pos`)).data.data,
+    shown: records,
+    onStale: () => setRefreshTick((t) => t + 1),
+  });
 
   useEffect(() => {
     const page = parseInt(searchParams.get("page") || "1", 10);

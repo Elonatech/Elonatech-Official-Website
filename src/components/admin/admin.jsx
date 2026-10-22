@@ -30,10 +30,14 @@ const AdminLogin = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      // withCredentials: the server sends the refresh cookie in this response,
+      // and for a cross-origin API the browser silently discards it unless the
+      // request opts in. Without this the cookie is never stored, silent
+      // refresh can't work, and admins are logged out when the 12h token expires.
       const res = await axios.post(
         `${BASEURL}/api/v1/auth/login`,
         { email, password, rememberMe },
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" }, withCredentials: true }
       );
 
       if (res.data.requireTotp) {
@@ -59,11 +63,12 @@ const AdminLogin = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const res = await axios.post(`${BASEURL}/api/v1/auth/totp/login`, {
-        adminId,
-        token: totpToken,
-        rememberMe,
-      });
+      // Same reason as the password login above: needed for the refresh cookie.
+      const res = await axios.post(
+        `${BASEURL}/api/v1/auth/totp/login`,
+        { adminId, token: totpToken, rememberMe },
+        { withCredentials: true }
+      );
 
       localStorage.setItem("token", JSON.stringify(res.data.access));
       localStorage.setItem("role", res.data.role);

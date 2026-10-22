@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { useEffect, useRef, useState } from "react";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import { sanitizeName } from "../../utils/sanitizeName";
+import { useAutoRefresh } from "../admin/useAutoRefresh";
+import { idsKey } from "../../pages/sales/useLiveProducts";
 import axios from "axios";
 import "../emptdp/applicationModal.css";
 import Serve from "../serve/serve";
@@ -40,9 +42,13 @@ const Main = () => {
   const [loadingLatest, setLoadingLatest] = useState(true);
   const [filteredProductCategory, setFilteredProductCategory] = useState(null);
 
+  // Quiet background re-check so a scheduled product appears here by itself
+  const [latestTick, setLatestTick] = useState(0);
+  useAutoRefresh(() => setLatestTick((t) => t + 1));
+
   useEffect(() => {
     const fetchLatestProducts = async () => {
-      setLoadingLatest(true);
+      if (latestTick === 0) setLoadingLatest(true);
       try {
         const response = await axios.get(
           `${BASEURL}/api/v1/product/filter/all`
@@ -57,9 +63,14 @@ const Main = () => {
           let latestProductInProductsCategory = null;
           if (productsCategory.length > 0) {
             latestProductInProductsCategory = productsCategory.sort(
-              (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+              (a, b) =>
+                new Date(b.publishAt || b.createdAt) - new Date(a.publishAt || a.createdAt)
             )[0];
-            setFilteredProductCategory(latestProductInProductsCategory);
+            setFilteredProductCategory((prev) =>
+              prev?._id === latestProductInProductsCategory._id
+                ? prev
+                : latestProductInProductsCategory
+            );
           }
 
           const productsByCategory = allProducts.reduce((acc, product) => {
@@ -74,11 +85,15 @@ const Main = () => {
 
           const latest = Object.values(productsByCategory).map((products) => {
             return products.sort(
-              (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+              (a, b) =>
+                new Date(b.publishAt || b.createdAt) - new Date(a.publishAt || a.createdAt)
             )[0];
           });
 
-          setLatestProducts(latest);
+          // Keep the same state (no re-render) when nothing changed
+          setLatestProducts((prev) =>
+            idsKey(prev) === idsKey(latest) ? prev : latest
+          );
         }
       } catch (error) {
         console.error("Error fetching latest products:", error);
@@ -88,7 +103,7 @@ const Main = () => {
     };
 
     fetchLatestProducts();
-  }, []);
+  }, [latestTick]);
 
   useEffect(() => {
     if (showConsultModal) consultFormOpenTime.current = Date.now();

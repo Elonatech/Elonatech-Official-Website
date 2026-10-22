@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { BASEURL } from "../../../../BaseURL/BaseURL";
 import { toast } from "react-toastify";
+import PublishTiming, { scheduleError, toUtcIso, toLocalInputValue } from "../../../../components/admin/PublishTiming";
 
 const ShopUpdate = () => {
   const getInitialState = () => {
@@ -48,6 +49,9 @@ const ShopUpdate = () => {
 
 
   const [images, setImages] = useState([]);
+  const [publishMode, setPublishMode] = useState("now"); // "now" | "schedule"
+  const [publishAt, setPublishAt] = useState("");
+  const [originalStatus, setOriginalStatus] = useState("published");
 
   // Handle Price
   const handleChangePrice = (e) => {
@@ -84,7 +88,19 @@ const ShopUpdate = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`${BASEURL}/api/v1/product/${id}`);
+        // Admin endpoint — unfiltered, so a scheduled or draft product can
+        // still be opened here. The public /api/v1/product/:id hides those
+        // entirely, which would make it impossible to edit or reschedule them.
+        const token = JSON.parse(localStorage.getItem("token"));
+        const res = await axios.get(`${BASEURL}/api/v1/product/admin/${id}`, {
+          headers: { "x-access-token": token },
+        });
+
+        setOriginalStatus(res.data.product.status || "published");
+        if (res.data.product.status === "scheduled" && res.data.product.publishAt) {
+          setPublishMode("schedule");
+          setPublishAt(toLocalInputValue(res.data.product.publishAt));
+        }
 
         setSlug(res.data.product.slug);
         setName(res.data.product.name);
@@ -125,8 +141,11 @@ const ShopUpdate = () => {
 
   //submit the form
   const handleSubmit = async (e) => {
+    e.preventDefault();
+    const timingError = scheduleError(publishMode, publishAt);
+    if (timingError) return toast.error(timingError);
+
     try {
-      e.preventDefault();
       const newData = {
         name,
         description,
@@ -156,6 +175,17 @@ const ShopUpdate = () => {
         wireless,
         images
       };
+
+      // Only touch scheduling fields when the admin actually changed something
+      // here — the backend deliberately leaves status/publishAt alone
+      // otherwise, so a plain content edit never reschedules or hides a product.
+      if (publishMode === "schedule") {
+        newData.publishAt = toUtcIso(publishAt);
+      } else if (originalStatus !== "published") {
+        // was scheduled/draft, admin switched it to "Publish now"
+        newData.status = "published";
+      }
+
       const token = JSON.parse(localStorage.getItem('token'));
       await axios.put(`${BASEURL}/api/v1/product/${id}/update`, newData, { headers: { 'x-access-token': token } });
       toast.success("Product Updated Successfully");
@@ -580,6 +610,12 @@ const ShopUpdate = () => {
             <></>
           )}
           {/* ============================================================ */}
+          <PublishTiming
+            mode={publishMode}
+            onModeChange={setPublishMode}
+            value={publishAt}
+            onChange={setPublishAt}
+          />
           <div className="col-md-5 mt-3 d-flex">
             <button
               type="submit"
