@@ -35,8 +35,8 @@ const BRAND_BLUE = "#33548f"; // the company blue, from the logo
 const MONO = 'Consolas, "Courier New", monospace';
 
 const LAYOUT = {
-  qr: { x: 190, y: 1400, size: 230 },
-  signature: { right: W - 190, width: 560, y: 1512 },
+  qr: { x: 190, y: 1420, size: 220 },
+  signature: { right: W - 190, width: 560, y: 1520 },
 };
 
 // The "program details" block under the dates. Core lists the development
@@ -114,20 +114,20 @@ const drawFrame = (ctx, theme) => {
 // programme name, centred, with a gold rule and a small accent diamond under it.
 const drawHeader = async (ctx, theme) => {
   const emblem = await loadImage(emblemUrl);
-  const size = 140;
-  ctx.drawImage(emblem, (W - size) / 2, 108, size, size);
+  const size = 180;
+  ctx.drawImage(emblem, (W - size) / 2, 100, size, size);
 
   ctx.textAlign = "center";
   ctx.fillStyle = BRAND_BLUE;
-  ctx.font = `bold 54px ${SANS}`;
-  spaced(ctx, "ELONATECH NIGERIA LIMITED", W / 2, 312, 6);
+  ctx.font = `bold 64px ${SANS}`;
+  spaced(ctx, "ELONATECH NIGERIA LIMITED", W / 2, 352, 6);
 
   ctx.fillStyle = NAVY;
-  ctx.font = `34px ${SANS}`;
-  ctx.fillText(PROGRAMME_FULL_NAME, W / 2, 360);
+  ctx.font = `40px ${SANS}`;
+  ctx.fillText(PROGRAMME_FULL_NAME, W / 2, 408);
 
   // rule with a diamond in the middle
-  const y = 398;
+  const y = 446;
   ctx.strokeStyle = GOLD;
   ctx.lineWidth = 3;
   ctx.beginPath();
@@ -158,7 +158,7 @@ const spacedLeft = (ctx, text, x, y, spacing) => {
   ctx.textAlign = align;
 };
 
-// Rows of "Label:  value", with the values lined up in one column.
+// Rows of "Label:  value", with the values lined up in one column (Ignite).
 const drawRows = (ctx, rows, startY, lineHeight) => {
   ctx.textAlign = "left";
   ctx.font = `bold 28px ${SANS}`;
@@ -177,38 +177,88 @@ const drawRows = (ctx, rows, startY, lineHeight) => {
   });
 };
 
+// Breaks text into lines no wider than maxWidth (uses the current font)
+const wrapLines = (ctx, text, maxWidth) => {
+  const lines = [];
+  let line = "";
+  text.split(" ").forEach((word) => {
+    const test = line ? `${line} ${word}` : word;
+    if (line && ctx.measureText(test).width > maxWidth) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = test;
+    }
+  });
+  if (line) lines.push(line);
+  return lines;
+};
+
+// Core: the four groups as a two-by-two grid. Small, tidy text, so the header
+// above can be larger.
+const GRID_GAP = 60;
+const GRID_COL = (DETAILS_RIGHT - DETAILS_LEFT - GRID_GAP) / 2;
+const drawCoreGrid = (ctx) => {
+  ctx.fillStyle = NAVY;
+  ctx.font = `bold 24px ${SANS}`;
+  spacedLeft(ctx, "PROGRAM DEVELOPMENT AREAS", DETAILS_LEFT, 1078, 4);
+
+  CORE_AREAS.forEach(([label, text], i) => {
+    const x = DETAILS_LEFT + (i % 2) * (GRID_COL + GRID_GAP);
+    const y = 1122 + Math.floor(i / 2) * 104;
+
+    ctx.textAlign = "left";
+    ctx.fillStyle = NAVY;
+    ctx.font = `bold 22px ${SANS}`;
+    ctx.fillText(label.replace(/:$/, ""), x, y);
+
+    ctx.fillStyle = INK;
+    ctx.font = `25px ${SERIF}`;
+    wrapLines(ctx, text, GRID_COL).forEach((line, n) => {
+      ctx.fillText(line, x, y + 30 + n * 29);
+    });
+  });
+};
+
+const RULE_Y = 1318; // gold rule above the closing sentence (same on both programmes)
+
 const drawDetails = (ctx, cert) => {
   const isIgnite = cert.program === "Ignite";
-  const rows = isIgnite
-    ? [
-        ["Pathway level:", cert.pathwayLevel],
-        ["Primary specialization:", cert.specialization],
-        ["Duration:", cert.duration],
-      ].filter(([, value]) => value)
-    : CORE_AREAS;
-  const lineHeight = isIgnite ? 56 : 52;
-  const firstRowY = 1088;
 
-  if (rows.length) {
-    ctx.fillStyle = NAVY;
-    ctx.font = `bold 26px ${SANS}`;
-    spacedLeft(ctx, isIgnite ? "PROGRAM DETAILS" : "PROGRAM DEVELOPMENT AREAS", DETAILS_LEFT, 1034, 4);
-    drawRows(ctx, rows, firstRowY, lineHeight);
+  if (isIgnite) {
+    const rows = [
+      ["Pathway level:", cert.pathwayLevel],
+      ["Primary specialization:", cert.specialization],
+      ["Duration:", cert.duration],
+    ].filter(([, value]) => value);
+
+    if (rows.length) {
+      // anchored to the rule, so a shorter list sits lower instead of leaving a gap below
+      const lineHeight = 60;
+      const lastRowY = RULE_Y - 40;
+      const firstRowY = lastRowY - (rows.length - 1) * lineHeight;
+      ctx.fillStyle = NAVY;
+      ctx.font = `bold 26px ${SANS}`;
+      spacedLeft(ctx, "PROGRAM DETAILS", DETAILS_LEFT, firstRowY - 52, 4);
+      drawRows(ctx, rows, firstRowY, lineHeight);
+    }
+  } else {
+    drawCoreGrid(ctx);
   }
 
   // thin gold rule, then the closing sentence
-  const ruleY = rows.length ? firstRowY + (rows.length - 1) * lineHeight + 38 : 1060;
   ctx.strokeStyle = GOLD;
   ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo(DETAILS_LEFT, ruleY);
-  ctx.lineTo(DETAILS_RIGHT, ruleY);
+  ctx.moveTo(DETAILS_LEFT, RULE_Y);
+  ctx.lineTo(DETAILS_RIGHT, RULE_Y);
   ctx.stroke();
 
   ctx.textAlign = "center";
   ctx.fillStyle = INK;
-  fitFont(ctx, isIgnite ? IGNITE_CLOSING : CORE_CLOSING, DETAILS_RIGHT - DETAILS_LEFT, 32, SERIF);
-  ctx.fillText(isIgnite ? IGNITE_CLOSING : CORE_CLOSING, W / 2, ruleY + 50);
+  const closing = isIgnite ? IGNITE_CLOSING : CORE_CLOSING;
+  fitFont(ctx, closing, DETAILS_RIGHT - DETAILS_LEFT, isIgnite ? 32 : 28, SERIF);
+  ctx.fillText(closing, W / 2, RULE_Y + 46);
 };
 
 // Text laid along a circle. Top text reads clockwise over the top with its
@@ -248,7 +298,7 @@ const star = (ctx, x, y, r) => {
 // under the bottom, a star either side, and ETMPDP with the programme name in
 // the middle. Inked in the programme colour and tilted a little, like a real stamp.
 const drawStamp = (ctx, theme, cert, cx, cy) => {
-  const R = 130;
+  const R = 124;
   ctx.save();
   ctx.translate(cx, cy);
   ctx.rotate((-9 * Math.PI) / 180);
@@ -321,33 +371,33 @@ export const renderCertificateCanvas = async (cert, { width = W } = {}) => {
   ctx.textAlign = "center";
   ctx.fillStyle = NAVY;
   ctx.font = `bold 112px ${SERIF}`;
-  spaced(ctx, "CERTIFICATE", W / 2, 520, 12);
+  spaced(ctx, "CERTIFICATE", W / 2, 568, 12);
   ctx.fillStyle = theme.brand;
   ctx.font = `38px ${SERIF}`;
-  spaced(ctx, "OF COMPLETION", W / 2, 578, 16);
+  spaced(ctx, "OF COMPLETION", W / 2, 626, 16);
 
   ctx.fillStyle = MUTED;
   ctx.font = `italic 40px ${SERIF}`;
-  ctx.fillText("This certificate is proudly presented to", W / 2, 646);
+  ctx.fillText("This certificate is proudly presented to", W / 2, 694);
 
   // — name —
   ctx.fillStyle = INK;
   fitFont(ctx, cert.fullName, 1900, 112, SERIF, "italic bold");
-  ctx.fillText(cert.fullName, W / 2, 750);
+  ctx.fillText(cert.fullName, W / 2, 798);
   ctx.strokeStyle = GOLD;
   ctx.lineWidth = 3;
   ctx.beginPath();
-  ctx.moveTo(W / 2 - 700, 782);
-  ctx.lineTo(W / 2 + 700, 782);
+  ctx.moveTo(W / 2 - 700, 830);
+  ctx.lineTo(W / 2 + 700, 830);
   ctx.stroke();
 
   // — programme —
   ctx.fillStyle = MUTED;
   ctx.font = `38px ${SERIF}`;
-  ctx.fillText("for successfully completing the", W / 2, 840);
+  ctx.fillText("for successfully completing the", W / 2, 888);
   ctx.fillStyle = theme.brand;
   ctx.font = `bold 76px ${SERIF}`;
-  ctx.fillText(programLabel(cert.program), W / 2, 920);
+  ctx.fillText(programLabel(cert.program), W / 2, 968);
   // — dates —
   ctx.fillStyle = MUTED;
   ctx.font = `32px ${SERIF}`;
@@ -355,13 +405,13 @@ export const renderCertificateCanvas = async (cert, { width = W } = {}) => {
     cert.enrollmentDate && `Enrolled ${formatLongDate(cert.enrollmentDate)}`,
     `Completed ${formatLongDate(cert.completionDate)}`,
   ].filter(Boolean);
-  ctx.fillText(dates.join("   •   "), W / 2, 976);
+  ctx.fillText(dates.join("   •   "), W / 2, 1024);
 
   // — what the programme covered (Core) / this person's pathway (Ignite) —
   drawDetails(ctx, cert);
 
   // — seal —
-  drawStamp(ctx, theme, cert, W / 2, 1526);
+  drawStamp(ctx, theme, cert, W / 2, 1528);
 
   // — QR + ID (bottom left) —
   const { x, y, size } = LAYOUT.qr;
