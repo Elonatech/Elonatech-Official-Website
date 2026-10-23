@@ -22,8 +22,11 @@ import {
 const DW = 1306;
 const DH = DW / Math.SQRT2; // A4 landscape ratio
 
-const RED = "#e30b0b";
-const BLUE = "#36568f";
+const RED = "#ce1a18"; // company red, from the logo
+const BLUE = "#33548f"; // company blue, from the logo
+// the frame keeps the colours it had
+const FRAME_RED = "#e30b0b";
+const FRAME_BLUE = "#36568f";
 const GREY = "#a7a9ac";
 const NAVY = "#1b2a49";
 const MUTED = "#5a6b8c";
@@ -146,11 +149,11 @@ export const renderCertificateCanvas = async (cert, { width = 2480 } = {}) => {
   ctx.fillRect(0, 0, DW, DH);
 
   // — frame —
-  ctx.strokeStyle = BLUE;
+  ctx.strokeStyle = FRAME_BLUE;
   ctx.lineWidth = 3;
   roundRect(ctx, 31, 31, DW - 62, DH - 62, 26);
   ctx.stroke();
-  ctx.strokeStyle = RED;
+  ctx.strokeStyle = FRAME_RED;
   ctx.lineWidth = 2;
   roundRect(ctx, 44, 44, DW - 88, DH - 88, 18);
   ctx.stroke();

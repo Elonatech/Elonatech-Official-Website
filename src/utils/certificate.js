@@ -15,6 +15,50 @@ export const programLabel = (program) => `ETMPDP ${program}`;
 // As printed on the certificate designs
 export const PROGRAMME_FULL_NAME = "Executive Technology Mentorship & Professional Development Program";
 
+// The choices the admin picks from. Taken from the ETMPDP Core and Ignite
+// pages and the Ignite application form, so a certificate says exactly what
+// the website says. If those pages change, change these lists to match.
+export const SPECIALIZATIONS = [
+  "Software Engineering",
+  "Graphics, Motion Graphics & Brand Design",
+  "Digital Marketing & Content Strategy",
+  "IT Support, Networking & Infrastructure",
+  "Computer Engineering",
+  "Virtual Assistance & Digital Operations",
+  "Data Analytics & Business Intelligence",
+  "Cybersecurity & Information Security",
+];
+
+// Ignite pathway levels, each with its fixed length
+export const IGNITE_PATHWAYS = [
+  { label: "Ignite Foundation", duration: "3 months" },
+  { label: "Ignite Professional", duration: "4 months" },
+  { label: "Ignite Executive", duration: "6 months" },
+];
+
+// Core is a single 12-month programme
+export const CORE_DURATION = "12 months";
+
+// What every Core participant covers (the same for everyone). Printed on the
+// Core certificate and shown on its verification page.
+export const CORE_AREAS = [
+  ["Software & Data:", "Software Engineering; Data Analytics & Business Intelligence"],
+  ["Creative & Digital:", "Graphics, Motion Graphics & Brand Design; Digital Marketing & Content Strategy"],
+  [
+    "IT & Infrastructure:",
+    "IT Support, Networking & Infrastructure; Computer Engineering; Cybersecurity & Information Security",
+  ],
+  ["Digital Operations:", "Virtual Assistance & Digital Operations"],
+];
+
+export const DURATIONS = ["3 months", "4 months", "6 months", "12 months"];
+
+// What the duration should be for a given programme / pathway level
+export const defaultDuration = (program, pathwayLevel) => {
+  if (program === "Core") return CORE_DURATION;
+  return IGNITE_PATHWAYS.find((p) => p.label === pathwayLevel)?.duration || "";
+};
+
 // Dates are stored as midnight UTC, so format them in UTC too — otherwise a
 // visitor west of Greenwich would see the day before.
 export const formatLongDate = (iso) =>

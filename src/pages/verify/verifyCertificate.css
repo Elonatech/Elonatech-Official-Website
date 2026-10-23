@@ -9,18 +9,6 @@
   --vc-line: #e5e7eb;
 }
 
-/* Logo band at the top (no menu). The logo has white lettering, hence the dark band. */
-.vc-header {
-  background: var(--vc-navy);
-  padding: 14px 0;
-}
-
-.vc-logo {
-  display: block;
-  height: 58px;
-  width: auto;
-}
-
 .vc-page {
   background: #f3f5f9;
   min-height: 70vh;
@@ -32,9 +20,9 @@
   position: relative;
   overflow: hidden;
   color: #fff;
-  padding: 56px 0 104px;
-  margin-top: -1px; /* closes the hairline seam under the logo band */
-  /* plain navy, the same as the logo band above it: no shading */
+  /* top padding clears the site menu, which is fixed over the top of the page */
+  padding: 132px 0 104px;
+  /* plain navy, no shading */
   background: var(--vc-navy);
 }
 
@@ -45,7 +33,7 @@
 }
 
 .vc-hero-sm {
-  padding: 44px 0 96px;
+  padding: 124px 0 96px;
 }
 
 .vc-hero-eyebrow {
@@ -520,7 +508,7 @@
 @media (max-width: 640px) {
   .vc-hero,
   .vc-hero-sm {
-    padding: 36px 0 88px;
+    padding: 104px 0 88px;
   }
 
   .vc-card {
@@ -549,5 +537,50 @@
 
   .vc-row-go {
     display: none;
+  }
+}
+
+/* Core: the development areas listed under the details */
+.vc-areas {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--vc-line);
+}
+
+.vc-areas-title {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+  font-weight: 600;
+}
+
+.vc-areas ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.vc-areas li {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 4px 16px;
+  font-size: 14.5px;
+}
+
+.vc-areas li strong {
+  color: var(--vc-navy);
+}
+
+.vc-areas li span {
+  color: #374151;
+}
+
+@media (max-width: 640px) {
+  .vc-areas li {
+    grid-template-columns: 1fr;
   }
 }

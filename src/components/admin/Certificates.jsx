@@ -14,6 +14,11 @@ import {
   safeFileName,
   downloadBlob,
   SITE_URL,
+  SPECIALIZATIONS,
+  IGNITE_PATHWAYS,
+  CORE_DURATION,
+  DURATIONS,
+  defaultDuration,
 } from "../../utils/certificate";
 import { certificatePdfBlob, certificatePreviewUrl } from "../../utils/certificateDesign";
 import "./SuperAdminDashboard.css";
@@ -28,9 +33,27 @@ const EMPTY_FORM = {
   enrollmentDate: "",
   completionDate: "",
   issueDate: "",
-  duration: "",
+  duration: CORE_DURATION,
   pathwayLevel: "",
   specialization: "",
+};
+
+const PATHWAY_LABELS = IGNITE_PATHWAYS.map((p) => p.label);
+
+// Keeps a value that is already saved but not in the list (an older, typed
+// entry) selectable, so editing never silently drops it.
+const withCurrent = (options, current) =>
+  current && !options.includes(current) ? [...options, current] : options;
+
+// Case-insensitive match against a list; also lets "Foundation" mean "Ignite Foundation"
+const matchOption = (value, options) => {
+  const v = String(value || "").trim().toLowerCase();
+  if (!v) return "";
+  return (
+    options.find((o) => o.toLowerCase() === v) ||
+    options.find((o) => o.toLowerCase().endsWith(` ${v}`)) ||
+    ""
+  );
 };
 
 const apiMessage = (error, fallback) => {
@@ -81,7 +104,28 @@ const parseCohort = (text) => {
       const enrollment = parseDate(cells[3]);
       if (enrollment.error) return fail(enrollment.error);
 
-      const [, , , , duration, pathwayLevel, specialization] = cells;
+      const [, , , , durationText, pathwayText, specializationText] = cells;
+
+      let pathwayLevel = "";
+      let specialization = "";
+      if (program === "Ignite") {
+        if (pathwayText) {
+          pathwayLevel = matchOption(pathwayText, PATHWAY_LABELS);
+          if (!pathwayLevel) return fail(`pathway level must be one of: ${PATHWAY_LABELS.join(", ")}`);
+        }
+        if (specializationText) {
+          specialization = matchOption(specializationText, SPECIALIZATIONS);
+          if (!specialization) return fail("specialization is not one of the ETMPDP Ignite specializations");
+        }
+      }
+
+      // Duration: as given (from the list), otherwise worked out from the programme / pathway
+      let duration = defaultDuration(program, pathwayLevel);
+      if (durationText) {
+        duration = matchOption(durationText, DURATIONS);
+        if (!duration) return fail(`duration must be one of: ${DURATIONS.join(", ")}`);
+      }
+
       rows.push({
         fullName: cells[0],
         program,
@@ -89,8 +133,8 @@ const parseCohort = (text) => {
         ...(enrollment.value ? { enrollmentDate: enrollment.value } : {}),
         ...(duration ? { duration } : {}),
         // Pathway level and specialization are only printed on Ignite certificates
-        ...(program === "Ignite" && pathwayLevel ? { pathwayLevel } : {}),
-        ...(program === "Ignite" && specialization ? { specialization } : {}),
+        ...(pathwayLevel ? { pathwayLevel } : {}),
+        ...(specialization ? { specialization } : {}),
       });
     });
   return { rows, problems };
@@ -225,6 +269,22 @@ const Certificates = () => {
     });
     setFormOpen(true);
   };
+
+  // Choosing the programme sets its duration (Core is always 12 months)
+  const changeProgram = (program) =>
+    setForm((f) => ({
+      ...f,
+      program,
+      duration: defaultDuration(program, program === "Ignite" ? f.pathwayLevel : ""),
+    }));
+
+  // Choosing an Ignite pathway level sets its length (3, 4 or 6 months)
+  const changePathway = (pathwayLevel) =>
+    setForm((f) => ({
+      ...f,
+      pathwayLevel,
+      duration: defaultDuration("Ignite", pathwayLevel) || f.duration,
+    }));
 
   const saveForm = async (e) => {
     e.preventDefault();
@@ -642,7 +702,8 @@ const Certificates = () => {
       {/* Add / edit */}
       {formOpen && (
         <div className="sad-overlay">
-          <div className="sad-modal" onClick={(e) => e.stopPropagation()}>
+          {/* wider than the default admin modal, like the application forms on the site */}
+          <div className="sad-modal" style={{ maxWidth: 780 }} onClick={(e) => e.stopPropagation()}>
             <div className="sad-modal-header">
               <h5>{editing ? "Edit certificate" : "Add certificate"}</h5>
               {closeBtn(() => setFormOpen(false))}
@@ -674,7 +735,7 @@ const Certificates = () => {
                   id="cert-program"
                   className="form-select"
                   value={form.program}
-                  onChange={(e) => setForm({ ...form, program: e.target.value })}
+                  onChange={(e) => changeProgram(e.target.value)}
                 >
                   {PROGRAMS.map((p) => (
                     <option key={p} value={p}>{programLabel(p)}</option>
@@ -707,14 +768,17 @@ const Certificates = () => {
               <div className="sad-form-row">
                 <div className="mb-3">
                   <label className="sad-label" htmlFor="cert-duration">Duration (printed on the certificate)</label>
-                  <input
+                  <select
                     id="cert-duration"
-                    className="form-control"
-                    placeholder="e.g. 12 months"
-                    maxLength={40}
+                    className="form-select"
                     value={form.duration}
                     onChange={(e) => setForm({ ...form, duration: e.target.value })}
-                  />
+                  >
+                    <option value="">Not shown</option>
+                    {withCurrent(DURATIONS, form.duration).map((d) => (
+                      <option key={d} value={d}>{d}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="mb-3">
                   <label className="sad-label" htmlFor="cert-issued">Date of issue (optional)</label>
@@ -731,23 +795,31 @@ const Certificates = () => {
                 <div className="sad-form-row">
                   <div className="mb-3">
                     <label className="sad-label" htmlFor="cert-pathway">Pathway level</label>
-                    <input
+                    <select
                       id="cert-pathway"
-                      className="form-control"
-                      maxLength={80}
+                      className="form-select"
                       value={form.pathwayLevel}
-                      onChange={(e) => setForm({ ...form, pathwayLevel: e.target.value })}
-                    />
+                      onChange={(e) => changePathway(e.target.value)}
+                    >
+                      <option value="">Select pathway level</option>
+                      {withCurrent(PATHWAY_LABELS, form.pathwayLevel).map((p) => (
+                        <option key={p} value={p}>{p}</option>
+                      ))}
+                    </select>
                   </div>
-                  <div className="mb-3">
-                    <label className="sad-label" htmlFor="cert-specialization">Specialization</label>
-                    <input
+                  <div className="mb-3" style={{ flex: 1.7 }}>
+                    <label className="sad-label" htmlFor="cert-specialization">Primary specialization</label>
+                    <select
                       id="cert-specialization"
-                      className="form-control"
-                      maxLength={120}
+                      className="form-select"
                       value={form.specialization}
                       onChange={(e) => setForm({ ...form, specialization: e.target.value })}
-                    />
+                    >
+                      <option value="">Select specialization</option>
+                      {withCurrent(SPECIALIZATIONS, form.specialization).map((p) => (
+                        <option key={p} value={p}>{p}</option>
+                      ))}
+                    </select>
                   </div>
                 </div>
               )}
@@ -772,7 +844,7 @@ const Certificates = () => {
       {/* Cohort */}
       {cohortOpen && (
         <div className="sad-overlay">
-          <div className="sad-modal sad-modal-lg" onClick={(e) => e.stopPropagation()}>
+          <div className="sad-modal sad-modal-lg" style={{ maxWidth: 780 }} onClick={(e) => e.stopPropagation()}>
             <div className="sad-modal-header">
               <h5>Add many certificates at once</h5>
               {closeBtn(() => setCohortOpen(false))}
@@ -780,8 +852,8 @@ const Certificates = () => {
             <div className="sad-modal-body">
               <p className="job-workplace-subtext" style={{ marginTop: 0 }}>
                 One person per line: <strong>Name, Program, Completion date, Start date, Duration, Pathway level,
-                Specialization</strong>. Only the first three are required; pathway level and specialization are for
-                Ignite. You can paste straight from a spreadsheet. Dates as YYYY-MM-DD or DD/MM/YYYY.
+                Specialization</strong>. Only the first three are required. Duration, pathway level and specialization are worked out or must
+                match the website's lists (Ignite Foundation, Professional or Executive; the eight specializations). You can paste straight from a spreadsheet. Dates as YYYY-MM-DD or DD/MM/YYYY.
               </p>
               <textarea
                 className="form-control"

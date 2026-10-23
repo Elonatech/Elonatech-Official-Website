@@ -9,6 +9,8 @@ import {
   verifyUrl,
   linkedInAddUrl,
   PROGRAMME_FULL_NAME,
+  CORE_AREAS,
+  CORE_DURATION,
   safeFileName,
   downloadBlob,
 } from "../../utils/certificate";
@@ -159,8 +161,11 @@ const VerifyCertificate = () => {
 
                 <dl className="vc-details">
                   {certificate.pathwayLevel && <Detail label="Pathway level">{certificate.pathwayLevel}</Detail>}
-                  {certificate.specialization && <Detail label="Specialization">{certificate.specialization}</Detail>}
-                  {certificate.duration && <Detail label="Duration">{certificate.duration}</Detail>}
+                  {certificate.specialization && <Detail label="Primary specialization">{certificate.specialization}</Detail>}
+                  {/* Core is always 12 months, even on certificates made before duration was recorded */}
+                  {(certificate.duration || (tone === "core" && CORE_DURATION)) && (
+                    <Detail label="Duration">{certificate.duration || CORE_DURATION}</Detail>
+                  )}
                   {certificate.enrollmentDate && (
                     <Detail label="Start date">{formatLongDate(certificate.enrollmentDate)}</Detail>
                   )}
@@ -170,6 +175,20 @@ const VerifyCertificate = () => {
                   )}
                   <Detail label="Certificate ID" mono>{certificate.code}</Detail>
                 </dl>
+
+                {tone === "core" && (
+                  <div className="vc-areas">
+                    <h3 className="vc-areas-title">Program development areas</h3>
+                    <ul>
+                      {CORE_AREAS.map(([label, text]) => (
+                        <li key={label}>
+                          <strong>{label.replace(/:$/, "")}</strong>
+                          <span>{text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </section>
 
               <section className="vc-card vc-showcase">

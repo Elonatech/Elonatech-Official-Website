@@ -1,10 +1,11 @@
-import logoUrl from "../components/navbar/captions/elonatech.png";
+import emblemUrl from "../components/footer/caption/Elonatech icon.png";
 import {
   programLabel,
   formatLongDate,
   verifyUrl,
   qrPngDataUrl,
   PROGRAMME_FULL_NAME,
+  CORE_AREAS,
 } from "./certificate";
 
 // ── CLASSIC design: the in-house certificate ─────────────────────────────
@@ -19,20 +20,34 @@ const W = 2480;
 const H = 1754;
 
 const THEMES = {
-  Core: { accent: "#c23a34" },
-  Ignite: { accent: "#34548c" },
+  // accent = the border colour (unchanged); brand = the company red / blue from
+  // the logo, used for everything else that is coloured
+  Core: { accent: "#c23a34", brand: "#ce1a18" },
+  Ignite: { accent: "#34548c", brand: "#33548f" },
 };
 const NAVY = "#11253d";
 const GOLD = "#b8964e";
 const INK = "#1f2937";
 const MUTED = "#6b7280";
 const SERIF = 'Georgia, "Times New Roman", serif';
+const SANS = "Arial, Helvetica, sans-serif";
+const BRAND_BLUE = "#33548f"; // the company blue, from the logo
 const MONO = 'Consolas, "Courier New", monospace';
 
 const LAYOUT = {
-  qr: { x: 190, y: 1385, size: 250 },
-  signature: { right: W - 190, width: 560, y: 1560 },
+  qr: { x: 190, y: 1400, size: 230 },
+  signature: { right: W - 190, width: 560, y: 1512 },
 };
+
+// The "program details" block under the dates. Core lists the development
+// areas (the same for everyone); Ignite lists the person's own pathway level,
+// specialization and duration from their record.
+const CORE_CLOSING =
+  "Integrated development in practical application, executive mentorship, leadership, business awareness and responsible AI.";
+const IGNITE_CLOSING =
+  "Specialization-focused learning, practical exposure, mentorship and professional development.";
+const DETAILS_LEFT = 300;
+const DETAILS_RIGHT = W - 300;
 
 const imageCache = new Map();
 const loadImage = (src) => {
@@ -95,35 +110,197 @@ const drawFrame = (ctx, theme) => {
   });
 };
 
+// Header: the emblem (no lettering), then the company name and the
+// programme name, centred, with a gold rule and a small accent diamond under it.
 const drawHeader = async (ctx, theme) => {
-  ctx.fillStyle = NAVY;
-  ctx.fillRect(90, 90, W - 180, 270);
-  ctx.fillStyle = theme.accent;
-  ctx.fillRect(90, 360, W - 180, 16);
+  const emblem = await loadImage(emblemUrl);
+  const size = 140;
+  ctx.drawImage(emblem, (W - size) / 2, 108, size, size);
 
-  // The logo has white lettering, so it sits on the navy band
-  const logo = await loadImage(logoUrl);
-  const h = 190;
-  const w = (logo.width / logo.height) * h;
-  ctx.drawImage(logo, (W - w) / 2, 90 + (270 - h) / 2, w, h);
+  ctx.textAlign = "center";
+  ctx.fillStyle = BRAND_BLUE;
+  ctx.font = `bold 54px ${SANS}`;
+  spaced(ctx, "ELONATECH NIGERIA LIMITED", W / 2, 312, 6);
+
+  ctx.fillStyle = NAVY;
+  ctx.font = `34px ${SANS}`;
+  ctx.fillText(PROGRAMME_FULL_NAME, W / 2, 360);
+
+  // rule with a diamond in the middle
+  const y = 398;
+  ctx.strokeStyle = GOLD;
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(W / 2 - 560, y);
+  ctx.lineTo(W / 2 - 24, y);
+  ctx.moveTo(W / 2 + 24, y);
+  ctx.lineTo(W / 2 + 560, y);
+  ctx.stroke();
+  ctx.fillStyle = theme.brand;
+  ctx.beginPath();
+  ctx.moveTo(W / 2, y - 13);
+  ctx.lineTo(W / 2 + 13, y);
+  ctx.lineTo(W / 2, y + 13);
+  ctx.lineTo(W / 2 - 13, y);
+  ctx.closePath();
+  ctx.fill();
 };
 
-const drawSeal = (ctx, theme, cx, cy) => {
-  ctx.fillStyle = theme.accent;
-  ctx.beginPath();
-  ctx.arc(cx, cy, 100, 0, Math.PI * 2);
-  ctx.fill();
+// Left-aligned text with letter-spacing (spaced() above centres its text)
+const spacedLeft = (ctx, text, x, y, spacing) => {
+  const align = ctx.textAlign;
+  ctx.textAlign = "left";
+  let cursor = x;
+  [...text].forEach((c) => {
+    ctx.fillText(c, cursor, y);
+    cursor += ctx.measureText(c).width + spacing;
+  });
+  ctx.textAlign = align;
+};
+
+// Rows of "Label:  value", with the values lined up in one column.
+const drawRows = (ctx, rows, startY, lineHeight) => {
+  ctx.textAlign = "left";
+  ctx.font = `bold 28px ${SANS}`;
+  const labelWidth = Math.max(...rows.map(([label]) => ctx.measureText(label).width));
+  const textX = DETAILS_LEFT + labelWidth + 34;
+
+  rows.forEach(([label, value], i) => {
+    const y = startY + i * lineHeight;
+    ctx.fillStyle = NAVY;
+    ctx.font = `bold 28px ${SANS}`;
+    ctx.fillText(label, DETAILS_LEFT, y);
+
+    ctx.fillStyle = INK;
+    fitFont(ctx, value, DETAILS_RIGHT - textX, 30, SERIF);
+    ctx.fillText(value, textX, y);
+  });
+};
+
+const drawDetails = (ctx, cert) => {
+  const isIgnite = cert.program === "Ignite";
+  const rows = isIgnite
+    ? [
+        ["Pathway level:", cert.pathwayLevel],
+        ["Primary specialization:", cert.specialization],
+        ["Duration:", cert.duration],
+      ].filter(([, value]) => value)
+    : CORE_AREAS;
+  const lineHeight = isIgnite ? 56 : 52;
+  const firstRowY = 1088;
+
+  if (rows.length) {
+    ctx.fillStyle = NAVY;
+    ctx.font = `bold 26px ${SANS}`;
+    spacedLeft(ctx, isIgnite ? "PROGRAM DETAILS" : "PROGRAM DEVELOPMENT AREAS", DETAILS_LEFT, 1034, 4);
+    drawRows(ctx, rows, firstRowY, lineHeight);
+  }
+
+  // thin gold rule, then the closing sentence
+  const ruleY = rows.length ? firstRowY + (rows.length - 1) * lineHeight + 38 : 1060;
   ctx.strokeStyle = GOLD;
-  ctx.lineWidth = 8;
+  ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.arc(cx, cy, 86, 0, Math.PI * 2);
+  ctx.moveTo(DETAILS_LEFT, ruleY);
+  ctx.lineTo(DETAILS_RIGHT, ruleY);
   ctx.stroke();
-  ctx.fillStyle = "#fff";
+
   ctx.textAlign = "center";
-  ctx.font = `bold 38px ${SERIF}`;
-  ctx.fillText("ETMPDP", cx, cy + 4);
-  ctx.font = `24px ${SERIF}`;
-  ctx.fillText("CERTIFIED", cx, cy + 40);
+  ctx.fillStyle = INK;
+  fitFont(ctx, isIgnite ? IGNITE_CLOSING : CORE_CLOSING, DETAILS_RIGHT - DETAILS_LEFT, 32, SERIF);
+  ctx.fillText(isIgnite ? IGNITE_CLOSING : CORE_CLOSING, W / 2, ruleY + 50);
+};
+
+// Text laid along a circle. Top text reads clockwise over the top with its
+// letters standing outwards; bottom text reads left to right along the bottom
+// with its letters standing upright.
+const arcText = (ctx, text, radius, centerAngle, spacing, bottom = false) => {
+  const chars = [...text];
+  const widths = chars.map((c) => ctx.measureText(c).width + spacing);
+  const span = widths.reduce((a, b) => a + b, 0) / radius;
+  let angle = bottom ? centerAngle + span / 2 : centerAngle - span / 2;
+
+  chars.forEach((c, i) => {
+    const half = widths[i] / 2 / radius;
+    angle += bottom ? -half : half;
+    ctx.save();
+    ctx.rotate(bottom ? angle - Math.PI / 2 : angle + Math.PI / 2);
+    ctx.translate(0, bottom ? radius : -radius);
+    // the letters' own side-bearing, so spacing is even
+    ctx.fillText(c, 0, 0);
+    ctx.restore();
+    angle += bottom ? -half : half;
+  });
+};
+
+const star = (ctx, x, y, r) => {
+  ctx.beginPath();
+  for (let i = 0; i < 10; i += 1) {
+    const rad = i % 2 ? r * 0.42 : r;
+    const a = -Math.PI / 2 + (i * Math.PI) / 5;
+    ctx.lineTo(x + rad * Math.cos(a), y + rad * Math.sin(a));
+  }
+  ctx.closePath();
+  ctx.fill();
+};
+
+// The ETMPDP stamp: two rings with "ELONATECH" over the top and "CERTIFIED"
+// under the bottom, a star either side, and ETMPDP with the programme name in
+// the middle. Inked in the programme colour and tilted a little, like a real stamp.
+const drawStamp = (ctx, theme, cert, cx, cy) => {
+  const R = 130;
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate((-9 * Math.PI) / 180);
+  ctx.globalAlpha = 0.93;
+  ctx.strokeStyle = theme.brand;
+  ctx.fillStyle = theme.brand;
+
+  // a faint tint inside, so it reads as a stamp and not just rings
+  ctx.save();
+  ctx.globalAlpha = 0.07;
+  ctx.beginPath();
+  ctx.arc(0, 0, R - 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // rings
+  ctx.lineWidth = 7;
+  ctx.beginPath();
+  ctx.arc(0, 0, R - 3, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(0, 0, R - 16, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.arc(0, 0, R - 58, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // lettering in the band between the rings
+  const mid = R - 37;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "alphabetic";
+  ctx.font = `bold 25px ${SERIF}`;
+  arcText(ctx, "ELONATECH", mid - 9, -Math.PI / 2, 5);
+  arcText(ctx, "CERTIFIED", mid + 9, Math.PI / 2, 5, true);
+  star(ctx, -mid, 0, 9);
+  star(ctx, mid, 0, 9);
+
+  // centre
+  ctx.font = `bold 26px ${SERIF}`;
+  ctx.fillText("ETMPDP", 0, 0);
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(-30, 10);
+  ctx.lineTo(30, 10);
+  ctx.stroke();
+  ctx.font = `bold 19px ${SERIF}`;
+  ctx.fillText(cert.program.toUpperCase(), 0, 34);
+  star(ctx, 0, -34, 6);
+
+  ctx.restore();
 };
 
 // Draws the certificate onto a new canvas. `width` scales the whole thing.
@@ -143,49 +320,48 @@ export const renderCertificateCanvas = async (cert, { width = W } = {}) => {
   // — title —
   ctx.textAlign = "center";
   ctx.fillStyle = NAVY;
-  ctx.font = `bold 150px ${SERIF}`;
-  spaced(ctx, "CERTIFICATE", W / 2, 590, 14);
-  ctx.fillStyle = theme.accent;
-  ctx.font = `44px ${SERIF}`;
-  spaced(ctx, "OF COMPLETION", W / 2, 670, 18);
+  ctx.font = `bold 112px ${SERIF}`;
+  spaced(ctx, "CERTIFICATE", W / 2, 520, 12);
+  ctx.fillStyle = theme.brand;
+  ctx.font = `38px ${SERIF}`;
+  spaced(ctx, "OF COMPLETION", W / 2, 578, 16);
 
   ctx.fillStyle = MUTED;
-  ctx.font = `italic 46px ${SERIF}`;
-  ctx.fillText("This certificate is proudly presented to", W / 2, 810);
+  ctx.font = `italic 40px ${SERIF}`;
+  ctx.fillText("This certificate is proudly presented to", W / 2, 646);
 
   // — name —
   ctx.fillStyle = INK;
-  fitFont(ctx, cert.fullName, 1900, 140, SERIF, "italic bold");
-  ctx.fillText(cert.fullName, W / 2, 960);
+  fitFont(ctx, cert.fullName, 1900, 112, SERIF, "italic bold");
+  ctx.fillText(cert.fullName, W / 2, 750);
   ctx.strokeStyle = GOLD;
   ctx.lineWidth = 3;
   ctx.beginPath();
-  ctx.moveTo(W / 2 - 700, 1000);
-  ctx.lineTo(W / 2 + 700, 1000);
+  ctx.moveTo(W / 2 - 700, 782);
+  ctx.lineTo(W / 2 + 700, 782);
   ctx.stroke();
 
   // — programme —
   ctx.fillStyle = MUTED;
-  ctx.font = `44px ${SERIF}`;
-  ctx.fillText("for successfully completing the", W / 2, 1085);
-  ctx.fillStyle = theme.accent;
-  ctx.font = `bold 92px ${SERIF}`;
-  ctx.fillText(programLabel(cert.program), W / 2, 1185);
-  ctx.fillStyle = INK;
   ctx.font = `38px ${SERIF}`;
-  ctx.fillText(PROGRAMME_FULL_NAME, W / 2, 1250);
-
+  ctx.fillText("for successfully completing the", W / 2, 840);
+  ctx.fillStyle = theme.brand;
+  ctx.font = `bold 76px ${SERIF}`;
+  ctx.fillText(programLabel(cert.program), W / 2, 920);
   // — dates —
   ctx.fillStyle = MUTED;
-  ctx.font = `36px ${SERIF}`;
+  ctx.font = `32px ${SERIF}`;
   const dates = [
     cert.enrollmentDate && `Enrolled ${formatLongDate(cert.enrollmentDate)}`,
     `Completed ${formatLongDate(cert.completionDate)}`,
   ].filter(Boolean);
-  ctx.fillText(dates.join("   •   "), W / 2, 1325);
+  ctx.fillText(dates.join("   •   "), W / 2, 976);
+
+  // — what the programme covered (Core) / this person's pathway (Ignite) —
+  drawDetails(ctx, cert);
 
   // — seal —
-  drawSeal(ctx, theme, W / 2, 1530);
+  drawStamp(ctx, theme, cert, W / 2, 1526);
 
   // — QR + ID (bottom left) —
   const { x, y, size } = LAYOUT.qr;
@@ -222,10 +398,29 @@ export const renderCertificateCanvas = async (cert, { width = W } = {}) => {
   ctx.textAlign = "center";
   ctx.fillStyle = INK;
   ctx.font = `bold 34px ${SERIF}`;
-  ctx.fillText("Authorised Signature", sig.right - sig.width / 2, sig.y + 50);
+  ctx.fillText("Authorised Signature", sig.right - sig.width / 2, sig.y + 46);
   ctx.fillStyle = MUTED;
-  ctx.font = `30px ${SERIF}`;
-  ctx.fillText("Elonatech Nigeria Limited", sig.right - sig.width / 2, sig.y + 94);
+  ctx.font = `28px ${SERIF}`;
+  ctx.fillText("Elonatech Nigeria Limited", sig.right - sig.width / 2, sig.y + 84);
+
+  // date of issue, under the signature (falls back to the day the record was made)
+  const issued = cert.issueDate || cert.createdAt;
+  if (issued) {
+    const label = "Date of issue: ";
+    const date = formatLongDate(issued);
+    ctx.font = `28px ${SERIF}`;
+    const labelW = ctx.measureText(label).width;
+    ctx.font = `bold 28px ${SERIF}`;
+    const dateW = ctx.measureText(date).width;
+    const startX = sig.right - sig.width / 2 - (labelW + dateW) / 2;
+    ctx.textAlign = "left";
+    ctx.fillStyle = MUTED;
+    ctx.font = `28px ${SERIF}`;
+    ctx.fillText(label, startX, sig.y + 126);
+    ctx.fillStyle = INK;
+    ctx.font = `bold 28px ${SERIF}`;
+    ctx.fillText(date, startX + labelW, sig.y + 126);
+  }
 
   return canvas;
 };
