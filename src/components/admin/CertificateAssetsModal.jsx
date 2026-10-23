@@ -25,15 +25,15 @@ const KINDS = [
   },
   {
     kind: "stamp",
-    label: "Company stamp",
-    hint: "Square PNG with a transparent background, cropped tight. About 600 × 600 px works well (at least 300 px). The drawn ETMPDP stamp always stays; this seal is placed on top of it.",
+    label: "Company seal",
+    hint: "Square PNG with a transparent background, cropped tight. About 800 × 800 px works well (at least 350 px). The drawn ETMPDP seal always stays; the company seal is placed on top of it.",
   },
 ];
 
 const formatWhen = (iso) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
-// Super-admin panel for the signature, the stamp and who signs. The images are
+// Super-admin panel for the signature, the seal and who signs. The images are
 // sent to the server and stored encrypted: nothing here can show them back, only
 // a finished sample certificate is previewed.
 const CertificateAssetsModal = ({ onClose }) => {
@@ -158,7 +158,7 @@ const CertificateAssetsModal = ({ onClose }) => {
     <div className="sad-overlay">
       <div className="sad-modal sad-modal-lg" style={{ maxWidth: 900, width: "95%" }} onClick={(e) => e.stopPropagation()}>
         <div className="sad-modal-header">
-          <h5>Signature &amp; stamp</h5>
+          <h5>Signature &amp; seal</h5>
           <button className="sad-modal-close" onClick={onClose} aria-label="Close">
             ×
           </button>
@@ -323,13 +323,13 @@ const CertificateAssetsModal = ({ onClose }) => {
         <div className="sad-overlay" style={{ zIndex: 1100 }}>
           <div className="sad-modal sad-modal-sm" onClick={(e) => e.stopPropagation()}>
             <div className="sad-modal-header">
-              <h5>Remove this {confirmRemove.startsWith("signature") ? "signature" : "stamp"}?</h5>
+              <h5>Remove this {confirmRemove.startsWith("signature") ? "signature" : "seal"}?</h5>
             </div>
             <div className="sad-modal-body" style={{ textAlign: "center" }}>
               <p>
                 {confirmRemove.includes(":")
                   ? `${confirmRemove.split(":")[1]} certificates will use the All programmes one again.`
-                  : "Certificates will go back to the signature line / drawn stamp only until you upload a new one."}
+                  : "Certificates will go back to the signature line / drawn seal only until you upload a new one."}
               </p>
               <div className="d-flex gap-2 mt-3" style={{ justifyContent: "center" }}>
                 <button className="sad-btn-create" style={{ background: "#dc2626" }} onClick={() => remove(confirmRemove)}>

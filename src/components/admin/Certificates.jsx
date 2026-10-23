@@ -616,7 +616,7 @@ const Certificates = () => {
                 style={{ background: "#f3f4f6", color: "#374151" }}
                 onClick={() => setAssetsOpen(true)}
               >
-                Signature &amp; stamp
+                Signature &amp; seal
               </button>
               <button
                 className="sad-btn-create"
