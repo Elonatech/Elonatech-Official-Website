@@ -21,12 +21,12 @@ const KINDS = [
   {
     kind: "signature",
     label: "Signature",
-    hint: "Wide PNG with a transparent background, dark ink, cropped tight to the ink. About 900 × 300 px works well (at least 450 px wide).",
+    hint: "Wide PNG with a transparent background, dark ink, cropped tight to the ink. About 900 × 300 px works well (at least 500 px wide). It is printed fairly large and sits just over the line.",
   },
   {
     kind: "stamp",
     label: "Company stamp",
-    hint: "Square PNG with a transparent background, cropped tight. About 600 × 600 px works well (at least 300 px). Until it is uploaded, a drawn ETMPDP stamp is used.",
+    hint: "Square PNG with a transparent background, cropped tight. About 600 × 600 px works well (at least 300 px). The drawn ETMPDP stamp always stays; this seal is placed on top of it.",
   },
 ];
 
@@ -329,7 +329,7 @@ const CertificateAssetsModal = ({ onClose }) => {
               <p>
                 {confirmRemove.includes(":")
                   ? `${confirmRemove.split(":")[1]} certificates will use the All programmes one again.`
-                  : "Certificates will go back to the placeholder until you upload a new one."}
+                  : "Certificates will go back to the signature line / drawn stamp only until you upload a new one."}
               </p>
               <div className="d-flex gap-2 mt-3" style={{ justifyContent: "center" }}>
                 <button className="sad-btn-create" style={{ background: "#dc2626" }} onClick={() => remove(confirmRemove)}>
