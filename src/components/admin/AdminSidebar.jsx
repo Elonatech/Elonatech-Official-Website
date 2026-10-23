@@ -31,7 +31,7 @@ const NAV_ITEMS = [
   { key: "subscribers", label: "Subscribers", to: "/dashboard/subscribers", icon: "bi-envelope" },
   { key: "quotes", label: "Quotes", to: "/dashboard/quotes", icon: "bi-file-earmark-ruled" },
   { key: "etmpdp", label: "Etmpdp", to: "/dashboard/etmpdp", icon: "bi-mortarboard" },
-  { key: "certificates", label: "Certificates", to: "/dashboard/certificates", Icon: BadgeCheck },
+  { key: "certificates", label: "Certificates", to: "/dashboard/certificates", Icon: BadgeCheck, superAdminOnly: true },
   { key: "orders", label: "Orders", to: "/dashboard/orders", icon: "bi-cart-check" },
   { key: "consultations", label: "Consultations", to: "/dashboard/consultations", icon: "bi-chat-dots" },
   { key: "retainerships", label: "Retainerships", to: "/dashboard/retainerships", icon: "bi-calendar-check" },

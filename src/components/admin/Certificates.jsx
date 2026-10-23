@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import JSZip from "jszip";
@@ -143,6 +144,24 @@ const parseCohort = (text) => {
 const csvCell = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
 
 const Certificates = () => {
+  const navigate = useNavigate();
+
+  // Certificates are for super admins only. The server enforces this too (403);
+  // this just keeps a normal admin from seeing a page that cannot work for them.
+  const isSuper = (() => {
+    try {
+      return JSON.parse(atob(getToken().split(".")[1])).role === "superAdmin";
+    } catch {
+      return false;
+    }
+  })();
+
+  useEffect(() => {
+    if (!isSuper) {
+      toast.error("Certificates are for super admins only");
+      navigate("/dashboard", { replace: true });
+    }
+  }, [isSuper, navigate]);
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [total, setTotal] = useState(0);
@@ -198,6 +217,8 @@ const Certificates = () => {
   );
 
   const load = useCallback(async () => {
+    // Never ask the server on a normal admin's behalf: the app signs a user out on any 403.
+    if (!isSuper) return;
     try {
       setLoading(true);
       const data = await fetchPage(page);
@@ -205,11 +226,16 @@ const Certificates = () => {
       setTotal(data.total || 0);
       setTotalPages(data.totalPages || 1);
     } catch (error) {
-      toast.error(apiMessage(error, "Failed to load certificates"));
+      if (error.response?.status === 403) {
+        toast.error("Certificates are for super admins only");
+        navigate("/dashboard", { replace: true });
+      } else {
+        toast.error(apiMessage(error, "Failed to load certificates"));
+      }
     } finally {
       setLoading(false);
     }
-  }, [fetchPage, page]);
+  }, [fetchPage, page, navigate, isSuper]);
 
   useEffect(() => {
     load();
@@ -477,6 +503,9 @@ const Certificates = () => {
   );
 
   const hasFilters = debouncedSearch || programFilter || statusFilter;
+
+  // a normal admin is already being sent back to the dashboard (see above)
+  if (!isSuper) return null;
 
   return (
     <>
