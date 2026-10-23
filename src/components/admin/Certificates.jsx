@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet-async";
 import JSZip from "jszip";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import AdminSidebar from "./AdminSidebar";
+import CertificateAssetsModal from "./CertificateAssetsModal";
 import {
   PROGRAMS,
   programLabel,
@@ -37,6 +38,7 @@ const EMPTY_FORM = {
   duration: CORE_DURATION,
   pathwayLevel: "",
   specialization: "",
+  specialFocus: "",
 };
 
 const PATHWAY_LABELS = IGNITE_PATHWAYS.map((p) => p.label);
@@ -120,6 +122,13 @@ const parseCohort = (text) => {
         }
       }
 
+      // Core: the last column is the optional Special focus (one of the eight tracks)
+      let specialFocus = "";
+      if (program === "Core" && specializationText) {
+        specialFocus = matchOption(specializationText, SPECIALIZATIONS);
+        if (!specialFocus) return fail("special focus is not one of the eight tracks");
+      }
+
       // Duration: as given (from the list), otherwise worked out from the programme / pathway
       let duration = defaultDuration(program, pathwayLevel);
       if (durationText) {
@@ -136,6 +145,7 @@ const parseCohort = (text) => {
         // Pathway level and specialization are only printed on Ignite certificates
         ...(pathwayLevel ? { pathwayLevel } : {}),
         ...(specialization ? { specialization } : {}),
+        ...(specialFocus ? { specialFocus } : {}),
       });
     });
   return { rows, problems };
@@ -189,6 +199,7 @@ const Certificates = () => {
   const [revokeReason, setRevokeReason] = useState("");
   const [deleting, setDeleting] = useState(null);
 
+  const [assetsOpen, setAssetsOpen] = useState(false);
   const [exporting, setExporting] = useState("");
   const [exportMenuOpen, setExportMenuOpen] = useState(false);
   const exportMenuRef = useRef(null);
@@ -261,15 +272,19 @@ const Certificates = () => {
   useEffect(() => {
     if (!viewing) return undefined;
     let cancelled = false;
+    let objectUrl = "";
     certificatePreviewUrl(viewing)
       .then((url) => {
-        if (!cancelled) setViewPreview(url);
+        objectUrl = url;
+        if (cancelled) URL.revokeObjectURL(url);
+        else setViewPreview(url);
       })
       .catch(() => {
-        if (!cancelled) toast.error("Couldn't draw the certificate");
+        if (!cancelled) toast.error("Couldn't load the certificate");
       });
     return () => {
       cancelled = true;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
       setViewPreview("");
     };
   }, [viewing]);
@@ -292,6 +307,7 @@ const Certificates = () => {
       duration: cert.duration || "",
       pathwayLevel: cert.pathwayLevel || "",
       specialization: cert.specialization || "",
+      specialFocus: cert.specialFocus || "",
     });
     setFormOpen(true);
   };
@@ -326,6 +342,8 @@ const Certificates = () => {
         // Only Ignite certificates have these two lines
         pathwayLevel: form.program === "Ignite" ? form.pathwayLevel.trim() : "",
         specialization: form.program === "Ignite" ? form.specialization.trim() : "",
+        // Only Core certificates have a Special focus
+        specialFocus: form.program === "Core" ? form.specialFocus.trim() : "",
       };
       if (editing) {
         await axios.patch(`${BASEURL}/api/v1/certificates/${editing._id}`, payload, { headers: authHeaders() });
@@ -596,6 +614,13 @@ const Certificates = () => {
               <button
                 className="sad-btn-create"
                 style={{ background: "#f3f4f6", color: "#374151" }}
+                onClick={() => setAssetsOpen(true)}
+              >
+                Signature &amp; stamp
+              </button>
+              <button
+                className="sad-btn-create"
+                style={{ background: "#f3f4f6", color: "#374151" }}
                 onClick={() => setCohortOpen(true)}
               >
                 Add many at once
@@ -852,6 +877,24 @@ const Certificates = () => {
                   </div>
                 </div>
               )}
+              {form.program === "Core" && (
+                <div className="mb-3">
+                  <label className="sad-label" htmlFor="cert-special-focus">
+                    Special focus (optional): the track they developed most during the programme
+                  </label>
+                  <select
+                    id="cert-special-focus"
+                    className="form-select"
+                    value={form.specialFocus}
+                    onChange={(e) => setForm({ ...form, specialFocus: e.target.value })}
+                  >
+                    <option value="">None: leave it off the certificate</option>
+                    {withCurrent(SPECIALIZATIONS, form.specialFocus).map((p) => (
+                      <option key={p} value={p}>{p}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
               <div className="d-flex gap-2 mt-3" style={{ justifyContent: "flex-end" }}>
                 <button
                   type="button"
@@ -882,7 +925,7 @@ const Certificates = () => {
               <p className="job-workplace-subtext" style={{ marginTop: 0 }}>
                 One person per line: <strong>Name, Program, Completion date, Start date, Duration, Pathway level,
                 Specialization</strong>. Only the first three are required. Duration, pathway level and specialization are worked out or must
-                match the website's lists (Ignite Foundation, Professional or Executive; the eight specializations). You can paste straight from a spreadsheet. Dates as YYYY-MM-DD or DD/MM/YYYY.
+                match the website's lists (Ignite Foundation, Professional or Executive; the eight specializations). For Core, the last column is the optional Special focus. You can paste straight from a spreadsheet. Dates as YYYY-MM-DD or DD/MM/YYYY.
               </p>
               <textarea
                 className="form-control"
@@ -989,6 +1032,8 @@ const Certificates = () => {
           </div>
         </div>
       )}
+
+      {assetsOpen && <CertificateAssetsModal onClose={() => setAssetsOpen(false)} />}
 
       {/* Revoke */}
       {revoking && (

@@ -1,5 +1,3 @@
-import QRCode from "qrcode";
-
 // The QR code on a printed certificate must keep working for years, so the
 // link it holds is always the real site address. It is deliberately NOT built
 // from window.location, or a QR made while testing on localhost or a preview
@@ -39,16 +37,19 @@ export const IGNITE_PATHWAYS = [
 // Core is a single 12-month programme
 export const CORE_DURATION = "12 months";
 
-// What every Core participant covers (the same for everyone). Printed on the
-// Core certificate and shown on its verification page.
-export const CORE_AREAS = [
-  ["Software & Data:", "Software Engineering; Data Analytics & Business Intelligence"],
-  ["Creative & Digital:", "Graphics, Motion Graphics & Brand Design; Digital Marketing & Content Strategy"],
-  [
-    "IT & Infrastructure:",
-    "IT Support, Networking & Infrastructure; Computer Engineering; Cybersecurity & Information Security",
-  ],
-  ["Digital Operations:", "Virtual Assistance & Digital Operations"],
+// What every Core participant covers (the same for everyone). The wording is
+// exactly what the server prints on the Core certificate
+// (Elonatech-Live-api/lib/certificateRenderer.js), so the verify page matches it.
+export const CORE_SUMMARY = "Multidisciplinary exposure across eight professional technology tracks";
+export const CORE_TRACKS = [
+  "Software Engineering",
+  "Graphics & Brand Design",
+  "Digital Marketing",
+  "IT & Networking",
+  "Computer Engineering",
+  "Virtual Assistance",
+  "Data Analytics",
+  "Cybersecurity",
 ];
 
 export const DURATIONS = ["3 months", "4 months", "6 months", "12 months"];
@@ -83,16 +84,6 @@ export const formatShortDate = (iso) =>
 
 // Value for <input type="date">
 export const toDateInput = (iso) => (iso ? new Date(iso).toISOString().slice(0, 10) : "");
-
-// "M" error correction survives a scuffed print; margin 2 is the quiet zone
-// scanners need around the code.
-const QR_OPTIONS = { errorCorrectionLevel: "M", margin: 2 };
-
-export const qrPngDataUrl = (code, width = 1024) =>
-  QRCode.toDataURL(verifyUrl(code), { ...QR_OPTIONS, width });
-
-export const qrSvgString = (code) =>
-  QRCode.toString(verifyUrl(code), { ...QR_OPTIONS, type: "svg" });
 
 export const safeFileName = (text) =>
   String(text || "")

@@ -9,7 +9,8 @@ import {
   verifyUrl,
   linkedInAddUrl,
   PROGRAMME_FULL_NAME,
-  CORE_AREAS,
+  CORE_SUMMARY,
+  CORE_TRACKS,
   CORE_DURATION,
   safeFileName,
   downloadBlob,
@@ -74,20 +75,24 @@ const VerifyCertificate = () => {
     };
   }, [code]);
 
-  // The certificate picture is drawn in the browser from the verified details
+  // The certificate picture comes from the server (the signature and stamp stay there)
   useEffect(() => {
     if (state.status !== "valid") return undefined;
     let cancelled = false;
+    let objectUrl = "";
     setPreview("");
     certificatePreviewUrl(state.certificate)
       .then((url) => {
-        if (!cancelled) setPreview(url);
+        objectUrl = url;
+        if (cancelled) URL.revokeObjectURL(url);
+        else setPreview(url);
       })
       .catch(() => {
         /* the details above still show everything */
       });
     return () => {
       cancelled = true;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
   }, [state]);
 
@@ -160,6 +165,7 @@ const VerifyCertificate = () => {
                 <p className="vc-programme-full">{PROGRAMME_FULL_NAME}</p>
 
                 <dl className="vc-details">
+                  {certificate.specialFocus && <Detail label="Special focus">{certificate.specialFocus}</Detail>}
                   {certificate.pathwayLevel && <Detail label="Pathway level">{certificate.pathwayLevel}</Detail>}
                   {certificate.specialization && <Detail label="Primary specialization">{certificate.specialization}</Detail>}
                   {/* Core is always 12 months, even on certificates made before duration was recorded */}
@@ -178,15 +184,9 @@ const VerifyCertificate = () => {
 
                 {tone === "core" && (
                   <div className="vc-areas">
-                    <h3 className="vc-areas-title">Program development areas</h3>
-                    <ul>
-                      {CORE_AREAS.map(([label, text]) => (
-                        <li key={label}>
-                          <strong>{label.replace(/:$/, "")}</strong>
-                          <span>{text}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <h3 className="vc-areas-title">Programme coverage</h3>
+                    <p className="vc-areas-lead">{CORE_SUMMARY}</p>
+                    <p className="vc-areas-tracks">{CORE_TRACKS.join("  •  ")}</p>
                   </div>
                 )}
               </section>

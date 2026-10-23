@@ -26,3 +26,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 Elonatech Frontend.zip
+
+
+# Signature and stamp images must NEVER be committed (anyone who clones the repo would get them).
+private-assets/
+*signature*.png
+*signature*.jpg
+*signature*.jpeg
+*signature*.webp
+*signature*.svg
+*stamp*.png
+*stamp*.jpg
+*stamp*.jpeg
+*stamp*.webp
+*stamp*.svg
