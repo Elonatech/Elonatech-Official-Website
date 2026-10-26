@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
-import { programLabel, programTone, PROGRAMS, formatShortDate, PROGRAMME_FULL_NAME } from "../../utils/certificate";
+import { programLabel, programTone, PROGRAMS, formatShortDate } from "../../utils/certificate";
 import "./verifyCertificate.css";
 
 const LIMIT = 20;
@@ -80,17 +80,17 @@ const EtmpdpCertificates = () => {
   return (
     <>
       <Helmet>
-        <title>Training Certificates | Elonatech</title>
+        <title>Training/Mentorship Certificates | Elonatech</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <main className="vc-page">
         <section className="vc-hero">
           <div className="container">
-            <p className="vc-hero-eyebrow">Elonatech · Training</p>
-            <h1 className="vc-hero-title">Training Certificates</h1>
+            <p className="vc-hero-eyebrow">Elonatech · Training · Mentorship</p>
+            <h1 className="vc-hero-title">Training/Mentorship Certificates</h1>
             <p className="vc-hero-sub">
-              People who have completed an Elonatech training programme, the {PROGRAMME_FULL_NAME} or a CompTIA course. Filter by programme, then select a name to verify their certificate.
+              Certificates issued by Elonatech Nigeria Limited to people who completed its mentorship and training programmes: ETMPDP Core, ETMPDP Ignite, CompTIA Network+ and CompTIA A+. Filter by programme, then select a name to verify their certificate.
             </p>
 
             {counts && (
