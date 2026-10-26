@@ -92,7 +92,7 @@ export const CORE_TRACKS = [
   "Cybersecurity",
 ];
 
-export const DURATIONS = ["4 weeks", "6 weeks", "8 weeks", "12 weeks", "3 months", "4 months", "6 months", "12 months"];
+export const DURATIONS = ["4 weeks", "6 weeks", "8 weeks", "3 months", "4 months", "6 months", "12 months"];
 
 // What the duration should be for a given programme / pathway level
 export const defaultDuration = (program, pathwayLevel) => {
