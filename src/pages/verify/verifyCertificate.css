@@ -95,6 +95,14 @@
   border-bottom: 3px solid #6f93d1;
 }
 
+.vc-stat-network {
+  border-bottom: 3px solid #3fa59d;
+}
+
+.vc-stat-aplus {
+  border-bottom: 3px solid #d98a3a;
+}
+
 /* ── Body (overlaps the hero) ────────────────────────────────────────── */
 .vc-body {
   position: relative;
@@ -184,6 +192,17 @@
 .vc-tone-ignite {
   --tone: var(--vc-blue);
   --tone-soft: #e7edf8;
+}
+
+/* CompTIA courses: Network+ is teal, A+ is amber */
+.vc-tone-network {
+  --tone: #0f766e;
+  --tone-soft: #e1f3f1;
+}
+
+.vc-tone-aplus {
+  --tone: #b45309;
+  --tone-soft: #fbefdc;
 }
 
 .vc-avatar {

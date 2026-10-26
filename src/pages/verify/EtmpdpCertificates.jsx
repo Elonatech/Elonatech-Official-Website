@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
-import { programLabel, formatShortDate, PROGRAMME_FULL_NAME } from "../../utils/certificate";
+import { programLabel, programTone, PROGRAMS, formatShortDate, PROGRAMME_FULL_NAME } from "../../utils/certificate";
 import "./verifyCertificate.css";
 
 const LIMIT = 20;
@@ -16,7 +16,7 @@ const initials = (name) =>
     .map((w) => w[0].toUpperCase())
     .join("");
 
-// The unlisted list of ETMPDP certificates. Nothing on the site links here
+// The unlisted list of training certificates (ETMPDP and CompTIA), served at /training-certificates. Nothing on the site links here
 // and search engines are told not to index it, so it is only reachable by
 // someone who has been given the link. Each row opens that person's
 // verification page.
@@ -80,17 +80,17 @@ const EtmpdpCertificates = () => {
   return (
     <>
       <Helmet>
-        <title>ETMPDP Certificates | Elonatech</title>
+        <title>Training Certificates | Elonatech</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <main className="vc-page">
         <section className="vc-hero">
           <div className="container">
-            <p className="vc-hero-eyebrow">Elonatech · ETMPDP</p>
-            <h1 className="vc-hero-title">Verified Certificates</h1>
+            <p className="vc-hero-eyebrow">Elonatech · Training</p>
+            <h1 className="vc-hero-title">Training Certificates</h1>
             <p className="vc-hero-sub">
-              People who have completed the {PROGRAMME_FULL_NAME}. Select a name to verify their certificate.
+              People who have completed an Elonatech training programme, the {PROGRAMME_FULL_NAME} or a CompTIA course. Filter by programme, then select a name to verify their certificate.
             </p>
 
             {counts && (
@@ -99,14 +99,12 @@ const EtmpdpCertificates = () => {
                   <strong>{counts.all}</strong>
                   <span>Certificates issued</span>
                 </div>
-                <div className="vc-stat vc-stat-core">
-                  <strong>{counts.Core}</strong>
-                  <span>ETMPDP Core</span>
-                </div>
-                <div className="vc-stat vc-stat-ignite">
-                  <strong>{counts.Ignite}</strong>
-                  <span>ETMPDP Ignite</span>
-                </div>
+                {PROGRAMS.map((p) => (
+                  <div key={p} className={`vc-stat vc-stat-${programTone(p)}`}>
+                    <strong>{counts[p] ?? 0}</strong>
+                    <span>{programLabel(p)}</span>
+                  </div>
+                ))}
               </div>
             )}
           </div>
@@ -129,8 +127,9 @@ const EtmpdpCertificates = () => {
               aria-label="Filter by programme"
             >
               <option value="">All programmes</option>
-              <option value="Core">ETMPDP Core</option>
-              <option value="Ignite">ETMPDP Ignite</option>
+              {PROGRAMS.map((p) => (
+                <option key={p} value={p}>{programLabel(p)}</option>
+              ))}
             </select>
           </div>
 
@@ -171,7 +170,7 @@ const EtmpdpCertificates = () => {
                     <li key={c.code}>
                       <Link
                         to={`/verify/${c.code}`}
-                        className={`vc-row vc-tone-${c.program === "Ignite" ? "ignite" : "core"}`}
+                        className={`vc-row vc-tone-${programTone(c.program)}`}
                       >
                         <span className="vc-avatar" aria-hidden="true">{initials(c.fullName)}</span>
                         <span className="vc-row-main">

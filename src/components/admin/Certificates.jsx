@@ -10,6 +10,7 @@ import CertificateAssetsModal from "./CertificateAssetsModal";
 import {
   PROGRAMS,
   programLabel,
+  matchProgram,
   formatShortDate,
   toDateInput,
   verifyUrl,
@@ -94,14 +95,14 @@ const parseCohort = (text) => {
     .filter(Boolean)
     .forEach((line, index) => {
       const cells = (line.includes("\t") ? line.split("\t") : line.split(",")).map((c) => c.trim());
-      const program = PROGRAMS.find((p) => p.toLowerCase() === (cells[1] || "").toLowerCase());
+      const program = matchProgram(cells[1]);
 
       // Skip a pasted header row such as "Name, Program, Completion date"
       if (index === 0 && !program && /name/i.test(cells[0])) return;
 
       const fail = (msg) => problems.push(`Line ${index + 1} (${cells[0] || "blank"}): ${msg}`);
       if (cells[0].length < 2) return fail("name is missing");
-      if (!program) return fail(`program must be ${PROGRAMS.join(" or ")}`);
+      if (!program) return fail("program must be Core, Ignite, Network+ or A+");
       const completion = parseDate(cells[2]);
       if (completion.error || !completion.value) return fail(completion.error || "completion date is missing");
       const enrollment = parseDate(cells[3]);
@@ -476,7 +477,7 @@ const Certificates = () => {
       for (const cert of all) {
         zip.file(`${safeFileName(cert.fullName)}-${cert.code}.pdf`, await certificatePdfBlob(cert));
       }
-      downloadBlob(await zip.generateAsync({ type: "blob" }), "etmpdp-certificates.zip");
+      downloadBlob(await zip.generateAsync({ type: "blob" }), "training-certificates.zip");
       toast.success(`Downloaded ${all.length} certificate${all.length === 1 ? "" : "s"}`);
     } catch (error) {
       toast.error(apiMessage(error, "Failed to build the certificates zip"));
@@ -505,7 +506,7 @@ const Certificates = () => {
       );
       downloadBlob(
         new Blob([[header.map(csvCell).join(","), ...lines].join("\n")], { type: "text/csv;charset=utf-8" }),
-        "etmpdp-certificates.csv"
+        "training-certificates.csv"
       );
     } catch (error) {
       toast.error(apiMessage(error, "Failed to export certificates"));
@@ -540,18 +541,18 @@ const Certificates = () => {
             <div>
               <h4 className="sad-title">Certificates</h4>
               <p className="sad-subtitle">
-                ETMPDP certificates. Each one is made with its own verification QR code already in place.
+                ETMPDP and CompTIA certificates. Each one is made with its own verification QR code already in place.
               </p>
               <p className="sad-subtitle" style={{ marginTop: 4 }}>
                 Public list page (share by link):{" "}
-                <a href="/etmpdp-certificates" target="_blank" rel="noreferrer">
-                  {SITE_URL.replace("https://", "")}/etmpdp-certificates
+                <a href="/training-certificates" target="_blank" rel="noreferrer">
+                  {SITE_URL.replace("https://", "")}/training-certificates
                 </a>{" "}
                 ·{" "}
                 <button
                   type="button"
                   className="job-action-edit"
-                  onClick={() => copy(`${SITE_URL}/etmpdp-certificates`, "List page link copied")}
+                  onClick={() => copy(`${SITE_URL}/training-certificates`, "List page link copied")}
                 >
                   Copy link
                 </button>
@@ -925,7 +926,7 @@ const Certificates = () => {
               <p className="job-workplace-subtext" style={{ marginTop: 0 }}>
                 One person per line: <strong>Name, Program, Completion date, Start date, Duration, Pathway level,
                 Specialization</strong>. Only the first three are required. Duration, pathway level and specialization are worked out or must
-                match the website's lists (Ignite Foundation, Professional or Executive; the eight specializations). For Core, the last column is the optional Special focus. You can paste straight from a spreadsheet. Dates as YYYY-MM-DD or DD/MM/YYYY.
+                match the website's lists (Ignite Foundation, Professional or Executive; the eight specializations). For Core, the last column is the optional Special focus. Program can be Core, Ignite, Network+ or A+ (CompTIA courses only need a duration, such as 8 weeks). You can paste straight from a spreadsheet. Dates as YYYY-MM-DD or DD/MM/YYYY.
               </p>
               <textarea
                 className="form-control"

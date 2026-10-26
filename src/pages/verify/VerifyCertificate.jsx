@@ -5,6 +5,9 @@ import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import {
   programLabel,
+  programTone,
+  isCompTia,
+  PROGRAM_INFO,
   formatLongDate,
   verifyUrl,
   linkedInAddUrl,
@@ -117,20 +120,21 @@ const VerifyCertificate = () => {
   };
 
   const { status, certificate } = state;
-  const tone = certificate?.program === "Ignite" ? "ignite" : "core";
+  const tone = programTone(certificate?.program);
+  const info = PROGRAM_INFO[certificate?.program];
 
   return (
     <>
       <Helmet>
         <title>Certificate Verification | Elonatech</title>
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="description" content="Verify an Elonatech ETMPDP certificate." />
+        <meta name="description" content="Verify an Elonatech certificate." />
       </Helmet>
 
       <main className="vc-page">
         <section className="vc-hero vc-hero-sm">
           <div className="container">
-            <p className="vc-hero-eyebrow">Elonatech · ETMPDP</p>
+            <p className="vc-hero-eyebrow">Elonatech · {isCompTia(certificate?.program) ? "CompTIA Training" : "ETMPDP"}</p>
             <h1 className="vc-hero-title">Certificate Verification</h1>
             <p className="vc-hero-sub">Confirm that an Elonatech certificate is genuine.</p>
           </div>
@@ -162,7 +166,7 @@ const VerifyCertificate = () => {
                     <span className="vc-pill">{programLabel(certificate.program)}</span>
                   </div>
                 </div>
-                <p className="vc-programme-full">{PROGRAMME_FULL_NAME}</p>
+                <p className="vc-programme-full">{info?.header || PROGRAMME_FULL_NAME}</p>
 
                 <dl className="vc-details">
                   {certificate.specialFocus && <Detail label="Special focus">{certificate.specialFocus}</Detail>}
@@ -181,6 +185,13 @@ const VerifyCertificate = () => {
                   )}
                   <Detail label="Certificate ID" mono>{certificate.code}</Detail>
                 </dl>
+
+                {isCompTia(certificate.program) && (
+                  <div className="vc-areas">
+                    <h3 className="vc-areas-title">Programme coverage</h3>
+                    <p className="vc-areas-lead">{info.description}</p>
+                  </div>
+                )}
 
                 {tone === "core" && (
                   <div className="vc-areas">

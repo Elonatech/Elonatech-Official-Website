@@ -6,12 +6,52 @@ export const SITE_URL = "https://elonatech.com.ng";
 
 export const verifyUrl = (code) => `${SITE_URL}/verify/${code}`;
 
-export const PROGRAMS = ["Core", "Ignite"];
-
-export const programLabel = (program) => `ETMPDP ${program}`;
-
-// As printed on the certificate designs
+// As printed on the ETMPDP certificate designs
 export const PROGRAMME_FULL_NAME = "Executive Technology Mentorship & Professional Development Program";
+
+// Every programme a certificate can be for. This mirrors the backend
+// (Elonatech-Live-api/lib/certificatePrograms.js, which is what is actually
+// printed on the certificate), so keep the keys and labels the same.
+//   family  "etmpdp" (Core, Ignite) or "comptia" (the CompTIA courses)
+export const PROGRAM_INFO = {
+  Core: { label: "ETMPDP Core", family: "etmpdp", tone: "core", header: PROGRAMME_FULL_NAME },
+  Ignite: { label: "ETMPDP Ignite", family: "etmpdp", tone: "ignite", header: PROGRAMME_FULL_NAME },
+  NetworkPlus: {
+    label: "CompTIA Network+",
+    family: "comptia",
+    tone: "network",
+    header: "CompTIA Training Program",
+    description: "Network engineering, infrastructure configuration, connectivity, security, and troubleshooting.",
+  },
+  APlus: {
+    label: "CompTIA A+",
+    family: "comptia",
+    tone: "aplus",
+    header: "CompTIA Training Program",
+    description: "Computer Engineering, hardware, operating systems, maintenance, and introductory networking.",
+  },
+};
+
+export const PROGRAMS = Object.keys(PROGRAM_INFO);
+
+export const programLabel = (program) => PROGRAM_INFO[program]?.label || program;
+export const programTone = (program) => PROGRAM_INFO[program]?.tone || "core";
+export const isCompTia = (program) => PROGRAM_INFO[program]?.family === "comptia";
+
+// What an admin may type for a programme in the cohort list ("Network+", "comptia a+", "Core"…)
+const PROGRAM_ALIASES = {
+  core: "Core",
+  ignite: "Ignite",
+  "network+": "NetworkPlus",
+  network: "NetworkPlus",
+  "n+": "NetworkPlus",
+  networkplus: "NetworkPlus",
+  "a+": "APlus",
+  a: "APlus",
+  aplus: "APlus",
+};
+export const matchProgram = (text) =>
+  PROGRAM_ALIASES[String(text || "").toLowerCase().replace(/\s+/g, "").replace(/^(comptia|etmpdp)/, "")] || "";
 
 // The choices the admin picks from. Taken from the ETMPDP Core and Ignite
 // pages and the Ignite application form, so a certificate says exactly what
@@ -52,7 +92,7 @@ export const CORE_TRACKS = [
   "Cybersecurity",
 ];
 
-export const DURATIONS = ["3 months", "4 months", "6 months", "12 months"];
+export const DURATIONS = ["4 weeks", "6 weeks", "8 weeks", "12 weeks", "3 months", "4 months", "6 months", "12 months"];
 
 // What the duration should be for a given programme / pathway level
 export const defaultDuration = (program, pathwayLevel) => {

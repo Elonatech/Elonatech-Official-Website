@@ -663,11 +663,17 @@ const router = createBrowserRouter([
         element: <VerifyCertificate />
       },
 
-      // Unlisted list of every ETMPDP certificate, shared by link only. Not in
-      // the menu, footer or sitemap; noindex on the page itself.
+      // Unlisted list of every training certificate (ETMPDP and CompTIA),
+      // filterable by programme, shared by link only. Not in the menu, footer or
+      // sitemap; noindex on the page itself. The old /etmpdp-certificates link
+      // keeps working by forwarding here.
+      {
+        path: "/training-certificates",
+        element: <EtmpdpCertificates />
+      },
       {
         path: "/etmpdp-certificates",
-        element: <EtmpdpCertificates />
+        element: <Navigate to="/training-certificates" replace />
       },
       {
         path: "/snowflakes",

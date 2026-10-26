@@ -15,7 +15,12 @@ const SCOPES = [
   { id: "default", label: "All programmes" },
   { id: "Core", label: "Core only" },
   { id: "Ignite", label: "Ignite only" },
+  { id: "NetworkPlus", label: "Network+ only" },
+  { id: "APlus", label: "A+ only" },
 ];
+
+// "Network+ only" -> "Network+"
+const scopeName = (id) => (SCOPES.find((s) => s.id === id)?.label || id).replace(/ only$/, "");
 
 const KINDS = [
   {
@@ -188,24 +193,20 @@ const CertificateAssetsModal = ({ onClose }) => {
                 </div>
               )}
 
-              <div role="tablist" aria-label="Which programmes" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+              <label className="sad-label" htmlFor="cert-asset-scope" style={{ marginTop: 4 }}>
+                Which certificates
+              </label>
+              <select id="cert-asset-scope" className="form-select" value={scope} onChange={(e) => setScope(e.target.value)}>
                 {SCOPES.map((s) => (
-                  <button
-                    key={s.id}
-                    role="tab"
-                    aria-selected={scope === s.id}
-                    className="sad-btn-create"
-                    style={scope === s.id ? undefined : { background: "#f3f4f6", color: "#374151" }}
-                    onClick={() => setScope(s.id)}
-                  >
+                  <option key={s.id} value={s.id}>
                     {s.label}
-                  </button>
+                  </option>
                 ))}
-              </div>
+              </select>
               <p className="job-workplace-subtext" style={{ margin: "8px 0 0" }}>
                 {isDefault
                   ? "Used for every programme that does not have its own."
-                  : `Only for ${scope} certificates. Anything left empty here uses the All programmes one.`}
+                  : `Only for ${scopeName(scope)} certificates. Anything left empty here uses the All programmes one.`}
               </p>
 
               {KINDS.map(({ kind, label, hint }) => {
@@ -295,18 +296,19 @@ const CertificateAssetsModal = ({ onClose }) => {
               <div style={{ padding: "12px 0 0", borderTop: "1px solid #e5e7eb" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
                   <strong>Sample (made-up recipient)</strong>
-                  <div style={{ display: "flex", gap: 6 }}>
-                    {["Core", "Ignite"].map((p) => (
-                      <button
-                        key={p}
-                        className="sad-btn-create"
-                        style={sampleProgram === p ? undefined : { background: "#f3f4f6", color: "#374151" }}
-                        onClick={() => setSampleProgram(p)}
-                      >
-                        {p}
-                      </button>
+                  <select
+                    className="form-select"
+                    style={{ width: "auto", minWidth: 180 }}
+                    aria-label="Sample programme"
+                    value={sampleProgram}
+                    onChange={(e) => setSampleProgram(e.target.value)}
+                  >
+                    {SCOPES.filter((s) => s.id !== "default").map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {scopeName(s.id)}
+                      </option>
                     ))}
-                  </div>
+                  </select>
                 </div>
                 {sample ? (
                   <img src={sample} alt="Sample certificate" style={{ width: "100%", marginTop: 10, border: "1px solid #e5e7eb", borderRadius: 8 }} />
@@ -328,7 +330,7 @@ const CertificateAssetsModal = ({ onClose }) => {
             <div className="sad-modal-body" style={{ textAlign: "center" }}>
               <p>
                 {confirmRemove.includes(":")
-                  ? `${confirmRemove.split(":")[1]} certificates will use the All programmes one again.`
+                  ? `${scopeName(confirmRemove.split(":")[1])} certificates will use the All programmes one again.`
                   : "Certificates will go back to the signature line / drawn seal only until you upload a new one."}
               </p>
               <div className="d-flex gap-2 mt-3" style={{ justifyContent: "center" }}>
