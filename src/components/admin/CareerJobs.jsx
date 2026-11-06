@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { CartProvider } from "react-use-cart";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import { BASEURL } from "../../BaseURL/BaseURL";
 import AdminSidebar from "./AdminSidebar";
+import JobDetailView from "../../pages/add/career/JobDetailView";
+import MainHeader from "../main-header-comp/MainHeader";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./SuperAdminDashboard.css";
@@ -58,6 +61,27 @@ const statusBadgeClass = (status) => {
 
 const LIMIT = 20;
 
+// The preview shows the site header, which needs a cart. This one keeps its
+// cart in memory only, so a preview can never read or change a real visitor's
+// saved cart.
+const usePreviewCartStorage = (key, initial) => useState(initial);
+
+// Same fallback the server uses when the Job Summary is left empty: a short
+// teaser taken from the description.
+const deriveSummary = (html) => {
+  const plain = String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  if (!plain) return "";
+  return plain.length > 160 ? `${plain.slice(0, 157)}...` : plain;
+};
+
+// What the public job page would show for what is currently typed in the form
+const buildPreviewJob = (values) => ({
+  ...values,
+  title: values.title?.trim() || "Untitled job",
+  jobSummary: values.jobSummary?.trim() || deriveSummary(values.jobDescription),
+  numberOfOpenings: values.numberOfOpenings ? Number(values.numberOfOpenings) : undefined,
+});
+
 const CareerJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -77,6 +101,29 @@ const CareerJobs = () => {
 
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+
+  // The job currently shown in the preview window (null = closed)
+  const [previewing, setPreviewing] = useState(null);
+
+  const savedScroll = useRef(0);
+  const wasPreviewing = useRef(false);
+
+  useEffect(() => {
+    if (previewing && !wasPreviewing.current) {
+      savedScroll.current = window.scrollY; // where the admin page was
+      window.scrollTo(0, 0);
+    } else if (!previewing && wasPreviewing.current) {
+      window.scrollTo(0, savedScroll.current);
+    }
+    wasPreviewing.current = !!previewing;
+  }, [previewing]);
+
+  useEffect(() => {
+    if (!previewing) return undefined;
+    const onKey = (e) => e.key === "Escape" && setPreviewing(null);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [previewing]);
 
   const fetchJobs = async () => {
     try {
@@ -386,6 +433,44 @@ const CareerJobs = () => {
     </>
   );
 
+  // Preview: the job exactly as visitors will see it (not clickable, not saved).
+  // It replaces the admin page while it is open; the form and its contents stay
+  // in state, so closing the preview brings everything back as it was.
+  if (previewing) {
+    return (
+      <>
+        <Helmet>
+          <meta name="robots" content="noindex" />
+          <title>Job preview — Elonatech</title>
+        </Helmet>
+
+        {/* The site header over the image, as on the public page. Look only: not clickable. */}
+        <div className="job-preview-header" aria-hidden="true">
+          <CartProvider storage={usePreviewCartStorage}>
+            <MainHeader />
+          </CartProvider>
+        </div>
+        <JobDetailView job={previewing} preview />
+        <div className="job-preview-pill">
+          <strong>Preview</strong>
+          <span className={`sad-role-badge ${statusBadgeClass(previewing.status || "Draft")}`}>
+            {previewing.status || "Draft"}
+          </span>
+          <span className="job-preview-pill-note">
+            {previewing.status === "Active"
+              ? "Visitors can see this job."
+              : previewing.status === "Closed"
+                ? "Visitors can't apply any more."
+                : "Visitors can't see this job yet."}
+          </span>
+          <button className="sad-btn-create" onClick={() => setPreviewing(null)}>
+            Close
+          </button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <Helmet>
@@ -479,6 +564,12 @@ const CareerJobs = () => {
                           <div className="job-actions-cell">
                             <button
                               className="job-action-edit"
+                              onClick={() => setPreviewing(job)}
+                            >
+                              Preview
+                            </button>
+                            <button
+                              className="job-action-edit"
                               onClick={() => openEdit(job)}
                             >
                               Edit
@@ -557,13 +648,23 @@ const CareerJobs = () => {
             </div>
             <form onSubmit={handleCreateSubmit} className="sad-modal-body">
               {renderFormFields(form, setForm)}
-              <button
-                type="submit"
-                className="sad-btn-create w-100"
-                disabled={submitting}
-              >
-                {submitting ? "Creating..." : "Create Job"}
-              </button>
+              <div className="d-flex gap-2">
+                <button
+                  type="button"
+                  className="sad-btn-create"
+                  style={{ background: "#f3f4f6", color: "#374151" }}
+                  onClick={() => setPreviewing(buildPreviewJob(form))}
+                >
+                  Preview
+                </button>
+                <button
+                  type="submit"
+                  className="sad-btn-create flex-grow-1"
+                  disabled={submitting}
+                >
+                  {submitting ? "Creating..." : "Create Job"}
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -587,13 +688,23 @@ const CareerJobs = () => {
             </div>
             <form onSubmit={handleEditSubmit} className="sad-modal-body">
               {renderFormFields(editForm, setEditForm)}
-              <button
-                type="submit"
-                className="sad-btn-create w-100"
-                disabled={editSubmitting}
-              >
-                {editSubmitting ? "Saving..." : "Save Changes"}
-              </button>
+              <div className="d-flex gap-2">
+                <button
+                  type="button"
+                  className="sad-btn-create"
+                  style={{ background: "#f3f4f6", color: "#374151" }}
+                  onClick={() => setPreviewing(buildPreviewJob(editForm))}
+                >
+                  Preview
+                </button>
+                <button
+                  type="submit"
+                  className="sad-btn-create flex-grow-1"
+                  disabled={editSubmitting}
+                >
+                  {editSubmitting ? "Saving..." : "Save Changes"}
+                </button>
+              </div>
             </form>
           </div>
         </div>

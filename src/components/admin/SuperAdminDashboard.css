@@ -1182,3 +1182,39 @@ body:has(.sad-overlay) {
     flex-direction: column;
   }
 }
+
+/* ── Job preview: the public job page, shown in place of the admin page ──── */
+/* the site header sits over the image like on the public page; it is only for show */
+.job-preview-header {
+  pointer-events: none;
+}
+
+/* the preview's own controls: a small floating control, no coloured band over the image */
+.job-preview-pill {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 3100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 24px);
+  padding: 8px 8px 8px 16px;
+  border-radius: 999px;
+  background: rgba(17, 37, 61, 0.94);
+  color: #fff;
+  font-size: 13px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+.job-preview-pill .sad-btn-create {
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+@media (max-width: 575px) {
+  .job-preview-pill-note {
+    display: none;
+  }
+}
