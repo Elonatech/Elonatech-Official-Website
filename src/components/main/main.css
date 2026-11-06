@@ -175,7 +175,7 @@
   display: flex;
   align-items: center;
   width: max-content;
-  animation: clients-scroll 35s linear infinite;
+  animation: clients-scroll 20s linear infinite; /* lower number = faster */
 }
 
 /* hovering (or touching) pauses it so a logo can be looked at */
