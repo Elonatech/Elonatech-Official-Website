@@ -22,6 +22,20 @@ import "./main.css";
 
 let lastSubmitTimeMain = 0;
 
+// "Some Of Our Clients" logos, shown in a continuously scrolling strip.
+// To add a client: upload the logo to Cloudinary (Media Library, folder
+// homePage/clientLogo), copy its image URL, and add one line here.
+const CLIENT_LOGOS = [
+  { name: "Simon Page College of Marketing", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234681/homePage/clientLogo/amp-featured-image_fincna.png" },
+  { name: "LSG Sky Chefs", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234684/homePage/clientLogo/lsg_iph8mx.png" },
+  { name: "HV", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234695/homePage/clientLogo/hv_nzxyt1.png" },
+  { name: "Kosofe Local Government", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234749/homePage/clientLogo/kosofe_yuqg5x.png" },
+  { name: "TruCSR", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234691/homePage/clientLogo/tru_h9afyy.png" },
+  { name: "Supreme Family Entertainment", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234742/homePage/clientLogo/feii_a8rzqg.png" },
+  { name: "Ireti Resource Centre", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234686/homePage/clientLogo/ireti_whpffr.png" },
+  {name: "Salvic Petroleum Resources Ltd.", src: "https://res.cloudinary.com/dahnwukbz/image/upload/v1793971513/Salvic_logo_b_otkgdh.jpg"},
+];
+
 const Main = () => {
   const [showConsultModal, setShowConsultModal] = useState(false);
   const [honeypot, setHoneypot] = useState("");
@@ -463,120 +477,17 @@ const Main = () => {
             margin: "auto",
           }}
         ></div>
-        <div
-          id="carouselExampleControls"
-          className="carousel slide mt-5 mySSSS"
-          data-bs-ride="carousel"
-        >
-          <div className="carousel-inner">
-            {/* carousel items (kept structure) */}
-            <div className="carousel-item active">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-2 col-6">
-                    <div className="card border-0">
-                      <img
-                        src=""
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234681/homePage/clientLogo/amp-featured-image_fincna.png"
-                        className="img-fluid lazyload"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-6">
-                    <div className="card border-0">
-                      <img
-                        src=""
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234684/homePage/clientLogo/lsg_iph8mx.png"
-                        className="img-fluid lazyload"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-6">
-                    <div className="card border-0">
-                      <img
-                        src=""
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234695/homePage/clientLogo/hv_nzxyt1.png"
-                        className="img-fluid lazyload"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-6">
-                    <div className="card border-0">
-                      <img
-                        src=""
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234749/homePage/clientLogo/kosofe_yuqg5x.png"
-                        className="img-fluid lazyload"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-6">
-                    <div className="card border-0">
-                      <img
-                        src=""
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234691/homePage/clientLogo/tru_h9afyy.png"
-                        className="img-fluid lazyload"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-6">
-                    <div className="card border-0">
-                      <img
-                        src=""
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234742/homePage/clientLogo/feii_a8rzqg.png"
-                        className="img-fluid lazyload"
-                        alt=""
-                      />
-                    </div>
-                  </div>
+        <div className="clients-marquee mt-5" aria-label="Our clients">
+          <div className="clients-track">
+            {/* the list twice, so the loop has no gap; the copy is hidden from screen readers */}
+            {[0, 1].map((copy) =>
+              CLIENT_LOGOS.map((logo) => (
+                <div className="clients-logo" key={`${copy}-${logo.name}`} aria-hidden={copy === 1}>
+                  <img src={logo.src} alt={copy === 0 ? logo.name : ""} loading="lazy" />
                 </div>
-              </div>
-            </div>
-
-            {/* other carousel items preserved similarly... */}
-            <div className="carousel-item">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-2 col-6">
-                    <div className="card border-0">
-                      <img
-                        src=""
-                        data-src="https://res.cloudinary.com/elonatech/image/upload/v1707234686/homePage/clientLogo/ireti_whpffr.png"
-                        className="img-fluid lazyload"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  {/* ... */}
-                </div>
-              </div>
-            </div>
-
-            {/* remaining carousel items omitted for brevity but unchanged structurally */}
+              ))
+            )}
           </div>
-
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="next"
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
 
