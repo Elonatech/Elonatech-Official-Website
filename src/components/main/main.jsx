@@ -19,22 +19,9 @@ import ElonatechOneStop from "./captions/One_stop_IT_solution-min_lqmw0y.png";
 // others
 import MDImage from "./captions/Ceo1.png";
 import "./main.css";
+import { CLIENT_LOGOS } from "../../utils/clientLogos";
 
 let lastSubmitTimeMain = 0;
-
-// "Some Of Our Clients" logos, shown in a continuously scrolling strip.
-// To add a client: upload the logo to Cloudinary (Media Library, folder
-// homePage/clientLogo), copy its image URL, and add one line here.
-const CLIENT_LOGOS = [
-  { name: "Simon Page College of Marketing", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234681/homePage/clientLogo/amp-featured-image_fincna.png" },
-  { name: "LSG Sky Chefs", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234684/homePage/clientLogo/lsg_iph8mx.png" },
-  { name: "HV", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234695/homePage/clientLogo/hv_nzxyt1.png" },
-  { name: "Kosofe Local Government", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234749/homePage/clientLogo/kosofe_yuqg5x.png" },
-  { name: "TruCSR", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234691/homePage/clientLogo/tru_h9afyy.png" },
-  { name: "Supreme Family Entertainment", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234742/homePage/clientLogo/feii_a8rzqg.png" },
-  { name: "Ireti Resource Centre", src: "https://res.cloudinary.com/elonatech/image/upload/v1707234686/homePage/clientLogo/ireti_whpffr.png" },
-  {name: "Salvic Petroleum Resources Ltd.", src: "https://res.cloudinary.com/dahnwukbz/image/upload/v1793971513/Salvic_logo_b_otkgdh.jpg"},
-];
 
 const Main = () => {
   const [showConsultModal, setShowConsultModal] = useState(false);
@@ -478,7 +465,8 @@ const Main = () => {
           }}
         ></div>
         <div className="clients-marquee mt-5" aria-label="Our clients">
-          <div className="clients-track">
+          {/* about 2.9s per logo keeps the scroll speed the same however many logos there are */}
+          <div className="clients-track" style={{ "--clients-duration": `${CLIENT_LOGOS.length * 2.9}s` }}>
             {/* the list twice, so the loop has no gap; the copy is hidden from screen readers */}
             {[0, 1].map((copy) =>
               CLIENT_LOGOS.map((logo) => (
